@@ -1,6 +1,1 @@
-test#1_Jonas 
-test#2_forink
-
-Das ist eine Änderung
-
-Das hier auch
+Das ist eine Testdatei, welche unwichtige Daten enthält.
