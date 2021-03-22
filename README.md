@@ -5,4 +5,4 @@
 22.03.2021:
 
 Alex:
-Test.txt hinzugefügt
+Test.txt hinzugefügt; Graphische Benutzeroberfläche hinzugefügt
