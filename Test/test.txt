@@ -1,2 +1,8 @@
 Das ist eine Testdatei, welche unwichtige Daten enthält.
+<<<<<<< HEAD
 Aber dennoch sind Tests wichtig. blabla
+=======
+Aber dennoch sind Tests wichtig.
+
+Das ist eine Änderung von Alex.
+>>>>>>> 62fe1dd72ecb534ec6c176a21b7339b5b3d4cbe9
