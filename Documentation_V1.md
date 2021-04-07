@@ -1,9 +1,6 @@
 # informatikprojekt
 
 ## Änderungsverlauf
+### 07.04.2021
 
-22.03.2021:
-
-Alex:
-Test.txt hinzugefügt; Graphische Benutzeroberfläche hinzugefügt
 
