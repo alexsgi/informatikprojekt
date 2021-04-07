@@ -13,6 +13,6 @@ Alexander, Jessica, Jonas:
 1. Besprechung und Erarbeitung des Pflichtenheftes
 2. Entscheidung über das Spielkonzept und die Spielidee
 3. Aufgabenverteilung innerhalb der Gruppe
-4. Besprecung der Vorgehensweise bei Änderungen
+4. Besprechung der Vorgehensweise bei Änderungen
 
 
