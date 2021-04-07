@@ -2,7 +2,7 @@
 
 ## Dokumentation
 
-### 22.03.2021
+### **22.03.2021**
 Alexander, Jessica, Jonas:
 1. Einrichtung der Plattform GitHub
 2. Besprechung der Ordnerstrukturen zur Versions- und Änderungsverwaltung
@@ -14,5 +14,3 @@ Alexander, Jessica, Jonas:
 2. Entscheidung über das Spielkonzept und die Spielidee
 3. Aufgabenverteilung innerhalb der Gruppe
 4. Besprechung der Vorgehensweise bei Änderungen
-
-
