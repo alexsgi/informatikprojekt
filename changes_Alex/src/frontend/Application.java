@@ -1,7 +1,9 @@
 package frontend;
 
 import java.awt.EventQueue;
+import frontend.*;
 
+@SuppressWarnings("unused")
 public class Application {
 
 	public static void main(String[] args) {
