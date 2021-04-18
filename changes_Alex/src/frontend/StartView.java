@@ -13,7 +13,7 @@ public class StartView extends JPanel {
 		JLabel lblStartView = new JLabel("Das wird das Startmen\u00FC sein");
 		lblStartView.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		lblStartView.setHorizontalAlignment(SwingConstants.CENTER);
-		lblStartView.setBounds(10, 182, 580, 22);
+		lblStartView.setBounds(0, 158, 580, 22);
 		add(lblStartView);
 
 	}
