@@ -21,7 +21,6 @@ public class StartView extends JPanel {
 		setLayout(null);
 
 		JLabel lblTitel = new JLabel("StickJumper");
-		// lblTitel.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		lblTitel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblTitel.setBounds(0, 96, 1280, 83);
 		lblTitel.setFont(AHARONI_FONT);
