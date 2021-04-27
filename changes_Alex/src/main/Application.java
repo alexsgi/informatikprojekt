@@ -9,7 +9,7 @@ import frontend.StartView;
 public class Application {
 
 	public static void main(String[] args) {
-		initUI();
+		// initUI();
 		StartView panel = new StartView();
 		FrameView view = new FrameView(panel);
 		view.setVisible(true);
