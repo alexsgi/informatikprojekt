@@ -43,7 +43,6 @@ public class StartView extends JPanel {
 			// Fucking error
 			e.printStackTrace();
 		}
-
 	}
 
 	private void registerFont() {
