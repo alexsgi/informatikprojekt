@@ -19,7 +19,7 @@ public class StartView extends JPanel {
     private Font AHARONI_FONT;
 
     public StartView() {
-        registerFont();
+        //registerFont();
         setLayout(null);
         JLabel lblTitel = new JLabel("StickJumper");
         lblTitel.setHorizontalAlignment(SwingConstants.CENTER);
