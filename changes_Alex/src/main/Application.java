@@ -22,7 +22,6 @@ public class Application {
 		try {
 			UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
 		} catch (Throwable e) {
-			// Fucking error
 			e.printStackTrace();
 		}
 	}
