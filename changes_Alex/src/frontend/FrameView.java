@@ -9,7 +9,7 @@ public class FrameView extends JFrame {
 		setResizable(false);
 		setTitle("StickJumper");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setSize(600, 400);
+		setSize(1280, 640);
 		setLocationRelativeTo(null);
 		setContentPane(contentPane);
 	}
