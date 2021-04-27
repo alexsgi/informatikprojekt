@@ -1,6 +1,5 @@
 package main;
 
-import javax.swing.JFileChooser;
 import javax.swing.UIManager;
 
 import frontend.FrameView;
@@ -13,9 +12,6 @@ public class Application {
 		StartView panel = new StartView();
 		FrameView view = new FrameView(panel);
 		view.setVisible(true);
-
-		JFileChooser chooser = new JFileChooser();
-		chooser.showOpenDialog(null);
 	}
 
 	private static void initUI() {

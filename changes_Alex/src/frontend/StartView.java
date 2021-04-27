@@ -6,6 +6,7 @@ import java.awt.Graphics;
 import java.awt.GraphicsEnvironment;
 import java.awt.Image;
 import java.io.IOException;
+import java.net.URL;
 
 import javax.imageio.ImageIO;
 import javax.swing.JLabel;
@@ -24,6 +25,7 @@ public class StartView extends JPanel {
 		lblTitel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblTitel.setBounds(0, 96, 1280, 83);
 		lblTitel.setFont(AHARONI_FONT);
+		lblTitel.setFont(lblTitel.getFont().deriveFont(64f));
 		// lblTitel.setFont(AHARONI_FONT, Font.PLAIN, 30);
 		add(lblTitel);
 
@@ -43,8 +45,15 @@ public class StartView extends JPanel {
 
 	private void registerFont() {
 		try {
-			Font AHARONI_FONT = Font.createFont(Font.TRUETYPE_FONT, getClass().getResourceAsStream("/res/aharoni.ttf"));
-			AHARONI_FONT.deriveFont(30f);
+			/*
+			 * Font AHARONI_FONT = Font.createFont(Font.TRUETYPE_FONT,
+			 * getClass().getResourceAsStream("/res/aharoni.ttf"));
+			 * AHARONI_FONT.deriveFont(30f); GraphicsEnvironment ge =
+			 * GraphicsEnvironment.getLocalGraphicsEnvironment();
+			 * ge.registerFont(AHARONI_FONT);
+			 */
+			URL fontUrl = new URL("http://db.onlinewebfonts.com/t/22db60d19480ba0274c9eb6ba877ea9b.ttf");
+			AHARONI_FONT = Font.createFont(Font.TRUETYPE_FONT, fontUrl.openStream());
 			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
 			ge.registerFont(AHARONI_FONT);
 		} catch (IOException e) {
