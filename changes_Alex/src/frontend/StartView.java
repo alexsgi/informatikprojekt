@@ -5,9 +5,7 @@ import java.awt.FontFormatException;
 import java.awt.Graphics;
 import java.awt.GraphicsEnvironment;
 import java.awt.Image;
-import java.io.File;
 import java.io.IOException;
-import java.net.URISyntaxException;
 
 import javax.imageio.ImageIO;
 import javax.swing.JLabel;
@@ -47,16 +45,13 @@ public class StartView extends JPanel {
 
 	private void registerFont() {
 		try {
-			Font AHARONI_FONT = Font
-					.createFont(Font.PLAIN, new File(getClass().getResource("/res/aharoni.ttf").toURI()))
-					.deriveFont(30f);
+			Font AHARONI_FONT = Font.createFont(Font.TRUETYPE_FONT, getClass().getResourceAsStream("/res/aharoni.ttf"));
+			AHARONI_FONT.deriveFont(30f);
 			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
 			ge.registerFont(AHARONI_FONT);
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (FontFormatException e) {
-			e.printStackTrace();
-		} catch (URISyntaxException e) {
 			e.printStackTrace();
 		}
 	}
