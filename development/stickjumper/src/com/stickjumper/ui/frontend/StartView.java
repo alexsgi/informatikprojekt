@@ -59,14 +59,10 @@ public class StartView extends JPanel {
              * GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
              * ge.registerFont(AHARONI_FONT);
              */
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (FontFormatException e) {
-            e.printStackTrace();
-        } catch (URISyntaxException e) {
-            // TODO Auto-generated catch block
+        } catch (IOException | URISyntaxException | FontFormatException e) {
             e.printStackTrace();
         }
+
     }
 }
 
