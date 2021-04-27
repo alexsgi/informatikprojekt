@@ -8,6 +8,7 @@ import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.util.Objects;
 
 import javax.imageio.ImageIO;
 import javax.swing.JLabel;
@@ -19,13 +20,13 @@ public class StartView extends JPanel {
     private Font AHARONI_FONT;
 
     public StartView() {
-        registerFont();
+        //registerFont();
         setLayout(null);
         JLabel lblTitel = new JLabel("StickJumper");
         lblTitel.setHorizontalAlignment(SwingConstants.CENTER);
         lblTitel.setBounds(0, 96, 1280, 83);
-        lblTitel.setFont(AHARONI_FONT);
-        lblTitel.setFont(lblTitel.getFont().deriveFont(64f));
+        //lblTitel.setFont(AHARONI_FONT);
+        //lblTitel.setFont(lblTitel.getFont().deriveFont(64f));
         // lblTitel.setFont(AHARONI_FONT, Font.PLAIN, 30);
         add(lblTitel);
 
@@ -36,7 +37,7 @@ public class StartView extends JPanel {
         super.paintComponent(graphicsObject);
         Image bgImage;
         try {
-            bgImage = ImageIO.read(getClass().getResource("/res/mountains-middle.png"));
+            bgImage = ImageIO.read(Objects.requireNonNull(getClass().getResource("/res/image/01_background/mountains-1412683_1280.png")));
             graphicsObject.drawImage(bgImage, 0, 0, null);
         } catch (IOException exceptionObject) {
             exceptionObject.printStackTrace();
@@ -47,7 +48,7 @@ public class StartView extends JPanel {
         try {
 
             Font AHARONI_FONT = Font.createFont(Font.TRUETYPE_FONT,
-                    new File(getClass().getResource("/res/aharoni.ttf").toURI()));
+                    new File(Objects.requireNonNull(getClass().getResource("/res/aharoni.ttf")).toURI()));
             System.err.println(AHARONI_FONT.getName());
             GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
             System.err.println(ge.registerFont(AHARONI_FONT));
@@ -59,14 +60,10 @@ public class StartView extends JPanel {
              * GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
              * ge.registerFont(AHARONI_FONT);
              */
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (FontFormatException e) {
-            e.printStackTrace();
-        } catch (URISyntaxException e) {
-            // TODO Auto-generated catch block
+        } catch (IOException | URISyntaxException | FontFormatException e) {
             e.printStackTrace();
         }
+
     }
 }
 
