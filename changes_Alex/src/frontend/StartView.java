@@ -38,7 +38,6 @@ public class StartView extends JPanel {
 			bgImage = ImageIO.read(getClass().getResource("/res/mountains-middle.png"));
 			g.drawImage(bgImage, 0, 0, null);
 		} catch (IOException e) {
-			// Fucking error
 			e.printStackTrace();
 		}
 	}
