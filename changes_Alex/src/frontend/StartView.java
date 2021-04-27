@@ -32,14 +32,14 @@ public class StartView extends JPanel {
 	}
 
 	@Override
-	protected void paintComponent(Graphics graphics) {
-		super.paintComponent(graphics);
+	protected void paintComponent(Graphics graphicsObject) {
+		super.paintComponent(graphicsObject);
 		Image bgImage;
 		try {
 			bgImage = ImageIO.read(getClass().getResource("/res/mountains-middle.png"));
-			graphics.drawImage(bgImage, 0, 0, null);
-		} catch (IOException error) {
-			error.printStackTrace();
+			graphicsObject.drawImage(bgImage, 0, 0, null);
+		} catch (IOException exceptionObject) {
+			exceptionObject.printStackTrace();
 		}
 	}
 
