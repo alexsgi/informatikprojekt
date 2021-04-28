@@ -1,25 +1,15 @@
 package com.stickjumper.ui.frontend;
 
-import java.awt.Font;
-import java.awt.FontFormatException;
-import java.awt.Graphics;
-import java.awt.GraphicsEnvironment;
-import java.awt.Image;
-import java.io.File;
-import java.io.IOException;
-import java.net.URISyntaxException;
-
 import javax.imageio.ImageIO;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.SwingConstants;
+import javax.swing.*;
+import java.awt.*;
+import java.io.IOException;
 
 public class StartView extends JPanel {
 
-    private Font AHARONI_FONT;
+    private Font AHARONI_FONT = registerFont();
 
     public StartView() {
-        registerFont();
         setLayout(null);
         JLabel lblTitel = new JLabel("StickJumper");
         lblTitel.setHorizontalAlignment(SwingConstants.CENTER);
@@ -42,20 +32,21 @@ public class StartView extends JPanel {
         }
     }
 
-    private void registerFont() {
+    private Font registerFont() {
         try {
-            Font AHARONI_FONT = Font.createFont(Font.TRUETYPE_FONT,
-                    new File(getClass().getResource("/res/fonts/aharoni.ttf").toURI()));
-            GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-            boolean registerSuccess = ge.registerFont(AHARONI_FONT);
-            if(registerSuccess) {
+            Font font = Font.createFont(Font.TRUETYPE_FONT,
+                    getClass().getResourceAsStream("/res/fonts/aharoni.ttf"));
+
+            boolean registerSuccess = GraphicsEnvironment.getLocalGraphicsEnvironment().registerFont(font);
+            if (registerSuccess) {
                 System.out.println("Schriftart registriert!");
+                return font;
             } else {
                 System.err.println("Schriftart konnte nicht registriert werden!");
             }
-        } catch (IOException | URISyntaxException | FontFormatException e) {
+        } catch (IOException | FontFormatException e) {
             e.printStackTrace();
         }
-
+        return new Font("Comic Sans MS", Font.PLAIN, 30);
     }
 }
