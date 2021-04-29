@@ -26,8 +26,6 @@ public class Starter {
         // Create an image instance from the image that you want to use as icon for your app
         view.setIconImage(image);
         // And set it
-
-
      /*   String fonts[] =
                 GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames();
 
