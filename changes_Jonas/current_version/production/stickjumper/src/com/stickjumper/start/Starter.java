@@ -19,8 +19,8 @@ public class Starter {
         view.setVisible(true);
 
         // Create an image instance from the image that you want to use as icon for your app
-        String path="C:\\Users\\jonas\\Documents\\Projekte\\informatikprojekt\\changes_Jonas\\current_version\\production\\stickjumper\\src\\com\\stickjumper\\start";
-        Image icon = Toolkit.getDefaultToolkit().getImage(path+"\\appicon_5.png");
+        String pathImage = getClass().getResourceAsStream("/res/images/aharoni.ttf");
+        Image icon = Toolkit.getDefaultToolkit().getImage(pathImage);
         // And set it
         view.setIconImage(icon);
     }
