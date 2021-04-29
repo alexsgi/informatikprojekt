@@ -1,8 +1,11 @@
 package com.stickjumper.ui.frontend;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.imageio.ImageIO;
+import javax.swing.*;
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.io.InputStream;
 
 public class FrameView extends JFrame {
 
@@ -14,6 +17,20 @@ public class FrameView extends JFrame {
         setLocationRelativeTo(null);
         setContentPane(contentPane);
 
+        BufferedImage icon = getIcon();
+        setIconImage(icon);
+
+    }
+
+    private BufferedImage getIcon() {
+        try {
+            InputStream in = getClass().getResourceAsStream("/res/images/appicon_5.png");
+            return ImageIO.read(in);
+        } catch (IOException e) {
+            System.out.println("The image was not loaded.");
+            System.exit(1);
+        }
+        return null;
     }
 
 }

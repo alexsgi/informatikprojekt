@@ -15,10 +15,7 @@ public class StartView extends JPanel {
         lblTitel.setHorizontalAlignment(SwingConstants.CENTER);
         lblTitel.setBounds(0, 96, 1280, 83);
         lblTitel.setFont(AHARONI_FONT);
-        // lblTitel.setFont(lblTitel.getFont().deriveFont(64f));
         add(lblTitel);
-
-
     }
 
     @Override
@@ -49,6 +46,6 @@ public class StartView extends JPanel {
             e.printStackTrace();
         } */
        // return  new Font("Comic Sans MS", Font.PLAIN, 30);
-        return  new Font("Arial Black", Font.PLAIN, 30);
+        return new Font("Arial Black", Font.PLAIN, 30);
     }
 }
