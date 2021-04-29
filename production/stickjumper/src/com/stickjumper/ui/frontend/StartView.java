@@ -18,6 +18,7 @@ public class StartView extends JPanel {
         // lblTitel.setFont(lblTitel.getFont().deriveFont(64f));
         add(lblTitel);
 
+
     }
 
     @Override
@@ -33,7 +34,7 @@ public class StartView extends JPanel {
     }
 
     private Font registerFont() {
-        try {
+       /* try {
             Font font = Font.createFont(Font.TRUETYPE_FONT,
                     getClass().getResourceAsStream("/res/fonts/aharoni.ttf"));
 
@@ -46,7 +47,8 @@ public class StartView extends JPanel {
             }
         } catch (IOException | FontFormatException e) {
             e.printStackTrace();
-        }
-        return new Font("Comic Sans MS", Font.PLAIN, 30);
+        } */
+       // return  new Font("Comic Sans MS", Font.PLAIN, 30);
+        return  new Font("Arial Black", Font.PLAIN, 30);
     }
 }
