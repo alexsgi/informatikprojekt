@@ -1,6 +1,5 @@
 package com.stickjumper.ui.frontend;
 
-
 import javax.swing.*;
 
 public class LoginFrameView extends JFrame {
@@ -11,7 +10,6 @@ public class LoginFrameView extends JFrame {
         setSize(600, 500);
         setLocationRelativeTo(null);
         setContentPane(contentPane);
-
     }
 
 }

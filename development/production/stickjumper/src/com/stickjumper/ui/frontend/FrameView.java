@@ -18,7 +18,6 @@ public class FrameView extends JFrame {
 
         BufferedImage icon = getIcon();
         setIconImage(icon);
-
     }
 
     private BufferedImage getIcon() {
@@ -32,5 +31,4 @@ public class FrameView extends JFrame {
         }
         return null;
     }
-
 }

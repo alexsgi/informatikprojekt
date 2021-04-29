@@ -2,8 +2,10 @@ package com.stickjumper.start;
 
 import com.stickjumper.ui.frontend.FrameView;
 import com.stickjumper.ui.frontend.StartView;
+import storage.properties.PropertyManager;
 
 import javax.swing.*;
+import java.io.File;
 
 public class Starter {
     
@@ -20,7 +22,5 @@ public class Starter {
         } catch (Throwable e) {
             e.printStackTrace();
         }
-
     }
-
 }

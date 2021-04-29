@@ -10,7 +10,7 @@ import java.net.URL;
 
 public class StartView extends JPanel {
 
-    private Font AHARONI_FONT = registerFont();
+    private final Font MAIN_FONT = registerFont();
     private int buttonCounter = 0;
     JButton loginButton = new JButton();
     JButton otherButton = new JButton();
@@ -20,7 +20,7 @@ public class StartView extends JPanel {
         JLabel lblTitel = new JLabel("StickJumper");
         lblTitel.setHorizontalAlignment(SwingConstants.CENTER);
         lblTitel.setBounds(0, 96, 1280, 83);
-        lblTitel.setFont(AHARONI_FONT);
+        lblTitel.setFont(MAIN_FONT);
         add(lblTitel);
 
         // this button should open up a new frame with a log in function
@@ -48,7 +48,7 @@ public class StartView extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 buttonCounter++;
-                otherButton.setText("IDK " + buttonCounter);
+                otherButton.setText("Counter: " + buttonCounter);
             }
         });
         add(otherButton);
@@ -59,7 +59,7 @@ public class StartView extends JPanel {
         super.paintComponent(graphicsObject);
         try {
             URL url = getClass().getResource("/images/start_view/background/mountains-middle.png");
-            if(url == null) return;
+            if (url == null) return;
             Image bgImage = ImageIO.read(url);
             graphicsObject.drawImage(bgImage, 0, 0, null);
         } catch (IOException exceptionObject) {
@@ -71,7 +71,4 @@ public class StartView extends JPanel {
         return new Font("Arial Black", Font.PLAIN, 40);
     }
 
-    public static void ausgeben() {
-        System.out.println("Hallo");
-    }
 }
