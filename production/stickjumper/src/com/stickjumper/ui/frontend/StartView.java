@@ -23,9 +23,8 @@ public class StartView extends JPanel {
     @Override
     protected void paintComponent(Graphics graphicsObject) {
         super.paintComponent(graphicsObject);
-        Image bgImage;
         try {
-            bgImage = ImageIO.read(getClass().getResource("/res/images/mountains-middle.png"));
+            Image bgImage = ImageIO.read(getClass().getResource("/images/start_view/background/mountains-middle.png"));
             graphicsObject.drawImage(bgImage, 0, 0, null);
         } catch (IOException exceptionObject) {
             exceptionObject.printStackTrace();
@@ -55,8 +54,7 @@ public class StartView extends JPanel {
     private void fontTest() {
         String[] fonts =
                 GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames();
-
-        for (String s : fonts ) {
+        for (String s : fonts) {
             System.out.println(s);
         }
     }
