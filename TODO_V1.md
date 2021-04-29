@@ -1,3 +1,0 @@
-# informatikprojekt
-
-## Änderungsverlauf
