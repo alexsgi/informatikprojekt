@@ -5,7 +5,7 @@ import javax.swing.JPanel;
 
 public class FrameView extends JFrame {
 
-    public FrameView(StartView contentPane) {
+    public FrameView(frontend.StartView contentPane) {
         setResizable(false);
         setTitle("StickJumper");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -14,4 +14,6 @@ public class FrameView extends JFrame {
         setContentPane(contentPane);
     }
 
+    public FrameView(frontend.StartView panel) {
+    }
 }

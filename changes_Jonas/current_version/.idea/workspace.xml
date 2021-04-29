@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7d66e31e-0e5d-4fe8-a1b4-8e730e94ba7b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../stickJumper/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stickJumper_old/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stickJumper_old/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stickJumper_old/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stickJumper_old/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stickJumper_old/.idea/v2.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stickJumper_old/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stickJumper_old/log/Logfile.1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stickJumper_old/log/Snapshot.1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stickJumper_old/log/Version_Number" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stickJumper_old/src/Main/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stickJumper_old/src/com/stickJumper/ui/backend/Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stickJumper_old/src/com/stickJumper/ui/frontend/FrameView" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stickJumper_old/src/com/stickJumper/ui/frontend/StartView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stickJumper_old/src/res/fonts/aharoni.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stickJumper_old/src/res/mountains-big.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stickJumper_old/src/res/mountains-middle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stickJumper_v1/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stickJumper_v1/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stickJumper_v1/.idea/artifacts/stickJumper_v1_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stickJumper_v1/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stickJumper_v1/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stickJumper_v1/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stickJumper_v1/out/artifacts/stickJumper_v1_jar/stickJumper_v1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stickJumper_v1/out/production/stickJumper_v1/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stickJumper_v1/src/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stickJumper_v1/src/com/backend/test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stickJumper_v1/src/com/frontend/FrameView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stickJumper_v1/src/com/frontend/StartView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stickJumper_v1/src/com/main/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stickJumper_v1/stickJumper_v1.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/out/production/stickjumper/com/stickjumper/main/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/out/production/stickjumper/com/stickjumper/ui/backend/TEST.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/out/production/stickjumper/com/stickjumper/ui/frontend/FrameView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/out/production/stickjumper/com/stickjumper/ui/frontend/StartView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/out/production/stickjumper/res/aharoni.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/out/production/stickjumper/res/images/01_background/more_backgrounds.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/out/production/stickjumper/res/images/01_background/mountains-1412683.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/out/production/stickjumper/res/images/01_background/mountains-1412683.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/out/production/stickjumper/res/images/01_background/mountains-1412683_1280.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/out/production/stickjumper/res/images/01_background/mountains-1412683_640.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/out/production/stickjumper/res/images/02_monster/monster-1297726.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/out/production/stickjumper/res/images/02_monster/monster-1297726.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/out/production/stickjumper/res/images/02_monster/monster-1297726_1280.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/out/production/stickjumper/res/images/02_monster/monster-1297726_1920.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/out/production/stickjumper/res/images/02_monster/monster-1297726_640.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/out/production/stickjumper/res/images/03_ghost/spirit-1775549.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/out/production/stickjumper/res/images/03_ghost/spirit-1775549.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/out/production/stickjumper/res/images/03_ghost/spirit-1775549_1280.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/out/production/stickjumper/res/images/03_ghost/spirit-1775549_640.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/out/production/stickjumper/res/images/04_ghost/ghosts-1775548.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/out/production/stickjumper/res/images/04_ghost/ghosts-1775548.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/out/production/stickjumper/res/images/04_ghost/ghosts-1775548_1280.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/out/production/stickjumper/res/images/04_ghost/ghosts-1775548_640.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/out/production/stickjumper/res/mountains-big.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/out/production/stickjumper/res/mountains-middle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/stickjumper/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/stickjumper/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/stickjumper/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/stickjumper/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/stickjumper/out/production/stickjumper/com/stickjumper/main/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/stickjumper/out/production/stickjumper/com/stickjumper/ui/backend/TEST.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/stickjumper/out/production/stickjumper/com/stickjumper/ui/frontend/FrameView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/stickjumper/out/production/stickjumper/com/stickjumper/ui/frontend/StartView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/stickjumper/src/com/stickjumper/main/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/stickjumper/src/com/stickjumper/ui/backend/TEST.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/stickjumper/src/com/stickjumper/ui/frontend/FrameView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/stickjumper/src/com/stickjumper/ui/frontend/StartView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/stickjumper/src/res/aharoni.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/stickjumper/src/res/images/01_background/more_backgrounds.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/stickjumper/src/res/images/01_background/mountains-1412683.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/stickjumper/src/res/images/01_background/mountains-1412683.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/stickjumper/src/res/images/01_background/mountains-1412683_1280.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/stickjumper/src/res/images/01_background/mountains-1412683_640.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/stickjumper/src/res/images/02_monster/monster-1297726.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/stickjumper/src/res/images/02_monster/monster-1297726.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/stickjumper/src/res/images/02_monster/monster-1297726_1280.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/stickjumper/src/res/images/02_monster/monster-1297726_1920.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/stickjumper/src/res/images/02_monster/monster-1297726_640.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/stickjumper/src/res/images/03_ghost/spirit-1775549.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/stickjumper/src/res/images/03_ghost/spirit-1775549.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/stickjumper/src/res/images/03_ghost/spirit-1775549_1280.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/stickjumper/src/res/images/03_ghost/spirit-1775549_640.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/stickjumper/src/res/images/04_ghost/ghosts-1775548.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/stickjumper/src/res/images/04_ghost/ghosts-1775548.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/stickjumper/src/res/images/04_ghost/ghosts-1775548_1280.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/stickjumper/src/res/images/04_ghost/ghosts-1775548_640.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/stickjumper/src/res/mountains-big.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/stickjumper/src/res/mountains-middle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../v1/stickjumper/stickjumper.iml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1rpdA0ZhPOjKxnIbM4RZE6M0i82" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/production" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7d66e31e-0e5d-4fe8-a1b4-8e730e94ba7b" name="Default Changelist" comment="" />
+      <created>1619676818191</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1619676818191</updated>
+      <workItem from="1619676819706" duration="102000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

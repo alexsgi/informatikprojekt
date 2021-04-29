@@ -16,7 +16,7 @@ public class Main {
 
     private static void initUI() {
         try {
-            UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+            UIManager.setLookAndFeel("com.sun.java.swing.play.windows.WindowsLookAndFeel");
         } catch (Throwable e) {
             e.printStackTrace();
         }
