@@ -16,6 +16,8 @@ public class StartView extends JPanel {
         lblTitel.setBounds(0, 96, 1280, 83);
         lblTitel.setFont(AHARONI_FONT);
         add(lblTitel);
+
+        fontTest();
     }
 
     @Override
@@ -48,5 +50,14 @@ public class StartView extends JPanel {
         }
         */
         return new Font("Arial Black", Font.PLAIN, 40);
+    }
+
+    private void fontTest() {
+        String[] fonts =
+                GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames();
+
+        for (String s : fonts ) {
+            System.out.println(s);
+        }
     }
 }
