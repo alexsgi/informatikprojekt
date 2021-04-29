@@ -27,8 +27,8 @@ public class FrameView extends JFrame {
             if(in == null) return null;
             return ImageIO.read(in);
         } catch (IOException e) {
+            e.printStackTrace();
             System.out.println("The image was not loaded");
-            System.exit(1);
         }
         return null;
     }

@@ -23,7 +23,6 @@ public class StartView extends JPanel {
         lblTitel.setFont(AHARONI_FONT);
         add(lblTitel);
 
-
         // this button should open up a new frame with a log in function
         loginButton.setText("Login");
         loginButton.setFont(new Font("Calibri", Font.PLAIN, 15));
@@ -69,30 +68,10 @@ public class StartView extends JPanel {
     }
 
     private Font registerFont() {
-       /*
-       try {
-            Font font = Font.createFont(Font.TRUETYPE_FONT,
-                    getClass().getResourceAsStream("/res/fonts/aharoni.ttf"));
-
-            boolean registerSuccess = GraphicsEnvironment.getLocalGraphicsEnvironment().registerFont(font);
-            if (registerSuccess) {
-                System.out.println("Schriftart registriert!");
-                return font;
-            } else {
-                System.err.println("Schriftart konnte nicht registriert werden!");
-            }
-        } catch (IOException | FontFormatException e) {
-            e.printStackTrace();
-        }
-        */
         return new Font("Arial Black", Font.PLAIN, 40);
     }
 
-    private void fontTest() {
-        String[] fonts =
-                GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames();
-        for (String s : fonts) {
-            System.out.println(s);
-        }
+    public static void ausgeben() {
+        System.out.println("Hallo");
     }
 }
