@@ -24,9 +24,10 @@ public class FrameView extends JFrame {
     private BufferedImage getIcon() {
         try {
             InputStream in = getClass().getResourceAsStream("/images/icons/appicon_5.png");
+            if(in == null) return null;
             return ImageIO.read(in);
         } catch (IOException e) {
-            System.out.println("The image was not loaded.");
+            System.out.println("The image was not loaded");
             System.exit(1);
         }
         return null;

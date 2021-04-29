@@ -4,6 +4,7 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
+import java.net.URL;
 
 public class StartView extends JPanel {
 
@@ -16,15 +17,15 @@ public class StartView extends JPanel {
         lblTitel.setBounds(0, 96, 1280, 83);
         lblTitel.setFont(AHARONI_FONT);
         add(lblTitel);
-
-        fontTest();
     }
 
     @Override
     protected void paintComponent(Graphics graphicsObject) {
         super.paintComponent(graphicsObject);
         try {
-            Image bgImage = ImageIO.read(getClass().getResource("/images/start_view/background/mountains-middle.png"));
+            URL url = getClass().getResource("/images/start_view/background/mountains-middle.png");
+            if(url == null) return;
+            Image bgImage = ImageIO.read(url);
             graphicsObject.drawImage(bgImage, 0, 0, null);
         } catch (IOException exceptionObject) {
             exceptionObject.printStackTrace();
