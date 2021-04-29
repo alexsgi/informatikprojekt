@@ -6,6 +6,8 @@ import java.awt.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import static jdk.internal.jshell.tool.JShellTool.getResource;
+
 public class FrameView extends JFrame {
 
     public FrameView(JPanel contentPane) throws MalformedURLException {
@@ -19,9 +21,8 @@ public class FrameView extends JFrame {
     }
 
     public void setAppIcon() throws MalformedURLException {
-        URL url = new URL("src/res/images/all_images");
-        Toolkit kit = Toolkit.getDefaultToolkit();
-        Image img = kit.createImage(url);
+
+        Image img = Toolkit.getDefaultToolkit().getImage(this.class.getResource("image.png"))
         this.setIconImage(img);
 
     }
