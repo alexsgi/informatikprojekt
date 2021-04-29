@@ -19,3 +19,10 @@ Alex, Jessica, Jonas:
 ## **08.04.2021**
 Alex:
 1. Konfiguration Datenbank
+
+## **29.04.2021**
+Jonas:
+1. Einfügen eines Appicons mit der Hilfe einer von Alex bearbeiteten Methode (Auswahl der richtigen Größe eines Platzahltericons, welches später ausgetauscht wird)
+2. Auswahl der Schriftart Arial Black als vorläufige Überschrift
+3. Prototyp einer Login Seite hinzugefügt
+
