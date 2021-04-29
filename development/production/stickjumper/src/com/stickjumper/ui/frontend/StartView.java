@@ -24,7 +24,7 @@ public class StartView extends JPanel {
         add(lblTitel);
 
 
-        //this button should open up a new frame with a log in function
+        // this button should open up a new frame with a log in function
         loginButton.setText("Login");
         loginButton.setFont(new Font("Calibri", Font.PLAIN, 15));
         loginButton.setBounds(0, 150, 200, 50);
@@ -40,7 +40,7 @@ public class StartView extends JPanel {
         add(loginButton);
 
 
-        //the following button was just an experiment in order to try out whether that works with another actionListener
+        // the following button was just an experiment in order to try out whether that works with another actionListener
         otherButton.setText("IDK");
         otherButton.setFont(new Font("Calibri", Font.PLAIN, 15));
         otherButton.setBounds(0, 200, 200, 50);
@@ -49,7 +49,7 @@ public class StartView extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 buttonCounter++;
-                otherButton.setText("IDK "+buttonCounter);
+                otherButton.setText("IDK " + buttonCounter);
             }
         });
         add(otherButton);
