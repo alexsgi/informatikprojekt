@@ -1,7 +1,7 @@
 <component name="libraryTable">
-  <library name="java_utils">
+  <library name="mysql_jdbc">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/stickjumper/libs/java_utils.jar!/" />
+      <root url="jar://$PROJECT_DIR$/stickjumper/libs/mysql_jdbc.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
