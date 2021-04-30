@@ -1,13 +1,12 @@
 package com.stickjumper.start;
 
-import com.stickjumper.database.DBConnection;
 import com.stickjumper.ui.frontend.FrameView;
 import com.stickjumper.ui.frontend.StartView;
 
 import javax.swing.*;
 
 public class Starter {
-    
+
     public static void main(String[] args) {
         initUI();
         StartView panel = new StartView();
