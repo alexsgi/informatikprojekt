@@ -58,6 +58,13 @@ public class DBConnection {
             }
             stmt = null;
         }
+        if (connection != null) {
+            try {
+                connection.close();
+            } catch (SQLException ignore) {
+            }
+            connection = null;
+        }
         init = false;
     }
 
