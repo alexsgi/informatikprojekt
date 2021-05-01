@@ -77,7 +77,6 @@ public class DBConnection {
             rs.close();
         } catch (SQLException ignore) {
         }
-        rs = null;
         return list;
     }
 
@@ -98,7 +97,6 @@ public class DBConnection {
             rs.close();
         } catch (SQLException ignore) {
         }
-        rs = null;
         // Player not found
         if (list.size() == 0) return null;
         // More than one player found: massive error!
