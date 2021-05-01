@@ -80,7 +80,7 @@ public class DBConnection {
         return list;
     }
 
-    public static Player getPlayerFromDatabase(String playerName) throws SQLException {
+    public static Player getPlayer(String playerName) throws SQLException {
         if (!init) throw new SQLException("init() not called");
         // Prepare list and player object
         ArrayList<Player> list = new ArrayList<>();
