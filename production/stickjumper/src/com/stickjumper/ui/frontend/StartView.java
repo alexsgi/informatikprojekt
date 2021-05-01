@@ -12,11 +12,11 @@ public class StartView extends JPanel {
 
     public StartView() {
         setLayout(null);
-        JLabel lblTitel = new JLabel("StickJumper");
-        lblTitel.setHorizontalAlignment(SwingConstants.CENTER);
-        lblTitel.setBounds(0, 96, 1280, 83);
-        lblTitel.setFont(AHARONI_FONT);
-        add(lblTitel);
+        JLabel lblTitle = new JLabel("StickJumper");
+        lblTitle.setHorizontalAlignment(SwingConstants.CENTER);
+        lblTitle.setBounds(0, 96, 1280, 83);
+        lblTitle.setFont(AHARONI_FONT);
+        add(lblTitle);
     }
 
     @Override
