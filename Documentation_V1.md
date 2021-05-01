@@ -39,5 +39,15 @@ Jonas:
 ### **30.04.2021**
 Alex:
 1. Importieren benötigter Bibliotheken
-2. Vollständige Datenbankanbindungsimplementierung
+2. Datenbankanbindungsimplementierung
 3. Erstellen der Klasse Player (→ Datenklasse für Daten aus DB)
+
+### **01.05.2021**
+Jessica, Jonas, Alex:
+1. Besprechung (Review) des derzeitigen Codes
+2. Besprechen der Klassenstruktur
+3. Planung weiteres Vorgehen und Aufgabenverteilung
+
+Alex:
+1. Implementierung der Datenbankabfragen
+2. Anpassung Klasse Player
