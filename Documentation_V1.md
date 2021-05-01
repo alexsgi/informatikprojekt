@@ -14,7 +14,7 @@ Alex, Jessica, Jonas:
 2. Entscheidung über das Spielkonzept und die Spielidee
 3. Aufgabenverteilung innerhalb der Gruppe
 4. Besprechung der Vorgehensweise bei Änderungen
-5. Entscheidung: Text wird "outgesourced", um eine Übersetzung in eine weitere Sprache zu erleichtern
+5. Entscheidung: Text wird "outgesourced", um eine Übersetzung in weitere Sprachen zu erleichtern
 
 ### **08.04.2021**
 Alex:
