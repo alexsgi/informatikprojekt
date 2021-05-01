@@ -6,7 +6,7 @@ import com.stickjumper.ui.frontend.StartView;
 import javax.swing.*;
 
 public class Starter {
-    
+
     public static void main(String[] args) {
         initUI();
         StartView panel = new StartView();
@@ -21,5 +21,4 @@ public class Starter {
             e.printStackTrace();
         }
     }
-
 }
