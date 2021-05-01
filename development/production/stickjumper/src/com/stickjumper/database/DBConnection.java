@@ -33,13 +33,11 @@ public class DBConnection {
         }
         try {
             stmt = connection.createStatement();
-            rs = stmt.executeQuery("SELECT * FROM test_table");
+            rs = stmt.executeQuery("SELECT * FROM player_table");
             Player player;
             System.out.println("DATABASE OUTPUT:");
             while (rs.next()) {
-                player = new Player(
-                        rs.getInt("key"), rs.getString("playername"), rs.getString("playerpassword"), rs.getInt("highscore")
-                );
+                player = Player.fromResultSet(rs);
                 System.out.println(player);
             }
             System.out.println("--- END OF DATABASE OUTPUT ---");
