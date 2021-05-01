@@ -61,7 +61,7 @@ public class DBConnection {
         init = false;
     }
 
-    public static ArrayList<Player> fetchAllData() throws SQLException {
+    public static ArrayList<Player> getAllPlayers() throws SQLException {
         if (!init) throw new SQLException("init() not called");
         // Prepare list and player object
         ArrayList<Player> list = new ArrayList<>();
@@ -110,7 +110,7 @@ public class DBConnection {
         // Call on loading screen
         DBConnection.init();
 
-        ArrayList<Player> list = fetchAllData();
+        ArrayList<Player> list = getAllPlayers();
         System.out.println("Number of players: " + list.size());
         for (Player p : list) {
             System.out.println(p);
