@@ -22,6 +22,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="CodeWithMe" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -33,7 +34,7 @@
       <updated>1619549844046</updated>
       <workItem from="1619549848339" duration="32000" />
       <workItem from="1619805111049" duration="769000" />
-      <workItem from="1619855239416" duration="654000" />
+      <workItem from="1619855239416" duration="1079000" />
     </task>
     <servers />
   </component>
@@ -51,5 +52,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
