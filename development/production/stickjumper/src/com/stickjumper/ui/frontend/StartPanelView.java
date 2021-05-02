@@ -31,6 +31,7 @@ public class StartPanelView extends JPanel {
         loginButton.setFont(new Font("Calibri", Font.PLAIN, 15));
         loginButton.setBounds(0, 150, 200, 50);
         loginButton.setVisible(true);
+        loginButton.setFocusable(false);
         loginButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -47,6 +48,7 @@ public class StartPanelView extends JPanel {
         otherButton.setFont(new Font("Calibri", Font.PLAIN, 15));
         otherButton.setBounds(0, 200, 200, 50);
         otherButton.setVisible(true);
+        otherButton.setFocusable(false);
         otherButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

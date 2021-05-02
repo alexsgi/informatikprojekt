@@ -10,6 +10,7 @@ public class FrameView extends JFrame {
 
     public FrameView(JPanel contentPane) {
         setResizable(false);
+        //setUndecorated(true);
         setTitle("StickJumper");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(1280, 640);
