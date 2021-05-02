@@ -22,4 +22,7 @@ public class MainFrameView extends JFrame {
         // Set icon
         setIconImage(UITools.getImage(getClass(), "/images/icons/appicon_5.png"));
     }
+
+
+
 }

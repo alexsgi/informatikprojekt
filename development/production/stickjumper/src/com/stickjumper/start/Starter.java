@@ -1,13 +1,20 @@
 package com.stickjumper.start;
 
 import com.stickjumper.database.DBConnection;
+import com.stickjumper.ui.frontend.GamePanelView;
 import com.stickjumper.ui.frontend.MainFrameView;
 import com.stickjumper.ui.frontend.StartPanelView;
 import com.stickjumper.ui.frontend.boot.LoadingFrameView;
 import com.stickjumper.ui.frontend.boot.LoadingPanelView;
 import com.stickjumper.utils.UITools;
+import com.stickjumper.utils.MyCallback;
+
+import javax.security.auth.callback.Callback;
 
 public class Starter {
+    static StartPanelView panel;
+    static MainFrameView view ;
+
 
     public static void main(String[] args) throws InterruptedException {
         // Load Windows UI config
@@ -17,9 +24,15 @@ public class Starter {
         LoadingFrameView loadingFrameView = new LoadingFrameView(loadingPanelView);
         loadingFrameView.setVisible(true);
 
+        view = new MainFrameView(panel);
         // Create main frame
-        StartPanelView panel = new StartPanelView();
-        MainFrameView view = new MainFrameView(panel);
+        panel = new StartPanelView(new MyCallback(){
+            @Override
+            public void play() {
+                Starter.switchPanel();
+            }
+        });
+
 
         // Init shut down hook
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
@@ -39,6 +52,9 @@ public class Starter {
 
 
     }
-
+        public static void switchPanel(){
+            view.removeAll();
+            view.add(new GamePanelView());
+        }
 
 }

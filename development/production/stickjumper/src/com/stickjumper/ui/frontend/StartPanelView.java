@@ -2,6 +2,7 @@ package com.stickjumper.ui.frontend;
 
 import com.stickjumper.ui.frontend.login.LoginFrameView;
 import com.stickjumper.ui.frontend.login.LoginPanelView;
+import com.stickjumper.utils.MyCallback;
 import com.stickjumper.utils.UITools;
 
 import javax.swing.*;
@@ -14,17 +15,18 @@ public class StartPanelView extends JPanel {
 
     private final Font MAIN_FONT = UITools.registerFont();
 
-    JButton loginButton = new JButton();
-    JButton otherButton = new JButton();
+    private JButton loginButton = new JButton();
+    private JButton otherButton = new JButton();
     private int buttonCounter = 0;
 
-    public StartPanelView() {
+    public StartPanelView(MyCallback myCallback) {
         setLayout(null);
         JLabel lblTitel = new JLabel("StickJumper");
         lblTitel.setHorizontalAlignment(SwingConstants.CENTER);
         lblTitel.setBounds(0, 96, 1280, 83);
         lblTitel.setFont(MAIN_FONT);
         add(lblTitel);
+
 
         // this button should open up a new frame with a log in function
         loginButton.setText("Login");
@@ -43,16 +45,16 @@ public class StartPanelView extends JPanel {
         add(loginButton);
 
         // the following button was just an experiment in order to try out whether that works with another actionListener
-        otherButton.setText("IDK");
+        otherButton.setText("PLAY");
         otherButton.setFont(new Font("Calibri", Font.PLAIN, 15));
         otherButton.setBounds(0, 200, 200, 50);
         otherButton.setVisible(true);
         otherButton.setFocusable(false);
         otherButton.addActionListener(new ActionListener() {
+
             @Override
             public void actionPerformed(ActionEvent e) {
-                buttonCounter++;
-                otherButton.setText("Counter: " + buttonCounter);
+                myCallback.play();
             }
         });
         add(otherButton);
