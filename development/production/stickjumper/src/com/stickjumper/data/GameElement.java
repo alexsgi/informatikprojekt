@@ -22,20 +22,36 @@ public abstract class GameElement {
         visible = true;
     }
 
+    public int getXPos() {
+        return xPos;
+    }
+
+    public void setXPos(int xPos) {
+        this.xPos = xPos;
+    }
+
+    public int getYPos() {
+        return yPos;
+    }
+
+    public void setYPos(int yPos) {
+        this.yPos = yPos;
+    }
+
+    public int getLength() {
+        return length;
+    }
+
     public void setLength(int length) {
         this.length = length;
     }
 
+    public int getWidth() {
+        return width;
+    }
+
     public void setWidth(int width) {
         this.width = width;
-    }
-
-    public void setyPos(int yPos) {
-        this.yPos = yPos;
-    }
-
-    public void setxPos(int xPos) {
-        this.xPos = xPos;
     }
 
     public boolean isVisible() {
@@ -44,21 +60,5 @@ public abstract class GameElement {
 
     public void setVisible(boolean visible) {
         this.visible = visible;
-    }
-
-    public int getWidth() {
-        return width;
-    }
-
-    public int getLength() {
-        return length;
-    }
-
-    public int getyPos() {
-        return yPos;
-    }
-
-    public int getxPos() {
-        return xPos;
     }
 }

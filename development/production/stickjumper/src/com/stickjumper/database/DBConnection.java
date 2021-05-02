@@ -5,6 +5,9 @@ import com.stickjumper.data.Player;
 import java.sql.*;
 import java.util.ArrayList;
 
+/**
+ * @author Alex
+ */
 public class DBConnection {
 
     private static final String DB_URL = "sql11.freesqldatabase.com";
@@ -24,8 +27,8 @@ public class DBConnection {
     public static void init() {
         if (init) return;
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
-        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
             e.printStackTrace();
             return;
         }
