@@ -1,11 +1,11 @@
-package com.stickjumper.data.GameElements;
+package com.stickjumper.data.gameelements;
 
 import com.stickjumper.data.GameElement;
 
 public abstract class Obstacle extends GameElement {
 
-    private int speed;
     private final int skinType;
+    private int speed;
 
     public Obstacle(int speed, int skinType) {
         // a running enemy

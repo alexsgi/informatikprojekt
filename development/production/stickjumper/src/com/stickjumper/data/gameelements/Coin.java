@@ -1,4 +1,4 @@
-package com.stickjumper.data.GameElements;
+package com.stickjumper.data.gameelements;
 
 import com.stickjumper.data.GameElement;
 
@@ -21,7 +21,7 @@ public class Coin extends GameElement {
     }
 
 
-    public void hit(){
+    public void hit() {
         // increase HighScore
     }
 

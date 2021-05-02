@@ -5,6 +5,9 @@ import com.stickjumper.data.Player;
 import java.sql.*;
 import java.util.ArrayList;
 
+/**
+ * @author Alex
+ */
 public class DBConnection {
 
     private static final String DB_URL = "sql11.freesqldatabase.com";
@@ -24,8 +27,8 @@ public class DBConnection {
     public static void init() {
         if (init) return;
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
-        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
             e.printStackTrace();
             return;
         }
@@ -106,24 +109,10 @@ public class DBConnection {
         }
         // Player not found
         if (list.size() == 0) return null;
-        // More than one player found: massive error!
+        // More than one player with same username found: massive error!
         if (list.size() > 1) {
             throw new SQLException("More than one player found!");
         }
         return list.get(0);
-    }
-
-    public static void main(String[] args) throws SQLException {
-        // Call on loading screen
-        DBConnection.init();
-
-        ArrayList<Player> list = getAllPlayers();
-        System.out.println("Number of players: " + list.size());
-        for (Player p : list) {
-            System.out.println(p);
-        }
-
-        // Call on end
-        DBConnection.close();
     }
 }

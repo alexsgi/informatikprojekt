@@ -1,28 +1,25 @@
-package com.stickjumper.data.GameElements;
+package com.stickjumper.data.gameelements;
 
 import com.stickjumper.data.GameElement;
+import com.stickjumper.data.Player;
 
+/**
+ * @author Jonas
+ */
 public class GameCharacter extends GameElement {
 
-    private final int skinType;
+    private int skinType;
     private int highScore;
-    // private boolean DBConnectionVal;
 
-    public GameCharacter(int yPos, int skinType /*, int highScoreFromDB, boolean DBConnectionVal */) {
-        this.setxPos(yPos);
-        this.skinType=skinType;
+    public GameCharacter(int yPos, int skinType) {
+        super();
+        this.setYPos(yPos);
+        this.skinType = skinType;
         this.setVisible(true);
+    }
 
-        /*
-        this.DBConnectionVal = DBConnectionVal;
-        if (DBConnectionVal){
-            this.highScore = highScoreFromDB;
-        } else{
-            this.highScore = 0;
-        }
-        */
-
-
+    public GameCharacter(Player player) {
+        highScore = player.getHighScore();
     }
 
     public int getSkinType() {
