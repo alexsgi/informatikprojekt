@@ -17,6 +17,10 @@ public class Starter {
         LoadingFrameView loadingFrameView = new LoadingFrameView(loadingPanelView);
         loadingFrameView.setVisible(true);
 
+        // Create main frame
+        StartPanelView panel = new StartPanelView();
+        MainFrameView view = new MainFrameView(panel);
+
         // Init shut down hook
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             // Code to run when shutting down software
@@ -29,10 +33,7 @@ public class Starter {
 
         // Close loading screen
         loadingFrameView.dispose();
-
-        // Open main frame
-        StartPanelView panel = new StartPanelView();
-        MainFrameView view = new MainFrameView(panel);
+        
         view.setVisible(true);
 
     }

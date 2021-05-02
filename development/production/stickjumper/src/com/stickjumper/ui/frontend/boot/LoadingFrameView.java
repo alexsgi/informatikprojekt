@@ -8,8 +8,11 @@ import java.awt.geom.RoundRectangle2D;
 public class LoadingFrameView extends JFrame {
 
     public LoadingFrameView(JPanel contentPane) {
+        // Can't change size
         setResizable(false);
+        // No border
         setUndecorated(true);
+        // Set size of window
         setSize(1080, 300);
         setLocationRelativeTo(null);
         setContentPane(contentPane);
