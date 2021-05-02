@@ -12,6 +12,6 @@ public class Enemy extends Obstacle {
         super(speed, skinType);
 
     }
-    
+
 
 }
