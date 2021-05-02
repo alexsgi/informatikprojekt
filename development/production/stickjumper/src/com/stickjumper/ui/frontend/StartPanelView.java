@@ -1,8 +1,8 @@
 package com.stickjumper.ui.frontend;
 
-import com.stickjumper.start.Starter;
 import com.stickjumper.ui.frontend.login.LoginFrameView;
 import com.stickjumper.ui.frontend.login.LoginPanelView;
+import com.stickjumper.utils.UITools;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,7 +12,8 @@ import java.awt.image.BufferedImage;
 
 public class StartPanelView extends JPanel {
 
-    private final Font MAIN_FONT = registerFont();
+    private final Font MAIN_FONT = UITools.registerFont();
+
     JButton loginButton = new JButton();
     JButton otherButton = new JButton();
     private int buttonCounter = 0;
@@ -61,13 +62,9 @@ public class StartPanelView extends JPanel {
     @Override
     protected void paintComponent(Graphics graphicsObject) {
         super.paintComponent(graphicsObject);
-        BufferedImage image = Starter.getImage(getClass(), "/images/start_view/background/mountains-middle.png");
+        BufferedImage image = UITools.getImage(getClass(), "/images/start_view/background/mountains-middle.png");
         if (image == null) return;
         graphicsObject.drawImage(image, 0, 0, null);
-    }
-
-    private Font registerFont() {
-        return new Font("Arial Black", Font.PLAIN, 40);
     }
 
 }

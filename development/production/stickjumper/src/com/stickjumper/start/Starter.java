@@ -5,18 +5,13 @@ import com.stickjumper.ui.frontend.MainFrameView;
 import com.stickjumper.ui.frontend.StartPanelView;
 import com.stickjumper.ui.frontend.boot.LoadingFrameView;
 import com.stickjumper.ui.frontend.boot.LoadingPanelView;
-
-import javax.imageio.ImageIO;
-import javax.swing.*;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
-import java.io.InputStream;
+import com.stickjumper.utils.UITools;
 
 public class Starter {
 
     public static void main(String[] args) throws InterruptedException {
         // Load Windows UI config
-        initUI();
+        UITools.initUI();
         // Prepare and start loading screen
         LoadingPanelView loadingPanelView = new LoadingPanelView();
         LoadingFrameView loadingFrameView = new LoadingFrameView(loadingPanelView);
@@ -42,24 +37,5 @@ public class Starter {
 
     }
 
-    private static void initUI() {
-        try {
-            UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
-        } catch (Throwable e) {
-            e.printStackTrace();
-        }
-    }
-
-    public static BufferedImage getImage(Class<?> c, String path) {
-        try {
-            InputStream in = c.getResourceAsStream(path);
-            if (in == null) return null;
-            return ImageIO.read(in);
-        } catch (IOException e) {
-            e.printStackTrace();
-            System.out.printf("The image (%s) was not loaded%n", path);
-        }
-        return null;
-    }
 
 }

@@ -1,6 +1,6 @@
 package com.stickjumper.ui.frontend.boot;
 
-import com.stickjumper.start.Starter;
+import com.stickjumper.utils.UITools;
 
 import javax.swing.*;
 import java.awt.geom.RoundRectangle2D;
@@ -15,7 +15,7 @@ public class LoadingFrameView extends JFrame {
         setContentPane(contentPane);
         int arc = 18;
         setShape(new RoundRectangle2D.Double(0, 0, 1080, 300, arc, arc));
-        setIconImage(Starter.getImage(getClass(), "/images/icons/appicon_5.png"));
+        setIconImage(UITools.getImage(getClass(), "/images/icons/appicon_5.png"));
     }
 
 }

@@ -1,6 +1,6 @@
 package com.stickjumper.ui.frontend.boot;
 
-import com.stickjumper.start.Starter;
+import com.stickjumper.utils.UITools;
 
 import javax.swing.*;
 import java.awt.*;
@@ -25,7 +25,7 @@ public class LoadingPanelView extends JPanel {
     @Override
     protected void paintComponent(Graphics graphicsObject) {
         super.paintComponent(graphicsObject);
-        BufferedImage image = Starter.getImage(getClass(), "/images/loading_screen/loading_screen_image.png");
+        BufferedImage image = UITools.getImage(getClass(), "/images/loading_screen/loading_screen_image.png");
         if (image == null) return;
         graphicsObject.drawImage(image, 0, 0, null);
     }
