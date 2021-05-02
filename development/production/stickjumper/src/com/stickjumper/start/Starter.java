@@ -22,6 +22,11 @@ public class Starter {
         LoadingFrameView loadingFrameView = new LoadingFrameView(loadingPanelView);
         loadingFrameView.setVisible(true);
 
+        // Init shut down hook
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+            // Code to run when shutting down software
+            DBConnection.close();
+        }));
         // Make all boot operations (db connection, ...)
         DBConnection.init();
         // Just to see loading frame
