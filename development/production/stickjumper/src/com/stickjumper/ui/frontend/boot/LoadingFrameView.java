@@ -13,7 +13,7 @@ public class LoadingFrameView extends JFrame {
         setSize(1080, 300);
         setLocationRelativeTo(null);
         setContentPane(contentPane);
-        int arc = 25;
+        int arc = 18;
         setShape(new RoundRectangle2D.Double(0, 0, 1080, 300, arc, arc));
         setIconImage(Starter.getImage(getClass(), "/images/icons/appicon_5.png"));
     }
