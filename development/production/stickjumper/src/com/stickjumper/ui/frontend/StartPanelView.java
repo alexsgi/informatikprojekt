@@ -42,7 +42,6 @@ public class StartPanelView extends JPanel {
         });
         add(loginButton);
 
-
         // the following button was just an experiment in order to try out whether that works with another actionListener
         otherButton.setText("IDK");
         otherButton.setFont(new Font("Calibri", Font.PLAIN, 15));

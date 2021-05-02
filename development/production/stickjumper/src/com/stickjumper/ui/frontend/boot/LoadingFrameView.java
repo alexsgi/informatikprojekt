@@ -14,7 +14,7 @@ public class LoadingFrameView extends JFrame {
         setLocationRelativeTo(null);
         setContentPane(contentPane);
         int arc = 18;
-        setShape(new RoundRectangle2D.Double(0, 0, 1080, 300, arc, arc));
+        setShape(new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), arc, arc));
         setIconImage(UITools.getImage(getClass(), "/images/icons/appicon_5.png"));
     }
 
