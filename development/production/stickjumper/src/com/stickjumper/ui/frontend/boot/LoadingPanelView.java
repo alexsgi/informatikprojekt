@@ -25,7 +25,7 @@ public class LoadingPanelView extends JPanel {
     @Override
     protected void paintComponent(Graphics graphicsObject) {
         super.paintComponent(graphicsObject);
-        BufferedImage image = UITools.getImage(getClass(), "/images/loading_screen/loading_screen_image.png");
+        BufferedImage image = UITools.getImage(getClass(), "/images/loading_screen/sky.png");
         if (image == null) return;
         graphicsObject.drawImage(image, 0, 0, null);
     }
