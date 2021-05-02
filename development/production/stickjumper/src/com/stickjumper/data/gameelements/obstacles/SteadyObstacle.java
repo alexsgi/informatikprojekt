@@ -1,6 +1,6 @@
-package com.stickjumper.data.GameElements.Obstacles;
+package com.stickjumper.data.gameelements.obstacles;
 
-import com.stickjumper.data.GameElements.Obstacle;
+import com.stickjumper.data.gameelements.Obstacle;
 
 public class SteadyObstacle extends Obstacle {
 

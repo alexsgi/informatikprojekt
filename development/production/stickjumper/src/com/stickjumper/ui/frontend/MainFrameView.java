@@ -6,9 +6,9 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class FrameView extends JFrame {
+public class MainFrameView extends JFrame {
 
-    public FrameView(JPanel contentPane) {
+    public MainFrameView(JPanel contentPane) {
         setResizable(false);
         setTitle("StickJumper");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -16,8 +16,6 @@ public class FrameView extends JFrame {
         setLocationRelativeTo(null);
         setContentPane(contentPane);
         setIconImage(getIcon());
-
-        //setUndecorated(true);
     }
 
     private BufferedImage getIcon() {

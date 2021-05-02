@@ -1,15 +1,14 @@
-package com.stickjumper.data.GameElements;
-
-/**
- * author Jonas
- */
+package com.stickjumper.data.gameelements;
 
 import com.stickjumper.data.GameElement;
 import com.stickjumper.data.Player;
 
+/**
+ * @author Jonas
+ */
 public class GameCharacter extends GameElement {
 
-    private  int skinType;
+    private int skinType;
     private int highScore;
 
     public GameCharacter(int yPos, int skinType) {

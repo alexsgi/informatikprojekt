@@ -10,7 +10,7 @@ public class LoginPanelView extends JPanel {
     public LoginPanelView() {
         welcomeLabel.setText("Welcome to our service");
         add(welcomeLabel);
-        welcomeLabel.setBounds(20, 20, 200, 50);
+        welcomeLabel.setBounds(200, 80, 200, 50);
         welcomeLabel.setFont(new Font("Arial Black", Font.PLAIN, 30));
     }
 
