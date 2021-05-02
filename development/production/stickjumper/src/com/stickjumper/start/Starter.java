@@ -34,7 +34,8 @@ public class Starter {
         view.setVisible(true);
         // Close loading screen
         loadingFrameView.dispose();
-        
+
+        view.setVisible(true);
 
 
     }
