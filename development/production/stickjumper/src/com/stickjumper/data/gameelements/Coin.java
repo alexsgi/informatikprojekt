@@ -21,7 +21,7 @@ public class Coin extends GameElement {
     }
 
 
-    public void hit(){
+    public void hit() {
         // increase HighScore
     }
 

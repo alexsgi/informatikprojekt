@@ -6,7 +6,7 @@ import java.awt.*;
 public class LoginPanelView extends JPanel {
 
     private JLabel welcomeLabel = new JLabel();
-    
+
     public LoginPanelView() {
         setLayout(null);
         welcomeLabel.setText("Welcome to our service");

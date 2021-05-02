@@ -1,10 +1,10 @@
 package com.stickjumper.ui.frontend.boot;
 
-import javax.imageio.ImageIO;
+import com.stickjumper.start.Starter;
+
 import javax.swing.*;
 import java.awt.*;
-import java.io.IOException;
-import java.net.URL;
+import java.awt.image.BufferedImage;
 
 public class LoadingPanelView extends JPanel {
 
@@ -25,14 +25,9 @@ public class LoadingPanelView extends JPanel {
     @Override
     protected void paintComponent(Graphics graphicsObject) {
         super.paintComponent(graphicsObject);
-        try {
-            URL url = getClass().getResource("/images/loading_screen/loading_screen_image.png");
-            if (url == null) return;
-            Image bgImage = ImageIO.read(url);
-            graphicsObject.drawImage(bgImage, 0, 0, null);
-        } catch (IOException exceptionObject) {
-            exceptionObject.printStackTrace();
-        }
+        BufferedImage image = Starter.getImage(getClass(), "/images/loading_screen/loading_screen_image.png");
+        if (image == null) return;
+        graphicsObject.drawImage(image, 0, 0, null);
     }
 
 }

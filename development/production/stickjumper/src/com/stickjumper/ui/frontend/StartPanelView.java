@@ -1,22 +1,21 @@
 package com.stickjumper.ui.frontend;
 
+import com.stickjumper.start.Starter;
 import com.stickjumper.ui.frontend.login.LoginFrameView;
 import com.stickjumper.ui.frontend.login.LoginPanelView;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
-import java.net.URL;
+import java.awt.image.BufferedImage;
 
 public class StartPanelView extends JPanel {
 
     private final Font MAIN_FONT = registerFont();
-    private int buttonCounter = 0;
     JButton loginButton = new JButton();
     JButton otherButton = new JButton();
+    private int buttonCounter = 0;
 
     public StartPanelView() {
         setLayout(null);
@@ -62,14 +61,9 @@ public class StartPanelView extends JPanel {
     @Override
     protected void paintComponent(Graphics graphicsObject) {
         super.paintComponent(graphicsObject);
-        try {
-            URL url = getClass().getResource("/images/start_view/background/mountains-middle.png");
-            if (url == null) return;
-            Image bgImage = ImageIO.read(url);
-            graphicsObject.drawImage(bgImage, 0, 0, null);
-        } catch (IOException exceptionObject) {
-            exceptionObject.printStackTrace();
-        }
+        BufferedImage image = Starter.getImage(getClass(), "/images/start_view/background/mountains-middle.png");
+        if (image == null) return;
+        graphicsObject.drawImage(image, 0, 0, null);
     }
 
     private Font registerFont() {

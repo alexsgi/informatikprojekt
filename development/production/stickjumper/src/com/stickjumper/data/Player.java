@@ -16,6 +16,20 @@ public class Player {
         this.skin = skin;
     }
 
+    public static Player fromResultSet(ResultSet rs) throws SQLException {
+        int k, h, s;
+        String n, p;
+        k = rs.getInt("key");
+        n = rs.getString("playername");
+        p = rs.getString("playerpassword");
+        h = rs.getInt("highscore");
+        s = rs.getInt("skin");
+        if (k < 0 || h < 0 || s < 0 || n == null || p == null) {
+            return null;
+        }
+        return new Player(k, n, p, h, s);
+    }
+
     public int getKey() {
         return key;
     }
@@ -59,19 +73,5 @@ public class Player {
     @Override
     public String toString() {
         return String.format("Player %s (%d) - Highscore: %s - Password: %s - Skin: %d", playerName, key, highScore, playerPassword, skin);
-    }
-
-    public static Player fromResultSet(ResultSet rs) throws SQLException {
-        int k, h, s;
-        String n, p;
-        k = rs.getInt("key");
-        n = rs.getString("playername");
-        p = rs.getString("playerpassword");
-        h = rs.getInt("highscore");
-        s = rs.getInt("skin");
-        if (k < 0 || h < 0 || s < 0 || n == null || p == null) {
-            return null;
-        }
-        return new Player(k, n, p, h, s);
     }
 }

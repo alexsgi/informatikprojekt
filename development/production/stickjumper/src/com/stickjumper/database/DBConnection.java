@@ -115,18 +115,4 @@ public class DBConnection {
         }
         return list.get(0);
     }
-
-    public static void main(String[] args) throws SQLException {
-        // Call on loading screen
-        DBConnection.init();
-
-        ArrayList<Player> list = getAllPlayers();
-        System.out.println("Number of players: " + list.size());
-        for (Player p : list) {
-            System.out.println(p);
-        }
-
-        // Call on end
-        DBConnection.close();
-    }
 }
