@@ -1,5 +1,8 @@
 package com.stickjumper.ui.frontend;
 
+import com.stickjumper.ui.frontend.login.LoginFrameView;
+import com.stickjumper.ui.frontend.login.LoginPanelView;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -8,14 +11,14 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.net.URL;
 
-public class StartView extends JPanel {
+public class StartPanelView extends JPanel {
 
     private final Font MAIN_FONT = registerFont();
     private int buttonCounter = 0;
     JButton loginButton = new JButton();
     JButton otherButton = new JButton();
 
-    public StartView() {
+    public StartPanelView() {
         setLayout(null);
         JLabel lblTitel = new JLabel("StickJumper");
         lblTitel.setHorizontalAlignment(SwingConstants.CENTER);

@@ -1,7 +1,7 @@
 package com.stickjumper.start;
 
 import com.stickjumper.ui.frontend.FrameView;
-import com.stickjumper.ui.frontend.StartView;
+import com.stickjumper.ui.frontend.StartPanelView;
 
 import javax.swing.*;
 
@@ -9,7 +9,7 @@ public class Starter {
 
     public static void main(String[] args) {
         initUI();
-        StartView panel = new StartView();
+        StartPanelView panel = new StartPanelView();
         FrameView view = new FrameView(panel);
         view.setVisible(true);
     }

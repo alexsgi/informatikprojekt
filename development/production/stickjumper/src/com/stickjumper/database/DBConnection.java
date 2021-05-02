@@ -106,7 +106,7 @@ public class DBConnection {
         }
         // Player not found
         if (list.size() == 0) return null;
-        // More than one player found: massive error!
+        // More than one player with same username found: massive error!
         if (list.size() > 1) {
             throw new SQLException("More than one player found!");
         }

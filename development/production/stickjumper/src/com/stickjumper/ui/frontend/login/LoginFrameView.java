@@ -1,4 +1,4 @@
-package com.stickjumper.ui.frontend;
+package com.stickjumper.ui.frontend.login;
 
 import javax.swing.*;
 
