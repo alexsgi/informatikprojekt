@@ -18,5 +18,11 @@ public class Controller implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         System.out.println(e.getSource().toString());
         System.out.println(e.getActionCommand());
+        switch (e.getActionCommand()) {
+            case "PLAY":
+                break;
+            case "LOGIN":
+                break;
+        }
     }
 }
