@@ -12,6 +12,7 @@ import com.stickjumper.utils.MyCallback;
 import javax.security.auth.callback.Callback;
 
 public class Starter {
+
     static StartPanelView panel;
     static MainFrameView view ;
 
@@ -24,7 +25,6 @@ public class Starter {
         LoadingFrameView loadingFrameView = new LoadingFrameView(loadingPanelView);
         loadingFrameView.setVisible(true);
 
-        view = new MainFrameView(panel);
         // Create main frame
         panel = new StartPanelView(new MyCallback(){
             @Override
@@ -32,6 +32,7 @@ public class Starter {
                 Starter.switchPanel();
             }
         });
+        view = new MainFrameView(panel);
 
 
         // Init shut down hook
@@ -42,7 +43,7 @@ public class Starter {
         // Make all boot operations (db connection, ...)
         DBConnection.init();
         // Just to see loading frame (freezes cpu)
-        Thread.sleep(4000);
+        //Thread.sleep(4000);
 
         view.setVisible(true);
         // Close loading screen
