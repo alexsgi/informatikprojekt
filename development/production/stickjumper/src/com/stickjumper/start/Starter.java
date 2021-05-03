@@ -17,8 +17,7 @@ public class Starter {
         // Load Windows UI config
         UITools.initUI();
         // Prepare and start loading screen
-        LoadingPanelView loadingPanelView = new LoadingPanelView();
-        LoadingFrameView loadingFrameView = new LoadingFrameView(loadingPanelView);
+        LoadingFrameView loadingFrameView = new LoadingFrameView();
         loadingFrameView.setVisible(true);
 
         // Create main frame
