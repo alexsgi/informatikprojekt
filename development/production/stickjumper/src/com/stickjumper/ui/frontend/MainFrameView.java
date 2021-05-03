@@ -1,5 +1,6 @@
 package com.stickjumper.ui.frontend;
 
+import com.stickjumper.utils.MyCallback;
 import com.stickjumper.utils.UITools;
 
 import javax.swing.*;
@@ -8,8 +9,7 @@ public class MainFrameView extends JFrame {
 
     private JPanel panel;
 
-    public MainFrameView(JPanel contentPane) {
-        panel = contentPane;
+    public MainFrameView() {
 
         // Can't change size of window
         setResizable(false);
@@ -22,7 +22,13 @@ public class MainFrameView extends JFrame {
         // Window in center of screen
         setLocationRelativeTo(null);
         // Add panel to frame
-        setContentPane(contentPane);
+        setContentPane(new StartPanelView(new MyCallback() {
+            @Override
+            public void play() {
+                changePanel(new GamePanelView());
+                revalidate();
+            }
+        }));
         // Set icon
         setIconImage(UITools.getImage(getClass(), "/images/icons/appicon_5.png"));
     }

@@ -11,9 +11,7 @@ import com.stickjumper.utils.UITools;
 
 public class Starter {
 
-    static StartPanelView panel;
     static MainFrameView view;
-
 
     public static void main(String[] args) throws InterruptedException {
         // Load Windows UI config
@@ -24,14 +22,7 @@ public class Starter {
         loadingFrameView.setVisible(true);
 
         // Create main frame
-        panel = new StartPanelView(new MyCallback() {
-            @Override
-            public void play() {
-                Starter.switchPanel();
-            }
-        });
-        view = new MainFrameView(panel);
-
+        view = new MainFrameView();
 
         // Init shut down hook
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
@@ -47,12 +38,9 @@ public class Starter {
         loadingFrameView.dispose();
         view.setVisible(true);
 
-
     }
 
     public static void switchPanel() {
-        //view.removeAll();
-        //view.add(new GamePanelView());
         view.setContentPane(new GamePanelView());
     }
 
