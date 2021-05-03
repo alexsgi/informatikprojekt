@@ -6,7 +6,11 @@ import javax.swing.*;
 
 public class MainFrameView extends JFrame {
 
+    private JPanel panel;
+
     public MainFrameView(JPanel contentPane) {
+        panel = contentPane;
+
         // Can't change size of window
         setResizable(false);
         // Title of window
@@ -23,6 +27,9 @@ public class MainFrameView extends JFrame {
         setIconImage(UITools.getImage(getClass(), "/images/icons/appicon_5.png"));
     }
 
-
+    public void changePanel(JPanel newPanel) {
+        panel = newPanel;
+        setContentPane(panel);
+    }
 
 }

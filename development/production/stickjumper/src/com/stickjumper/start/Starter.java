@@ -6,15 +6,13 @@ import com.stickjumper.ui.frontend.MainFrameView;
 import com.stickjumper.ui.frontend.StartPanelView;
 import com.stickjumper.ui.frontend.boot.LoadingFrameView;
 import com.stickjumper.ui.frontend.boot.LoadingPanelView;
-import com.stickjumper.utils.UITools;
 import com.stickjumper.utils.MyCallback;
-
-import javax.security.auth.callback.Callback;
+import com.stickjumper.utils.UITools;
 
 public class Starter {
 
     static StartPanelView panel;
-    static MainFrameView view ;
+    static MainFrameView view;
 
 
     public static void main(String[] args) throws InterruptedException {
@@ -26,7 +24,7 @@ public class Starter {
         loadingFrameView.setVisible(true);
 
         // Create main frame
-        panel = new StartPanelView(new MyCallback(){
+        panel = new StartPanelView(new MyCallback() {
             @Override
             public void play() {
                 Starter.switchPanel();
@@ -45,17 +43,17 @@ public class Starter {
         // Just to see loading frame (freezes cpu)
         //Thread.sleep(4000);
 
-        view.setVisible(true);
         // Close loading screen
         loadingFrameView.dispose();
-
         view.setVisible(true);
 
 
     }
-        public static void switchPanel(){
-            view.removeAll();
-            view.add(new GamePanelView());
-        }
+
+    public static void switchPanel() {
+        //view.removeAll();
+        //view.add(new GamePanelView());
+        view.setContentPane(new GamePanelView());
+    }
 
 }

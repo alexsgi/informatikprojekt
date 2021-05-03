@@ -13,7 +13,7 @@ public class GamePanelView extends JPanel {
 
     public GamePanelView() {
         setLayout(null);
-        JLabel lblTitle = new JLabel("StickJumper");
+        lblTitle = new JLabel("StickJumper");
         lblTitle.setHorizontalAlignment(SwingConstants.CENTER);
         lblTitle.setBounds(0, 96, 1280, 83);
         lblTitle.setFont(MAIN_FONT);
