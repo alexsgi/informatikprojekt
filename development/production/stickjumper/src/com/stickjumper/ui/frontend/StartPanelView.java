@@ -50,6 +50,7 @@ public class StartPanelView extends JPanel {
         otherButton.setBounds(0, 200, 200, 50);
         otherButton.setVisible(true);
         otherButton.setFocusable(false);
+        /*
         otherButton.addActionListener(new ActionListener() {
 
             @Override
@@ -57,6 +58,9 @@ public class StartPanelView extends JPanel {
                 myCallback.play();
             }
         });
+         */
+        otherButton.addActionListener(new Controller());
+        otherButton.setActionCommand("ACTION COMMAND");
         add(otherButton);
     }
 
