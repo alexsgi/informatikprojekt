@@ -1,44 +1,23 @@
 package com.stickjumper.ui.frontend;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-
-public class Controller implements ActionListener, KeyListener {
+public class Controller {
 
     private StartPanelView mainPanel;
 
-    public Controller(StartPanelView view) {
-        this.mainPanel = view;
+    public Controller() {
     }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        System.out.println(e.getActionCommand());
-        switch (e.getActionCommand()) {
-            case "PLAY":
-                break;
-            case "LOGIN":
-                break;
-            case "ACTION COMMAND":
-                mainPanel.anpassenText("Neuer Text");
-                break;
-        }
+    public void setPanel(StartPanelView panel) {
+        mainPanel = panel;
     }
 
-    @Override
-    public void keyTyped(KeyEvent e) {
-        System.out.println("Methode aufgerufen (1)");
+    public void newMethod() {
+        mainPanel.anpassenText("Es funzt");
+
     }
 
-    @Override
-    public void keyPressed(KeyEvent e) {
-        System.out.println("Methode aufgerufen (2)");
-    }
+    public void keyPressed() {
 
-    @Override
-    public void keyReleased(KeyEvent e) {
-        System.out.println("Methode aufgerufen (2)");
+        mainPanel.anpassenText("lol");
     }
 }

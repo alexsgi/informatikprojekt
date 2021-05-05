@@ -1,15 +1,12 @@
 package com.stickjumper.start;
 
 import com.stickjumper.database.DBConnection;
-import com.stickjumper.ui.frontend.GamePanelView;
 import com.stickjumper.ui.frontend.MainFrameView;
-import com.stickjumper.ui.frontend.StartPanelView;
 import com.stickjumper.ui.frontend.boot.LoadingFrameView;
-import com.stickjumper.ui.frontend.boot.LoadingPanelView;
-import com.stickjumper.utils.MyCallback;
 import com.stickjumper.utils.UITools;
 
 public class Starter {
+
 
     public static void main(String[] args) throws InterruptedException {
         // Load Windows UI config
@@ -17,6 +14,7 @@ public class Starter {
         // Prepare and start loading screen
         LoadingFrameView loadingFrameView = new LoadingFrameView();
         loadingFrameView.setVisible(true);
+
 
         // Create main frame
         MainFrameView view = new MainFrameView();

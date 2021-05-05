@@ -9,8 +9,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
 
 public class StartPanelView extends JPanel {
@@ -21,7 +19,7 @@ public class StartPanelView extends JPanel {
     private JButton otherButton = new JButton();
     private int buttonCounter = 0;
 
-    public StartPanelView(MyCallback myCallback) {
+    public StartPanelView(MyCallback myCallback, Controller controller) {
         setLayout(null);
         JLabel lblTitel = new JLabel("StickJumper");
         lblTitel.setHorizontalAlignment(SwingConstants.CENTER);
@@ -62,9 +60,13 @@ public class StartPanelView extends JPanel {
         });
          */
 
-        Controller controller = new Controller(this);
 
-        otherButton.addActionListener(controller);
+        otherButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                controller.newMethod();
+            }
+        });
         otherButton.setActionCommand("ACTION COMMAND");
         add(otherButton);
     }
