@@ -24,14 +24,10 @@ public class Starter {
         // Init shut down hook
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             // Code to run when shutting down software
-            DBConnection.close();
+            //DBConnection.close();
         }));
         // Make all boot operations (db connection, ...)
-        DBConnection.init();
-        ArrayList<Player> list = DBConnection.getAllPlayers();
-        for (Player p : list) {
-            System.out.println(p.toString());
-        }
+        // DBConnection.init();
 
         // Close loading screen
         loadingFrameView.dispose();
