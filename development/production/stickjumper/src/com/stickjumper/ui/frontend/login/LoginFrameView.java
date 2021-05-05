@@ -6,6 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
 import java.awt.geom.RoundRectangle2D;
 
 public class LoginFrameView extends JFrame {
@@ -32,10 +33,18 @@ public class LoginFrameView extends JFrame {
         loginButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 controller.enableMainFrame();
+                pullThePlug();
             }
         });
         add(loginButton);
     }
+    public void pullThePlug() {
+        // this will hide and dispose the frame, so that the application quits by
+        // itself if there is nothing else around.
+        setVisible(false);
+        dispose();
 
+    }
 }

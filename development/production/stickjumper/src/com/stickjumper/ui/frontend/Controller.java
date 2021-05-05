@@ -1,5 +1,7 @@
 package com.stickjumper.ui.frontend;
 
+import java.awt.*;
+
 public class Controller {
 
     private StartPanelView mainPanel;
@@ -32,4 +34,6 @@ public class Controller {
     public void enableMainFrame(){
         mainFrameView.setVisible(true);
     }
+
+
 }
