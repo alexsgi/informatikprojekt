@@ -13,11 +13,13 @@ public class Controller {
 
     public void newMethod() {
         mainPanel.anpassenText("Es funzt");
-
     }
 
-    public void keyPressed() {
-
+    public void spacePressed() {
         mainPanel.anpassenText("lol");
+    }
+
+    public void enterPressed(){
+        mainPanel.anpassenText("Enter");
     }
 }

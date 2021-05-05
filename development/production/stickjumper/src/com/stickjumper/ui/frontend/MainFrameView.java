@@ -52,8 +52,14 @@ public class MainFrameView extends JFrame implements KeyListener {
 
     @Override
     public void keyPressed(KeyEvent e) {
-
-        controller.keyPressed();
+        switch (e.getKeyCode()){
+            case KeyEvent.VK_SPACE:
+                controller.spacePressed();
+                break;
+            case KeyEvent.VK_ENTER:
+                controller.enterPressed();
+                break;
+        }
     }
 
     @Override
