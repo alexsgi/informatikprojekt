@@ -52,6 +52,9 @@ Alex:
 1. Implementierung der Datenbankabfragen
 2. Anpassung Klasse Player
 
+Jonas:
+1. Einfügen aller Klassen, die in Verbindugn mit der Klasse GameElement stehen
+
 ### **02.05.2021**
 Alex:
 1. Implementierung Loading screen
@@ -61,3 +64,15 @@ Alex:
 1. Anpassung Loading screen mit Jonas
 2. Anpassung Datenbankverbindung
 3. MVC-Versuch mit Jonas
+
+Jonas: 
+1. Implementieren der Klasse Controller mit Alex mit vorläufigem Aufbau, bei welchem Controller von ActionListener erbt
+
+### **05.05.2021**
+Jessica, Alex, Jonas
+1. Konferenz mit Besprechung des MVC
+2. Überarbeitung der Anwendung des MVC durch die Klasse Controller, ohne ActionListener
+
+Jonas:
+1. Umsetzen des KeyListeners über die Klassen des Frames, Panels und controllers
+2. Testen und weiterere Funktionen hinzugefügt mit Alex und Jessica
