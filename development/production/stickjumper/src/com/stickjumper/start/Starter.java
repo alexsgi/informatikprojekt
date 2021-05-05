@@ -28,7 +28,7 @@ public class Starter {
         // Just to see loading frame (freezes cpu)
         // Thread.sleep(4000);
 
-
+        
         // Close loading screen
         loadingFrameView.dispose();
         view.setVisible(true);
