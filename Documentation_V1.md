@@ -69,10 +69,10 @@ Jonas:
 1. Implementieren der Klasse Controller mit Alex mit vorläufigem Aufbau, bei welchem Controller von ActionListener erbt
 
 ### **05.05.2021**
-Jessica, Alex, Jonas
+Jessica, Alex, Jonas:
 1. Konferenz mit Besprechung des MVC
 2. Überarbeitung der Anwendung des MVC durch die Klasse Controller, ohne ActionListener
 
 Jonas:
-1. Umsetzen des KeyListeners über die Klassen des Frames, Panels und controllers
-2. Testen und weiterere Funktionen hinzugefügt mit Alex und Jessica
+1. Umsetzen des KeyListeners über die Klassen des Frames, Panels und Controllers
+2. Testen und weiterer Funktionen hinzugefügt mit Alex und Jessica
