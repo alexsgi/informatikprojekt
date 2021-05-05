@@ -29,7 +29,7 @@ public class Starter {
         // Make all boot operations (db connection, ...)
         DBConnection.init();
         // Just to see loading frame (freezes cpu)
-        //Thread.sleep(4000);
+        Thread.sleep(4000);
 
         // Close loading screen
         loadingFrameView.dispose();
