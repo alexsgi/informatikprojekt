@@ -51,3 +51,13 @@ Jessica, Jonas, Alex:
 Alex:
 1. Implementierung der Datenbankabfragen
 2. Anpassung Klasse Player
+
+### **02.05.2021**
+Alex:
+1. Implementierung Loading screen
+
+### **03.05.2021**
+Alex:
+1. Anpassung Loading screen mit Jonas
+2. Anpassung Datenbankverbindung
+3. MVC-Versuch mit Jonas
