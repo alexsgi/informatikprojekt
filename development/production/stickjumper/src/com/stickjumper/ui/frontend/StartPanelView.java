@@ -15,16 +15,16 @@ public class StartPanelView extends JPanel {
     private final Font MAIN_FONT = UITools.registerFont();
 
     private JButton loginButton = new JButton();
-    private JButton otherButton = new JButton();
+    private JButton playButton = new JButton();
     private int buttonCounter = 0;
 
     public StartPanelView(Controller controller) {
         setLayout(null);
-        JLabel lblTitel = new JLabel("StickJumper");
-        lblTitel.setHorizontalAlignment(SwingConstants.CENTER);
-        lblTitel.setBounds(0, 96, 1280, 83);
-        lblTitel.setFont(MAIN_FONT);
-        add(lblTitel);
+        JLabel lblTitle = new JLabel("StickJumper");
+        lblTitle.setHorizontalAlignment(SwingConstants.CENTER);
+        lblTitle.setBounds(0, 96, 1280, 83);
+        lblTitle.setFont(MAIN_FONT);
+        add(lblTitle);
 
         // this button should open up a new frame with a log in function
         loginButton.setText("Login");
@@ -36,29 +36,27 @@ public class StartPanelView extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 controller.disableMainFrame();
-                LoginPanelView loginPanel = new LoginPanelView();
-                LoginFrameView loginFrame = new LoginFrameView(loginPanel, controller);
+
+                LoginFrameView loginFrame = new LoginFrameView(controller);
                 loginFrame.setVisible(true);
             }
         });
         add(loginButton);
 
         // the following button was just an experiment in order to try out whether that works with another actionListener
-        otherButton.setText("PLAY");
-        otherButton.setFont(new Font("Calibri", Font.PLAIN, 15));
-        otherButton.setBounds(0, 200, 200, 50);
-        otherButton.setVisible(true);
-        otherButton.setFocusable(false);
-
-
-        otherButton.addActionListener(new ActionListener() {
+        playButton.setText("PLAY");
+        playButton.setFont(new Font("Calibri", Font.PLAIN, 15));
+        playButton.setBounds(0, 200, 200, 50);
+        playButton.setVisible(true);
+        playButton.setFocusable(false);
+        playButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                controller.newMethod();
+                controller.startGame();
             }
         });
-        otherButton.setActionCommand("ACTION COMMAND");
-        add(otherButton);
+        playButton.setActionCommand("ACTION COMMAND");
+        add(playButton);
     }
 
     @Override
@@ -70,6 +68,6 @@ public class StartPanelView extends JPanel {
     }
 
     public void anpassenText(String neuerText) {
-        otherButton.setText(neuerText);
+        playButton.setText(neuerText);
     }
 }

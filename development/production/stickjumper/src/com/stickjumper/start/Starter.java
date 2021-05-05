@@ -23,7 +23,7 @@ public class Starter {
             DBConnection.close();
         }));
         // Make all boot operations (db connection, ...)
-        DBConnection.init();
+        // DBConnection.init();
         // Just to see loading frame (freezes cpu)
         // Thread.sleep(4000);
 

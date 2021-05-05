@@ -1,29 +1,29 @@
 package com.stickjumper.ui.frontend;
 
-
 public class Controller {
 
-    private StartPanelView mainPanel;
+    private StartPanelView startPanel;
+    private GamePanelView gamePanel;
     private MainFrameView mainFrameView;
 
     public Controller(MainFrameView mainFrameView) {
         this.mainFrameView = mainFrameView;
     }
 
-    public void setPanel(StartPanelView panel) {
-        mainPanel = panel;
+    public void setStartPanel(StartPanelView panel) {
+        startPanel = panel;
     }
 
-    public void newMethod() {
-        mainPanel.anpassenText("Es funzt");
+    public void setGamePanel(GamePanelView gamePanel) {
+        this.gamePanel = gamePanel;
     }
 
     public void spacePressed() {
-        mainPanel.anpassenText("SPACE");
+        startPanel.anpassenText("SPACE");
     }
 
     public void enterPressed() {
-        mainPanel.anpassenText("ENTER");
+        startPanel.anpassenText("ENTER");
     }
 
     public void disableMainFrame() {
@@ -34,5 +34,8 @@ public class Controller {
         mainFrameView.setVisible(true);
     }
 
+    public void startGame() {
+        mainFrameView.setGamePanel();
+    }
 
 }

@@ -8,8 +8,9 @@ import java.awt.event.KeyListener;
 
 public class MainFrameView extends JFrame implements KeyListener {
 
-    private StartPanelView panel;
+    private StartPanelView startPanel;
     private Controller controller;
+    private GamePanelView gamePanel = new GamePanelView();
 
     public MainFrameView() {
         // Can't change size of window
@@ -27,11 +28,11 @@ public class MainFrameView extends JFrame implements KeyListener {
 
         controller = new Controller(this);
         addKeyListener(this);
-        panel = new StartPanelView(controller);
-        controller.setPanel(panel);
+        startPanel = new StartPanelView(controller);
+        controller.setStartPanel(startPanel);
 
         // Add panel to frame
-        setContentPane(panel);
+        setContentPane(startPanel);
     }
 
     @Override
@@ -56,11 +57,10 @@ public class MainFrameView extends JFrame implements KeyListener {
 
     }
 
-    /*
-    public void changePanel(JPanel newPanel) {
-        panel = newPanel;
-        setContentPane(panel);
+    public void setGamePanel() {
+        setContentPane(gamePanel);
+        controller.setGamePanel(gamePanel);
         revalidate();
     }
-     */
+
 }
