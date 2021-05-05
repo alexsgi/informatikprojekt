@@ -1,13 +1,10 @@
 package com.stickjumper.start;
 
-import com.stickjumper.data.Player;
-import com.stickjumper.database.DBConnection;
 import com.stickjumper.ui.frontend.MainFrameView;
 import com.stickjumper.ui.frontend.boot.LoadingFrameView;
 import com.stickjumper.utils.UITools;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
 
 public class Starter {
 
