@@ -21,21 +21,25 @@ public class MainFrameView extends JFrame {
         setSize(1280, 640);
         // Window in center of screen
         setLocationRelativeTo(null);
+        // Set icon
+        setIconImage(UITools.getImage(getClass(), "/images/icons/appicon_5.png"));
         // Add panel to frame
-        setContentPane(new StartPanelView(new MyCallback() {
+
+        StartPanelView panel = new StartPanelView(new MyCallback() {
             @Override
             public void play() {
                 changePanel(new GamePanelView());
-                revalidate();
+
             }
-        }));
-        // Set icon
-        setIconImage(UITools.getImage(getClass(), "/images/icons/appicon_5.png"));
+        });
+
+        setContentPane(panel);
     }
 
     public void changePanel(JPanel newPanel) {
         panel = newPanel;
         setContentPane(panel);
+        revalidate();
     }
 
 }

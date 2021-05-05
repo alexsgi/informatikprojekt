@@ -9,6 +9,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
 
 public class StartPanelView extends JPanel {
@@ -65,10 +67,6 @@ public class StartPanelView extends JPanel {
         otherButton.addActionListener(controller);
         otherButton.setActionCommand("ACTION COMMAND");
         add(otherButton);
-
-        //this.addKeyListener(controller);
-        otherButton.addKeyListener(controller);
-        //this.requestFocus();
     }
 
     @Override
@@ -82,5 +80,4 @@ public class StartPanelView extends JPanel {
     public void anpassenText(String neuerText) {
         otherButton.setText(neuerText);
     }
-
 }

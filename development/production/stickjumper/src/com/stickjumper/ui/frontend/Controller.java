@@ -8,16 +8,13 @@ import java.awt.event.KeyListener;
 public class Controller implements ActionListener, KeyListener {
 
     private StartPanelView mainPanel;
-    private MainFrameView frame;
 
-    public Controller(StartPanelView view, MainFrameView frame) {
+    public Controller(StartPanelView view) {
         this.mainPanel = view;
-        this.frame = frame;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        System.out.println(e.getSource().toString());
         System.out.println(e.getActionCommand());
         switch (e.getActionCommand()) {
             case "PLAY":
@@ -37,7 +34,7 @@ public class Controller implements ActionListener, KeyListener {
 
     @Override
     public void keyPressed(KeyEvent e) {
-        System.out.println("Methode aufgerufen");
+        System.out.println("Methode aufgerufen (2)");
     }
 
     @Override
