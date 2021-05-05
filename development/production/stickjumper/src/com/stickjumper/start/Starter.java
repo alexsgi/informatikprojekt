@@ -25,11 +25,8 @@ public class Starter {
         }));
         // Make all boot operations (db connection, ...)
         // DBConnection.init();
-<<<<<<< HEAD
         // Just to see loading frame (freezes cpu)
         // Thread.sleep(4000);
-=======
->>>>>>> 1b1b5aecb220d0d83c78b959ab1353d4f981ba79
 
         // Close loading screen
         loadingFrameView.dispose();
