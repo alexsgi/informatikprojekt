@@ -1,6 +1,5 @@
 package com.stickjumper.ui.frontend;
 
-import java.awt.*;
 
 public class Controller {
 
@@ -20,18 +19,18 @@ public class Controller {
     }
 
     public void spacePressed() {
-        mainPanel.anpassenText("lol");
+        mainPanel.anpassenText("SPACE");
     }
 
-    public void enterPressed(){
-        mainPanel.anpassenText("Enter");
+    public void enterPressed() {
+        mainPanel.anpassenText("ENTER");
     }
 
-    public void disableMainFrame(){
+    public void disableMainFrame() {
         mainFrameView.setVisible(false);
     }
 
-    public void enableMainFrame(){
+    public void enableMainFrame() {
         mainFrameView.setVisible(true);
     }
 

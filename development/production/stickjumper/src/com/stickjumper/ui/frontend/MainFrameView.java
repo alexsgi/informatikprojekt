@@ -1,7 +1,5 @@
 package com.stickjumper.ui.frontend;
 
-import com.stickjumper.start.Starter;
-import com.stickjumper.utils.MyCallback;
 import com.stickjumper.utils.UITools;
 
 import javax.swing.*;
@@ -14,7 +12,6 @@ public class MainFrameView extends JFrame implements KeyListener {
     private Controller controller;
 
     public MainFrameView() {
-
         // Can't change size of window
         setResizable(false);
         // Title of window
@@ -27,22 +24,13 @@ public class MainFrameView extends JFrame implements KeyListener {
         setLocationRelativeTo(null);
         // Set icon
         setIconImage(UITools.getImage(getClass(), "/images/icons/appicon_5.png"));
-        // Add panel to frame
 
         controller = new Controller(this);
-        this.addKeyListener(this);
-
-        panel = new StartPanelView(new MyCallback() {
-            @Override
-            public void play() {
-                //changePanel(new GamePanelView());
-
-            }
-        }, controller);
-
+        addKeyListener(this);
+        panel = new StartPanelView(controller);
         controller.setPanel(panel);
 
-
+        // Add panel to frame
         setContentPane(panel);
     }
 
@@ -53,7 +41,7 @@ public class MainFrameView extends JFrame implements KeyListener {
 
     @Override
     public void keyPressed(KeyEvent e) {
-        switch (e.getKeyCode()){
+        switch (e.getKeyCode()) {
             case KeyEvent.VK_SPACE:
                 controller.spacePressed();
                 break;
@@ -68,14 +56,11 @@ public class MainFrameView extends JFrame implements KeyListener {
 
     }
 
-
-
-    /*public void changePanel(JPanel newPanel) {
+    /*
+    public void changePanel(JPanel newPanel) {
         panel = newPanel;
         setContentPane(panel);
         revalidate();
     }
-
      */
-
 }
