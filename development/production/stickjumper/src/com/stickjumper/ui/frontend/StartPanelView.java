@@ -59,9 +59,16 @@ public class StartPanelView extends JPanel {
             }
         });
          */
-        otherButton.addActionListener(new Controller());
+
+        Controller controller = new Controller(this);
+
+        otherButton.addActionListener(controller);
         otherButton.setActionCommand("ACTION COMMAND");
         add(otherButton);
+
+        //this.addKeyListener(controller);
+        otherButton.addKeyListener(controller);
+        //this.requestFocus();
     }
 
     @Override
@@ -70,6 +77,10 @@ public class StartPanelView extends JPanel {
         BufferedImage image = UITools.getImage(getClass(), "/images/start_view/background/mountains-middle.png");
         if (image == null) return;
         graphicsObject.drawImage(image, 0, 0, null);
+    }
+
+    public void anpassenText(String neuerText) {
+        otherButton.setText(neuerText);
     }
 
 }

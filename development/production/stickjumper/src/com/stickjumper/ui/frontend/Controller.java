@@ -1,17 +1,18 @@
 package com.stickjumper.ui.frontend;
 
-import com.stickjumper.ui.frontend.boot.LoadingFrameView;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
-public class Controller implements ActionListener {
+public class Controller implements ActionListener, KeyListener {
 
-    private MainFrameView mainFrameView;
-    private LoadingFrameView loadingFrameView;
+    private StartPanelView mainPanel;
+    private MainFrameView frame;
 
-    public Controller() {
-
+    public Controller(StartPanelView view, MainFrameView frame) {
+        this.mainPanel = view;
+        this.frame = frame;
     }
 
     @Override
@@ -23,6 +24,24 @@ public class Controller implements ActionListener {
                 break;
             case "LOGIN":
                 break;
+            case "ACTION COMMAND":
+                mainPanel.anpassenText("Neuer Text");
+                break;
         }
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+        System.out.println("Methode aufgerufen (1)");
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        System.out.println("Methode aufgerufen");
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+        System.out.println("Methode aufgerufen (2)");
     }
 }
