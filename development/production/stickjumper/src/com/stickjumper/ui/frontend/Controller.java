@@ -1,6 +1,5 @@
 package com.stickjumper.ui.frontend;
 
-
 public class Controller {
 
     private StartPanelView mainPanel;
