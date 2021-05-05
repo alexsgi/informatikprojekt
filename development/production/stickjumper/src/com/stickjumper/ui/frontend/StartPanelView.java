@@ -37,8 +37,9 @@ public class StartPanelView extends JPanel {
         loginButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                controller.disableMainFrame();
                 LoginPanelView loginPanel = new LoginPanelView();
-                LoginFrameView loginFrame = new LoginFrameView(loginPanel);
+                LoginFrameView loginFrame = new LoginFrameView(loginPanel, controller);
                 loginFrame.setVisible(true);
             }
         });

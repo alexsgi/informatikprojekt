@@ -1,5 +1,6 @@
 package com.stickjumper.ui.frontend;
 
+import com.stickjumper.start.Starter;
 import com.stickjumper.utils.MyCallback;
 import com.stickjumper.utils.UITools;
 
@@ -28,7 +29,7 @@ public class MainFrameView extends JFrame implements KeyListener {
         setIconImage(UITools.getImage(getClass(), "/images/icons/appicon_5.png"));
         // Add panel to frame
 
-        controller = new Controller();
+        controller = new Controller(this);
         this.addKeyListener(this);
 
         panel = new StartPanelView(new MyCallback() {
