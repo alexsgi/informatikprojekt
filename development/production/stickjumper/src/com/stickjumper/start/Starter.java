@@ -1,10 +1,13 @@
 package com.stickjumper.start;
 
+import com.stickjumper.data.Player;
+import com.stickjumper.database.DBConnection;
 import com.stickjumper.ui.frontend.MainFrameView;
 import com.stickjumper.ui.frontend.boot.LoadingFrameView;
 import com.stickjumper.utils.UITools;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class Starter {
 
@@ -24,11 +27,15 @@ public class Starter {
             //DBConnection.close();
         }));
         // Make all boot operations (db connection, ...)
-        // DBConnection.init();
+        DBConnection.init();
         // Just to see loading frame (freezes cpu)
         // Thread.sleep(4000);
 
-        
+        ArrayList<Player> list = DBConnection.getAllPlayers();
+        for(Player p : list) {
+            System.out.println(p);
+        }
+
         // Close loading screen
         loadingFrameView.dispose();
         view.setVisible(true);

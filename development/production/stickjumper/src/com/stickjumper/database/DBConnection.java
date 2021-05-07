@@ -10,10 +10,10 @@ import java.util.ArrayList;
  */
 public class DBConnection {
 
-    private static final String DB_URL = "sql11.freesqldatabase.com";
-    private static final String DB_NAME = "sql11404194";
-    private static final String DB_USERNAME = "sql11404194";
-    private static final String DB_PASSWORD = "bXItgyjBxd";
+    private static final String DB_URL = "stickjumper.ddns.net";
+    private static final String DB_NAME = "stickjumper";
+    private static final String DB_USERNAME = "stickjumperuser";
+    private static final String DB_PASSWORD = "XcZa746Awf43468SO736ZmOZRS";
     private static final String DB_TABLE_NAME = "player_table";
 
     private static Connection connection;

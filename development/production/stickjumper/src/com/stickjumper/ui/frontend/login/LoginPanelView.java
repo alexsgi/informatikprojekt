@@ -1,6 +1,5 @@
 package com.stickjumper.ui.frontend.login;
 
-import com.stickjumper.database.DBConnection;
 import com.stickjumper.ui.frontend.Controller;
 
 import javax.swing.*;
@@ -50,7 +49,6 @@ public class LoginPanelView extends JPanel {
         });
         add(initDB);
     }
-
 
 
 }
