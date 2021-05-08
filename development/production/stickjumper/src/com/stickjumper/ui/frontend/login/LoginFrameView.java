@@ -15,16 +15,12 @@ public class LoginFrameView extends JFrame {
         setLocationRelativeTo(null);
         loginPanel = new LoginPanelView(controller, this);
         setContentPane(loginPanel);
-
     }
 
 
     public void pullThePlug() {
-        // this will hide and dispose the frame, so that the application quits by
-        // itself if there is nothing else around.
         setVisible(false);
         dispose();
-
     }
 
 }

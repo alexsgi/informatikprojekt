@@ -21,7 +21,6 @@ public class LoginPanelView extends JPanel {
         welcomeLabel.setBounds(0, 20, 600, 50);
         welcomeLabel.setFont(new Font("Arial Black", Font.PLAIN, 22));
 
-
         loginButton.setText("Login");
         loginButton.setFont(new Font("Calibri", Font.PLAIN, 15));
         loginButton.setBounds(0, 150, 200, 50);

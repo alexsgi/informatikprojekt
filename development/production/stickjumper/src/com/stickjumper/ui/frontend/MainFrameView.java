@@ -62,5 +62,4 @@ public class MainFrameView extends JFrame implements KeyListener {
         controller.setGamePanel(gamePanel);
         revalidate();
     }
-
 }

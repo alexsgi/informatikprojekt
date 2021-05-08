@@ -32,7 +32,7 @@ public class Starter {
         // Thread.sleep(4000);
 
         ArrayList<Player> list = DBConnection.getAllPlayers();
-        for(Player p : list) {
+        for (Player p : list) {
             System.out.println(p);
         }
 
