@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="550a4376-b378-4896-a71f-8e11b0c10b03" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/KlausurCode/src/ABSCHLUSS.java" beforeDir="false" afterPath="$PROJECT_DIR$/KlausurCode/src/ABSCHLUSS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KlausurCode/src/AutomatischerStart.java" beforeDir="false" afterPath="$PROJECT_DIR$/KlausurCode/src/AutomatischerStart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KlausurCode/src/BAUMELEMENT.java" beforeDir="false" afterPath="$PROJECT_DIR$/KlausurCode/src/BAUMELEMENT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KlausurCode/src/BINBAUM.java" beforeDir="false" afterPath="$PROJECT_DIR$/KlausurCode/src/BINBAUM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KlausurCode/src/KNOTEN.java" beforeDir="false" afterPath="$PROJECT_DIR$/KlausurCode/src/KNOTEN.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KlausurCode/src/LIED.java" beforeDir="false" afterPath="$PROJECT_DIR$/KlausurCode/src/LIED.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KlausurCode/src/LIEDDATEN.java" beforeDir="false" afterPath="$PROJECT_DIR$/KlausurCode/src/LIEDDATEN.java" afterDir="false" />
-    </list>
+    <list default="true" id="550a4376-b378-4896-a71f-8e11b0c10b03" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,6 +41,7 @@
       <workItem from="1620212644758" duration="160000" />
       <workItem from="1620459783720" duration="410000" />
       <workItem from="1620492431246" duration="248000" />
+      <workItem from="1620494264390" duration="13000" />
     </task>
     <servers />
   </component>
