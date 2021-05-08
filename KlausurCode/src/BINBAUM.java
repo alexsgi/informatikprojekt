@@ -1,10 +1,8 @@
-public class BINBAUM{
+public class BINBAUM {
 
     BAUMELEMENT wurzel;
-    public BINBAUM()
-    {
 
-
+    public BINBAUM() {
         // manuelle Erstellung beispielhafter BAUMELEMENTE also Einfügen von Liedern
         // wurzel: Ebene 0
         wurzel = new LIED(new LIEDDATEN("Faded"));
@@ -31,7 +29,7 @@ public class BINBAUM{
 
     }
 
-    public void automatischerMethodenaufruf(){
+    public void automatischerMethodenaufruf() {
         wurzel.infosAusgeben("Cake by the Ocean");
     }
 }

@@ -1,7 +1,6 @@
-public abstract class BAUMELEMENT extends KNOTEN{
+public abstract class BAUMELEMENT extends KNOTEN {
 
-    public BAUMELEMENT()
-    {
+    public BAUMELEMENT() {
 
     }
 

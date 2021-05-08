@@ -1,20 +1,21 @@
-public abstract class KNOTEN{
+public abstract class KNOTEN {
     BAUMELEMENT linkerNachfolger; // = new ABSCHLUSS();
     BAUMELEMENT rechterNachfolger; // = new ABSCHLUSS();
-    public KNOTEN()
-    {
+
+    public KNOTEN() {
 
     }
 
-    public void infosAusgeben(String schluessel){
+    public void infosAusgeben(String schluessel) {
         linkerNachfolger.infosAusgeben(schluessel);
-        if (titelGeben()==schluessel){
-            System.out.println(schluessel);}
+        if (titelGeben() == schluessel) {
+            System.out.println(schluessel);
+        }
         rechterNachfolger.infosAusgeben(schluessel);
 
     }
 
-    public String titelGeben(){
+    public String titelGeben() {
         return null;
     }
 }
