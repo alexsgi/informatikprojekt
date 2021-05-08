@@ -76,3 +76,9 @@ Jessica, Alex, Jonas:
 Jonas:
 1. Umsetzen des KeyListeners über die Klassen des Frames, Panels und Controllers
 2. Testen und weiterer Funktionen hinzugefügt mit Alex und Jessica
+
+### **07.05.2021**
+Alex:
+1. Aufsetzen eines MySQL-/MariaDB-Servers auf einem Raspberry Pi
+2. Migrieren der DB zu selbst-gehostetem MySQL-Dienst
+3. Anpassung der Verbindung in DBConnection
