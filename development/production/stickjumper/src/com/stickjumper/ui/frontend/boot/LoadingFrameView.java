@@ -7,6 +7,8 @@ import java.awt.geom.RoundRectangle2D;
 
 public class LoadingFrameView extends JFrame {
 
+    LoadingPanelView loadingPanelView;
+
     public LoadingFrameView() {
         setResizable(false);
         // No border
@@ -17,8 +19,9 @@ public class LoadingFrameView extends JFrame {
         int arc = 18;
         setShape(new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), arc, arc));
         setIconImage(UITools.getImage(getClass(), "/images/icons/appicon_5.png"));
-
-        setContentPane(new LoadingPanelView());
+        
+        loadingPanelView = new LoadingPanelView();
+        setContentPane(loadingPanelView);
     }
 
 }
