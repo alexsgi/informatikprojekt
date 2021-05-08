@@ -52,5 +52,4 @@ public class LoginPanelView extends JPanel {
     }
 
 
-
 }
