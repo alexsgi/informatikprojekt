@@ -28,6 +28,8 @@ public class Starter {
         // Make all boot operations (db connection, ...)
         DBConnection.init();
 
+        // some new comments
+
         // Close loading screen
         loadingFrameView.dispose();
         view.setVisible(true);
