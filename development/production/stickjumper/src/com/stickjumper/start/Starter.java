@@ -5,11 +5,9 @@ import com.stickjumper.ui.frontend.MainFrameView;
 import com.stickjumper.ui.frontend.boot.LoadingFrameView;
 import com.stickjumper.utils.UITools;
 
-import java.sql.SQLException;
-
 public class Starter {
 
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) {
         // Load Windows UI config
         UITools.initUI();
         // Prepare and start loading screen
