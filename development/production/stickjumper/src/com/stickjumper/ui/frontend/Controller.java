@@ -41,7 +41,7 @@ public class Controller {
         mainFrameView.setGamePanel();
     }
 
-    public Player playerLogin(String userName, String password){
+    public Player playerLogin(String userName, String password) {
         return DBConnection.playerLogin(userName, password);
 
     }
