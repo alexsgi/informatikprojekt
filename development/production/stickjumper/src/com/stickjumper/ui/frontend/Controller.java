@@ -1,5 +1,8 @@
 package com.stickjumper.ui.frontend;
 
+import com.stickjumper.data.Player;
+import com.stickjumper.database.DBConnection;
+
 public class Controller {
 
     private StartPanelView startPanel;
@@ -36,6 +39,11 @@ public class Controller {
 
     public void startGame() {
         mainFrameView.setGamePanel();
+    }
+
+    public Player playerLogin(String userName, String password){
+        return DBConnection.playerLogin(userName, password);
+
     }
 
 }

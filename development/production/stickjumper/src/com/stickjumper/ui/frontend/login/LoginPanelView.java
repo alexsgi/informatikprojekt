@@ -29,8 +29,10 @@ public class LoginPanelView extends JPanel {
         loginButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                controller.playerLogin("test", "test");
+                // controller.playerLogin(textBoxName.getText(), textBoxPassword.getText());
                 controller.enableMainFrame();
-                loginFrameView.pullThePlug();
+                loginFrameView.disposeLoginFrame();
             }
         });
         add(loginButton);
@@ -48,6 +50,7 @@ public class LoginPanelView extends JPanel {
         });
         add(initDB);
     }
+
 
 
 }

@@ -7,15 +7,18 @@ import com.stickjumper.utils.UITools;
 
 public class Starter {
 
+    private static LoadingFrameView loadingFrameView;
+    private static MainFrameView view;
+
     public static void main(String[] args) {
         // Load Windows UI config
         UITools.initUI();
         // Prepare and start loading screen
-        LoadingFrameView loadingFrameView = new LoadingFrameView();
+        loadingFrameView = new LoadingFrameView();
         loadingFrameView.setVisible(true);
 
         // Create main frame
-        MainFrameView view = new MainFrameView();
+        view = new MainFrameView();
 
         // Init shut down hook
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {

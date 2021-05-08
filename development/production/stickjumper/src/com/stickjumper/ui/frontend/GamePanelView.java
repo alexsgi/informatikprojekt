@@ -19,4 +19,5 @@ public class GamePanelView extends JPanel {
         add(lblTitle);
 
     }
+
 }

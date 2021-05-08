@@ -18,7 +18,7 @@ public class LoginFrameView extends JFrame {
     }
 
 
-    public void pullThePlug() {
+    public void disposeLoginFrame() {
         setVisible(false);
         dispose();
     }

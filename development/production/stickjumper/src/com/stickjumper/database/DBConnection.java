@@ -115,4 +115,10 @@ public class DBConnection {
         }
         return list.get(0);
     }
+
+    public static Player playerLogin(String userName, String password) {
+        // TODO
+        // return new Player (parameter);
+        return null;
+    }
 }

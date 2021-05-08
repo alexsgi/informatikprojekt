@@ -7,7 +7,7 @@ import java.awt.geom.RoundRectangle2D;
 
 public class LoadingFrameView extends JFrame {
 
-    LoadingPanelView loadingPanelView;
+    private LoadingPanelView loadingPanelView;
 
     public LoadingFrameView() {
         setResizable(false);
