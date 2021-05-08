@@ -5,8 +5,6 @@ import com.stickjumper.ui.frontend.MainFrameView;
 import com.stickjumper.ui.frontend.boot.LoadingFrameView;
 import com.stickjumper.utils.UITools;
 
-import javax.swing.*;
-
 public class Starter {
 
     private static LoadingFrameView loadingFrameView;
@@ -33,7 +31,6 @@ public class Starter {
         // Close loading screen
         loadingFrameView.dispose();
         view.setVisible(true);
-
     }
 
 }
