@@ -1,6 +1,7 @@
-package com.stickjumper.ui.frontend;
+package com.stickjumper.frontend.start;
 
-import com.stickjumper.ui.frontend.login.LoginFrameView;
+import com.stickjumper.controller.Controller;
+import com.stickjumper.frontend.login.LoginFrameView;
 import com.stickjumper.utils.UITools;
 
 import javax.swing.*;

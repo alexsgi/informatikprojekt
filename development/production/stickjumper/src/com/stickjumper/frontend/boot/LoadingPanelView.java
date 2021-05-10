@@ -1,4 +1,4 @@
-package com.stickjumper.ui.frontend.boot;
+package com.stickjumper.frontend.boot;
 
 import com.stickjumper.utils.UITools;
 

@@ -1,10 +1,15 @@
-package com.stickjumper.ui.frontend;
+package com.stickjumper.frontend;
 
+import com.stickjumper.controller.Controller;
+import com.stickjumper.data.Player;
+import com.stickjumper.frontend.game.GamePanelView;
+import com.stickjumper.frontend.start.StartPanelView;
 import com.stickjumper.utils.UITools;
 
 import javax.swing.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.ArrayList;
 
 public class MainFrameView extends JFrame implements KeyListener {
 
@@ -64,5 +69,10 @@ public class MainFrameView extends JFrame implements KeyListener {
         setContentPane(gamePanel);
         controller.setGamePanel(gamePanel);
         revalidate();
+    }
+
+    public void addPlayerList(ArrayList<Player> list){
+        controller.setList(list);
+        // global List is initialized
     }
 }

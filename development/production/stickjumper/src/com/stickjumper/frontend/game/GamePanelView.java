@@ -1,4 +1,4 @@
-package com.stickjumper.ui.frontend;
+package com.stickjumper.frontend.game;
 
 import com.stickjumper.utils.UITools;
 

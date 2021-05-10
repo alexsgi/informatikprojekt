@@ -1,4 +1,4 @@
-package com.stickjumper.database;
+package com.stickjumper.data.database;
 
 import com.stickjumper.data.Player;
 
@@ -89,6 +89,7 @@ public class DBConnection {
         }
         return list;
     }
+    // add all PLayers to list with return type List
 
     public static Player getPlayer(String playerName) throws SQLException {
         if (!init) throw new SQLException("init() not called");
@@ -121,4 +122,6 @@ public class DBConnection {
         // return new Player (parameter);
         return null;
     }
+
+
 }

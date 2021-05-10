@@ -5,7 +5,8 @@ import java.sql.SQLException;
 
 public class Player {
 
-    private int key, highScore, skin;
+    private final int key;
+    private int highScore, skin;
     private String playerName, playerPassword;
 
     public Player(int key, String playerName, String playerPassword, int highScore, int skin) {
@@ -30,12 +31,12 @@ public class Player {
         return new Player(k, n, p, h, s);
     }
 
-    public int getKey() {
-        return key;
+    public void updatePlayerOnDB(){
+        // TODO upload all necessary information on DB
     }
 
-    public void setKey(int key) {
-        this.key = key;
+    public int getKey() {
+        return key;
     }
 
     public String getPlayerName() {
