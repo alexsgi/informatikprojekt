@@ -24,7 +24,7 @@ public class UITools {
             return ImageIO.read(in);
         } catch (IOException e) {
             e.printStackTrace();
-            System.out.printf("The image (%s) was not loaded%n", path);
+            System.out.printf("The image (%s) was not loaded\n", path);
         }
         return null;
     }
