@@ -18,8 +18,13 @@ public class LoadingPanelView extends JPanel {
         loadingLabel.setFont(new Font("Arial Black", Font.PLAIN, 20));
         // Set text color to white
         loadingLabel.setForeground(Color.WHITE);
-
         add(loadingLabel);
+
+        JLabel gifLabel = new JLabel();
+        //ImageIcon imageIcon = new ImageIcon(getClass().getResource("/images/loading_screen/gif1.gif"));
+        //gifLabel.setIcon(imageIcon);
+        gifLabel.setBounds(600, 200, 50, 50);
+        add(gifLabel);
     }
 
     @Override
