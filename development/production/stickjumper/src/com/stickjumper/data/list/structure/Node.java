@@ -37,9 +37,7 @@ public class Node extends ListElement {
 
     @Override
     public Player search(String username, String password) {
-        if (player.getPlayerName().equals(username) && player.getPlayerPassword().equals(password)) {
-            return player;
-        }
+        if (player.getPlayerName().equals(username) && player.getPlayerPassword().equals(password)) return player;
         return followingNode.search(username, password);
     }
 
