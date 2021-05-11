@@ -19,7 +19,7 @@ public class Controller {
     private ArrayList<Player> playerList;
     private Scenery scenery;
 
-    private int speed = 2;
+    private int speed = 1;
 
     public Controller(MainFrameView mainFrameView) {
         this.mainFrameView = mainFrameView;
@@ -93,7 +93,7 @@ public class Controller {
         GameElementRender coinElement;
 
         public Scenery() {
-            coinElement = new GameElementRender(new Coin(new Point(1200, 500)));
+            coinElement = new GameElementRender(new Coin(new Point(600, 200)));
             gamePanel.add(coinElement);
         }
 
