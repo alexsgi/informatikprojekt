@@ -6,6 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 
 public class LoginPanelView extends JPanel {
 
@@ -29,8 +30,11 @@ public class LoginPanelView extends JPanel {
         loginButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                controller.playerLogin("test", "test");
-                // controller.playerLogin(textBoxName.getText(), textBoxPassword.getText());
+                try {
+                    controller.playerLogin("Jan Marsalek", "dasisteinpasswort");
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
                 controller.enableMainFrame();
                 loginFrameView.disposeLoginFrame();
             }

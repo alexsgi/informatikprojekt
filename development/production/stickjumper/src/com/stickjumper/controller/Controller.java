@@ -8,6 +8,7 @@ import com.stickjumper.frontend.rendering.GameElementRender;
 import com.stickjumper.frontend.start.StartPanelView;
 
 import java.awt.*;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class Controller {
@@ -46,13 +47,13 @@ public class Controller {
         mainFrameView.setGamePanel();
     }
 
-    public boolean playerLogin(String userName, String password) {
+    public boolean playerLogin(String userName, String password) throws SQLException {
         currentPlayer = getPlayerFromList(userName, password);
         return currentPlayer != null;
     }
 
-    private Player getPlayerFromList(String userName, String password) {
-        // return list.searchPlayerInList(String userName, String password) TODO: search-method in List
+    private Player getPlayerFromList(String userName, String password) throws SQLException {
+        //return list.searchPlayerInList(String userName, String password); // TODO: search-method in List
         return null;
     }
 
