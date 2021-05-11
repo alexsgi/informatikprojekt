@@ -33,12 +33,13 @@ public class LoginPanelView extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 loginButton.setEnabled(false);
                 try {
-                    boolean successful = controller.playerLogin("Jan Marsalek", "dasisteinpasswort");
+                    boolean successful = controller.playerLogin("Jan ", "dasisteinpasswort");
                     if(successful) {
                         controller.enableMainFrame();
                         loginFrameView.disposeLoginFrame();
                     } else {
-                        JOptionPane.showMessageDialog(null, "False credentials");
+                        JOptionPane.showMessageDialog(null, "False credentials, try again");
+                        loginButton.setEnabled(true);
                     }
 
                 } catch (SQLException throwables) {
