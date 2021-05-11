@@ -52,7 +52,7 @@ public class Controller {
         return currentPlayer != null;
     }
 
-    private Player getPlayerFromList(String userName, String password) throws SQLException {
+    private Player getPlayerFromList(String userName, String password) {
         return playerList.search(userName, password);
     }
 

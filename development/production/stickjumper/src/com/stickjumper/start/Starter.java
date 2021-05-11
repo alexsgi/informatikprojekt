@@ -11,25 +11,24 @@ import java.sql.SQLException;
 
 public class Starter {
 
-    public static void main(String[] args) throws SQLException, IOException, InterruptedException {
+    public static void main(String[] args) throws SQLException {
         // Load Windows UI config
         UITools.initUI();
         // Prepare and start loading screen
         LoadingFrameView loadingFrameView = new LoadingFrameView();
         loadingFrameView.setVisible(true);
 
-        List list = null;
+        List list;
 
         // INTERNET CONNECTION TEST
-        boolean connectionAvailable = serverConnectionTest();
-        if (connectionAvailable) {
-            // Init shut down hook
-            // Code to run when shutting down software
-            Runtime.getRuntime().addShutdownHook(new Thread(DBConnection::close));
-            // Make all internet boot operations (db connection, ...)
-            DBConnection.init();
-            //list = DBConnection.getAllPlayers(); // -> TODO: List
-        }
+        // boolean connectionAvailable = serverConnectionTest();
+        // if (connectionAvailable) {
+        // Init shut down hook
+        // Code to run when shutting down software
+        Runtime.getRuntime().addShutdownHook(new Thread(DBConnection::close));
+        // Make all internet boot operations (db connection, ...)
+        DBConnection.init();
+        list = DBConnection.getAllPlayers();
 
         // boot operations
 
