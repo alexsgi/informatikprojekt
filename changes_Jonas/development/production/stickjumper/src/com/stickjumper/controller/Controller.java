@@ -19,7 +19,7 @@ public class Controller {
     private Player currentPlayer;
     private ArrayList<Player> playerList;
     private Scenery scenery;
-    private MovingBackground movingBackground;
+    private MovingBackground movingBackground = new MovingBackground();
 
     private int speed = 1;
 
@@ -34,7 +34,6 @@ public class Controller {
     public void setGamePanel(GamePanelView gamePanel) {
         this.gamePanel = gamePanel;
         scenery = new Scenery();
-        movingBackground = new MovingBackground();
         movingBackground.setVisible(true);
         movingBackground.setSize(2560, 640);
         gamePanel.add(movingBackground);
@@ -120,6 +119,16 @@ public class Controller {
             coinElement.incrementY(Math.abs(n));
         }
 
+    }
+
+    public void startMovingBackground(){
+        // start again
+        movingBackground.startMovement();
+    }
+
+    public void stopMovingBackground(){
+        // Game over
+        movingBackground.stopMovement();
     }
 
 }
