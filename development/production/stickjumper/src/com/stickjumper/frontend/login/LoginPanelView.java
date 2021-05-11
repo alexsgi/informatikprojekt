@@ -48,17 +48,11 @@ public class LoginPanelView extends JPanel {
         });
         add(loginButton);
 
-        initDB.setText("Init DB");
+        initDB.setText("KeInE aHnUnG");
         initDB.setFont(new Font("Calibri", Font.PLAIN, 15));
         initDB.setBounds(0, 250, 200, 50);
         initDB.setVisible(true);
         initDB.setFocusable(false);
-        initDB.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // DBConnection.init();
-            }
-        });
         add(initDB);
     }
 
