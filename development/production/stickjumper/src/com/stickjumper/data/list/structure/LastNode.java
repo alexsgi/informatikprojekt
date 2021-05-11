@@ -5,13 +5,15 @@ import com.stickjumper.data.Player;
 public class LastNode extends ListElement {
 
     @Override
-    public ListElement getFollower() {
+    public ListElement getFollowingNode() {
         return this;
     }
 
     @Override
     public ListElement insert(Player p) {
-        return null;
+        Node n = new Node(p);
+        n.setFollowingNode(this);
+        return n;
     }
 
     @Override

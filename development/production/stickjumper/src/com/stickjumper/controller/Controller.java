@@ -2,6 +2,7 @@ package com.stickjumper.controller;
 
 import com.stickjumper.data.Player;
 import com.stickjumper.data.gameelements.Coin;
+import com.stickjumper.data.list.List;
 import com.stickjumper.frontend.MainFrameView;
 import com.stickjumper.frontend.game.GamePanelView;
 import com.stickjumper.frontend.rendering.GameElementRender;
@@ -9,7 +10,6 @@ import com.stickjumper.frontend.start.StartPanelView;
 
 import java.awt.*;
 import java.sql.SQLException;
-import java.util.ArrayList;
 
 public class Controller {
 
@@ -17,7 +17,7 @@ public class Controller {
     private GamePanelView gamePanel;
     private MainFrameView mainFrameView;
     private Player currentPlayer;
-    private ArrayList<Player> playerList;
+    private List playerList;
     private Scenery scenery;
 
     private int speed = 1;
@@ -52,12 +52,11 @@ public class Controller {
         return currentPlayer != null;
     }
 
-    private Player getPlayerFromList(String userName, String password) throws SQLException {
-        //return list.searchPlayerInList(String userName, String password); // TODO: search-method in List
-        return null;
+    private Player getPlayerFromList(String userName, String password) {
+        return playerList.search(userName, password);
     }
 
-    public void setList(ArrayList<Player> list) {
+    public void setList(List list) {
         this.playerList = list;
     }
 

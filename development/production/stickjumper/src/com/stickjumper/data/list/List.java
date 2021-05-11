@@ -3,6 +3,7 @@ package com.stickjumper.data.list;
 import com.stickjumper.data.Player;
 import com.stickjumper.data.list.structure.LastNode;
 import com.stickjumper.data.list.structure.ListElement;
+import com.stickjumper.data.list.structure.Node;
 
 public class List {
 
@@ -22,5 +23,10 @@ public class List {
 
     public void remove(Player p) {
         root = root.removeNode(p);
+    }
+
+    public Player getRootPlayer() {
+        if (root instanceof LastNode) return null;
+        return ((Node) root).getPlayer();
     }
 }

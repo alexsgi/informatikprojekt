@@ -1,9 +1,9 @@
 package com.stickjumper.data.database;
 
 import com.stickjumper.data.Player;
+import com.stickjumper.data.list.List;
 
 import java.sql.*;
-import java.util.ArrayList;
 
 public class DBConnection {
 
@@ -68,17 +68,17 @@ public class DBConnection {
         init = false;
     }
 
-    public static ArrayList<Player> getAllPlayers() throws SQLException {
+    public static List getAllPlayers() throws SQLException {
         if (!init) throw new SQLException("init() not called");
         // Prepare list and player object
-        ArrayList<Player> list = new ArrayList<>();
+        List list = new List();
         Player player;
         // Execute SQL: select all players
         ResultSet rs = stmt.executeQuery("SELECT * FROM " + DB_TABLE_NAME);
         // Add players to list if player not null
         while (rs.next()) {
             player = Player.fromResultSet(rs);
-            if (player != null) list.add(player);
+            if (player != null) list.insert(player);
         }
         try {
             rs.close();
@@ -86,19 +86,18 @@ public class DBConnection {
         }
         return list;
     }
-    // add all PLayers to list with return type List
 
     public static Player getPlayer(String playerName) throws SQLException {
         if (!init) throw new SQLException("init() not called");
         // Prepare list and player object
-        ArrayList<Player> list = new ArrayList<>();
+        List list = new List();
         Player player;
         // Execute SQL: select player with specific name
         ResultSet rs = stmt.executeQuery("SELECT * FROM " + DB_TABLE_NAME + " WHERE playername='" + playerName + "';");
         // Add players to list if player not null
         while (rs.next()) {
             player = Player.fromResultSet(rs);
-            if (player != null) list.add(player);
+            if (player != null) list.insert(player);
         }
         // Close result set
         try {
@@ -111,7 +110,7 @@ public class DBConnection {
         if (list.size() > 1) {
             throw new SQLException("More than one player found!");
         }
-        return list.get(0);
+        return list.getRootPlayer();
     }
 
     public static Player playerLogin(String userName, String password) {
