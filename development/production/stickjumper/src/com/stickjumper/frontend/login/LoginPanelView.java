@@ -33,7 +33,7 @@ public class LoginPanelView extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 loginButton.setEnabled(false);
                 try {
-                    boolean successful = controller.playerLogin("Jan ", "dasisteinpasswort");
+                    boolean successful = controller.playerLogin("Jan Marsalek", "dasisteinpasswort");
                     if(successful) {
                         controller.enableMainFrame();
                         loginFrameView.disposeLoginFrame();
