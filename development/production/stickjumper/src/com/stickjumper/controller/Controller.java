@@ -53,8 +53,7 @@ public class Controller {
     }
 
     private Player getPlayerFromList(String userName, String password) throws SQLException {
-        //return list.searchPlayerInList(String userName, String password); // TODO: search-method in List
-        return null;
+        return playerList.search(userName, password);
     }
 
     public void setList(List list) {
