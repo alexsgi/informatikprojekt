@@ -8,7 +8,7 @@ import java.awt.image.BufferedImage;
 
 public class GameElementRender extends JLabel {
 
-    private GameElement gameElement;
+    private final GameElement gameElement;
 
     public GameElementRender(GameElement gameElement) {
         this.gameElement = gameElement;
