@@ -2,22 +2,24 @@ package com.stickjumper.data.gameelements;
 
 import com.stickjumper.data.GameElement;
 
+import java.awt.*;
+
 public abstract class Obstacle extends GameElement {
 
-    private final int skinType;
+    private static final int height = 64, width = 64;
+    private static final String imagePath = "/images/elements/coin/coin.png";
     private int speed;
 
-    public Obstacle(int speed, int skinType) {
+    public Obstacle(Point p, int speed) {
+        super(p, height, width, true, imagePath);
         // a running enemy
         this.speed = speed;
-        this.skinType = skinType;
     }
 
-    public Obstacle(int skinType) {
+    public Obstacle(Point p) {
+        super(p, height, width, true, imagePath);
         // obstacle "not moving" in the game but moving on the screen
         speed = 0;
-        this.skinType = skinType;
-
     }
 
     public void hit() {
@@ -32,7 +34,4 @@ public abstract class Obstacle extends GameElement {
         this.speed = speed;
     }
 
-    public int getSkinType() {
-        return skinType;
-    }
 }

@@ -6,42 +6,50 @@ import com.stickjumper.frontend.MainFrameView;
 import com.stickjumper.frontend.boot.LoadingFrameView;
 import com.stickjumper.utils.UITools;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class Starter {
 
-    private static LoadingFrameView loadingFrameView;
-    private static MainFrameView view;
-
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) throws SQLException, IOException, InterruptedException {
         // Load Windows UI config
         UITools.initUI();
         // Prepare and start loading screen
-        loadingFrameView = new LoadingFrameView();
+        LoadingFrameView loadingFrameView = new LoadingFrameView();
         loadingFrameView.setVisible(true);
 
-        // INTERNET CONNECTION TEST
+        ArrayList<Player> list = null;
 
-        // Init shut down hook
-        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+        // INTERNET CONNECTION TEST
+        boolean connectionAvailable = serverConnectionTest();
+        if (connectionAvailable) {
+            // Init shut down hook
             // Code to run when shutting down software
-            DBConnection.close();
-        }));
-        // Make all boot operations (db connection, ...)
-        DBConnection.init();
-        ArrayList<Player> list = DBConnection.getAllPlayers(); // -> TODO: List
+            Runtime.getRuntime().addShutdownHook(new Thread(DBConnection::close));
+            // Make all internet boot operations (db connection, ...)
+            DBConnection.init();
+            list = DBConnection.getAllPlayers(); // -> TODO: List
+        }
+
+        // boot operations
+
         // no internet connection -> one single Player to locally save data until you close the game
 
         // Create main frame
-        view = new MainFrameView();
-        view.addPlayerList(list);
-
-        // some new comments
+        MainFrameView mainFrameView = new MainFrameView();
+        mainFrameView.addPlayerList(list);
 
         // Close loading screen
         loadingFrameView.dispose();
-        view.setVisible(true);
+        mainFrameView.setVisible(true);
+    }
+
+    public static boolean serverConnectionTest() throws InterruptedException, IOException {
+        // SPECIFIED FOR WINDOWS! NOT macOS OR UNIX
+        Process p1 = java.lang.Runtime.getRuntime().exec("ping -n 1 stickjumper.ddns.net");
+        int returnVal = p1.waitFor();
+        return (returnVal == 0);
     }
 
 }

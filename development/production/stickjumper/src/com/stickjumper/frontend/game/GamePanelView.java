@@ -1,5 +1,6 @@
 package com.stickjumper.frontend.game;
 
+import com.stickjumper.controller.Controller;
 import com.stickjumper.utils.UITools;
 
 import javax.swing.*;
@@ -9,6 +10,7 @@ public class GamePanelView extends JPanel {
 
     private final Font MAIN_FONT = UITools.registerFont();
     private JLabel lblTitle;
+    private Controller controller;
 
     public GamePanelView() {
         setLayout(null);
@@ -17,6 +19,7 @@ public class GamePanelView extends JPanel {
         lblTitle.setBounds(0, 96, 1280, 83);
         lblTitle.setFont(MAIN_FONT);
         add(lblTitle);
+
 
     }
 

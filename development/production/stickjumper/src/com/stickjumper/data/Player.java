@@ -31,7 +31,7 @@ public class Player {
         return new Player(k, n, p, h, s);
     }
 
-    public void updatePlayerOnDB(){
+    public void updatePlayerOnDB() {
         // TODO upload all necessary information on DB
     }
 
