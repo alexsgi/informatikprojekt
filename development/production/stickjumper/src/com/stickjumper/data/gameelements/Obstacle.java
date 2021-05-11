@@ -6,18 +6,18 @@ import java.awt.*;
 
 public abstract class Obstacle extends GameElement {
 
-    private int speed;
-    private static final int length = 64, width = 64;
+    private static final int height = 64, width = 64;
     private static final String imagePath = "/images/elements/coin/coin.png";
+    private int speed;
 
     public Obstacle(Point p, int speed) {
-        super(p, length, width, true, imagePath);
+        super(p, height, width, true, imagePath);
         // a running enemy
         this.speed = speed;
     }
 
     public Obstacle(Point p) {
-        super(p, length, width, true, imagePath);
+        super(p, height, width, true, imagePath);
         // obstacle "not moving" in the game but moving on the screen
         speed = 0;
     }

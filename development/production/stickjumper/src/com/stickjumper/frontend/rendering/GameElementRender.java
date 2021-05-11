@@ -16,7 +16,7 @@ public class GameElementRender extends JLabel {
         assert image != null; // TRY CATCH!
         setIcon(new ImageIcon(image));
         setLocation(gameElement.getLocation());
-        setSize(gameElement.getLength(), gameElement.getWidth());
+        setSize(gameElement.getHeight(), gameElement.getWidth());
     }
 
     public GameElement getGameElement() {

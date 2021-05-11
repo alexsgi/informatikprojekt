@@ -1,8 +1,8 @@
 package com.stickjumper.controller;
 
 import com.stickjumper.data.Player;
-import com.stickjumper.frontend.game.GamePanelView;
 import com.stickjumper.frontend.MainFrameView;
+import com.stickjumper.frontend.game.GamePanelView;
 import com.stickjumper.frontend.start.StartPanelView;
 
 import java.util.ArrayList;
@@ -60,7 +60,7 @@ public class Controller {
         return null;
     }
 
-    public void setList(ArrayList<Player> list){
+    public void setList(ArrayList<Player> list) {
         this.playerList = list;
     }
 

@@ -7,14 +7,14 @@ import java.awt.*;
 
 public class GameCharacter extends GameElement {
 
+    private static final int height = 64, width = 64;
+    private static final String imagePath = "/images/elements/coin/coin.png";
+    private static Point p = new Point(0, 0);
     private int skinType;
     private int highScore;
-    private static Point p = new Point(0, 0);
-    private static final int length = 64, width = 64;
-    private static final String imagePath = "/images/elements/coin/coin.png";
 
     public GameCharacter(int yPos, int skinType) {
-        super(new Point(p.x, yPos), length, width, true, imagePath);
+        super(new Point(p.x, yPos), height, width, true, imagePath);
         p.y = yPos;
         this.setY(yPos);
         this.skinType = skinType;
@@ -22,7 +22,7 @@ public class GameCharacter extends GameElement {
     }
 
     public GameCharacter(Player player) {
-        super(p, length, width, true, imagePath);
+        super(p, height, width, true, imagePath);
         highScore = player.getHighScore();
     }
 

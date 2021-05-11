@@ -6,19 +6,19 @@ import java.awt.*;
 
 public class Coin extends GameElement {
 
-    private final int coinValue;
-    private static final int length = 64, width = 64;
+    private static final int height = 64, width = 64;
     private static final String imagePath = "/images/elements/coin/coin.png";
+    private final int coinValue;
 
     public Coin(Point p, int coinValue) {
-        super(p, length, width, true, imagePath);
+        super(p, height, width, true, imagePath);
         this.setVisible(true);
         this.coinValue = coinValue;
     }
 
     // Default coinValue
     public Coin(Point p) {
-        super(p, length, width, true, imagePath);
+        super(p, height, width, true, imagePath);
         this.setVisible(true);
         this.coinValue = 10;
     }

@@ -5,25 +5,25 @@ import java.awt.*;
 public abstract class GameElement {
 
     private Point point = new Point();
-    private int length;
+    private int height;
     private int width;
     private boolean visible;
     private String imagePath;
 
-    public GameElement(Point p, int length, int width, boolean visible, String imagePath) {
+    public GameElement(Point p, int height, int width, boolean visible, String imagePath) {
         this.point = p;
-        this.length = length;
+        this.height = height;
         this.width = width;
         this.visible = visible;
         this.imagePath = imagePath;
     }
 
-    public void setLocation(Point newPoint) {
-        point = newPoint;
-    }
-
     public Point getLocation() {
         return point;
+    }
+
+    public void setLocation(Point newPoint) {
+        point = newPoint;
     }
 
     public int getX() {
@@ -42,8 +42,8 @@ public abstract class GameElement {
         point.y = yPos;
     }
 
-    public int getLength() {
-        return length;
+    public int getHeight() {
+        return height;
     }
 
     public int getWidth() {
