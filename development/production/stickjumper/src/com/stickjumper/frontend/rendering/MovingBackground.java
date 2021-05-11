@@ -11,13 +11,9 @@ import java.util.TimerTask;
 public class MovingBackground extends JLabel {
 
     private final BufferedImage backgroundMiddle, backgroundMiddleMirrored;
-<<<<<<< HEAD
     public double backgroundMiddleX, backgroundMiddleMirroredX;
     private double backgroundSpeed;
-=======
-    public int backgroundMiddleX, backgroundMiddleMirroredX;
-    private final int backgroundSpeed;
->>>>>>> 863e7211948aea07f075c002825a19d45d4da568
+
 
     private final Timer backgroundTimer;
     private boolean movement = true;
@@ -35,9 +31,6 @@ public class MovingBackground extends JLabel {
             @Override
             public void run() {
                 if (movement) {
-<<<<<<< HEAD
-
-
                     if(backgroundMiddleX > -1277){
                         backgroundMiddleX -= 0.1;
                     } else {
@@ -45,17 +38,6 @@ public class MovingBackground extends JLabel {
                     }
                     if(backgroundMiddleMirroredX > -1277){
                         backgroundMiddleMirroredX -= 0.1;
-=======
-                    if (backgroundMiddleX > -1277) {
-                        backgroundMiddleX -= 1;
-                    } else {
-                        backgroundMiddleX = 1280;
-                    }
-                    if (backgroundMiddleMirroredX > -1277) {
-                        backgroundMiddleMirroredX -= 1;
->>>>>>> 863e7211948aea07f075c002825a19d45d4da568
-                    } else {
-                        backgroundMiddleMirroredX = 1280;
                     }
                 }
             }
@@ -67,15 +49,8 @@ public class MovingBackground extends JLabel {
         super.paintComponent(graphics);
         Graphics2D graphics2D = (Graphics2D) graphics;
         graphics2D.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-
-<<<<<<< HEAD
         graphics.drawImage(backgroundMiddle, (int) backgroundMiddleX, 0,1280, 640, null);
         graphics.drawImage(backgroundMiddleMirrored, (int) backgroundMiddleMirroredX,0,1280, 640,null);
-=======
-        graphics.drawImage(backgroundMiddle, backgroundMiddleX, 0, 1280, 640, null);
-        graphics.drawImage(backgroundMiddleMirrored, backgroundMiddleMirroredX, 0, 1280, 640, null);
->>>>>>> 863e7211948aea07f075c002825a19d45d4da568
-
         repaint();
     }
 
