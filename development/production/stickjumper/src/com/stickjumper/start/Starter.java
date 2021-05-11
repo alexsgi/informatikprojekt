@@ -1,14 +1,13 @@
 package com.stickjumper.start;
 
-import com.stickjumper.data.Player;
 import com.stickjumper.data.database.DBConnection;
+import com.stickjumper.data.list.List;
 import com.stickjumper.frontend.MainFrameView;
 import com.stickjumper.frontend.boot.LoadingFrameView;
 import com.stickjumper.utils.UITools;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.ArrayList;
 
 public class Starter {
 
@@ -19,7 +18,7 @@ public class Starter {
         LoadingFrameView loadingFrameView = new LoadingFrameView();
         loadingFrameView.setVisible(true);
 
-        ArrayList<Player> list = null;
+        List list = null;
 
         // INTERNET CONNECTION TEST
         boolean connectionAvailable = serverConnectionTest();
@@ -29,7 +28,7 @@ public class Starter {
             Runtime.getRuntime().addShutdownHook(new Thread(DBConnection::close));
             // Make all internet boot operations (db connection, ...)
             DBConnection.init();
-            list = DBConnection.getAllPlayers(); // -> TODO: List
+            //list = DBConnection.getAllPlayers(); // -> TODO: List
         }
 
         // boot operations

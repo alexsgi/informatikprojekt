@@ -4,7 +4,7 @@ import com.stickjumper.data.Player;
 
 public abstract class ListElement {
 
-    public abstract ListElement getFollower();
+    public abstract ListElement getFollowingNode();
 
     public abstract ListElement insert(Player p);
 
