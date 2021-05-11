@@ -1,6 +1,7 @@
 package com.stickjumper.frontend.login;
 
 import com.stickjumper.controller.Controller;
+import com.stickjumper.data.Player;
 
 import javax.swing.*;
 import java.awt.*;
@@ -30,13 +31,19 @@ public class LoginPanelView extends JPanel {
         loginButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                loginButton.setEnabled(false);
                 try {
-                    controller.playerLogin("Jan Marsalek", "dasisteinpasswort");
+                    boolean successful = controller.playerLogin("Jan Marsalek", "dasisteinpasswort");
+                    if(successful) {
+                        controller.enableMainFrame();
+                        loginFrameView.disposeLoginFrame();
+                    } else {
+                        JOptionPane.showMessageDialog(null, "False credentials");
+                    }
+
                 } catch (SQLException throwables) {
                     throwables.printStackTrace();
                 }
-                controller.enableMainFrame();
-                loginFrameView.disposeLoginFrame();
             }
         });
         add(loginButton);
