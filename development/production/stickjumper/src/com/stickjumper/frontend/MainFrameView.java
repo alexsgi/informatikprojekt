@@ -57,6 +57,18 @@ public class MainFrameView extends JFrame implements KeyListener {
             case KeyEvent.VK_ENTER:
                 controller.enterPressed();
                 break;
+            case KeyEvent.VK_LEFT:
+                controller.leftPressed();
+                break;
+            case KeyEvent.VK_RIGHT:
+                controller.rightPressed();
+                break;
+            case KeyEvent.VK_UP:
+                controller.upPressed();
+                break;
+            case KeyEvent.VK_DOWN:
+                controller.downPressed();
+                break;
         }
     }
 
@@ -71,8 +83,7 @@ public class MainFrameView extends JFrame implements KeyListener {
         revalidate();
     }
 
-    public void addPlayerList(ArrayList<Player> list){
+    public void addPlayerList(ArrayList<Player> list) {
         controller.setList(list);
-        // global List is initialized
     }
 }
