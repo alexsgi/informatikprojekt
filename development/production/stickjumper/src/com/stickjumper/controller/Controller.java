@@ -19,6 +19,8 @@ public class Controller {
     private ArrayList<Player> playerList;
     private Scenery scenery;
 
+    private int speed = 2;
+
     public Controller(MainFrameView mainFrameView) {
         this.mainFrameView = mainFrameView;
     }
@@ -69,19 +71,19 @@ public class Controller {
     }
 
     public void leftPressed() {
-        scenery.left(10);
+        scenery.left(speed);
     }
 
     public void rightPressed() {
-        scenery.right(10);
+        scenery.right(speed);
     }
 
     public void upPressed() {
-        scenery.up(10);
+        scenery.up(speed);
     }
 
     public void downPressed() {
-        scenery.down(10);
+        scenery.down(speed);
     }
 
     public class Scenery {
