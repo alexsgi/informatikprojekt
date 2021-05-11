@@ -8,10 +8,10 @@ import java.awt.image.BufferedImage;
 
 public class LoadingPanelView extends JPanel {
 
-    private JLabel loadingLabel = new JLabel();
-
     public LoadingPanelView() {
         setLayout(null);
+
+        JLabel loadingLabel = new JLabel();
         loadingLabel.setText("Loading ...");
         loadingLabel.setHorizontalAlignment(SwingConstants.CENTER);
         loadingLabel.setBounds(0, 250, 1080, 50);
@@ -19,12 +19,6 @@ public class LoadingPanelView extends JPanel {
         // Set text color to white
         loadingLabel.setForeground(Color.WHITE);
         add(loadingLabel);
-
-        JLabel gifLabel = new JLabel();
-        //ImageIcon imageIcon = new ImageIcon(getClass().getResource("/images/loading_screen/gif1.gif"));
-        //gifLabel.setIcon(imageIcon);
-        gifLabel.setBounds(600, 200, 50, 50);
-        add(gifLabel);
     }
 
     @Override
