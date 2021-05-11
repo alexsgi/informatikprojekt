@@ -1,57 +1,53 @@
 package com.stickjumper.data;
 
+import java.awt.*;
+
 public abstract class GameElement {
 
-    private int xPos;
-    private int yPos;
+    private Point point = new Point();
     private int length;
     private int width;
     private boolean visible;
-    // private boolean vulnerable;
-    // private int highScore;
-    // private int skinType;
-    // is this information really necessary in all objects, which use GameElement like coins?
+    private String imagePath;
 
-
-    public GameElement() {
-        xPos = 0;
-        yPos = 0;
-        length = 0;
-        width = 0;
-        // TODO: What are the default values for those?
-        visible = true;
+    public GameElement(Point p, int length, int width, boolean visible, String imagePath) {
+        this.point = p;
+        this.length = length;
+        this.width = width;
+        this.visible = visible;
+        this.imagePath = imagePath;
     }
 
-    public int getXPos() {
-        return xPos;
+    public void setLocation(Point newPoint) {
+        point = newPoint;
     }
 
-    public void setXPos(int xPos) {
-        this.xPos = xPos;
+    public Point getLocation() {
+        return point;
     }
 
-    public int getYPos() {
-        return yPos;
+    public int getX() {
+        return point.x;
     }
 
-    public void setYPos(int yPos) {
-        this.yPos = yPos;
+    public void setX(int xPos) {
+        point.x = xPos;
+    }
+
+    public int getY() {
+        return point.y;
+    }
+
+    public void setY(int yPos) {
+        point.y = yPos;
     }
 
     public int getLength() {
         return length;
     }
 
-    public void setLength(int length) {
-        this.length = length;
-    }
-
     public int getWidth() {
         return width;
-    }
-
-    public void setWidth(int width) {
-        this.width = width;
     }
 
     public boolean isVisible() {
@@ -60,5 +56,9 @@ public abstract class GameElement {
 
     public void setVisible(boolean visible) {
         this.visible = visible;
+    }
+
+    public String getImagePath() {
+        return imagePath;
     }
 }

@@ -1,5 +1,7 @@
 package com.stickjumper.frontend.game;
 
+import com.stickjumper.data.gameelements.Coin;
+import com.stickjumper.frontend.rendering.GameElementRender;
 import com.stickjumper.utils.UITools;
 
 import javax.swing.*;
@@ -17,6 +19,9 @@ public class GamePanelView extends JPanel {
         lblTitle.setBounds(0, 96, 1280, 83);
         lblTitle.setFont(MAIN_FONT);
         add(lblTitle);
+
+        GameElementRender coinElement = new GameElementRender(new Coin(new Point(50, 50)));
+        add(coinElement);
 
     }
 

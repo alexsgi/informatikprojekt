@@ -3,22 +3,26 @@ package com.stickjumper.data.gameelements;
 import com.stickjumper.data.GameElement;
 import com.stickjumper.data.Player;
 
-/**
- * @author Jonas
- */
+import java.awt.*;
+
 public class GameCharacter extends GameElement {
 
     private int skinType;
     private int highScore;
+    private static Point p = new Point(0, 0);
+    private static final int length = 64, width = 64;
+    private static final String imagePath = "/images/elements/coin/coin.png";
 
     public GameCharacter(int yPos, int skinType) {
-        super();
-        this.setYPos(yPos);
+        super(new Point(p.x, yPos), length, width, true, imagePath);
+        p.y = yPos;
+        this.setY(yPos);
         this.skinType = skinType;
         this.setVisible(true);
     }
 
     public GameCharacter(Player player) {
+        super(p, length, width, true, imagePath);
         highScore = player.getHighScore();
     }
 
@@ -33,13 +37,13 @@ public class GameCharacter extends GameElement {
     /*
     public void increaseHighScore(int num){
         if(num > 0){
-            highScore = highScore + num;
+            highScore += num;
         }
     }
 
     public void increaseHighScore(){
         // this method increases the HighScore by a default number
-        highScore = highScore + 10;
+        highScore += 10;
     }
 
     public void setNewHighScore(int highScore){
@@ -52,7 +56,7 @@ public class GameCharacter extends GameElement {
     }
 
     private void uploadHighScoreToDB(int newHighScore){
-        // TODO: This will be the method that uploads the new HighScore to the DB via DBConnection
+        // TODO: This will be the method that uploads the new highscore to the DB via DBConnection
     }
     */
 }

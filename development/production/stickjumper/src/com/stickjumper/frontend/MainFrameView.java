@@ -71,8 +71,7 @@ public class MainFrameView extends JFrame implements KeyListener {
         revalidate();
     }
 
-    public void addPlayerList(ArrayList<Player> list){
+    public void addPlayerList(ArrayList<Player> list) {
         controller.setList(list);
-        // global List is initialized
     }
 }

@@ -5,9 +5,6 @@ import com.stickjumper.data.Player;
 import java.sql.*;
 import java.util.ArrayList;
 
-/**
- * @author Alex
- */
 public class DBConnection {
 
     private static final String DB_URL = "stickjumper.ddns.net";
