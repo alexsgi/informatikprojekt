@@ -27,21 +27,8 @@ public class MovingBackground extends JLabel {
         backgroundSpeed = 1;
 
         backgroundTimer = new Timer();
-        backgroundTimer.scheduleAtFixedRate(new TimerTask() {
-            @Override
-            public void run() {
-                if (movement) {
-                    if(backgroundMiddleX > -1277){
-                        backgroundMiddleX -= 0.1;
-                    } else {
-                        backgroundMiddleX = 1280;
-                    }
-                    if(backgroundMiddleMirroredX > -1277){
-                        backgroundMiddleMirroredX -= 0.1;
-                    }
-                }
-            }
-        }, 0, (long) backgroundSpeed);
+
+        move();
     }
 
     @Override
@@ -60,6 +47,26 @@ public class MovingBackground extends JLabel {
 
     public void startMovement() {
         movement = true;
+    }
+
+    public void move(){
+        backgroundMiddleX += 90;
+        backgroundMiddleMirroredX += 90;
+     backgroundTimer.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                if (movement) {
+                    if(backgroundMiddleX > -1277){
+                        backgroundMiddleX -= 0.1;
+                    } else {
+                       backgroundMiddleX = 1280;
+                 }
+                   if(backgroundMiddleMirroredX > -1277){
+                      backgroundMiddleMirroredX -= 0.1;
+                 }
+              }
+          }
+        }, 0, (long) backgroundSpeed);
     }
 }
 
