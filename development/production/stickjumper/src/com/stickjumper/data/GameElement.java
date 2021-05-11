@@ -61,4 +61,12 @@ public abstract class GameElement {
     public String getImagePath() {
         return imagePath;
     }
+
+    public void incrementX(int n) {
+        point.x += n;
+    }
+
+    public void incrementY(int n) {
+        point.y += n;
+    }
 }

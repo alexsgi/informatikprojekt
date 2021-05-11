@@ -22,4 +22,14 @@ public class GameElementRender extends JLabel {
     public GameElement getGameElement() {
         return gameElement;
     }
+
+    public void incrementX(int n) {
+        gameElement.incrementX(n);
+        setLocation(gameElement.getLocation());
+    }
+
+    public void incrementY(int n) {
+        gameElement.incrementY(n);
+        setLocation(gameElement.getLocation());
+    }
 }
