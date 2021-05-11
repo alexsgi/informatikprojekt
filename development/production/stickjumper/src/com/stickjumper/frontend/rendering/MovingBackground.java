@@ -18,8 +18,8 @@ public class MovingBackground extends JLabel {
     private boolean movement = true;
 
     public MovingBackground(){
-        backgroundMiddle = UITools.getImage(getClass(), "/images/moving_background_files/mountains-middle.png");
-        backgroundMiddleMirrored = UITools.getImage(getClass(), "/images/moving_background_files/mountains-middle-mirrored.png");
+        backgroundMiddle = UITools.getImage(getClass(), "/images/start_view/background/mountains-middle.png");
+        backgroundMiddleMirrored = UITools.getImage(getClass(), "/images/start_view/background/mountains-middle-mirrored.png");
         backgroundMiddleX = 0;
         backgroundMiddleMirroredX = 1280;
 
@@ -32,16 +32,16 @@ public class MovingBackground extends JLabel {
                 if (movement) {
 
 
-                if(backgroundMiddleX > -1277){
-                    backgroundMiddleX -= 1;
-                } else {
-                    backgroundMiddleX = 1280;
-                }
-                if(backgroundMiddleMirroredX > -1277){
-                    backgroundMiddleMirroredX -= 1;
-                } else {
-                    backgroundMiddleMirroredX = 1280;
-                }
+                    if(backgroundMiddleX > -1277){
+                        backgroundMiddleX -= 1;
+                    } else {
+                        backgroundMiddleX = 1280;
+                    }
+                    if(backgroundMiddleMirroredX > -1277){
+                        backgroundMiddleMirroredX -= 1;
+                    } else {
+                        backgroundMiddleMirroredX = 1280;
+                    }
                 }
             }
         }, 0, backgroundSpeed);
@@ -67,3 +67,4 @@ public class MovingBackground extends JLabel {
         movement = true;
     }
 }
+

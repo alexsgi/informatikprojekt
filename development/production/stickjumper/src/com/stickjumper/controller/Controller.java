@@ -6,6 +6,7 @@ import com.stickjumper.data.list.List;
 import com.stickjumper.frontend.MainFrameView;
 import com.stickjumper.frontend.game.GamePanelView;
 import com.stickjumper.frontend.rendering.GameElementRender;
+import com.stickjumper.frontend.rendering.MovingBackground;
 import com.stickjumper.frontend.start.StartPanelView;
 
 import java.awt.*;
@@ -19,6 +20,7 @@ public class Controller {
     private Player currentPlayer;
     private List playerList;
     private Scenery scenery;
+    private MovingBackground movingBackground = new MovingBackground();
 
     private int speed = 1;
 
@@ -33,6 +35,9 @@ public class Controller {
     public void setGamePanel(GamePanelView gamePanel) {
         this.gamePanel = gamePanel;
         scenery = new Scenery();
+        movingBackground.setVisible(true);
+        movingBackground.setSize(2560, 640);
+        gamePanel.add(movingBackground);
     }
 
     public void disableMainFrame() {
@@ -113,6 +118,16 @@ public class Controller {
             coinElement.incrementY(Math.abs(n));
         }
 
+    }
+
+    public void startMovingBackground(){
+        // start again
+        movingBackground.startMovement();
+    }
+
+    public void stopMovingBackground(){
+        // Game over
+        movingBackground.stopMovement();
     }
 
 }
