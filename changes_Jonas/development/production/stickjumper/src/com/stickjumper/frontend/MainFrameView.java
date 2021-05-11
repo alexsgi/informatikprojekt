@@ -31,13 +31,15 @@ public class MainFrameView extends JFrame implements KeyListener {
         // Set icon
         setIconImage(UITools.getImage(getClass(), "/images/icons/appicon_5.png"));
 
-        // gamePanelView
-        gamePanel = new GamePanelView();
+
 
         controller = new Controller(this);
         addKeyListener(this);
         startPanel = new StartPanelView(controller);
         controller.setStartPanel(startPanel);
+
+        // gamePanelView
+        gamePanel = new GamePanelView(controller);
 
         // Add panel to frame
         setContentPane(startPanel);
