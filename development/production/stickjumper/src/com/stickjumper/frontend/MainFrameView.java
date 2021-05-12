@@ -15,7 +15,7 @@ public class MainFrameView extends JFrame implements KeyListener {
     private StartPanelView startPanel;
     private Controller controller;
     private GamePanelView gamePanel;
-    
+
     public MainFrameView() {
         // Can't change size of window
         setResizable(false);
