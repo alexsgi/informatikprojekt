@@ -123,7 +123,6 @@ public class LoginPanelView extends JPanel {
         registerButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 registerButton.setForeground(Color.BLUE);
-
             }
 
             public void mouseExited(java.awt.event.MouseEvent evt) {
