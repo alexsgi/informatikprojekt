@@ -1,9 +1,0 @@
-<component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="StickJumper" type="Application" factoryName="Application">
-    <option name="MAIN_CLASS_NAME" value="com.stickjumper.start.Starter" />
-    <module name="stickjumper" />
-    <method v="2">
-      <option name="Make" enabled="true" />
-    </method>
-  </configuration>
-</component>
