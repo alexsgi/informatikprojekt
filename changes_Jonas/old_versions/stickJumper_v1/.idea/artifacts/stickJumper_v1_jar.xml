@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="stickJumper_v1:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/stickJumper_v1_jar</output-path>
-    <root id="archive" name="stickJumper_v1.jar">
-      <element id="module-output" name="stickJumper_v1" />
-    </root>
-  </artifact>
-</component>
