@@ -16,16 +16,18 @@ public class Controller {
 
     private StartPanelView startPanel;
     private GamePanelView gamePanel;
-    private MainFrameView mainFrameView;
+    private final MainFrameView mainFrameView;
     private Player currentPlayer;
     private List playerList;
     private Scenery scenery;
-    private MovingBackground movingBackground = new MovingBackground();
+    private final MovingBackground movingBackground = new MovingBackground();
+    private int currentScore = 0;
 
-    private int speed = 1;
+    private final int speed = 1;
 
     public Controller(MainFrameView mainFrameView) {
         this.mainFrameView = mainFrameView;
+
     }
 
     public void setStartPanel(StartPanelView panel) {
@@ -50,10 +52,12 @@ public class Controller {
 
     public void startGame() {
         mainFrameView.setGamePanel();
+        currentScore = -1;
     }
 
     public boolean playerLogin(String userName, String password) throws SQLException {
         currentPlayer = getPlayerFromList(userName, password);
+        currentScore = -1;
         return currentPlayer != null;
     }
 
@@ -64,6 +68,7 @@ public class Controller {
     public void setList(List list) {
         this.playerList = list;
     }
+
 
     // Keys
 
@@ -132,22 +137,21 @@ public class Controller {
 
     public class MethodsToSubmitForWednesday {
 
-        public boolean newHighScoreExisting() {
-            try {
-                return (playerList.search(currentPlayer.getPlayerName(), currentPlayer.getPlayerPassword()) != null &&
-                        playerList.search(currentPlayer.getPlayerName(), currentPlayer.getPlayerPassword()).getHighScore() != currentPlayer.getHighScore());
-            } catch (NullPointerException ignore) {
-            }
-            return false;
+        public boolean isScoreExisting() {
+            return (currentScore != -1);
         }
 
-        public int getScoreFromCurrentPlayer(){
-            if(newHighScoreExisting()){return currentPlayer.getHighScore();}
+        public int getScoreFromCurrentPlayer() {
+            if (isScoreExisting()) return currentScore;
             return 0;
         }
 
-        public void setScore(int newScore){
-            currentPlayer.setHighScore(newScore);
+        public void setScore(int newScore) {
+            currentScore = newScore;
+        }
+
+        public void updateHighScore() {
+            if (currentScore > currentPlayer.getHighScore()) currentPlayer.setHighScore(currentScore);
         }
     }
 
