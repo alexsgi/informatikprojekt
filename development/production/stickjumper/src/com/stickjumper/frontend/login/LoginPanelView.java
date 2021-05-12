@@ -12,6 +12,9 @@ public class LoginPanelView extends JPanel {
         setLayout(null);
         setSize(loginFrameView.getWidth(), loginFrameView.getHeight());
 
+        // Color color = new Color(62, 146, 204, 127);
+        // setBackground(color);
+
         JLabel welcomeLabel = new JLabel();
         welcomeLabel.setText("Welcome to StickJumper");
         welcomeLabel.setHorizontalAlignment(SwingConstants.CENTER);
@@ -79,6 +82,8 @@ public class LoginPanelView extends JPanel {
         registerButton.setFocusable(false);
         registerButton.setBackground(null);
         registerButton.setBorder(null);
+        registerButton.setOpaque(false);
+        registerButton.setBorderPainted(false);
         add(registerButton);
 
         loginButton.addActionListener(e -> {
