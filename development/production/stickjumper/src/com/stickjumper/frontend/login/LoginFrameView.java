@@ -9,6 +9,7 @@ public class LoginFrameView extends JFrame {
     private LoginPanelView loginPanel;
 
     public LoginFrameView(Controller controller) {
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
         setTitle("Login");
         setSize(600, 500);
