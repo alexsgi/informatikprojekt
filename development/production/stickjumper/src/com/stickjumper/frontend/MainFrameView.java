@@ -15,7 +15,6 @@ public class MainFrameView extends JFrame implements KeyListener {
     private StartPanelView startPanel;
     private Controller controller;
     private GamePanelView gamePanel;
-    private List list;
 
     public MainFrameView() {
         // Can't change size of window
@@ -31,13 +30,11 @@ public class MainFrameView extends JFrame implements KeyListener {
         // Set icon
         setIconImage(UITools.getImage(getClass(), "/images/icons/appicon_5.png"));
 
-
         controller = new Controller(this);
         addKeyListener(this);
         startPanel = new StartPanelView(controller);
         controller.setStartPanel(startPanel);
 
-        // gamePanelView
         gamePanel = new GamePanelView(controller);
 
         // Add panel to frame

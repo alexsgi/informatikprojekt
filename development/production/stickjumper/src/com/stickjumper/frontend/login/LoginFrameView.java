@@ -1,6 +1,7 @@
 package com.stickjumper.frontend.login;
 
 import com.stickjumper.controller.Controller;
+import com.stickjumper.utils.UITools;
 
 import javax.swing.*;
 
@@ -16,6 +17,7 @@ public class LoginFrameView extends JFrame {
         setLocationRelativeTo(null);
         loginPanel = new LoginPanelView(controller, this);
         setContentPane(loginPanel);
+        setIconImage(UITools.getImage(getClass(), "/images/icons/appicon_5.png"));
     }
 
 
