@@ -12,8 +12,8 @@ public class MovingBackground extends JLabel {
 
     private final BufferedImage backgroundMiddle, backgroundMiddleMirrored;
     private final Timer backgroundTimer;
-    public double backgroundMiddleX, backgroundMiddleMirroredX;
-    private final double backgroundSpeed;
+    public int backgroundMiddleX, backgroundMiddleMirroredX;
+    private final int backgroundSpeed;
     private boolean movement = true;
 
     public MovingBackground() {
@@ -34,8 +34,8 @@ public class MovingBackground extends JLabel {
         super.paintComponent(graphics);
         Graphics2D graphics2D = (Graphics2D) graphics;
         graphics2D.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-        graphics.drawImage(backgroundMiddle, (int) backgroundMiddleX, 0, 1280, 640, null);
-        graphics.drawImage(backgroundMiddleMirrored, (int) backgroundMiddleMirroredX, 0, 1280, 640, null);
+        graphics.drawImage(backgroundMiddle, backgroundMiddleX, 0, 1280, 640, null);
+        graphics.drawImage(backgroundMiddleMirrored,  backgroundMiddleMirroredX, 0, 1280, 640, null);
         repaint();
     }
 
