@@ -37,10 +37,12 @@ public class MovingBackground extends JLabel {
                     }
                     if (backgroundMiddleMirroredX > -1277) {
                         backgroundMiddleMirroredX -= 1;
+                    } else {
+                        backgroundMiddleMirroredX = 1280;
                     }
                 }
             }
-        },  0, backgroundSpeed);
+        }, 0, backgroundSpeed);
 
     }
 
@@ -49,8 +51,8 @@ public class MovingBackground extends JLabel {
         super.paintComponent(graphics);
         Graphics2D graphics2D = (Graphics2D) graphics;
         graphics2D.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-        graphics.drawImage(backgroundMiddle, backgroundMiddleX, 0,1280, 640, null);
-        graphics.drawImage(backgroundMiddleMirrored, backgroundMiddleMirroredX,0,1280, 640,null);
+        graphics.drawImage(backgroundMiddle, backgroundMiddleX, 0, 1280, 640, null);
+        graphics.drawImage(backgroundMiddleMirrored, backgroundMiddleMirroredX, 0, 1280, 640, null);
         repaint();
     }
 

@@ -14,17 +14,15 @@ import java.sql.SQLException;
 
 public class Controller {
 
+    private final MainFrameView mainFrameView;
+    private final MovingBackground movingBackground = new MovingBackground();
+    private final int speed = 1;
     private StartPanelView startPanel;
     private GamePanelView gamePanel;
-    private final MainFrameView mainFrameView;
     private Player currentPlayer;
     private List playerList;
     private Scenery scenery;
-    private final MovingBackground movingBackground = new MovingBackground();
     private int currentScore = 0;
-
-
-    private final int speed = 1;
 
     public Controller(MainFrameView mainFrameView) {
         this.mainFrameView = mainFrameView;
@@ -154,7 +152,7 @@ public class Controller {
 
         public void updateHighScore() {
 
-            if(currentPlayer.getHighScore()<currentScore) currentPlayer.setHighScore(currentScore);
+            if (currentPlayer.getHighScore() < currentScore) currentPlayer.setHighScore(currentScore);
 
         }
     }
