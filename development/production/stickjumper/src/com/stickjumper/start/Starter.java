@@ -31,7 +31,6 @@ public class Starter {
         list = DBConnection.getAllPlayers();
 
         // boot operations
-
         // no internet connection -> one single Player to locally save data until you close the game
 
         // Create main frame
