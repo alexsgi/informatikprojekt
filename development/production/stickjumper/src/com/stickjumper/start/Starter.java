@@ -6,7 +6,6 @@ import com.stickjumper.frontend.MainFrameView;
 import com.stickjumper.frontend.boot.LoadingFrameView;
 import com.stickjumper.utils.UITools;
 
-import java.awt.*;
 import java.io.IOException;
 import java.sql.SQLException;
 
