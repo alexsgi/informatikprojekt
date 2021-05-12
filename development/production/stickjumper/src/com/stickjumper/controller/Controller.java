@@ -142,16 +142,24 @@ public class Controller {
         }
 
         public int getScoreFromCurrentPlayer() {
+<<<<<<< HEAD
             if (isScoreExisting()) return currentScore;
+=======
+            if (newHighScoreExisting()) return currentPlayer.getHighScore();
+>>>>>>> 3bce90e26170096539022649e2c62b88f3210a53
             return 0;
         }
 
         public void setScore(int newScore) {
+<<<<<<< HEAD
             currentScore = newScore;
         }
 
         public void updateHighScore() {
             if (currentScore > currentPlayer.getHighScore()) currentPlayer.setHighScore(currentScore);
+=======
+            currentPlayer.setHighScore(newScore);
+>>>>>>> 3bce90e26170096539022649e2c62b88f3210a53
         }
     }
 
