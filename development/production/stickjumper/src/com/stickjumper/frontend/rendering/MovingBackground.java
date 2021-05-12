@@ -37,10 +37,11 @@ public class MovingBackground extends JLabel {
                     }
                     if (backgroundMiddleMirroredX > -1277) {
                         backgroundMiddleMirroredX -= 1;
-                    }
+                    } else {
+                    backgroundMiddleMirroredX = 1280;}
                 }
             }
-        },  0, backgroundSpeed);
+                },  0, backgroundSpeed);
 
     }
 
