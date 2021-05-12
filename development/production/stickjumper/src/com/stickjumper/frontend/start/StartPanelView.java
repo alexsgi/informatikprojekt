@@ -24,6 +24,13 @@ public class StartPanelView extends JPanel {
         lblTitle.setFont(MAIN_FONT);
         add(lblTitle);
 
+        JLabel highScorelbl = new JLabel();
+        highScorelbl.setHorizontalAlignment(SwingConstants.CENTER);
+        highScorelbl.setBounds(0, 3, 1280, 83);
+        highScorelbl.setFont(new Font("Calibri", Font.PLAIN, 20));
+        highScorelbl.setText("Highscore: " + controller.new MethodsToSubmitForWednesday().getScoreFromCurrentPlayer());
+        add(highScorelbl);
+
         // Button to open login frame
         loginButton.setText("Login");
         loginButton.setFont(new Font("Calibri", Font.PLAIN, 15));

@@ -12,7 +12,7 @@ public class MovingBackground extends JLabel {
 
     private final BufferedImage backgroundMiddle, backgroundMiddleMirrored;
     public double backgroundMiddleX, backgroundMiddleMirroredX;
-    private double backgroundSpeed;
+    private final double backgroundSpeed;
 
 
     private final Timer backgroundTimer;

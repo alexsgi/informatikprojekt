@@ -15,6 +15,7 @@ public class MainFrameView extends JFrame implements KeyListener {
     private StartPanelView startPanel;
     private Controller controller;
     private GamePanelView gamePanel;
+    private List list;
 
     public MainFrameView() {
         // Can't change size of window
@@ -83,7 +84,7 @@ public class MainFrameView extends JFrame implements KeyListener {
         revalidate();
     }
 
-    public void addPlayerList(List list) {
+    public void addPlayerListToController(List list) {
         controller.setList(list);
     }
 }

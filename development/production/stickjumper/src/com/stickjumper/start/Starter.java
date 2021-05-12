@@ -36,7 +36,7 @@ public class Starter {
 
         // Create main frame
         MainFrameView mainFrameView = new MainFrameView();
-        mainFrameView.addPlayerList(list);
+        mainFrameView.addPlayerListToController(list);
 
         // Close loading screen
         loadingFrameView.dispose();
