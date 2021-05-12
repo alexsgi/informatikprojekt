@@ -4,56 +4,54 @@ import com.stickjumper.controller.Controller;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.sql.SQLException;
 
 public class LoginPanelView extends JPanel {
 
-    private JLabel welcomeLabel = new JLabel();
-    private JButton loginButton = new JButton();
-    private JButton initDB = new JButton();
-
     public LoginPanelView(Controller controller, LoginFrameView loginFrameView) {
         setLayout(null);
+        setSize(loginFrameView.getWidth(), loginFrameView.getHeight());
+
+        JLabel welcomeLabel = new JLabel();
         welcomeLabel.setText("Welcome to our service");
         add(welcomeLabel);
         welcomeLabel.setHorizontalAlignment(SwingConstants.CENTER);
         welcomeLabel.setBounds(0, 20, 600, 50);
         welcomeLabel.setFont(new Font("Arial Black", Font.PLAIN, 22));
 
+        JButton loginButton = new JButton();
         loginButton.setText("Login");
         loginButton.setFont(new Font("Calibri", Font.PLAIN, 15));
-        loginButton.setBounds(0, 150, 200, 50);
+        loginButton.setSize(200, 50);
+        loginButton.setLocation((getWidth() - loginButton.getWidth()) / 4, getHeight() - loginButton.getHeight() * 2);
         loginButton.setVisible(true);
         loginButton.setFocusable(false);
-        loginButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                loginButton.setEnabled(false);
-                try {
-                    boolean successful = controller.playerLogin("Jan Marsalek", "dasisteinpasswort");
-                    if (successful) {
-                        controller.enableMainFrame();
-                        loginFrameView.disposeLoginFrame();
-                    } else {
-                        JOptionPane.showMessageDialog(null, "False credentials, try again");
-                        loginButton.setEnabled(true);
-                    }
-
-                } catch (SQLException throwables) {
-                    throwables.printStackTrace();
+        loginButton.addActionListener(e -> {
+            loginButton.setEnabled(false);
+            try {
+                boolean successful = controller.playerLogin("Jan Marsalek", "dasisteinpasswort");
+                if (successful) {
+                    controller.enableMainFrame();
+                    loginFrameView.disposeLoginFrame();
+                } else {
+                    JOptionPane.showMessageDialog(null, "False credentials, try again");
+                    loginButton.setEnabled(true);
                 }
+
+            } catch (SQLException throwable) {
+                throwable.printStackTrace();
             }
         });
         add(loginButton);
 
-        initDB.setText("KeInE aHnUnG");
-        initDB.setFont(new Font("Calibri", Font.PLAIN, 15));
-        initDB.setBounds(0, 250, 200, 50);
-        initDB.setVisible(true);
-        initDB.setFocusable(false);
-        add(initDB);
+        JButton registerButton = new JButton();
+        registerButton.setText("Register");
+        registerButton.setFont(new Font("Calibri", Font.PLAIN, 15));
+        registerButton.setSize(200, 50);
+        registerButton.setLocation((getWidth() - registerButton.getWidth()) / 2 + (getWidth() - registerButton.getWidth()) / 4, getHeight() - registerButton.getHeight() * 2);
+        registerButton.setVisible(true);
+        registerButton.setFocusable(false);
+        add(registerButton);
     }
 
 
