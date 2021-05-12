@@ -130,4 +130,25 @@ public class Controller {
 
     }
 
+    public class MethodsToSubmitForWednesday {
+
+        public boolean newHighScoreExisting() {
+            try {
+                return (playerList.search(currentPlayer.getPlayerName(), currentPlayer.getPlayerPassword()) != null &&
+                        playerList.search(currentPlayer.getPlayerName(), currentPlayer.getPlayerPassword()).getHighScore() != currentPlayer.getHighScore());
+            } catch (NullPointerException ignore) {
+            }
+            return false;
+        }
+
+        public int getScoreFromCurrentPlayer(){
+            if(newHighScoreExisting()){return currentPlayer.getHighScore();}
+            return 0;
+        }
+
+        public void setScore(int newScore){
+            currentPlayer.setHighScore(newScore);
+        }
+    }
+
 }
