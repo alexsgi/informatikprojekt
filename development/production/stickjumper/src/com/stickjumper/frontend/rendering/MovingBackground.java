@@ -13,7 +13,7 @@ public class MovingBackground extends JLabel {
     private final BufferedImage backgroundMiddle, backgroundMiddleMirrored;
     private final Timer backgroundTimer;
     public int backgroundMiddleX, backgroundMiddleMirroredX;
-    private final int backgroundSpeed;
+    private int backgroundSpeed;
     private boolean movement = true;
 
     public MovingBackground() {
@@ -22,34 +22,10 @@ public class MovingBackground extends JLabel {
         backgroundMiddleX = 0;
         backgroundMiddleMirroredX = 1280;
 
-        backgroundSpeed = 1;
+        backgroundSpeed = 7;
 
         backgroundTimer = new Timer();
 
-        move();
-    }
-
-    @Override
-    public void paintComponent(Graphics graphics) {
-        super.paintComponent(graphics);
-        Graphics2D graphics2D = (Graphics2D) graphics;
-        graphics2D.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-        graphics.drawImage(backgroundMiddle, backgroundMiddleX, 0, 1280, 640, null);
-        graphics.drawImage(backgroundMiddleMirrored,  backgroundMiddleMirroredX, 0, 1280, 640, null);
-        repaint();
-    }
-
-    public void stopMovement() {
-        movement = false;
-    }
-
-    public void startMovement() {
-        movement = true;
-    }
-
-    public void move() {
-        // backgroundMiddleX += 90;
-        // backgroundMiddleMirroredX += 90;
         backgroundTimer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
@@ -64,7 +40,28 @@ public class MovingBackground extends JLabel {
                     }
                 }
             }
-        }, 0, (long) 10);
+        },  0, backgroundSpeed);
+
     }
+
+    @Override
+    public void paintComponent(Graphics graphics) {
+        super.paintComponent(graphics);
+        Graphics2D graphics2D = (Graphics2D) graphics;
+        graphics2D.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+        graphics.drawImage(backgroundMiddle, backgroundMiddleX, 0,1280, 640, null);
+        graphics.drawImage(backgroundMiddleMirrored, backgroundMiddleMirroredX,0,1280, 640,null);
+        repaint();
+    }
+
+    public void stopMovement() {
+        movement = false;
+    }
+
+    public void startMovement() {
+        movement = true;
+    }
+
+
 }
 
