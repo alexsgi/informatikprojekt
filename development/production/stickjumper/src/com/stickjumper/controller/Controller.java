@@ -141,12 +141,12 @@ public class Controller {
             return false;
         }
 
-        public int getScoreFromCurrentPlayer(){
-            if(newHighScoreExisting()){return currentPlayer.getHighScore();}
+        public int getScoreFromCurrentPlayer() {
+            if (newHighScoreExisting()) return currentPlayer.getHighScore();
             return 0;
         }
 
-        public void setScore(int newScore){
+        public void setScore(int newScore) {
             currentPlayer.setHighScore(newScore);
         }
     }
