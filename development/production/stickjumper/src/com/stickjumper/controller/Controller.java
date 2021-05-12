@@ -91,6 +91,16 @@ public class Controller {
         scenery.down(speed);
     }
 
+    public void startMovingBackground() {
+        // start again
+        movingBackground.startMovement();
+    }
+
+    public void stopMovingBackground() {
+        // Game over
+        movingBackground.stopMovement();
+    }
+
     public class Scenery {
 
         // private GameAlgorithm
@@ -118,16 +128,6 @@ public class Controller {
             coinElement.incrementY(Math.abs(n));
         }
 
-    }
-
-    public void startMovingBackground(){
-        // start again
-        movingBackground.startMovement();
-    }
-
-    public void stopMovingBackground(){
-        // Game over
-        movingBackground.stopMovement();
     }
 
 }

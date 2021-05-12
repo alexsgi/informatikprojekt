@@ -11,10 +11,9 @@ import java.util.TimerTask;
 public class MovingBackground extends JLabel {
 
     private final BufferedImage backgroundMiddle, backgroundMiddleMirrored;
+    private final Timer backgroundTimer;
     public double backgroundMiddleX, backgroundMiddleMirroredX;
     private double backgroundSpeed;
-
-    private final Timer backgroundTimer;
     private boolean movement = true;
 
     public MovingBackground() {

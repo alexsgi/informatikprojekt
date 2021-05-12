@@ -1,7 +1,6 @@
 package com.stickjumper.frontend.login;
 
 import com.stickjumper.controller.Controller;
-import com.stickjumper.data.Player;
 
 import javax.swing.*;
 import java.awt.*;
@@ -34,7 +33,7 @@ public class LoginPanelView extends JPanel {
                 loginButton.setEnabled(false);
                 try {
                     boolean successful = controller.playerLogin("Jan Marsalek", "dasisteinpasswort");
-                    if(successful) {
+                    if (successful) {
                         controller.enableMainFrame();
                         loginFrameView.disposeLoginFrame();
                     } else {
