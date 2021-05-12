@@ -8,8 +8,10 @@ import javax.swing.*;
 public class LoginFrameView extends JFrame {
 
     private LoginPanelView loginPanel;
+    Controller controller;
 
     public LoginFrameView(Controller controller) {
+        this.controller = controller;
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
         setTitle("Login");
@@ -23,7 +25,16 @@ public class LoginFrameView extends JFrame {
 
     public void disposeLoginFrame() {
         setVisible(false);
+        controller.enableMainFrame();
         dispose();
+
+    }
+
+    public void openRegister(){
+        // setContentPane(null);
+        RegisterPanelView registerPanelView = new RegisterPanelView( controller,  this);
+        setContentPane(registerPanelView);
+
     }
 
 }

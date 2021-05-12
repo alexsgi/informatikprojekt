@@ -6,21 +6,14 @@ import javax.swing.*;
 import java.awt.*;
 import java.sql.SQLException;
 
-public class LoginPanelView extends JPanel {
+public class RegisterPanelView extends JPanel {
 
-    Controller controller;
-    LoginFrameView loginFrameView;
-
-    public LoginPanelView(Controller controller, LoginFrameView loginFrameView) {
+    public RegisterPanelView(Controller controller, LoginFrameView loginFrameView) {
         setLayout(null);
         setSize(loginFrameView.getWidth(), loginFrameView.getHeight());
 
-        this.controller = controller;
-        this.loginFrameView = loginFrameView;
-
-        Color color = new Color(224,255,255);
+        Color color = new Color(224,220,255);
         setBackground(color);
-
 
         JButton backToStartMenuButton = new JButton();
         backToStartMenuButton.setText("get back to start");
@@ -45,6 +38,8 @@ public class LoginPanelView extends JPanel {
         });
 
 
+
+
         JLabel welcomeLabel = new JLabel();
         welcomeLabel.setText("Welcome to StickJumper");
         welcomeLabel.setHorizontalAlignment(SwingConstants.CENTER);
@@ -53,7 +48,7 @@ public class LoginPanelView extends JPanel {
         add(welcomeLabel);
 
         JLabel signInLabel = new JLabel();
-        signInLabel.setText("Sign in to play and compete with other players");
+        signInLabel.setText("Create new account to play and compete with other players");
         signInLabel.setHorizontalAlignment(SwingConstants.CENTER);
         signInLabel.setSize(getWidth(), 30);
         signInLabel.setLocation(0, welcomeLabel.getY() + welcomeLabel.getHeight() + 5);
@@ -92,34 +87,36 @@ public class LoginPanelView extends JPanel {
         passwordField.setToolTipText("Enter your password");
         add(passwordField);
 
-        JButton loginButton = new JButton();
-        loginButton.setText("Login");
-        loginButton.setFont(new Font("Calibri", Font.PLAIN, 15));
-        loginButton.setSize(200, 40);
-        //loginButton.setLocation((getWidth() - loginButton.getWidth()) / 8, getHeight() - loginButton.getHeight() * 2);
-        loginButton.setLocation((getWidth() - loginButton.getWidth()) / 2, getHeight() - (int) (loginButton.getHeight() * 3.5));
-        loginButton.setFocusable(false);
-        add(loginButton);
+        JLabel passwordLabelAgain = new JLabel();
+        passwordLabelAgain.setText("Repeat password");
+        passwordLabelAgain.setHorizontalAlignment(SwingConstants.LEFT);
+        passwordLabelAgain.setSize(getWidth() - 2 * 100, 30);
+        passwordLabelAgain.setLocation(getWidth() / 7, passwordField.getY() + userNameTextField.getHeight() + 1);
+        passwordLabelAgain.setFont(new Font("Open Sans", Font.PLAIN, 13));
+        add(passwordLabelAgain);
+
+        JPasswordField passwordFieldAgain = new JPasswordField();
+        passwordFieldAgain.setHorizontalAlignment(SwingConstants.LEFT);
+        passwordFieldAgain.setSize(getWidth() - 2 * 100, 30);
+        passwordFieldAgain.setLocation(getWidth() / 7, passwordLabelAgain.getY() + passwordLabel.getHeight() + 1);
+        passwordFieldAgain.setEchoChar('*');
+        passwordFieldAgain.setFont(new Font("Open Sans", Font.PLAIN, 13));
+        passwordFieldAgain.setToolTipText("Enter your password");
+        add(passwordFieldAgain);
 
         JButton registerButton = new JButton();
-        registerButton.setText("Still not registered? Join the community");
+        registerButton.setText("Create new account");
         registerButton.setFont(new Font("Calibri", Font.PLAIN, 15));
-        registerButton.setSize(2 * loginButton.getWidth(), 40);
-        // registerButton.setLocation((getWidth() / 2) + ((getWidth() / 2 - registerButton.getWidth()) / 2), getHeight() - registerButton.getHeight() * 2);
-        // mathematically simplified
-        // registerButton.setLocation((int) (0.75 * getWidth() - 0.5 * registerButton.getWidth()), getHeight() - registerButton.getHeight() * 2);
-        registerButton.setLocation((getWidth() - registerButton.getWidth()) / 2, getHeight() - (registerButton.getHeight() * 2));
-
-
-        registerButton.setBackground(null);
-        registerButton.setOpaque(true);
-        registerButton.setBorderPainted(false);
+        registerButton.setSize(200, 40);
+        //loginButton.setLocation((getWidth() - loginButton.getWidth()) / 8, getHeight() - loginButton.getHeight() * 2);
+        registerButton.setLocation((getWidth() - registerButton.getWidth()) / 2, getHeight() - (int) (registerButton.getHeight() * 3.5));
         registerButton.setFocusable(false);
-        registerButton.setBorder(null);
         add(registerButton);
 
-        loginButton.addActionListener(e -> {
-            loginButton.setEnabled(false);
+
+
+        /* registerButton.addActionListener(e -> {
+            registerButton.setEnabled(false);
 
             String username = userNameTextField.getText(), password;
             char[] passwordArray = passwordField.getPassword();
@@ -144,29 +141,15 @@ public class LoginPanelView extends JPanel {
             loginButton.setEnabled(true);
         });
 
-        registerButton.addActionListener(e -> {
-            // user wants to register
-            System.out.println("open register panel/frame");
-            loginFrameView.openRegister();
-        });
 
-        registerButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                registerButton.setForeground(Color.BLUE);
-            }
 
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                registerButton.setForeground(Color.BLACK);
-            }
-        });
+         */
 
         backToStartMenuButton.addActionListener(e -> {
             backToStartMenuButton.setEnabled(false);
             loginFrameView.disposeLoginFrame();
 
         });
-
-
     }
 
 
