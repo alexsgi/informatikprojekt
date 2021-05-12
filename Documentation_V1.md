@@ -3,13 +3,13 @@
 ## Dokumentation
 
 ### **22.03.2021**
-Alex, Jessica, Jonas:
+Jessica, Alex, Jonas:
 1. Einrichtung der Plattform GitHub
 2. Besprechung der Ordnerstrukturen zur Versions- und Änderungsverwaltung
 3. Besprechung der Vorgehensweise bei Änderungen und Dokumentationen 
 
 ### **07.04.2021**
-Alex, Jessica, Jonas:
+Jessica, Alex, Jonas:
 1. Besprechung und Erarbeitung des Pflichtenheftes
 2. Entscheidung über das Spielkonzept und die Spielidee
 3. Aufgabenverteilung innerhalb der Gruppe
@@ -43,7 +43,7 @@ Alex:
 3. Erstellen der Klasse Player (→ Datenklasse für Daten aus DB)
 
 ### **01.05.2021**
-Jessica, Jonas, Alex:
+Jessica, Alex, Jonas:
 1. Besprechung (Review) des derzeitigen Codes
 2. Besprechen der Klassenstruktur
 3. Planung weiteres Vorgehen und Aufgabenverteilung
@@ -53,7 +53,10 @@ Alex:
 2. Anpassung Klasse Player
 
 Jonas:
-1. Einfügen aller Klassen, die in Verbindugn mit der Klasse GameElement stehen
+1. Einfügen aller Klassen, die in Verbindung mit der Klasse GameElement stehen
+
+Jessica:
+1. Bearbeiten mehrerer Tutorials zur Erstellung eines GUIs
 
 ### **02.05.2021**
 Alex:
@@ -82,3 +85,33 @@ Alex:
 1. Aufsetzen eines MySQL-/MariaDB-Servers auf einem Raspberry Pi
 2. Migrieren der DB zu selbst-gehostetem MySQL-Dienst
 3. Anpassung der Verbindung in DBConnection
+
+### **08.05.2021**
+Jessica, Alex, Jonas:
+1. Fertigstellung der Klassen- und Ordnerstruktur
+
+Alex:
+1. Implementieren der Listen zur Speicherung der Spieler
+
+Jonas:
+
+### **09.05.2021**
+Alex:
+1. Anpassung der Listen zur Speicherung der Spieler
+2. Schreiben der GameElementRender-Klasse zur Visualisierung von Spielobjekten
+
+Jonas:
+
+### **10.05.2021**
+Alex:
+1. Implementierung Netzwerk- und Servertest
+
+Jonas:
+
+### **11.05.2021**
+Jessica:
+1. Ausarbeitung des Klassendiagramms zu Sprint-Planning 2
+
+### **12.05.2021**
+Jessica:
+1. Fertigstellung des Klassendiagramms zu Sprint-Planning 2
