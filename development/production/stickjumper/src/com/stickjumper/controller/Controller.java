@@ -17,8 +17,7 @@ public class Controller {
     private StartPanelView startPanel;
     private GamePanelView gamePanel;
     private MainFrameView mainFrameView;
-    private Player currentPlayer = new Player(0, "Max", "Mustermann",0, 1 );
-    // Default values for player which will not be saved but have to be there for many methods
+    private Player currentPlayer;
     private List playerList;
     private Scenery scenery;
     private MovingBackground movingBackground = new MovingBackground();
@@ -40,7 +39,6 @@ public class Controller {
         movingBackground.setSize(2560, 640);
         gamePanel.add(movingBackground);
     }
-
 
     public void disableMainFrame() {
         mainFrameView.setVisible(false);
@@ -93,6 +91,15 @@ public class Controller {
         scenery.down(speed);
     }
 
+    public void startMovingBackground() {
+        // start again
+        movingBackground.startMovement();
+    }
+
+    public void stopMovingBackground() {
+        // Game over
+        movingBackground.stopMovement();
+    }
 
     public class Scenery {
 
@@ -121,38 +128,6 @@ public class Controller {
             coinElement.incrementY(Math.abs(n));
         }
 
-    }
-
-    public void startMovingBackground(){
-        // start again
-        movingBackground.startMovement();
-    }
-
-    public void stopMovingBackground(){
-        // Game over
-        movingBackground.stopMovement();
-    }
-
-    public class MethodsToSubmitForWednesday {
-
-        public boolean newHighScoreExisting() {
-            try{
-                return (playerList.search(currentPlayer.getPlayerName(), currentPlayer.getPlayerPassword()).getHighScore() != currentPlayer.getHighScore()
-                    && playerList.search(currentPlayer.getPlayerName(), currentPlayer.getPlayerPassword()) != null);
-            }
-                catch (NullPointerException ignore){}
-                System.out.println("error: currentPlayer not found in list"); // is this needed?
-                return false;
-        }
-
-        public int getScoreFromCurrentPlayer(){
-            if(newHighScoreExisting()){return currentPlayer.getHighScore();}
-            return 0;
-        }
-
-        public void setScore(int newScore){
-            currentPlayer.setHighScore(newScore);
-        }
     }
 
 }
