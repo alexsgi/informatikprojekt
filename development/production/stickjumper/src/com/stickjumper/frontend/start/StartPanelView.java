@@ -65,12 +65,22 @@ public class StartPanelView extends JPanel {
              */
 
         });
+        loginButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                loginButton.setForeground(Color.GRAY);
+            }
+
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                loginButton.setForeground(Color.WHITE);
+            }
+        });
         menuPanel.add(loginButton);
 
-        BufferedImage image = UITools.getImage(getClass(), "/images/start_view/icons/play.png");
+        BufferedImage playImage = UITools.getImage(getClass(), "/images/start_view/icons/play.png");
+        BufferedImage playImageDark = UITools.getImage(getClass(), "/images/start_view/icons/play-dark.png");
         JButton playButton = new JButton();
         playButton.setFont(new Font("Calibri", Font.PLAIN, 15));
-        playButton.setSize((image != null) ? image.getWidth() : 64, (image != null) ? image.getHeight() : 64);
+        playButton.setSize((playImage != null) ? playImage.getWidth() : 64, (playImage != null) ? playImage.getHeight() : 64);
         playButton.setLocation((getWidth() - playButton.getWidth()) / 2, (getHeight() - playButton.getHeight()) / 2);
         playButton.setFocusable(false);
         playButton.addActionListener(e -> controller.startGame());
@@ -80,12 +90,34 @@ public class StartPanelView extends JPanel {
         playButton.setBorderPainted(false);
         playButton.setFocusable(false);
         playButton.setBorder(null);
-        if (image != null) {
-            ImageIcon icon = new ImageIcon(image);
-            playButton.setIcon(icon);
+        if (playImage != null) {
+            ImageIcon iconLight = new ImageIcon(playImage);
+            playButton.setIcon(iconLight);
         } else {
             playButton.setText("PLAY");
         }
+        playButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                if (playImageDark != null) {
+                    ImageIcon iconDark = new ImageIcon(playImageDark);
+                    playButton.setIcon(null);
+                    playButton.setIcon(iconDark);
+                } else {
+                    playButton.setText("PLAY");
+
+                }
+            }
+
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                if (playImage != null) {
+                    ImageIcon iconLight = new ImageIcon(playImage);
+                    playButton.setIcon(null);
+                    playButton.setIcon(iconLight);
+                } else {
+                    playButton.setText("PLAY");
+                };
+            }
+        });
 
         JButton settingsButton = new JButton();
         settingsButton.setText("Settings");
@@ -100,6 +132,16 @@ public class StartPanelView extends JPanel {
         settingsButton.setOpaque(false);
         settingsButton.setBorderPainted(false);
         menuPanel.add(settingsButton);
+
+        settingsButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                settingsButton.setForeground(Color.GRAY);
+            }
+
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                settingsButton.setForeground(Color.WHITE);
+            }
+        });
     }
 
     @Override
