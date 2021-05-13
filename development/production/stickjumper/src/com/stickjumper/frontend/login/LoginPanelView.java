@@ -2,6 +2,8 @@ package com.stickjumper.frontend.login;
 
 import com.stickjumper.controller.Controller;
 import com.stickjumper.utils.UITools;
+import com.stickjumper.utils.components.JRoundPasswordField;
+import com.stickjumper.utils.components.JRoundTextField;
 
 import javax.swing.*;
 import java.awt.*;
@@ -65,7 +67,8 @@ public class LoginPanelView extends JPanel {
         userNameLabel.setFont(new Font("Open Sans", Font.PLAIN, 13));
         add(userNameLabel);
 
-        JTextField userNameTextField = new JTextField();
+        int corners = 15;
+        JTextField userNameTextField = new JRoundTextField(corners);
         userNameTextField.setSize(getWidth() - 2 * 100, 30);
         userNameTextField.setLocation(getWidth() / 7, userNameLabel.getY() + userNameLabel.getHeight() + 1);
         userNameTextField.setFont(new Font("Open Sans", Font.PLAIN, 13));
@@ -80,7 +83,7 @@ public class LoginPanelView extends JPanel {
         passwordLabel.setFont(new Font("Open Sans", Font.PLAIN, 13));
         add(passwordLabel);
 
-        JPasswordField passwordField = new JPasswordField();
+        JPasswordField passwordField = new JRoundPasswordField(corners);
         passwordField.setHorizontalAlignment(SwingConstants.LEFT);
         passwordField.setSize(getWidth() - 2 * 100, 30);
         passwordField.setLocation(getWidth() / 7, passwordLabel.getY() + passwordLabel.getHeight() + 1);
@@ -92,14 +95,14 @@ public class LoginPanelView extends JPanel {
         JButton loginButton = new JButton();
         loginButton.setText("Login");
         loginButton.setFont(new Font("Calibri", Font.PLAIN, 15));
-        loginButton.setSize(200, 40);
+        loginButton.setSize(150, 40);
         loginButton.setLocation((getWidth() - loginButton.getWidth()) / 2, getHeight() - (int) (loginButton.getHeight() * 3.5));
         loginButton.setFocusable(false);
         add(loginButton);
 
         JButton registerButton = new JButton();
         registerButton.setText("Still not registered? Join the community");
-        registerButton.setFont(new Font("Calibri", Font.PLAIN, 15));
+        registerButton.setFont(new Font("Calibri", Font.PLAIN, 14));
         registerButton.setSize(2 * loginButton.getWidth(), 40);
         registerButton.setLocation((getWidth() - registerButton.getWidth()) / 2, getHeight() - (registerButton.getHeight() * 2));
         registerButton.setBackground(null);

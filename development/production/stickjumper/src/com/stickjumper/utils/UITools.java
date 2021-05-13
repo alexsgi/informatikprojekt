@@ -6,7 +6,6 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.URL;
 
 public class UITools {
 
@@ -24,8 +23,7 @@ public class UITools {
             InputStream in = c.getResourceAsStream(path);
             if (in == null) return null;
             return ImageIO.read(in);
-
-            /*
+            /* OR:
             URL url = c.getResource(path);
             if(url == null) return null;
             return ImageIO.read(url);

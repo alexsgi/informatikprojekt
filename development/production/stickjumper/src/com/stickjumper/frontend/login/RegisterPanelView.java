@@ -11,8 +11,6 @@ import java.awt.image.BufferedImage;
 
 public class RegisterPanelView extends JPanel {
 
-    private final int corners = 15;
-
     public RegisterPanelView(Controller controller, LoginFrameView loginFrameView) {
         setLayout(null);
         setSize(loginFrameView.getWidth(), loginFrameView.getHeight());
@@ -62,6 +60,7 @@ public class RegisterPanelView extends JPanel {
         userNameLabel.setFont(new Font("Open Sans", Font.PLAIN, 13));
         add(userNameLabel);
 
+        int corners = 15;
         JTextField userNameTextField = new JRoundTextField(corners);
         userNameTextField.setSize(getWidth() - 2 * 100, 30);
         userNameTextField.setLocation(getWidth() / 7, userNameLabel.getY() + userNameLabel.getHeight() + 1);
@@ -106,7 +105,7 @@ public class RegisterPanelView extends JPanel {
         JButton registerButton = new JButton();
         registerButton.setText("Sign up");
         registerButton.setFont(new Font("Calibri", Font.PLAIN, 15));
-        registerButton.setSize(200, 40);
+        registerButton.setSize(150, 40);
         registerButton.setLocation((getWidth() - registerButton.getWidth()) / 2, getHeight() - (int) (registerButton.getHeight() * 3.5));
         registerButton.setFocusable(false);
         add(registerButton);
