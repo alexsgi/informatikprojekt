@@ -2,7 +2,7 @@ package com.stickjumper.frontend.start;
 
 import com.stickjumper.controller.Controller;
 import com.stickjumper.frontend.login.LoginFrameView;
-import com.stickjumper.frontend.start.menu.MenuPanel;
+import com.stickjumper.frontend.start.startsidemenu.StartSideMenuPanel;
 import com.stickjumper.utils.UITools;
 
 import javax.swing.*;
@@ -24,7 +24,7 @@ public class StartPanelView extends JPanel {
         lblTitle.setFont(MAIN_FONT);
         add(lblTitle);
 
-        MenuPanel menuPanel = new MenuPanel(this);
+        StartSideMenuPanel menuPanel = new StartSideMenuPanel(this);
         add(menuPanel);
 
         lblHighScore = new JLabel();
