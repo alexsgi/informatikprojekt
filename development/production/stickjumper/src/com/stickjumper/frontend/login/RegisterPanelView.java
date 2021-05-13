@@ -2,12 +2,16 @@ package com.stickjumper.frontend.login;
 
 import com.stickjumper.controller.Controller;
 import com.stickjumper.utils.UITools;
+import com.stickjumper.utils.components.JRoundPasswordField;
+import com.stickjumper.utils.components.JRoundTextField;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
 public class RegisterPanelView extends JPanel {
+
+    private final int corners = 15;
 
     public RegisterPanelView(Controller controller, LoginFrameView loginFrameView) {
         setLayout(null);
@@ -58,7 +62,7 @@ public class RegisterPanelView extends JPanel {
         userNameLabel.setFont(new Font("Open Sans", Font.PLAIN, 13));
         add(userNameLabel);
 
-        JTextField userNameTextField = new JTextField();
+        JTextField userNameTextField = new JRoundTextField(corners);
         userNameTextField.setSize(getWidth() - 2 * 100, 30);
         userNameTextField.setLocation(getWidth() / 7, userNameLabel.getY() + userNameLabel.getHeight() + 1);
         userNameTextField.setFont(new Font("Open Sans", Font.PLAIN, 13));
@@ -73,7 +77,7 @@ public class RegisterPanelView extends JPanel {
         passwordLabel.setFont(new Font("Open Sans", Font.PLAIN, 13));
         add(passwordLabel);
 
-        JPasswordField passwordField = new JPasswordField();
+        JPasswordField passwordField = new JRoundPasswordField(corners);
         passwordField.setHorizontalAlignment(SwingConstants.LEFT);
         passwordField.setSize(getWidth() - 2 * 100, 30);
         passwordField.setLocation(getWidth() / 7, passwordLabel.getY() + passwordLabel.getHeight() + 1);
@@ -90,7 +94,7 @@ public class RegisterPanelView extends JPanel {
         passwordLabelAgain.setFont(new Font("Open Sans", Font.PLAIN, 13));
         add(passwordLabelAgain);
 
-        JPasswordField passwordFieldAgain = new JPasswordField();
+        JPasswordField passwordFieldAgain = new JRoundPasswordField(corners);
         passwordFieldAgain.setHorizontalAlignment(SwingConstants.LEFT);
         passwordFieldAgain.setSize(getWidth() - 2 * 100, 30);
         passwordFieldAgain.setLocation(getWidth() / 7, passwordLabelAgain.getY() + passwordLabel.getHeight() + 1);
@@ -138,7 +142,6 @@ public class RegisterPanelView extends JPanel {
         backButton.addActionListener(e -> {
             backButton.setEnabled(false);
             loginFrameView.disposeLoginFrame();
-
         });
     }
 
