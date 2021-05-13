@@ -21,17 +21,17 @@ public class LoginPanelView extends JPanel {
         Color color = new Color(224, 255, 255);
         setBackground(color);
 
-        JButton backToStartMenuButton = new JButton();
-        backToStartMenuButton.setText("Back");
-        backToStartMenuButton.setHorizontalAlignment(SwingConstants.LEFT);
-        backToStartMenuButton.setBounds(5, 0, 200, 30);
-        backToStartMenuButton.setFont(new Font("Calibri", Font.PLAIN, 12));
-        add(backToStartMenuButton);
-        backToStartMenuButton.setBackground(null);
-        backToStartMenuButton.setOpaque(true);
-        backToStartMenuButton.setBorderPainted(false);
-        backToStartMenuButton.setFocusable(false);
-        backToStartMenuButton.setBorder(null);
+        JButton backButton = new JButton();
+        backButton.setText("Back");
+        backButton.setHorizontalAlignment(SwingConstants.LEFT);
+        backButton.setBounds(5, 0, 200, 30);
+        backButton.setFont(new Font("Calibri", Font.PLAIN, 12));
+        add(backButton);
+        backButton.setBackground(null);
+        backButton.setOpaque(true);
+        backButton.setBorderPainted(false);
+        backButton.setFocusable(false);
+        backButton.setBorder(null);
 
         JLabel welcomeLabel = new JLabel();
         welcomeLabel.setText("Welcome to StickJumper");
@@ -138,18 +138,18 @@ public class LoginPanelView extends JPanel {
             }
         });
 
-        backToStartMenuButton.addMouseListener(new java.awt.event.MouseAdapter() {
+        backButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                backToStartMenuButton.setForeground(Color.BLUE);
+                backButton.setForeground(Color.BLUE);
             }
 
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                backToStartMenuButton.setForeground(Color.BLACK);
+                backButton.setForeground(Color.BLACK);
             }
         });
 
-        backToStartMenuButton.addActionListener(e -> {
-            backToStartMenuButton.setEnabled(false);
+        backButton.addActionListener(e -> {
+            backButton.setEnabled(false);
             loginFrameView.disposeLoginFrame();
         });
 
