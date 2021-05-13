@@ -1,9 +1,13 @@
 package com.stickjumper.frontend.login;
 
 import com.stickjumper.controller.Controller;
+import com.stickjumper.utils.UITools;
+import com.stickjumper.utils.components.JRoundPasswordField;
+import com.stickjumper.utils.components.JRoundTextField;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.sql.SQLException;
 
 public class LoginPanelView extends JPanel {
@@ -18,35 +22,30 @@ public class LoginPanelView extends JPanel {
         this.controller = controller;
         this.loginFrameView = loginFrameView;
 
-        Color color = new Color(224,255,255);
+        Color color = new Color(224, 255, 255);
         setBackground(color);
 
-
-        JButton backToStartMenuButton = new JButton();
-        backToStartMenuButton.setText("get back to start");
-        backToStartMenuButton.setHorizontalAlignment(SwingConstants.LEFT);
-        backToStartMenuButton.setBounds(5, 0, 200, 30);
-        backToStartMenuButton.setFont(new Font("Calibri", Font.PLAIN, 11));
-        add(backToStartMenuButton);
-        backToStartMenuButton.setBackground(null);
-        backToStartMenuButton.setOpaque(true);
-        backToStartMenuButton.setBorderPainted(false);
-        backToStartMenuButton.setFocusable(false);
-        backToStartMenuButton.setBorder(null);
-
-        backToStartMenuButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                backToStartMenuButton.setForeground(Color.BLUE);
-            }
-
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                backToStartMenuButton.setForeground(Color.BLACK);
-            }
-        });
-
+        JButton backButton = new JButton();
+        backButton.setHorizontalAlignment(SwingConstants.CENTER);
+        backButton.setSize(32, 32);
+        backButton.setLocation(5, 5);
+        backButton.setFont(new Font("Calibri", Font.PLAIN, 12));
+        add(backButton);
+        backButton.setBackground(null);
+        backButton.setOpaque(true);
+        backButton.setBorderPainted(false);
+        backButton.setFocusable(false);
+        backButton.setBorder(null);
+        BufferedImage image = UITools.getImage(getClass(), "/images/login_register/back.png");
+        if (image != null) {
+            ImageIcon icon = new ImageIcon(image);
+            backButton.setIcon(icon);
+        } else {
+            backButton.setText("Back");
+        }
 
         JLabel welcomeLabel = new JLabel();
-        welcomeLabel.setText("Welcome to StickJumper");
+        welcomeLabel.setText("Welcome back to StickJumper");
         welcomeLabel.setHorizontalAlignment(SwingConstants.CENTER);
         welcomeLabel.setBounds(0, 20, 600, 50);
         welcomeLabel.setFont(new Font("Open Sans", Font.BOLD, 22));
@@ -68,7 +67,8 @@ public class LoginPanelView extends JPanel {
         userNameLabel.setFont(new Font("Open Sans", Font.PLAIN, 13));
         add(userNameLabel);
 
-        JTextField userNameTextField = new JTextField();
+        int corners = 15;
+        JTextField userNameTextField = new JRoundTextField(corners);
         userNameTextField.setSize(getWidth() - 2 * 100, 30);
         userNameTextField.setLocation(getWidth() / 7, userNameLabel.getY() + userNameLabel.getHeight() + 1);
         userNameTextField.setFont(new Font("Open Sans", Font.PLAIN, 13));
@@ -83,7 +83,7 @@ public class LoginPanelView extends JPanel {
         passwordLabel.setFont(new Font("Open Sans", Font.PLAIN, 13));
         add(passwordLabel);
 
-        JPasswordField passwordField = new JPasswordField();
+        JPasswordField passwordField = new JRoundPasswordField(corners);
         passwordField.setHorizontalAlignment(SwingConstants.LEFT);
         passwordField.setSize(getWidth() - 2 * 100, 30);
         passwordField.setLocation(getWidth() / 7, passwordLabel.getY() + passwordLabel.getHeight() + 1);
@@ -95,22 +95,16 @@ public class LoginPanelView extends JPanel {
         JButton loginButton = new JButton();
         loginButton.setText("Login");
         loginButton.setFont(new Font("Calibri", Font.PLAIN, 15));
-        loginButton.setSize(200, 40);
-        //loginButton.setLocation((getWidth() - loginButton.getWidth()) / 8, getHeight() - loginButton.getHeight() * 2);
+        loginButton.setSize(150, 40);
         loginButton.setLocation((getWidth() - loginButton.getWidth()) / 2, getHeight() - (int) (loginButton.getHeight() * 3.5));
         loginButton.setFocusable(false);
         add(loginButton);
 
         JButton registerButton = new JButton();
         registerButton.setText("Still not registered? Join the community");
-        registerButton.setFont(new Font("Calibri", Font.PLAIN, 15));
+        registerButton.setFont(new Font("Calibri", Font.PLAIN, 14));
         registerButton.setSize(2 * loginButton.getWidth(), 40);
-        // registerButton.setLocation((getWidth() / 2) + ((getWidth() / 2 - registerButton.getWidth()) / 2), getHeight() - registerButton.getHeight() * 2);
-        // mathematically simplified
-        // registerButton.setLocation((int) (0.75 * getWidth() - 0.5 * registerButton.getWidth()), getHeight() - registerButton.getHeight() * 2);
         registerButton.setLocation((getWidth() - registerButton.getWidth()) / 2, getHeight() - (registerButton.getHeight() * 2));
-
-
         registerButton.setBackground(null);
         registerButton.setOpaque(true);
         registerButton.setBorderPainted(false);
@@ -144,11 +138,7 @@ public class LoginPanelView extends JPanel {
             loginButton.setEnabled(true);
         });
 
-        registerButton.addActionListener(e -> {
-            // user wants to register
-            System.out.println("open register panel/frame");
-            loginFrameView.openRegister();
-        });
+        registerButton.addActionListener(e -> loginFrameView.openRegister());
 
         registerButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -160,10 +150,19 @@ public class LoginPanelView extends JPanel {
             }
         });
 
-        backToStartMenuButton.addActionListener(e -> {
-            backToStartMenuButton.setEnabled(false);
-            loginFrameView.disposeLoginFrame();
+        backButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                backButton.setForeground(Color.BLUE);
+            }
 
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                backButton.setForeground(Color.BLACK);
+            }
+        });
+
+        backButton.addActionListener(e -> {
+            backButton.setEnabled(false);
+            loginFrameView.disposeLoginFrame();
         });
 
 

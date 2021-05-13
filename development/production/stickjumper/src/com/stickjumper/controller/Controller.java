@@ -17,7 +17,7 @@ public class Controller {
     private final MainFrameView mainFrameView;
     private final MovingBackground movingBackground = new MovingBackground();
     private final int speed = 1;
-    private StartPanelView startPanel;
+    private StartPanelView startPanelView;
     private GamePanelView gamePanel;
     private Player currentPlayer;
     private List playerList;
@@ -26,11 +26,10 @@ public class Controller {
 
     public Controller(MainFrameView mainFrameView) {
         this.mainFrameView = mainFrameView;
-
     }
 
     public void setStartPanel(StartPanelView panel) {
-        startPanel = panel;
+        startPanelView = panel;
     }
 
     public void setGamePanel(GamePanelView gamePanel) {
@@ -56,6 +55,7 @@ public class Controller {
 
     public boolean playerLogin(String userName, String password) throws SQLException {
         currentPlayer = getPlayerFromList(userName, password);
+        if (currentPlayer != null) startPanelView.showHighScore(currentPlayer.getHighScore());
         currentScore = -1;
         return currentPlayer != null;
     }
@@ -68,15 +68,12 @@ public class Controller {
         this.playerList = list;
     }
 
-
     // Keys
 
     public void spacePressed() {
-        startPanel.anpassenText("SPACE");
     }
 
     public void enterPressed() {
-        startPanel.anpassenText("ENTER");
     }
 
     public void leftPressed() {
@@ -143,7 +140,6 @@ public class Controller {
         public int getScoreFromCurrentPlayer() {
             if (isScoreExisting()) return currentScore;
             return -1;
-
         }
 
         public void setScore(int newScore) {
@@ -151,9 +147,7 @@ public class Controller {
         }
 
         public void updateHighScore() {
-
             if (currentPlayer.getHighScore() < currentScore) currentPlayer.setHighScore(currentScore);
-
         }
     }
 

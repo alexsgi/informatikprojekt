@@ -1,10 +1,13 @@
 package com.stickjumper.frontend.login;
 
 import com.stickjumper.controller.Controller;
+import com.stickjumper.utils.UITools;
+import com.stickjumper.utils.components.JRoundPasswordField;
+import com.stickjumper.utils.components.JRoundTextField;
 
 import javax.swing.*;
 import java.awt.*;
-import java.sql.SQLException;
+import java.awt.image.BufferedImage;
 
 public class RegisterPanelView extends JPanel {
 
@@ -12,33 +15,27 @@ public class RegisterPanelView extends JPanel {
         setLayout(null);
         setSize(loginFrameView.getWidth(), loginFrameView.getHeight());
 
-        Color color = new Color(224,220,255);
+        Color color = new Color(224, 220, 255);
         setBackground(color);
 
-        JButton backToStartMenuButton = new JButton();
-        backToStartMenuButton.setText("get back to start");
-        backToStartMenuButton.setHorizontalAlignment(SwingConstants.LEFT);
-        backToStartMenuButton.setBounds(5, 0, 200, 30);
-        backToStartMenuButton.setFont(new Font("Calibri", Font.PLAIN, 11));
-        add(backToStartMenuButton);
-        backToStartMenuButton.setBackground(null);
-        backToStartMenuButton.setOpaque(true);
-        backToStartMenuButton.setBorderPainted(false);
-        backToStartMenuButton.setFocusable(false);
-        backToStartMenuButton.setBorder(null);
-
-        backToStartMenuButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                backToStartMenuButton.setForeground(Color.BLUE);
-            }
-
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                backToStartMenuButton.setForeground(Color.BLACK);
-            }
-        });
-
-
-
+        JButton backButton = new JButton();
+        backButton.setHorizontalAlignment(SwingConstants.CENTER);
+        backButton.setSize(32, 32);
+        backButton.setLocation(5, 5);
+        backButton.setFont(new Font("Calibri", Font.PLAIN, 12));
+        add(backButton);
+        backButton.setBackground(null);
+        backButton.setOpaque(true);
+        backButton.setBorderPainted(false);
+        backButton.setFocusable(false);
+        backButton.setBorder(null);
+        BufferedImage image = UITools.getImage(getClass(), "/images/login_register/back.png");
+        if (image != null) {
+            ImageIcon icon = new ImageIcon(image);
+            backButton.setIcon(icon);
+        } else {
+            backButton.setText("Back");
+        }
 
         JLabel welcomeLabel = new JLabel();
         welcomeLabel.setText("Welcome to StickJumper");
@@ -48,7 +45,7 @@ public class RegisterPanelView extends JPanel {
         add(welcomeLabel);
 
         JLabel signInLabel = new JLabel();
-        signInLabel.setText("Create new account to play and compete with other players");
+        signInLabel.setText("Join the community by creating an account");
         signInLabel.setHorizontalAlignment(SwingConstants.CENTER);
         signInLabel.setSize(getWidth(), 30);
         signInLabel.setLocation(0, welcomeLabel.getY() + welcomeLabel.getHeight() + 5);
@@ -63,7 +60,8 @@ public class RegisterPanelView extends JPanel {
         userNameLabel.setFont(new Font("Open Sans", Font.PLAIN, 13));
         add(userNameLabel);
 
-        JTextField userNameTextField = new JTextField();
+        int corners = 15;
+        JTextField userNameTextField = new JRoundTextField(corners);
         userNameTextField.setSize(getWidth() - 2 * 100, 30);
         userNameTextField.setLocation(getWidth() / 7, userNameLabel.getY() + userNameLabel.getHeight() + 1);
         userNameTextField.setFont(new Font("Open Sans", Font.PLAIN, 13));
@@ -78,7 +76,7 @@ public class RegisterPanelView extends JPanel {
         passwordLabel.setFont(new Font("Open Sans", Font.PLAIN, 13));
         add(passwordLabel);
 
-        JPasswordField passwordField = new JPasswordField();
+        JPasswordField passwordField = new JRoundPasswordField(corners);
         passwordField.setHorizontalAlignment(SwingConstants.LEFT);
         passwordField.setSize(getWidth() - 2 * 100, 30);
         passwordField.setLocation(getWidth() / 7, passwordLabel.getY() + passwordLabel.getHeight() + 1);
@@ -95,7 +93,7 @@ public class RegisterPanelView extends JPanel {
         passwordLabelAgain.setFont(new Font("Open Sans", Font.PLAIN, 13));
         add(passwordLabelAgain);
 
-        JPasswordField passwordFieldAgain = new JPasswordField();
+        JPasswordField passwordFieldAgain = new JRoundPasswordField(corners);
         passwordFieldAgain.setHorizontalAlignment(SwingConstants.LEFT);
         passwordFieldAgain.setSize(getWidth() - 2 * 100, 30);
         passwordFieldAgain.setLocation(getWidth() / 7, passwordLabelAgain.getY() + passwordLabel.getHeight() + 1);
@@ -105,17 +103,15 @@ public class RegisterPanelView extends JPanel {
         add(passwordFieldAgain);
 
         JButton registerButton = new JButton();
-        registerButton.setText("Create new account");
+        registerButton.setText("Sign up");
         registerButton.setFont(new Font("Calibri", Font.PLAIN, 15));
-        registerButton.setSize(200, 40);
-        //loginButton.setLocation((getWidth() - loginButton.getWidth()) / 8, getHeight() - loginButton.getHeight() * 2);
+        registerButton.setSize(150, 40);
         registerButton.setLocation((getWidth() - registerButton.getWidth()) / 2, getHeight() - (int) (registerButton.getHeight() * 3.5));
         registerButton.setFocusable(false);
         add(registerButton);
 
-
-
-        /* registerButton.addActionListener(e -> {
+        /*
+        registerButton.addActionListener(e -> {
             registerButton.setEnabled(false);
 
             String username = userNameTextField.getText(), password;
@@ -140,15 +136,11 @@ public class RegisterPanelView extends JPanel {
             }
             loginButton.setEnabled(true);
         });
-
-
-
          */
 
-        backToStartMenuButton.addActionListener(e -> {
-            backToStartMenuButton.setEnabled(false);
+        backButton.addActionListener(e -> {
+            backButton.setEnabled(false);
             loginFrameView.disposeLoginFrame();
-
         });
     }
 

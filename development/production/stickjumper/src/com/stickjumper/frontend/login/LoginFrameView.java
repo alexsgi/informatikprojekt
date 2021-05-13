@@ -7,7 +7,6 @@ import javax.swing.*;
 
 public class LoginFrameView extends JFrame {
 
-    private LoginPanelView loginPanel;
     Controller controller;
 
     public LoginFrameView(Controller controller) {
@@ -17,7 +16,7 @@ public class LoginFrameView extends JFrame {
         setTitle("Login");
         setSize(600, 500);
         setLocationRelativeTo(null);
-        loginPanel = new LoginPanelView(controller, this);
+        LoginPanelView loginPanel = new LoginPanelView(controller, this);
         setContentPane(loginPanel);
         setIconImage(UITools.getImage(getClass(), "/images/icons/appicon_5.png"));
     }
@@ -30,11 +29,10 @@ public class LoginFrameView extends JFrame {
 
     }
 
-    public void openRegister(){
+    public void openRegister() {
         // setContentPane(null);
-        RegisterPanelView registerPanelView = new RegisterPanelView( controller,  this);
+        RegisterPanelView registerPanelView = new RegisterPanelView(controller, this);
         setContentPane(registerPanelView);
-
     }
 
 }
