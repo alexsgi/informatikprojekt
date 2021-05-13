@@ -1,9 +1,11 @@
 package com.stickjumper.frontend.login;
 
 import com.stickjumper.controller.Controller;
+import com.stickjumper.utils.UITools;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.sql.SQLException;
 
 public class LoginPanelView extends JPanel {
@@ -22,9 +24,9 @@ public class LoginPanelView extends JPanel {
         setBackground(color);
 
         JButton backButton = new JButton();
-        backButton.setText("Back");
-        backButton.setHorizontalAlignment(SwingConstants.LEFT);
-        backButton.setBounds(5, 0, 200, 30);
+        backButton.setHorizontalAlignment(SwingConstants.CENTER);
+        backButton.setSize(32, 32);
+        backButton.setLocation(5, 5);
         backButton.setFont(new Font("Calibri", Font.PLAIN, 12));
         add(backButton);
         backButton.setBackground(null);
@@ -32,9 +34,16 @@ public class LoginPanelView extends JPanel {
         backButton.setBorderPainted(false);
         backButton.setFocusable(false);
         backButton.setBorder(null);
+        BufferedImage image = UITools.getImage(getClass(), "/images/login_register/back.png");
+        if (image != null) {
+            ImageIcon icon = new ImageIcon(image);
+            backButton.setIcon(icon);
+        } else {
+            backButton.setText("Back");
+        }
 
         JLabel welcomeLabel = new JLabel();
-        welcomeLabel.setText("Welcome to StickJumper");
+        welcomeLabel.setText("Welcome back to StickJumper");
         welcomeLabel.setHorizontalAlignment(SwingConstants.CENTER);
         welcomeLabel.setBounds(0, 20, 600, 50);
         welcomeLabel.setFont(new Font("Open Sans", Font.BOLD, 22));

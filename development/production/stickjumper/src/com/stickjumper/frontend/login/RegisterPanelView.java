@@ -17,21 +17,22 @@ public class RegisterPanelView extends JPanel {
         setBackground(color);
 
         JButton backButton = new JButton();
-        backButton.setText("Back");
-        backButton.setHorizontalAlignment(SwingConstants.LEFT);
-        backButton.setBounds(5, 0, 200, 30);
+        backButton.setHorizontalAlignment(SwingConstants.CENTER);
+        backButton.setSize(32, 32);
+        backButton.setLocation(5, 5);
         backButton.setFont(new Font("Calibri", Font.PLAIN, 12));
         add(backButton);
-        //backButton.setBackground(null);
-        //backButton.setOpaque(true);
-        //backButton.setBorderPainted(false);
-        //backButton.setFocusable(false);
-        //backButton.setBorder(null);
+        backButton.setBackground(null);
+        backButton.setOpaque(true);
+        backButton.setBorderPainted(false);
+        backButton.setFocusable(false);
+        backButton.setBorder(null);
         BufferedImage image = UITools.getImage(getClass(), "/images/login_register/back.png");
-        if(image != null) {
-            System.err.println(image.getWidth() + " x " + image.getHeight());
+        if (image != null) {
             ImageIcon icon = new ImageIcon(image);
             backButton.setIcon(icon);
+        } else {
+            backButton.setText("Back");
         }
 
         JLabel welcomeLabel = new JLabel();
@@ -42,7 +43,7 @@ public class RegisterPanelView extends JPanel {
         add(welcomeLabel);
 
         JLabel signInLabel = new JLabel();
-        signInLabel.setText("Create new account to play and compete with other players");
+        signInLabel.setText("Join the community by creating an account");
         signInLabel.setHorizontalAlignment(SwingConstants.CENTER);
         signInLabel.setSize(getWidth(), 30);
         signInLabel.setLocation(0, welcomeLabel.getY() + welcomeLabel.getHeight() + 5);
@@ -99,7 +100,7 @@ public class RegisterPanelView extends JPanel {
         add(passwordFieldAgain);
 
         JButton registerButton = new JButton();
-        registerButton.setText("Create new account");
+        registerButton.setText("Sign up");
         registerButton.setFont(new Font("Calibri", Font.PLAIN, 15));
         registerButton.setSize(200, 40);
         registerButton.setLocation((getWidth() - registerButton.getWidth()) / 2, getHeight() - (int) (registerButton.getHeight() * 3.5));
@@ -133,16 +134,6 @@ public class RegisterPanelView extends JPanel {
             loginButton.setEnabled(true);
         });
          */
-
-        backButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                backButton.setForeground(Color.BLUE);
-            }
-
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                backButton.setForeground(Color.BLACK);
-            }
-        });
 
         backButton.addActionListener(e -> {
             backButton.setEnabled(false);
