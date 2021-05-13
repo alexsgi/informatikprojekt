@@ -4,7 +4,6 @@ import com.stickjumper.controller.Controller;
 
 import javax.swing.*;
 import java.awt.*;
-import java.sql.SQLException;
 
 public class RegisterPanelView extends JPanel {
 
@@ -12,33 +11,20 @@ public class RegisterPanelView extends JPanel {
         setLayout(null);
         setSize(loginFrameView.getWidth(), loginFrameView.getHeight());
 
-        Color color = new Color(224,220,255);
+        Color color = new Color(224, 220, 255);
         setBackground(color);
 
         JButton backToStartMenuButton = new JButton();
-        backToStartMenuButton.setText("get back to start");
+        backToStartMenuButton.setText("Back");
         backToStartMenuButton.setHorizontalAlignment(SwingConstants.LEFT);
         backToStartMenuButton.setBounds(5, 0, 200, 30);
-        backToStartMenuButton.setFont(new Font("Calibri", Font.PLAIN, 11));
+        backToStartMenuButton.setFont(new Font("Calibri", Font.PLAIN, 12));
         add(backToStartMenuButton);
         backToStartMenuButton.setBackground(null);
         backToStartMenuButton.setOpaque(true);
         backToStartMenuButton.setBorderPainted(false);
         backToStartMenuButton.setFocusable(false);
         backToStartMenuButton.setBorder(null);
-
-        backToStartMenuButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                backToStartMenuButton.setForeground(Color.BLUE);
-            }
-
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                backToStartMenuButton.setForeground(Color.BLACK);
-            }
-        });
-
-
-
 
         JLabel welcomeLabel = new JLabel();
         welcomeLabel.setText("Welcome to StickJumper");
@@ -108,14 +94,12 @@ public class RegisterPanelView extends JPanel {
         registerButton.setText("Create new account");
         registerButton.setFont(new Font("Calibri", Font.PLAIN, 15));
         registerButton.setSize(200, 40);
-        //loginButton.setLocation((getWidth() - loginButton.getWidth()) / 8, getHeight() - loginButton.getHeight() * 2);
         registerButton.setLocation((getWidth() - registerButton.getWidth()) / 2, getHeight() - (int) (registerButton.getHeight() * 3.5));
         registerButton.setFocusable(false);
         add(registerButton);
 
-
-
-        /* registerButton.addActionListener(e -> {
+        /*
+        registerButton.addActionListener(e -> {
             registerButton.setEnabled(false);
 
             String username = userNameTextField.getText(), password;
@@ -140,10 +124,17 @@ public class RegisterPanelView extends JPanel {
             }
             loginButton.setEnabled(true);
         });
-
-
-
          */
+
+        backToStartMenuButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                backToStartMenuButton.setForeground(Color.BLUE);
+            }
+
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                backToStartMenuButton.setForeground(Color.BLACK);
+            }
+        });
 
         backToStartMenuButton.addActionListener(e -> {
             backToStartMenuButton.setEnabled(false);

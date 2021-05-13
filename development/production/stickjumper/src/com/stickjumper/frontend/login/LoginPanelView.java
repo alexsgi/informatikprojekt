@@ -18,32 +18,20 @@ public class LoginPanelView extends JPanel {
         this.controller = controller;
         this.loginFrameView = loginFrameView;
 
-        Color color = new Color(224,255,255);
+        Color color = new Color(224, 255, 255);
         setBackground(color);
 
-
         JButton backToStartMenuButton = new JButton();
-        backToStartMenuButton.setText("get back to start");
+        backToStartMenuButton.setText("Back");
         backToStartMenuButton.setHorizontalAlignment(SwingConstants.LEFT);
         backToStartMenuButton.setBounds(5, 0, 200, 30);
-        backToStartMenuButton.setFont(new Font("Calibri", Font.PLAIN, 11));
+        backToStartMenuButton.setFont(new Font("Calibri", Font.PLAIN, 12));
         add(backToStartMenuButton);
         backToStartMenuButton.setBackground(null);
         backToStartMenuButton.setOpaque(true);
         backToStartMenuButton.setBorderPainted(false);
         backToStartMenuButton.setFocusable(false);
         backToStartMenuButton.setBorder(null);
-
-        backToStartMenuButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                backToStartMenuButton.setForeground(Color.BLUE);
-            }
-
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                backToStartMenuButton.setForeground(Color.BLACK);
-            }
-        });
-
 
         JLabel welcomeLabel = new JLabel();
         welcomeLabel.setText("Welcome to StickJumper");
@@ -96,7 +84,6 @@ public class LoginPanelView extends JPanel {
         loginButton.setText("Login");
         loginButton.setFont(new Font("Calibri", Font.PLAIN, 15));
         loginButton.setSize(200, 40);
-        //loginButton.setLocation((getWidth() - loginButton.getWidth()) / 8, getHeight() - loginButton.getHeight() * 2);
         loginButton.setLocation((getWidth() - loginButton.getWidth()) / 2, getHeight() - (int) (loginButton.getHeight() * 3.5));
         loginButton.setFocusable(false);
         add(loginButton);
@@ -105,12 +92,7 @@ public class LoginPanelView extends JPanel {
         registerButton.setText("Still not registered? Join the community");
         registerButton.setFont(new Font("Calibri", Font.PLAIN, 15));
         registerButton.setSize(2 * loginButton.getWidth(), 40);
-        // registerButton.setLocation((getWidth() / 2) + ((getWidth() / 2 - registerButton.getWidth()) / 2), getHeight() - registerButton.getHeight() * 2);
-        // mathematically simplified
-        // registerButton.setLocation((int) (0.75 * getWidth() - 0.5 * registerButton.getWidth()), getHeight() - registerButton.getHeight() * 2);
         registerButton.setLocation((getWidth() - registerButton.getWidth()) / 2, getHeight() - (registerButton.getHeight() * 2));
-
-
         registerButton.setBackground(null);
         registerButton.setOpaque(true);
         registerButton.setBorderPainted(false);
@@ -144,11 +126,7 @@ public class LoginPanelView extends JPanel {
             loginButton.setEnabled(true);
         });
 
-        registerButton.addActionListener(e -> {
-            // user wants to register
-            System.out.println("open register panel/frame");
-            loginFrameView.openRegister();
-        });
+        registerButton.addActionListener(e -> loginFrameView.openRegister());
 
         registerButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -160,10 +138,19 @@ public class LoginPanelView extends JPanel {
             }
         });
 
+        backToStartMenuButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                backToStartMenuButton.setForeground(Color.BLUE);
+            }
+
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                backToStartMenuButton.setForeground(Color.BLACK);
+            }
+        });
+
         backToStartMenuButton.addActionListener(e -> {
             backToStartMenuButton.setEnabled(false);
             loginFrameView.disposeLoginFrame();
-
         });
 
 
