@@ -13,7 +13,7 @@ public class StartPanelView extends JPanel {
 
     private final Font MAIN_FONT = UITools.registerFont();
 
-    private JLabel lblHighScore;
+    private final JLabel lblHighScore;
 
     public StartPanelView(Controller controller) {
         setLayout(null);
@@ -25,6 +25,7 @@ public class StartPanelView extends JPanel {
         add(lblTitle);
 
         MenuPanel menuPanel = new MenuPanel(this);
+        add(menuPanel);
 
         lblHighScore = new JLabel();
         lblHighScore.setHorizontalAlignment(SwingConstants.CENTER);
@@ -36,15 +37,33 @@ public class StartPanelView extends JPanel {
         // Button to open login frame
         JButton loginButton = new JButton();
         loginButton.setText("Login");
-        loginButton.setFont(new Font("Calibri", Font.PLAIN, 15));
-        loginButton.setSize(menuPanel.getWidth(), 30);
-        loginButton.setHorizontalAlignment(SwingConstants.LEFT);
-        loginButton.setLocation(0, (menuPanel.getHeight() - loginButton.getHeight()) / 2);
+        loginButton.setFont(new Font("Calibri", Font.BOLD, 17));
+        loginButton.setForeground(Color.WHITE);
+        loginButton.setSize(menuPanel.getWidth() - 10, 40);
+        loginButton.setHorizontalAlignment(SwingConstants.CENTER);
+        loginButton.setLocation((menuPanel.getWidth() - loginButton.getWidth()) / 2, (menuPanel.getHeight() - loginButton.getHeight()) / 2);
         loginButton.setFocusable(false);
+        loginButton.setBackground(null);
+        loginButton.setBorder(null);
+        loginButton.setOpaque(false);
+        loginButton.setBorderPainted(false);
         loginButton.addActionListener(e -> {
             controller.disableMainFrame();
             LoginFrameView loginFrame = new LoginFrameView(controller);
             loginFrame.setVisible(true);
+
+            /* Code to test opacity - DOESN'T WORK - CRITICAL ERROR
+            for (int i = 255; i >= 0; i--) {
+                System.out.println(i);
+                menuPanel.setBackground(new Color(86, 73, 78, i));
+                try {
+                    Thread.sleep(5);
+                } catch (InterruptedException interruptedException) {
+                    interruptedException.printStackTrace();
+                }
+            }
+             */
+
         });
         menuPanel.add(loginButton);
 
@@ -68,7 +87,19 @@ public class StartPanelView extends JPanel {
             playButton.setText("PLAY");
         }
 
-        add(menuPanel);
+        JButton settingsButton = new JButton();
+        settingsButton.setText("Settings");
+        settingsButton.setFont(new Font("Calibri", Font.BOLD, 17));
+        settingsButton.setForeground(Color.WHITE);
+        settingsButton.setSize(menuPanel.getWidth() - 10, 40);
+        settingsButton.setHorizontalAlignment(SwingConstants.CENTER);
+        settingsButton.setLocation((menuPanel.getWidth() - loginButton.getWidth()) / 2, (menuPanel.getHeight() - loginButton.getHeight() * 2));
+        settingsButton.setFocusable(false);
+        settingsButton.setBackground(null);
+        settingsButton.setBorder(null);
+        settingsButton.setOpaque(false);
+        settingsButton.setBorderPainted(false);
+        menuPanel.add(settingsButton);
     }
 
     @Override
