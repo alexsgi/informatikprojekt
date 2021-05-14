@@ -7,6 +7,8 @@ import com.stickjumper.utils.UITools;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 
 public class StartPanelView extends JPanel {
@@ -78,26 +80,25 @@ public class StartPanelView extends JPanel {
         if (playImage != null) playButton.setIcon(new ImageIcon(playImage));
         add(playButton);
 
-        playButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                if (playImageDark != null) {
-                    playButton.setIcon(new ImageIcon(playImageDark));
-                } else {
-                    playButton.setText("PLAY");
-                }
+        playButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                if (playImageDark != null) playButton.setIcon(new ImageIcon(playImageDark));
             }
 
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                if (playImage != null) {
-                    playButton.setIcon(new ImageIcon(playImage));
-                } else {
-                    playButton.setText("PLAY");
-                }
+            @Override
+            public void mouseExited(MouseEvent e) {
+                if (playImage != null) playButton.setIcon(new ImageIcon(playImage));
             }
-
         });
 
-        playButton.addActionListener(e -> controller.startGame());
+        playButton.addActionListener(e -> {
+            if (controller.getCurrentPlayer() != null) {
+                controller.startGame();
+            } else {
+                JOptionPane.showMessageDialog(null, "Please sign in to play");
+            }
+        });
 
         loginButton.addActionListener(e -> {
             controller.disableMainFrame();
@@ -124,7 +125,6 @@ public class StartPanelView extends JPanel {
                 settingsButton.setForeground(Color.WHITE);
             }
         });
-
     }
 
     @Override

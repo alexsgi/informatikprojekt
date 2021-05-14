@@ -1,6 +1,7 @@
 package com.stickjumper.frontend.rendering;
 
 import com.stickjumper.data.GameElement;
+import com.stickjumper.data.Player;
 import com.stickjumper.utils.UITools;
 
 import javax.swing.*;

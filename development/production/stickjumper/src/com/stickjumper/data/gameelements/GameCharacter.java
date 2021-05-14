@@ -8,21 +8,21 @@ import java.awt.*;
 public class GameCharacter extends GameElement {
 
     private static final int height = 64, width = 64;
-    private static final String imagePath = "/images/elements/coin/coin.png";
-    private static Point p = new Point(0, 0);
+    private static final String imagePath = "/images/elements/skins/skin_1.png";
+    private static Point point;
     private int skinType;
     private int highScore;
 
-    public GameCharacter(int yPos, int skinType) {
-        super(new Point(p.x, yPos), height, width, true, imagePath);
-        p.y = yPos;
-        this.setY(yPos);
+    public GameCharacter(Point p, int skinType) {
+        super(point, height, width, true, imagePath);
+        point = p;
         this.skinType = skinType;
         this.setVisible(true);
     }
 
-    public GameCharacter(Player player) {
+    public GameCharacter(Player player, Point p) {
         super(p, height, width, true, imagePath);
+        point = p;
         highScore = player.getHighScore();
     }
 

@@ -15,6 +15,8 @@ public class GamePanelView extends JPanel {
     public GamePanelView(Controller controller) {
         this.controller = controller;
         setLayout(null);
+        setSize(1280, 640);
+
         JLabel lblTitle = new JLabel("GamePanel");
         lblTitle.setHorizontalAlignment(SwingConstants.CENTER);
         lblTitle.setBounds(0, 96, 1280, 83);

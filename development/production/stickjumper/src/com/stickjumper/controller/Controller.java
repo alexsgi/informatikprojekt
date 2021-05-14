@@ -2,6 +2,7 @@ package com.stickjumper.controller;
 
 import com.stickjumper.data.Player;
 import com.stickjumper.data.gameelements.Coin;
+import com.stickjumper.data.gameelements.GameCharacter;
 import com.stickjumper.data.list.List;
 import com.stickjumper.frontend.MainFrameView;
 import com.stickjumper.frontend.game.GamePanelView;
@@ -51,6 +52,7 @@ public class Controller {
     public void startGame() {
         mainFrameView.setGamePanel();
         currentScore = -1;
+        scenery.initPlayerUI(gamePanel);
     }
 
     public boolean playerLogin(String userName, String password) throws SQLException {
@@ -102,15 +104,24 @@ public class Controller {
         movingBackground.stopMovement();
     }
 
+    public Player getCurrentPlayer() {
+        return currentPlayer;
+    }
+
     public class Scenery {
 
-        // private GameAlgorithm
-        // List<Enemy>
         GameElementRender coinElement;
+        GameElementRender playerFigure;
 
         public Scenery() {
             coinElement = new GameElementRender(new Coin(new Point(600, 200)));
             gamePanel.add(coinElement);
+        }
+
+        public void initPlayerUI(GamePanelView panel) {
+            Point position = new Point(50, 50);
+            playerFigure = new GameElementRender(new GameCharacter(currentPlayer, position));
+            gamePanel.add(playerFigure);
         }
 
         public void left(int n) {
