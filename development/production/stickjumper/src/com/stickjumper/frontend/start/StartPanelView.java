@@ -41,7 +41,7 @@ public class StartPanelView extends JPanel {
         loginButton.setForeground(Color.WHITE);
         loginButton.setSize(menuPanel.getWidth() - 10, 40);
         loginButton.setHorizontalAlignment(SwingConstants.CENTER);
-        loginButton.setLocation((menuPanel.getWidth() - loginButton.getWidth()) / 2, (menuPanel.getHeight() - loginButton.getHeight() * 2 -80));
+        loginButton.setLocation((menuPanel.getWidth() - loginButton.getWidth()) / 2, (menuPanel.getHeight() - loginButton.getHeight() * 2 - 80));
         loginButton.setFocusable(false);
         loginButton.setBackground(null);
         loginButton.setBorder(null);
@@ -90,7 +90,7 @@ public class StartPanelView extends JPanel {
         settingsButton.setForeground(Color.WHITE);
         settingsButton.setSize(menuPanel.getWidth() - 10, 40);
         settingsButton.setHorizontalAlignment(SwingConstants.CENTER);
-        settingsButton.setLocation((menuPanel.getWidth() - loginButton.getWidth()) / 2, (menuPanel.getHeight() - settingsButton.getHeight() * 2 ));
+        settingsButton.setLocation((menuPanel.getWidth() - loginButton.getWidth()) / 2, (menuPanel.getHeight() - settingsButton.getHeight() * 2));
         settingsButton.setFocusable(false);
         settingsButton.setBackground(null);
         settingsButton.setBorder(null);
@@ -122,8 +122,9 @@ public class StartPanelView extends JPanel {
                     playButton.setIcon(new ImageIcon(playImage));
                 } else {
                     playButton.setText("PLAY");
-                };
+                }
             }
+
         });
     }
 
