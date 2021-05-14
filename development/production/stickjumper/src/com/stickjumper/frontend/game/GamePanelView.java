@@ -5,6 +5,7 @@ import com.stickjumper.utils.UITools;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.image.BufferedImage;
 
 public class GamePanelView extends JPanel {
 
@@ -20,6 +21,20 @@ public class GamePanelView extends JPanel {
         lblTitle.setFont(MAIN_FONT);
         add(lblTitle);
 
+        JButton homeButton = new JButton();
+        homeButton.setHorizontalAlignment(SwingConstants.CENTER);
+        homeButton.setSize(36, 36);
+        homeButton.setLocation(5, 5);
+        homeButton.setFont(new Font("Calibri", Font.PLAIN, 12));
+        homeButton.setBackground(null);
+        homeButton.setOpaque(false);
+        homeButton.setBorderPainted(false);
+        homeButton.setFocusable(false);
+        homeButton.setBorder(null);
+        BufferedImage image = UITools.getImage(getClass(), "/images/game_view/icons/home.png");
+        if (image != null) homeButton.setIcon(new ImageIcon(image));
+        add(homeButton);
+
         // Button to start the movement
         JButton startButton = new JButton();
         startButton.setText("Start");
@@ -27,7 +42,6 @@ public class GamePanelView extends JPanel {
         startButton.setBounds(0, 150, 200, 50);
         startButton.setVisible(true);
         startButton.setFocusable(false);
-        startButton.addActionListener(e -> controller.startMovingBackground());
         add(startButton);
 
         // Button to stop the movement
@@ -37,8 +51,10 @@ public class GamePanelView extends JPanel {
         stopButton.setBounds(0, 200, 200, 50);
         stopButton.setVisible(true);
         stopButton.setFocusable(false);
-        stopButton.addActionListener(e -> controller.stopMovingBackground());
         add(stopButton);
+
+        startButton.addActionListener(e -> controller.startMovingBackground());
+        stopButton.addActionListener(e -> controller.stopMovingBackground());
     }
 
 }

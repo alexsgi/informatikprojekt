@@ -25,24 +25,19 @@ public class LoginPanelView extends JPanel {
         Color color = new Color(224, 255, 255);
         setBackground(color);
 
+        BufferedImage image = UITools.getImage(getClass(), "/images/login_register/back.png");
         JButton backButton = new JButton();
         backButton.setHorizontalAlignment(SwingConstants.CENTER);
         backButton.setSize(32, 32);
         backButton.setLocation(5, 5);
         backButton.setFont(new Font("Calibri", Font.PLAIN, 12));
-        add(backButton);
         backButton.setBackground(null);
         backButton.setOpaque(true);
         backButton.setBorderPainted(false);
         backButton.setFocusable(false);
         backButton.setBorder(null);
-        BufferedImage image = UITools.getImage(getClass(), "/images/login_register/back.png");
-        if (image != null) {
-            ImageIcon icon = new ImageIcon(image);
-            backButton.setIcon(icon);
-        } else {
-            backButton.setText("Back");
-        }
+        if (image != null) backButton.setIcon(new ImageIcon(image));
+        add(backButton);
 
         JLabel welcomeLabel = new JLabel();
         welcomeLabel.setText("Welcome back to StickJumper");
@@ -164,9 +159,6 @@ public class LoginPanelView extends JPanel {
             backButton.setEnabled(false);
             loginFrameView.disposeLoginFrame();
         });
-
-
     }
-
 
 }

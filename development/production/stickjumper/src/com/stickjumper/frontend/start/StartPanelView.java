@@ -47,41 +47,7 @@ public class StartPanelView extends JPanel {
         loginButton.setBorder(null);
         loginButton.setOpaque(false);
         loginButton.setBorderPainted(false);
-        loginButton.addActionListener(e -> {
-            controller.disableMainFrame();
-            LoginFrameView loginFrame = new LoginFrameView(controller);
-            loginFrame.setVisible(true);
-        });
-        loginButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                loginButton.setForeground(Color.GRAY);
-            }
-
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                loginButton.setForeground(Color.WHITE);
-            }
-        });
         menuPanel.add(loginButton);
-
-        BufferedImage playImage = UITools.getImage(getClass(), "/images/start_view/icons/play.png");
-        BufferedImage playImageDark = UITools.getImage(getClass(), "/images/start_view/icons/play-dark.png");
-        JButton playButton = new JButton();
-        playButton.setFont(new Font("Calibri", Font.PLAIN, 15));
-        playButton.setSize((playImage != null) ? playImage.getWidth() : 64, (playImage != null) ? playImage.getHeight() : 64);
-        playButton.setLocation((getWidth() - playButton.getWidth()) / 2, (getHeight() - playButton.getHeight()) / 2);
-        playButton.setFocusable(false);
-        playButton.addActionListener(e -> controller.startGame());
-        add(playButton);
-        playButton.setBackground(null);
-        playButton.setOpaque(false);
-        playButton.setBorderPainted(false);
-        playButton.setFocusable(false);
-        playButton.setBorder(null);
-        if (playImage != null) {
-            playButton.setIcon(new ImageIcon(playImage));
-        } else {
-            playButton.setText("PLAY");
-        }
 
         JButton settingsButton = new JButton();
         settingsButton.setText("Settings");
@@ -97,15 +63,20 @@ public class StartPanelView extends JPanel {
         settingsButton.setBorderPainted(false);
         menuPanel.add(settingsButton);
 
-        settingsButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                settingsButton.setForeground(Color.GRAY);
-            }
-
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                settingsButton.setForeground(Color.WHITE);
-            }
-        });
+        BufferedImage playImage = UITools.getImage(getClass(), "/images/start_view/icons/play.png");
+        BufferedImage playImageDark = UITools.getImage(getClass(), "/images/start_view/icons/play-dark.png");
+        JButton playButton = new JButton();
+        playButton.setFont(new Font("Calibri", Font.PLAIN, 15));
+        playButton.setSize((playImage != null) ? playImage.getWidth() : 64, (playImage != null) ? playImage.getHeight() : 64);
+        playButton.setLocation((getWidth() - playButton.getWidth()) / 2, (getHeight() - playButton.getHeight()) / 2);
+        playButton.setFocusable(false);
+        playButton.setBackground(null);
+        playButton.setOpaque(false);
+        playButton.setBorderPainted(false);
+        playButton.setFocusable(false);
+        playButton.setBorder(null);
+        if (playImage != null) playButton.setIcon(new ImageIcon(playImage));
+        add(playButton);
 
         playButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -125,6 +96,35 @@ public class StartPanelView extends JPanel {
             }
 
         });
+
+        playButton.addActionListener(e -> controller.startGame());
+
+        loginButton.addActionListener(e -> {
+            controller.disableMainFrame();
+            LoginFrameView loginFrame = new LoginFrameView(controller);
+            loginFrame.setVisible(true);
+        });
+
+        loginButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                loginButton.setForeground(Color.GRAY);
+            }
+
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                loginButton.setForeground(Color.WHITE);
+            }
+        });
+
+        settingsButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                settingsButton.setForeground(Color.GRAY);
+            }
+
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                settingsButton.setForeground(Color.WHITE);
+            }
+        });
+
     }
 
     @Override
