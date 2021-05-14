@@ -7,13 +7,24 @@ import com.stickjumper.utils.components.JRoundTextField;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.sql.SQLException;
 
-public class LoginPanelView extends JPanel {
+public class LoginPanelView extends JPanel implements ActionListener {
 
     Controller controller;
     LoginFrameView loginFrameView;
+
+    // All buttons
+    JButton backButton = new JButton();
+    JButton loginButton = new JButton();
+    JButton registerButton = new JButton();
+
+    // All Text fields
+    JTextField userNameTextField;
+    JPasswordField passwordField;
 
     public LoginPanelView(Controller controller, LoginFrameView loginFrameView) {
         setLayout(null);
@@ -25,8 +36,7 @@ public class LoginPanelView extends JPanel {
         Color color = new Color(224, 255, 255);
         setBackground(color);
 
-        BufferedImage image = UITools.getImage(getClass(), "/images/login_register/back.png");
-        JButton backButton = new JButton();
+        BufferedImage backImage = UITools.getImage(getClass(), "/images/login_register/back.png");
         backButton.setHorizontalAlignment(SwingConstants.CENTER);
         backButton.setSize(32, 32);
         backButton.setLocation(5, 5);
@@ -36,7 +46,9 @@ public class LoginPanelView extends JPanel {
         backButton.setBorderPainted(false);
         backButton.setFocusable(false);
         backButton.setBorder(null);
-        if (image != null) backButton.setIcon(new ImageIcon(image));
+        backButton.setActionCommand("backButton");
+        backButton.addActionListener(this);
+        if (backImage != null) backButton.setIcon(new ImageIcon(backImage));
         add(backButton);
 
         JLabel welcomeLabel = new JLabel();
@@ -63,7 +75,7 @@ public class LoginPanelView extends JPanel {
         add(userNameLabel);
 
         int corners = 15;
-        JTextField userNameTextField = new JRoundTextField(corners);
+        userNameTextField = new JRoundTextField(corners);
         userNameTextField.setSize(getWidth() - 2 * 100, 30);
         userNameTextField.setLocation(getWidth() / 7, userNameLabel.getY() + userNameLabel.getHeight() + 1);
         userNameTextField.setFont(new Font("Open Sans", Font.PLAIN, 13));
@@ -78,7 +90,7 @@ public class LoginPanelView extends JPanel {
         passwordLabel.setFont(new Font("Open Sans", Font.PLAIN, 13));
         add(passwordLabel);
 
-        JPasswordField passwordField = new JRoundPasswordField(corners);
+        passwordField = new JRoundPasswordField(corners);
         passwordField.setHorizontalAlignment(SwingConstants.LEFT);
         passwordField.setSize(getWidth() - 2 * 100, 30);
         passwordField.setLocation(getWidth() / 7, passwordLabel.getY() + passwordLabel.getHeight() + 1);
@@ -87,15 +99,16 @@ public class LoginPanelView extends JPanel {
         passwordField.setToolTipText("Enter your password");
         add(passwordField);
 
-        JButton loginButton = new JButton();
+
         loginButton.setText("Login");
         loginButton.setFont(new Font("Calibri", Font.PLAIN, 15));
         loginButton.setSize(150, 40);
         loginButton.setLocation((getWidth() - loginButton.getWidth()) / 2, getHeight() - (int) (loginButton.getHeight() * 3.5));
         loginButton.setFocusable(false);
+        loginButton.setActionCommand("loginButton");
+        loginButton.addActionListener(this);
         add(loginButton);
 
-        JButton registerButton = new JButton();
         registerButton.setText("Still not registered? Join the community");
         registerButton.setFont(new Font("Calibri", Font.PLAIN, 14));
         registerButton.setSize(2 * loginButton.getWidth(), 40);
@@ -105,36 +118,57 @@ public class LoginPanelView extends JPanel {
         registerButton.setBorderPainted(false);
         registerButton.setFocusable(false);
         registerButton.setBorder(null);
+        registerButton.setActionCommand("registerButton");
+        registerButton.addActionListener(this);
         add(registerButton);
 
-        loginButton.addActionListener(e -> {
-            loginButton.setEnabled(false);
+        addAllMouseListeners();
+    }
 
-            String username = userNameTextField.getText(), password;
-            char[] passwordArray = passwordField.getPassword();
-            if (passwordArray != null && !(password = new String(passwordArray)).equals("null") && !password.isEmpty() && username != null && !username.isEmpty()) {
-                try {
-                    // Test with username = Jan Marsalek & password = dasisteinpasswort
-                    boolean successful = controller.playerLogin(username, password);
-                    if (successful) {
-                        controller.enableMainFrame();
-                        loginFrameView.disposeLoginFrame();
-                    } else {
-                        JOptionPane.showMessageDialog(null, "False credentials, try again");
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        switch (e.getActionCommand()){
+            case "backButton":
+                backButton.setEnabled(false);
+                controller.panelAndFrameManager.loginFrameClose();
+                break;
+
+            case "loginButton":
+                loginButton.setEnabled(false);
+
+                String username = userNameTextField.getText(), password;
+                char[] passwordArray = passwordField.getPassword();
+                if (passwordArray != null && !(password = new String(passwordArray)).equals("null") && !password.isEmpty() && username != null && !username.isEmpty()) {
+                    try {
+                        // Test with username = Jan Marsalek & password = dasisteinpasswort
+                        boolean successful = controller.playerLogin(username, password);
+                        if (successful) {
+                            controller.panelAndFrameManager.enableMainFrame();
+                            controller.panelAndFrameManager.loginFrameClose();
+                        } else {
+                            JOptionPane.showMessageDialog(null, "False credentials, try again");
+                        }
+
+                    } catch (SQLException throwable) {
+                        throwable.printStackTrace();
                     }
 
-                } catch (SQLException throwable) {
-                    throwable.printStackTrace();
+                } else {
+                    JOptionPane.showMessageDialog(null, "Enter your credentials");
                 }
+                loginButton.setEnabled(true);
+                break;
 
-            } else {
-                JOptionPane.showMessageDialog(null, "Enter your credentials");
-            }
-            loginButton.setEnabled(true);
-        });
+            case "registerButton":
+                controller.panelAndFrameManager.loginPanelToRegisterPanel();
+                break;
 
-        registerButton.addActionListener(e -> loginFrameView.openRegister());
 
+
+        }
+    }
+
+    private void addAllMouseListeners(){
         registerButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 registerButton.setForeground(Color.BLUE);
@@ -155,10 +189,6 @@ public class LoginPanelView extends JPanel {
             }
         });
 
-        backButton.addActionListener(e -> {
-            backButton.setEnabled(false);
-            loginFrameView.disposeLoginFrame();
-        });
     }
 
 }

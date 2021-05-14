@@ -7,7 +7,9 @@ import javax.swing.*;
 
 public class LoginFrameView extends JFrame {
 
-    Controller controller;
+    private Controller controller;
+    private LoginPanelView loginPanelView;
+    private RegisterPanelView registerPanelView;
 
     public LoginFrameView(Controller controller) {
         this.controller = controller;
@@ -16,23 +18,21 @@ public class LoginFrameView extends JFrame {
         setTitle("Login");
         setSize(600, 500);
         setLocationRelativeTo(null);
-        LoginPanelView loginPanel = new LoginPanelView(controller, this);
-        setContentPane(loginPanel);
+
         setIconImage(UITools.getImage(getClass(), "/images/icons/appicon_5.png"));
+
+        // builds both panels, they can be changed via PanelAndFrameManager
+        registerPanelView = new RegisterPanelView(controller, this);
+        controller.setRegisterPanelView(registerPanelView);
+        loginPanelView = new LoginPanelView(controller, this);
+        controller.setLoginPanelView(loginPanelView);
+
+        setContentPane(loginPanelView);
+
+
     }
 
 
-    public void disposeLoginFrame() {
-        setVisible(false);
-        controller.enableMainFrame();
-        dispose();
 
-    }
-
-    public void openRegister() {
-        // setContentPane(null);
-        RegisterPanelView registerPanelView = new RegisterPanelView(controller, this);
-        setContentPane(registerPanelView);
-    }
 
 }
