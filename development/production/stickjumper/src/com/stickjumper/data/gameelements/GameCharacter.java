@@ -9,20 +9,17 @@ public class GameCharacter extends GameElement {
 
     private static final int height = 64, width = 64;
     private static final String imagePath = "/images/elements/skins/skin_1.png";
-    private static Point point;
     private int skinType;
     private int highScore;
 
     public GameCharacter(Point p, int skinType) {
-        super(point, height, width, true, imagePath);
-        point = p;
+        super(p, height, width, true, imagePath);
         this.skinType = skinType;
         this.setVisible(true);
     }
 
     public GameCharacter(Player player, Point p) {
         super(p, height, width, true, imagePath);
-        point = p;
         highScore = player.getHighScore();
     }
 

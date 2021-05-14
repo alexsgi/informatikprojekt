@@ -4,7 +4,7 @@ import java.awt.*;
 
 public abstract class GameElement {
 
-    private Point point = new Point();
+    private Point point;
     private int height;
     private int width;
     private boolean visible;

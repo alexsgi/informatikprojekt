@@ -7,7 +7,6 @@ import com.stickjumper.data.list.List;
 import com.stickjumper.frontend.MainFrameView;
 import com.stickjumper.frontend.game.GamePanelView;
 import com.stickjumper.frontend.rendering.GameElementRender;
-import com.stickjumper.frontend.rendering.MovingBackground;
 import com.stickjumper.frontend.start.StartPanelView;
 
 import java.awt.*;
@@ -16,7 +15,6 @@ import java.sql.SQLException;
 public class Controller {
 
     private final MainFrameView mainFrameView;
-    private final MovingBackground movingBackground = new MovingBackground();
     private final int speed = 1;
     private StartPanelView startPanelView;
     private GamePanelView gamePanel;
@@ -36,9 +34,6 @@ public class Controller {
     public void setGamePanel(GamePanelView gamePanel) {
         this.gamePanel = gamePanel;
         scenery = new Scenery();
-        movingBackground.setVisible(true);
-        movingBackground.setSize(2560, 640);
-        gamePanel.add(movingBackground);
     }
 
     public void disableMainFrame() {
@@ -70,38 +65,12 @@ public class Controller {
         this.playerList = list;
     }
 
-    // Keys
-
-    public void spacePressed() {
-    }
-
-    public void enterPressed() {
-    }
-
-    public void leftPressed() {
-        scenery.left(speed);
-    }
-
-    public void rightPressed() {
-        scenery.right(speed);
-    }
-
-    public void upPressed() {
-        scenery.up(speed);
-    }
-
-    public void downPressed() {
-        scenery.down(speed);
-    }
-
     public void startMovingBackground() {
-        // start again
-        movingBackground.startMovement();
+        gamePanel.startMovingBackground();
     }
 
     public void stopMovingBackground() {
-        // Game over
-        movingBackground.stopMovement();
+        gamePanel.stopMovinBackground();
     }
 
     public Player getCurrentPlayer() {
@@ -120,24 +89,9 @@ public class Controller {
 
         public void initPlayerUI(GamePanelView panel) {
             Point position = new Point(50, 50);
-            playerFigure = new GameElementRender(new GameCharacter(currentPlayer, position));
+            GameCharacter character = (currentPlayer == null) ? new GameCharacter(position, 0) : new GameCharacter(currentPlayer, position);
+            playerFigure = new GameElementRender(character);
             gamePanel.add(playerFigure);
-        }
-
-        public void left(int n) {
-            coinElement.incrementX(-Math.abs(n));
-        }
-
-        public void right(int n) {
-            coinElement.incrementX(Math.abs(n));
-        }
-
-        public void up(int n) {
-            coinElement.incrementY(-Math.abs(n));
-        }
-
-        public void down(int n) {
-            coinElement.incrementY(Math.abs(n));
         }
 
     }

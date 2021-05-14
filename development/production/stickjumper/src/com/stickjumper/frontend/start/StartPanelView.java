@@ -93,11 +93,14 @@ public class StartPanelView extends JPanel {
         });
 
         playButton.addActionListener(e -> {
+            /*
             if (controller.getCurrentPlayer() != null) {
                 controller.startGame();
             } else {
                 JOptionPane.showMessageDialog(null, "Please sign in to play");
             }
+             */
+            controller.startGame();
         });
 
         loginButton.addActionListener(e -> {

@@ -26,7 +26,10 @@ public class StartSideMenuPanel extends JPanel {
     protected void paintComponent(Graphics graphicsObject) {
         super.paintComponent(graphicsObject);
         BufferedImage image = UITools.getImage(getClass(), "/images/start_view/background/mountains-middle-dark.png");
-        if (image == null) {System.out.println("No pic"); return;}
+        if (image == null) {
+            System.out.println("No pic");
+            return;
+        }
         graphicsObject.drawImage(image, 0, 0, null);
     }
 }

@@ -1,6 +1,7 @@
 package com.stickjumper.frontend.game;
 
 import com.stickjumper.controller.Controller;
+import com.stickjumper.frontend.rendering.MovingBackground;
 import com.stickjumper.utils.UITools;
 
 import javax.swing.*;
@@ -11,6 +12,7 @@ public class GamePanelView extends JPanel {
 
     private final Font MAIN_FONT = UITools.registerFont();
     private Controller controller;
+    private MovingBackground movingBackground;
 
     public GamePanelView(Controller controller) {
         this.controller = controller;
@@ -55,8 +57,21 @@ public class GamePanelView extends JPanel {
         stopButton.setFocusable(false);
         add(stopButton);
 
+        movingBackground = new MovingBackground();
+        movingBackground.setVisible(true);
+        movingBackground.setSize(2560, 640);
+        add(movingBackground);
+
         startButton.addActionListener(e -> controller.startMovingBackground());
         stopButton.addActionListener(e -> controller.stopMovingBackground());
+    }
+
+    public void startMovingBackground() {
+        movingBackground.startMovement();
+    }
+
+    public void stopMovinBackground() {
+        movingBackground.stopMovement();
     }
 
 }
