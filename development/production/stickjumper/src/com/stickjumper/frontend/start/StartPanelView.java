@@ -78,8 +78,7 @@ public class StartPanelView extends JPanel {
         playButton.setFocusable(false);
         playButton.setBorder(null);
         if (playImage != null) {
-            ImageIcon iconLight = new ImageIcon(playImage);
-            playButton.setIcon(iconLight);
+            playButton.setIcon(new ImageIcon(playImage));
         } else {
             playButton.setText("PLAY");
         }
