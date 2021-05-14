@@ -51,19 +51,6 @@ public class StartPanelView extends JPanel {
             controller.disableMainFrame();
             LoginFrameView loginFrame = new LoginFrameView(controller);
             loginFrame.setVisible(true);
-
-            /* Code to test opacity - DOESN'T WORK - CRITICAL ERROR
-            for (int i = 255; i >= 0; i--) {
-                System.out.println(i);
-                menuPanel.setBackground(new Color(86, 73, 78, i));
-                try {
-                    Thread.sleep(5);
-                } catch (InterruptedException interruptedException) {
-                    interruptedException.printStackTrace();
-                }
-            }
-             */
-
         });
         loginButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -96,28 +83,6 @@ public class StartPanelView extends JPanel {
         } else {
             playButton.setText("PLAY");
         }
-        playButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                if (playImageDark != null) {
-                    ImageIcon iconDark = new ImageIcon(playImageDark);
-                    playButton.setIcon(null);
-                    playButton.setIcon(iconDark);
-                } else {
-                    playButton.setText("PLAY");
-
-                }
-            }
-
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                if (playImage != null) {
-                    ImageIcon iconLight = new ImageIcon(playImage);
-                    playButton.setIcon(null);
-                    playButton.setIcon(iconLight);
-                } else {
-                    playButton.setText("PLAY");
-                };
-            }
-        });
 
         JButton settingsButton = new JButton();
         settingsButton.setText("Settings");
@@ -140,6 +105,24 @@ public class StartPanelView extends JPanel {
 
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 settingsButton.setForeground(Color.WHITE);
+            }
+        });
+
+        playButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                if (playImageDark != null) {
+                    playButton.setIcon(new ImageIcon(playImageDark));
+                } else {
+                    playButton.setText("PLAY");
+                }
+            }
+
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                if (playImage != null) {
+                    playButton.setIcon(new ImageIcon(playImage));
+                } else {
+                    playButton.setText("PLAY");
+                };
             }
         });
     }
