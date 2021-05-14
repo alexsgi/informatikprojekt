@@ -38,11 +38,18 @@ public class MainFrameView extends JFrame {
         setContentPane(startPanel);
     }
 
-    public void setGamePanel() {
+    public void setPanelToGamePanel() {
         setContentPane(gamePanel);
         controller.setGamePanel(gamePanel);
         revalidate();
     }
+
+    public void setPanelToStartPanel(){
+        setContentPane(startPanel);
+        revalidate();
+
+    }
+
 
     public void addPlayerListToController(List list) {
         controller.setList(list);

@@ -14,7 +14,7 @@ import java.sql.SQLException;
 
 public class Controller {
 
-    private final MainFrameView mainFrameView;
+    public final MainFrameView mainFrameView;
     private final int speed = 1;
     private StartPanelView startPanelView;
     private GamePanelView gamePanel;
@@ -45,7 +45,7 @@ public class Controller {
     }
 
     public void startGame() {
-        mainFrameView.setGamePanel();
+        mainFrameView.setPanelToGamePanel();
         currentScore = -1;
         scenery.initPlayerUI(gamePanel);
     }

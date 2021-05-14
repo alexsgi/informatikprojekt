@@ -6,6 +6,10 @@ import com.stickjumper.utils.UITools;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 
 public class GamePanelView extends JPanel {
@@ -35,9 +39,28 @@ public class GamePanelView extends JPanel {
         homeButton.setBorderPainted(false);
         homeButton.setFocusable(false);
         homeButton.setBorder(null);
-        BufferedImage image = UITools.getImage(getClass(), "/images/game_view/icons/home.png");
-        if (image != null) homeButton.setIcon(new ImageIcon(image));
+        BufferedImage homeImageDark = UITools.getImage(getClass(), "/images/game_view/icons/home.png");
+        BufferedImage homeImageLight = UITools.getImage(getClass(), "/images/game_view/icons/home-light.png");
+        if (homeImageDark != null) homeButton.setIcon(new ImageIcon(homeImageDark));
         add(homeButton);
+        homeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                controller.mainFrameView.setPanelToStartPanel();
+            }
+        });
+
+        homeButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                if (homeImageLight != null) homeButton.setIcon(new ImageIcon(homeImageLight));
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                if (homeImageDark != null) homeButton.setIcon(new ImageIcon(homeImageDark));
+            }
+        });
 
         // Button to start the movement
         JButton startButton = new JButton();
