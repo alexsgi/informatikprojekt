@@ -27,7 +27,8 @@ public class PanelFrameManager {
     }
 
     public void enableMainFrame() {
-        mainFrameView.setVisible(true);
+        mainFrameView.setEnabled(true);
+        mainFrameView.setAlwaysOnTop(true);
     }
 
     public void starterLoginButton() {
@@ -42,7 +43,8 @@ public class PanelFrameManager {
     }
 
     public void mainFrameDisable() {
-        mainFrameView.setVisible(false);
+        mainFrameView.setEnabled(false);
+        mainFrameView.setAlwaysOnTop(false);
     }
 
     public void switchToGamePanel() {
