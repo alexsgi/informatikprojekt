@@ -30,25 +30,15 @@ public class MainFrameView extends JFrame {
 
         controller = new Controller(this);
         startPanel = new StartPanelView(controller);
-        controller.setStartPanel(startPanel);
+        controller.setStartPanelView(startPanel);
 
         gamePanel = new GamePanelView(controller);
+        controller.setGamePanel(gamePanel);
 
         // Add panel to frame
         setContentPane(startPanel);
     }
 
-    public void setPanelToGamePanel() {
-        setContentPane(gamePanel);
-        controller.setGamePanel(gamePanel);
-        revalidate();
-    }
-
-    public void setPanelToStartPanel(){
-        setContentPane(startPanel);
-        revalidate();
-
-    }
 
 
     public void addPlayerListToController(List list) {
