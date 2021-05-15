@@ -127,6 +127,7 @@ public class LoginPanelView extends JPanel implements ActionListener, MouseListe
             case "backButton":
                 backButton.setEnabled(false);
                 controller.getPanelFrameManager().loginFrameClose();
+                // JOptionPane.showMessageDialog(null, "Your highscore will not be saved, when not logged in");
                 break;
             case "loginButton":
                 loginButton.setEnabled(false);
