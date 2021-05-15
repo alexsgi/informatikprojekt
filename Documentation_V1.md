@@ -86,6 +86,9 @@ Alex:
 2. Migrieren der DB zu selbst-gehostetem MySQL-Dienst
 3. Anpassung der Verbindung in DBConnection
 
+Jonas:
+1. Überarbeitung der Liste und Klärung dessen genaue Funktionialität mit Alex
+
 ### **08.05.2021**
 Jessica, Alex, Jonas:
 1. Fertigstellung der Klassen- und Ordnerstruktur
@@ -98,34 +101,55 @@ Alex:
 1. Anpassung der Listen zur Speicherung der Spieler
 2. Schreiben der GameElementRender-Klasse zur Visualisierung von Spielobjekten
 
+Jonas:
+1. Umstrukturierung mancher Ordner zu einer logischeren Struktur (unter Rücksprache mit den
+Gruppenmitgliedern)
+
 ### **10.05.2021**
 Alex:
 1. Implementierung Netzwerk- und Servertest
+
+Jonas:
+1. Erstellen des MovingNackgrounds mit Testen und einfügen in GanePanelView
+2. Hinzufügen der Buttons "Start" und "Stop" als provisorische StartGame und GameOver Situationen
 
 ### **11.05.2021**
 Jessica:
 1. Ausarbeitung des Klassendiagramms zu Sprint-Planning 2
 
+Jonas:
+1. Einfügen der für die Abgabe am folgenden Tag geforderten Methoden zum Auslesen der
+HighScorewerte
+2. Erstellung eines Labels, welches den aktuellen Score anzeigt
+
 ### **12.05.2021**
 Jessica:
 1. Fertigstellung des Klassendiagramms zu Sprint-Planning 2
 
+Jonas:
+1. Erstellung eines automatisch generierten svg-Dokuments, welches als Klassendiagramm fungiert
+2. UI-Anpassung StartPanel mit Alex
+
 Alex:
 1. UI-Anpassung LoginPanel mit Jonas
 
+### **13.05.2021**
+Alex:
+1. Erstellen einer neuen Oberfläche des LoginPanels
+2. UI-Anpassung RegisterPanel mit Jonas
+
 Jonas: 
 1. UI-Anpassung LoginPanel mit Alex
-
-### **13.05.2021**
-Jonas:
-
-
-Alex:
-1. UI-Anpassung RegisterPanel mit Jonas
+2. Erstellen eine Oberfläche des RegisterPanels
 
 ### **14.05.2021**
-Alex:
-1. UI-Anpassungen mit Jonas
+Alex: 
+1. weitere UI-Anpassungen mit Jonas 
+
+Jonas: 
+1. Umstrukturierung einiger Klassen mit Erstellen struktureller Klassen, welche den Controller "entlasten"
+2. Actionlistener "aufräumen"
+3. weitere UI-Anpassungen mit Alex 
 
 ### **15.05.2021**
 Alex:
