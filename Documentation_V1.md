@@ -113,7 +113,13 @@ Jessica:
 Alex:
 1. UI-Anpassung LoginPanel mit Jonas
 
+Jonas: 
+1. UI-Anpassung LoginPanel mit Alex
+
 ### **13.05.2021**
+Jonas:
+
+
 Alex:
 1. UI-Anpassung RegisterPanel mit Jonas
 
@@ -126,3 +132,4 @@ Alex:
 1. Anpassung Mouse-/Action-Listener mit Jonas
 2. Erstellung der Settings-Klasse
 3. Laden aller Bilder beim Loading-Screen
+
