@@ -46,7 +46,7 @@ public class GamePanelView extends JPanel {
         homeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                controller.panelAndFrameManager.mainFrameSetPanelToStartPanel();
+                controller.panelFrameManager.mainFrameSetPanelToStartPanel();
             }
         });
 

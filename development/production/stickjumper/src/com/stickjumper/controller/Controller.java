@@ -39,38 +39,38 @@ public class Controller {
     private RegisterPanelView registerPanelView;
 
     // Manages open and close operations for frames and panels
-    public final PanelAndFrameManager panelAndFrameManager;
+    public final PanelFrameManager panelFrameManager;
 
 
     public Controller(MainFrameView mainFrameView) {
         this.mainFrameView = mainFrameView;
-        panelAndFrameManager= new PanelAndFrameManager(this, mainFrameView);
+        panelFrameManager = new PanelFrameManager(this, mainFrameView);
     }
 
     public void setGamePanel(GamePanelView gamePanel) {
         this.gamePanelView = gamePanel;
-        panelAndFrameManager.setGamePanelView(gamePanel);
+        panelFrameManager.setGamePanelView(gamePanel);
 
     }
 
     public void setLoginFrameView(LoginFrameView loginFrameView) {
         this.loginFrameView = loginFrameView;
-        panelAndFrameManager.setLoginFrameView(loginFrameView);
+        panelFrameManager.setLoginFrameView(loginFrameView);
     }
 
     public void setStartPanelView(StartPanelView startPanelView) {
         this.startPanelView = startPanelView;
-        panelAndFrameManager.setStartPanelView(startPanelView);
+        panelFrameManager.setStartPanelView(startPanelView);
     }
 
     public void setLoginPanelView(LoginPanelView loginPanelView) {
         this.loginPanelView = loginPanelView;
-        panelAndFrameManager.setLoginPanelView(loginPanelView);
+        panelFrameManager.setLoginPanelView(loginPanelView);
     }
 
     public void setRegisterPanelView(RegisterPanelView registerPanelView) {
         this.registerPanelView = registerPanelView;
-        panelAndFrameManager.setRegisterPanelView(registerPanelView);
+        panelFrameManager.setRegisterPanelView(registerPanelView);
     }
 
 
@@ -78,7 +78,7 @@ public class Controller {
 
 
     public void startGame() {
-        panelAndFrameManager.mainFrameSetPanelToGamePanel();
+        panelFrameManager.mainFrameSetPanelToGamePanel();
         currentScore = -1;
         // new scenery (temporarily)
         scenery = new Scenery();

@@ -21,7 +21,7 @@ public class LoginFrameView extends JFrame {
 
         setIconImage(UITools.getImage(getClass(), "/images/icons/appicon_5.png"));
 
-        // builds both panels, they can be changed via PanelAndFrameManager
+        // builds both panels, they can be changed via PanelFrameManager
         registerPanelView = new RegisterPanelView(controller, this);
         controller.setRegisterPanelView(registerPanelView);
         loginPanelView = new LoginPanelView(controller, this);

@@ -12,7 +12,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
-import java.rmi.activation.ActivationGroupDesc;
 
 public class StartPanelView extends JPanel implements ActionListener {
 
@@ -124,7 +123,7 @@ public class StartPanelView extends JPanel implements ActionListener {
             case "loginButton":
                 LoginFrameView loginFrame = new LoginFrameView(controller);
                 controller.setLoginFrameView(loginFrame);
-                controller.panelAndFrameManager.starterLoginButton();
+                controller.panelFrameManager.starterLoginButton();
                 break;
             case "settingsButton":
 

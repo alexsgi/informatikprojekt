@@ -9,7 +9,7 @@ import com.stickjumper.frontend.start.StartPanelView;
 
 import java.awt.*;
 
-public class PanelAndFrameManager {
+public class PanelFrameManager {
 
     // All panels
     public StartPanelView startPanelView;
@@ -23,7 +23,7 @@ public class PanelAndFrameManager {
 
     public Controller controller;
 
-    public PanelAndFrameManager(Controller controller, MainFrameView mainFrameView) {
+    public PanelFrameManager(Controller controller, MainFrameView mainFrameView) {
         this.controller = controller;
         this.mainFrameView = mainFrameView;
     }
@@ -47,22 +47,21 @@ public class PanelAndFrameManager {
         mainFrameView.setVisible(false);
     }
 
-    public void mainFrameSetPanelToGamePanel() {
+    public void switchToGamePanel() {
         mainFrameView.setContentPane(gamePanelView);
         mainFrameView.revalidate();
     }
 
-    public void mainFrameSetPanelToStartPanel(){
+    public void switchToStartPanel(){
         mainFrameView.setContentPane(startPanelView);
         mainFrameView.revalidate();
-
     }
 
     public void loginPanelToRegisterPanel(){
         loginFrameView.setContentPane(registerPanelView);
     }
 
-    public void RegisterPanelToLoginPanel(){
+    public void switchToLogin(){
         loginFrameView.setContentPane(loginPanelView);
     }
 

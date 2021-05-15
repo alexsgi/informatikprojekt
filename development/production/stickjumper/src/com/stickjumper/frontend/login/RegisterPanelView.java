@@ -10,7 +10,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
-import java.sql.SQLException;
 
 public class RegisterPanelView extends JPanel implements ActionListener {
 
@@ -151,8 +150,8 @@ public class RegisterPanelView extends JPanel implements ActionListener {
                         // Test with username = Jan Marsalek & password = dasisteinpasswort
                         boolean successful = controller.playerLogin(username, password);
                         if (successful) {
-                            controller.panelAndFrameManager.enableMainFrame();
-                            controller.panelAndFrameManager.loginFrameClose();
+                            controller.panelFrameManager.enableMainFrame();
+                            controller.panelFrameManager.loginFrameClose();
                         } else {
                             JOptionPane.showMessageDialog(null, "False credentials, try again");
                         }
@@ -170,7 +169,7 @@ public class RegisterPanelView extends JPanel implements ActionListener {
 
             case "backButton":
                 backButton.setEnabled(false);
-                controller.panelAndFrameManager.loginFrameClose();
+                controller.panelFrameManager.loginFrameClose();
                 break;
 
 
