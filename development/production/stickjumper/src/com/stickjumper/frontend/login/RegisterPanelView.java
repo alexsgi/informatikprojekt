@@ -169,7 +169,7 @@ public class RegisterPanelView extends JPanel implements ActionListener {
 
             case "backButton":
                 backButton.setEnabled(false);
-                controller.panelFrameManager.loginFrameClose();
+                controller.getPanelFrameManager().loginFrameClose();
                 break;
 
 

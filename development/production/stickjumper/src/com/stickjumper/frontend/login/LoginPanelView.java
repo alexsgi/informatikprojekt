@@ -130,7 +130,7 @@ public class LoginPanelView extends JPanel implements ActionListener {
         switch (e.getActionCommand()) {
             case "backButton":
                 backButton.setEnabled(false);
-                controller.panelFrameManager.loginFrameClose();
+                controller.getPanelFrameManager().loginFrameClose();
                 break;
 
             case "loginButton":
@@ -143,8 +143,8 @@ public class LoginPanelView extends JPanel implements ActionListener {
                         // Test with username = Jan Marsalek & password = dasisteinpasswort
                         boolean successful = controller.playerLogin(username, password);
                         if (successful) {
-                            controller.panelFrameManager.enableMainFrame();
-                            controller.panelFrameManager.loginFrameClose();
+                            controller.getPanelFrameManager().enableMainFrame();
+                            controller.getPanelFrameManager().loginFrameClose();
                         } else {
                             JOptionPane.showMessageDialog(null, "False credentials, try again");
                         }
@@ -160,7 +160,7 @@ public class LoginPanelView extends JPanel implements ActionListener {
                 break;
 
             case "registerButton":
-                controller.panelFrameManager.loginPanelToRegisterPanel();
+                controller.getPanelFrameManager().loginPanelToRegisterPanel();
                 break;
 
 

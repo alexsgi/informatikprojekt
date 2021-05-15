@@ -33,7 +33,7 @@ public class MainFrameView extends JFrame {
         controller.setStartPanelView(startPanel);
 
         gamePanel = new GamePanelView(controller);
-        controller.setGamePanel(gamePanel);
+        controller.setGamePanelView(gamePanel);
 
         // Add panel to frame
         setContentPane(startPanel);

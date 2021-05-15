@@ -100,7 +100,7 @@ public class GamePanelView extends JPanel implements ActionListener, MouseListen
         switch (e.getActionCommand()) {
             case "STOP" -> controller.stopMovingBackground();
             case "START" -> controller.startMovingBackground();
-            case "HOME" -> controller.panelFrameManager.switchToStartPanel();
+            case "HOME" -> controller.getPanelFrameManager().switchToStartPanel();
         }
     }
 

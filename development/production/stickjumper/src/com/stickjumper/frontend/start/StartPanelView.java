@@ -122,7 +122,7 @@ public class StartPanelView extends JPanel implements ActionListener {
             case "loginButton":
                 LoginFrameView loginFrame = new LoginFrameView(controller);
                 controller.setLoginFrameView(loginFrame);
-                controller.panelFrameManager.starterLoginButton();
+                controller.getPanelFrameManager().starterLoginButton();
                 break;
             case "settingsButton":
 

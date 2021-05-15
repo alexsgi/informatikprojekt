@@ -18,7 +18,7 @@ import java.sql.SQLException;
 public class Controller {
 
     // Manages open and close operations for frames and panels
-    public final PanelFrameManager panelFrameManager;
+    private final PanelFrameManager panelFrameManager;
     // Player management
     private Player currentPlayer;
     private List playerList;
@@ -39,9 +39,9 @@ public class Controller {
         panelFrameManager = new PanelFrameManager(this, mainFrameView);
     }
 
-    public void setGamePanel(GamePanelView gamePanel) {
-        this.gamePanelView = gamePanel;
-        panelFrameManager.setGamePanelView(gamePanel);
+    public void setGamePanelView(GamePanelView gamePanelView) {
+        this.gamePanelView = gamePanelView;
+        panelFrameManager.setGamePanelView(gamePanelView);
     }
 
     public void setLoginFrameView(LoginFrameView loginFrameView) {
@@ -64,6 +64,9 @@ public class Controller {
         panelFrameManager.setRegisterPanelView(registerPanelView);
     }
 
+    public PanelFrameManager getPanelFrameManager() {
+        return panelFrameManager;
+    }
 
     public void startGame() {
         panelFrameManager.switchToGamePanel();
