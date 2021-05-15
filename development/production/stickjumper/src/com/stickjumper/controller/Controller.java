@@ -19,6 +19,8 @@ public class Controller {
 
     // Manages open and close operations for frames and panels
     private final PanelFrameManager panelFrameManager;
+    // All frames
+    private final MainFrameView mainFrameView;
     // Player management
     private Player currentPlayer;
     private List playerList;
@@ -30,8 +32,6 @@ public class Controller {
     private GamePanelView gamePanelView;
     private LoginPanelView loginPanelView;
     private RegisterPanelView registerPanelView;
-    // All frames
-    private final MainFrameView mainFrameView;
     private LoginFrameView loginFrameView;
 
     public Controller(MainFrameView mainFrameView) {

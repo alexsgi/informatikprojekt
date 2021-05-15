@@ -17,9 +17,9 @@ public class LoginFrameView extends JFrame {
         this.controller = controller;
         // setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-        this.addWindowListener(new WindowAdapter(){
-            public void windowClosing(WindowEvent e){
-                controller.panelFrameManager.enableMainFrame();
+        this.addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                controller.getPanelFrameManager().enableMainFrame();
             }
         });
 
@@ -37,8 +37,6 @@ public class LoginFrameView extends JFrame {
         controller.setLoginPanelView(loginPanelView);
 
         setContentPane(loginPanelView);
-
-
     }
 
 

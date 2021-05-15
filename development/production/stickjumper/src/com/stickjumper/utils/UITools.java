@@ -19,15 +19,9 @@ public class UITools {
 
     public static BufferedImage getImage(Class<?> c, String path) {
         try {
-
             InputStream in = c.getResourceAsStream(path);
             if (in == null) return null;
             return ImageIO.read(in);
-            /* OR:
-            URL url = c.getResource(path);
-            if(url == null) return null;
-            return ImageIO.read(url);
-             */
         } catch (IOException e) {
             e.printStackTrace();
             System.out.printf("The image (%s) was not loaded\n", path);
