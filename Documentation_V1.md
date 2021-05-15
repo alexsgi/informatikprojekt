@@ -93,20 +93,14 @@ Jessica, Alex, Jonas:
 Alex:
 1. Implementieren der Listen zur Speicherung der Spieler
 
-Jonas:
-
 ### **09.05.2021**
 Alex:
 1. Anpassung der Listen zur Speicherung der Spieler
 2. Schreiben der GameElementRender-Klasse zur Visualisierung von Spielobjekten
 
-Jonas:
-
 ### **10.05.2021**
 Alex:
 1. Implementierung Netzwerk- und Servertest
-
-Jonas:
 
 ### **11.05.2021**
 Jessica:
@@ -115,3 +109,20 @@ Jessica:
 ### **12.05.2021**
 Jessica:
 1. Fertigstellung des Klassendiagramms zu Sprint-Planning 2
+
+Alex:
+1. UI-Anpassung LoginPanel mit Jonas
+
+### **13.05.2021**
+Alex:
+1. UI-Anpassung RegisterPanel mit Jonas
+
+### **14.05.2021**
+Alex:
+1. UI-Anpassungen mit Jonas
+
+### **15.05.2021**
+Alex:
+1. Anpassung Mouse-/Action-Listener mit Jonas
+2. Erstellung der Settings-Klasse
+3. Laden aller Bilder beim Loading-Screen
