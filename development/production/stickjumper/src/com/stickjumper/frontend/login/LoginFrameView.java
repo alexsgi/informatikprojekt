@@ -4,6 +4,8 @@ import com.stickjumper.controller.Controller;
 import com.stickjumper.utils.UITools;
 
 import javax.swing.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 public class LoginFrameView extends JFrame {
 
@@ -13,7 +15,14 @@ public class LoginFrameView extends JFrame {
 
     public LoginFrameView(Controller controller) {
         this.controller = controller;
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        // setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+
+        this.addWindowListener(new WindowAdapter(){
+            public void windowClosing(WindowEvent e){
+                controller.panelFrameManager.enableMainFrame();
+            }
+        });
+
         setResizable(false);
         setTitle("Login");
         setSize(600, 500);
