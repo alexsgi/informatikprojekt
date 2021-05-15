@@ -4,6 +4,8 @@ import com.stickjumper.controller.Controller;
 import com.stickjumper.data.list.List;
 import com.stickjumper.frontend.game.GamePanelView;
 import com.stickjumper.frontend.start.StartPanelView;
+import com.stickjumper.utils.Settings;
+import com.stickjumper.utils.variables.ImageManager;
 
 import javax.swing.*;
 
@@ -19,7 +21,7 @@ public class MainFrameView extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(Settings.SCREEN_WIDTH, Settings.SCREEN_HEIGHT);
         setLocationRelativeTo(null);
-        setIconImage(Settings.APP_ICON_IMAGE);
+        setIconImage(ImageManager.APP_ICON_IMAGE);
 
         controller = new Controller(this);
         startPanel = new StartPanelView(controller);

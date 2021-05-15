@@ -1,9 +1,10 @@
 package com.stickjumper.frontend.game;
 
 import com.stickjumper.controller.Controller;
-import com.stickjumper.frontend.Settings;
+import com.stickjumper.utils.Settings;
 import com.stickjumper.frontend.rendering.MovingBackground;
 import com.stickjumper.utils.components.AdvancedButton;
+import com.stickjumper.utils.variables.ImageManager;
 
 import javax.swing.*;
 import java.awt.*;
@@ -39,7 +40,7 @@ public class GamePanelView extends JPanel implements ActionListener, MouseListen
         backButton.setName(Settings.GAME_VIEW_BACK_BUTTON_ACTION_NAME);
         backButton.addActionListener(this);
         backButton.addMouseListener(this);
-        backButton.setIcon(Settings.GAME_ICON_HOME_DARK);
+        backButton.setIcon(ImageManager.GAME_ICON_HOME_DARK);
         add(backButton);
 
         // Button to start the movement
@@ -110,7 +111,7 @@ public class GamePanelView extends JPanel implements ActionListener, MouseListen
     public void mouseEntered(MouseEvent e) {
         switch (e.getComponent().getName()) {
             case Settings.GAME_VIEW_BACK_BUTTON_ACTION_NAME:
-                backButton.setIcon(Settings.GAME_ICON_HOME);
+                backButton.setIcon(ImageManager.GAME_ICON_HOME);
                 break;
             case Settings.GAME_VIEW_START_BUTTON_ACTION_NAME:
                 startButton.setForeground(Color.GRAY);
@@ -125,7 +126,7 @@ public class GamePanelView extends JPanel implements ActionListener, MouseListen
     public void mouseExited(MouseEvent e) {
         switch (e.getComponent().getName()) {
             case Settings.GAME_VIEW_BACK_BUTTON_ACTION_NAME:
-                backButton.setIcon(Settings.GAME_ICON_HOME_DARK);
+                backButton.setIcon(ImageManager.GAME_ICON_HOME_DARK);
                 break;
             case Settings.GAME_VIEW_START_BUTTON_ACTION_NAME:
                 startButton.setForeground(Color.BLACK);

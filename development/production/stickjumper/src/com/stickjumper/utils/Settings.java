@@ -1,4 +1,4 @@
-package com.stickjumper.frontend;
+package com.stickjumper.utils;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -35,11 +35,6 @@ public class Settings {
     public static Font FONT_LOGIN_FIELDS_LABELS = new Font("Open Sans", Font.PLAIN, 13);
     public static Font FONT_LOGIN_BUTTON = new Font("Calibri", Font.PLAIN, 15);
     public static Font FONT_LOGIN_SMALL_BUTTON = new Font("Calibri", Font.PLAIN, 14);
-    // IMAGES
-    public static BufferedImage APP_ICON_IMAGE, BACKGROUND_MAIN, MOVING_BACKGROUND, MOVING_BACKGROUND_MIRRORED;
-    public static BufferedImage GAME_ICON_HOME, GAME_ICON_HOME_DARK;
-    public static BufferedImage START_ICON_PLAY, START_ICON_PLAY_DARK;
-    public static BufferedImage START_MENU_BACKGROUND_DARK;
-    public static BufferedImage LOGIN_REGISTER_BACK;
+
 
 }
