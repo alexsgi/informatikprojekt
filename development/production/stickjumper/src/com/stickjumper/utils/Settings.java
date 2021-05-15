@@ -13,17 +13,7 @@ public class Settings {
     public static final String LOADING_FRAME_BACKGROUND_IMAGE_PATH = "/images/loading_screen/sky.png";
     // LOGIN/REGISTER
     public static final int LOGIN_VIEW_TEXTFIELD_CORNER_RADIUS = 15;
-    public static final String LOGIN_VIEW_LOGIN_BUTTON_ACTION_NAME = "LOGIN";
-    public static final String LOGIN_VIEW_REGISTER_BUTTON_ACTION_NAME = "REGISTER";
-    public static final String LOGIN_VIEW_BACK_BUTTON_ACTION_NAME = "BACK";
-    // START
-    public static final String START_VIEW_LOGIN_BUTTON_ACTION_NAME = LOGIN_VIEW_LOGIN_BUTTON_ACTION_NAME;
-    public static final String START_VIEW_SETTINGS_BUTTON_ACTION_NAME = "SETTINGS";
-    public static final String START_VIEW_PLAY_BUTTON_ACTION_NAME = "PLAY";
-    // GAME
-    public static final String GAME_VIEW_BACK_BUTTON_ACTION_NAME = LOGIN_VIEW_BACK_BUTTON_ACTION_NAME;
-    public static final String GAME_VIEW_START_BUTTON_ACTION_NAME = "START";
-    public static final String GAME_VIEW_STOP_BUTTON_ACTION_NAME = "STOP";
+
     // FONT SIZES
     public static Font FONT_HEADING_BIG = new Font("Arial Black", Font.PLAIN, 40);
     public static Font FONT_HEADING_SMALL = new Font("Arial Black", Font.PLAIN, 20);

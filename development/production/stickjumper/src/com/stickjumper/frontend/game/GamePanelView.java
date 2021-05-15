@@ -36,8 +36,8 @@ public class GamePanelView extends JPanel implements ActionListener, MouseListen
         backButton.setHorizontalAlignment(SwingConstants.CENTER);
         backButton.setSize(36, 36);
         backButton.setLocation(5, 5);
-        backButton.setActionCommand(Settings.GAME_VIEW_BACK_BUTTON_ACTION_NAME);
-        backButton.setName(Settings.GAME_VIEW_BACK_BUTTON_ACTION_NAME);
+        backButton.setActionCommand("backButton");
+        backButton.setName("backButton");
         backButton.addActionListener(this);
         backButton.addMouseListener(this);
         backButton.setIcon(ImageManager.GAME_ICON_HOME_DARK);
@@ -50,8 +50,8 @@ public class GamePanelView extends JPanel implements ActionListener, MouseListen
         startButton.setSize(200, 40);
         startButton.setLocation(((getWidth() - startButton.getWidth()) / 2) + (getWidth() - startButton.getWidth()) / 4, getHeight() - startButton.getHeight() * 2);
         startButton.setFocusable(false);
-        startButton.setActionCommand(Settings.GAME_VIEW_START_BUTTON_ACTION_NAME);
-        startButton.setName(Settings.GAME_VIEW_START_BUTTON_ACTION_NAME);
+        startButton.setActionCommand("startButton");
+        startButton.setName("startButton");
         startButton.addActionListener(this);
         startButton.addMouseListener(this);
         add(startButton);
@@ -63,8 +63,8 @@ public class GamePanelView extends JPanel implements ActionListener, MouseListen
         stopButton.setSize(200, 40);
         stopButton.setLocation((getWidth() - stopButton.getWidth()) / 4, getHeight() - stopButton.getHeight() * 2);
         stopButton.setFocusable(false);
-        stopButton.setActionCommand(Settings.GAME_VIEW_STOP_BUTTON_ACTION_NAME);
-        stopButton.setName(Settings.GAME_VIEW_STOP_BUTTON_ACTION_NAME);
+        stopButton.setActionCommand("stopButton");
+        stopButton.setName("stopButton");
         stopButton.addActionListener(this);
         stopButton.addMouseListener(this);
         add(stopButton);
@@ -86,9 +86,9 @@ public class GamePanelView extends JPanel implements ActionListener, MouseListen
     @Override
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()) {
-            case Settings.GAME_VIEW_STOP_BUTTON_ACTION_NAME -> controller.stopMovingBackground();
-            case Settings.GAME_VIEW_START_BUTTON_ACTION_NAME -> controller.startMovingBackground();
-            case Settings.GAME_VIEW_BACK_BUTTON_ACTION_NAME -> controller.getPanelFrameManager().switchToStartPanel();
+            case "stopButton" -> controller.stopMovingBackground();
+            case "startButton" -> controller.startMovingBackground();
+            case "backButton" -> controller.getPanelFrameManager().switchToStartPanel();
         }
     }
 
@@ -110,13 +110,13 @@ public class GamePanelView extends JPanel implements ActionListener, MouseListen
     @Override
     public void mouseEntered(MouseEvent e) {
         switch (e.getComponent().getName()) {
-            case Settings.GAME_VIEW_BACK_BUTTON_ACTION_NAME:
+            case "backButton":
                 backButton.setIcon(ImageManager.GAME_ICON_HOME);
                 break;
-            case Settings.GAME_VIEW_START_BUTTON_ACTION_NAME:
+            case "startButton":
                 startButton.setForeground(Color.GRAY);
                 break;
-            case Settings.GAME_VIEW_STOP_BUTTON_ACTION_NAME:
+            case "stopButton":
                 stopButton.setForeground(Color.GRAY);
                 break;
         }
@@ -125,13 +125,13 @@ public class GamePanelView extends JPanel implements ActionListener, MouseListen
     @Override
     public void mouseExited(MouseEvent e) {
         switch (e.getComponent().getName()) {
-            case Settings.GAME_VIEW_BACK_BUTTON_ACTION_NAME:
+            case "backButton":
                 backButton.setIcon(ImageManager.GAME_ICON_HOME_DARK);
                 break;
-            case Settings.GAME_VIEW_START_BUTTON_ACTION_NAME:
+            case "startButton":
                 startButton.setForeground(Color.BLACK);
                 break;
-            case Settings.GAME_VIEW_STOP_BUTTON_ACTION_NAME:
+            case "stopButton":
                 stopButton.setForeground(Color.BLACK);
                 break;
         }
