@@ -23,7 +23,8 @@ public class StartPanelView extends JPanel implements ActionListener, MouseListe
     private Controller controller;
 
     // All buttons
-    private JButton loginButton, settingsButton, playButton;
+    private JButton loginButton, settingsButton;
+    private AdvancedButton playButton;
 
     // images needed
     private BufferedImage playImage = UITools.getImage(getClass(), "/images/start_view/icons/play.png");
@@ -85,7 +86,7 @@ public class StartPanelView extends JPanel implements ActionListener, MouseListe
         playButton.setActionCommand(Settings.START_VIEW_PLAY_BUTTON_ACTION_NAME);
         playButton.setName(Settings.START_VIEW_PLAY_BUTTON_ACTION_NAME);
         playButton.addMouseListener(this);
-        if (playImage != null) playButton.setIcon(new ImageIcon(playImage));
+        playButton.setIcon(playImage);
         add(playButton);
     }
 
@@ -100,7 +101,6 @@ public class StartPanelView extends JPanel implements ActionListener, MouseListe
     public void showHighScore(int highScore) {
         lblHighScore.setText("Highscore: " + highScore);
     }
-
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -143,7 +143,7 @@ public class StartPanelView extends JPanel implements ActionListener, MouseListe
                 settingsButton.setForeground(Color.GRAY);
                 break;
             case Settings.START_VIEW_PLAY_BUTTON_ACTION_NAME:
-                if (playImageDark != null) playButton.setIcon(new ImageIcon(playImageDark));
+                playButton.setIcon(playImageDark);
                 break;
         }
     }
@@ -158,7 +158,7 @@ public class StartPanelView extends JPanel implements ActionListener, MouseListe
                 settingsButton.setForeground(Color.WHITE);
                 break;
             case Settings.START_VIEW_PLAY_BUTTON_ACTION_NAME:
-                if (playImage != null) playButton.setIcon(new ImageIcon(playImage));
+                playButton.setIcon(playImage);
                 break;
         }
     }
