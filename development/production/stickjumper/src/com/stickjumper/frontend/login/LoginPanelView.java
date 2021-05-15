@@ -3,6 +3,7 @@ package com.stickjumper.frontend.login;
 import com.stickjumper.controller.Controller;
 import com.stickjumper.frontend.Settings;
 import com.stickjumper.utils.UITools;
+import com.stickjumper.utils.components.AdvancedButton;
 import com.stickjumper.utils.components.JRoundPasswordField;
 import com.stickjumper.utils.components.JRoundTextField;
 
@@ -21,7 +22,8 @@ public class LoginPanelView extends JPanel implements ActionListener, MouseListe
     private LoginFrameView loginFrameView;
 
     // All buttons
-    private JButton backButton, loginButton, registerButton;
+    private AdvancedButton backButton, registerButton;
+    private JButton loginButton;
 
     // All Text fields
     private JTextField userNameTextField;
@@ -38,20 +40,15 @@ public class LoginPanelView extends JPanel implements ActionListener, MouseListe
         setBackground(color);
 
         BufferedImage backImage = UITools.getImage(getClass(), "/images/login_register/back.png");
-        backButton = new JButton();
+        backButton = new AdvancedButton();
         backButton.setHorizontalAlignment(SwingConstants.CENTER);
         backButton.setSize(32, 32);
         backButton.setLocation(5, 5);
         backButton.setFont(new Font("Calibri", Font.PLAIN, 12));
-        backButton.setBackground(null);
-        backButton.setOpaque(true);
-        backButton.setBorderPainted(false);
-        backButton.setFocusable(false);
-        backButton.setBorder(null);
         backButton.setActionCommand(Settings.LOGIN_VIEW_BACK_BUTTON_ACTION_NAME);
         backButton.setName(Settings.LOGIN_VIEW_BACK_BUTTON_ACTION_NAME);
         backButton.addActionListener(this);
-        if (backImage != null) backButton.setIcon(new ImageIcon(backImage));
+        backButton.setIcon(backImage);
         add(backButton);
 
         JLabel welcomeLabel = new JLabel();
@@ -112,16 +109,11 @@ public class LoginPanelView extends JPanel implements ActionListener, MouseListe
         loginButton.addActionListener(this);
         add(loginButton);
 
-        registerButton = new JButton();
+        registerButton = new AdvancedButton();
         registerButton.setText("Still not registered? Join the community");
         registerButton.setFont(new Font("Calibri", Font.PLAIN, 14));
         registerButton.setSize(2 * loginButton.getWidth(), 40);
         registerButton.setLocation((getWidth() - registerButton.getWidth()) / 2, getHeight() - (registerButton.getHeight() * 2));
-        registerButton.setBackground(null);
-        registerButton.setOpaque(true);
-        registerButton.setBorderPainted(false);
-        registerButton.setFocusable(false);
-        registerButton.setBorder(null);
         registerButton.setActionCommand(Settings.LOGIN_VIEW_REGISTER_BUTTON_ACTION_NAME);
         registerButton.setName(Settings.LOGIN_VIEW_REGISTER_BUTTON_ACTION_NAME);
         registerButton.addActionListener(this);

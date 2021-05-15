@@ -5,6 +5,7 @@ import com.stickjumper.frontend.Settings;
 import com.stickjumper.frontend.login.LoginFrameView;
 import com.stickjumper.frontend.start.startsidemenu.StartSideMenuPanel;
 import com.stickjumper.utils.UITools;
+import com.stickjumper.utils.components.AdvancedButton;
 
 import javax.swing.*;
 import java.awt.*;
@@ -50,52 +51,36 @@ public class StartPanelView extends JPanel implements ActionListener, MouseListe
         add(lblHighScore);
 
         // Button to open login frame
-        loginButton = new JButton();
+        loginButton = new AdvancedButton();
         loginButton.setText("Login");
         loginButton.setFont(new Font("Calibri", Font.BOLD, 17));
         loginButton.setForeground(Color.WHITE);
         loginButton.setSize(menuPanel.getWidth() - 10, 40);
         loginButton.setHorizontalAlignment(SwingConstants.CENTER);
         loginButton.setLocation((menuPanel.getWidth() - loginButton.getWidth()) / 2, (menuPanel.getHeight() - loginButton.getHeight() * 2 - 80));
-        loginButton.setFocusable(false);
-        loginButton.setBackground(null);
-        loginButton.setBorder(null);
-        loginButton.setOpaque(false);
-        loginButton.setBorderPainted(false);
         loginButton.setActionCommand(Settings.START_VIEW_LOGIN_BUTTON_ACTION_NAME);
         loginButton.setName(Settings.START_VIEW_LOGIN_BUTTON_ACTION_NAME);
         loginButton.addActionListener(this);
         loginButton.addMouseListener(this);
         menuPanel.add(loginButton);
 
-        settingsButton = new JButton();
+        settingsButton = new AdvancedButton();
         settingsButton.setText("Settings");
         settingsButton.setFont(new Font("Calibri", Font.BOLD, 17));
         settingsButton.setForeground(Color.WHITE);
         settingsButton.setSize(menuPanel.getWidth() - 10, 40);
         settingsButton.setHorizontalAlignment(SwingConstants.CENTER);
         settingsButton.setLocation((menuPanel.getWidth() - loginButton.getWidth()) / 2, (menuPanel.getHeight() - settingsButton.getHeight() * 2));
-        settingsButton.setFocusable(false);
-        settingsButton.setBackground(null);
-        settingsButton.setBorder(null);
-        settingsButton.setOpaque(false);
-        settingsButton.setBorderPainted(false);
         settingsButton.addActionListener(this);
         settingsButton.addMouseListener(this);
         settingsButton.setActionCommand(Settings.START_VIEW_SETTINGS_BUTTON_ACTION_NAME);
         settingsButton.setName(Settings.START_VIEW_SETTINGS_BUTTON_ACTION_NAME);
         menuPanel.add(settingsButton);
 
-        playButton = new JButton();
+        playButton = new AdvancedButton();
         playButton.setFont(new Font("Calibri", Font.PLAIN, 15));
         playButton.setSize((playImage != null) ? playImage.getWidth() : 64, (playImage != null) ? playImage.getHeight() : 64);
         playButton.setLocation((getWidth() - playButton.getWidth()) / 2, (getHeight() - playButton.getHeight()) / 2);
-        playButton.setFocusable(false);
-        playButton.setBackground(null);
-        playButton.setOpaque(false);
-        playButton.setBorderPainted(false);
-        playButton.setFocusable(false);
-        playButton.setBorder(null);
         playButton.addActionListener(this);
         playButton.setActionCommand(Settings.START_VIEW_PLAY_BUTTON_ACTION_NAME);
         playButton.setName(Settings.START_VIEW_PLAY_BUTTON_ACTION_NAME);

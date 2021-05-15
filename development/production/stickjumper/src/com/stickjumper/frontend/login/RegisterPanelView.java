@@ -3,6 +3,7 @@ package com.stickjumper.frontend.login;
 import com.stickjumper.controller.Controller;
 import com.stickjumper.frontend.Settings;
 import com.stickjumper.utils.UITools;
+import com.stickjumper.utils.components.AdvancedButton;
 import com.stickjumper.utils.components.JRoundPasswordField;
 import com.stickjumper.utils.components.JRoundTextField;
 
@@ -18,7 +19,8 @@ public class RegisterPanelView extends JPanel implements ActionListener {
     private LoginFrameView loginFrameView;
 
     // All buttons
-    private JButton backButton, registerButton;
+    private AdvancedButton backButton;
+    private JButton registerButton;
 
     // All Text fields
     private JTextField userNameTextField;
@@ -36,18 +38,13 @@ public class RegisterPanelView extends JPanel implements ActionListener {
         Color color = new Color(224, 220, 255);
         setBackground(color);
 
-        backButton = new JButton();
+        backButton = new AdvancedButton();
         backButton.setHorizontalAlignment(SwingConstants.CENTER);
         backButton.setSize(32, 32);
         backButton.setLocation(5, 5);
         backButton.setFont(new Font("Calibri", Font.PLAIN, 12));
-        backButton.setBackground(null);
-        backButton.setOpaque(true);
-        backButton.setBorderPainted(false);
-        backButton.setFocusable(false);
-        backButton.setBorder(null);
         BufferedImage image = UITools.getImage(getClass(), "/images/login_register/back.png");
-        if (image != null) backButton.setIcon(new ImageIcon(image));
+        backButton.setIcon(image);
         backButton.setActionCommand(Settings.LOGIN_VIEW_BACK_BUTTON_ACTION_NAME);
         backButton.addActionListener(this);
         add(backButton);
