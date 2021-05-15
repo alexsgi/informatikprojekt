@@ -42,7 +42,6 @@ public class Controller {
     public void setGamePanel(GamePanelView gamePanel) {
         this.gamePanelView = gamePanel;
         panelFrameManager.setGamePanelView(gamePanel);
-
     }
 
     public void setLoginFrameView(LoginFrameView loginFrameView) {
