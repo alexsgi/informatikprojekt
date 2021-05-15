@@ -48,6 +48,7 @@ public class LoginPanelView extends JPanel implements ActionListener, MouseListe
         backButton.setActionCommand(Settings.LOGIN_VIEW_BACK_BUTTON_ACTION_NAME);
         backButton.setName(Settings.LOGIN_VIEW_BACK_BUTTON_ACTION_NAME);
         backButton.addActionListener(this);
+        backButton.addMouseListener(this);
         backButton.setIcon(backImage);
         add(backButton);
 
@@ -107,6 +108,7 @@ public class LoginPanelView extends JPanel implements ActionListener, MouseListe
         loginButton.setActionCommand(Settings.LOGIN_VIEW_LOGIN_BUTTON_ACTION_NAME);
         loginButton.setName(Settings.LOGIN_VIEW_LOGIN_BUTTON_ACTION_NAME);
         loginButton.addActionListener(this);
+        loginButton.addMouseListener(this);
         add(loginButton);
 
         registerButton = new AdvancedButton();
@@ -117,9 +119,8 @@ public class LoginPanelView extends JPanel implements ActionListener, MouseListe
         registerButton.setActionCommand(Settings.LOGIN_VIEW_REGISTER_BUTTON_ACTION_NAME);
         registerButton.setName(Settings.LOGIN_VIEW_REGISTER_BUTTON_ACTION_NAME);
         registerButton.addActionListener(this);
+        registerButton.addMouseListener(this);
         add(registerButton);
-
-        addAllMouseListeners();
     }
 
     @Override
@@ -157,29 +158,6 @@ public class LoginPanelView extends JPanel implements ActionListener, MouseListe
         }
     }
 
-    private void addAllMouseListeners() {
-        registerButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                registerButton.setForeground(Color.BLUE);
-            }
-
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                registerButton.setForeground(Color.BLACK);
-            }
-        });
-
-        backButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                backButton.setForeground(Color.BLUE);
-            }
-
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                backButton.setForeground(Color.BLACK);
-            }
-        });
-
-    }
-
     @Override
     public void mouseClicked(MouseEvent e) {
 
@@ -197,11 +175,31 @@ public class LoginPanelView extends JPanel implements ActionListener, MouseListe
 
     @Override
     public void mouseEntered(MouseEvent e) {
-
+        switch (e.getComponent().getName()) {
+            case Settings.LOGIN_VIEW_BACK_BUTTON_ACTION_NAME:
+                // redundant?
+                break;
+            case Settings.LOGIN_VIEW_LOGIN_BUTTON_ACTION_NAME:
+                // redundant?
+                break;
+            case Settings.LOGIN_VIEW_REGISTER_BUTTON_ACTION_NAME:
+                registerButton.setForeground(Color.BLUE);
+                break;
+        }
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
-
+        switch (e.getComponent().getName()) {
+            case Settings.LOGIN_VIEW_BACK_BUTTON_ACTION_NAME:
+                // redundant?
+                break;
+            case Settings.LOGIN_VIEW_LOGIN_BUTTON_ACTION_NAME:
+                // redundant?
+                break;
+            case Settings.LOGIN_VIEW_REGISTER_BUTTON_ACTION_NAME:
+                registerButton.setForeground(Color.BLACK);
+                break;
+        }
     }
 }
