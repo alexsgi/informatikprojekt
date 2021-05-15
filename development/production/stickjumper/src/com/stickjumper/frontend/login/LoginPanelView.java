@@ -127,7 +127,7 @@ public class LoginPanelView extends JPanel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        switch (e.getActionCommand()){
+        switch (e.getActionCommand()) {
             case "backButton":
                 backButton.setEnabled(false);
                 controller.panelFrameManager.loginFrameClose();
@@ -164,11 +164,10 @@ public class LoginPanelView extends JPanel implements ActionListener {
                 break;
 
 
-
         }
     }
 
-    private void addAllMouseListeners(){
+    private void addAllMouseListeners() {
         registerButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 registerButton.setForeground(Color.BLUE);

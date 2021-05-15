@@ -17,30 +17,22 @@ import java.sql.SQLException;
 
 public class Controller {
 
-
-    private final int speed = 1;
-
     // Player management
     private Player currentPlayer;
     private List playerList;
     private int currentScore = 0;
-
     // Display management (temporarily)
     private Scenery scenery;
-
-    // All frames
-    public final MainFrameView mainFrameView;
-    private LoginFrameView loginFrameView;
-
     // All panels
     private StartPanelView startPanelView;
     private GamePanelView gamePanelView;
     private LoginPanelView loginPanelView;
     private RegisterPanelView registerPanelView;
-
+    // All frames
+    public final MainFrameView mainFrameView;
+    private LoginFrameView loginFrameView;
     // Manages open and close operations for frames and panels
     public final PanelFrameManager panelFrameManager;
-
 
     public Controller(MainFrameView mainFrameView) {
         this.mainFrameView = mainFrameView;
@@ -74,11 +66,8 @@ public class Controller {
     }
 
 
-
-
-
     public void startGame() {
-        panelFrameManager.mainFrameSetPanelToGamePanel();
+        panelFrameManager.switchToGamePanel();
         currentScore = -1;
         // new scenery (temporarily)
         scenery = new Scenery();

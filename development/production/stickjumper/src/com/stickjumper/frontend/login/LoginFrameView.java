@@ -33,6 +33,4 @@ public class LoginFrameView extends JFrame {
     }
 
 
-
-
 }

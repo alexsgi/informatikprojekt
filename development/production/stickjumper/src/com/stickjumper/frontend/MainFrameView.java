@@ -40,7 +40,6 @@ public class MainFrameView extends JFrame {
     }
 
 
-
     public void addPlayerListToController(List list) {
         controller.setList(list);
     }

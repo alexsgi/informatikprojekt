@@ -27,7 +27,7 @@ public class RegisterPanelView extends JPanel implements ActionListener {
 
 
     public RegisterPanelView(Controller controller, LoginFrameView loginFrameView) {
-        this.controller= controller;
+        this.controller = controller;
         this.loginFrameView = loginFrameView;
 
         setLayout(null);
@@ -139,7 +139,7 @@ public class RegisterPanelView extends JPanel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        switch (e.getActionCommand()){
+        switch (e.getActionCommand()) {
             case "registerButton":
                 /*
                 registerButton.setEnabled(false);

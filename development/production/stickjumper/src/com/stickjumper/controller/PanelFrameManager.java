@@ -7,8 +7,6 @@ import com.stickjumper.frontend.login.LoginPanelView;
 import com.stickjumper.frontend.login.RegisterPanelView;
 import com.stickjumper.frontend.start.StartPanelView;
 
-import java.awt.*;
-
 public class PanelFrameManager {
 
     // All panels
@@ -32,12 +30,12 @@ public class PanelFrameManager {
         mainFrameView.setVisible(true);
     }
 
-    public void starterLoginButton(){
+    public void starterLoginButton() {
         mainFrameDisable();
         loginFrameView.setVisible(true);
     }
 
-    public void loginFrameClose(){
+    public void loginFrameClose() {
         loginFrameView.setVisible(false);
         enableMainFrame();
         loginFrameView.dispose();
@@ -52,16 +50,16 @@ public class PanelFrameManager {
         mainFrameView.revalidate();
     }
 
-    public void switchToStartPanel(){
+    public void switchToStartPanel() {
         mainFrameView.setContentPane(startPanelView);
         mainFrameView.revalidate();
     }
 
-    public void loginPanelToRegisterPanel(){
+    public void loginPanelToRegisterPanel() {
         loginFrameView.setContentPane(registerPanelView);
     }
 
-    public void switchToLogin(){
+    public void switchToLogin() {
         loginFrameView.setContentPane(loginPanelView);
     }
 
@@ -69,7 +67,9 @@ public class PanelFrameManager {
         this.loginPanelView = loginPanelView;
     }
 
-    public void setRegisterPanelView(RegisterPanelView registerPanelView) {this.registerPanelView = registerPanelView;}
+    public void setRegisterPanelView(RegisterPanelView registerPanelView) {
+        this.registerPanelView = registerPanelView;
+    }
 
     public void setGamePanelView(GamePanelView gamePanelView) {
         this.gamePanelView = gamePanelView;

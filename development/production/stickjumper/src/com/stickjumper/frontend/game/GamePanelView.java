@@ -6,8 +6,6 @@ import com.stickjumper.utils.UITools;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
@@ -43,24 +41,6 @@ public class GamePanelView extends JPanel {
         BufferedImage homeImageLight = UITools.getImage(getClass(), "/images/game_view/icons/home-light.png");
         if (homeImageDark != null) homeButton.setIcon(new ImageIcon(homeImageDark));
         add(homeButton);
-        homeButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                controller.panelFrameManager.mainFrameSetPanelToStartPanel();
-            }
-        });
-
-        homeButton.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseEntered(MouseEvent e) {
-                if (homeImageLight != null) homeButton.setIcon(new ImageIcon(homeImageLight));
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e) {
-                if (homeImageDark != null) homeButton.setIcon(new ImageIcon(homeImageDark));
-            }
-        });
 
         // Button to start the movement
         JButton startButton = new JButton();
@@ -85,8 +65,21 @@ public class GamePanelView extends JPanel {
         movingBackground.setSize(2560, 640);
         add(movingBackground);
 
+        homeButton.addActionListener(e -> controller.panelFrameManager.switchToStartPanel());
         startButton.addActionListener(e -> controller.startMovingBackground());
         stopButton.addActionListener(e -> controller.stopMovingBackground());
+
+        homeButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                if (homeImageLight != null) homeButton.setIcon(new ImageIcon(homeImageLight));
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                if (homeImageDark != null) homeButton.setIcon(new ImageIcon(homeImageDark));
+            }
+        });
     }
 
     public void startMovingBackground() {

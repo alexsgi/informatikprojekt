@@ -115,11 +115,10 @@ public class StartPanelView extends JPanel implements ActionListener {
     }
 
 
-
     @Override
     public void actionPerformed(ActionEvent e) {
 
-        switch (e.getActionCommand()){
+        switch (e.getActionCommand()) {
             case "loginButton":
                 LoginFrameView loginFrame = new LoginFrameView(controller);
                 controller.setLoginFrameView(loginFrame);
@@ -145,7 +144,7 @@ public class StartPanelView extends JPanel implements ActionListener {
 
     }
 
-    public void addAllMouseListeners(){
+    public void addAllMouseListeners() {
         loginButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 loginButton.setForeground(Color.GRAY);
