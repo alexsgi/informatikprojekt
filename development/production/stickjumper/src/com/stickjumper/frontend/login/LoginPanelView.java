@@ -2,7 +2,6 @@ package com.stickjumper.frontend.login;
 
 import com.stickjumper.controller.Controller;
 import com.stickjumper.frontend.Settings;
-import com.stickjumper.utils.UITools;
 import com.stickjumper.utils.components.AdvancedButton;
 import com.stickjumper.utils.components.JRoundPasswordField;
 import com.stickjumper.utils.components.JRoundTextField;
@@ -13,7 +12,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.awt.image.BufferedImage;
 import java.sql.SQLException;
 
 public class LoginPanelView extends JPanel implements ActionListener, MouseListener {
@@ -39,7 +37,6 @@ public class LoginPanelView extends JPanel implements ActionListener, MouseListe
         Color color = new Color(224, 255, 255);
         setBackground(color);
 
-        BufferedImage backImage = UITools.getImage(getClass(), "/images/login_register/back.png");
         backButton = new AdvancedButton();
         backButton.setHorizontalAlignment(SwingConstants.CENTER);
         backButton.setSize(32, 32);
@@ -49,14 +46,14 @@ public class LoginPanelView extends JPanel implements ActionListener, MouseListe
         backButton.setName(Settings.LOGIN_VIEW_BACK_BUTTON_ACTION_NAME);
         backButton.addActionListener(this);
         backButton.addMouseListener(this);
-        backButton.setIcon(backImage);
+        backButton.setIcon(Settings.LOGIN_REGISTER_BACK);
         add(backButton);
 
         JLabel welcomeLabel = new JLabel();
         welcomeLabel.setText("Welcome back to StickJumper");
         welcomeLabel.setHorizontalAlignment(SwingConstants.CENTER);
         welcomeLabel.setBounds(0, 20, 600, 50);
-        welcomeLabel.setFont(new Font("Open Sans", Font.BOLD, 22));
+        welcomeLabel.setFont(Settings.FONT_LOGIN_HEADER);
         add(welcomeLabel);
 
         JLabel signInLabel = new JLabel();
@@ -64,7 +61,7 @@ public class LoginPanelView extends JPanel implements ActionListener, MouseListe
         signInLabel.setHorizontalAlignment(SwingConstants.CENTER);
         signInLabel.setSize(getWidth(), 30);
         signInLabel.setLocation(0, welcomeLabel.getY() + welcomeLabel.getHeight() + 5);
-        signInLabel.setFont(new Font("Open Sans", Font.PLAIN, 14));
+        signInLabel.setFont(Settings.FONT_LOGIN_SUBHEADER);
         add(signInLabel);
 
         JLabel userNameLabel = new JLabel();
@@ -72,13 +69,13 @@ public class LoginPanelView extends JPanel implements ActionListener, MouseListe
         userNameLabel.setHorizontalAlignment(SwingConstants.LEFT);
         userNameLabel.setSize(getWidth() - 2 * 100, 30);
         userNameLabel.setLocation(getWidth() / 7, signInLabel.getY() + signInLabel.getHeight() + 25);
-        userNameLabel.setFont(new Font("Open Sans", Font.PLAIN, 13));
+        userNameLabel.setFont(Settings.FONT_LOGIN_FIELDS_LABELS);
         add(userNameLabel);
 
         userNameTextField = new JRoundTextField(Settings.LOGIN_VIEW_TEXTFIELD_CORNER_RADIUS);
         userNameTextField.setSize(getWidth() - 2 * 100, 30);
         userNameTextField.setLocation(getWidth() / 7, userNameLabel.getY() + userNameLabel.getHeight() + 1);
-        userNameTextField.setFont(new Font("Open Sans", Font.PLAIN, 13));
+        userNameTextField.setFont(Settings.FONT_LOGIN_FIELDS_LABELS);
         userNameTextField.setToolTipText("Enter your username");
         add(userNameTextField);
 
@@ -87,7 +84,7 @@ public class LoginPanelView extends JPanel implements ActionListener, MouseListe
         passwordLabel.setHorizontalAlignment(SwingConstants.LEFT);
         passwordLabel.setSize(getWidth() - 2 * 100, 30);
         passwordLabel.setLocation(getWidth() / 7, userNameTextField.getY() + userNameTextField.getHeight() + 1);
-        passwordLabel.setFont(new Font("Open Sans", Font.PLAIN, 13));
+        passwordLabel.setFont(Settings.FONT_LOGIN_FIELDS_LABELS);
         add(passwordLabel);
 
         passwordField = new JRoundPasswordField(Settings.LOGIN_VIEW_TEXTFIELD_CORNER_RADIUS);
@@ -95,13 +92,13 @@ public class LoginPanelView extends JPanel implements ActionListener, MouseListe
         passwordField.setSize(getWidth() - 2 * 100, 30);
         passwordField.setLocation(getWidth() / 7, passwordLabel.getY() + passwordLabel.getHeight() + 1);
         passwordField.setEchoChar('*');
-        passwordField.setFont(new Font("Open Sans", Font.PLAIN, 13));
+        passwordField.setFont(Settings.FONT_LOGIN_FIELDS_LABELS);
         passwordField.setToolTipText("Enter your password");
         add(passwordField);
 
         loginButton = new JButton();
         loginButton.setText("Login");
-        loginButton.setFont(new Font("Calibri", Font.PLAIN, 15));
+        loginButton.setFont(Settings.FONT_LOGIN_BUTTON);
         loginButton.setSize(150, 40);
         loginButton.setLocation((getWidth() - loginButton.getWidth()) / 2, getHeight() - (int) (loginButton.getHeight() * 3.5));
         loginButton.setFocusable(false);
@@ -113,7 +110,7 @@ public class LoginPanelView extends JPanel implements ActionListener, MouseListe
 
         registerButton = new AdvancedButton();
         registerButton.setText("Still not registered? Join the community");
-        registerButton.setFont(new Font("Calibri", Font.PLAIN, 14));
+        registerButton.setFont(Settings.FONT_LOGIN_SMALL_BUTTON);
         registerButton.setSize(2 * loginButton.getWidth(), 40);
         registerButton.setLocation((getWidth() - registerButton.getWidth()) / 2, getHeight() - (registerButton.getHeight() * 2));
         registerButton.setActionCommand(Settings.LOGIN_VIEW_REGISTER_BUTTON_ACTION_NAME);

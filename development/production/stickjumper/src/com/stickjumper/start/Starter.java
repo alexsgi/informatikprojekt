@@ -18,20 +18,19 @@ public class Starter {
         LoadingFrameView loadingFrameView = new LoadingFrameView();
         loadingFrameView.setVisible(true);
 
-        List list;
+        long start, end;
+        start = System.currentTimeMillis();
+        UITools.loadALlImages(loadingFrameView.getClass());
+        end = System.currentTimeMillis();
+        System.err.println("Image loading took " + (end - start) + " ms");
 
-        // INTERNET CONNECTION TEST
+        List list;
         // boolean connectionAvailable = serverConnectionTest();
         // if (connectionAvailable) {
-        // Init shut down hook
-        // Code to run when shutting down software
         Runtime.getRuntime().addShutdownHook(new Thread(DBConnection::close));
         // Make all internet boot operations (db connection, ...)
         DBConnection.init();
         list = DBConnection.getAllPlayers();
-
-        // boot operations
-        // no internet connection -> one single Player to locally save data until you close the game
 
         // Create main frame
         MainFrameView mainFrameView = new MainFrameView();

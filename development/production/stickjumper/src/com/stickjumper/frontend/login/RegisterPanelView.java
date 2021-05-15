@@ -2,7 +2,6 @@ package com.stickjumper.frontend.login;
 
 import com.stickjumper.controller.Controller;
 import com.stickjumper.frontend.Settings;
-import com.stickjumper.utils.UITools;
 import com.stickjumper.utils.components.AdvancedButton;
 import com.stickjumper.utils.components.JRoundPasswordField;
 import com.stickjumper.utils.components.JRoundTextField;
@@ -11,7 +10,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
 
 public class RegisterPanelView extends JPanel implements ActionListener {
 
@@ -43,8 +41,7 @@ public class RegisterPanelView extends JPanel implements ActionListener {
         backButton.setSize(32, 32);
         backButton.setLocation(5, 5);
         backButton.setFont(new Font("Calibri", Font.PLAIN, 12));
-        BufferedImage image = UITools.getImage(getClass(), "/images/login_register/back.png");
-        backButton.setIcon(image);
+        backButton.setIcon(Settings.LOGIN_REGISTER_BACK);
         backButton.setActionCommand(Settings.LOGIN_VIEW_BACK_BUTTON_ACTION_NAME);
         backButton.addActionListener(this);
         add(backButton);

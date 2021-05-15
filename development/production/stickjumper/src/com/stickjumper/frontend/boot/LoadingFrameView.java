@@ -5,6 +5,7 @@ import com.stickjumper.utils.UITools;
 
 import javax.swing.*;
 import java.awt.geom.RoundRectangle2D;
+import java.awt.image.BufferedImage;
 
 public class LoadingFrameView extends JFrame {
 
@@ -15,9 +16,11 @@ public class LoadingFrameView extends JFrame {
         setLocationRelativeTo(null);
         // Make round corners
         setShape(new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), Settings.LOADING_FRAME_CORNER_RADIUS, Settings.LOADING_FRAME_CORNER_RADIUS));
-        setIconImage(UITools.getImage(getClass(), "/images/icons/appicon_5.png"));
+        BufferedImage image = UITools.getImage(getClass(), Settings.APP_ICON);
+        Settings.APP_ICON_IMAGE = image;
+        setIconImage(image);
 
-        setContentPane(new LoadingPanelView());
+        setContentPane(new LoadingPanelView(this));
     }
 
 }

@@ -3,7 +3,6 @@ package com.stickjumper.frontend.game;
 import com.stickjumper.controller.Controller;
 import com.stickjumper.frontend.Settings;
 import com.stickjumper.frontend.rendering.MovingBackground;
-import com.stickjumper.utils.UITools;
 import com.stickjumper.utils.components.AdvancedButton;
 
 import javax.swing.*;
@@ -12,17 +11,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.awt.image.BufferedImage;
 
 public class GamePanelView extends JPanel implements ActionListener, MouseListener {
 
-    private final Font MAIN_FONT = UITools.registerFont();
     private Controller controller;
     private MovingBackground movingBackground;
 
     private JButton startButton, stopButton;
     private AdvancedButton backButton;
-    private BufferedImage homeImageDark, homeImageLight;
 
     public GamePanelView(Controller controller) {
         this.controller = controller;
@@ -32,27 +28,24 @@ public class GamePanelView extends JPanel implements ActionListener, MouseListen
         JLabel lblTitle = new JLabel("GamePanel");
         lblTitle.setHorizontalAlignment(SwingConstants.CENTER);
         lblTitle.setBounds(0, 96, 1280, 83);
-        lblTitle.setFont(MAIN_FONT);
+        lblTitle.setFont(Settings.FONT_HEADING_BIG);
         add(lblTitle);
 
         backButton = new AdvancedButton();
         backButton.setHorizontalAlignment(SwingConstants.CENTER);
         backButton.setSize(36, 36);
         backButton.setLocation(5, 5);
-        backButton.setFont(new Font("Calibri", Font.PLAIN, 12));
         backButton.setActionCommand(Settings.GAME_VIEW_BACK_BUTTON_ACTION_NAME);
         backButton.setName(Settings.GAME_VIEW_BACK_BUTTON_ACTION_NAME);
-        homeImageDark = UITools.getImage(getClass(), "/images/game_view/icons/home.png");
-        homeImageLight = UITools.getImage(getClass(), "/images/game_view/icons/home-light.png");
         backButton.addActionListener(this);
         backButton.addMouseListener(this);
-        backButton.setIcon(homeImageDark);
+        backButton.setIcon(Settings.GAME_ICON_HOME_DARK);
         add(backButton);
 
         // Button to start the movement
         startButton = new JButton();
         startButton.setText("Start");
-        startButton.setFont(new Font("Calibri", Font.PLAIN, 15));
+        startButton.setFont(Settings.FONT_BUTTON_PLAIN);
         startButton.setSize(200, 40);
         startButton.setLocation(((getWidth() - startButton.getWidth()) / 2) + (getWidth() - startButton.getWidth()) / 4, getHeight() - startButton.getHeight() * 2);
         startButton.setFocusable(false);
@@ -65,7 +58,7 @@ public class GamePanelView extends JPanel implements ActionListener, MouseListen
         // Button to stop the movement
         stopButton = new JButton();
         stopButton.setText("Stop");
-        stopButton.setFont(new Font("Calibri", Font.PLAIN, 15));
+        stopButton.setFont(Settings.FONT_BUTTON_PLAIN);
         stopButton.setSize(200, 40);
         stopButton.setLocation((getWidth() - stopButton.getWidth()) / 4, getHeight() - stopButton.getHeight() * 2);
         stopButton.setFocusable(false);
@@ -117,7 +110,7 @@ public class GamePanelView extends JPanel implements ActionListener, MouseListen
     public void mouseEntered(MouseEvent e) {
         switch (e.getComponent().getName()) {
             case Settings.GAME_VIEW_BACK_BUTTON_ACTION_NAME:
-                if (homeImageLight != null) backButton.setIcon(new ImageIcon(homeImageLight));
+                backButton.setIcon(Settings.GAME_ICON_HOME);
                 break;
             case Settings.GAME_VIEW_START_BUTTON_ACTION_NAME:
                 startButton.setForeground(Color.GRAY);
@@ -132,7 +125,7 @@ public class GamePanelView extends JPanel implements ActionListener, MouseListen
     public void mouseExited(MouseEvent e) {
         switch (e.getComponent().getName()) {
             case Settings.GAME_VIEW_BACK_BUTTON_ACTION_NAME:
-                if (homeImageDark != null) backButton.setIcon(new ImageIcon(homeImageDark));
+                backButton.setIcon(Settings.GAME_ICON_HOME_DARK);
                 break;
             case Settings.GAME_VIEW_START_BUTTON_ACTION_NAME:
                 startButton.setForeground(Color.BLACK);
