@@ -72,19 +72,19 @@ public class StartPanelView extends JPanel implements ActionListener, MouseListe
         settingsButton.setSize(menuPanel.getWidth() - 10, 40);
         settingsButton.setHorizontalAlignment(SwingConstants.CENTER);
         settingsButton.setLocation((menuPanel.getWidth() - loginButton.getWidth()) / 2, (menuPanel.getHeight() - settingsButton.getHeight() * 2));
-        settingsButton.addActionListener(this);
-        settingsButton.addMouseListener(this);
         settingsButton.setActionCommand(Settings.START_VIEW_SETTINGS_BUTTON_ACTION_NAME);
         settingsButton.setName(Settings.START_VIEW_SETTINGS_BUTTON_ACTION_NAME);
+        settingsButton.addActionListener(this);
+        settingsButton.addMouseListener(this);
         menuPanel.add(settingsButton);
 
         playButton = new AdvancedButton();
         playButton.setFont(new Font("Calibri", Font.PLAIN, 15));
         playButton.setSize((playImage != null) ? playImage.getWidth() : 64, (playImage != null) ? playImage.getHeight() : 64);
         playButton.setLocation((getWidth() - playButton.getWidth()) / 2, (getHeight() - playButton.getHeight()) / 2);
-        playButton.addActionListener(this);
         playButton.setActionCommand(Settings.START_VIEW_PLAY_BUTTON_ACTION_NAME);
         playButton.setName(Settings.START_VIEW_PLAY_BUTTON_ACTION_NAME);
+        playButton.addActionListener(this);
         playButton.addMouseListener(this);
         playButton.setIcon(playImage);
         add(playButton);

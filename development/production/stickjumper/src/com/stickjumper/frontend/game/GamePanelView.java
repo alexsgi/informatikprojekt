@@ -4,6 +4,7 @@ import com.stickjumper.controller.Controller;
 import com.stickjumper.frontend.Settings;
 import com.stickjumper.frontend.rendering.MovingBackground;
 import com.stickjumper.utils.UITools;
+import com.stickjumper.utils.components.AdvancedButton;
 
 import javax.swing.*;
 import java.awt.*;
@@ -19,7 +20,8 @@ public class GamePanelView extends JPanel implements ActionListener, MouseListen
     private Controller controller;
     private MovingBackground movingBackground;
 
-    private JButton backButton, startButton, stopButton;
+    private JButton startButton, stopButton;
+    private AdvancedButton backButton;
     private BufferedImage homeImageDark, homeImageLight;
 
     public GamePanelView(Controller controller) {
@@ -33,21 +35,18 @@ public class GamePanelView extends JPanel implements ActionListener, MouseListen
         lblTitle.setFont(MAIN_FONT);
         add(lblTitle);
 
-        backButton = new JButton();
+        backButton = new AdvancedButton();
         backButton.setHorizontalAlignment(SwingConstants.CENTER);
         backButton.setSize(36, 36);
         backButton.setLocation(5, 5);
         backButton.setFont(new Font("Calibri", Font.PLAIN, 12));
-        backButton.setBackground(null);
-        backButton.setOpaque(false);
-        backButton.setBorderPainted(false);
-        backButton.setFocusable(false);
-        backButton.setBorder(null);
         backButton.setActionCommand(Settings.GAME_VIEW_BACK_BUTTON_ACTION_NAME);
         backButton.setName(Settings.GAME_VIEW_BACK_BUTTON_ACTION_NAME);
         homeImageDark = UITools.getImage(getClass(), "/images/game_view/icons/home.png");
         homeImageLight = UITools.getImage(getClass(), "/images/game_view/icons/home-light.png");
-        if (homeImageDark != null) backButton.setIcon(new ImageIcon(homeImageDark));
+        backButton.addActionListener(this);
+        backButton.addMouseListener(this);
+        backButton.setIcon(homeImageDark);
         add(backButton);
 
         // Button to start the movement
@@ -56,10 +55,11 @@ public class GamePanelView extends JPanel implements ActionListener, MouseListen
         startButton.setFont(new Font("Calibri", Font.PLAIN, 15));
         startButton.setSize(200, 40);
         startButton.setLocation(((getWidth() - startButton.getWidth()) / 2) + (getWidth() - startButton.getWidth()) / 4, getHeight() - startButton.getHeight() * 2);
-        startButton.setVisible(true);
         startButton.setFocusable(false);
         startButton.setActionCommand(Settings.GAME_VIEW_START_BUTTON_ACTION_NAME);
         startButton.setName(Settings.GAME_VIEW_START_BUTTON_ACTION_NAME);
+        startButton.addActionListener(this);
+        startButton.addMouseListener(this);
         add(startButton);
 
         // Button to stop the movement
@@ -68,24 +68,17 @@ public class GamePanelView extends JPanel implements ActionListener, MouseListen
         stopButton.setFont(new Font("Calibri", Font.PLAIN, 15));
         stopButton.setSize(200, 40);
         stopButton.setLocation((getWidth() - stopButton.getWidth()) / 4, getHeight() - stopButton.getHeight() * 2);
-        stopButton.setVisible(true);
         stopButton.setFocusable(false);
         stopButton.setActionCommand(Settings.GAME_VIEW_STOP_BUTTON_ACTION_NAME);
         stopButton.setName(Settings.GAME_VIEW_STOP_BUTTON_ACTION_NAME);
+        stopButton.addActionListener(this);
+        stopButton.addMouseListener(this);
         add(stopButton);
 
         movingBackground = new MovingBackground();
         movingBackground.setVisible(true);
         movingBackground.setSize(2560, 640);
         add(movingBackground);
-
-        backButton.addActionListener(this);
-        startButton.addActionListener(this);
-        stopButton.addActionListener(this);
-
-        backButton.addMouseListener(this);
-        startButton.addMouseListener(this);
-        stopButton.addMouseListener(this);
     }
 
     public void startMovingBackground() {
