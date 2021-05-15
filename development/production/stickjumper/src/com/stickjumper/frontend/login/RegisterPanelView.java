@@ -1,10 +1,11 @@
 package com.stickjumper.frontend.login;
 
 import com.stickjumper.controller.Controller;
-import com.stickjumper.frontend.Settings;
+import com.stickjumper.utils.Settings;
 import com.stickjumper.utils.components.AdvancedButton;
 import com.stickjumper.utils.components.JRoundPasswordField;
 import com.stickjumper.utils.components.JRoundTextField;
+import com.stickjumper.utils.variables.ImageManager;
 
 import javax.swing.*;
 import java.awt.*;
@@ -41,8 +42,8 @@ public class RegisterPanelView extends JPanel implements ActionListener {
         backButton.setSize(32, 32);
         backButton.setLocation(5, 5);
         backButton.setFont(new Font("Calibri", Font.PLAIN, 12));
-        backButton.setIcon(Settings.LOGIN_REGISTER_BACK);
-        backButton.setActionCommand(Settings.LOGIN_VIEW_BACK_BUTTON_ACTION_NAME);
+        backButton.setIcon(ImageManager.LOGIN_REGISTER_BACK);
+        backButton.setActionCommand("backButton");
         backButton.addActionListener(this);
         add(backButton);
 
@@ -116,7 +117,7 @@ public class RegisterPanelView extends JPanel implements ActionListener {
         registerButton.setSize(150, 40);
         registerButton.setLocation((getWidth() - registerButton.getWidth()) / 2, getHeight() - (int) (registerButton.getHeight() * 3.5));
         registerButton.setFocusable(false);
-        registerButton.setActionCommand(Settings.LOGIN_VIEW_REGISTER_BUTTON_ACTION_NAME);
+        registerButton.setActionCommand("registerButton");
         registerButton.addActionListener(this);
         add(registerButton);
     }
@@ -125,7 +126,7 @@ public class RegisterPanelView extends JPanel implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()) {
-            case Settings.LOGIN_VIEW_REGISTER_BUTTON_ACTION_NAME:
+            case "registerButton":
                 /*
                 registerButton.setEnabled(false);
                 String username = userNameTextField.getText(), password;
@@ -151,7 +152,7 @@ public class RegisterPanelView extends JPanel implements ActionListener {
                 registerButton.setEnabled(true);
                 */
                 break;
-            case Settings.LOGIN_VIEW_BACK_BUTTON_ACTION_NAME:
+            case "backButton":
                 backButton.setEnabled(false);
                 controller.getPanelFrameManager().loginFrameClose();
                 break;

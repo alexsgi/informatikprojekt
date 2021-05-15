@@ -5,6 +5,7 @@ import com.stickjumper.data.list.List;
 import com.stickjumper.frontend.MainFrameView;
 import com.stickjumper.frontend.boot.LoadingFrameView;
 import com.stickjumper.utils.UITools;
+import com.stickjumper.utils.variables.ImageManager;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -20,7 +21,7 @@ public class Starter {
 
         long start, end;
         start = System.currentTimeMillis();
-        UITools.loadALlImages(loadingFrameView.getClass());
+        ImageManager.loadALlImages(loadingFrameView.getClass());
         end = System.currentTimeMillis();
         System.err.println("Image loading took " + (end - start) + " ms");
 

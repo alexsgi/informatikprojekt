@@ -1,6 +1,7 @@
 package com.stickjumper.frontend.rendering;
 
-import com.stickjumper.frontend.Settings;
+import com.stickjumper.utils.Settings;
+import com.stickjumper.utils.variables.ImageManager;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,8 +16,8 @@ public class MovingBackground extends JLabel {
     private boolean movement = true;
 
     public MovingBackground() {
-        backgroundMiddle = Settings.MOVING_BACKGROUND;
-        backgroundMiddleMirrored = Settings.MOVING_BACKGROUND_MIRRORED;
+        backgroundMiddle = ImageManager.MOVING_BACKGROUND;
+        backgroundMiddleMirrored = ImageManager.MOVING_BACKGROUND_MIRRORED;
 
         Timer backgroundTimer = new Timer();
         int backgroundSpeed = 7;

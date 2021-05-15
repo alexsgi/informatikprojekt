@@ -1,10 +1,11 @@
 package com.stickjumper.frontend.login;
 
 import com.stickjumper.controller.Controller;
-import com.stickjumper.frontend.Settings;
+import com.stickjumper.utils.Settings;
 import com.stickjumper.utils.components.AdvancedButton;
 import com.stickjumper.utils.components.JRoundPasswordField;
 import com.stickjumper.utils.components.JRoundTextField;
+import com.stickjumper.utils.variables.ImageManager;
 
 import javax.swing.*;
 import java.awt.*;
@@ -42,11 +43,11 @@ public class LoginPanelView extends JPanel implements ActionListener, MouseListe
         backButton.setSize(32, 32);
         backButton.setLocation(5, 5);
         backButton.setFont(new Font("Calibri", Font.PLAIN, 12));
-        backButton.setActionCommand(Settings.LOGIN_VIEW_BACK_BUTTON_ACTION_NAME);
-        backButton.setName(Settings.LOGIN_VIEW_BACK_BUTTON_ACTION_NAME);
+        backButton.setActionCommand("backButton");
+        backButton.setName("backButton");
         backButton.addActionListener(this);
         backButton.addMouseListener(this);
-        backButton.setIcon(Settings.LOGIN_REGISTER_BACK);
+        backButton.setIcon(ImageManager.LOGIN_REGISTER_BACK);
         add(backButton);
 
         JLabel welcomeLabel = new JLabel();
@@ -102,8 +103,8 @@ public class LoginPanelView extends JPanel implements ActionListener, MouseListe
         loginButton.setSize(150, 40);
         loginButton.setLocation((getWidth() - loginButton.getWidth()) / 2, getHeight() - (int) (loginButton.getHeight() * 3.5));
         loginButton.setFocusable(false);
-        loginButton.setActionCommand(Settings.LOGIN_VIEW_LOGIN_BUTTON_ACTION_NAME);
-        loginButton.setName(Settings.LOGIN_VIEW_LOGIN_BUTTON_ACTION_NAME);
+        loginButton.setActionCommand("loginButton");
+        loginButton.setName("loginButton");
         loginButton.addActionListener(this);
         loginButton.addMouseListener(this);
         add(loginButton);
@@ -113,8 +114,8 @@ public class LoginPanelView extends JPanel implements ActionListener, MouseListe
         registerButton.setFont(Settings.FONT_LOGIN_SMALL_BUTTON);
         registerButton.setSize(2 * loginButton.getWidth(), 40);
         registerButton.setLocation((getWidth() - registerButton.getWidth()) / 2, getHeight() - (registerButton.getHeight() * 2));
-        registerButton.setActionCommand(Settings.LOGIN_VIEW_REGISTER_BUTTON_ACTION_NAME);
-        registerButton.setName(Settings.LOGIN_VIEW_REGISTER_BUTTON_ACTION_NAME);
+        registerButton.setActionCommand("registerButton");
+        registerButton.setName("registerButton");
         registerButton.addActionListener(this);
         registerButton.addMouseListener(this);
         add(registerButton);
@@ -123,11 +124,11 @@ public class LoginPanelView extends JPanel implements ActionListener, MouseListe
     @Override
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()) {
-            case Settings.LOGIN_VIEW_BACK_BUTTON_ACTION_NAME:
+            case "backButton":
                 backButton.setEnabled(false);
                 controller.getPanelFrameManager().loginFrameClose();
                 break;
-            case Settings.LOGIN_VIEW_LOGIN_BUTTON_ACTION_NAME:
+            case "loginButton":
                 loginButton.setEnabled(false);
                 String username = userNameTextField.getText(), password;
                 char[] passwordArray = passwordField.getPassword();
@@ -149,7 +150,7 @@ public class LoginPanelView extends JPanel implements ActionListener, MouseListe
                 }
                 loginButton.setEnabled(true);
                 break;
-            case Settings.LOGIN_VIEW_REGISTER_BUTTON_ACTION_NAME:
+            case "registerButton":
                 controller.getPanelFrameManager().loginPanelToRegisterPanel();
                 break;
         }
@@ -173,13 +174,13 @@ public class LoginPanelView extends JPanel implements ActionListener, MouseListe
     @Override
     public void mouseEntered(MouseEvent e) {
         switch (e.getComponent().getName()) {
-            case Settings.LOGIN_VIEW_BACK_BUTTON_ACTION_NAME:
+            case "backButton":
                 // redundant?
                 break;
-            case Settings.LOGIN_VIEW_LOGIN_BUTTON_ACTION_NAME:
+            case "loginButton":
                 // redundant?
                 break;
-            case Settings.LOGIN_VIEW_REGISTER_BUTTON_ACTION_NAME:
+            case "registerButton":
                 registerButton.setForeground(Color.BLUE);
                 break;
         }
@@ -188,13 +189,13 @@ public class LoginPanelView extends JPanel implements ActionListener, MouseListe
     @Override
     public void mouseExited(MouseEvent e) {
         switch (e.getComponent().getName()) {
-            case Settings.LOGIN_VIEW_BACK_BUTTON_ACTION_NAME:
+            case "backButton":
                 // redundant?
                 break;
-            case Settings.LOGIN_VIEW_LOGIN_BUTTON_ACTION_NAME:
+            case "loginButton":
                 // redundant?
                 break;
-            case Settings.LOGIN_VIEW_REGISTER_BUTTON_ACTION_NAME:
+            case "registerButton":
                 registerButton.setForeground(Color.BLACK);
                 break;
         }

@@ -1,6 +1,7 @@
 package com.stickjumper.frontend.start.startsidemenu;
 
-import com.stickjumper.frontend.Settings;
+import com.stickjumper.utils.Settings;
+import com.stickjumper.utils.variables.ImageManager;
 
 import javax.swing.*;
 import java.awt.*;
@@ -24,6 +25,6 @@ public class StartSideMenuPanel extends JPanel {
             return;
         }
          */
-        graphicsObject.drawImage(Settings.START_MENU_BACKGROUND_DARK, 0, 0, null);
+        graphicsObject.drawImage(ImageManager.START_MENU_BACKGROUND_DARK, 0, 0, null);
     }
 }
