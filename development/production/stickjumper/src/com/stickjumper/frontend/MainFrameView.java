@@ -39,7 +39,6 @@ public class MainFrameView extends JFrame {
         setContentPane(startPanel);
     }
 
-
     public void addPlayerListToController(List list) {
         controller.setList(list);
     }

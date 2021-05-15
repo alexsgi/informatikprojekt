@@ -1,6 +1,7 @@
 package com.stickjumper.frontend.login;
 
 import com.stickjumper.controller.Controller;
+import com.stickjumper.frontend.Settings;
 import com.stickjumper.utils.UITools;
 import com.stickjumper.utils.components.JRoundPasswordField;
 import com.stickjumper.utils.components.JRoundTextField;
@@ -74,8 +75,7 @@ public class LoginPanelView extends JPanel implements ActionListener {
         userNameLabel.setFont(new Font("Open Sans", Font.PLAIN, 13));
         add(userNameLabel);
 
-        int corners = 15;
-        userNameTextField = new JRoundTextField(corners);
+        userNameTextField = new JRoundTextField(Settings.LOGIN_TEXTFIELD_CORNER_RADIUS);
         userNameTextField.setSize(getWidth() - 2 * 100, 30);
         userNameTextField.setLocation(getWidth() / 7, userNameLabel.getY() + userNameLabel.getHeight() + 1);
         userNameTextField.setFont(new Font("Open Sans", Font.PLAIN, 13));
@@ -90,7 +90,7 @@ public class LoginPanelView extends JPanel implements ActionListener {
         passwordLabel.setFont(new Font("Open Sans", Font.PLAIN, 13));
         add(passwordLabel);
 
-        passwordField = new JRoundPasswordField(corners);
+        passwordField = new JRoundPasswordField(Settings.LOGIN_TEXTFIELD_CORNER_RADIUS);
         passwordField.setHorizontalAlignment(SwingConstants.LEFT);
         passwordField.setSize(getWidth() - 2 * 100, 30);
         passwordField.setLocation(getWidth() / 7, passwordLabel.getY() + passwordLabel.getHeight() + 1);

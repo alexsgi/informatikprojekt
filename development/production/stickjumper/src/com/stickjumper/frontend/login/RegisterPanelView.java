@@ -1,6 +1,7 @@
 package com.stickjumper.frontend.login;
 
 import com.stickjumper.controller.Controller;
+import com.stickjumper.frontend.Settings;
 import com.stickjumper.utils.UITools;
 import com.stickjumper.utils.components.JRoundPasswordField;
 import com.stickjumper.utils.components.JRoundTextField;
@@ -17,8 +18,7 @@ public class RegisterPanelView extends JPanel implements ActionListener {
     private LoginFrameView loginFrameView;
 
     // All buttons
-    private JButton backButton = new JButton();
-    private JButton registerButton = new JButton();
+    private JButton backButton, registerButton;
 
     // All Text fields
     private JTextField userNameTextField;
@@ -36,7 +36,7 @@ public class RegisterPanelView extends JPanel implements ActionListener {
         Color color = new Color(224, 220, 255);
         setBackground(color);
 
-
+        backButton = new JButton();
         backButton.setHorizontalAlignment(SwingConstants.CENTER);
         backButton.setSize(32, 32);
         backButton.setLocation(5, 5);
@@ -47,13 +47,8 @@ public class RegisterPanelView extends JPanel implements ActionListener {
         backButton.setFocusable(false);
         backButton.setBorder(null);
         BufferedImage image = UITools.getImage(getClass(), "/images/login_register/back.png");
-        if (image != null) {
-            ImageIcon icon = new ImageIcon(image);
-            backButton.setIcon(icon);
-        } else {
-            backButton.setText("Back");
-        }
-        backButton.setActionCommand("backButton");
+        if (image != null) backButton.setIcon(new ImageIcon(image));
+        backButton.setActionCommand("BACK");
         backButton.addActionListener(this);
         add(backButton);
 
@@ -80,8 +75,7 @@ public class RegisterPanelView extends JPanel implements ActionListener {
         userNameLabel.setFont(new Font("Open Sans", Font.PLAIN, 13));
         add(userNameLabel);
 
-        int corners = 15;
-        userNameTextField = new JRoundTextField(corners);
+        userNameTextField = new JRoundTextField(Settings.LOGIN_TEXTFIELD_CORNER_RADIUS);
         userNameTextField.setSize(getWidth() - 2 * 100, 30);
         userNameTextField.setLocation(getWidth() / 7, userNameLabel.getY() + userNameLabel.getHeight() + 1);
         userNameTextField.setFont(new Font("Open Sans", Font.PLAIN, 13));
@@ -96,7 +90,7 @@ public class RegisterPanelView extends JPanel implements ActionListener {
         passwordLabel.setFont(new Font("Open Sans", Font.PLAIN, 13));
         add(passwordLabel);
 
-        passwordField = new JRoundPasswordField(corners);
+        passwordField = new JRoundPasswordField(Settings.LOGIN_TEXTFIELD_CORNER_RADIUS);
         passwordField.setHorizontalAlignment(SwingConstants.LEFT);
         passwordField.setSize(getWidth() - 2 * 100, 30);
         passwordField.setLocation(getWidth() / 7, passwordLabel.getY() + passwordLabel.getHeight() + 1);
@@ -113,7 +107,7 @@ public class RegisterPanelView extends JPanel implements ActionListener {
         passwordLabelAgain.setFont(new Font("Open Sans", Font.PLAIN, 13));
         add(passwordLabelAgain);
 
-        passwordFieldAgain = new JRoundPasswordField(corners);
+        passwordFieldAgain = new JRoundPasswordField(Settings.LOGIN_TEXTFIELD_CORNER_RADIUS);
         passwordFieldAgain.setHorizontalAlignment(SwingConstants.LEFT);
         passwordFieldAgain.setSize(getWidth() - 2 * 100, 30);
         passwordFieldAgain.setLocation(getWidth() / 7, passwordLabelAgain.getY() + passwordLabel.getHeight() + 1);
@@ -122,15 +116,13 @@ public class RegisterPanelView extends JPanel implements ActionListener {
         passwordFieldAgain.setToolTipText("Enter your password");
         add(passwordFieldAgain);
 
-
+        registerButton = new JButton();
         registerButton.setText("Sign up");
         registerButton.setFont(new Font("Calibri", Font.PLAIN, 15));
         registerButton.setSize(150, 40);
         registerButton.setLocation((getWidth() - registerButton.getWidth()) / 2, getHeight() - (int) (registerButton.getHeight() * 3.5));
         registerButton.setFocusable(false);
-        registerButton.setActionCommand("registerButton");
-        registerButton.addActionListener(this);
-        registerButton.setActionCommand("registerButoon");
+        registerButton.setActionCommand("REGISTER");
         registerButton.addActionListener(this);
         add(registerButton);
 
@@ -140,7 +132,7 @@ public class RegisterPanelView extends JPanel implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()) {
-            case "registerButton":
+            case "REGISTER":
                 /*
                 registerButton.setEnabled(false);
                 String username = userNameTextField.getText(), password;
@@ -166,13 +158,10 @@ public class RegisterPanelView extends JPanel implements ActionListener {
                 registerButton.setEnabled(true);
                 */
                 break;
-
-            case "backButton":
+            case "BACK":
                 backButton.setEnabled(false);
                 controller.getPanelFrameManager().loginFrameClose();
                 break;
-
-
         }
     }
 }
