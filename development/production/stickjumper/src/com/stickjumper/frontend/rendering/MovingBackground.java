@@ -25,12 +25,12 @@ public class MovingBackground extends JLabel {
             @Override
             public void run() {
                 if (movement) {
-                    if (backgroundMiddleX > -1277) {
+                    if (backgroundMiddleX > -1274) {
                         backgroundMiddleX -= 1;
                     } else {
                         backgroundMiddleX = 1280;
                     }
-                    if (backgroundMiddleMirroredX > -1277) {
+                    if (backgroundMiddleMirroredX > -1274) {
                         backgroundMiddleMirroredX -= 1;
                     } else {
                         backgroundMiddleMirroredX = 1280;
