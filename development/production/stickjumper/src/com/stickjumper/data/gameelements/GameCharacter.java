@@ -7,19 +7,18 @@ import java.awt.*;
 
 public class GameCharacter extends GameElement {
 
-    private static final int height = 64, width = 64;
+    private static final int width = 70, height = 78;
     private static final String imagePath = "/images/elements/skins/skin_1.png";
     private int skinType;
     private int highScore;
 
     public GameCharacter(Point p, int skinType) {
-        super(p, height, width, true, imagePath);
+        super(p, width, height, true, imagePath);
         this.skinType = skinType;
-        this.setVisible(true);
     }
 
     public GameCharacter(Player player, Point p) {
-        super(p, height, width, true, imagePath);
+        super(p, width, height, true, imagePath);
         highScore = player.getHighScore();
     }
 

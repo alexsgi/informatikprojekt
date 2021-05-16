@@ -10,7 +10,7 @@ public abstract class GameElement {
     private boolean visible;
     private String imagePath;
 
-    public GameElement(Point p, int height, int width, boolean visible, String imagePath) {
+    public GameElement(Point p, int width, int height, boolean visible, String imagePath) {
         this.point = p;
         this.height = height;
         this.width = width;

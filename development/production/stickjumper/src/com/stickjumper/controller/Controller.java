@@ -108,7 +108,7 @@ public class Controller {
         }
 
         public void initPlayerUI(GamePanelView panel) {
-            Point position = new Point(50, 50);
+            Point position = new Point(gamePanelView.getWidth() / 2, gamePanelView.getHeight() / 2);
             GameCharacter character = (currentPlayer == null) ? new GameCharacter(position, 0) : new GameCharacter(currentPlayer, position);
             playerFigure = new GameElementRender(character);
             gamePanelView.add(playerFigure);

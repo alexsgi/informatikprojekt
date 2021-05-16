@@ -19,11 +19,7 @@ public class Starter {
         LoadingFrameView loadingFrameView = new LoadingFrameView();
         loadingFrameView.setVisible(true);
 
-        long start, end;
-        start = System.currentTimeMillis();
         ImageManager.loadALlImages(loadingFrameView.getClass());
-        end = System.currentTimeMillis();
-        System.err.println("Image loading took " + (end - start) + " ms");
 
         List list;
         // boolean connectionAvailable = serverConnectionTest();
