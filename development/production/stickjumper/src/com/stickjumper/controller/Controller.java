@@ -30,9 +30,6 @@ public class Controller {
     // All panels
     private StartPanelView startPanelView;
     private GamePanelView gamePanelView;
-    private LoginPanelView loginPanelView;
-    private RegisterPanelView registerPanelView;
-    private LoginFrameView loginFrameView;
 
     public Controller(MainFrameView mainFrameView) {
         this.mainFrameView = mainFrameView;
@@ -45,7 +42,6 @@ public class Controller {
     }
 
     public void setLoginFrameView(LoginFrameView loginFrameView) {
-        this.loginFrameView = loginFrameView;
         panelFrameManager.setLoginFrameView(loginFrameView);
     }
 
@@ -55,12 +51,10 @@ public class Controller {
     }
 
     public void setLoginPanelView(LoginPanelView loginPanelView) {
-        this.loginPanelView = loginPanelView;
         panelFrameManager.setLoginPanelView(loginPanelView);
     }
 
     public void setRegisterPanelView(RegisterPanelView registerPanelView) {
-        this.registerPanelView = registerPanelView;
         panelFrameManager.setRegisterPanelView(registerPanelView);
     }
 

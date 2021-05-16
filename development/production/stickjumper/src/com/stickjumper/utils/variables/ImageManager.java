@@ -24,5 +24,5 @@ public class ImageManager {
         START_MENU_BACKGROUND_DARK = UITools.getImage(c, "/images/start_view/background/mountains-middle-dark.png");
         LOGIN_REGISTER_BACK = UITools.getImage(c, "/images/login_register/back.png");
     }
-    
+
 }
