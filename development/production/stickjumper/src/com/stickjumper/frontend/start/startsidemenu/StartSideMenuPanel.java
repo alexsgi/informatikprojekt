@@ -1,6 +1,5 @@
 package com.stickjumper.frontend.start.startsidemenu;
 
-import com.stickjumper.utils.Settings;
 import com.stickjumper.utils.variables.ImageManager;
 
 import javax.swing.*;

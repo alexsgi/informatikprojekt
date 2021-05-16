@@ -1,9 +1,9 @@
 package com.stickjumper.frontend.start;
 
 import com.stickjumper.controller.Controller;
-import com.stickjumper.utils.Settings;
 import com.stickjumper.frontend.login.LoginFrameView;
 import com.stickjumper.frontend.start.startsidemenu.StartSideMenuPanel;
+import com.stickjumper.utils.Settings;
 import com.stickjumper.utils.UITools;
 import com.stickjumper.utils.components.AdvancedButton;
 import com.stickjumper.utils.variables.ImageManager;

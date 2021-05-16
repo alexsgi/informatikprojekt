@@ -1,6 +1,5 @@
 package com.stickjumper.frontend.rendering;
 
-import com.stickjumper.utils.Settings;
 import com.stickjumper.utils.variables.ImageManager;
 
 import javax.swing.*;
@@ -58,7 +57,6 @@ public class MovingBackground extends JLabel {
     public void startMovement() {
         movement = true;
     }
-
 
 }
 

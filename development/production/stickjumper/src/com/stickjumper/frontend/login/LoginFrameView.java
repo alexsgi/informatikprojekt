@@ -21,7 +21,7 @@ public class LoginFrameView extends JFrame {
 
         setResizable(false);
         setTitle("Login");
-        setSize(600, 500);
+        setSize(Settings.LOGIN_SCREEN_WIDTH, Settings.LOGIN_SCREEN_HEIGHT);
         setLocationRelativeTo(null);
         // setAlwaysOnTop(true);
 

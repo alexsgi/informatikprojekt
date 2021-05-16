@@ -1,8 +1,8 @@
 package com.stickjumper.frontend.game;
 
 import com.stickjumper.controller.Controller;
-import com.stickjumper.utils.Settings;
 import com.stickjumper.frontend.rendering.MovingBackground;
+import com.stickjumper.utils.Settings;
 import com.stickjumper.utils.components.AdvancedButton;
 import com.stickjumper.utils.variables.ImageManager;
 
