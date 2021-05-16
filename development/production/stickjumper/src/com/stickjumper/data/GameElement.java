@@ -1,21 +1,21 @@
 package com.stickjumper.data;
 
 import java.awt.*;
+import java.awt.image.BufferedImage;
 
 public abstract class GameElement {
 
     private Point point;
-    private int height;
-    private int width;
+    private int width, height;
     private boolean visible;
-    private String imagePath;
+    private BufferedImage image;
 
-    public GameElement(Point p, int width, int height, boolean visible, String imagePath) {
+    public GameElement(Point p, int width, int height, boolean visible, BufferedImage image) {
         this.point = p;
         this.height = height;
         this.width = width;
         this.visible = visible;
-        this.imagePath = imagePath;
+        this.image = image;
     }
 
     public Point getLocation() {
@@ -58,8 +58,8 @@ public abstract class GameElement {
         this.visible = visible;
     }
 
-    public String getImagePath() {
-        return imagePath;
+    public BufferedImage getImage() {
+        return image;
     }
 
     public void incrementX(int n) {

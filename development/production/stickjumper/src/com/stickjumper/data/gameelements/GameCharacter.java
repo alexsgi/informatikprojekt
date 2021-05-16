@@ -2,23 +2,23 @@ package com.stickjumper.data.gameelements;
 
 import com.stickjumper.data.GameElement;
 import com.stickjumper.data.Player;
+import com.stickjumper.utils.variables.ImageManager;
 
 import java.awt.*;
 
 public class GameCharacter extends GameElement {
 
-    private static final int width = 70, height = 78;
-    private static final String imagePath = "/images/elements/skins/skin_1.png";
+    public static final int width = 70 + ImageManager.padding, height = 78 + ImageManager.padding;
     private int skinType;
     private int highScore;
 
     public GameCharacter(Point p, int skinType) {
-        super(p, width, height, true, imagePath);
+        super(p, width, height, true, ImageManager.PLAYER_SKIN_1);
         this.skinType = skinType;
     }
 
     public GameCharacter(Player player, Point p) {
-        super(p, width, height, true, imagePath);
+        super(p, width, height, true, ImageManager.PLAYER_SKIN_1);
         highScore = player.getHighScore();
     }
 

@@ -3,6 +3,8 @@ package com.stickjumper.controller;
 import com.stickjumper.data.Player;
 import com.stickjumper.data.gameelements.Coin;
 import com.stickjumper.data.gameelements.GameCharacter;
+import com.stickjumper.data.gameelements.obstacles.Enemy;
+import com.stickjumper.data.gameelements.obstacles.SteadyObstacle;
 import com.stickjumper.data.list.List;
 import com.stickjumper.frontend.MainFrameView;
 import com.stickjumper.frontend.game.GamePanelView;
@@ -67,7 +69,7 @@ public class Controller {
         currentScore = -1;
         // new scenery (temporarily)
         scenery = new Scenery();
-        scenery.initPlayerUI(gamePanelView);
+        scenery.initPlayerUI();
     }
 
     public boolean playerLogin(String userName, String password) throws SQLException {
@@ -104,14 +106,23 @@ public class Controller {
 
         public Scenery() {
             coinElement = new GameElementRender(new Coin(new Point(600, 200)));
-            gamePanelView.add(coinElement);
+            gamePanelView.addObject(coinElement);
         }
 
-        public void initPlayerUI(GamePanelView panel) {
-            Point position = new Point(gamePanelView.getWidth() / 2, gamePanelView.getHeight() / 2);
+        public void initPlayerUI() {
+
+            int h = gamePanelView.getHeight() - 100;
+            int w = gamePanelView.getWidth();
+            Point position = new Point((w - GameCharacter.width) / 4, h - GameCharacter.height);
             GameCharacter character = (currentPlayer == null) ? new GameCharacter(position, 0) : new GameCharacter(currentPlayer, position);
             playerFigure = new GameElementRender(character);
-            gamePanelView.add(playerFigure);
+            gamePanelView.addObject(playerFigure);
+
+            GameElementRender enemy = new GameElementRender(new Enemy(new Point((w - Enemy.dimension.width) / 2, h - Enemy.dimension.height), 0));
+            gamePanelView.addObject(enemy);
+
+            GameElementRender obstacle = new GameElementRender(new SteadyObstacle(new Point((w - SteadyObstacle.dimension.width) / 2 + (w - SteadyObstacle.dimension.width) / 4, h - SteadyObstacle.dimension.height)));
+            gamePanelView.addObject(obstacle);
         }
 
     }

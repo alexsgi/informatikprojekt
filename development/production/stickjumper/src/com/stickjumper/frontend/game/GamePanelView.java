@@ -1,6 +1,7 @@
 package com.stickjumper.frontend.game;
 
 import com.stickjumper.controller.Controller;
+import com.stickjumper.frontend.rendering.GameElementRender;
 import com.stickjumper.frontend.rendering.MovingBackground;
 import com.stickjumper.utils.Settings;
 import com.stickjumper.utils.components.AdvancedButton;
@@ -26,11 +27,16 @@ public class GamePanelView extends JPanel implements ActionListener, MouseListen
         setLayout(null);
         setSize(1280, 640);
 
+        movingBackground = new MovingBackground();
+        movingBackground.setVisible(true);
+        movingBackground.setSize(2560, 640);
+        add(movingBackground);
+
         JLabel lblTitle = new JLabel("GamePanel");
         lblTitle.setHorizontalAlignment(SwingConstants.CENTER);
         lblTitle.setBounds(0, 96, 1280, 83);
         lblTitle.setFont(Settings.FONT_HEADING_BIG);
-        add(lblTitle);
+        movingBackground.add(lblTitle);
 
         backButton = new AdvancedButton();
         backButton.setHorizontalAlignment(SwingConstants.CENTER);
@@ -41,7 +47,7 @@ public class GamePanelView extends JPanel implements ActionListener, MouseListen
         backButton.addActionListener(this);
         backButton.addMouseListener(this);
         backButton.setIcon(ImageManager.GAME_ICON_HOME_DARK);
-        add(backButton);
+        movingBackground.add(backButton);
 
         // Button to start the movement
         startButton = new JButton();
@@ -54,7 +60,7 @@ public class GamePanelView extends JPanel implements ActionListener, MouseListen
         startButton.setName("startButton");
         startButton.addActionListener(this);
         startButton.addMouseListener(this);
-        add(startButton);
+        movingBackground.add(startButton);
 
         // Button to stop the movement
         stopButton = new JButton();
@@ -67,12 +73,7 @@ public class GamePanelView extends JPanel implements ActionListener, MouseListen
         stopButton.setName("stopButton");
         stopButton.addActionListener(this);
         stopButton.addMouseListener(this);
-        add(stopButton);
-
-        movingBackground = new MovingBackground();
-        movingBackground.setVisible(true);
-        movingBackground.setSize(2560, 640);
-        add(movingBackground);
+        movingBackground.add(stopButton);
     }
 
     public void startMovingBackground() {
@@ -135,5 +136,9 @@ public class GamePanelView extends JPanel implements ActionListener, MouseListen
                 stopButton.setForeground(Color.BLACK);
                 break;
         }
+    }
+
+    public void addObject(GameElementRender render) {
+        movingBackground.add(render);
     }
 }

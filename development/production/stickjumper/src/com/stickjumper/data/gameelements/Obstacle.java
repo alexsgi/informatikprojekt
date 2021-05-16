@@ -3,22 +3,19 @@ package com.stickjumper.data.gameelements;
 import com.stickjumper.data.GameElement;
 
 import java.awt.*;
+import java.awt.image.BufferedImage;
 
 public abstract class Obstacle extends GameElement {
 
-    private static final int height = 64, width = 64;
-    private static final String imagePath = "/images/elements/coin/coin.png";
     private int speed;
 
-    public Obstacle(Point p, int speed) {
-        super(p, height, width, true, imagePath);
-        // a running enemy
+    public Obstacle(Point p, int speed, BufferedImage image, Dimension dimension) {
+        super(p, dimension.width, dimension.height, true, image);
         this.speed = speed;
     }
 
-    public Obstacle(Point p) {
-        super(p, height, width, true, imagePath);
-        // obstacle "not moving" in the game but moving on the screen
+    public Obstacle(Point p, BufferedImage image, Dimension dimension) {
+        super(p, dimension.width, dimension.height, true, image);
         speed = 0;
     }
 

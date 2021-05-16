@@ -57,6 +57,6 @@ public class MovingBackground extends JLabel {
     public void startMovement() {
         movement = true;
     }
-    
+
 }
 

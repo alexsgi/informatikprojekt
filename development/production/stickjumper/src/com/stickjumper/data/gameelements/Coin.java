@@ -1,24 +1,24 @@
 package com.stickjumper.data.gameelements;
 
 import com.stickjumper.data.GameElement;
+import com.stickjumper.utils.variables.ImageManager;
 
 import java.awt.*;
 
 public class Coin extends GameElement {
 
-    private static final int height = 64, width = 64;
-    private static final String imagePath = "/images/elements/coin/coin.png";
+    public static final int width = 64 + ImageManager.padding, height = 64 + ImageManager.padding;
     private final int coinValue;
 
     public Coin(Point p, int coinValue) {
-        super(p, height, width, true, imagePath);
+        super(p, width, height, true, ImageManager.COIN_SKIN);
         this.setVisible(true);
         this.coinValue = coinValue;
     }
 
     // Default coinValue
     public Coin(Point p) {
-        super(p, height, width, true, imagePath);
+        super(p, width, height, true, ImageManager.COIN_SKIN);
         this.setVisible(true);
         this.coinValue = 10;
     }
