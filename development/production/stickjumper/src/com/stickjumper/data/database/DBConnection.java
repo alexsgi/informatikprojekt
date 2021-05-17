@@ -119,12 +119,14 @@ public class DBConnection {
         preparedStatement.setInt(1, player.getHighScore());
         preparedStatement.setString(2, player.getPlayerName());
         preparedStatement.setString(3, player.getPlayerPassword());
-
         int rowsAffected = preparedStatement.executeUpdate();
+        // 1 = all okay; 0 = error (e.g. player not found)
         return rowsAffected == 1;
     }
 
-    public static void registerPlayer(String username, String password) throws SQLException {
+    public static boolean registerPlayer(String username, String password) throws SQLException {
+        Player checkIfExists = getPlayer(username);
+        if(checkIfExists != null) return false;
         // TODO: Hash password?
         String sql = String.format("INSERT INTO %s (playername, playerpassword, highscore, skin) VALUES (?, ?, ?, ?)",
                 DB_TABLE_NAME);
@@ -139,6 +141,7 @@ public class DBConnection {
         Player registeredPlayer = getPlayer(username);
         // or update full list?
         // check if registeredPlayer != null
+        return true;
     }
 
 }

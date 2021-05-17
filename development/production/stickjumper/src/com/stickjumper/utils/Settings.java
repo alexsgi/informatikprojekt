@@ -20,6 +20,7 @@ public class Settings {
     public static Font FONT_BUTTON = new Font("Calibri", Font.BOLD, 17);
     public static Font FONT_BUTTON_PLAIN = new Font("Calibri", Font.PLAIN, 17);
     public static Font FONT_LABEL = new Font("Calibri", Font.PLAIN, 20);
+    public static Font FONT_LABEL_WARNING = new Font("Calibri", Font.PLAIN, 14);
     public static Font FONT_LOGIN_HEADER = new Font("Open Sans", Font.BOLD, 22);
     public static Font FONT_LOGIN_SUBHEADER = new Font("Open Sans", Font.PLAIN, 14);
     public static Font FONT_LOGIN_FIELDS_LABELS = new Font("Open Sans", Font.PLAIN, 13);

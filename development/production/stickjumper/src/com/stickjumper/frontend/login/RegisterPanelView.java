@@ -1,6 +1,7 @@
 package com.stickjumper.frontend.login;
 
 import com.stickjumper.controller.Controller;
+import com.stickjumper.data.database.DBConnection;
 import com.stickjumper.utils.ImageManager;
 import com.stickjumper.utils.Settings;
 import com.stickjumper.utils.components.AdvancedButton;
@@ -11,6 +12,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 
 public class RegisterPanelView extends JPanel implements ActionListener {
 
@@ -23,8 +25,8 @@ public class RegisterPanelView extends JPanel implements ActionListener {
 
     // All Text fields
     private JTextField userNameTextField;
-    private JPasswordField passwordField;
-    private JPasswordField passwordFieldAgain;
+    private JPasswordField passwordField, passwordFieldControl;
+    private JLabel warningLabel;
 
 
     public RegisterPanelView(Controller controller, LoginFrameView loginFrameView) {
@@ -102,14 +104,22 @@ public class RegisterPanelView extends JPanel implements ActionListener {
         passwordLabelAgain.setFont(new Font("Open Sans", Font.PLAIN, 13));
         add(passwordLabelAgain);
 
-        passwordFieldAgain = new JRoundPasswordField(Settings.LOGIN_VIEW_TEXTFIELD_CORNER_RADIUS);
-        passwordFieldAgain.setHorizontalAlignment(SwingConstants.LEFT);
-        passwordFieldAgain.setSize(getWidth() - 2 * 100, 30);
-        passwordFieldAgain.setLocation(getWidth() / 7, passwordLabelAgain.getY() + passwordLabel.getHeight() + 1);
-        passwordFieldAgain.setEchoChar('*');
-        passwordFieldAgain.setFont(new Font("Open Sans", Font.PLAIN, 13));
-        passwordFieldAgain.setToolTipText("Enter your password");
-        add(passwordFieldAgain);
+        passwordFieldControl = new JRoundPasswordField(Settings.LOGIN_VIEW_TEXTFIELD_CORNER_RADIUS);
+        passwordFieldControl.setHorizontalAlignment(SwingConstants.LEFT);
+        passwordFieldControl.setSize(getWidth() - 2 * 100, 30);
+        passwordFieldControl.setLocation(getWidth() / 7, passwordLabelAgain.getY() + passwordLabel.getHeight() + 1);
+        passwordFieldControl.setEchoChar('*');
+        passwordFieldControl.setFont(new Font("Open Sans", Font.PLAIN, 13));
+        passwordFieldControl.setToolTipText("Enter your password");
+        add(passwordFieldControl);
+
+        warningLabel = new JLabel();
+        warningLabel.setSize(getWidth(), 30);
+        warningLabel.setLocation(0, passwordFieldControl.getY() + passwordFieldControl.getHeight() + 10);
+        warningLabel.setFont(Settings.FONT_LABEL_WARNING);
+        warningLabel.setForeground(Color.RED);
+        warningLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        add(warningLabel);
 
         registerButton = new JButton();
         registerButton.setText("Sign up");
@@ -125,35 +135,46 @@ public class RegisterPanelView extends JPanel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        warningLabel.setText(""); // set empty
         switch (e.getActionCommand()) {
             case "registerButton":
-                /*
+                String username = userNameTextField.getText(), password, passwordControl;
+                char[] passwordArray = passwordField.getPassword(), passwordControlArray = passwordFieldControl.getPassword();
+                if (username == null || username.isEmpty()) {
+                    warningLabel.setText("Choose an username");
+                    userNameTextField.requestFocus();
+                    return;
+                }
+                if (passwordArray == null || (password = new String(passwordArray)).isEmpty()) {
+                    warningLabel.setText("Set a password");
+                    passwordField.requestFocus();
+                    return;
+                }
+                if (passwordControlArray == null || (passwordControl = new String(passwordControlArray)).isEmpty()) {
+                    warningLabel.setText("Confirm your password");
+                    passwordFieldControl.requestFocus();
+                    return;
+                }
+                if (!password.equals(passwordControl)) {
+                    warningLabel.setText("The entered passwords do not match");
+                    return;
+                }
                 registerButton.setEnabled(false);
-                String username = userNameTextField.getText(), password;
-                char[] passwordArray = passwordField.getPassword();
-                if (passwordArray != null && !(password = new String(passwordArray)).equals("null") && !password.isEmpty() && username != null && !username.isEmpty()) {
-                    try {
-                        // Test with username = Jan Marsalek & password = dasisteinpasswort
-                        boolean successful = controller.playerLogin(username, password);
-                        if (successful) {
-                            controller.panelFrameManager.enableMainFrame();
-                            controller.panelFrameManager.loginFrameClose();
-                        } else {
-                            JOptionPane.showMessageDialog(null, "False credentials, try again");
-                        }
-
-                    } catch (SQLException throwable) {
-                        throwable.printStackTrace();
+                try {
+                    boolean registrationSuccess = DBConnection.registerPlayer(username, password);
+                    if (!registrationSuccess) {
+                        warningLabel.setText("Username already taken");
+                    } else {
+                        // Registration successful
                     }
-
-                } else {
-                    JOptionPane.showMessageDialog(null, "Enter your credentials");
+                } catch (SQLException throwable) {
+                    // Error - internet connection?
+                    warningLabel.setText("Internet connection available?");
+                    throwable.printStackTrace();
                 }
                 registerButton.setEnabled(true);
-                */
                 break;
             case "backButton":
-                backButton.setEnabled(false);
                 controller.getPanelFrameManager().loginFrameClose();
                 break;
         }
