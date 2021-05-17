@@ -157,3 +157,12 @@ Alex:
 2. Erstellung der Settings-Klasse
 3. Laden aller Bilder beim Loading-Screen
 
+### **16.05.2021**
+Alex:
+1. Anpassung RegisterPanelView
+
+### **17.05.2021**
+Alex:
+1. Implementierung updateHighScore in DBConnection
+2. Registrierungslogik verfasst in RegisterPanelView
+3. Hinzufügen eines warningLabels in RegisterPanelView
