@@ -3,9 +3,9 @@ package com.stickjumper.frontend.game;
 import com.stickjumper.controller.Controller;
 import com.stickjumper.frontend.rendering.GameElementRender;
 import com.stickjumper.frontend.rendering.MovingBackground;
+import com.stickjumper.utils.ImageManager;
 import com.stickjumper.utils.Settings;
 import com.stickjumper.utils.components.AdvancedButton;
-import com.stickjumper.utils.variables.ImageManager;
 
 import javax.swing.*;
 import java.awt.*;

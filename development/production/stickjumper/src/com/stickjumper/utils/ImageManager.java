@@ -1,11 +1,10 @@
-package com.stickjumper.utils.variables;
-
-import com.stickjumper.utils.UITools;
+package com.stickjumper.utils;
 
 import java.awt.image.BufferedImage;
 
 public class ImageManager {
 
+    private static final int sizeTolerance = 5;
     // IMAGES
     public static BufferedImage APP_ICON_IMAGE, BACKGROUND_MAIN, MOVING_BACKGROUND, MOVING_BACKGROUND_MIRRORED;
     public static BufferedImage GAME_ICON_HOME, GAME_ICON_HOME_DARK;
@@ -15,8 +14,6 @@ public class ImageManager {
     public static BufferedImage PLAYER_SKIN_1;
     public static BufferedImage COIN_SKIN;
     public static BufferedImage ENEMY_SKIN, STEADY_OBSTACLE_SKIN;
-
-    public static int padding = 10;
 
     public static void loadALlImages(Class<?> c) {
         BACKGROUND_MAIN = UITools.getImage(c, "/images/start_view/background/mountains-middle.png");
@@ -32,6 +29,10 @@ public class ImageManager {
         COIN_SKIN = UITools.getImage(c, "/images/elements/coin/coin.png");
         ENEMY_SKIN = UITools.getImage(c, "/images/elements/obstacles/enemy.png");
         STEADY_OBSTACLE_SKIN = UITools.getImage(c, "/images/elements/obstacles/steady_obstacle.png");
+    }
+
+    public static int getSizeTolerance() {
+        return sizeTolerance;
     }
 
 }

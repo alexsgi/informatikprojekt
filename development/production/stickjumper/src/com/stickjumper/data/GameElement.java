@@ -1,53 +1,40 @@
 package com.stickjumper.data;
 
+import com.stickjumper.utils.Dimens;
+import com.stickjumper.utils.ImageManager;
+
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
 public abstract class GameElement {
 
-    private Point point;
-    private int width, height;
+    private Point location;
+    private Dimens dimens;
     private boolean visible;
     private BufferedImage image;
 
-    public GameElement(Point p, int width, int height, boolean visible, BufferedImage image) {
-        this.point = p;
-        this.height = height;
-        this.width = width;
+    public GameElement(Point p, Dimens d, boolean visible, BufferedImage image) {
+        this.location = p;
+        d = new Dimens(d.getWidth() + ImageManager.getSizeTolerance(), d.getHeight() + ImageManager.getSizeTolerance());
+        this.dimens = d;
         this.visible = visible;
         this.image = image;
     }
 
     public Point getLocation() {
-        return point;
+        return location;
     }
 
     public void setLocation(Point newPoint) {
-        point = newPoint;
+        location = newPoint;
     }
 
-    public int getX() {
-        return point.x;
+    public Dimens getDimens() {
+        return dimens;
     }
 
-    public void setX(int xPos) {
-        point.x = xPos;
-    }
-
-    public int getY() {
-        return point.y;
-    }
-
-    public void setY(int yPos) {
-        point.y = yPos;
-    }
-
-    public int getHeight() {
-        return height;
-    }
-
-    public int getWidth() {
-        return width;
+    public void setDimens(Dimens dimens) {
+        this.dimens = dimens;
     }
 
     public boolean isVisible() {
@@ -62,11 +49,15 @@ public abstract class GameElement {
         return image;
     }
 
+    public void setImage(BufferedImage image) {
+        this.image = image;
+    }
+
     public void incrementX(int n) {
-        point.x += n;
+        location.x += n;
     }
 
     public void incrementY(int n) {
-        point.y += n;
+        location.y += n;
     }
 }

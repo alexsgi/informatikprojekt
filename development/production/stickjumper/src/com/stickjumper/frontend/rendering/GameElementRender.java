@@ -12,7 +12,7 @@ public class GameElementRender extends JLabel {
         this.gameElement = gameElement;
         setIcon(new ImageIcon(gameElement.getImage()));
         setLocation(gameElement.getLocation());
-        setSize(gameElement.getHeight(), gameElement.getWidth());
+        setSize(gameElement.getDimens().getWidth(), gameElement.getDimens().getHeight());
     }
 
     public GameElement getGameElement() {
