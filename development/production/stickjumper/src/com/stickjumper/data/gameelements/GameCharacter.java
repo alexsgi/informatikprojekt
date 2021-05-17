@@ -56,9 +56,5 @@ public class GameCharacter extends GameElement {
             }
         }
     }
-
-    private void uploadHighScoreToDB(int newHighScore){
-        // TODO: This will be the method that uploads the new highscore to the DB via DBConnection
-    }
     */
 }

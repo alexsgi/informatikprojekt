@@ -126,7 +126,7 @@ public class DBConnection {
 
     public static boolean registerPlayer(String username, String password) throws SQLException {
         Player checkIfExists = getPlayer(username);
-        if(checkIfExists != null) return false;
+        if (checkIfExists != null) return false;
         // TODO: Hash password?
         String sql = String.format("INSERT INTO %s (playername, playerpassword, highscore, skin) VALUES (?, ?, ?, ?)",
                 DB_TABLE_NAME);
@@ -136,12 +136,8 @@ public class DBConnection {
         preparedStatement.setInt(3, 0);
         preparedStatement.setInt(4, 0);
         // Check documentation of executeUpdate() !
-        int rowsAffected = preparedStatement.executeUpdate();
-        System.out.println(rowsAffected);
-        Player registeredPlayer = getPlayer(username);
-        // or update full list?
-        // check if registeredPlayer != null
-        return true;
+        preparedStatement.executeUpdate();
+        return getPlayer(username) != null;
     }
 
 }

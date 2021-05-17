@@ -166,9 +166,18 @@ public class RegisterPanelView extends JPanel implements ActionListener {
                         warningLabel.setText("Username already taken");
                     } else {
                         // Registration successful
+                        controller.setList(DBConnection.getAllPlayers());
+                        if (controller.playerLogin(username, password)) {
+                            controller.getPanelFrameManager().loginFrameClose();
+                        } else {
+                            // weird error
+                            // send log to server?
+                            System.err.println("Weird error (register");
+                        }
                     }
                 } catch (SQLException throwable) {
                     // Error - internet connection?
+                    // TODO: implement server status check (online?), otherwise the program will freeze
                     warningLabel.setText("Internet connection available?");
                     throwable.printStackTrace();
                 }

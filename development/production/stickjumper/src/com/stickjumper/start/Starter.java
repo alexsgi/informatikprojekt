@@ -4,10 +4,11 @@ import com.stickjumper.data.database.DBConnection;
 import com.stickjumper.data.list.List;
 import com.stickjumper.frontend.MainFrameView;
 import com.stickjumper.frontend.boot.LoadingFrameView;
+import com.stickjumper.utils.ConnectionTester;
 import com.stickjumper.utils.ImageManager;
 import com.stickjumper.utils.UITools;
 
-import java.io.IOException;
+import javax.swing.*;
 import java.sql.SQLException;
 
 public class Starter {
@@ -19,11 +20,17 @@ public class Starter {
         LoadingFrameView loadingFrameView = new LoadingFrameView();
         loadingFrameView.setVisible(true);
 
+        int serverResponseCode = ConnectionTester.checkConnection();
+        boolean connectionAvailable = serverResponseCode == ConnectionTester.CONNECTION_OK;
+        if (!connectionAvailable) {
+            // TODO: check before login, register and update highscore (db)
+            JOptionPane.showMessageDialog(null, "Can not connect to the server -\ninternet connection available?");
+            System.exit(1);
+        }
+
         ImageManager.loadALlImages(loadingFrameView.getClass());
 
         List list;
-        // boolean connectionAvailable = serverConnectionTest();
-        // if (connectionAvailable) {
         Runtime.getRuntime().addShutdownHook(new Thread(DBConnection::close));
         // Make all internet boot operations (db connection, ...)
         DBConnection.init();
@@ -36,13 +43,6 @@ public class Starter {
         // Close loading screen
         loadingFrameView.dispose();
         mainFrameView.setVisible(true);
-    }
-
-    public static boolean serverConnectionTest() throws InterruptedException, IOException {
-        // SPECIFIED FOR WINDOWS! NOT macOS OR UNIX
-        Process p1 = java.lang.Runtime.getRuntime().exec("ping -n 1 stickjumper.ddns.net");
-        int returnVal = p1.waitFor();
-        return (returnVal == 0);
     }
 
 }

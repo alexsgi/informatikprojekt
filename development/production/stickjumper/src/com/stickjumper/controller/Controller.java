@@ -144,6 +144,7 @@ public class Controller {
         public void updateHighScore() {
             if (currentPlayer.getHighScore() < currentScore) currentPlayer.setHighScore(currentScore);
         }
+
     }
 
 }
