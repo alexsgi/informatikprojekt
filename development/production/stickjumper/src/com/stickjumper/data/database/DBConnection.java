@@ -136,6 +136,9 @@ public class DBConnection {
         // Check documentation of executeUpdate() !
         int rowsAffected = preparedStatement.executeUpdate();
         System.out.println(rowsAffected);
+        Player registeredPlayer = getPlayer(username);
+        // or update full list?
+        // check if registeredPlayer != null
     }
 
 }
