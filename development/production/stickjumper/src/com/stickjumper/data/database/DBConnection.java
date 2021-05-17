@@ -113,11 +113,29 @@ public class DBConnection {
         return list.getRootPlayer();
     }
 
-    public static Player playerLogin(String userName, String password) {
-        // TODO
-        // return new Player (parameter);
-        return null;
+    public static boolean updateHighScore(Player player) throws SQLException {
+        String sql = String.format("UPDATE %s SET highscore=? WHERE playername=? AND playerpassword =?", DB_TABLE_NAME);
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        preparedStatement.setInt(1, player.getHighScore());
+        preparedStatement.setString(2, player.getPlayerName());
+        preparedStatement.setString(3, player.getPlayerPassword());
+
+        int rowsAffected = preparedStatement.executeUpdate();
+        return rowsAffected == 1;
     }
 
+    public static void registerPlayer(String username, String password) throws SQLException {
+        // TODO: Hash password?
+        String sql = String.format("INSERT INTO %s (playername, playerpassword, highscore, skin) VALUES (?, ?, ?, ?)",
+                DB_TABLE_NAME);
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        preparedStatement.setString(1, username);
+        preparedStatement.setString(2, password);
+        preparedStatement.setInt(3, 0);
+        preparedStatement.setInt(4, 0);
+        // Check documentation of executeUpdate() !
+        int rowsAffected = preparedStatement.executeUpdate();
+        System.out.println(rowsAffected);
+    }
 
 }
