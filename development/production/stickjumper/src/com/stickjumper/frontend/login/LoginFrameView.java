@@ -23,7 +23,6 @@ public class LoginFrameView extends JFrame {
         setTitle("Login");
         setSize(Settings.LOGIN_SCREEN_WIDTH, Settings.LOGIN_SCREEN_HEIGHT);
         setLocationRelativeTo(null);
-        // setAlwaysOnTop(true);
 
         setIconImage(ImageManager.APP_ICON_IMAGE);
 
