@@ -23,16 +23,16 @@ public class Coin extends GameElement {
         this.coinValue = 10;
     }
 
+    public static Dimens getStandardDimens() {
+        return dimens;
+    }
+
     public void hit() {
         // increase highscore
     }
 
     public int getCoinValue() {
         return coinValue;
-    }
-
-    public static Dimens getStandardDimens() {
-        return dimens;
     }
 
 }

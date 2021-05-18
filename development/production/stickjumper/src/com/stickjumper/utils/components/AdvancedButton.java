@@ -22,4 +22,5 @@ public class AdvancedButton extends JButton {
     public void setIcon(ImageIcon icon) {
         if (icon != null) super.setIcon(icon);
     }
+
 }

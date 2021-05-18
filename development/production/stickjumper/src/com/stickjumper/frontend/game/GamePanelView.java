@@ -34,7 +34,7 @@ public class GamePanelView extends JPanel implements ActionListener, MouseListen
 
         JLabel lblTitle = new JLabel("GamePanel");
         lblTitle.setHorizontalAlignment(SwingConstants.CENTER);
-        lblTitle.setBounds(0, 96, 1280, 83);
+        lblTitle.setBounds(0, 96, getWidth(), 83);
         lblTitle.setFont(Settings.FONT_HEADING_BIG);
         movingBackground.add(lblTitle);
 
@@ -92,8 +92,10 @@ public class GamePanelView extends JPanel implements ActionListener, MouseListen
             case "startButton" -> controller.startMovingBackground();
             case "stopButton" -> {
                 controller.stopMovingBackground();
+                /* test if updating high score on DB works
                 controller.setScore(500);
-                controller.updateHighScore();
+                controller.updateHighScore()
+                 */
             }
         }
     }
