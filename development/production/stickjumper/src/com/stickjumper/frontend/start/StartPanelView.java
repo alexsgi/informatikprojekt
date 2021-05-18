@@ -128,7 +128,11 @@ public class StartPanelView extends JPanel implements ActionListener, MouseListe
 
     @Override
     public void mouseReleased(MouseEvent e) {
-
+        switch (e.getComponent().getName()) {
+            case "loginButton" -> loginButton.setForeground(Color.WHITE);
+            // case "settingsButton" -> settingsButton.setForeground(Color.WHITE);
+            case "playButton" -> playButton.setIcon(ImageManager.START_ICON_PLAY);
+        }
     }
 
     @Override

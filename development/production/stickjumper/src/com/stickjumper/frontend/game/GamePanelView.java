@@ -1,11 +1,13 @@
 package com.stickjumper.frontend.game;
 
 import com.stickjumper.controller.Controller;
+import com.stickjumper.data.database.DBConnection;
 import com.stickjumper.frontend.rendering.GameElementRender;
 import com.stickjumper.frontend.rendering.MovingBackground;
 import com.stickjumper.utils.ImageManager;
 import com.stickjumper.utils.Settings;
 import com.stickjumper.utils.components.AdvancedButton;
+import com.stickjumper.utils.components.JRoundTextField;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,6 +15,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.sql.SQLException;
 
 public class GamePanelView extends JPanel implements ActionListener, MouseListener {
 
@@ -21,6 +24,8 @@ public class GamePanelView extends JPanel implements ActionListener, MouseListen
 
     private JButton startButton, stopButton;
     private AdvancedButton backButton;
+
+    JRoundTextField userNameTextField;
 
     public GamePanelView(Controller controller) {
         this.controller = controller;
@@ -74,6 +79,14 @@ public class GamePanelView extends JPanel implements ActionListener, MouseListen
         stopButton.addActionListener(this);
         stopButton.addMouseListener(this);
         movingBackground.add(stopButton);
+
+
+        userNameTextField = new JRoundTextField(Settings.LOGIN_VIEW_TEXTFIELD_CORNER_RADIUS);
+        userNameTextField.setSize(200, 30);
+        userNameTextField.setLocation(800,0);
+        userNameTextField.setFont(Settings.FONT_LOGIN_FIELDS_LABELS);
+        userNameTextField.setToolTipText("Enter your highscore");
+        movingBackground.add(userNameTextField);
     }
 
     public void startMovingBackground() {
@@ -87,9 +100,22 @@ public class GamePanelView extends JPanel implements ActionListener, MouseListen
     @Override
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()) {
-            case "stopButton" -> controller.stopMovingBackground();
-            case "startButton" -> controller.startMovingBackground();
-            case "backButton" -> controller.getPanelFrameManager().switchToStartPanel();
+            case "stopButton":
+                    controller.stopMovingBackground();
+                    controller.getCurrentPlayer().setHighScore(Integer.parseInt(userNameTextField.getText()));
+                try {
+                    DBConnection.updateHighScore(controller.getCurrentPlayer());
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+                break;
+
+            case "startButton":
+                controller.startMovingBackground();
+                break;
+            case "backButton" :
+                controller.getPanelFrameManager().switchToStartPanel();
+                break;
         }
     }
 

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="Raspberry Pi - StickJumper" uuid="330a729d-bc8f-420f-b046-75e5053f6b32">
+    <data-source source="LOCAL" name="stickJumperFinal" uuid="9456804d-6305-45f7-a92d-5f50a6943e56">
       <driver-ref>mariadb</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.mariadb.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mariadb://192.168.178.10:3306/stickjumper</jdbc-url>
+      <jdbc-url>jdbc:mariadb://stickjumper.ddns.net:3306/stickjumper</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

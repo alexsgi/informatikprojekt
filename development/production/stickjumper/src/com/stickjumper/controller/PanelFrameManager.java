@@ -54,6 +54,8 @@ public class PanelFrameManager {
 
     public void switchToStartPanel() {
         mainFrameView.setContentPane(startPanelView);
+        if (controller.getCurrentPlayer() != null)
+            controller.getPanelFrameManager().startPanelView.showHighScore(controller.getCurrentPlayer().getHighScore());
         mainFrameView.revalidate();
     }
 
