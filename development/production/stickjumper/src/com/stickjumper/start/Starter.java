@@ -30,12 +30,11 @@ public class Starter {
 
         ImageManager.loadALlImages(loadingFrameView.getClass());
 
-        List list;
+        List list = null;
         Runtime.getRuntime().addShutdownHook(new Thread(DBConnection::close));
         // Make all internet boot operations (db connection, ...)
         DBConnection.init();
         list = DBConnection.getAllPlayers();
-
         // Create main frame
         MainFrameView mainFrameView = new MainFrameView();
         mainFrameView.addPlayerListToController(list);
