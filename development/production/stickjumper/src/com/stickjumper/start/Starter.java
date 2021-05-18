@@ -1,7 +1,6 @@
 package com.stickjumper.start;
 
 import com.stickjumper.data.database.DBConnection;
-import com.stickjumper.data.list.List;
 import com.stickjumper.frontend.MainFrameView;
 import com.stickjumper.frontend.boot.LoadingFrameView;
 import com.stickjumper.utils.ConnectionTester;
