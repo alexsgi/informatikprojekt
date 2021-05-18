@@ -112,7 +112,17 @@ public class GamePanelView extends JPanel implements ActionListener, MouseListen
 
     @Override
     public void mouseReleased(MouseEvent e) {
-
+        switch (e.getComponent().getName()) {
+            case "backButton":
+                backButton.setIcon(ImageManager.GAME_ICON_HOME_DARK);
+                break;
+            case "startButton":
+                startButton.setForeground(Color.BLACK);
+                break;
+            case "stopButton":
+                stopButton.setForeground(Color.BLACK);
+                break;
+        }
     }
 
     @Override
