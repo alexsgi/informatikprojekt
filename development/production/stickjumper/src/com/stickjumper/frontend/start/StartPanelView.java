@@ -7,6 +7,7 @@ import com.stickjumper.utils.ImageManager;
 import com.stickjumper.utils.Settings;
 import com.stickjumper.utils.UITools;
 import com.stickjumper.utils.components.AdvancedButton;
+import com.stickjumper.utils.components.InternetStateLabel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -19,6 +20,7 @@ import java.awt.image.BufferedImage;
 public class StartPanelView extends JPanel implements ActionListener, MouseListener {
 
     private JLabel lblHighScore;
+    private InternetStateLabel internetIconLabel;
     private Controller controller;
 
     // All buttons
@@ -27,11 +29,16 @@ public class StartPanelView extends JPanel implements ActionListener, MouseListe
 
     public StartPanelView(Controller controller) {
         setLayout(null);
-        setSize(1280, 640);
+        setSize(Settings.SCREEN_WIDTH, Settings.SCREEN_HEIGHT);
 
         this.controller = controller;
         StartSideMenuPanel menuPanel = new StartSideMenuPanel(this);
         add(menuPanel);
+
+        internetIconLabel = new InternetStateLabel();
+        internetIconLabel.setLocation(getWidth() - internetIconLabel.getWidth() * 2, 5);
+        internetIconLabel.setInternetEnabledStatus();
+        add(internetIconLabel);
 
         JLabel lblTitle = new JLabel("StickJumper");
         lblTitle.setHorizontalAlignment(SwingConstants.CENTER);
@@ -99,16 +106,13 @@ public class StartPanelView extends JPanel implements ActionListener, MouseListe
     @Override
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()) {
-            case "loginButton":
+            case "loginButton" -> {
                 LoginFrameView loginFrame = new LoginFrameView(controller);
                 controller.setLoginFrameView(loginFrame);
                 controller.getPanelFrameManager().starterLoginButton();
-                break;
-            case "settingsButton":
-                break;
-            case "playButton":
-                controller.startGame();
-                break;
+            }
+            case "settingsButton" -> internetIconLabel.flipStatus();
+            case "playButton" -> controller.startGame();
         }
     }
 
@@ -130,30 +134,18 @@ public class StartPanelView extends JPanel implements ActionListener, MouseListe
     @Override
     public void mouseEntered(MouseEvent e) {
         switch (e.getComponent().getName()) {
-            case "loginButton":
-                loginButton.setForeground(Color.GRAY);
-                break;
-            case "settingsButton":
-                settingsButton.setForeground(Color.GRAY);
-                break;
-            case "playButton":
-                playButton.setIcon(ImageManager.START_ICON_PLAY_DARK);
-                break;
+            case "loginButton" -> loginButton.setForeground(Color.GRAY);
+            case "settingsButton" -> settingsButton.setForeground(Color.GRAY);
+            case "playButton" -> playButton.setIcon(ImageManager.START_ICON_PLAY_DARK);
         }
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
         switch (e.getComponent().getName()) {
-            case "loginButton":
-                loginButton.setForeground(Color.WHITE);
-                break;
-            case "settingsButton":
-                settingsButton.setForeground(Color.WHITE);
-                break;
-            case "playButton":
-                playButton.setIcon(ImageManager.START_ICON_PLAY);
-                break;
+            case "loginButton" -> loginButton.setForeground(Color.WHITE);
+            case "settingsButton" -> settingsButton.setForeground(Color.WHITE);
+            case "playButton" -> playButton.setIcon(ImageManager.START_ICON_PLAY);
         }
     }
 }
