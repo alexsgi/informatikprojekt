@@ -166,3 +166,8 @@ Alex:
 1. Implementierung updateHighScore in DBConnection
 2. Registrierungslogik verfasst in RegisterPanelView
 3. Hinzufügen eines warningLabels in RegisterPanelView
+
+### **18.05.2021**
+Alex:
+1. Fertigstellung DB-Verbindung und -Funktionen
+2. Fertigstellung AdvancedButton

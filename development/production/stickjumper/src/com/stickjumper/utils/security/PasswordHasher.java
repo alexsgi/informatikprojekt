@@ -17,7 +17,7 @@ public class PasswordHasher {
         long fullStart, fullEnd, start, end;
         String passwordToHash = "Passwort", hashed;
         fullStart = System.currentTimeMillis();
-        for (int i = 1; i <= 20; i++) {
+        for (int i = 5; i <= 25; i++) {
             start = System.currentTimeMillis();
             hashed = hash(passwordToHash, i);
             end = System.currentTimeMillis();

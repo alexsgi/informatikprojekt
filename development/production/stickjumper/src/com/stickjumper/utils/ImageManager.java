@@ -10,7 +10,7 @@ public class ImageManager {
     public static BufferedImage GAME_ICON_HOME, GAME_ICON_HOME_DARK;
     public static BufferedImage START_ICON_PLAY, START_ICON_PLAY_DARK;
     public static BufferedImage START_MENU_BACKGROUND_DARK;
-    public static BufferedImage LOGIN_REGISTER_BACK;
+    public static BufferedImage ICON_BACK, ICON_BACK_DARK;
     public static BufferedImage PLAYER_SKIN_1;
     public static BufferedImage COIN_SKIN;
     public static BufferedImage ENEMY_SKIN, STEADY_OBSTACLE_SKIN;
@@ -25,7 +25,8 @@ public class ImageManager {
         START_ICON_PLAY = UITools.getImage(c, "/images/start_view/icons/play.png");
         START_ICON_PLAY_DARK = UITools.getImage(c, "/images/start_view/icons/play-dark.png");
         START_MENU_BACKGROUND_DARK = UITools.getImage(c, "/images/start_view/background/mountains-middle-dark.png");
-        LOGIN_REGISTER_BACK = UITools.getImage(c, "/images/login_register/back.png");
+        ICON_BACK = UITools.getImage(c, "/images/icons/back.png");
+        ICON_BACK_DARK = UITools.getImage(c, "/images/icons/back_dark.png");
         PLAYER_SKIN_1 = UITools.getImage(c, "/images/elements/skins/skin_1.png");
         COIN_SKIN = UITools.getImage(c, "/images/elements/coin/coin.png");
         ENEMY_SKIN = UITools.getImage(c, "/images/elements/obstacles/enemy_skin.png");

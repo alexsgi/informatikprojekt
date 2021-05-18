@@ -2,8 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0e848060-ec63-4ad4-b24b-712af781a6e0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/stickjumper/src/res/images/icons/back.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/login/LoginPanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/login/LoginPanelView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/login/RegisterPanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/login/RegisterPanelView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/start/StartPanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/start/StartPanelView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/ImageManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/ImageManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/components/AdvancedButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/components/AdvancedButton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/security/PasswordHasher.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/security/PasswordHasher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stickjumper/src/res/images/login_register/back.png" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/res/images/icons/back_dark.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +49,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/stickjumper/src/res/images/game_view/icons" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/stickjumper/src/res/images/icons" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.20694445" />
@@ -52,18 +59,19 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Elena\Desktop\Alexander\05\Projekte\informatikprojekt\development\production\stickjumper\src\res\images\icons" />
       <recent name="C:\Users\Elena\Desktop\Alexander\05\Projekte\informatikprojekt\development\production\stickjumper\src\res\images\game_view\icons" />
       <recent name="C:\Users\Elena\Desktop\Alexander\05\Projekte\informatikprojekt\development\production\stickjumper\src\res\images\start_view\icons" />
       <recent name="C:\Users\Elena\Desktop\Alexander\05\Projekte\informatikprojekt\development\production\stickjumper\src\res\images\game_view" />
       <recent name="C:\Users\Elena\Desktop\Alexander\05\Projekte\informatikprojekt\development\production\stickjumper\src\res\images\login_register" />
-      <recent name="C:\Users\Elena\Desktop\Alexander\05\Projekte\informatikprojekt\development\production\stickjumper\libs" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Elena\Desktop\Alexander\05\Projekte\informatikprojekt\development\production\stickjumper\src\res\images\icons" />
       <recent name="C:\Users\Elena\Desktop\Alexander\05\Projekte\informatikprojekt\development\production\stickjumper\src\res\images\elements\skins" />
       <recent name="C:\Users\Elena\Desktop\Alexander\05\Projekte\informatikprojekt\development\production\stickjumper\src\res\images\game_view\icons" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.PasswordHasher">
+  <component name="RunManager" selected="Application.Starter">
     <configuration name="PasswordHasher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.stickjumper.utils.security.PasswordHasher" />
       <module name="stickjumper" />
@@ -118,8 +126,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.PasswordHasher" />
         <item itemvalue="Application.Starter" />
+        <item itemvalue="Application.PasswordHasher" />
         <item itemvalue="Application.StackOverFlowTest" />
       </list>
     </recent_temporary>
@@ -161,7 +169,7 @@
       <workItem from="1621334632745" duration="1624000" />
       <workItem from="1621336321518" duration="63000" />
       <workItem from="1621336539292" duration="3550000" />
-      <workItem from="1621346933404" duration="3988000" />
+      <workItem from="1621346933404" duration="8902000" />
     </task>
     <servers />
   </component>

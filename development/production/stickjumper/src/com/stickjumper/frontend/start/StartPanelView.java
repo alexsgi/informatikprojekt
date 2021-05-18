@@ -13,19 +13,16 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 
-public class StartPanelView extends JPanel implements ActionListener, MouseListener {
+public class StartPanelView extends JPanel implements ActionListener {
 
     private JLabel lblHighScore;
     private InternetStateLabel internetIconLabel;
     private Controller controller;
 
     // All buttons
-    private JButton loginButton, settingsButton;
-    private AdvancedButton playButton;
+    private AdvancedButton loginButton, settingsButton, playButton;
 
     public StartPanelView(Controller controller) {
         setLayout(null);
@@ -54,40 +51,33 @@ public class StartPanelView extends JPanel implements ActionListener, MouseListe
         add(lblHighScore);
 
         // Button to open login frame
-        loginButton = new AdvancedButton();
+        loginButton = new AdvancedButton(Color.GRAY, Color.WHITE);
         loginButton.setText("Login");
         loginButton.setFont(Settings.FONT_BUTTON);
         loginButton.setForeground(Color.WHITE);
         loginButton.setSize(menuPanel.getWidth() - 10, 40);
         loginButton.setHorizontalAlignment(SwingConstants.CENTER);
         loginButton.setLocation((menuPanel.getWidth() - loginButton.getWidth()) / 2, (menuPanel.getHeight() - loginButton.getHeight() * 2 - 80));
-        loginButton.setActionCommand("loginButton");
-        loginButton.setName("loginButton");
+        loginButton.setID("loginButton");
         loginButton.addActionListener(this);
-        loginButton.addMouseListener(this);
         menuPanel.add(loginButton);
 
-        settingsButton = new AdvancedButton();
+        settingsButton = new AdvancedButton(Color.GRAY, Color.WHITE);
         settingsButton.setText("Settings");
         settingsButton.setFont(Settings.FONT_BUTTON);
         settingsButton.setForeground(Color.WHITE);
         settingsButton.setSize(menuPanel.getWidth() - 10, 40);
         settingsButton.setHorizontalAlignment(SwingConstants.CENTER);
         settingsButton.setLocation((menuPanel.getWidth() - loginButton.getWidth()) / 2, (menuPanel.getHeight() - settingsButton.getHeight() * 2));
-        settingsButton.setActionCommand("settingsButton");
-        settingsButton.setName("settingsButton");
+        settingsButton.setID("settingsButton");
         settingsButton.addActionListener(this);
-        settingsButton.addMouseListener(this);
         menuPanel.add(settingsButton);
 
-        playButton = new AdvancedButton();
+        playButton = new AdvancedButton(ImageManager.START_ICON_PLAY_DARK, ImageManager.START_ICON_PLAY);
         playButton.setSize(ImageManager.START_ICON_PLAY.getWidth(), ImageManager.START_ICON_PLAY.getHeight());
         playButton.setLocation((getWidth() - playButton.getWidth()) / 2, (getHeight() - playButton.getHeight()) / 2);
-        playButton.setActionCommand("playButton");
-        playButton.setName("playButton");
+        playButton.setID("playButton");
         playButton.addActionListener(this);
-        playButton.addMouseListener(this);
-        playButton.setIcon(ImageManager.START_ICON_PLAY);
         add(playButton);
     }
 
@@ -116,40 +106,4 @@ public class StartPanelView extends JPanel implements ActionListener, MouseListe
         }
     }
 
-    @Override
-    public void mouseClicked(MouseEvent e) {
-
-    }
-
-    @Override
-    public void mousePressed(MouseEvent e) {
-
-    }
-
-    @Override
-    public void mouseReleased(MouseEvent e) {
-        switch (e.getComponent().getName()) {
-            case "loginButton" -> loginButton.setForeground(Color.WHITE);
-            // case "settingsButton" -> settingsButton.setForeground(Color.WHITE);
-            case "playButton" -> playButton.setIcon(ImageManager.START_ICON_PLAY);
-        }
-    }
-
-    @Override
-    public void mouseEntered(MouseEvent e) {
-        switch (e.getComponent().getName()) {
-            case "loginButton" -> loginButton.setForeground(Color.GRAY);
-            case "settingsButton" -> settingsButton.setForeground(Color.GRAY);
-            case "playButton" -> playButton.setIcon(ImageManager.START_ICON_PLAY_DARK);
-        }
-    }
-
-    @Override
-    public void mouseExited(MouseEvent e) {
-        switch (e.getComponent().getName()) {
-            case "loginButton" -> loginButton.setForeground(Color.WHITE);
-            case "settingsButton" -> settingsButton.setForeground(Color.WHITE);
-            case "playButton" -> playButton.setIcon(ImageManager.START_ICON_PLAY);
-        }
-    }
 }

@@ -20,8 +20,7 @@ public class RegisterPanelView extends JPanel implements ActionListener {
     private LoginFrameView loginFrameView;
 
     // All buttons
-    private AdvancedButton backButton;
-    private JButton registerButton;
+    private AdvancedButton backButton, registerButton;
 
     // All Text fields
     private JTextField userNameTextField;
@@ -39,13 +38,12 @@ public class RegisterPanelView extends JPanel implements ActionListener {
         Color color = new Color(224, 220, 255);
         setBackground(color);
 
-        backButton = new AdvancedButton();
+        backButton = new AdvancedButton(ImageManager.ICON_BACK_DARK, ImageManager.ICON_BACK);
         backButton.setHorizontalAlignment(SwingConstants.CENTER);
         backButton.setSize(32, 32);
         backButton.setLocation(5, 5);
         backButton.setFont(new Font("Calibri", Font.PLAIN, 12));
-        backButton.setIcon(ImageManager.LOGIN_REGISTER_BACK);
-        backButton.setActionCommand("backButton");
+        backButton.setID("backButton");
         backButton.addActionListener(this);
         add(backButton);
 
@@ -121,23 +119,21 @@ public class RegisterPanelView extends JPanel implements ActionListener {
         warningLabel.setHorizontalAlignment(SwingConstants.CENTER);
         add(warningLabel);
 
-        registerButton = new JButton();
+        registerButton = new AdvancedButton(null);
         registerButton.setText("Sign up");
         registerButton.setFont(new Font("Calibri", Font.PLAIN, 15));
         registerButton.setSize(150, 40);
         registerButton.setLocation((getWidth() - registerButton.getWidth()) / 2, getHeight() - (int) (registerButton.getHeight() * 3.5));
-        registerButton.setFocusable(false);
-        registerButton.setActionCommand("registerButton");
+        registerButton.setID("registerButton");
         registerButton.addActionListener(this);
         add(registerButton);
     }
-
 
     @Override
     public void actionPerformed(ActionEvent e) {
         warningLabel.setText(""); // set empty
         switch (e.getActionCommand()) {
-            case "registerButton":
+            case "registerButton" -> {
                 String username = userNameTextField.getText(), password, passwordControl;
                 char[] passwordArray = passwordField.getPassword(), passwordControlArray = passwordFieldControl.getPassword();
                 if (username == null || username.isEmpty()) {
@@ -182,10 +178,8 @@ public class RegisterPanelView extends JPanel implements ActionListener {
                     throwable.printStackTrace();
                 }
                 registerButton.setEnabled(true);
-                break;
-            case "backButton":
-                controller.getPanelFrameManager().loginFrameClose();
-                break;
+            }
+            case "backButton" -> controller.getPanelFrameManager().loginFrameClose();
         }
     }
 }
