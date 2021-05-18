@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0e848060-ec63-4ad4-b24b-712af781a6e0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/security/PasswordHasher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b8655501-3d0f-4268-af57-60e918f943c4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/b8655501-3d0f-4268-af57-60e918f943c4.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/data/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/data/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/login/LoginPanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/login/LoginPanelView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/start/Starter.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/start/Starter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/Settings.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +68,20 @@
       <recent name="C:\Users\Elena\Desktop\Alexander\05\Projekte\informatikprojekt\development\production\stickjumper\src\res\images\game_view\icons" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Starter">
+  <component name="RunManager" selected="Application.PasswordHasher">
+    <configuration name="PasswordHasher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.stickjumper.utils.security.PasswordHasher" />
+      <module name="stickjumper" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.stickjumper.utils.security.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="StackOverFlowTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.stickjumper.test.StackOverFlowTest" />
       <module name="stickjumper" />
@@ -89,19 +108,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.PasswordHasher" />
         <item itemvalue="Application.Starter" />
         <item itemvalue="Application.StackOverFlowTest" />
       </list>
@@ -144,6 +166,7 @@
       <workItem from="1621334632745" duration="1624000" />
       <workItem from="1621336321518" duration="63000" />
       <workItem from="1621336539292" duration="3550000" />
+      <workItem from="1621346933404" duration="3256000" />
     </task>
     <servers />
   </component>

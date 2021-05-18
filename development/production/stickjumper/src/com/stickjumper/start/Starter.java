@@ -20,7 +20,7 @@ public class Starter {
         LoadingFrameView loadingFrameView = new LoadingFrameView();
         loadingFrameView.setVisible(true);
 
-        long s1, e1;
+        long s1, s2, start, e1, e2, end;
         s1 = System.currentTimeMillis();
         int serverResponseCode = ConnectionTester.checkConnection();
         e1 = System.currentTimeMillis();
@@ -31,15 +31,16 @@ public class Starter {
             JOptionPane.showMessageDialog(null, "Can not connect to the server -\ninternet connection available?");
             System.exit(1);
         }
-
-        long start, end;
         start = System.currentTimeMillis();
         ImageManager.loadALlImages(loadingFrameView.getClass());
         end = System.currentTimeMillis();
         Settings.logData("Image loading took " + (end - start) + " ms");
 
         // Make all internet boot operations (db connection, ...)
+        s2 = System.currentTimeMillis();
         DBConnection.init();
+        e2 = System.currentTimeMillis();
+        Settings.logData("DB connection took " + (e2 - s2) + " ms");
         // Create main frame
         MainFrameView mainFrameView = new MainFrameView();
         mainFrameView.addPlayerListToController(DBConnection.getAllPlayers());

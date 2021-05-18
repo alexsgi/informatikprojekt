@@ -29,7 +29,7 @@ public class Settings {
 
     public static void logData(String data) {
         System.out.println(data);
-        // What to do with logs
+        // What to do with logs?
     }
 
 }

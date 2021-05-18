@@ -28,6 +28,8 @@ public class LoginPanelView extends JPanel implements ActionListener, MouseListe
     private JTextField userNameTextField;
     private JPasswordField passwordField;
 
+    private JLabel warningLabel;
+
     public LoginPanelView(Controller controller, LoginFrameView loginFrameView) {
         setLayout(null);
         setSize(loginFrameView.getWidth(), loginFrameView.getHeight());
@@ -96,6 +98,14 @@ public class LoginPanelView extends JPanel implements ActionListener, MouseListe
         passwordField.setFont(Settings.FONT_LOGIN_FIELDS_LABELS);
         passwordField.setToolTipText("Enter your password");
         add(passwordField);
+
+        warningLabel = new JLabel("LOL");
+        warningLabel.setSize(getWidth(), 30);
+        warningLabel.setLocation(0, passwordField.getY() + passwordField.getHeight() + 10);
+        warningLabel.setFont(Settings.FONT_LABEL_WARNING);
+        warningLabel.setForeground(Color.RED);
+        warningLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        add(warningLabel);
 
         loginButton = new JButton();
         loginButton.setText("Login");
