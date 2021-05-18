@@ -14,17 +14,24 @@ public class PasswordHasher {
     private static byte[] salt = new byte[]{-71, 0, -54, 50, 22, -16, -67, -84, 36, 17, -31, -104, -23, -112, -77, 123};
 
     public static void main(String[] args) throws NoSuchAlgorithmException, InvalidKeySpecException {
-        long start, end;
+        long fullStart, fullEnd, start, end;
         String passwordToHash = "DasIstEinTollesUndSicheresPasswort", hashed;
-        start = System.currentTimeMillis();
-        hashed = hash(passwordToHash);
-        end = System.currentTimeMillis();
-        Settings.logData("Hashed password: " + hashed);
-        Settings.logData("Hashing took " + (end - start) + " ms");
+        fullStart = System.currentTimeMillis();
+        for (int i = 1; i <= 20; i++) {
+            start = System.currentTimeMillis();
+            hashed = hash(passwordToHash, i);
+            end = System.currentTimeMillis();
+            Settings.logData("Hashed password: " + hashed);
+            Settings.logData("Faktor and key length: " + i + " (" + (i * 1024) + ")");
+            Settings.logData("Hashing took " + (end - start) + " ms\n");
+        }
+        fullEnd = System.currentTimeMillis();
+        System.err.println("\n" + "Time: " + (fullEnd - fullStart) + " ms");
+
     }
 
-    public static String hash(String input) throws NoSuchAlgorithmException, InvalidKeySpecException {
-        KeySpec spec = new PBEKeySpec(input.toCharArray(), salt, 65536, 2048);
+    public static String hash(String input, int faktor) throws NoSuchAlgorithmException, InvalidKeySpecException {
+        KeySpec spec = new PBEKeySpec(input.toCharArray(), salt, 65536, faktor * 1024);
         SecretKeyFactory f = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA1");
         byte[] hash = f.generateSecret(spec).getEncoded();
         Base64.Encoder enc = Base64.getEncoder();
