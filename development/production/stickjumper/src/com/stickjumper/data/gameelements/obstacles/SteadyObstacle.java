@@ -8,7 +8,7 @@ import java.awt.*;
 
 public class SteadyObstacle extends Obstacle {
 
-    public static final Dimens dimens = new Dimens(100, 75);
+    public static final Dimens dimens = new Dimens(50, 100);
 
     public SteadyObstacle(Point p) {
         super(p, dimens, ImageManager.STEADY_OBSTACLE_SKIN);

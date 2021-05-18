@@ -8,7 +8,7 @@ import java.awt.*;
 
 public class Enemy extends Obstacle {
 
-    private static final Dimens dimens = new Dimens(100, 93);
+    private static final Dimens dimens = new Dimens(100, 88);
 
     public Enemy(Point p, int speed) {
         super(p, dimens, ImageManager.ENEMY_SKIN, speed);

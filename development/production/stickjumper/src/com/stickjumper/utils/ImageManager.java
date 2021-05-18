@@ -28,8 +28,8 @@ public class ImageManager {
         LOGIN_REGISTER_BACK = UITools.getImage(c, "/images/login_register/back.png");
         PLAYER_SKIN_1 = UITools.getImage(c, "/images/elements/skins/skin_1.png");
         COIN_SKIN = UITools.getImage(c, "/images/elements/coin/coin.png");
-        ENEMY_SKIN = UITools.getImage(c, "/images/elements/obstacles/enemy.png");
-        STEADY_OBSTACLE_SKIN = UITools.getImage(c, "/images/elements/obstacles/steady_obstacle.png");
+        ENEMY_SKIN = UITools.getImage(c, "/images/elements/obstacles/enemy_skin.png");
+        STEADY_OBSTACLE_SKIN = UITools.getImage(c, "/images/elements/obstacles/steady_obstacle_skin.png");
         ICON_INTERNET_AVAILABLE = UITools.getImage(c, "/images/start_view/icons/internet_available.png");
         ICON_INTERNET_UNAVAILABLE = UITools.getImage(c, "/images/start_view/icons/internet_unavailable.png");
     }
