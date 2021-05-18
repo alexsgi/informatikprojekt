@@ -1,6 +1,7 @@
 package com.stickjumper.controller;
 
 import com.stickjumper.data.Player;
+import com.stickjumper.data.database.DBConnection;
 import com.stickjumper.data.gameelements.Coin;
 import com.stickjumper.data.gameelements.GameCharacter;
 import com.stickjumper.data.gameelements.obstacles.Enemy;
@@ -14,6 +15,7 @@ import com.stickjumper.frontend.login.RegisterPanelView;
 import com.stickjumper.frontend.rendering.GameElementRender;
 import com.stickjumper.frontend.start.StartPanelView;
 
+import javax.swing.*;
 import java.awt.*;
 import java.sql.SQLException;
 
@@ -36,6 +38,21 @@ public class Controller {
     public Controller(MainFrameView mainFrameView) {
         this.mainFrameView = mainFrameView;
         panelFrameManager = new PanelFrameManager(this, mainFrameView);
+        Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
+            @Override
+            public void run() {
+                if (getCurrentPlayer() != null) {
+                    updateHighScore();
+                    try {
+                        DBConnection.updateHighScore(getCurrentPlayer());
+                    } catch (SQLException throwable) {
+                        throwable.printStackTrace();
+                        JOptionPane.showMessageDialog(null, "Error updating highscore");
+                    }
+                }
+                DBConnection.close();
+            }
+        }));
     }
 
     public void setGamePanelView(GamePanelView gamePanelView) {
@@ -99,6 +116,23 @@ public class Controller {
         return currentPlayer;
     }
 
+    public boolean isScoreExisting() {
+        return (currentScore != -1);
+    }
+
+    public int getScoreFromCurrentPlayer() {
+        if (isScoreExisting()) return currentScore;
+        return -1;
+    }
+
+    public void setScore(int newScore) {
+        currentScore = newScore;
+    }
+
+    public void updateHighScore() {
+        if (currentPlayer.getHighScore() < currentScore) currentPlayer.setHighScore(currentScore);
+    }
+
     public class Scenery {
 
         GameElementRender coinElement;
@@ -126,25 +160,5 @@ public class Controller {
 
     }
 
-    public class MethodsToSubmitForWednesday {
-
-        public boolean isScoreExisting() {
-            return (currentScore != -1);
-        }
-
-        public int getScoreFromCurrentPlayer() {
-            if (isScoreExisting()) return currentScore;
-            return -1;
-        }
-
-        public void setScore(int newScore) {
-            currentScore = newScore;
-        }
-
-        public void updateHighScore() {
-            if (currentPlayer.getHighScore() < currentScore) currentPlayer.setHighScore(currentScore);
-        }
-
-    }
 
 }
