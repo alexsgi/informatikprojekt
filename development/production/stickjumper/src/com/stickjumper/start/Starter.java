@@ -5,6 +5,7 @@ import com.stickjumper.frontend.MainFrameView;
 import com.stickjumper.frontend.boot.LoadingFrameView;
 import com.stickjumper.utils.ConnectionTester;
 import com.stickjumper.utils.ImageManager;
+import com.stickjumper.utils.Settings;
 import com.stickjumper.utils.UITools;
 
 import javax.swing.*;
@@ -19,7 +20,11 @@ public class Starter {
         LoadingFrameView loadingFrameView = new LoadingFrameView();
         loadingFrameView.setVisible(true);
 
+        long s1, e1;
+        s1 = System.currentTimeMillis();
         int serverResponseCode = ConnectionTester.checkConnection();
+        e1 = System.currentTimeMillis();
+        Settings.logData("Network operation took " + (e1 - s1) + " ms");
         boolean connectionAvailable = serverResponseCode == ConnectionTester.CONNECTION_OK;
         if (!connectionAvailable) {
             // TODO: check before login, register and update highscore (db)
@@ -31,7 +36,7 @@ public class Starter {
         start = System.currentTimeMillis();
         ImageManager.loadALlImages(loadingFrameView.getClass());
         end = System.currentTimeMillis();
-        System.err.println("Image loading took " + (end - start) + " ms");
+        Settings.logData("Image loading took " + (end - start) + " ms");
 
         // Make all internet boot operations (db connection, ...)
         DBConnection.init();

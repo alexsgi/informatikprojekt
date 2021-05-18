@@ -50,7 +50,7 @@ public class StartPanelView extends JPanel implements ActionListener, MouseListe
         lblHighScore.setHorizontalAlignment(SwingConstants.CENTER);
         lblHighScore.setBounds(0, 3, getWidth(), 50);
         lblHighScore.setFont(Settings.FONT_LABEL);
-        lblHighScore.setText("Highscore: " + controller.new MethodsToSubmitForWednesday().getScoreFromCurrentPlayer());
+        lblHighScore.setText("Highscore: " + controller.getScoreFromCurrentPlayer());
         add(lblHighScore);
 
         // Button to open login frame

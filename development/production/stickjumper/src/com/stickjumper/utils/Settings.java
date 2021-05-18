@@ -27,5 +27,9 @@ public class Settings {
     public static Font FONT_LOGIN_BUTTON = new Font("Calibri", Font.PLAIN, 15);
     public static Font FONT_LOGIN_SMALL_BUTTON = new Font("Calibri", Font.PLAIN, 14);
 
+    public static void logData(String data) {
+        System.out.println(data);
+        // What to do with logs
+    }
 
 }

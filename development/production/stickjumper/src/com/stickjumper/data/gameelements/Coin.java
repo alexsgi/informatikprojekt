@@ -30,4 +30,9 @@ public class Coin extends GameElement {
     public int getCoinValue() {
         return coinValue;
     }
+
+    public static Dimens getStandardDimens() {
+        return dimens;
+    }
+
 }

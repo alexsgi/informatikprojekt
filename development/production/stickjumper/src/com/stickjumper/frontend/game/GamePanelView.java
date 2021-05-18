@@ -88,9 +88,13 @@ public class GamePanelView extends JPanel implements ActionListener, MouseListen
     @Override
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()) {
-            case "stopButton" -> controller.stopMovingBackground();
-            case "startButton" -> controller.startMovingBackground();
             case "backButton" -> controller.getPanelFrameManager().switchToStartPanel();
+            case "startButton" -> controller.startMovingBackground();
+            case "stopButton" -> {
+                controller.stopMovingBackground();
+                controller.setScore(500);
+                controller.updateHighScore();
+            }
         }
     }
 

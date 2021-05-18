@@ -14,6 +14,7 @@ import com.stickjumper.frontend.login.LoginPanelView;
 import com.stickjumper.frontend.login.RegisterPanelView;
 import com.stickjumper.frontend.rendering.GameElementRender;
 import com.stickjumper.frontend.start.StartPanelView;
+import com.stickjumper.utils.Settings;
 
 import javax.swing.*;
 import java.awt.*;
@@ -86,7 +87,7 @@ public class Controller {
         currentScore = -1;
         // new scenery (temporarily)
         scenery = new Scenery();
-        scenery.initPlayerUI();
+        scenery.initUIObjects();
     }
 
     public boolean playerLogin(String userName, String password) throws SQLException {
@@ -121,8 +122,7 @@ public class Controller {
     }
 
     public int getScoreFromCurrentPlayer() {
-        if (isScoreExisting()) return currentScore;
-        return -1;
+        return (isScoreExisting()) ? currentScore : -1;
     }
 
     public void setScore(int newScore) {
@@ -135,20 +135,17 @@ public class Controller {
 
     public class Scenery {
 
-        GameElementRender coinElement;
-        GameElementRender playerFigure;
-
         public Scenery() {
-            coinElement = new GameElementRender(new Coin(new Point(600, 200)));
+            GameElementRender coinElement = new GameElementRender(new Coin(new Point((Settings.SCREEN_WIDTH - Coin.getStandardDimens().getWidth()) / 2, 200)));
             gamePanelView.addObject(coinElement);
         }
 
-        public void initPlayerUI() {
+        public void initUIObjects() {
             int h = gamePanelView.getHeight() - 100;
             int w = gamePanelView.getWidth();
             Point position = new Point((w - GameCharacter.width) / 4, h - GameCharacter.height);
             GameCharacter character = (currentPlayer == null) ? new GameCharacter(position, 0) : new GameCharacter(currentPlayer, position);
-            playerFigure = new GameElementRender(character);
+            GameElementRender playerFigure = new GameElementRender(character);
             gamePanelView.addObject(playerFigure);
 
             GameElementRender enemy = new GameElementRender(new Enemy(new Point((w - Enemy.getStandardDimens().getWidth()) / 2, h - Enemy.getStandardDimens().getHeight()), 0));
@@ -159,6 +156,5 @@ public class Controller {
         }
 
     }
-
 
 }
