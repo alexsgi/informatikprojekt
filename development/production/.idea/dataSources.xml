@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="stickJumperFinal" uuid="9456804d-6305-45f7-a92d-5f50a6943e56">
+    <data-source source="LOCAL" name="StickJumper" uuid="b8655501-3d0f-4268-af57-60e918f943c4">
       <driver-ref>mariadb</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.mariadb.jdbc.Driver</jdbc-driver>

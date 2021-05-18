@@ -120,7 +120,7 @@ public class DBConnection {
         preparedStatement.setString(2, player.getPlayerName());
         preparedStatement.setString(3, player.getPlayerPassword());
         int rowsAffected = preparedStatement.executeUpdate();
-        // 1 = all okay; 0 = error (e.g. player not found)
+        // 1 = ok; 0 = error (e.g. player not found)
         return rowsAffected == 1;
     }
 
