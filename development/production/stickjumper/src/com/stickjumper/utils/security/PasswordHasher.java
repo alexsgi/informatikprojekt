@@ -15,14 +15,14 @@ public class PasswordHasher {
 
     public static void main(String[] args) throws NoSuchAlgorithmException, InvalidKeySpecException {
         long fullStart, fullEnd, start, end;
-        String passwordToHash = "DasIstEinTollesUndSicheresPasswort", hashed;
+        String passwordToHash = "Passwort", hashed;
         fullStart = System.currentTimeMillis();
         for (int i = 1; i <= 20; i++) {
             start = System.currentTimeMillis();
             hashed = hash(passwordToHash, i);
             end = System.currentTimeMillis();
             Settings.logData("Hashed password: " + hashed);
-            Settings.logData("Faktor and key length: " + i + " (" + (i * 1024) + ")");
+            Settings.logData("Faktor and key length: " + i + " (" + (i * 1024) + " Bit)");
             Settings.logData("Hashing took " + (end - start) + " ms\n");
         }
         fullEnd = System.currentTimeMillis();
