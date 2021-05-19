@@ -73,7 +73,7 @@ public class StartPanelView extends JPanel implements ActionListener {
         settingsButton.addActionListener(this);
         menuPanel.add(settingsButton);
 
-        playButton = new AdvancedButton(ImageManager.START_ICON_PLAY_DARK, ImageManager.START_ICON_PLAY);
+        playButton = new AdvancedButton(ImageManager.START_ICON_PLAY_ACCENT, ImageManager.START_ICON_PLAY);
         playButton.setSize(ImageManager.START_ICON_PLAY.getWidth(), ImageManager.START_ICON_PLAY.getHeight());
         playButton.setLocation((getWidth() - playButton.getWidth()) / 2, (getHeight() - playButton.getHeight()) / 2);
         playButton.setID("playButton");

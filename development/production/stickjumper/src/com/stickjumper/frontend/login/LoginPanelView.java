@@ -6,6 +6,7 @@ import com.stickjumper.utils.Settings;
 import com.stickjumper.utils.components.AdvancedButton;
 import com.stickjumper.utils.components.JRoundPasswordField;
 import com.stickjumper.utils.components.JRoundTextField;
+import com.stickjumper.utils.components.LoginLabel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -23,10 +24,11 @@ public class LoginPanelView extends JPanel implements ActionListener {
     // private JProgressBar progressBar;
 
     // All Text fields
-    private JTextField userNameTextField;
-    private JPasswordField passwordField;
+    private JRoundTextField userNameTextField;
+    private JRoundPasswordField passwordField;
 
     private JLabel warningLabel;
+    private LoginLabel welcomeLabel, signInLabel, userNameLabel, passwordLabel;
 
     public LoginPanelView(Controller controller, LoginFrameView loginFrameView) {
         setLayout(null);
@@ -45,14 +47,14 @@ public class LoginPanelView extends JPanel implements ActionListener {
         backButton.addActionListener(this);
         add(backButton);
 
-        JLabel welcomeLabel = new JLabel();
+        welcomeLabel = new LoginLabel(LoginLabel.HEADER);
         welcomeLabel.setText("Welcome back to StickJumper");
         welcomeLabel.setHorizontalAlignment(SwingConstants.CENTER);
         welcomeLabel.setBounds(0, 20, 600, 50);
         welcomeLabel.setFont(Settings.FONT_LOGIN_HEADER);
         add(welcomeLabel);
 
-        JLabel signInLabel = new JLabel();
+        signInLabel = new LoginLabel(LoginLabel.SUBHEADER);
         signInLabel.setText("Sign in to play and compete with other players");
         signInLabel.setHorizontalAlignment(SwingConstants.CENTER);
         signInLabel.setSize(getWidth(), 30);
@@ -60,7 +62,7 @@ public class LoginPanelView extends JPanel implements ActionListener {
         signInLabel.setFont(Settings.FONT_LOGIN_SUBHEADER);
         add(signInLabel);
 
-        JLabel userNameLabel = new JLabel();
+        userNameLabel = new LoginLabel(LoginLabel.TEXT);
         userNameLabel.setText("Username");
         userNameLabel.setHorizontalAlignment(SwingConstants.LEFT);
         userNameLabel.setSize(getWidth() - 2 * 100, 30);
@@ -68,14 +70,14 @@ public class LoginPanelView extends JPanel implements ActionListener {
         userNameLabel.setFont(Settings.FONT_LOGIN_FIELDS_LABELS);
         add(userNameLabel);
 
-        userNameTextField = new JRoundTextField(Settings.LOGIN_VIEW_TEXTFIELD_CORNER_RADIUS);
+        userNameTextField = new JRoundTextField();
         userNameTextField.setSize(getWidth() - 2 * 100, 30);
         userNameTextField.setLocation(getWidth() / 7, userNameLabel.getY() + userNameLabel.getHeight() + 1);
         userNameTextField.setFont(Settings.FONT_LOGIN_FIELDS_LABELS);
         userNameTextField.setToolTipText("Enter your username");
         add(userNameTextField);
 
-        JLabel passwordLabel = new JLabel();
+        passwordLabel = new LoginLabel(LoginLabel.TEXT);
         passwordLabel.setText("Password");
         passwordLabel.setHorizontalAlignment(SwingConstants.LEFT);
         passwordLabel.setSize(getWidth() - 2 * 100, 30);
@@ -83,7 +85,7 @@ public class LoginPanelView extends JPanel implements ActionListener {
         passwordLabel.setFont(Settings.FONT_LOGIN_FIELDS_LABELS);
         add(passwordLabel);
 
-        passwordField = new JRoundPasswordField(Settings.LOGIN_VIEW_TEXTFIELD_CORNER_RADIUS);
+        passwordField = new JRoundPasswordField();
         passwordField.setHorizontalAlignment(SwingConstants.LEFT);
         passwordField.setSize(getWidth() - 2 * 100, 30);
         passwordField.setLocation(getWidth() / 7, passwordLabel.getY() + passwordLabel.getHeight() + 1);
