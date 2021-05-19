@@ -32,4 +32,9 @@ public class Settings {
         // What to do with logs?
     }
 
+    public static void logData(String data, Exception e) {
+        System.out.println(data);
+        // What to do with logs?
+    }
+
 }

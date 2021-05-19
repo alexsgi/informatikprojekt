@@ -5,6 +5,8 @@
       <change afterPath="$PROJECT_DIR$/../../Documentation_19.05.2021.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Documentation_V1.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../Documentation_V1.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/Settings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/security/PasswordHasher.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/security/PasswordHasher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/login/LoginPanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/login/LoginPanelView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../documents/Abgabe_19.05.2021/Documentation_19.05.2021.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../../documents/Abgabe_19.05.2021/Documentation_19.05.2021.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../documents/Abgabe_19.05.2021/production_19.05.2021.zip" beforeDir="false" />
@@ -68,7 +70,7 @@
       <recent name="C:\Users\Elena\Desktop\Alexander\05\Projekte\informatikprojekt\development\production\stickjumper\src\res\images\game_view\icons" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Starter">
+  <component name="RunManager" selected="Application.PasswordHasher">
     <configuration name="PasswordHasher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.stickjumper.utils.security.PasswordHasher" />
       <module name="stickjumper" />
@@ -121,8 +123,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Starter" />
         <item itemvalue="Application.PasswordHasher" />
+        <item itemvalue="Application.Starter" />
         <item itemvalue="Application.StackOverFlowTest" />
       </list>
     </recent_temporary>
@@ -165,7 +167,7 @@
       <workItem from="1621336321518" duration="63000" />
       <workItem from="1621336539292" duration="3550000" />
       <workItem from="1621346933404" duration="8902000" />
-      <workItem from="1621405622310" duration="1795000" />
+      <workItem from="1621405622310" duration="3600000" />
     </task>
     <servers />
   </component>
