@@ -14,6 +14,8 @@ import java.sql.SQLException;
 public class Starter {
 
     public static void main(String[] args) throws SQLException {
+        long fullStart, fullEnd;
+        fullStart = System.currentTimeMillis();
         // Load Windows UI config
         UITools.initUI();
         // Prepare and start loading screen
@@ -48,6 +50,8 @@ public class Starter {
         // Close loading screen
         loadingFrameView.dispose();
         mainFrameView.setVisible(true);
+        fullEnd = System.currentTimeMillis();
+        Settings.logData("Time taken for full boot: " + (fullEnd - fullStart) + " ms");
     }
 
 }
