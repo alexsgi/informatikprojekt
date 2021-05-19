@@ -1,10 +1,19 @@
 package com.stickjumper.utils.components;
 
+import com.stickjumper.utils.UITools;
+import com.sun.tools.javac.Main;
+
+import javax.sound.sampled.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
 
 public class AdvancedButton extends JButton {
 
@@ -48,6 +57,7 @@ public class AdvancedButton extends JButton {
             @Override
             public void mouseReleased(MouseEvent e) {
                 setForeground(exitColor);
+                playSound(e.getClass(), "sounds/button_sound_1.wav");
             }
 
             @Override
@@ -85,6 +95,7 @@ public class AdvancedButton extends JButton {
             @Override
             public void mouseReleased(MouseEvent e) {
                 setIcon(exitImage);
+                playSound(e.getClass(), "sounds/button_sound_1.wav");
             }
 
             @Override
@@ -117,5 +128,21 @@ public class AdvancedButton extends JButton {
         setName(id);
         setActionCommand(id);
     }
+
+    public void playSound(Class<?> c, final String path) {
+        try {
+            URL defaultSound = getClass().getResource("/sounds/button_sound_1.wav");
+            // getClass().getSy.getResource("/images/ads/WindowsNavigationStart.wav");
+            File soundFile = new File(defaultSound.toURI());
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(soundFile);
+            Clip clip = AudioSystem.getClip();
+            clip.open(audioInputStream);
+            clip.start( );
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
+
 
 }
