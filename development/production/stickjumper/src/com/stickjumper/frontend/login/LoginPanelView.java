@@ -66,7 +66,6 @@ public class LoginPanelView extends JPanel implements ActionListener {
         userNameTextField = new JRoundTextField();
         userNameTextField.setSize(getWidth() - 2 * 100, 30);
         userNameTextField.setLocation(getWidth() / 7, userNameLabel.getY() + userNameLabel.getHeight() + 1);
-        userNameTextField.setToolTipText("Enter your username");
         add(userNameTextField);
 
         passwordLabel = new LoginLabel(LoginLabel.TEXT);
@@ -79,7 +78,6 @@ public class LoginPanelView extends JPanel implements ActionListener {
         passwordField.setHorizontalAlignment(SwingConstants.LEFT);
         passwordField.setSize(getWidth() - 2 * 100, 30);
         passwordField.setLocation(getWidth() / 7, passwordLabel.getY() + passwordLabel.getHeight() + 1);
-        passwordField.setToolTipText("Enter your password");
         add(passwordField);
 
         warningLabel = new LoginLabel(LoginLabel.WARNING);

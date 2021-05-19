@@ -16,17 +16,14 @@ import java.sql.SQLException;
 
 public class RegisterPanelView extends JPanel implements ActionListener {
 
-    private Controller controller;
-    private LoginFrameView loginFrameView;
+    private final Controller controller;
+    private final LoginFrameView loginFrameView;
 
-    // All buttons
-    private AdvancedButton backButton, registerButton;
-
-    // All Text fields
-    private JTextField userNameTextField;
-    private JPasswordField passwordField, passwordFieldControl;
-    private JLabel warningLabel;
-    private LoginLabel welcomeLabel, signInLabel, userNameLabel, passwordLabel, passwordLabelControl;
+    private final AdvancedButton registerButton;
+    private final JTextField userNameTextField;
+    private final JPasswordField passwordField, passwordFieldControl;
+    private final JLabel warningLabel;
+    private final LoginLabel welcomeLabel, signInLabel, userNameLabel, passwordLabel, passwordLabelControl;
 
     public RegisterPanelView(Controller controller, LoginFrameView loginFrameView) {
         super();
@@ -37,7 +34,7 @@ public class RegisterPanelView extends JPanel implements ActionListener {
         this.controller = controller;
         this.loginFrameView = loginFrameView;
 
-        backButton = new AdvancedButton(ImageManager.ICON_BACK_DARK, ImageManager.ICON_BACK);
+        AdvancedButton backButton = new AdvancedButton(ImageManager.ICON_BACK_DARK, ImageManager.ICON_BACK);
         backButton.setSize(32, 32);
         backButton.setLocation(5, 5);
         backButton.setID("backButton");
@@ -65,7 +62,6 @@ public class RegisterPanelView extends JPanel implements ActionListener {
         userNameTextField = new JRoundTextField();
         userNameTextField.setSize(getWidth() - 2 * 100, 30);
         userNameTextField.setLocation(getWidth() / 7, userNameLabel.getY() + userNameLabel.getHeight() + 1);
-        userNameTextField.setToolTipText("Enter your username");
         add(userNameTextField);
 
         passwordLabel = new LoginLabel(LoginLabel.TEXT);
@@ -77,7 +73,6 @@ public class RegisterPanelView extends JPanel implements ActionListener {
         passwordField = new JRoundPasswordField();
         passwordField.setSize(getWidth() - 2 * 100, 30);
         passwordField.setLocation(getWidth() / 7, passwordLabel.getY() + passwordLabel.getHeight() + 1);
-        passwordField.setToolTipText("Enter your password");
         add(passwordField);
 
         passwordLabelControl = new LoginLabel(LoginLabel.TEXT);
@@ -89,7 +84,6 @@ public class RegisterPanelView extends JPanel implements ActionListener {
         passwordFieldControl = new JRoundPasswordField();
         passwordFieldControl.setSize(getWidth() - 2 * 100, 30);
         passwordFieldControl.setLocation(getWidth() / 7, passwordLabelControl.getY() + passwordLabel.getHeight() + 1);
-        passwordFieldControl.setToolTipText("Enter your password");
         add(passwordFieldControl);
 
         warningLabel = new LoginLabel(LoginLabel.WARNING);
