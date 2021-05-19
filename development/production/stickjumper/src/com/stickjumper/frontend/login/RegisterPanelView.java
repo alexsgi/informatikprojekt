@@ -36,7 +36,7 @@ public class RegisterPanelView extends JPanel implements ActionListener {
         setSize(loginFrameView.getWidth(), loginFrameView.getHeight());
 
         Color color = new Color(224, 220, 255);
-        setBackground(color);
+        setBackground(Color.decode("#F7F7FF"));
 
         backButton = new AdvancedButton(ImageManager.ICON_BACK_DARK, ImageManager.ICON_BACK);
         backButton.setHorizontalAlignment(SwingConstants.CENTER);

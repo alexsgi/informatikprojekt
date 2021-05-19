@@ -20,7 +20,7 @@ public class LoginPanelView extends JPanel implements ActionListener {
 
     // All buttons
     private AdvancedButton backButton, registerButton, loginButton;
-    private JProgressBar jProgressBar;
+    // private JProgressBar progressBar;
 
     // All Text fields
     private JTextField userNameTextField;
@@ -35,8 +35,7 @@ public class LoginPanelView extends JPanel implements ActionListener {
         this.controller = controller;
         this.loginFrameView = loginFrameView;
 
-        Color color = new Color(224, 255, 255);
-        setBackground(color);
+        setBackground(Color.decode("#F7F7FF"));
 
         backButton = new AdvancedButton(ImageManager.ICON_BACK_DARK, ImageManager.ICON_BACK);
         backButton.setHorizontalAlignment(SwingConstants.CENTER);
@@ -119,32 +118,31 @@ public class LoginPanelView extends JPanel implements ActionListener {
         registerButton.addActionListener(this);
         add(registerButton);
 
-        /* jProgressBar = new JProgressBar();
-        jProgressBar.setSize(200, 20);
-        jProgressBar.setLocation((getWidth() - jProgressBar.getWidth()) / 2, 300);
-        jProgressBar.setMaximum(100);
-        jProgressBar.setMinimum(0);
-        jProgressBar.setVisible(true);
-        jProgressBar.setIndeterminate(true);
-        jProgressBar.setFocusable(false);
-        jProgressBar.setBackground(null);
-        jProgressBar.setOpaque(true);
-        jProgressBar.setBorderPainted(false);
-        jProgressBar.setFocusable(false);
-        jProgressBar.setBorder(null);
-        jProgressBar.setForeground(null);
-        add(jProgressBar);
-
+        /*
+        progressBar.setFocusable(false);
+        progressBar.setBackground(null);
+        progressBar.setOpaque(true);
+        progressBar.setBorderPainted(false);
+        progressBar.setFocusable(false);
+        progressBar.setBorder(null);
+        progressBar.setForeground(null);
+        progressBar = new JProgressBar();
+        progressBar.setSize(50, 50);
+        progressBar.setLocation((getWidth() - progressBar.getWidth()) / 2, 300);
+        progressBar.setVisible(true);
+        progressBar.setMaximum(100);
+        progressBar.setMinimum(0);
+        progressBar.setIndeterminate(true);
+        add(progressBar);
          */
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        warningLabel.setText(""); // set empty
+        warningLabel.setText("");
         switch (e.getActionCommand()) {
             case "backButton" -> controller.getPanelFrameManager().loginFrameClose();
             case "loginButton" -> {
-
                 String username = userNameTextField.getText(), password;
                 char[] passwordArray = passwordField.getPassword();
                 if (username == null || username.isEmpty()) {
@@ -158,7 +156,7 @@ public class LoginPanelView extends JPanel implements ActionListener {
                     return;
                 }
                 loginButton.setEnabled(false);
-                progressBarRun();
+                // progressBarRun();
                 try {
                     boolean successful = controller.playerLogin(username, password);
                     if (successful) {
@@ -171,14 +169,15 @@ public class LoginPanelView extends JPanel implements ActionListener {
                     throwable.printStackTrace();
                 }
                 loginButton.setEnabled(true);
-                // jProgressBar.setVisible(false);
+                // progressBar.setVisible(false);
             }
             case "registerButton" -> controller.getPanelFrameManager().loginPanelToRegisterPanel();
         }
     }
 
     private void progressBarRun() {
-            /* jProgressBar.setVisible(true);
+            /*
+            progressBar.setVisible(true);
             Timer progressBarTimer = new Timer();
             int progressBarSpeed = 20;
             final int[] x = {0};
@@ -187,12 +186,11 @@ public class LoginPanelView extends JPanel implements ActionListener {
                 public void run() {
 
                     if (x[0] <= 100) {
-                        jProgressBar.setValue(x[0]);
+                        progressBar.setValue(x[0]);
                         x[0]++;
                     }
                 }
             }, 0, progressBarSpeed);
-
              */
     }
 }

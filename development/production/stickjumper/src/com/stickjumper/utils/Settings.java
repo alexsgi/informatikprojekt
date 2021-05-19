@@ -5,7 +5,7 @@ import java.awt.*;
 public class Settings {
 
     // GENERAL
-    public static final String APP_ICON = "/images/icons/appicon_5.png";
+    public static final String APP_ICON = "/images/icons/appicon_4.png";
     public static final int SCREEN_WIDTH = 1280, SCREEN_HEIGHT = 640;
     public static final int LOGIN_SCREEN_WIDTH = 600, LOGIN_SCREEN_HEIGHT = 500;
     // LOADING

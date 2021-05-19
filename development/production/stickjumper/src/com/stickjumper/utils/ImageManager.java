@@ -25,8 +25,8 @@ public class ImageManager {
         START_ICON_PLAY = UITools.getImage(c, "/images/start_view/icons/play.png");
         START_ICON_PLAY_DARK = UITools.getImage(c, "/images/start_view/icons/play-dark.png");
         START_MENU_BACKGROUND_DARK = UITools.getImage(c, "/images/start_view/background/mountains-middle-dark.png");
-        ICON_BACK = UITools.getImage(c, "/images/icons/back.png");
-        ICON_BACK_DARK = UITools.getImage(c, "/images/icons/back_dark.png");
+        ICON_BACK = UITools.getImage(c, "/images/icons/back_dark.png");
+        ICON_BACK_DARK = UITools.getImage(c, "/images/icons/back.png");
         PLAYER_SKIN_1 = UITools.getImage(c, "/images/elements/skins/skin_1.png");
         COIN_SKIN = UITools.getImage(c, "/images/elements/coin/coin.png");
         ENEMY_SKIN = UITools.getImage(c, "/images/elements/obstacles/enemy_skin.png");
