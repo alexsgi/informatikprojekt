@@ -15,6 +15,8 @@ public class JRoundPasswordField extends JPasswordField {
         super();
         setOpaque(false);
         setFont(Settings.FONT_LOGIN_FIELDS_LABELS);
+        setHorizontalAlignment(SwingConstants.LEFT);
+        setEchoChar('*');
     }
 
     @Override

@@ -10,7 +10,6 @@ import com.stickjumper.utils.components.JRoundTextField;
 import com.stickjumper.utils.components.LoginLabel;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
@@ -30,17 +29,14 @@ public class RegisterPanelView extends JPanel implements ActionListener {
     private LoginLabel welcomeLabel, signInLabel, userNameLabel, passwordLabel, passwordLabelControl;
 
     public RegisterPanelView(Controller controller, LoginFrameView loginFrameView) {
+        setLayout(null);
+        setSize(loginFrameView.getWidth(), loginFrameView.getHeight());
+        setBackground(Settings.LOGIN_BACKGROUND_COLOR);
+
         this.controller = controller;
         this.loginFrameView = loginFrameView;
 
-        setLayout(null);
-        setSize(loginFrameView.getWidth(), loginFrameView.getHeight());
-
-        Color color = new Color(224, 220, 255);
-        setBackground(Color.decode("#F7F7FF"));
-
         backButton = new AdvancedButton(ImageManager.ICON_BACK_DARK, ImageManager.ICON_BACK);
-        backButton.setHorizontalAlignment(SwingConstants.CENTER);
         backButton.setSize(32, 32);
         backButton.setLocation(5, 5);
         backButton.setID("backButton");
@@ -49,21 +45,18 @@ public class RegisterPanelView extends JPanel implements ActionListener {
 
         welcomeLabel = new LoginLabel(LoginLabel.HEADER);
         welcomeLabel.setText("Welcome to StickJumper");
-        welcomeLabel.setHorizontalAlignment(SwingConstants.CENTER);
         welcomeLabel.setSize(600, 50);
         welcomeLabel.setLocation(0, 20);
         add(welcomeLabel);
 
         signInLabel = new LoginLabel(LoginLabel.SUBHEADER);
         signInLabel.setText("Join the community by creating an account");
-        signInLabel.setHorizontalAlignment(SwingConstants.CENTER);
         signInLabel.setSize(getWidth(), 30);
         signInLabel.setLocation(0, welcomeLabel.getY() + welcomeLabel.getHeight() + 5);
         add(signInLabel);
 
         userNameLabel = new LoginLabel(LoginLabel.TEXT);
         userNameLabel.setText("Username");
-        userNameLabel.setHorizontalAlignment(SwingConstants.LEFT);
         userNameLabel.setSize(getWidth() - 2 * 100, 30);
         userNameLabel.setLocation(getWidth() / 7, signInLabel.getY() + signInLabel.getHeight() + 25);
         add(userNameLabel);
@@ -76,40 +69,31 @@ public class RegisterPanelView extends JPanel implements ActionListener {
 
         passwordLabel = new LoginLabel(LoginLabel.TEXT);
         passwordLabel.setText("Password");
-        passwordLabel.setHorizontalAlignment(SwingConstants.LEFT);
         passwordLabel.setSize(getWidth() - 2 * 100, 30);
         passwordLabel.setLocation(getWidth() / 7, userNameTextField.getY() + userNameTextField.getHeight() + 1);
         add(passwordLabel);
 
         passwordField = new JRoundPasswordField();
-        passwordField.setHorizontalAlignment(SwingConstants.LEFT);
         passwordField.setSize(getWidth() - 2 * 100, 30);
         passwordField.setLocation(getWidth() / 7, passwordLabel.getY() + passwordLabel.getHeight() + 1);
-        passwordField.setEchoChar('*');
         passwordField.setToolTipText("Enter your password");
         add(passwordField);
 
         passwordLabelControl = new LoginLabel(LoginLabel.TEXT);
         passwordLabelControl.setText("Repeat password");
-        passwordLabelControl.setHorizontalAlignment(SwingConstants.LEFT);
         passwordLabelControl.setSize(getWidth() - 2 * 100, 30);
         passwordLabelControl.setLocation(getWidth() / 7, passwordField.getY() + userNameTextField.getHeight() + 1);
         add(passwordLabelControl);
 
         passwordFieldControl = new JRoundPasswordField();
-        passwordFieldControl.setHorizontalAlignment(SwingConstants.LEFT);
         passwordFieldControl.setSize(getWidth() - 2 * 100, 30);
         passwordFieldControl.setLocation(getWidth() / 7, passwordLabelControl.getY() + passwordLabel.getHeight() + 1);
-        passwordFieldControl.setEchoChar('*');
         passwordFieldControl.setToolTipText("Enter your password");
         add(passwordFieldControl);
 
-        warningLabel = new JLabel();
+        warningLabel = new LoginLabel(LoginLabel.WARNING);
         warningLabel.setSize(getWidth(), 30);
         warningLabel.setLocation(0, passwordFieldControl.getY() + passwordFieldControl.getHeight() + 10);
-        warningLabel.setFont(Settings.FONT_LABEL_WARNING);
-        warningLabel.setForeground(Color.RED);
-        warningLabel.setHorizontalAlignment(SwingConstants.CENTER);
         add(warningLabel);
 
         registerButton = new AdvancedButton(null);

@@ -69,6 +69,7 @@ public class AdvancedButton extends JButton {
         setFocusable(false);
         setBorder(null);
         setIcon(exitImage);
+        setHorizontalAlignment(SwingConstants.CENTER);
         addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {

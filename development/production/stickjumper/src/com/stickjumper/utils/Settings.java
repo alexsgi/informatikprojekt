@@ -13,6 +13,7 @@ public class Settings {
     public static final String LOADING_FRAME_BACKGROUND_IMAGE_PATH = "/images/loading_screen/sky.png";
     // LOGIN/REGISTER
     public static final int LOGIN_VIEW_TEXTFIELD_CORNER_RADIUS = 15;
+    public static final Color LOGIN_BACKGROUND_COLOR = Color.decode("#F7F7FF");
 
     // FONT SIZES
     public static Font FONT_HEADING_BIG = new Font("Arial Black", Font.PLAIN, 40);

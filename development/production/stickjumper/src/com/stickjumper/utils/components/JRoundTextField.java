@@ -15,6 +15,7 @@ public class JRoundTextField extends JTextField {
         super();
         setOpaque(false);
         setFont(Settings.FONT_LOGIN_FIELDS_LABELS);
+        setHorizontalAlignment(SwingConstants.LEFT);
     }
 
     @Override

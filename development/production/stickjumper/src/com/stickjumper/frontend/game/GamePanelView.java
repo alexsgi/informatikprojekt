@@ -21,7 +21,7 @@ public class GamePanelView extends JPanel implements ActionListener {
     public GamePanelView(Controller controller) {
         this.controller = controller;
         setLayout(null);
-        setSize(1280, 640);
+        setSize(Settings.SCREEN_WIDTH, Settings.SCREEN_HEIGHT);
 
         movingBackground = new MovingBackground();
         movingBackground.setVisible(true);
