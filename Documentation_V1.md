@@ -157,9 +157,18 @@ Alex:
 2. Erstellung der Settings-Klasse
 3. Laden aller Bilder beim Loading-Screen
 
+Jonas:
+1. Anpassung der Klassen ImageManager und PanelFrame Manager
+2. Controller "aufräumen"
+
 ### **16.05.2021**
 Alex:
 1. Anpassung RegisterPanelView
+
+Jonas:
+1. Vergebliche Anpassung des MovinBackgrounds zu einer "glitchfreien" Version
+2. Erarbeitung einer Lösungsstrategie für dieses Problem
+
 
 ### **17.05.2021**
 Alex:
@@ -167,7 +176,16 @@ Alex:
 2. Registrierungslogik verfasst in RegisterPanelView
 3. Hinzufügen eines warningLabels in RegisterPanelView
 
+Jonas:
+1. Testphase zum Testen der Datenbankverbindung durch ein JField in GamePanelView
+2. Anpassung der getesteten Methoden zur richtigen FUnktionsweise
+
 ### **18.05.2021**
 Alex:
 1. Fertigstellung DB-Verbindung und -Funktionen
 2. Fertigstellung AdvancedButton
+
+Jonas: 
+1. Einrichtung der Datenbank in meiner Entwicklungsungebung
+2. Testphase für Anmeldungen
+
