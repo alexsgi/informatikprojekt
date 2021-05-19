@@ -14,6 +14,8 @@ public class Settings {
     // LOGIN/REGISTER
     public static final int LOGIN_VIEW_TEXTFIELD_CORNER_RADIUS = 15;
     public static final Color LOGIN_BACKGROUND_COLOR = Color.decode("#F7F7FF");
+    // START
+    public static final int START_SPACE_BUTTONS = 20;
 
     // FONT SIZES
     public static Font FONT_HEADING_BIG = new Font("Arial Black", Font.PLAIN, 40);
