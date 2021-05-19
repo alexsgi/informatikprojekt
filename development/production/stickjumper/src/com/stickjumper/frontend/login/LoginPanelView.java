@@ -129,18 +129,19 @@ public class LoginPanelView extends JPanel implements ActionListener {
         add(jProgressBar);
 
         Timer progressBarTimer = new Timer();
-        int progressBarSpeed = 7;
+        int progressBarSpeed = 20;
         final int[] x = {0};
         progressBarTimer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
+                if (x[0]<=100)
                 jProgressBar.setValue(x[0]);
                 x[0]++;
             }
         }, 0, progressBarSpeed);}
 
 
-    
+
 
     @Override
     public void actionPerformed(ActionEvent e) {
