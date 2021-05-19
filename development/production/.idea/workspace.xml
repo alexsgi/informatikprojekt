@@ -20,11 +20,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/login/LoginFrameView.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/MainFrameView.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/login/LoginFrameView.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/login/LoginPanelView.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/UITools.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/login/RegisterPanelView.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/UITools.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1sNxAxlUOzIo4QGOFZ9jkhs4zer" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
