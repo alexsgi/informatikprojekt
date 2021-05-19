@@ -46,12 +46,10 @@ public class AdvancedButton extends JButton {
         addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
-
             }
 
             @Override
             public void mousePressed(MouseEvent e) {
-
             }
 
             @Override
@@ -81,15 +79,14 @@ public class AdvancedButton extends JButton {
         setFocusable(false);
         setBorder(null);
         setIcon(exitImage);
+        setHorizontalAlignment(SwingConstants.CENTER);
         addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
-
             }
 
             @Override
             public void mousePressed(MouseEvent e) {
-
             }
 
             @Override
@@ -120,8 +117,9 @@ public class AdvancedButton extends JButton {
         if (image != null) super.setIcon(new ImageIcon(image));
     }
 
-    public void setIcon(ImageIcon icon) {
-        if (icon != null) super.setIcon(icon);
+    @Override
+    public void setIcon(Icon defaultIcon) {
+        if (defaultIcon != null) super.setIcon(defaultIcon);
     }
 
     public void setID(String id) {

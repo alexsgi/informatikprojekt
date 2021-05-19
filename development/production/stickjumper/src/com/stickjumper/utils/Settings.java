@@ -5,7 +5,7 @@ import java.awt.*;
 public class Settings {
 
     // GENERAL
-    public static final String APP_ICON = "/images/icons/appicon_5.png";
+    public static final String APP_ICON = "/images/icons/appicon_4.png";
     public static final int SCREEN_WIDTH = 1280, SCREEN_HEIGHT = 640;
     public static final int LOGIN_SCREEN_WIDTH = 600, LOGIN_SCREEN_HEIGHT = 500;
     // LOADING
@@ -13,6 +13,9 @@ public class Settings {
     public static final String LOADING_FRAME_BACKGROUND_IMAGE_PATH = "/images/loading_screen/sky.png";
     // LOGIN/REGISTER
     public static final int LOGIN_VIEW_TEXTFIELD_CORNER_RADIUS = 15;
+    public static final Color LOGIN_BACKGROUND_COLOR = Color.decode("#F7F7FF");
+    // START
+    public static final int START_SPACE_BUTTONS = 20;
 
     // FONT SIZES
     public static Font FONT_HEADING_BIG = new Font("Arial Black", Font.PLAIN, 40);

@@ -7,121 +7,93 @@ import com.stickjumper.utils.Settings;
 import com.stickjumper.utils.components.AdvancedButton;
 import com.stickjumper.utils.components.JRoundPasswordField;
 import com.stickjumper.utils.components.JRoundTextField;
+import com.stickjumper.utils.components.LoginLabel;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
 
 public class RegisterPanelView extends JPanel implements ActionListener {
 
-    private Controller controller;
-    private LoginFrameView loginFrameView;
+    private final Controller controller;
+    private final LoginFrameView loginFrameView;
 
-    // All buttons
-    private AdvancedButton backButton, registerButton;
-
-    // All Text fields
-    private JTextField userNameTextField;
-    private JPasswordField passwordField, passwordFieldControl;
-    private JLabel warningLabel;
-
+    private final AdvancedButton registerButton;
+    private final JTextField userNameTextField;
+    private final JPasswordField passwordField, passwordFieldControl;
+    private final JLabel warningLabel;
+    private final LoginLabel welcomeLabel, signInLabel, userNameLabel, passwordLabel, passwordLabelControl;
 
     public RegisterPanelView(Controller controller, LoginFrameView loginFrameView) {
+        super();
+        setLayout(null);
+        setSize(loginFrameView.getWidth(), loginFrameView.getHeight());
+        setBackground(Settings.LOGIN_BACKGROUND_COLOR);
+
         this.controller = controller;
         this.loginFrameView = loginFrameView;
 
-        setLayout(null);
-        setSize(loginFrameView.getWidth(), loginFrameView.getHeight());
-
-        Color color = new Color(224, 220, 255);
-        setBackground(color);
-
-        backButton = new AdvancedButton(ImageManager.ICON_BACK_DARK, ImageManager.ICON_BACK);
-        backButton.setHorizontalAlignment(SwingConstants.CENTER);
+        AdvancedButton backButton = new AdvancedButton(ImageManager.ICON_BACK_DARK, ImageManager.ICON_BACK);
         backButton.setSize(32, 32);
         backButton.setLocation(5, 5);
-        backButton.setFont(new Font("Calibri", Font.PLAIN, 12));
         backButton.setID("backButton");
         backButton.addActionListener(this);
         add(backButton);
 
-        JLabel welcomeLabel = new JLabel();
+        welcomeLabel = new LoginLabel(LoginLabel.HEADER);
         welcomeLabel.setText("Welcome to StickJumper");
-        welcomeLabel.setHorizontalAlignment(SwingConstants.CENTER);
-        welcomeLabel.setBounds(0, 20, 600, 50);
-        welcomeLabel.setFont(new Font("Open Sans", Font.BOLD, 22));
+        welcomeLabel.setSize(600, 50);
+        welcomeLabel.setLocation(0, 20);
         add(welcomeLabel);
 
-        JLabel signInLabel = new JLabel();
+        signInLabel = new LoginLabel(LoginLabel.SUBHEADER);
         signInLabel.setText("Join the community by creating an account");
-        signInLabel.setHorizontalAlignment(SwingConstants.CENTER);
         signInLabel.setSize(getWidth(), 30);
         signInLabel.setLocation(0, welcomeLabel.getY() + welcomeLabel.getHeight() + 5);
-        signInLabel.setFont(new Font("Open Sans", Font.PLAIN, 14));
         add(signInLabel);
 
-        JLabel userNameLabel = new JLabel();
+        userNameLabel = new LoginLabel(LoginLabel.TEXT);
         userNameLabel.setText("Username");
-        userNameLabel.setHorizontalAlignment(SwingConstants.LEFT);
         userNameLabel.setSize(getWidth() - 2 * 100, 30);
         userNameLabel.setLocation(getWidth() / 7, signInLabel.getY() + signInLabel.getHeight() + 25);
-        userNameLabel.setFont(new Font("Open Sans", Font.PLAIN, 13));
         add(userNameLabel);
 
-        userNameTextField = new JRoundTextField(Settings.LOGIN_VIEW_TEXTFIELD_CORNER_RADIUS);
+        userNameTextField = new JRoundTextField();
         userNameTextField.setSize(getWidth() - 2 * 100, 30);
         userNameTextField.setLocation(getWidth() / 7, userNameLabel.getY() + userNameLabel.getHeight() + 1);
-        userNameTextField.setFont(new Font("Open Sans", Font.PLAIN, 13));
-        userNameTextField.setToolTipText("Enter your username");
         add(userNameTextField);
 
-        JLabel passwordLabel = new JLabel();
+        passwordLabel = new LoginLabel(LoginLabel.TEXT);
         passwordLabel.setText("Password");
-        passwordLabel.setHorizontalAlignment(SwingConstants.LEFT);
         passwordLabel.setSize(getWidth() - 2 * 100, 30);
         passwordLabel.setLocation(getWidth() / 7, userNameTextField.getY() + userNameTextField.getHeight() + 1);
-        passwordLabel.setFont(new Font("Open Sans", Font.PLAIN, 13));
         add(passwordLabel);
 
-        passwordField = new JRoundPasswordField(Settings.LOGIN_VIEW_TEXTFIELD_CORNER_RADIUS);
-        passwordField.setHorizontalAlignment(SwingConstants.LEFT);
+        passwordField = new JRoundPasswordField();
         passwordField.setSize(getWidth() - 2 * 100, 30);
         passwordField.setLocation(getWidth() / 7, passwordLabel.getY() + passwordLabel.getHeight() + 1);
-        passwordField.setEchoChar('*');
-        passwordField.setFont(new Font("Open Sans", Font.PLAIN, 13));
-        passwordField.setToolTipText("Enter your password");
         add(passwordField);
 
-        JLabel passwordLabelAgain = new JLabel();
-        passwordLabelAgain.setText("Repeat password");
-        passwordLabelAgain.setHorizontalAlignment(SwingConstants.LEFT);
-        passwordLabelAgain.setSize(getWidth() - 2 * 100, 30);
-        passwordLabelAgain.setLocation(getWidth() / 7, passwordField.getY() + userNameTextField.getHeight() + 1);
-        passwordLabelAgain.setFont(new Font("Open Sans", Font.PLAIN, 13));
-        add(passwordLabelAgain);
+        passwordLabelControl = new LoginLabel(LoginLabel.TEXT);
+        passwordLabelControl.setText("Repeat password");
+        passwordLabelControl.setSize(getWidth() - 2 * 100, 30);
+        passwordLabelControl.setLocation(getWidth() / 7, passwordField.getY() + userNameTextField.getHeight() + 1);
+        add(passwordLabelControl);
 
-        passwordFieldControl = new JRoundPasswordField(Settings.LOGIN_VIEW_TEXTFIELD_CORNER_RADIUS);
-        passwordFieldControl.setHorizontalAlignment(SwingConstants.LEFT);
+        passwordFieldControl = new JRoundPasswordField();
         passwordFieldControl.setSize(getWidth() - 2 * 100, 30);
-        passwordFieldControl.setLocation(getWidth() / 7, passwordLabelAgain.getY() + passwordLabel.getHeight() + 1);
-        passwordFieldControl.setEchoChar('*');
-        passwordFieldControl.setFont(new Font("Open Sans", Font.PLAIN, 13));
-        passwordFieldControl.setToolTipText("Enter your password");
+        passwordFieldControl.setLocation(getWidth() / 7, passwordLabelControl.getY() + passwordLabel.getHeight() + 1);
         add(passwordFieldControl);
 
-        warningLabel = new JLabel();
+        warningLabel = new LoginLabel(LoginLabel.WARNING);
         warningLabel.setSize(getWidth(), 30);
         warningLabel.setLocation(0, passwordFieldControl.getY() + passwordFieldControl.getHeight() + 10);
-        warningLabel.setFont(Settings.FONT_LABEL_WARNING);
-        warningLabel.setForeground(Color.RED);
-        warningLabel.setHorizontalAlignment(SwingConstants.CENTER);
         add(warningLabel);
 
         registerButton = new AdvancedButton(null);
         registerButton.setText("Sign up");
-        registerButton.setFont(new Font("Calibri", Font.PLAIN, 15));
+        registerButton.setFont(Settings.FONT_LOGIN_BUTTON);
         registerButton.setSize(150, 40);
         registerButton.setLocation((getWidth() - registerButton.getWidth()) / 2, getHeight() - (int) (registerButton.getHeight() * 3.5));
         registerButton.setID("registerButton");
@@ -131,7 +103,7 @@ public class RegisterPanelView extends JPanel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        warningLabel.setText(""); // set empty
+        warningLabel.setText("");
         switch (e.getActionCommand()) {
             case "registerButton" -> {
                 String username = userNameTextField.getText(), password, passwordControl;
