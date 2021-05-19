@@ -8,10 +8,13 @@ import com.stickjumper.utils.components.JRoundPasswordField;
 import com.stickjumper.utils.components.JRoundTextField;
 
 import javax.swing.*;
+import javax.swing.plaf.ProgressBarUI;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class LoginPanelView extends JPanel implements ActionListener {
 
@@ -117,7 +120,27 @@ public class LoginPanelView extends JPanel implements ActionListener {
         registerButton.setID("registerButton");
         registerButton.addActionListener(this);
         add(registerButton);
-    }
+
+        JProgressBar jProgressBar = new JProgressBar();
+        jProgressBar.setSize(200, 20);
+        jProgressBar.setLocation((getWidth() - jProgressBar.getWidth()) / 2, 300);
+        jProgressBar.setMaximum(100);
+        jProgressBar.setMinimum(0);
+        add(jProgressBar);
+
+        Timer progressBarTimer = new Timer();
+        int progressBarSpeed = 7;
+        final int[] x = {0};
+        progressBarTimer.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                jProgressBar.setValue(x[0]);
+                x[0]++;
+            }
+        }, 0, progressBarSpeed);}
+
+
+    
 
     @Override
     public void actionPerformed(ActionEvent e) {

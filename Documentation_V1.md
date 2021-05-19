@@ -110,7 +110,7 @@ Alex:
 1. Implementierung Netzwerk- und Servertest
 
 Jonas:
-1. Erstellen des MovingNackgrounds mit Testen und einfügen in GanePanelView
+1. Erstellen des MovingBackgrounds mit Testen und Einfügen in GamePanelView
 2. Hinzufügen der Buttons "Start" und "Stop" als provisorische StartGame und GameOver Situationen
 
 ### **11.05.2021**
@@ -166,7 +166,7 @@ Alex:
 1. Anpassung RegisterPanelView
 
 Jonas:
-1. Vergebliche Anpassung des MovinBackgrounds zu einer "glitchfreien" Version
+1. Vergebliche Anpassung des MovingBackgrounds zu einer "glitchfreien" Version
 2. Erarbeitung einer Lösungsstrategie für dieses Problem
 
 
@@ -177,8 +177,8 @@ Alex:
 3. Hinzufügen eines warningLabels in RegisterPanelView
 
 Jonas:
-1. Testphase zum Testen der Datenbankverbindung durch ein JField in GamePanelView
-2. Anpassung der getesteten Methoden zur richtigen FUnktionsweise
+1. Testphase zum Testen der Datenbankverbindung durch ein JTextField in GamePanelView
+2. Anpassung der getesteten Methoden zur richtigen Funktionsweise
 
 ### **18.05.2021**
 Alex:
@@ -186,6 +186,5 @@ Alex:
 2. Fertigstellung AdvancedButton
 
 Jonas: 
-1. Einrichtung der Datenbank in meiner Entwicklungsungebung
+1. Einrichtung der Datenbank in meiner Entwicklungsumgebung
 2. Testphase für Anmeldungen
-
