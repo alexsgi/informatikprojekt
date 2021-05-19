@@ -51,18 +51,6 @@
     <property name="settings.editor.selected.configurable" value="ssh.settings" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Elena\Desktop\Alexander\05\Projekte\informatikprojekt\development\production\stickjumper\src\res\images\icons" />
-      <recent name="C:\Users\Elena\Desktop\Alexander\05\Projekte\informatikprojekt\development\production\stickjumper\src\res\images\game_view\icons" />
-      <recent name="C:\Users\Elena\Desktop\Alexander\05\Projekte\informatikprojekt\development\production\stickjumper\src\res\images\start_view\icons" />
-      <recent name="C:\Users\Elena\Desktop\Alexander\05\Projekte\informatikprojekt\development\production\stickjumper\src\res\images\game_view" />
-      <recent name="C:\Users\Elena\Desktop\Alexander\05\Projekte\informatikprojekt\development\production\stickjumper\src\res\images\login_register" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Elena\Desktop\Alexander\05\Projekte\informatikprojekt\development\production\stickjumper\src\res\images\icons" />
-      <recent name="C:\Users\Elena\Desktop\Alexander\05\Projekte\informatikprojekt\development\production\stickjumper\src\res\images\elements\skins" />
-      <recent name="C:\Users\Elena\Desktop\Alexander\05\Projekte\informatikprojekt\development\production\stickjumper\src\res\images\game_view\icons" />
-    </key>
   </component>
   <component name="RunManager" selected="Application.Starter">
     <configuration name="PasswordHasher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -71,19 +59,6 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.stickjumper.utils.security.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="StackOverFlowTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.stickjumper.test.StackOverFlowTest" />
-      <module name="stickjumper" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.stickjumper.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -119,7 +94,6 @@
       <list>
         <item itemvalue="Application.Starter" />
         <item itemvalue="Application.PasswordHasher" />
-        <item itemvalue="Application.StackOverFlowTest" />
       </list>
     </recent_temporary>
   </component>
