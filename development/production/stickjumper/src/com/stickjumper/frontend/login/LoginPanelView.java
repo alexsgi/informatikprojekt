@@ -31,6 +31,7 @@ public class LoginPanelView extends JPanel implements ActionListener {
     private LoginLabel welcomeLabel, signInLabel, userNameLabel, passwordLabel;
 
     public LoginPanelView(Controller controller, LoginFrameView loginFrameView) {
+        super();
         setLayout(null);
         setSize(loginFrameView.getWidth(), loginFrameView.getHeight());
         setBackground(Settings.LOGIN_BACKGROUND_COLOR);

@@ -10,6 +10,7 @@ import java.awt.image.BufferedImage;
 public class LoadingPanelView extends JPanel {
 
     public LoadingPanelView(LoadingFrameView frame) {
+        super();
         setLayout(null);
 
         JLabel loadingLabel = new JLabel();

@@ -19,6 +19,7 @@ public class GamePanelView extends JPanel implements ActionListener {
     private AdvancedButton backButton, startButton, stopButton;
 
     public GamePanelView(Controller controller) {
+        super();
         this.controller = controller;
         setLayout(null);
         setSize(Settings.SCREEN_WIDTH, Settings.SCREEN_HEIGHT);

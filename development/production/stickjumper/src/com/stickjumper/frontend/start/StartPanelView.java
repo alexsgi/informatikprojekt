@@ -5,7 +5,6 @@ import com.stickjumper.frontend.login.LoginFrameView;
 import com.stickjumper.frontend.start.startsidemenu.StartSideMenuPanel;
 import com.stickjumper.utils.ImageManager;
 import com.stickjumper.utils.Settings;
-import com.stickjumper.utils.UITools;
 import com.stickjumper.utils.components.AdvancedButton;
 import com.stickjumper.utils.components.InternetStateLabel;
 
@@ -13,7 +12,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
 
 public class StartPanelView extends JPanel implements ActionListener {
 
@@ -22,9 +20,10 @@ public class StartPanelView extends JPanel implements ActionListener {
     private Controller controller;
 
     // All buttons
-    private AdvancedButton statisticsButton,loginButton, settingsButton, playButton;
+    private AdvancedButton statisticsButton, loginButton, settingsButton, playButton;
 
     public StartPanelView(Controller controller) {
+        super();
         setLayout(null);
         setSize(Settings.SCREEN_WIDTH, Settings.SCREEN_HEIGHT);
 
@@ -96,9 +95,8 @@ public class StartPanelView extends JPanel implements ActionListener {
     @Override
     protected void paintComponent(Graphics graphicsObject) {
         super.paintComponent(graphicsObject);
-        BufferedImage image = UITools.getImage(getClass(), "/images/start_view/background/mountains-middle.png");
-        if (image == null) return;
-        graphicsObject.drawImage(image, 0, 0, null);
+        if (ImageManager.BACKGROUND_MAIN == null) return;
+        graphicsObject.drawImage(ImageManager.BACKGROUND_MAIN, 0, 0, null);
     }
 
     public void showHighScore(int highScore) {

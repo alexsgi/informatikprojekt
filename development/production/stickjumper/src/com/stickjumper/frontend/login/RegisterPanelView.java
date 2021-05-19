@@ -29,6 +29,7 @@ public class RegisterPanelView extends JPanel implements ActionListener {
     private LoginLabel welcomeLabel, signInLabel, userNameLabel, passwordLabel, passwordLabelControl;
 
     public RegisterPanelView(Controller controller, LoginFrameView loginFrameView) {
+        super();
         setLayout(null);
         setSize(loginFrameView.getWidth(), loginFrameView.getHeight());
         setBackground(Settings.LOGIN_BACKGROUND_COLOR);
