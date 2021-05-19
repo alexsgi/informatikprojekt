@@ -57,7 +57,7 @@ public class AdvancedButton extends JButton {
             @Override
             public void mouseReleased(MouseEvent e) {
                 setForeground(exitColor);
-                playSound(e.getClass(), "sounds/button_sound_1.wav");
+                playSound("sounds/button_sound_1.wav");
             }
 
             @Override
@@ -95,7 +95,7 @@ public class AdvancedButton extends JButton {
             @Override
             public void mouseReleased(MouseEvent e) {
                 setIcon(exitImage);
-                playSound(e.getClass(), "sounds/button_sound_1.wav");
+                playSound("sounds/button_sound_1.wav");
             }
 
             @Override
@@ -129,7 +129,7 @@ public class AdvancedButton extends JButton {
         setActionCommand(id);
     }
 
-    public void playSound(Class<?> c, final String path) {
+    /* public void playSound(Class<?> c, final String path) {
         try {
             URL defaultSound = getClass().getResource("/sounds/button_sound_1.wav");
             // getClass().getSy.getResource("/images/ads/WindowsNavigationStart.wav");
@@ -144,5 +144,42 @@ public class AdvancedButton extends JButton {
     }
 
 
+
+    public void playSound(final String url) {
+        new Thread(new Runnable() {
+            // The wrapper thread is unnecessary, unless it blocks on the
+            // Clip finishing; see comments.
+            public void run() {
+                try {
+                    Clip clip = AudioSystem.getClip();
+                    AudioInputStream inputStream = AudioSystem.getAudioInputStream(
+                            getClass().getResourceAsStream("/sounds/button_sound_1.wav"));
+                    clip.open(inputStream);
+                    clip.start();
+                } catch (Exception e) {
+                    System.err.println(e.getMessage());
+                }
+            }
+        }).start();
+    }
+        */
+
+    public void playSound(final String url) {
+        new Thread(new Runnable() {
+            // The wrapper thread is unnecessary, unless it blocks on the
+            // Clip finishing; see comments.
+            public void run() {
+                try {
+                    Clip clip = AudioSystem.getClip();
+                    AudioInputStream inputStream = AudioSystem.getAudioInputStream(
+                            getClass().getResourceAsStream("/sounds/button_sound_1.wav"));
+                    clip.open(inputStream);
+                    clip.start();
+                } catch (Exception e) {
+                    System.err.println(e.getMessage());
+                }
+            }
+        }).start();
+    }
 
 }
