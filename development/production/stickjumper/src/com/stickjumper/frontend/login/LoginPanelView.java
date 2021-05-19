@@ -8,13 +8,10 @@ import com.stickjumper.utils.components.JRoundPasswordField;
 import com.stickjumper.utils.components.JRoundTextField;
 
 import javax.swing.*;
-import javax.swing.plaf.ProgressBarUI;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
-import java.util.Timer;
-import java.util.TimerTask;
 
 public class LoginPanelView extends JPanel implements ActionListener {
 
@@ -23,6 +20,7 @@ public class LoginPanelView extends JPanel implements ActionListener {
 
     // All buttons
     private AdvancedButton backButton, registerButton, loginButton;
+    private JProgressBar jProgressBar;
 
     // All Text fields
     private JTextField userNameTextField;
@@ -121,27 +119,24 @@ public class LoginPanelView extends JPanel implements ActionListener {
         registerButton.addActionListener(this);
         add(registerButton);
 
-        JProgressBar jProgressBar = new JProgressBar();
+        /* jProgressBar = new JProgressBar();
         jProgressBar.setSize(200, 20);
         jProgressBar.setLocation((getWidth() - jProgressBar.getWidth()) / 2, 300);
         jProgressBar.setMaximum(100);
         jProgressBar.setMinimum(0);
+        jProgressBar.setVisible(true);
+        jProgressBar.setIndeterminate(true);
+        jProgressBar.setFocusable(false);
+        jProgressBar.setBackground(null);
+        jProgressBar.setOpaque(true);
+        jProgressBar.setBorderPainted(false);
+        jProgressBar.setFocusable(false);
+        jProgressBar.setBorder(null);
+        jProgressBar.setForeground(null);
         add(jProgressBar);
 
-        Timer progressBarTimer = new Timer();
-        int progressBarSpeed = 20;
-        final int[] x = {0};
-        progressBarTimer.scheduleAtFixedRate(new TimerTask() {
-            @Override
-            public void run() {
-                if (x[0]<=100)
-                jProgressBar.setValue(x[0]);
-                x[0]++;
-            }
-        }, 0, progressBarSpeed);}
-
-
-
+         */
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -149,6 +144,7 @@ public class LoginPanelView extends JPanel implements ActionListener {
         switch (e.getActionCommand()) {
             case "backButton" -> controller.getPanelFrameManager().loginFrameClose();
             case "loginButton" -> {
+
                 String username = userNameTextField.getText(), password;
                 char[] passwordArray = passwordField.getPassword();
                 if (username == null || username.isEmpty()) {
@@ -162,6 +158,7 @@ public class LoginPanelView extends JPanel implements ActionListener {
                     return;
                 }
                 loginButton.setEnabled(false);
+                progressBarRun();
                 try {
                     boolean successful = controller.playerLogin(username, password);
                     if (successful) {
@@ -174,9 +171,28 @@ public class LoginPanelView extends JPanel implements ActionListener {
                     throwable.printStackTrace();
                 }
                 loginButton.setEnabled(true);
+                // jProgressBar.setVisible(false);
             }
             case "registerButton" -> controller.getPanelFrameManager().loginPanelToRegisterPanel();
         }
     }
 
+    private void progressBarRun() {
+            /* jProgressBar.setVisible(true);
+            Timer progressBarTimer = new Timer();
+            int progressBarSpeed = 20;
+            final int[] x = {0};
+            progressBarTimer.scheduleAtFixedRate(new TimerTask() {
+                @Override
+                public void run() {
+
+                    if (x[0] <= 100) {
+                        jProgressBar.setValue(x[0]);
+                        x[0]++;
+                    }
+                }
+            }, 0, progressBarSpeed);
+
+             */
+    }
 }
