@@ -188,3 +188,14 @@ Alex:
 Jonas: 
 1. Einrichtung der Datenbank in meiner Entwicklungsumgebung
 2. Testphase für Anmeldungen
+
+### **19.05.2021**
+Jonas: 
+1. Einfügen einer Methode, welche einen "Click-Sound" beim drücken eines AdvancedButtons abspielt
+2. Anpassen der Methode mit relativem "jar-kompatiblem" Pfad mit Alex
+
+### ""20.05.2021**
+!!! Vorhaben
+Jonas:
+1. "Verallgemeinerung" der playSound - Methode in UI-Tools
+
