@@ -3,6 +3,7 @@
     <output-path>$PROJECT_DIR$/out/artifacts/stickjumper_jar</output-path>
     <root id="archive" name="stickjumper.jar">
       <element id="module-output" name="stickjumper" />
+      <element id="file-copy" path="$PROJECT_DIR$/stickjumper/libs/mysql_jdbc.jar" />
     </root>
   </artifact>
 </component>
