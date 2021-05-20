@@ -30,20 +30,5 @@ public class UITools {
         return null;
     }
 
-    public static AudioInputStream getSound(Class<?> c /*, String path */ ){
-        try {
-            URL url = c.getClassLoader().getResource("sounds/button_sound_1.wav");
-            AudioInputStream audioIn;
-            audioIn = AudioSystem.getAudioInputStream(url);
 
-            if (audioIn == null) return null;
-            return audioIn;
-        } catch (IOException | UnsupportedAudioFileException e ) {
-            e.printStackTrace();
-            System.out.printf("The track (%s) was not loaded\n"+ "sounds/button_sound_1.wav");
-        }
-        return null;
-        
-        
-    }
 }

@@ -3,17 +3,17 @@ package com.stickjumper.start;
 import com.stickjumper.data.database.DBConnection;
 import com.stickjumper.frontend.MainFrameView;
 import com.stickjumper.frontend.boot.LoadingFrameView;
-import com.stickjumper.utils.ConnectionTester;
-import com.stickjumper.utils.ImageManager;
-import com.stickjumper.utils.Settings;
-import com.stickjumper.utils.UITools;
+import com.stickjumper.utils.*;
 
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.*;
+import java.io.IOException;
 import java.sql.SQLException;
 
 public class Starter {
 
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) throws SQLException, UnsupportedAudioFileException, LineUnavailableException, IOException {
         long fullStart, fullEnd;
         fullStart = System.currentTimeMillis();
         // Load Windows UI config
@@ -22,7 +22,7 @@ public class Starter {
         LoadingFrameView loadingFrameView = new LoadingFrameView();
         loadingFrameView.setVisible(true);
 
-        long s1, s2, start, e1, e2, end;
+        long s1, s2,s3,  start, e1, e2, e3, end;
         s1 = System.currentTimeMillis();
         int serverResponseCode = ConnectionTester.checkConnection();
         e1 = System.currentTimeMillis();
@@ -37,6 +37,11 @@ public class Starter {
         ImageManager.loadALlImages(loadingFrameView.getClass());
         end = System.currentTimeMillis();
         Settings.logData("Image loading took " + (end - start) + " ms");
+
+        s3 = System.currentTimeMillis();
+        SoundManager.loadAllClipPaths();
+        e3 = System.currentTimeMillis();
+        Settings.logData("Sounds loading took " + (e3 - s3) + " ms");
 
         // Make all internet boot operations (db connection, ...)
         s2 = System.currentTimeMillis();
