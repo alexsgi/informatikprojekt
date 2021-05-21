@@ -24,16 +24,12 @@ public class GamePanelView extends JPanel implements ActionListener {
         setLayout(null);
         setSize(Settings.SCREEN_WIDTH, Settings.SCREEN_HEIGHT);
 
-        movingBackground = new MovingBackground();
-        movingBackground.setVisible(true);
-        movingBackground.setSize(2560, 640);
-        add(movingBackground);
 
         JLabel lblTitle = new JLabel("GamePanel");
         lblTitle.setHorizontalAlignment(SwingConstants.CENTER);
         lblTitle.setBounds(0, 96, getWidth(), 83);
         lblTitle.setFont(Settings.FONT_HEADING_BIG);
-        movingBackground.add(lblTitle);
+        add(lblTitle);
 
         backButton = new AdvancedButton(ImageManager.GAME_ICON_HOME_ACCENT, ImageManager.GAME_ICON_HOME);
         backButton.setHorizontalAlignment(SwingConstants.CENTER);
@@ -41,7 +37,7 @@ public class GamePanelView extends JPanel implements ActionListener {
         backButton.setLocation(5, 5);
         backButton.setID("backButton");
         backButton.addActionListener(this);
-        movingBackground.add(backButton);
+        add(backButton);
 
         // Button to start the movement
         startButton = new AdvancedButton(null);
@@ -51,7 +47,7 @@ public class GamePanelView extends JPanel implements ActionListener {
         startButton.setLocation(((getWidth() - startButton.getWidth()) / 2) + (getWidth() - startButton.getWidth()) / 4, getHeight() - startButton.getHeight() * 2);
         startButton.setID("startButton");
         startButton.addActionListener(this);
-        movingBackground.add(startButton);
+        add(startButton);
 
         // Button to stop the movement
         stopButton = new AdvancedButton(null);
@@ -61,7 +57,13 @@ public class GamePanelView extends JPanel implements ActionListener {
         stopButton.setLocation((getWidth() - stopButton.getWidth()) / 4, getHeight() - stopButton.getHeight() * 2);
         stopButton.setID("stopButton");
         stopButton.addActionListener(this);
-        movingBackground.add(stopButton);
+        add(stopButton);
+
+
+        movingBackground = new MovingBackground();
+        movingBackground.setVisible(true);
+        movingBackground.setSize(2560, 640);
+        add(movingBackground);
     }
 
     public void startMovingBackground() {
@@ -81,7 +83,6 @@ public class GamePanelView extends JPanel implements ActionListener {
         }
     }
 
-    public void addObject(GameElementRender render) {
-        movingBackground.add(render);
+    public void addObject(GameElementRender render) { add(render);
     }
 }
