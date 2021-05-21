@@ -10,35 +10,32 @@ public class SoundManager {
     public static String pathButtonSound2;
     public static String bootSound;
 
-
     public static void loadAllClips() {
-
         pathButtonSound = "/sounds/button_sound_1.wav";
         pathButtonSound2 = "/sounds/Winding-Alarm-Clock.wav";
         bootSound = "/sounds/empty-boot-sequence.wav";
         bootSound = "/sounds/boot-2.wav";
-
-
-
+        bootSound = "/sounds/boot-sound.wav";
     }
-    public static void initSoundsAndBoot(){
+
+    public static void initSoundsAndBoot() {
         playSound(bootSound);
     }
 
+    public static void playSound(final String url) {
+        new Thread(() -> {
+            try {
+                Clip clip = AudioSystem.getClip();
+                AudioInputStream inputStream = AudioSystem.getAudioInputStream(
+                        UITools.class.getResourceAsStream(url));
+                clip.open(inputStream);
+                clip.start();
+                clip.setMicrosecondPosition(0);
+            } catch (Exception e) {
+                Settings.logData("Error playing sound", e);
+            }
 
-    public static void playSound(final String url ) {
-        new Thread(() ->{
-        try {
-            Clip clip = AudioSystem.getClip();
-            AudioInputStream inputStream = AudioSystem.getAudioInputStream(
-                    UITools.class.getResourceAsStream(url));
-            clip.open(inputStream);
-            clip.start();
-            clip.setMicrosecondPosition(0);
-        } catch (Exception e) {
-            Settings.logData("Error playing sound", e);
-        }
-
-    }).start();}
+        }).start();
+    }
 }
 

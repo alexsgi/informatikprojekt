@@ -20,19 +20,17 @@ public class Starter {
         UITools.initUI();
 
 
-
-
         // Prepare and start loading screen
         LoadingFrameView loadingFrameView = new LoadingFrameView();
         loadingFrameView.setVisible(true);
 
-        long s1, s2,s3,  start, e1, e2, e3, end;
+        long s1, s2, s3, start, e1, e2, e3, end;
         s3 = System.currentTimeMillis();
         SoundManager.loadAllClips();
         SoundManager.initSoundsAndBoot();
         e3 = System.currentTimeMillis();
         Settings.logData("Sounds loading took " + (e3 - s3) + " ms");
-        
+
 
         s1 = System.currentTimeMillis();
         int serverResponseCode = ConnectionTester.checkConnection();
