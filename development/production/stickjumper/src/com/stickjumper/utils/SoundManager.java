@@ -10,12 +10,12 @@ public class SoundManager {
     public static String pathButtonSound2;
     public static String bootSound;
 
+
     public static void loadAllClips() {
         pathButtonSound = "/sounds/button_sound_1.wav";
         pathButtonSound2 = "/sounds/Winding-Alarm-Clock.wav";
         // bootSound = "/sounds/empty-boot-sequence.wav";
         bootSound = "/sounds/boot-2.wav";
-        bootSound = "/sounds/boot-sound.wav";
     }
 
     public static void initSoundsAndBoot() {
