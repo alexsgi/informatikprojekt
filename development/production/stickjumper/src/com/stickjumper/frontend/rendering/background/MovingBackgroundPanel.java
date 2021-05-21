@@ -12,7 +12,7 @@ public class MovingBackgroundPanel extends JPanel {
 
     private final BufferedImage backgroundMiddle, backgroundMiddleMirrored;
     private int backgroundMiddleX = 0, backgroundMiddleMirroredX = 1280;
-    private boolean movement = true;
+    private boolean movement = false;
 
     public MovingBackgroundPanel() {
         super(true);

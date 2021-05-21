@@ -5,6 +5,7 @@ import com.stickjumper.frontend.game.GamePanelView;
 import com.stickjumper.frontend.login.LoginFrameView;
 import com.stickjumper.frontend.login.LoginPanelView;
 import com.stickjumper.frontend.login.RegisterPanelView;
+import com.stickjumper.frontend.rendering.background.MovingBackgroundPanel;
 import com.stickjumper.frontend.start.StartPanelView;
 
 public class PanelFrameManager {
@@ -51,12 +52,14 @@ public class PanelFrameManager {
         //mainFrameView.setContentPane(gamePanelView);
         mainFrameView.getContentPane().removeAll();
         mainFrameView.getContentPane().add(gamePanelView);
+        ((MovingBackgroundPanel) mainFrameView.getContentPane()).startMovement();
         //mainFrameView.revalidate();
     }
 
     public void switchToStartPanel() {
         mainFrameView.getContentPane().removeAll();
         mainFrameView.getContentPane().add(startPanelView);
+        ((MovingBackgroundPanel) mainFrameView.getContentPane()).stopMovement();
         if (controller.getCurrentPlayer() != null)
             controller.getPanelFrameManager().startPanelView.showHighScore(controller.getCurrentPlayer().getHighScore());
         //mainFrameView.revalidate();
