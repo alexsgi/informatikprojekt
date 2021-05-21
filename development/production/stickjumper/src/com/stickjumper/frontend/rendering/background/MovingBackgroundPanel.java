@@ -61,7 +61,7 @@ public class MovingBackgroundPanel extends JPanel {
         movement = true;
     }
 
-    public void flipStatus() {
+    public void flipMovementStatus() {
         movement = !movement;
     }
 }

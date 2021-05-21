@@ -21,6 +21,7 @@ public class PanelFrameManager {
     public LoginFrameView loginFrameView;
 
     public Controller controller;
+    private SceneryController sceneryController;
 
     public PanelFrameManager(Controller controller, MainFrameView mainFrameView) {
         this.controller = controller;
@@ -52,10 +53,11 @@ public class PanelFrameManager {
     }
 
     public void switchToStartPanel() {
-        mainFrameView.getContentPane().removeAll();
-        mainFrameView.getContentPane().add(startPanelView);
-        stopMovingBackground();
-        if (controller.getCurrentPlayer() != null)
+        sceneryController.stopGame();
+         mainFrameView.getContentPane().removeAll();
+         mainFrameView.getContentPane().add(startPanelView);
+         stopMovingBackground();
+         if (controller.getCurrentPlayer() != null)
             startPanelView.showHighScore(controller.getCurrentPlayer().getHighScore());
     }
 
@@ -93,6 +95,10 @@ public class PanelFrameManager {
 
     public void setLoginFrameView(LoginFrameView loginFrameView) {
         this.loginFrameView = loginFrameView;
+    }
+
+    public void setSceneryController(SceneryController sceneryController) {
+        this.sceneryController = sceneryController;
     }
 
 }

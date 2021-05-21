@@ -15,12 +15,12 @@ public class GameCharacter extends GameElement {
     private int highScore;
 
     public GameCharacter(Point p, int skinType) {
-        super(p, dimens, true, ImageManager.PLAYER_SKIN_1);
+        super(p, dimens, true, ImageManager.PLAYER_SKIN_1, 0);
         this.skinType = skinType;
     }
 
     public GameCharacter(Player player, Point p) {
-        super(p, dimens, true, ImageManager.PLAYER_SKIN_1);
+        super(p, dimens, true, ImageManager.PLAYER_SKIN_1, 0);
         highScore = player.getHighScore();
     }
 

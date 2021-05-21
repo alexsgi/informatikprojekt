@@ -11,12 +11,12 @@ public abstract class Obstacle extends GameElement {
     private int speed;
 
     public Obstacle(Point p, Dimens dimens, BufferedImage image, int speed) {
-        super(p, dimens, true, image);
+        super(p, dimens, true, image, -1);
         this.speed = speed;
     }
 
     public Obstacle(Point p, Dimens dimens, BufferedImage image) {
-        super(p, dimens, true, image);
+        super(p, dimens, true, image, -1);
         this.speed = 0;
     }
 

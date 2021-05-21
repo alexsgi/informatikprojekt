@@ -39,6 +39,8 @@ public class Controller {
     public Controller(MainFrameView mainFrameView) {
         this.mainFrameView = mainFrameView;
         panelFrameManager = new PanelFrameManager(this, mainFrameView);
+        sceneryController = new SceneryController(gamePanelView, panelFrameManager, this);
+        panelFrameManager.setSceneryController(sceneryController);
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             stopTimer();
             if (getCurrentPlayer() != null) {
@@ -110,6 +112,7 @@ public class Controller {
     public void startGame() {
         panelFrameManager.switchToGamePanel();
         currentScore = -1;
+        sceneryController.startGame();
     }
 
     public boolean playerLogin(String userName, String password) throws SQLException {

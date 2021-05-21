@@ -19,6 +19,11 @@ public class GameElementRender extends JLabel {
         return gameElement;
     }
 
+    public int getSpeed(){
+        return gameElement.getSpeed();
+
+    }
+
     public void decrementX(int n) {
         gameElement.decrementX(n);
         setLocation(gameElement.getLocation());

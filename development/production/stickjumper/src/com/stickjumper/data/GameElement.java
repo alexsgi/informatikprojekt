@@ -12,12 +12,14 @@ public abstract class GameElement {
     private Dimens dimens;
     private boolean visible;
     private BufferedImage image;
+    private int speed;
 
-    public GameElement(Point p, Dimens d, boolean visible, BufferedImage image) {
+    public GameElement(Point p, Dimens d, boolean visible, BufferedImage image, int speed) {
         this.location = p;
         this.dimens = new Dimens(d.getWidth() + ImageManager.getSizeTolerance(), d.getHeight() + ImageManager.getSizeTolerance());
         this.visible = visible;
         this.image = image;
+        this.speed= speed;
     }
 
     public Point getLocation() {
@@ -30,6 +32,14 @@ public abstract class GameElement {
 
     public Dimens getDimens() {
         return dimens;
+    }
+
+    public int getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(int speed) {
+        this.speed = speed;
     }
 
     public void setDimens(Dimens dimens) {

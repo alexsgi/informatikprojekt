@@ -10,6 +10,8 @@ import com.stickjumper.utils.Settings;
 
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class SceneryController {
 
@@ -19,10 +21,14 @@ public class SceneryController {
 
     private ArrayList<GameElementRender> gameElementRenders = new ArrayList<>();
 
+    private boolean gameStarted = false;
+
+
     public SceneryController(GamePanelView gamePanelView, PanelFrameManager panelFrameManager, Controller controller) {
         this.gamePanelView = gamePanelView;
         this.panelFrameManager = panelFrameManager;
         this.controller = controller;
+        move();
     }
 
     public void initSomeObjects() {
@@ -36,7 +42,7 @@ public class SceneryController {
         GameElementRender playerFigure = new GameElementRender(character);
         addGameElementRender(playerFigure);
 
-        GameElementRender enemy = new GameElementRender(new Enemy(new Point((w - Enemy.getStandardDimens().getWidth()) / 2, h - Enemy.getStandardDimens().getHeight()), 0));
+        GameElementRender enemy = new GameElementRender(new Enemy(new Point((w - Enemy.getStandardDimens().getWidth()) / 2, h - Enemy.getStandardDimens().getHeight()), 1));
         gamePanelView.addObject(enemy);
         addGameElementRender(enemy);
 
@@ -48,6 +54,39 @@ public class SceneryController {
     public void addGameElementRender(GameElementRender render) {
         gameElementRenders.add(render);
         gamePanelView.addObject(render);
+    }
+
+    private void move(){
+       Timer foregroundTimer = new Timer();
+       int timerSpeed = 20;
+       int generalSpeed = 1;
+
+       foregroundTimer.scheduleAtFixedRate(new TimerTask() {
+           @Override
+           public void run() {
+               if(gameStarted) {
+                   gameElementRenders.forEach((e) -> {
+                       e.decrementX(e.getSpeed() * generalSpeed);
+
+                       // System.out.println("yes");
+                   });
+               }
+
+           }
+       }, 0, timerSpeed);
+
+
+
+    }
+
+    public void startGame(){
+        gameStarted = true;
+        System.out.println("start");
+    }
+
+    public void stopGame(){
+        gameStarted = false;
+        System.out.println("stop");
     }
 
     public void moveLeft() {

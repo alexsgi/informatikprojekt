@@ -12,13 +12,13 @@ public class Coin extends GameElement {
     private final int coinValue;
 
     public Coin(Point p, int coinValue) {
-        super(p, dimens, true, ImageManager.COIN_SKIN);
+        super(p, dimens, true, ImageManager.COIN_SKIN, 1);
         this.setVisible(true);
         this.coinValue = coinValue;
     }
 
     public Coin(Point p) {
-        super(p, dimens, true, ImageManager.COIN_SKIN);
+        super(p, dimens, true, ImageManager.COIN_SKIN, 1);
         this.setVisible(true);
         this.coinValue = 10;
     }
