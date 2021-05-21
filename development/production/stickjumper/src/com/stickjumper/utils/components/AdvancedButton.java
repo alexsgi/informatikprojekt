@@ -43,6 +43,7 @@ public class AdvancedButton extends JButton {
 
             @Override
             public void mousePressed(MouseEvent e) {
+                setForeground(enterColor);
             }
 
             @Override
@@ -82,6 +83,7 @@ public class AdvancedButton extends JButton {
 
             @Override
             public void mousePressed(MouseEvent e) {
+                setIcon(enterImage);
             }
 
             @Override
