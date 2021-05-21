@@ -29,47 +29,49 @@ public class PanelFrameManager {
 
     public void enableMainFrame() {
         mainFrameView.setEnabled(true);
-        mainFrameView.setAlwaysOnTop(true);
     }
 
-    public void starterLoginButton() {
-        mainFrameDisable();
+    public void disableMainFrame() {
+        mainFrameView.setEnabled(false);
+    }
+
+    public void openLoginFrame() {
+        disableMainFrame();
         loginFrameView.setVisible(true);
     }
 
-    public void loginFrameClose() {
-        loginFrameView.setVisible(false);
+    public void closeLoginFrame() {
         enableMainFrame();
         loginFrameView.dispose();
     }
 
-    public void mainFrameDisable() {
-        mainFrameView.setEnabled(false);
-        mainFrameView.setAlwaysOnTop(false);
-    }
-
     public void switchToGamePanel() {
-        //mainFrameView.setContentPane(gamePanelView);
         mainFrameView.getContentPane().removeAll();
         mainFrameView.getContentPane().add(gamePanelView);
-        ((MovingBackgroundPanel) mainFrameView.getContentPane()).startMovement();
-        //mainFrameView.revalidate();
+        startMovingBackground();
     }
 
     public void switchToStartPanel() {
         mainFrameView.getContentPane().removeAll();
         mainFrameView.getContentPane().add(startPanelView);
-        ((MovingBackgroundPanel) mainFrameView.getContentPane()).stopMovement();
+        stopMovingBackground();
         if (controller.getCurrentPlayer() != null)
-            controller.getPanelFrameManager().startPanelView.showHighScore(controller.getCurrentPlayer().getHighScore());
-        //mainFrameView.revalidate();
+            startPanelView.showHighScore(controller.getCurrentPlayer().getHighScore());
     }
 
-    public void loginPanelToRegisterPanel() {
+    public void startMovingBackground() {
+        ((MovingBackgroundPanel) mainFrameView.getContentPane()).startMovement();
+    }
+
+    public void stopMovingBackground() {
+        ((MovingBackgroundPanel) mainFrameView.getContentPane()).stopMovement();
+    }
+
+    public void switchToRegisterPanel() {
         loginFrameView.setContentPane(registerPanelView);
     }
 
-    public void switchToLogin() {
+    public void switchToLoginPanel() {
         loginFrameView.setContentPane(loginPanelView);
     }
 
@@ -85,11 +87,12 @@ public class PanelFrameManager {
         this.gamePanelView = gamePanelView;
     }
 
+    public void setStartPanelView(StartPanelView startPanelView) {
+        this.startPanelView = startPanelView;
+    }
+
     public void setLoginFrameView(LoginFrameView loginFrameView) {
         this.loginFrameView = loginFrameView;
     }
 
-    public void setStartPanelView(StartPanelView startPanelView) {
-        this.startPanelView = startPanelView;
-    }
 }

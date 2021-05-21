@@ -19,13 +19,13 @@ public class GameElementRender extends JLabel {
         return gameElement;
     }
 
-    public void incrementX(int n) {
-        gameElement.incrementX(n);
+    public void decrementX(int n) {
+        gameElement.decrementX(n);
         setLocation(gameElement.getLocation());
     }
 
-    public void incrementY(int n) {
-        gameElement.incrementY(n);
+    public void decrementY(int n) {
+        gameElement.decrementY(n);
         setLocation(gameElement.getLocation());
     }
 }

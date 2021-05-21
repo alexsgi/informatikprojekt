@@ -1,5 +1,6 @@
 package com.stickjumper.utils.components;
 
+import com.stickjumper.utils.Settings;
 import com.stickjumper.utils.SoundManager;
 
 import javax.swing.*;
@@ -106,6 +107,7 @@ public class AdvancedButton extends JButton {
         super();
         setFocusable(false);
         setIcon(image);
+        setFont(Settings.FONT_BUTTON_PLAIN);
     }
 
     public void setIcon(BufferedImage image) {

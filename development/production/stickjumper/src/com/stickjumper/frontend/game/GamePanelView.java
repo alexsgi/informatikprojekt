@@ -2,7 +2,6 @@ package com.stickjumper.frontend.game;
 
 import com.stickjumper.controller.Controller;
 import com.stickjumper.frontend.rendering.GameElementRender;
-import com.stickjumper.frontend.rendering.background.MovingBackground;
 import com.stickjumper.utils.ImageManager;
 import com.stickjumper.utils.Settings;
 import com.stickjumper.utils.components.AdvancedButton;
@@ -14,7 +13,6 @@ import java.awt.event.ActionListener;
 public class GamePanelView extends JPanel implements ActionListener {
 
     private Controller controller;
-    private MovingBackground movingBackground;
 
     private AdvancedButton backButton, startButton, stopButton;
 
@@ -42,52 +40,40 @@ public class GamePanelView extends JPanel implements ActionListener {
         backButton.addActionListener(this);
         add(backButton);
 
-        // Button to start the movement
         startButton = new AdvancedButton(null);
-        startButton.setText("Start");
-        startButton.setFont(Settings.FONT_BUTTON_PLAIN);
+        startButton.setText("Right/Start");
         startButton.setSize(200, 40);
-        startButton.setLocation(((getWidth() - startButton.getWidth()) / 2) + (getWidth() - startButton.getWidth()) / 4, getHeight() - startButton.getHeight() * 2);
+        startButton.setLocation(((getWidth() - startButton.getWidth()) / 2) + (getWidth() - startButton.getWidth()) / 4, 0);
         startButton.setID("startButton");
         startButton.addActionListener(this);
         add(startButton);
 
-        // Button to stop the movement
         stopButton = new AdvancedButton(null);
-        stopButton.setText("Stop");
-        stopButton.setFont(Settings.FONT_BUTTON_PLAIN);
+        stopButton.setText("Left/Stop");
         stopButton.setSize(200, 40);
-        stopButton.setLocation((getWidth() - stopButton.getWidth()) / 4, getHeight() - stopButton.getHeight() * 2);
+        stopButton.setLocation((getWidth() - stopButton.getWidth()) / 4, 0);
         stopButton.setID("stopButton");
         stopButton.addActionListener(this);
         add(stopButton);
-
-        /*
-        movingBackground = new MovingBackground();
-        movingBackground.setVisible(true);
-        movingBackground.setSize(2560, 640);
-        add(movingBackground);
-         */
-    }
-
-    public void startMovingBackground() {
-        movingBackground.startMovement();
-    }
-
-    public void stopMovingBackground() {
-        movingBackground.stopMovement();
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()) {
             case "backButton" -> controller.getPanelFrameManager().switchToStartPanel();
-            case "startButton" -> controller.startMovingBackground();
-            case "stopButton" -> controller.stopMovingBackground();
+            case "startButton" -> {
+                // controller.startMovingBackground();
+                controller.getSceneryController().moveRight();
+            }
+            case "stopButton" -> {
+                // controller.stopMovingBackground();
+                controller.getSceneryController().moveLeft();
+            }
         }
     }
 
     public void addObject(GameElementRender render) {
         add(render);
     }
+
 }

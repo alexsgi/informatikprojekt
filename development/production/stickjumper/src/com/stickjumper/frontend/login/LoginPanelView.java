@@ -31,7 +31,7 @@ public class LoginPanelView extends JPanel implements ActionListener {
     private LoginLabel welcomeLabel, signInLabel, userNameLabel, passwordLabel;
 
     public LoginPanelView(Controller controller, LoginFrameView loginFrameView) {
-        super();
+        super(true);
         setLayout(null);
         setSize(loginFrameView.getWidth(), loginFrameView.getHeight());
         setBackground(Settings.LOGIN_BACKGROUND_COLOR);
@@ -126,7 +126,7 @@ public class LoginPanelView extends JPanel implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         warningLabel.setText("");
         switch (e.getActionCommand()) {
-            case "backButton" -> controller.getPanelFrameManager().loginFrameClose();
+            case "backButton" -> controller.getPanelFrameManager().closeLoginFrame();
             case "loginButton" -> {
                 String username = userNameTextField.getText(), password;
                 char[] passwordArray = passwordField.getPassword();
@@ -146,7 +146,7 @@ public class LoginPanelView extends JPanel implements ActionListener {
                     boolean successful = controller.playerLogin(username, password);
                     if (successful) {
                         controller.getPanelFrameManager().enableMainFrame();
-                        controller.getPanelFrameManager().loginFrameClose();
+                        controller.getPanelFrameManager().closeLoginFrame();
                     } else {
                         warningLabel.setText("False credentials");
                     }
@@ -156,7 +156,7 @@ public class LoginPanelView extends JPanel implements ActionListener {
                 loginButton.setEnabled(true);
                 // progressBar.setVisible(false);
             }
-            case "registerButton" -> controller.getPanelFrameManager().loginPanelToRegisterPanel();
+            case "registerButton" -> controller.getPanelFrameManager().switchToRegisterPanel();
         }
     }
 

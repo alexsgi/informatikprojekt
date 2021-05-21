@@ -2,36 +2,30 @@ package com.stickjumper.controller;
 
 import com.stickjumper.data.Player;
 import com.stickjumper.data.database.DBConnection;
-import com.stickjumper.data.gameelements.Coin;
-import com.stickjumper.data.gameelements.GameCharacter;
-import com.stickjumper.data.gameelements.obstacles.Enemy;
-import com.stickjumper.data.gameelements.obstacles.SteadyObstacle;
 import com.stickjumper.data.list.List;
 import com.stickjumper.frontend.MainFrameView;
 import com.stickjumper.frontend.game.GamePanelView;
 import com.stickjumper.frontend.login.LoginFrameView;
 import com.stickjumper.frontend.login.LoginPanelView;
 import com.stickjumper.frontend.login.RegisterPanelView;
-import com.stickjumper.frontend.rendering.GameElementRender;
 import com.stickjumper.frontend.start.StartPanelView;
-import com.stickjumper.utils.Settings;
 
 import javax.swing.*;
-import java.awt.*;
 import java.sql.SQLException;
 
 public class Controller {
 
     // Manages open and close operations for frames and panels
     private final PanelFrameManager panelFrameManager;
+    // Manages all in-game objects
+    private SceneryController sceneryController;
     // All frames
     private final MainFrameView mainFrameView;
     // Player management
     private Player currentPlayer;
     private List playerList;
     private int currentScore = 0;
-    // Display management (temporarily)
-    private Scenery scenery;
+    ;
     // All panels
     private StartPanelView startPanelView;
     private GamePanelView gamePanelView;
@@ -56,15 +50,18 @@ public class Controller {
     public void setGamePanelView(GamePanelView gamePanelView) {
         this.gamePanelView = gamePanelView;
         panelFrameManager.setGamePanelView(gamePanelView);
-    }
-
-    public void setLoginFrameView(LoginFrameView loginFrameView) {
-        panelFrameManager.setLoginFrameView(loginFrameView);
+        sceneryController = new SceneryController(gamePanelView, panelFrameManager, this);
+        // TODO: just a test - DELETE ALL OBJECTS WHEN GOING BACK TO START? - WHEN LOAD ALL OBJECTS?
+        sceneryController.initSomeObjects();
     }
 
     public void setStartPanelView(StartPanelView startPanelView) {
         this.startPanelView = startPanelView;
         panelFrameManager.setStartPanelView(startPanelView);
+    }
+
+    public void setLoginFrameView(LoginFrameView loginFrameView) {
+        panelFrameManager.setLoginFrameView(loginFrameView);
     }
 
     public void setLoginPanelView(LoginPanelView loginPanelView) {
@@ -82,9 +79,6 @@ public class Controller {
     public void startGame() {
         panelFrameManager.switchToGamePanel();
         currentScore = -1;
-        // new scenery (temporarily)
-        scenery = new Scenery();
-        scenery.initUIObjects();
     }
 
     public boolean playerLogin(String userName, String password) throws SQLException {
@@ -103,11 +97,11 @@ public class Controller {
     }
 
     public void startMovingBackground() {
-        gamePanelView.startMovingBackground();
+        getPanelFrameManager().startMovingBackground();
     }
 
     public void stopMovingBackground() {
-        gamePanelView.stopMovingBackground();
+        getPanelFrameManager().stopMovingBackground();
     }
 
     public Player getCurrentPlayer() {
@@ -130,28 +124,8 @@ public class Controller {
         if (currentPlayer.getHighScore() < currentScore) currentPlayer.setHighScore(currentScore);
     }
 
-    public class Scenery {
-
-        public Scenery() {
-            GameElementRender coinElement = new GameElementRender(new Coin(new Point((Settings.SCREEN_WIDTH - Coin.getStandardDimens().getWidth()) / 2, 200)));
-            gamePanelView.addObject(coinElement);
-        }
-
-        public void initUIObjects() {
-            int h = gamePanelView.getHeight() - 100;
-            int w = gamePanelView.getWidth();
-            Point position = new Point((w - GameCharacter.width) / 4, h - GameCharacter.height);
-            GameCharacter character = (currentPlayer == null) ? new GameCharacter(position, 0) : new GameCharacter(currentPlayer, position);
-            GameElementRender playerFigure = new GameElementRender(character);
-            gamePanelView.addObject(playerFigure);
-
-            GameElementRender enemy = new GameElementRender(new Enemy(new Point((w - Enemy.getStandardDimens().getWidth()) / 2, h - Enemy.getStandardDimens().getHeight()), 0));
-            gamePanelView.addObject(enemy);
-
-            GameElementRender obstacle = new GameElementRender(new SteadyObstacle(new Point((w - SteadyObstacle.getStandardDimens().getWidth()) / 2 + (w - SteadyObstacle.getStandardDimens().getWidth()) / 4, h - SteadyObstacle.getStandardDimens().getHeight())));
-            gamePanelView.addObject(obstacle);
-        }
-
+    public SceneryController getSceneryController() {
+        return sceneryController;
     }
 
 }

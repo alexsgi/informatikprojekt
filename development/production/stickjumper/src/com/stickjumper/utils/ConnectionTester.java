@@ -17,6 +17,7 @@ public class ConnectionTester {
     public static int checkConnection() {
         try {
             HttpsURLConnection connection = (HttpsURLConnection) new URL(SERVER_STATUS_URL).openConnection();
+            connection.setConnectTimeout(100);
             BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
             StringBuilder responseBuilder = new StringBuilder();
             String response;

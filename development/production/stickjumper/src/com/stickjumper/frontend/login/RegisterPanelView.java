@@ -26,7 +26,7 @@ public class RegisterPanelView extends JPanel implements ActionListener {
     private final LoginLabel welcomeLabel, signInLabel, userNameLabel, passwordLabel, passwordLabelControl;
 
     public RegisterPanelView(Controller controller, LoginFrameView loginFrameView) {
-        super();
+        super(true);
         setLayout(null);
         setSize(loginFrameView.getWidth(), loginFrameView.getHeight());
         setBackground(Settings.LOGIN_BACKGROUND_COLOR);
@@ -136,7 +136,7 @@ public class RegisterPanelView extends JPanel implements ActionListener {
                         // Registration successful
                         controller.setList(DBConnection.getAllPlayers());
                         if (controller.playerLogin(username, password)) {
-                            controller.getPanelFrameManager().loginFrameClose();
+                            controller.getPanelFrameManager().closeLoginFrame();
                         } else {
                             // weird error
                             // send log to server?
@@ -151,7 +151,10 @@ public class RegisterPanelView extends JPanel implements ActionListener {
                 }
                 registerButton.setEnabled(true);
             }
-            case "backButton" -> controller.getPanelFrameManager().loginFrameClose();
+            case "backButton" -> {
+                // controller.getPanelFrameManager().closeLoginFrame();
+                controller.getPanelFrameManager().switchToLoginPanel();
+            }
         }
     }
 }

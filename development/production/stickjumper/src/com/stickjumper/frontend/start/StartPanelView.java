@@ -23,7 +23,7 @@ public class StartPanelView extends JPanel implements ActionListener {
     private AdvancedButton statisticsButton, loginButton, settingsButton, playButton;
 
     public StartPanelView(Controller controller) {
-        super();
+        super(true);
         setLayout(null);
         setSize(Settings.SCREEN_WIDTH, Settings.SCREEN_HEIGHT);
         setOpaque(false);
@@ -103,7 +103,7 @@ public class StartPanelView extends JPanel implements ActionListener {
             case "loginButton" -> {
                 LoginFrameView loginFrame = new LoginFrameView(controller);
                 controller.setLoginFrameView(loginFrame);
-                controller.getPanelFrameManager().starterLoginButton();
+                controller.getPanelFrameManager().openLoginFrame();
             }
             case "settingsButton" -> internetIconLabel.flipStatus();
             case "playButton" -> controller.startGame();

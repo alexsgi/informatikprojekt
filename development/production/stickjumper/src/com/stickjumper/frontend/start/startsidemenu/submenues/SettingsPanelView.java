@@ -4,5 +4,9 @@ import javax.swing.*;
 
 public class SettingsPanelView extends JPanel {
 
+    public SettingsPanelView() {
+        super(true);
+        setLayout(null);
+    }
 
 }

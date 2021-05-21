@@ -15,8 +15,7 @@ public abstract class GameElement {
 
     public GameElement(Point p, Dimens d, boolean visible, BufferedImage image) {
         this.location = p;
-        d = new Dimens(d.getWidth() + ImageManager.getSizeTolerance(), d.getHeight() + ImageManager.getSizeTolerance());
-        this.dimens = d;
+        this.dimens = new Dimens(d.getWidth() + ImageManager.getSizeTolerance(), d.getHeight() + ImageManager.getSizeTolerance());
         this.visible = visible;
         this.image = image;
     }
@@ -53,11 +52,11 @@ public abstract class GameElement {
         this.image = image;
     }
 
-    public void incrementX(int n) {
-        location.x += n;
+    public void decrementX(int n) {
+        location.x -= n;
     }
 
-    public void incrementY(int n) {
-        location.y += n;
+    public void decrementY(int n) {
+        location.y -= n;
     }
 }

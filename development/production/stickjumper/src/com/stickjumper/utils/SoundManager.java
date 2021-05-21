@@ -16,6 +16,7 @@ public class SoundManager {
     public static AudioInputStream inputStreamBootSound, inputStreamButtonSound;
 
     public static void loadAllClips() {
+        pathButtonSound2 = pathBootSoundEmpty;
         try {
             inputStreamBootSound = AudioSystem.getAudioInputStream(SoundManager.class.getResourceAsStream(pathBootSoundEmpty));
             inputStreamButtonSound = AudioSystem.getAudioInputStream(SoundManager.class.getResourceAsStream(pathButtonSound2));
