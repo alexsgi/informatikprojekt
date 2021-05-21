@@ -13,6 +13,7 @@ public class SoundManager {
 
     private static Clip clip;
 
+
     public static void loadAllClips() {
         try {
             clip = AudioSystem.getClip();
@@ -22,6 +23,10 @@ public class SoundManager {
         } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
             e.printStackTrace();
         }
+        pathButtonSound = "/sounds/button_sound_1.wav";
+        pathButtonSound2 = "/sounds/Winding-Alarm-Clock.wav";
+        // bootSound = "/sounds/empty-boot-sequence.wav";
+        bootSound = "/sounds/boot-2.wav";
     }
 
     public static void initSoundsAndBoot() {
