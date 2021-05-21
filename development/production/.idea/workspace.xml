@@ -8,7 +8,9 @@
   <component name="ChangeListManager">
     <list default="true" id="0e848060-ec63-4ad4-b24b-712af781a6e0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/start/Starter.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/start/Starter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/SoundManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/SoundManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/UITools.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/UITools.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/components/AdvancedButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/components/AdvancedButton.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,13 +85,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -141,6 +145,7 @@
       <workItem from="1621346933404" duration="8902000" />
       <workItem from="1621405622310" duration="3600000" />
       <workItem from="1621536172504" duration="1934000" />
+      <workItem from="1621584511545" duration="1180000" />
     </task>
     <servers />
   </component>

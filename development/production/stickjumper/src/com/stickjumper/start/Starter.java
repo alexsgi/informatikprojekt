@@ -22,7 +22,7 @@ public class Starter {
         LoadingFrameView loadingFrameView = new LoadingFrameView();
         loadingFrameView.setVisible(true);
 
-        long s1, s2,s3,  start, e1, e2, e3, end;
+        long s1, s2, s3, start, e1, e2, e3, end;
         s1 = System.currentTimeMillis();
         int serverResponseCode = ConnectionTester.checkConnection();
         e1 = System.currentTimeMillis();
@@ -39,7 +39,7 @@ public class Starter {
         Settings.logData("Image loading took " + (end - start) + " ms");
 
         s3 = System.currentTimeMillis();
-        SoundManager.loadAllClipPaths();
+        SoundManager.loadAllClips();
         e3 = System.currentTimeMillis();
         Settings.logData("Sounds loading took " + (e3 - s3) + " ms");
 
