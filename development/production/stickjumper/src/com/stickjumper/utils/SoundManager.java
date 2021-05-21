@@ -26,18 +26,13 @@ public class SoundManager {
     }
 
 
-    public static void playSound(final String url /*,  boolean notFirstPlay */) {
+    public static void playSound(final String url ) {
         new Thread(() ->{
         try {
             Clip clip = AudioSystem.getClip();
             AudioInputStream inputStream = AudioSystem.getAudioInputStream(
                     UITools.class.getResourceAsStream(url));
             clip.open(inputStream);
-            /*
-            if(!notFirstPlay){ FloatControl volume = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
-                volume.setValue(0);
-            }
-             */
             clip.start();
             clip.setMicrosecondPosition(0);
         } catch (Exception e) {

@@ -49,7 +49,7 @@ public class AdvancedButton extends JButton {
             public void mouseReleased(MouseEvent e) {
                 setForeground(exitColor);
 
-                SoundManager.playSound(SoundManager.pathButtonSound2 /*, true*/ );
+                SoundManager.playSound(SoundManager.pathButtonSound2 );
 
             }
 
@@ -88,7 +88,7 @@ public class AdvancedButton extends JButton {
             public void mouseReleased(MouseEvent e) {
                 setIcon(exitImage);
 
-                SoundManager.playSound(SoundManager.pathButtonSound2 /*, true*/ );
+                SoundManager.playSound(SoundManager.pathButtonSound2 );
 
             }
 
