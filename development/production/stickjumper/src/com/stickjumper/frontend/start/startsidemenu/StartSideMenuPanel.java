@@ -1,7 +1,5 @@
 package com.stickjumper.frontend.start.startsidemenu;
 
-import com.stickjumper.utils.ImageManager;
-
 import javax.swing.*;
 import java.awt.*;
 
@@ -11,7 +9,8 @@ public class StartSideMenuPanel extends JPanel {
         setLayout(null);
         setSize(parent.getWidth() / 6, parent.getHeight());
         setLocation(0, 0);
-        // setBackground(new Color(86, 73, 78, 125));
+        //setOpaque(false);
+        setBackground(new Color(86, 73, 78, 125));
     }
 
     @Override
@@ -24,6 +23,6 @@ public class StartSideMenuPanel extends JPanel {
             return;
         }
          */
-        graphicsObject.drawImage(ImageManager.START_MENU_BACKGROUND_DARK, 0, 0, null);
+        //graphicsObject.drawImage(ImageManager.START_MENU_BACKGROUND_DARK, 0, 0, null);
     }
 }

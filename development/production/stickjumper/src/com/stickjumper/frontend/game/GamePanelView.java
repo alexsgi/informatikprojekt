@@ -2,7 +2,7 @@ package com.stickjumper.frontend.game;
 
 import com.stickjumper.controller.Controller;
 import com.stickjumper.frontend.rendering.GameElementRender;
-import com.stickjumper.frontend.rendering.MovingBackground;
+import com.stickjumper.frontend.rendering.background.MovingBackground;
 import com.stickjumper.utils.ImageManager;
 import com.stickjumper.utils.Settings;
 import com.stickjumper.utils.components.AdvancedButton;
@@ -19,16 +19,19 @@ public class GamePanelView extends JPanel implements ActionListener {
     private AdvancedButton backButton, startButton, stopButton;
 
     public GamePanelView(Controller controller) {
-        super();
-        this.controller = controller;
+        super(true);
         setLayout(null);
+        setOpaque(false);
         setSize(Settings.SCREEN_WIDTH, Settings.SCREEN_HEIGHT);
+        setBackground(null);
 
+        this.controller = controller;
 
         JLabel lblTitle = new JLabel("GamePanel");
         lblTitle.setHorizontalAlignment(SwingConstants.CENTER);
         lblTitle.setBounds(0, 96, getWidth(), 83);
         lblTitle.setFont(Settings.FONT_HEADING_BIG);
+        lblTitle.setOpaque(false);
         add(lblTitle);
 
         backButton = new AdvancedButton(ImageManager.GAME_ICON_HOME_ACCENT, ImageManager.GAME_ICON_HOME);
@@ -59,11 +62,12 @@ public class GamePanelView extends JPanel implements ActionListener {
         stopButton.addActionListener(this);
         add(stopButton);
 
-
+        /*
         movingBackground = new MovingBackground();
         movingBackground.setVisible(true);
         movingBackground.setSize(2560, 640);
         add(movingBackground);
+         */
     }
 
     public void startMovingBackground() {
@@ -83,6 +87,7 @@ public class GamePanelView extends JPanel implements ActionListener {
         }
     }
 
-    public void addObject(GameElementRender render) { add(render);
+    public void addObject(GameElementRender render) {
+        add(render);
     }
 }
