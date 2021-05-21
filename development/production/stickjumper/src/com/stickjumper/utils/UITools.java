@@ -1,12 +1,10 @@
 package com.stickjumper.utils;
 
 import javax.imageio.ImageIO;
-import javax.sound.sampled.*;
 import javax.swing.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.URL;
 
 public class UITools {
 

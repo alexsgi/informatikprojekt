@@ -33,6 +33,7 @@ public class Starter {
         e3 = System.currentTimeMillis();
         Settings.logData("Sounds loading took " + (e3 - s3) + " ms");
         
+
         s1 = System.currentTimeMillis();
         int serverResponseCode = ConnectionTester.checkConnection();
         e1 = System.currentTimeMillis();
@@ -47,7 +48,6 @@ public class Starter {
         ImageManager.loadALlImages(loadingFrameView.getClass());
         end = System.currentTimeMillis();
         Settings.logData("Image loading took " + (end - start) + " ms");
-
 
 
         // Make all internet boot operations (db connection, ...)
