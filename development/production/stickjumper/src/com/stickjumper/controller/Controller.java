@@ -15,7 +15,6 @@ import com.stickjumper.frontend.login.RegisterPanelView;
 import com.stickjumper.frontend.rendering.GameElementRender;
 import com.stickjumper.frontend.start.StartPanelView;
 import com.stickjumper.utils.Settings;
-import com.stickjumper.utils.SoundManager;
 
 import javax.swing.*;
 import java.awt.*;
@@ -40,21 +39,17 @@ public class Controller {
     public Controller(MainFrameView mainFrameView) {
         this.mainFrameView = mainFrameView;
         panelFrameManager = new PanelFrameManager(this, mainFrameView);
-        Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
-            @Override
-            public void run() {
-                if (getCurrentPlayer() != null) {
-                    updateHighScore();
-                    try {
-                        DBConnection.updateHighScore(getCurrentPlayer());
-                    } catch (SQLException throwable) {
-                        throwable.printStackTrace();
-                        JOptionPane.showMessageDialog(null, "Error updating highscore");
-                    }
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+            if (getCurrentPlayer() != null) {
+                updateHighScore();
+                try {
+                    DBConnection.updateHighScore(getCurrentPlayer());
+                } catch (SQLException throwable) {
+                    throwable.printStackTrace();
+                    JOptionPane.showMessageDialog(null, "Error updating highscore");
                 }
-                DBConnection.close();
-                SoundManager.playSound(SoundManager.inputStreamBootSound);
             }
+            DBConnection.close();
         }));
     }
 
