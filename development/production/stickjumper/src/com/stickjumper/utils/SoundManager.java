@@ -11,14 +11,14 @@ public class SoundManager {
     public static String pathButtonSound = "/sounds/button_sound_1.wav";
     public static String pathButtonSound2 = "/sounds/Winding-Alarm-Clock.wav";
     public static String pathBootSound = "/sounds/boot-2.wav";
+    public static String pathBootSoundEmpty = "/sounds/empty-boot-sequence.wav";
 
     public static AudioInputStream inputStreamBootSound, inputStreamButtonSound;
 
     public static void loadAllClips() {
         try {
-            inputStreamBootSound = AudioSystem.getAudioInputStream(SoundManager.class.getResourceAsStream(pathBootSound));
+            inputStreamBootSound = AudioSystem.getAudioInputStream(SoundManager.class.getResourceAsStream(pathBootSoundEmpty));
             inputStreamButtonSound = AudioSystem.getAudioInputStream(SoundManager.class.getResourceAsStream(pathButtonSound2));
-            // next AudioInputStreams
         } catch (UnsupportedAudioFileException | IOException e) {
             e.printStackTrace();
         }

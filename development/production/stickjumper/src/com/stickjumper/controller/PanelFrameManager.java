@@ -48,15 +48,18 @@ public class PanelFrameManager {
     }
 
     public void switchToGamePanel() {
-        mainFrameView.setContentPane(gamePanelView);
-        mainFrameView.revalidate();
+        //mainFrameView.setContentPane(gamePanelView);
+        mainFrameView.getContentPane().removeAll();
+        mainFrameView.getContentPane().add(gamePanelView);
+        //mainFrameView.revalidate();
     }
 
     public void switchToStartPanel() {
-        mainFrameView.setContentPane(startPanelView);
+        mainFrameView.getContentPane().removeAll();
+        mainFrameView.getContentPane().add(startPanelView);
         if (controller.getCurrentPlayer() != null)
             controller.getPanelFrameManager().startPanelView.showHighScore(controller.getCurrentPlayer().getHighScore());
-        mainFrameView.revalidate();
+        //mainFrameView.revalidate();
     }
 
     public void loginPanelToRegisterPanel() {

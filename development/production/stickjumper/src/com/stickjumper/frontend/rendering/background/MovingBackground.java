@@ -1,4 +1,4 @@
-package com.stickjumper.frontend.rendering;
+package com.stickjumper.frontend.rendering.background;
 
 import com.stickjumper.utils.ImageManager;
 

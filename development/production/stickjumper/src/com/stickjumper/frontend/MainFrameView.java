@@ -3,6 +3,7 @@ package com.stickjumper.frontend;
 import com.stickjumper.controller.Controller;
 import com.stickjumper.data.list.List;
 import com.stickjumper.frontend.game.GamePanelView;
+import com.stickjumper.frontend.rendering.background.MovingBackgroundPanel;
 import com.stickjumper.frontend.start.StartPanelView;
 import com.stickjumper.utils.ImageManager;
 import com.stickjumper.utils.Settings;
@@ -31,7 +32,10 @@ public class MainFrameView extends JFrame {
         controller.setGamePanelView(gamePanel);
 
         // Add panel to frame
-        setContentPane(startPanel);
+        // setContentPane(startPanel);
+        MovingBackgroundPanel movingBackgroundPanel = new MovingBackgroundPanel();
+        movingBackgroundPanel.add(startPanel);
+        setContentPane(movingBackgroundPanel);
     }
 
     public void addPlayerListToController(List list) {

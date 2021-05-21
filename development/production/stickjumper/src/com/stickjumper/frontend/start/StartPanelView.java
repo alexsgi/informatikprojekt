@@ -26,6 +26,7 @@ public class StartPanelView extends JPanel implements ActionListener {
         super();
         setLayout(null);
         setSize(Settings.SCREEN_WIDTH, Settings.SCREEN_HEIGHT);
+        setOpaque(false);
 
         this.controller = controller;
         StartSideMenuPanel menuPanel = new StartSideMenuPanel(this);
@@ -90,13 +91,6 @@ public class StartPanelView extends JPanel implements ActionListener {
         playButton.setID("playButton");
         playButton.addActionListener(this);
         add(playButton);
-    }
-
-    @Override
-    protected void paintComponent(Graphics graphicsObject) {
-        super.paintComponent(graphicsObject);
-        if (ImageManager.BACKGROUND_MAIN == null) return;
-        graphicsObject.drawImage(ImageManager.BACKGROUND_MAIN, 0, 0, null);
     }
 
     public void showHighScore(int highScore) {
