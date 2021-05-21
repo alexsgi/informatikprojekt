@@ -15,6 +15,7 @@ import com.stickjumper.frontend.login.RegisterPanelView;
 import com.stickjumper.frontend.rendering.GameElementRender;
 import com.stickjumper.frontend.start.StartPanelView;
 import com.stickjumper.utils.Settings;
+import com.stickjumper.utils.SoundManager;
 
 import javax.swing.*;
 import java.awt.*;
@@ -52,6 +53,7 @@ public class Controller {
                     }
                 }
                 DBConnection.close();
+                SoundManager.playSound(SoundManager.inputStreamBootSound);
             }
         }));
     }
