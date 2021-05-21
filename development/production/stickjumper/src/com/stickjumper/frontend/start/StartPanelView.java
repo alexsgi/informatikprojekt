@@ -102,6 +102,10 @@ public class StartPanelView extends JPanel implements ActionListener {
         lblHighScore.setText("Highscore: " + highScore);
     }
 
+    public InternetStateLabel getInternetIconLabel() {
+        return internetIconLabel;
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()) {

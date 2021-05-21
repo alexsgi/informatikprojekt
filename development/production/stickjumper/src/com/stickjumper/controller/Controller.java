@@ -9,9 +9,13 @@ import com.stickjumper.frontend.login.LoginFrameView;
 import com.stickjumper.frontend.login.LoginPanelView;
 import com.stickjumper.frontend.login.RegisterPanelView;
 import com.stickjumper.frontend.start.StartPanelView;
+import com.stickjumper.utils.ConnectionTester;
+import com.stickjumper.utils.Settings;
 
 import javax.swing.*;
 import java.sql.SQLException;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class Controller {
 
@@ -29,10 +33,14 @@ public class Controller {
     private StartPanelView startPanelView;
     private GamePanelView gamePanelView;
 
+    private Timer connectionTimer;
+    private boolean connectedToServer;
+
     public Controller(MainFrameView mainFrameView) {
         this.mainFrameView = mainFrameView;
         panelFrameManager = new PanelFrameManager(this, mainFrameView);
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+            stopTimer();
             if (getCurrentPlayer() != null) {
                 updateHighScore();
                 try {
@@ -57,6 +65,7 @@ public class Controller {
     public void setStartPanelView(StartPanelView startPanelView) {
         this.startPanelView = startPanelView;
         panelFrameManager.setStartPanelView(startPanelView);
+        initTimer();
     }
 
     public void setLoginFrameView(LoginFrameView loginFrameView) {
@@ -73,6 +82,29 @@ public class Controller {
 
     public PanelFrameManager getPanelFrameManager() {
         return panelFrameManager;
+    }
+
+    private void initTimer() {
+        connectionTimer = new Timer();
+        connectionTimer.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                Settings.logDataOneLine("Checking connection ...");
+                int connectionStatus = ConnectionTester.checkConnection();
+                connectedToServer = connectionStatus == ConnectionTester.CONNECTION_OK;
+                if (connectedToServer) {
+                    startPanelView.getInternetIconLabel().setInternetEnabledStatus();
+                    Settings.logData(" ok");
+                } else {
+                    startPanelView.getInternetIconLabel().setInternetDisabledStatus();
+                    Settings.logData(" failed");
+                }
+            }
+        }, 5000, 10000);
+    }
+
+    private void stopTimer() {
+        if (connectionTimer != null) connectionTimer.cancel();
     }
 
     public void startGame() {

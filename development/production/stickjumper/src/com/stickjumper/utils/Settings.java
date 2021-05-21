@@ -40,4 +40,9 @@ public class Settings {
         // What to do with logs?
     }
 
+    public static void logDataOneLine(String data) {
+        System.out.print(data);
+        // What to do with logs?
+    }
+
 }
