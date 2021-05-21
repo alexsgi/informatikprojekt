@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: com.stickjumper.start.Starter
+Class-Path: mysql_jdbc.jar
+
