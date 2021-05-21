@@ -59,7 +59,7 @@ public class PanelFrameManager {
         mainFrameView.getContentPane().add(startPanelView);
         if (controller.getCurrentPlayer() != null)
             controller.getPanelFrameManager().startPanelView.showHighScore(controller.getCurrentPlayer().getHighScore());
-        mainFrameView.revalidate();
+        //mainFrameView.revalidate();
     }
 
     public void loginPanelToRegisterPanel() {
