@@ -7,6 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e848060-ec63-4ad4-b24b-712af781a6e0" name="Default Changelist" comment="" />
+
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -53,6 +54,7 @@
     <property name="settings.editor.selected.configurable" value="ssh.settings" />
   </component>
   <component name="RecentsManager">
+
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.stickjumper.utils" />
     </key>
@@ -87,12 +89,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
+      <option name="TEST_OBJECT" value="class" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -149,6 +153,7 @@
       <workItem from="1621536172504" duration="1934000" />
       <workItem from="1621583342495" duration="3807000" />
       <workItem from="1621584511545" duration="2690000" />
+      <workItem from="1621587309805" duration="345000" />
       <workItem from="1621587309805" duration="46000" />
     </task>
     <servers />
