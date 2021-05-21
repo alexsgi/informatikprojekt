@@ -1,6 +1,9 @@
 package com.stickjumper.utils;
 
-import javax.sound.sampled.*;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.IOException;
 
 public class SoundManager {
@@ -11,22 +14,14 @@ public class SoundManager {
 
     public static AudioInputStream inputStreamBootSound, inputStreamButtonSound;
 
-    private static Clip clip;
-
-
     public static void loadAllClips() {
         try {
-            clip = AudioSystem.getClip();
             inputStreamBootSound = AudioSystem.getAudioInputStream(SoundManager.class.getResourceAsStream(pathBootSound));
             inputStreamButtonSound = AudioSystem.getAudioInputStream(SoundManager.class.getResourceAsStream(pathButtonSound2));
             // next AudioInputStreams
-        } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
+        } catch (UnsupportedAudioFileException | IOException e) {
             e.printStackTrace();
         }
-        pathButtonSound = "/sounds/button_sound_1.wav";
-        pathButtonSound2 = "/sounds/Winding-Alarm-Clock.wav";
-        // bootSound = "/sounds/empty-boot-sequence.wav";
-        bootSound = "/sounds/boot-2.wav";
     }
 
     public static void initSoundsAndBoot() {
@@ -36,7 +31,7 @@ public class SoundManager {
     public static void playSound(AudioInputStream inputStream) {
         new Thread(() -> {
             try {
-                //Clip clip = AudioSystem.getClip();
+                Clip clip = AudioSystem.getClip();
                 clip.open(inputStream);
                 clip.start();
                 clip.setMicrosecondPosition(0);
