@@ -7,11 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e848060-ec63-4ad4-b24b-712af781a6e0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/start/Starter.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/start/Starter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/SoundManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/SoundManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/components/AdvancedButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/components/AdvancedButton.java" afterDir="false" />
+    </list>
+    <list id="eed17eaa-9261-443e-ae5b-e9a662f1e43f" name="Changes by jonas" comment="">
+      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/SoundManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/SoundManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +37,20 @@
     <setting file="file://$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/login/RegisterPanelView.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/login/LoginFrameView.java" root0="FORCE_HIGHLIGHTING" />
   </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/SoundManager.java">
+      <ranges>
+        <range start1="2" end1="5" start2="2" end2="4" changelist="0e848060-ec63-4ad4-b24b-712af781a6e0" />
+        <range start1="8" end1="11" start2="7" end2="14" changelist="0e848060-ec63-4ad4-b24b-712af781a6e0" />
+        <range start1="13" end1="18" start2="16" end2="24" changelist="0e848060-ec63-4ad4-b24b-712af781a6e0" />
+        <range start1="21" end1="22" start2="27" end2="28" changelist="0e848060-ec63-4ad4-b24b-712af781a6e0" />
+        <range start1="24" end1="25" start2="30" end2="31" changelist="0e848060-ec63-4ad4-b24b-712af781a6e0" />
+        <range start1="27" end1="30" start2="33" end2="34" changelist="0e848060-ec63-4ad4-b24b-712af781a6e0" />
+        <range start1="34" end1="35" start2="38" end2="39" changelist="0e848060-ec63-4ad4-b24b-712af781a6e0" />
+        <range start1="39" end1="39" start2="43" end2="61" changelist="eed17eaa-9261-443e-ae5b-e9a662f1e43f" />
+      </ranges>
+    </file>
+  </component>
   <component name="ProjectId" id="1sNxAxlUOzIo4QGOFZ9jkhs4zer" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -50,13 +66,14 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/stickjumper/src/res/sounds" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.20694445" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="ssh.settings" />
+    <property name="settings.editor.selected.configurable" value="CodeWithMe" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -155,7 +172,7 @@
       <workItem from="1621584511545" duration="2690000" />
       <workItem from="1621587309805" duration="345000" />
       <workItem from="1621587309805" duration="46000" />
-      <workItem from="1621588710867" duration="376000" />
+      <workItem from="1621588710867" duration="1772000" />
     </task>
     <servers />
   </component>

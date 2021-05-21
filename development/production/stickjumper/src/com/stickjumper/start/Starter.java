@@ -5,7 +5,6 @@ import com.stickjumper.frontend.MainFrameView;
 import com.stickjumper.frontend.boot.LoadingFrameView;
 import com.stickjumper.utils.*;
 
-import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.*;
 import java.io.IOException;
@@ -13,12 +12,11 @@ import java.sql.SQLException;
 
 public class Starter {
 
-    public static void main(String[] args) throws SQLException, UnsupportedAudioFileException, LineUnavailableException, IOException {
+    public static void main(String[] args) throws SQLException, UnsupportedAudioFileException, IOException {
         long fullStart, fullEnd;
         fullStart = System.currentTimeMillis();
         // Load Windows UI config
         UITools.initUI();
-
 
         // Prepare and start loading screen
         LoadingFrameView loadingFrameView = new LoadingFrameView();
@@ -31,7 +29,6 @@ public class Starter {
         e3 = System.currentTimeMillis();
         Settings.logData("Sounds loading took " + (e3 - s3) + " ms");
 
-
         s1 = System.currentTimeMillis();
         int serverResponseCode = ConnectionTester.checkConnection();
         e1 = System.currentTimeMillis();
@@ -42,11 +39,11 @@ public class Starter {
             JOptionPane.showMessageDialog(null, "Can not connect to the server -\ninternet connection available?");
             System.exit(1);
         }
+
         start = System.currentTimeMillis();
         ImageManager.loadALlImages(loadingFrameView.getClass());
         end = System.currentTimeMillis();
         Settings.logData("Image loading took " + (end - start) + " ms");
-
 
         // Make all internet boot operations (db connection, ...)
         s2 = System.currentTimeMillis();
