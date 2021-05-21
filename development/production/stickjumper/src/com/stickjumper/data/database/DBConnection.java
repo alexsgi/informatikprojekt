@@ -127,7 +127,6 @@ public class DBConnection {
     public static boolean registerPlayer(String username, String password) throws SQLException {
         Player checkIfExists = getPlayer(username);
         if (checkIfExists != null) return false;
-        // TODO: Hash password?
         String sql = String.format("INSERT INTO %s (playername, playerpassword, highscore, skin) VALUES (?, ?, ?, ?)",
                 DB_TABLE_NAME);
         PreparedStatement preparedStatement = connection.prepareStatement(sql);

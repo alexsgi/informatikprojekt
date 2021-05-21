@@ -33,14 +33,13 @@ public class GamePanelView extends JPanel implements ActionListener {
         add(lblTitle);
 
         backButton = new AdvancedButton(ImageManager.GAME_ICON_HOME_ACCENT, ImageManager.GAME_ICON_HOME);
-        backButton.setHorizontalAlignment(SwingConstants.CENTER);
         backButton.setSize(36, 36);
         backButton.setLocation(5, 5);
         backButton.setID("backButton");
         backButton.addActionListener(this);
         add(backButton);
 
-        startButton = new AdvancedButton(null);
+        startButton = new AdvancedButton();
         startButton.setText("Right/Start");
         startButton.setSize(200, 40);
         startButton.setLocation(((getWidth() - startButton.getWidth()) / 2) + (getWidth() - startButton.getWidth()) / 4, 0);
@@ -48,7 +47,7 @@ public class GamePanelView extends JPanel implements ActionListener {
         startButton.addActionListener(this);
         add(startButton);
 
-        stopButton = new AdvancedButton(null);
+        stopButton = new AdvancedButton();
         stopButton.setText("Left/Stop");
         stopButton.setSize(200, 40);
         stopButton.setLocation((getWidth() - stopButton.getWidth()) / 4, 0);

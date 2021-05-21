@@ -15,12 +15,13 @@ import java.awt.event.ActionListener;
 
 public class StartPanelView extends JPanel implements ActionListener {
 
-    private JLabel lblHighScore;
-    private InternetStateLabel internetIconLabel;
-    private Controller controller;
+    private final InternetStateLabel internetIconLabel;
+    private final Controller controller;
 
     // All buttons
-    private AdvancedButton statisticsButton, loginButton, settingsButton, playButton;
+    private final AdvancedButton statisticsButton, loginButton, settingsButton, playButton;
+    private final JLabel lblHighScore;
+    private final StartSideMenuPanel menuPanel;
 
     public StartPanelView(Controller controller) {
         super(true);
@@ -29,7 +30,8 @@ public class StartPanelView extends JPanel implements ActionListener {
         setOpaque(false);
 
         this.controller = controller;
-        StartSideMenuPanel menuPanel = new StartSideMenuPanel(this);
+
+        menuPanel = new StartSideMenuPanel(this);
         add(menuPanel);
 
         internetIconLabel = new InternetStateLabel();
@@ -61,7 +63,6 @@ public class StartPanelView extends JPanel implements ActionListener {
         settingsButton.addActionListener(this);
         menuPanel.add(settingsButton);
 
-        // Button to open login frame
         loginButton = new AdvancedButton(Color.GRAY, Color.WHITE);
         loginButton.setText("Login");
         loginButton.setFont(Settings.FONT_BUTTON);
@@ -78,7 +79,7 @@ public class StartPanelView extends JPanel implements ActionListener {
         statisticsButton.setFont(Settings.FONT_BUTTON);
         statisticsButton.setForeground(Color.WHITE);
         statisticsButton.setSize(menuPanel.getWidth() - 10, 30);
-        statisticsButton.setLocation((menuPanel.getWidth() - settingsButton.getWidth()) / 2,
+        statisticsButton.setLocation((menuPanel.getWidth() - statisticsButton.getWidth()) / 2,
                 loginButton.getY() - statisticsButton.getHeight() - Settings.START_SPACE_BUTTONS);
         statisticsButton.setID("statisticsButton");
         statisticsButton.addActionListener(this);
@@ -91,6 +92,10 @@ public class StartPanelView extends JPanel implements ActionListener {
         playButton.setID("playButton");
         playButton.addActionListener(this);
         add(playButton);
+    }
+
+    public StartSideMenuPanel getSideMenuPanel() {
+        return menuPanel;
     }
 
     public void showHighScore(int highScore) {

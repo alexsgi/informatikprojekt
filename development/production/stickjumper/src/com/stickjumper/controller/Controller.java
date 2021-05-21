@@ -25,7 +25,6 @@ public class Controller {
     private Player currentPlayer;
     private List playerList;
     private int currentScore = 0;
-    ;
     // All panels
     private StartPanelView startPanelView;
     private GamePanelView gamePanelView;
@@ -97,11 +96,11 @@ public class Controller {
     }
 
     public void startMovingBackground() {
-        getPanelFrameManager().startMovingBackground();
+        panelFrameManager.startMovingBackground();
     }
 
     public void stopMovingBackground() {
-        getPanelFrameManager().stopMovingBackground();
+        panelFrameManager.stopMovingBackground();
     }
 
     public Player getCurrentPlayer() {

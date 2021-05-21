@@ -22,11 +22,7 @@ public class AdvancedButton extends JButton {
     public AdvancedButton() {
         super();
         setFocusable(false);
-        setBackground(null);
-        setOpaque(false);
-        setBorderPainted(false);
-        setFocusable(false);
-        setBorder(null);
+        setFont(Settings.FONT_BUTTON_PLAIN);
     }
 
     public AdvancedButton(Color enterColor, Color exitColor) {
@@ -101,13 +97,6 @@ public class AdvancedButton extends JButton {
                 setIcon(exitImage);
             }
         });
-    }
-
-    public AdvancedButton(BufferedImage image) {
-        super();
-        setFocusable(false);
-        setIcon(image);
-        setFont(Settings.FONT_BUTTON_PLAIN);
     }
 
     public void setIcon(BufferedImage image) {

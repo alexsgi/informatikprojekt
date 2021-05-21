@@ -11,7 +11,7 @@ import java.util.Base64;
 
 public class PasswordHasher {
 
-    private static final byte[] salt = new byte[]{-71, 0, -54, 50, 22, -16, -67, -84, 36, 17, -31, -104, -23, -112, -77, 123};
+    private static final byte[] salt = new byte[]{-71, 49, -54, 50, 22, -16, -67, -84, 36, 17, -31, -104, -23, -112, -77, 123};
 
     public static String hash(String input) {
         KeySpec spec = new PBEKeySpec(input.toCharArray(), salt, 65536, 128);

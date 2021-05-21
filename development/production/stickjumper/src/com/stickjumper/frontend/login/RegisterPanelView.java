@@ -8,6 +8,7 @@ import com.stickjumper.utils.components.AdvancedButton;
 import com.stickjumper.utils.components.JRoundPasswordField;
 import com.stickjumper.utils.components.JRoundTextField;
 import com.stickjumper.utils.components.LoginLabel;
+import com.stickjumper.utils.security.PasswordHasher;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -17,13 +18,11 @@ import java.sql.SQLException;
 public class RegisterPanelView extends JPanel implements ActionListener {
 
     private final Controller controller;
-    private final LoginFrameView loginFrameView;
 
     private final AdvancedButton registerButton;
     private final JTextField userNameTextField;
     private final JPasswordField passwordField, passwordFieldControl;
     private final JLabel warningLabel;
-    private final LoginLabel welcomeLabel, signInLabel, userNameLabel, passwordLabel, passwordLabelControl;
 
     public RegisterPanelView(Controller controller, LoginFrameView loginFrameView) {
         super(true);
@@ -32,7 +31,6 @@ public class RegisterPanelView extends JPanel implements ActionListener {
         setBackground(Settings.LOGIN_BACKGROUND_COLOR);
 
         this.controller = controller;
-        this.loginFrameView = loginFrameView;
 
         AdvancedButton backButton = new AdvancedButton(ImageManager.ICON_BACK_DARK, ImageManager.ICON_BACK);
         backButton.setSize(32, 32);
@@ -41,19 +39,19 @@ public class RegisterPanelView extends JPanel implements ActionListener {
         backButton.addActionListener(this);
         add(backButton);
 
-        welcomeLabel = new LoginLabel(LoginLabel.HEADER);
+        LoginLabel welcomeLabel = new LoginLabel(LoginLabel.HEADER);
         welcomeLabel.setText("Welcome to StickJumper");
         welcomeLabel.setSize(600, 50);
         welcomeLabel.setLocation(0, 20);
         add(welcomeLabel);
 
-        signInLabel = new LoginLabel(LoginLabel.SUBHEADER);
+        LoginLabel signInLabel = new LoginLabel(LoginLabel.SUBHEADER);
         signInLabel.setText("Join the community by creating an account");
         signInLabel.setSize(getWidth(), 30);
         signInLabel.setLocation(0, welcomeLabel.getY() + welcomeLabel.getHeight() + 5);
         add(signInLabel);
 
-        userNameLabel = new LoginLabel(LoginLabel.TEXT);
+        LoginLabel userNameLabel = new LoginLabel(LoginLabel.TEXT);
         userNameLabel.setText("Username");
         userNameLabel.setSize(getWidth() - 2 * 100, 30);
         userNameLabel.setLocation(getWidth() / 7, signInLabel.getY() + signInLabel.getHeight() + 25);
@@ -64,7 +62,7 @@ public class RegisterPanelView extends JPanel implements ActionListener {
         userNameTextField.setLocation(getWidth() / 7, userNameLabel.getY() + userNameLabel.getHeight() + 1);
         add(userNameTextField);
 
-        passwordLabel = new LoginLabel(LoginLabel.TEXT);
+        LoginLabel passwordLabel = new LoginLabel(LoginLabel.TEXT);
         passwordLabel.setText("Password");
         passwordLabel.setSize(getWidth() - 2 * 100, 30);
         passwordLabel.setLocation(getWidth() / 7, userNameTextField.getY() + userNameTextField.getHeight() + 1);
@@ -75,7 +73,7 @@ public class RegisterPanelView extends JPanel implements ActionListener {
         passwordField.setLocation(getWidth() / 7, passwordLabel.getY() + passwordLabel.getHeight() + 1);
         add(passwordField);
 
-        passwordLabelControl = new LoginLabel(LoginLabel.TEXT);
+        LoginLabel passwordLabelControl = new LoginLabel(LoginLabel.TEXT);
         passwordLabelControl.setText("Repeat password");
         passwordLabelControl.setSize(getWidth() - 2 * 100, 30);
         passwordLabelControl.setLocation(getWidth() / 7, passwordField.getY() + userNameTextField.getHeight() + 1);
@@ -91,7 +89,7 @@ public class RegisterPanelView extends JPanel implements ActionListener {
         warningLabel.setLocation(0, passwordFieldControl.getY() + passwordFieldControl.getHeight() + 10);
         add(warningLabel);
 
-        registerButton = new AdvancedButton(null);
+        registerButton = new AdvancedButton();
         registerButton.setText("Sign up");
         registerButton.setFont(Settings.FONT_LOGIN_BUTTON);
         registerButton.setSize(150, 40);
@@ -128,33 +126,36 @@ public class RegisterPanelView extends JPanel implements ActionListener {
                     return;
                 }
                 registerButton.setEnabled(false);
+                String hashed = PasswordHasher.hash(password);
+                if(hashed == null) {
+                    JOptionPane.showMessageDialog(null, "Massive error (password hashing)");
+                    Settings.logData("Error hashing password (register)");
+                    System.exit(-1);
+                }
                 try {
-                    boolean registrationSuccess = DBConnection.registerPlayer(username, password);
+                    boolean registrationSuccess = DBConnection.registerPlayer(username, hashed);
                     if (!registrationSuccess) {
                         warningLabel.setText("Username already taken");
                     } else {
                         // Registration successful
                         controller.setList(DBConnection.getAllPlayers());
-                        if (controller.playerLogin(username, password)) {
+                        if (controller.playerLogin(username, hashed)) {
                             controller.getPanelFrameManager().closeLoginFrame();
                         } else {
                             // weird error
-                            // send log to server?
-                            System.err.println("Weird error (register");
+                            Settings.logData("Weird error (register");
                         }
                     }
                 } catch (SQLException throwable) {
                     // Error - internet connection?
                     // TODO: implement server status check (online?), otherwise the program will freeze
                     warningLabel.setText("Internet connection available?");
-                    throwable.printStackTrace();
+                    Settings.logData("SQLException during register", throwable);
                 }
                 registerButton.setEnabled(true);
             }
-            case "backButton" -> {
-                // controller.getPanelFrameManager().closeLoginFrame();
-                controller.getPanelFrameManager().switchToLoginPanel();
-            }
+            case "backButton" -> // controller.getPanelFrameManager().closeLoginFrame();
+                    controller.getPanelFrameManager().switchToLoginPanel();
         }
     }
 }
