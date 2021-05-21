@@ -195,7 +195,14 @@ Jonas:
 2. Anpassen der Methode mit relativem "jar-kompatiblem" Pfad mit Alex
 
 ### ""20.05.2021**
-!!! Vorhaben
 Jonas:
 1. "Verallgemeinerung" der playSound - Methode in UI-Tools
 
+### **21.05.2021**
+Jessica, Alex, Jonas:
+1. Besprechung über Soundausgabe und Umsetzung der Spiellogik
+
+Jonas: 
+1. Überarbeitung der playSound - Methode mit lag - Optimierung
+
+Alex:
