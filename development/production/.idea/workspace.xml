@@ -6,7 +6,9 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="460ac02d-4569-48ee-b691-afac2c185a3b" name="Default Changelist" comment="" />
+    <list default="true" id="460ac02d-4569-48ee-b691-afac2c185a3b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/ConnectionTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/ConnectionTester.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -89,17 +91,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Starter" />
@@ -115,7 +106,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="0e848060-ec63-4ad4-b24b-712af781a6e0" name="Default Changelist" comment="" />
+      <changelist id="460ac02d-4569-48ee-b691-afac2c185a3b" name="Default Changelist" comment="" />
       <created>1620726716029</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -153,6 +144,7 @@
       <workItem from="1621587309805" duration="46000" />
       <workItem from="1621588710867" duration="3104000" />
       <workItem from="1621601948108" duration="3024000" />
+      <workItem from="1621621007013" duration="56000" />
     </task>
     <servers />
   </component>
