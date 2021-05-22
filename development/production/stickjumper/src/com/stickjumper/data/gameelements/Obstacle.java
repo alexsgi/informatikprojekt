@@ -8,28 +8,16 @@ import java.awt.image.BufferedImage;
 
 public abstract class Obstacle extends GameElement {
 
-    private int speed;
-
     public Obstacle(Point p, Dimens dimens, BufferedImage image, int speed) {
-        super(p, dimens, true, image, -1);
-        this.speed = speed;
+        super(p, dimens, true, image, speed);
     }
 
     public Obstacle(Point p, Dimens dimens, BufferedImage image) {
-        super(p, dimens, true, image, -1);
-        this.speed = 0;
+        super(p, dimens, true, image, 0);
     }
 
     public void hit() {
         //Game Over
-    }
-
-    public int getSpeed() {
-        return speed;
-    }
-
-    public void setSpeed(int speed) {
-        this.speed = speed;
     }
 
 }

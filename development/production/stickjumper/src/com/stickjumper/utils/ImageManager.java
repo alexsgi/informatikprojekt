@@ -4,7 +4,7 @@ import java.awt.image.BufferedImage;
 
 public class ImageManager {
 
-    private static final int sizeTolerance = 5;
+    private static final int sizeTolerance = 0;
     // IMAGES
     public static BufferedImage APP_ICON_IMAGE, BACKGROUND_MAIN, MOVING_BACKGROUND, MOVING_BACKGROUND_MIRRORED;
     public static BufferedImage GAME_ICON_HOME_ACCENT, GAME_ICON_HOME;

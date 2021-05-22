@@ -127,7 +127,7 @@ public class RegisterPanelView extends JPanel implements ActionListener {
                 }
                 registerButton.setEnabled(false);
                 String hashed = PasswordHasher.hash(password);
-                if(hashed == null) {
+                if (hashed == null) {
                     JOptionPane.showMessageDialog(null, "Massive error (password hashing)");
                     Settings.logData("Error hashing password (register)");
                     System.exit(-1);

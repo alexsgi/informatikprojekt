@@ -19,7 +19,7 @@ public abstract class GameElement {
         this.dimens = new Dimens(d.getWidth() + ImageManager.getSizeTolerance(), d.getHeight() + ImageManager.getSizeTolerance());
         this.visible = visible;
         this.image = image;
-        this.speed= speed;
+        this.speed = speed;
     }
 
     public Point getLocation() {
@@ -34,16 +34,16 @@ public abstract class GameElement {
         return dimens;
     }
 
+    public void setDimens(Dimens dimens) {
+        this.dimens = dimens;
+    }
+
     public int getSpeed() {
         return speed;
     }
 
     public void setSpeed(int speed) {
         this.speed = speed;
-    }
-
-    public void setDimens(Dimens dimens) {
-        this.dimens = dimens;
     }
 
     public boolean isVisible() {
@@ -66,7 +66,4 @@ public abstract class GameElement {
         location.x -= n;
     }
 
-    public void decrementY(int n) {
-        location.y -= n;
-    }
 }

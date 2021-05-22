@@ -9,17 +9,16 @@ import java.awt.*;
 public class Coin extends GameElement {
 
     private static final Dimens dimens = new Dimens(64, 64);
+    private static final int speed = 2;
     private final int coinValue;
 
     public Coin(Point p, int coinValue) {
-        super(p, dimens, true, ImageManager.COIN_SKIN, 1);
-        this.setVisible(true);
+        super(p, dimens, true, ImageManager.COIN_SKIN, speed);
         this.coinValue = coinValue;
     }
 
     public Coin(Point p) {
-        super(p, dimens, true, ImageManager.COIN_SKIN, 1);
-        this.setVisible(true);
+        super(p, dimens, true, ImageManager.COIN_SKIN, speed);
         this.coinValue = 10;
     }
 

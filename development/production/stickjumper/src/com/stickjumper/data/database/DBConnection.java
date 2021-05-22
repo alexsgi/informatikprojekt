@@ -2,6 +2,7 @@ package com.stickjumper.data.database;
 
 import com.stickjumper.data.Player;
 import com.stickjumper.data.list.List;
+import com.stickjumper.utils.Settings;
 
 import java.sql.*;
 
@@ -26,25 +27,20 @@ public class DBConnection {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+            Settings.logData("Error loading driver", e);
             return;
         }
         try {
             connection = DriverManager.getConnection(String.format("jdbc:mysql://%s/%s?user=%s&password=%s",
                     DB_URL, DB_NAME, DB_USERNAME, DB_PASSWORD));
         } catch (SQLException ex) {
-            System.out.println("SQLException: " + ex.getMessage());
-            System.out.println("SQLState: " + ex.getSQLState());
-            System.out.println("VendorError: " + ex.getErrorCode());
-            ex.printStackTrace();
+            Settings.logData("SQL Exception (init)", ex);
             return;
         }
         try {
             stmt = connection.createStatement();
         } catch (SQLException ex) {
-            System.out.println("SQLException: " + ex.getMessage());
-            System.out.println("SQLState: " + ex.getSQLState());
-            System.out.println("VendorError: " + ex.getErrorCode());
+            Settings.logData("SQL Exception (init)", ex);
         }
         init = true;
     }

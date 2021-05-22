@@ -54,10 +54,10 @@ public class PanelFrameManager {
 
     public void switchToStartPanel() {
         sceneryController.stopGame();
-         mainFrameView.getContentPane().removeAll();
-         mainFrameView.getContentPane().add(startPanelView);
-         stopMovingBackground();
-         if (controller.getCurrentPlayer() != null)
+        mainFrameView.getContentPane().removeAll();
+        mainFrameView.getContentPane().add(startPanelView);
+        stopMovingBackground();
+        if (controller.getCurrentPlayer() != null)
             startPanelView.showHighScore(controller.getCurrentPlayer().getHighScore());
     }
 

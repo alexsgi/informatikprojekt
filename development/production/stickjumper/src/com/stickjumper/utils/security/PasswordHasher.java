@@ -21,7 +21,6 @@ public class PasswordHasher {
             Base64.Encoder enc = Base64.getEncoder();
             return enc.encodeToString(hash);
         } catch (NoSuchAlgorithmException | InvalidKeySpecException e) {
-            e.printStackTrace();
             Settings.logData("Error hashing password", e);
         }
         return null;

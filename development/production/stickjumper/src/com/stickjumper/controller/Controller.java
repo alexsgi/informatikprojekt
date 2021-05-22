@@ -21,10 +21,10 @@ public class Controller {
 
     // Manages open and close operations for frames and panels
     private final PanelFrameManager panelFrameManager;
-    // Manages all in-game objects
-    private SceneryController sceneryController;
     // All frames
     private final MainFrameView mainFrameView;
+    // Manages all in-game objects
+    private SceneryController sceneryController;
     // Player management
     private Player currentPlayer;
     private List playerList;
@@ -39,16 +39,14 @@ public class Controller {
     public Controller(MainFrameView mainFrameView) {
         this.mainFrameView = mainFrameView;
         panelFrameManager = new PanelFrameManager(this, mainFrameView);
-        sceneryController = new SceneryController(gamePanelView, panelFrameManager, this);
-        panelFrameManager.setSceneryController(sceneryController);
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             stopTimer();
             if (getCurrentPlayer() != null) {
                 updateHighScore();
                 try {
                     DBConnection.updateHighScore(getCurrentPlayer());
-                } catch (SQLException throwable) {
-                    throwable.printStackTrace();
+                } catch (SQLException e) {
+                    Settings.logData("SQLException (updateHighscore in Controller)", e);
                     JOptionPane.showMessageDialog(null, "Error updating highscore");
                 }
             }
@@ -60,6 +58,7 @@ public class Controller {
         this.gamePanelView = gamePanelView;
         panelFrameManager.setGamePanelView(gamePanelView);
         sceneryController = new SceneryController(gamePanelView, panelFrameManager, this);
+        panelFrameManager.setSceneryController(sceneryController);
         // TODO: just a test - DELETE ALL OBJECTS WHEN GOING BACK TO START? - WHEN LOAD ALL OBJECTS?
         sceneryController.initSomeObjects();
     }

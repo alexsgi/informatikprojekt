@@ -154,8 +154,8 @@ public class LoginPanelView extends JPanel implements ActionListener {
                     } else {
                         warningLabel.setText("False credentials");
                     }
-                } catch (SQLException throwable) {
-                    throwable.printStackTrace();
+                } catch (SQLException ex) {
+                    Settings.logData("SQLException (login)", ex);
                 }
                 loginButton.setEnabled(true);
                 // progressBar.setVisible(false);

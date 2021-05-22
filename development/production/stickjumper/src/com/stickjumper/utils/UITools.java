@@ -12,7 +12,7 @@ public class UITools {
         try {
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
         } catch (Throwable e) {
-            e.printStackTrace();
+            Settings.logData("Error loading L&F", e);
         }
     }
 
@@ -22,8 +22,7 @@ public class UITools {
             if (in == null) return null;
             return ImageIO.read(in);
         } catch (IOException e) {
-            e.printStackTrace();
-            System.out.printf("The image (%s) was not loaded\n", path);
+            Settings.logData(String.format("The image (%s) was not loaded\n", path), e);
         }
         return null;
     }

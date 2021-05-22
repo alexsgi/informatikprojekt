@@ -5,6 +5,7 @@ import java.awt.*;
 public class Settings {
 
     // GENERAL
+    private static final boolean debugMode = true;
     public static final String APP_ICON = "/images/icons/appicon_4.png";
     public static final int SCREEN_WIDTH = 1280, SCREEN_HEIGHT = 640;
     public static final int LOGIN_SCREEN_WIDTH = 600, LOGIN_SCREEN_HEIGHT = 500;
@@ -16,7 +17,6 @@ public class Settings {
     public static final Color LOGIN_BACKGROUND_COLOR = Color.decode("#F7F7FF");
     // START
     public static final int START_SPACE_BUTTONS = 20;
-
     // FONT SIZES
     public static Font FONT_HEADING_BIG = new Font("Arial Black", Font.PLAIN, 40);
     public static Font FONT_HEADING_SMALL = new Font("Arial Black", Font.PLAIN, 20);
@@ -31,18 +31,31 @@ public class Settings {
     public static Font FONT_LOGIN_SMALL_BUTTON = new Font("Calibri", Font.PLAIN, 14);
 
     public static void logData(String data) {
-        System.out.println(data);
+        if (isDebugMode()) System.out.println(data);
         // What to do with logs?
     }
 
     public static void logData(String data, Exception e) {
-        System.out.println(data);
+        if (isDebugMode()) System.out.println(data);
         // What to do with logs?
+        System.err.println(e.getMessage());
+        e.printStackTrace();
+    }
+
+    public static void logData(String data, Throwable e) {
+        if (isDebugMode()) System.out.println(data);
+        // What to do with logs?
+        System.err.println(e.getMessage());
+        e.printStackTrace();
     }
 
     public static void logDataOneLine(String data) {
-        System.out.print(data);
+        if (isDebugMode()) System.out.print(data);
         // What to do with logs?
+    }
+
+    public static boolean isDebugMode() {
+        return debugMode;
     }
 
 }

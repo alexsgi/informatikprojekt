@@ -21,7 +21,7 @@ public class SoundManager {
             inputStreamBootSound = AudioSystem.getAudioInputStream(SoundManager.class.getResourceAsStream(pathBootSoundEmpty));
             inputStreamButtonSound = AudioSystem.getAudioInputStream(SoundManager.class.getResourceAsStream(pathButtonSound2));
         } catch (UnsupportedAudioFileException | IOException e) {
-            e.printStackTrace();
+            Settings.logData("Error loading sounds", e);
         }
     }
 
