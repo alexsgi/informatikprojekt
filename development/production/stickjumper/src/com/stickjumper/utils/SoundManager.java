@@ -25,7 +25,7 @@ public class SoundManager {
         }
     }
 
-    public static void initSoundsAndBoot() {
+    public static void bootSoundManager() {
         playSound(inputStreamBootSound);
     }
 

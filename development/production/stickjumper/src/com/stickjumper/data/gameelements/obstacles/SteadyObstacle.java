@@ -10,8 +10,9 @@ public class SteadyObstacle extends Obstacle {
 
     public static final Dimens dimens = new Dimens(50, 100);
 
-    public SteadyObstacle(Point p) {
-        super(p, dimens, ImageManager.STEADY_OBSTACLE_SKIN);
+
+    public SteadyObstacle(Point p, int skinType) {
+        super(p, dimens, ImageManager.STEADY_OBSTACLE_SKIN, skinType);
     }
 
     public static Dimens getStandardDimens() {

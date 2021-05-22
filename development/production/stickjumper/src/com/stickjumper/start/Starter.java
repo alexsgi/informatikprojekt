@@ -1,5 +1,6 @@
 package com.stickjumper.start;
 
+import com.stickjumper.controller.scenerycontrolling.SceneryRandomGenerator;
 import com.stickjumper.data.database.DBConnection;
 import com.stickjumper.frontend.MainFrameView;
 import com.stickjumper.frontend.boot.LoadingFrameView;
@@ -12,6 +13,7 @@ import java.sql.SQLException;
 
 public class Starter {
 
+
     public static void main(String[] args) throws SQLException, UnsupportedAudioFileException, IOException {
         long fullStart, fullEnd;
         fullStart = System.currentTimeMillis();
@@ -22,10 +24,10 @@ public class Starter {
         LoadingFrameView loadingFrameView = new LoadingFrameView();
         loadingFrameView.setVisible(true);
 
-        long s1, s2, s3, start, e1, e2, e3, end;
+        long s1, s2, s3, s4, start, e1, e2, e3, e4, end;
         s3 = System.currentTimeMillis();
         SoundManager.loadAllClips();
-        SoundManager.initSoundsAndBoot();
+        SoundManager.bootSoundManager();
         e3 = System.currentTimeMillis();
         Settings.logData("Sounds loading took " + (e3 - s3) + " ms");
 
@@ -45,14 +47,21 @@ public class Starter {
         end = System.currentTimeMillis();
         Settings.logData("Image loading took " + (end - start) + " ms");
 
+        // First Random Generation
+        s4 = System.currentTimeMillis();
+        SceneryRandomGenerator sceneryRandomGenerator = new SceneryRandomGenerator();
+        e4 = System.currentTimeMillis();
+        Settings.logData("Loading first game took " + (e4 - s4) + " ms");
+
         // Make all internet boot operations (db connection, ...)
         s2 = System.currentTimeMillis();
         DBConnection.init();
         e2 = System.currentTimeMillis();
         Settings.logData("DB connection took " + (e2 - s2) + " ms");
         // Create main frame
-        MainFrameView mainFrameView = new MainFrameView();
+        MainFrameView mainFrameView = new MainFrameView(sceneryRandomGenerator);
         mainFrameView.addPlayerListToController(DBConnection.getAllPlayers());
+
 
         // Close loading screen
         loadingFrameView.dispose();

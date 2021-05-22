@@ -4,6 +4,7 @@ import com.stickjumper.data.GameElement;
 import com.stickjumper.data.Player;
 import com.stickjumper.utils.Dimens;
 import com.stickjumper.utils.ImageManager;
+import com.stickjumper.utils.Settings;
 
 import java.awt.*;
 
@@ -22,6 +23,11 @@ public class GameCharacter extends GameElement {
     public GameCharacter(Player player, Point p) {
         super(p, dimens, true, ImageManager.PLAYER_SKIN_1, 0);
         highScore = player.getHighScore();
+    }
+
+    public GameCharacter(int skinType){
+        super(new Point(Settings.seaLevel, Settings.yPositionGameCharacter), dimens, true, ImageManager.PLAYER_SKIN_1, 0);
+        this.skinType = skinType;
     }
 
     public int getSkinType() {

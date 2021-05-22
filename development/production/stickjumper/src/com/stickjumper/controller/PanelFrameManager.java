@@ -1,5 +1,6 @@
 package com.stickjumper.controller;
 
+import com.stickjumper.controller.scenerycontrolling.SceneryController;
 import com.stickjumper.frontend.MainFrameView;
 import com.stickjumper.frontend.game.GamePanelView;
 import com.stickjumper.frontend.login.LoginFrameView;

@@ -1,5 +1,7 @@
 package com.stickjumper.controller;
 
+import com.stickjumper.controller.scenerycontrolling.SceneryController;
+import com.stickjumper.controller.scenerycontrolling.SceneryRandomGenerator;
 import com.stickjumper.data.Player;
 import com.stickjumper.data.database.DBConnection;
 import com.stickjumper.data.list.List;
@@ -25,6 +27,7 @@ public class Controller {
     private final MainFrameView mainFrameView;
     // Manages all in-game objects
     private SceneryController sceneryController;
+    private SceneryRandomGenerator sceneryRandomGenerator;
     // Player management
     private Player currentPlayer;
     private List playerList;
@@ -36,8 +39,9 @@ public class Controller {
     private Timer connectionTimer;
     private boolean connectedToServer;
 
-    public Controller(MainFrameView mainFrameView) {
+    public Controller(MainFrameView mainFrameView, SceneryRandomGenerator sceneryRandomGenerator) {
         this.mainFrameView = mainFrameView;
+        this.sceneryRandomGenerator = sceneryRandomGenerator;
         panelFrameManager = new PanelFrameManager(this, mainFrameView);
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             stopTimer();
@@ -58,6 +62,7 @@ public class Controller {
         this.gamePanelView = gamePanelView;
         panelFrameManager.setGamePanelView(gamePanelView);
         sceneryController = new SceneryController(gamePanelView, panelFrameManager, this);
+        sceneryRandomGenerator.setSceneryController(sceneryController);
         panelFrameManager.setSceneryController(sceneryController);
         // TODO: just a test - DELETE ALL OBJECTS WHEN GOING BACK TO START? - WHEN LOAD ALL OBJECTS?
         sceneryController.initSomeObjects();
