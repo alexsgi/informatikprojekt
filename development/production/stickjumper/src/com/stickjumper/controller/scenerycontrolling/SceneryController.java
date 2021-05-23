@@ -25,7 +25,6 @@ public class SceneryController {
 
     // init timer:
     Timer foregroundTimer = new Timer();
-    TimerTask movementTT;
     int timerSpeed = 20;
     int generalSpeed = 1;
 
@@ -33,20 +32,6 @@ public class SceneryController {
         this.gamePanelView = gamePanelView;
         this.panelFrameManager = panelFrameManager;
         this.controller = controller;
-
-        movementTT = new TimerTask() {
-            @Override
-            public void run() {
-                gameElementRenders.forEach((e) -> e.decrementX(e.getSpeed() * generalSpeed));
-                for (int i = 0; i < gameElementRenders.size(); i++) {
-                    GameElementRender current = gameElementRenders.get(i);
-                    Point pos = current.getLocation();
-                    if (pos.getX() + current.getWidth() <= 0) {
-                        removeGameElementRender(i);
-                    }
-                }
-            }
-        };
     }
 
     public void initSomeObjects() {
@@ -119,8 +104,20 @@ public class SceneryController {
 
     public void startGame() {
         foregroundTimer = new Timer();
-            foregroundTimer.scheduleAtFixedRate(movementTT, 0, timerSpeed);
-        }
+        foregroundTimer.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                gameElementRenders.forEach((e) -> e.decrementX(e.getSpeed() * generalSpeed));
+                for (int i = 0; i < gameElementRenders.size(); i++) {
+                    GameElementRender current = gameElementRenders.get(i);
+                    Point pos = current.getLocation();
+                    if (pos.getX() + current.getWidth() <= 0) {
+                        removeGameElementRender(i);
+                    }
+                }
+            }
+        }, 0, timerSpeed);
+    }
 
     public void stopGame() {
         foregroundTimer.cancel();
