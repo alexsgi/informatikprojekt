@@ -24,28 +24,23 @@ public class SceneryController {
     private ArrayList<GameElementRender> gameElementRenders = new ArrayList<>();
     private boolean gameCharacterAlreadyAdded;
 
-
     // init timer:
-    Timer foregroundTimer = new Timer();
-    int timerSpeed;
+    Timer foregroundTimer;
+    int timerSpeed = Settings.foregroundSpeed;
     int generalSpeed = 1;
 
     public SceneryController(GamePanelView gamePanelView, PanelFrameManager panelFrameManager, Controller controller) {
         this.gamePanelView = gamePanelView;
         this.panelFrameManager = panelFrameManager;
         this.controller = controller;
-        timerSpeed = Settings.foregroundSpeed;
     }
-
 
     public void initGameCharacter(int skinType){
         if (!gameCharacterAlreadyAdded) {
             GameElementRender gameCharacterElement = new GameElementRender(new GameCharacter(skinType));
-            gamePanelView.addObject(gameCharacterElement);
             addGameElementRender(gameCharacterElement);
             gameCharacterAlreadyAdded = true;
         }
-
     }
 
     public void initCertainGameObject(GameElement object){
