@@ -67,6 +67,5 @@ public abstract class GameElement {
         location.x -= n;
     }
 
-    public abstract String getNameOfCLass();
 
 }

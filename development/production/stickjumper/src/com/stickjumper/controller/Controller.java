@@ -65,7 +65,6 @@ public class Controller {
         sceneryRandomGenerator.setSceneryController(sceneryController);
         panelFrameManager.setSceneryController(sceneryController);
         // TODO: just a test - DELETE ALL OBJECTS WHEN GOING BACK TO START? - WHEN LOAD ALL OBJECTS?
-        sceneryController.initSomeObjects();
     }
 
     public void setStartPanelView(StartPanelView startPanelView) {
@@ -117,7 +116,7 @@ public class Controller {
         panelFrameManager.switchToGamePanel();
         currentScore = -1;
         sceneryController.startGame();
-        sceneryRandomGenerator.generate();
+        sceneryRandomGenerator.randomGenerate();
     }
 
     public boolean playerLogin(String userName, String password) throws SQLException {

@@ -26,7 +26,7 @@ public class GameCharacter extends GameElement {
     }
 
     public GameCharacter(int skinType){
-        super(new Point(Settings.seaLevel, Settings.yPositionGameCharacter), dimens, true, ImageManager.PLAYER_SKIN_1, 0);
+        super(new Point(Settings.xPositionGameCharacter, Settings.SCREEN_HEIGHT-Settings.seaLevel-dimens.getHeight()), dimens, true, ImageManager.PLAYER_SKIN_1, 0);
         this.skinType = skinType;
     }
 
@@ -42,10 +42,6 @@ public class GameCharacter extends GameElement {
         return dimens;
     }
 
-    @Override
-    public String getNameOfCLass() {
-        return "GameCharacter";
-    }
 
     /*
     public void increaseHighScore(int num){

@@ -9,7 +9,7 @@ import java.awt.*;
 public class Coin extends GameElement {
 
     private static final Dimens dimens = new Dimens(64, 64);
-    private static final int speed = 2;
+    private static final int speed = 1;
     private final int coinValue;
 
     public Coin(Point p, int coinValue) {
@@ -34,8 +34,5 @@ public class Coin extends GameElement {
         return coinValue;
     }
 
-    @Override
-    public String getNameOfCLass() {
-        return "Coin";
-    }
+
 }

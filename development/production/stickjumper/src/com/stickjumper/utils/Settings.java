@@ -32,7 +32,7 @@ public class Settings {
 
     // seaLevel and y-position of GameCharacter for initializations in SceneryController
     public static int seaLevel = 100;
-    public static int yPositionGameCharacter = 320;
+    public static int xPositionGameCharacter = 320;
 
     public static void logData(String data) {
         if (isDebugMode()) System.out.println(data);
