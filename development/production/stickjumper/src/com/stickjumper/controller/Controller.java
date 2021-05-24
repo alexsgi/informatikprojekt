@@ -15,7 +15,6 @@ import com.stickjumper.utils.ConnectionTester;
 import com.stickjumper.utils.Settings;
 
 import javax.swing.*;
-import java.awt.event.KeyEvent;
 import java.sql.SQLException;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -87,6 +86,7 @@ public class Controller {
         panelFrameManager.setRegisterPanelView(registerPanelView);
     }
 
+
     public PanelFrameManager getPanelFrameManager() {
         return panelFrameManager;
     }
@@ -120,6 +120,7 @@ public class Controller {
         sceneryController.startGame();
         sceneryRandomGenerator.randomGenerate();
         gameStarted = true;
+        mainFrameView.keysEnabled = true;
     }
 
     public boolean playerLogin(String userName, String password) throws SQLException {
@@ -167,6 +168,10 @@ public class Controller {
 
     public SceneryController getSceneryController() {
         return sceneryController;
+    }
+
+    public MainFrameView getMainFrameView() {
+        return mainFrameView;
     }
 
     public SceneryRandomGenerator getSceneryRandomGenerator() {

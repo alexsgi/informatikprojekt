@@ -20,6 +20,7 @@ public class SceneryController {
     private Controller controller;
     private ArrayList<GameElementRender> gameElementRenders = new ArrayList<>();
     private boolean gameCharacterAlreadyAdded;
+    public static boolean gameOver = false;
 
     // this position is relative to the frame
     public static int yPosGameCharacter;
@@ -29,7 +30,6 @@ public class SceneryController {
     private int timerSpeed = Settings.foregroundSpeed;
     private int generalSpeed = 1;
     private static int jumpVar;
-
 
     GameElementRender gameCharacterElement;
 
@@ -67,6 +67,7 @@ public class SceneryController {
     }
 
     public void startGame() {
+        unfreeze();
         foregroundTimer = new Timer();
         foregroundTimer.scheduleAtFixedRate(new TimerTask() {
             @Override
@@ -78,25 +79,30 @@ public class SceneryController {
                     if (current.getLocation().getX() + current.getWidth() <= 0) removeGameElementRender(i);
                 }
                 if (gameCharacterAlreadyAdded) yPosGameCharacter = gameCharacterElement.getY();
+                if (gameOver) freeze();
             }
         }, 0, timerSpeed);
     }
 
+    public void freeze() {
+        if (foregroundTimer != null) foregroundTimer.cancel();
+        if (jumpTimer != null) jumpTimer.cancel();
+        controller.stopMovingBackground();
+        gamePanelView.lblGameOver.setVisible(true);
+    }
+
+    public void unfreeze() {
+        gameOver = false;
+        gamePanelView.lblGameOver.setVisible(false);
+    }
+
     public void stopGame() {
-        foregroundTimer.cancel();
+        freeze();
         gameElementRenders.forEach((e) -> gamePanelView.remove(e));
         gameElementRenders.clear();
         gamePanelView.remove(gameCharacterElement);
         gameCharacterElement = null;
         gameCharacterAlreadyAdded = false;
-    }
-
-    public void moveLeft() {
-        for (GameElementRender render : gameElementRenders) render.decrementX(50);
-    }
-
-    public void moveRight() {
-        for (GameElementRender render : gameElementRenders) render.decrementX(-50);
     }
 
     public GamePanelView getGamePanelView() {
@@ -107,37 +113,29 @@ public class SceneryController {
         switch (e.getKeyCode()) {
             case KeyEvent.VK_SPACE:
                 jump();
+                controller.getMainFrameView().keysEnabled = false;
                 break;
         }
     }
 
     private void jump() {
-        jumpVar = Settings.jumpHeight;
+        if (gameOver) return;
+        jumpVar = Settings.JUMP_HEIGHT;
         jumpTimer = new Timer();
         jumpTimer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
-                gameCharacterElement.incrementY(jumpVar);
-                if (jumpVar > 0) {
-                    jumpVar--;
-                } else if (jumpVar == 0) {
-                    jumpTimer.cancel();
-                    jumpBackDown();
+                if (gameCharacterElement != null) {
+                    gameCharacterElement.incrementY(jumpVar);
+                    if (jumpVar > 0) {
+                        jumpVar--;
+                    } else if (jumpVar == 0) {
+                        jumpTimer.cancel();
+                        jumpBackDown();
+                    }
                 }
             }
-        }, 0, Settings.jumpPeriod);
-
-        /* Thread jumpThread = new Thread(() -> {
-            try {
-                Thread.sleep(60);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            jumpTimer.cancel();
-        });
-        jumpThread.start();
-
-         */
+        }, 0, Settings.JUMP_PERIOD);
     }
 
     public void jumpBackDown() {
@@ -146,15 +144,17 @@ public class SceneryController {
         jumpTimer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
-
-                gameCharacterElement.decrementY(jumpVar);
-                if (jumpVar < Settings.jumpHeight) {
-                    jumpVar++;
-                } else if (jumpVar == Settings.jumpHeight) {
-                    jumpTimer.cancel();
+                if (gameCharacterElement != null) {
+                    gameCharacterElement.decrementY(jumpVar);
+                    if (jumpVar < Settings.JUMP_HEIGHT) {
+                        jumpVar++;
+                    } else if (jumpVar == Settings.JUMP_HEIGHT) {
+                        jumpTimer.cancel();
+                        controller.getMainFrameView().keysEnabled = true;
+                    }
                 }
             }
-        }, 50, Settings.jumpPeriod);
+        }, 50, Settings.JUMP_PERIOD);
     }
 
         /*
@@ -162,7 +162,6 @@ public class SceneryController {
         // the input parameter height is the height above the "sea level" in game
         int h = gamePanelView.getHeight()-Settings.seaLevel;
         int w = gamePanelView.getWidth();
-
 
         switch (objectType) {
             case "Coin":

@@ -1,5 +1,7 @@
 package com.stickjumper.data.gameelements;
 
+import com.stickjumper.controller.Controller;
+import com.stickjumper.controller.scenerycontrolling.SceneryController;
 import com.stickjumper.data.GameElement;
 import com.stickjumper.utils.Dimens;
 
@@ -7,6 +9,7 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 
 public abstract class Obstacle extends GameElement {
+
     private int skinType;
 
     public Obstacle(Point p, Dimens dimens, BufferedImage image, int speed, int skinType) {
@@ -21,7 +24,7 @@ public abstract class Obstacle extends GameElement {
 
     @Override
     public void hit() {
-        System.out.println("Game over");
+        SceneryController.gameOver = true;
     }
 
 }

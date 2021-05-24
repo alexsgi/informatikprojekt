@@ -20,35 +20,31 @@ public class Settings {
     // START
     public static final int START_SPACE_BUTTONS = 20;
     // FONT SIZES
-    public static Font FONT_HEADING_BIG = new Font("Arial Black", Font.PLAIN, 40);
-    public static Font FONT_HEADING_SMALL = new Font("Arial Black", Font.PLAIN, 20);
-    public static Font FONT_BUTTON = new Font("Calibri", Font.BOLD, 17);
-    public static Font FONT_BUTTON_PLAIN = new Font("Calibri", Font.PLAIN, 17);
-    public static Font FONT_LABEL = new Font("Calibri", Font.PLAIN, 20);
-    public static Font FONT_LABEL_WARNING = new Font("Calibri", Font.PLAIN, 14);
-    public static Font FONT_LOGIN_HEADER = new Font("Open Sans", Font.BOLD, 22);
-    public static Font FONT_LOGIN_SUBHEADER = new Font("Open Sans", Font.PLAIN, 14);
-    public static Font FONT_LOGIN_FIELDS_LABELS = new Font("Open Sans", Font.PLAIN, 13);
-    public static Font FONT_LOGIN_BUTTON = new Font("Calibri", Font.PLAIN, 15);
-    public static Font FONT_LOGIN_SMALL_BUTTON = new Font("Calibri", Font.PLAIN, 14);
+    public static final Font FONT_HEADING_BIG = new Font("Arial Black", Font.PLAIN, 40);
+    public static final Font FONT_HEADING_GAME_OVER = new Font("Arial Black", Font.PLAIN, 100);
+    public static final Font FONT_HEADING_SMALL = new Font("Arial Black", Font.PLAIN, 20);
+    public static final Font FONT_BUTTON = new Font("Calibri", Font.BOLD, 17);
+    public static final Font FONT_BUTTON_PLAIN = new Font("Calibri", Font.PLAIN, 17);
+    public static final Font FONT_LABEL = new Font("Calibri", Font.PLAIN, 20);
+    public static final Font FONT_LABEL_WARNING = new Font("Calibri", Font.PLAIN, 14);
+    public static final Font FONT_LOGIN_HEADER = new Font("Open Sans", Font.BOLD, 22);
+    public static final Font FONT_LOGIN_SUBHEADER = new Font("Open Sans", Font.PLAIN, 14);
+    public static final Font FONT_LOGIN_FIELDS_LABELS = new Font("Open Sans", Font.PLAIN, 13);
+    public static final Font FONT_LOGIN_BUTTON = new Font("Calibri", Font.PLAIN, 15);
+    public static final Font FONT_LOGIN_SMALL_BUTTON = new Font("Calibri", Font.PLAIN, 14);
 
     // seaLevel and y-position of GameCharacter for initializations in SceneryController
-    public static int seaLevel = 100;
-    public static int xPositionGameCharacter = 320;
-    public static int xDimensGameCharacter = GameCharacter.getXValueDimens();
+    public static final int seaLevel = 100;
+    public static final int xPositionGameCharacter = 320;
+    public static final int xDimensGameCharacter = GameCharacter.getXValueDimens();
 
     // speed control (the higher the number, the slower the movement)
-    public static int backgroundSpeed = 15;
-    public static int foregroundSpeed = 7;
+    public static final int backgroundSpeed = 15;
+    public static final int foregroundSpeed = 4;
 
     // jump variable
-    public static int jumpHeight = 20;
-    public static int jumpPeriod = 20;
-
-    // CLASS NAMES
-    public static final String COIN_CLASS_NAME = "Coin";
-    public static final String ENEMY_CLASS_NAME = "Enemy";
-    public static final String STEADY_OBSTACLE_CLASS_NAME = "SteadyObstacle";
+    public static final int JUMP_HEIGHT = 22;
+    public static final int JUMP_PERIOD = 13;
 
     public static void logData(String data) {
         if (isDebugMode()) System.out.println(data);

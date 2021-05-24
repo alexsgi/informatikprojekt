@@ -7,6 +7,7 @@ import com.stickjumper.utils.Settings;
 import com.stickjumper.utils.components.AdvancedButton;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -14,7 +15,8 @@ public class GamePanelView extends JPanel implements ActionListener {
 
     private Controller controller;
 
-    private AdvancedButton backButton, startButton, stopButton;
+    private AdvancedButton backButton;
+    public JLabel lblGameOver;
 
     public GamePanelView(Controller controller) {
         super(true);
@@ -25,12 +27,16 @@ public class GamePanelView extends JPanel implements ActionListener {
 
         this.controller = controller;
 
-        JLabel lblTitle = new JLabel("GamePanel");
-        lblTitle.setHorizontalAlignment(SwingConstants.CENTER);
-        lblTitle.setBounds(0, 96, getWidth(), 83);
-        lblTitle.setFont(Settings.FONT_HEADING_BIG);
-        lblTitle.setOpaque(false);
-        add(lblTitle);
+        lblGameOver = new JLabel("Game over");
+        lblGameOver.setHorizontalAlignment(SwingConstants.CENTER);
+        lblGameOver.setVerticalAlignment(SwingConstants.CENTER);
+        lblGameOver.setSize(getWidth(), getHeight());
+        lblGameOver.setLocation(0, 0);
+        lblGameOver.setFont(Settings.FONT_HEADING_GAME_OVER);
+        // lblGameOver.setOpaque(false);
+        lblGameOver.setVisible(false);
+        lblGameOver.setBackground(new Color(112, 128, 144));
+        add(lblGameOver);
 
         backButton = new AdvancedButton(ImageManager.GAME_ICON_HOME_ACCENT, ImageManager.GAME_ICON_HOME);
         backButton.setSize(36, 36);
@@ -38,41 +44,18 @@ public class GamePanelView extends JPanel implements ActionListener {
         backButton.setID("backButton");
         backButton.addActionListener(this);
         add(backButton);
-
-        startButton = new AdvancedButton();
-        startButton.setText("Right/Start");
-        startButton.setSize(200, 40);
-        startButton.setLocation(((getWidth() - startButton.getWidth()) / 2) + (getWidth() - startButton.getWidth()) / 4, 0);
-        startButton.setID("startButton");
-        startButton.addActionListener(this);
-        add(startButton);
-
-        stopButton = new AdvancedButton();
-        stopButton.setText("Left/Stop");
-        stopButton.setSize(200, 40);
-        stopButton.setLocation((getWidth() - stopButton.getWidth()) / 4, 0);
-        stopButton.setID("stopButton");
-        stopButton.addActionListener(this);
-        add(stopButton);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()) {
             case "backButton" -> controller.getPanelFrameManager().switchToStartPanel();
-            case "startButton" -> {
-                // controller.startMovingBackground();
-                controller.getSceneryController().moveRight();
-            }
-            case "stopButton" -> {
-                // controller.stopMovingBackground();
-                controller.getSceneryController().moveLeft();
-            }
         }
     }
 
     public void addObject(GameElementRender render) {
         add(render);
     }
+
 
 }
