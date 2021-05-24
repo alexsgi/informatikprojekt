@@ -42,7 +42,7 @@ public class SceneryRandomGenerator {
                 createEnemy(2, 1);
                 createSteadyObstacle(1);
             }
-        }, 0, 2000);
+        }, 0, 8000);
 
         // the real random component
     }
