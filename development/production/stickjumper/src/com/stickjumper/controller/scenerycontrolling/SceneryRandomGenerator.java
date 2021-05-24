@@ -12,14 +12,12 @@ import java.util.TimerTask;
 
 public class SceneryRandomGenerator {
 
-    private SceneryController sceneryController;
-    Timer timer;
-
-    private int h;
-    private int w;
-    // array lists for all objects
-
     private static int coinHeight = 0;
+    Timer timer;
+    private SceneryController sceneryController;
+    private int h;
+    // array lists for all objects
+    private int w;
 
     public SceneryRandomGenerator() {
         // TODO: creating all the objects "enemy, steadyObstacle, Coin" in here and passing them as input parameter in the method "initCertainObject"

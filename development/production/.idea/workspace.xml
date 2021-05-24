@@ -7,24 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="460ac02d-4569-48ee-b691-afac2c185a3b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/controller/scenerycontrolling/SceneryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/controller/scenerycontrolling/SceneryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/data/gameelements/Obstacle.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/data/gameelements/Obstacle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/data/gameelements/obstacles/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/data/gameelements/obstacles/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/MainFrameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/MainFrameView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/game/GamePanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/game/GamePanelView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/Settings.java" afterDir="false" />
     </list>
-    <list id="cb6ccd45-2f4a-4a31-aef3-f8cd82d4f1fc" name="Changes by Alex" comment="">
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/controller/scenerycontrolling/SceneryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/controller/scenerycontrolling/SceneryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/data/gameelements/Obstacle.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/data/gameelements/Obstacle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/data/gameelements/obstacles/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/data/gameelements/obstacles/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/data/gameelements/obstacles/SteadyObstacle.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/data/gameelements/obstacles/SteadyObstacle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/game/GamePanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/game/GamePanelView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/Settings.java" afterDir="false" />
-    </list>
+    <list id="cb6ccd45-2f4a-4a31-aef3-f8cd82d4f1fc" name="Changes by Alex" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -54,65 +39,6 @@
     <setting file="file://$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/login/LoginPanelView.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/login/RegisterPanelView.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/UITools.java" root0="FORCE_HIGHLIGHTING" />
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/Settings.java">
-      <ranges>
-        <range start1="22" end1="33" start2="22" end2="34" changelist="460ac02d-4569-48ee-b691-afac2c185a3b" />
-        <range start1="35" end1="38" start2="36" end2="39" changelist="cb6ccd45-2f4a-4a31-aef3-f8cd82d4f1fc" />
-        <range start1="40" end1="42" start2="41" end2="43" changelist="460ac02d-4569-48ee-b691-afac2c185a3b" />
-        <range start1="44" end1="51" start2="45" end2="47" changelist="460ac02d-4569-48ee-b691-afac2c185a3b" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/stickjumper/src/com/stickjumper/controller/Controller.java">
-      <ranges>
-        <range start1="17" end1="18" start2="17" end2="17" changelist="cb6ccd45-2f4a-4a31-aef3-f8cd82d4f1fc" />
-        <range start1="88" end1="88" start2="87" end2="88" changelist="cb6ccd45-2f4a-4a31-aef3-f8cd82d4f1fc" />
-        <range start1="122" end1="122" start2="122" end2="123" changelist="460ac02d-4569-48ee-b691-afac2c185a3b" />
-        <range start1="171" end1="171" start2="172" end2="176" changelist="460ac02d-4569-48ee-b691-afac2c185a3b" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/game/GamePanelView.java">
-      <ranges>
-        <range start1="9" end1="9" start2="9" end2="10" changelist="460ac02d-4569-48ee-b691-afac2c185a3b" />
-        <range start1="16" end1="17" start2="17" end2="19" changelist="cb6ccd45-2f4a-4a31-aef3-f8cd82d4f1fc" />
-        <range start1="27" end1="33" start2="29" end2="39" changelist="460ac02d-4569-48ee-b691-afac2c185a3b" />
-        <range start1="40" end1="56" start2="46" end2="46" changelist="460ac02d-4569-48ee-b691-afac2c185a3b" />
-        <range start1="62" end1="70" start2="52" end2="52" changelist="460ac02d-4569-48ee-b691-afac2c185a3b" />
-        <range start1="76" end1="76" start2="58" end2="59" changelist="460ac02d-4569-48ee-b691-afac2c185a3b" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/stickjumper/src/com/stickjumper/data/gameelements/Obstacle.java">
-      <ranges>
-        <range start1="2" end1="2" start2="2" end2="4" changelist="cb6ccd45-2f4a-4a31-aef3-f8cd82d4f1fc" />
-        <range start1="9" end1="9" start2="11" end2="12" changelist="cb6ccd45-2f4a-4a31-aef3-f8cd82d4f1fc" />
-        <range start1="23" end1="24" start2="26" end2="27" changelist="460ac02d-4569-48ee-b691-afac2c185a3b" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/stickjumper/src/com/stickjumper/controller/scenerycontrolling/SceneryController.java">
-      <ranges>
-        <range start1="22" end1="22" start2="22" end2="23" changelist="460ac02d-4569-48ee-b691-afac2c185a3b" />
-        <range start1="32" end1="33" start2="33" end2="33" changelist="cb6ccd45-2f4a-4a31-aef3-f8cd82d4f1fc" />
-        <range start1="69" end1="69" start2="69" end2="70" changelist="cb6ccd45-2f4a-4a31-aef3-f8cd82d4f1fc" />
-        <range start1="80" end1="80" start2="81" end2="82" changelist="460ac02d-4569-48ee-b691-afac2c185a3b" />
-        <range start1="84" end1="84" start2="86" end2="98" changelist="cb6ccd45-2f4a-4a31-aef3-f8cd82d4f1fc" />
-        <range start1="85" end1="86" start2="99" end2="100" changelist="cb6ccd45-2f4a-4a31-aef3-f8cd82d4f1fc" />
-        <range start1="92" end1="100" start2="106" end2="106" changelist="cb6ccd45-2f4a-4a31-aef3-f8cd82d4f1fc" />
-        <range start1="109" end1="109" start2="115" end2="116" changelist="460ac02d-4569-48ee-b691-afac2c185a3b" />
-        <range start1="114" end1="115" start2="121" end2="123" changelist="cb6ccd45-2f4a-4a31-aef3-f8cd82d4f1fc" />
-        <range start1="119" end1="125" start2="127" end2="135" changelist="460ac02d-4569-48ee-b691-afac2c185a3b" />
-        <range start1="127" end1="140" start2="137" end2="138" changelist="cb6ccd45-2f4a-4a31-aef3-f8cd82d4f1fc" />
-        <range start1="148" end1="154" start2="146" end2="154" changelist="460ac02d-4569-48ee-b691-afac2c185a3b" />
-        <range start1="156" end1="157" start2="156" end2="157" changelist="460ac02d-4569-48ee-b691-afac2c185a3b" />
-        <range start1="164" end1="165" start2="164" end2="164" changelist="cb6ccd45-2f4a-4a31-aef3-f8cd82d4f1fc" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/stickjumper/src/com/stickjumper/data/gameelements/obstacles/Enemy.java">
-      <ranges>
-        <range start1="5" end1="6" start2="5" end2="5" changelist="cb6ccd45-2f4a-4a31-aef3-f8cd82d4f1fc" />
-        <range start1="21" end1="21" start2="20" end2="21" changelist="460ac02d-4569-48ee-b691-afac2c185a3b" />
-      </ranges>
-    </file>
   </component>
   <component name="ProjectId" id="1sNxAxlUOzIo4QGOFZ9jkhs4zer" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">

@@ -25,9 +25,13 @@ public class GameCharacter extends GameElement {
         highScore = player.getHighScore();
     }
 
-    public GameCharacter(int skinType){
-        super(new Point(Settings.xPositionGameCharacter, Settings.SCREEN_HEIGHT-Settings.seaLevel-dimens.getHeight()), dimens, true, ImageManager.PLAYER_SKIN_1, 0);
+    public GameCharacter(int skinType) {
+        super(new Point(Settings.xPositionGameCharacter, Settings.SCREEN_HEIGHT - Settings.seaLevel - dimens.getHeight()), dimens, true, ImageManager.PLAYER_SKIN_1, 0);
         this.skinType = skinType;
+    }
+
+    public static int getXValueDimens() {
+        return dimens.getWidth();
     }
 
     public int getSkinType() {
@@ -40,10 +44,6 @@ public class GameCharacter extends GameElement {
 
     public Dimens getDimens() {
         return dimens;
-    }
-
-    public static int getXValueDimens() {
-        return dimens.getWidth();
     }
 
     @Override

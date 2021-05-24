@@ -25,6 +25,7 @@ public class Controller {
     private final PanelFrameManager panelFrameManager;
     // All frames
     private final MainFrameView mainFrameView;
+    public boolean gameStarted = false;
     // Manages all in-game objects
     private SceneryController sceneryController;
     private SceneryRandomGenerator sceneryRandomGenerator;
@@ -35,10 +36,8 @@ public class Controller {
     // All panels
     private StartPanelView startPanelView;
     private GamePanelView gamePanelView;
-
     private Timer connectionTimer;
     private boolean connectedToServer;
-    public boolean gameStarted = false;
 
     public Controller(MainFrameView mainFrameView, SceneryRandomGenerator sceneryRandomGenerator) {
         this.mainFrameView = mainFrameView;

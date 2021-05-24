@@ -1,6 +1,5 @@
 package com.stickjumper.data.gameelements;
 
-import com.stickjumper.controller.Controller;
 import com.stickjumper.controller.scenerycontrolling.SceneryController;
 import com.stickjumper.data.GameElement;
 import com.stickjumper.utils.Dimens;

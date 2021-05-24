@@ -15,23 +15,20 @@ import java.util.TimerTask;
 
 public class SceneryController {
 
+    public static boolean gameOver = false;
+    // this position is relative to the frame
+    public static int yPosGameCharacter;
+    private static int jumpVar;
+    // init timer:
+    Timer foregroundTimer, jumpTimer;
+    GameElementRender gameCharacterElement;
     private GamePanelView gamePanelView;
     private PanelFrameManager panelFrameManager;
     private Controller controller;
     private ArrayList<GameElementRender> gameElementRenders = new ArrayList<>();
     private boolean gameCharacterAlreadyAdded;
-    public static boolean gameOver = false;
-
-    // this position is relative to the frame
-    public static int yPosGameCharacter;
-
-    // init timer:
-    Timer foregroundTimer, jumpTimer;
     private int timerSpeed = Settings.foregroundSpeed;
     private int generalSpeed = 1;
-    private static int jumpVar;
-
-    GameElementRender gameCharacterElement;
 
     public SceneryController(GamePanelView gamePanelView, PanelFrameManager panelFrameManager, Controller controller) {
         this.gamePanelView = gamePanelView;

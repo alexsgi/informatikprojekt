@@ -3,7 +3,6 @@ package com.stickjumper.data.gameelements;
 import com.stickjumper.data.GameElement;
 import com.stickjumper.utils.Dimens;
 import com.stickjumper.utils.ImageManager;
-import com.stickjumper.utils.Settings;
 
 import java.awt.*;
 

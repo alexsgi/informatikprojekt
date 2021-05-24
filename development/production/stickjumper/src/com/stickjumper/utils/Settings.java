@@ -6,8 +6,6 @@ import java.awt.*;
 
 public class Settings {
 
-    // GENERAL
-    private static final boolean debugMode = true;
     public static final String APP_ICON = "/images/icons/appicon_4.png";
     public static final int SCREEN_WIDTH = 1280, SCREEN_HEIGHT = 640;
     public static final int LOGIN_SCREEN_WIDTH = 600, LOGIN_SCREEN_HEIGHT = 500;
@@ -32,19 +30,18 @@ public class Settings {
     public static final Font FONT_LOGIN_FIELDS_LABELS = new Font("Open Sans", Font.PLAIN, 13);
     public static final Font FONT_LOGIN_BUTTON = new Font("Calibri", Font.PLAIN, 15);
     public static final Font FONT_LOGIN_SMALL_BUTTON = new Font("Calibri", Font.PLAIN, 14);
-
     // seaLevel and y-position of GameCharacter for initializations in SceneryController
     public static final int seaLevel = 100;
     public static final int xPositionGameCharacter = 320;
     public static final int xDimensGameCharacter = GameCharacter.getXValueDimens();
-
     // speed control (the higher the number, the slower the movement)
     public static final int backgroundSpeed = 15;
     public static final int foregroundSpeed = 4;
-
     // jump variable
     public static final int JUMP_HEIGHT = 22;
     public static final int JUMP_PERIOD = 13;
+    // GENERAL
+    private static final boolean debugMode = true;
 
     public static void logData(String data) {
         if (isDebugMode()) System.out.println(data);

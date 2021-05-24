@@ -15,11 +15,11 @@ import java.awt.event.KeyListener;
 
 public class MainFrameView extends JFrame implements KeyListener {
 
+    public boolean keysEnabled = true;
     private StartPanelView startPanel;
     private Controller controller;
     private GamePanelView gamePanel;
     private SceneryRandomGenerator sceneryRandomGenerator;
-    public boolean keysEnabled = true;
 
     public MainFrameView(SceneryRandomGenerator sceneryRandomGenerator) {
         setResizable(false);
@@ -53,7 +53,8 @@ public class MainFrameView extends JFrame implements KeyListener {
 
     @Override
     public void keyPressed(KeyEvent e) {
-        if (controller != null && controller.gameStarted && keysEnabled) controller.getSceneryController().keyPressed(e);
+        if (controller != null && controller.gameStarted && keysEnabled)
+            controller.getSceneryController().keyPressed(e);
     }
 
     @Override
