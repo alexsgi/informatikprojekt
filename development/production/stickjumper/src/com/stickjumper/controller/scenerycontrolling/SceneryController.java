@@ -3,10 +3,7 @@ package com.stickjumper.controller.scenerycontrolling;
 import com.stickjumper.controller.Controller;
 import com.stickjumper.controller.PanelFrameManager;
 import com.stickjumper.data.GameElement;
-import com.stickjumper.data.gameelements.Coin;
 import com.stickjumper.data.gameelements.GameCharacter;
-import com.stickjumper.data.gameelements.obstacles.Enemy;
-import com.stickjumper.data.gameelements.obstacles.SteadyObstacle;
 import com.stickjumper.frontend.game.GamePanelView;
 import com.stickjumper.frontend.rendering.GameElementRender;
 import com.stickjumper.utils.Settings;
@@ -35,7 +32,7 @@ public class SceneryController {
         this.controller = controller;
     }
 
-    public void initGameCharacter(int skinType){
+    public void initGameCharacter(int skinType) {
         if (!gameCharacterAlreadyAdded) {
             GameElementRender gameCharacterElement = new GameElementRender(new GameCharacter(skinType));
             addGameElementRender(gameCharacterElement);
@@ -43,7 +40,7 @@ public class SceneryController {
         }
     }
 
-    public void initCertainGameObject(GameElement object){
+    public void initCertainGameObject(GameElement object) {
         GameElementRender elementRender = new GameElementRender(object);
         gamePanelView.addObject(elementRender);
         addGameElementRender(elementRender);
@@ -54,7 +51,7 @@ public class SceneryController {
         gamePanelView.addObject(render);
     }
 
-    public void removeGameElementRender(int arrayListNumber){
+    public void removeGameElementRender(int arrayListNumber) {
         GameElementRender current = gameElementRenders.get(arrayListNumber);
         gameElementRenders.remove(arrayListNumber);
         gamePanelView.remove(current);
@@ -65,9 +62,10 @@ public class SceneryController {
         foregroundTimer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
-                gameElementRenders.forEach((e) -> e.decrementX(e.getSpeed() * generalSpeed));
+                // gameElementRenders.forEach((e) -> e.decrementX(e.getSpeed() * generalSpeed));
                 for (int i = 0; i < gameElementRenders.size(); i++) {
                     GameElementRender current = gameElementRenders.get(i);
+                    current.decrementX(current.getSpeed() * generalSpeed);
                     Point pos = current.getLocation();
                     if (pos.getX() + current.getWidth() <= 0) {
                         removeGameElementRender(i);
@@ -96,7 +94,8 @@ public class SceneryController {
         return gamePanelView;
     }
 
-        /* public void initCertainObject(String objectType, int height, int speed, int skinOrCoinValue){
+        /*
+        public void initCertainObject(String objectType, int height, int speed, int skinOrCoinValue){
         // the input parameter height is the height above the "sea level" in game
         int h = gamePanelView.getHeight()-Settings.seaLevel;
         int w = gamePanelView.getWidth();

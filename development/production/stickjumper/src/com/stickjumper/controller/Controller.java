@@ -70,7 +70,7 @@ public class Controller {
     public void setStartPanelView(StartPanelView startPanelView) {
         this.startPanelView = startPanelView;
         panelFrameManager.setStartPanelView(startPanelView);
-        initTimer();
+        // initTimer();
     }
 
     public void setLoginFrameView(LoginFrameView loginFrameView) {

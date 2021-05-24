@@ -43,19 +43,19 @@ public class SceneryRandomGenerator {
                 createCoin(coinHeight, 1);
                 createEnemy(2, 1);
                 createSteadyObstacle(1);
-                if (coinHeight - Coin.getStandardDimens().getHeight() < Settings.SCREEN_HEIGHT) {
+                if (coinHeight + Coin.getStandardDimens().getHeight() + Settings.seaLevel * 2 < Settings.SCREEN_HEIGHT) {
                     coinHeight += 50;
+                } else {
+                    coinHeight -= 50;
                 }
             }
-        }, 0, 2000);
-
+        }, 0, 500);
         // the real random component
     }
 
     public void recreate() {
         randomGenerate();
         // dont know if this is really needed
-
         // overwrites all the objects in the array lists, so that the game is different form the last one
     }
 
