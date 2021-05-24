@@ -194,9 +194,15 @@ Jonas:
 1. Einfügen einer Methode, welche einen "Click-Sound" beim drücken eines AdvancedButtons abspielt
 2. Anpassen der Methode mit relativem "jar-kompatiblem" Pfad mit Alex
 
-### ""20.05.2021**
+Alex:
+1. MovingBackground, Buttons in RegisterPanel angepasst
+
+### **20.05.2021**
 Jonas:
 1. "Verallgemeinerung" der playSound - Methode in UI-Tools
+
+Alex:
+1. MV-Panel erstellt
 
 ### **21.05.2021**
 Jessica, Alex, Jonas:
@@ -206,3 +212,24 @@ Jonas:
 1. Überarbeitung der playSound - Methode mit lag - Optimierung
 
 Alex:
+1. GamElement-UI angepasst
+
+### **22.05.2021**
+
+Alex:
+1. Reguläre Internetverbindungstest
+2. MV-Anpassung
+
+### **23.05.2021**
+
+Jonas:
+1.
+
+Alex:
+1. Anpassung RandomGenerator
+
+### **24.05.2021**
+
+Alex:
+1. Jump-Funktion und Game-Over screen implementiert mit Jonas
+2. Automatische Spielzugüberprüfung mit Jonas
