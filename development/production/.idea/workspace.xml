@@ -7,31 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="460ac02d-4569-48ee-b691-afac2c185a3b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/stickjumper/src/res/sounds/DunDunDun.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stickjumper/src/res/sounds/coin.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stickjumper/src/res/sounds/soundMP3/90Speed_DunDunDunV6_From_FesliyanStudios.com.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stickjumper/src/res/sounds/soundMP3/Bag-of-Coins-A-www.fesliyanstudios.com.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stickjumper/src/res/sounds/soundMP3/Bag-of-Coins-A-www.fesliyanstudios.com.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stickjumper/src/res/sounds/soundMP3/Male-Death-Crying-Nooooo-Scream-A-www.fesliyanstudios.com.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stickjumper/src/res/sounds/soundMP3/Video-Game-Positive-Sound-A1-8bit-www.fesliyanstudios.com.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stickjumper/src/res/sounds/soundMP3/Video-Game-Positive-Sound-A2-8bit-www.fesliyanstudios.com.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stickjumper/src/res/sounds/soundMP3/Video-Game-Power-Level-Up-A1-www.fesliyanstudios.com.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stickjumper/src/res/sounds/soundMP3/Video-Game-Power-Level-Up-A3-Med-www.fesliyanstudios.com.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stickjumper/src/res/sounds/soundMP3/Video-Game-Power-Level-Up-B1-www.fesliyanstudios.com.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stickjumper/src/res/sounds/soundMP3/Video-Game-Secret-Sound-C2-Slow-Reverse-www.fesliyanstudios.com.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stickjumper/src/res/sounds/soundMP3/Video-Game-Secret-Sound-D-Slows-Down-www.fesliyanstudios.com.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stickjumper/src/res/sounds/soundMP3/Video-Game-Secret-Sound-D3-Slows-Down-www.fesliyanstudios.com.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stickjumper/src/res/sounds/soundMP3/Video-Game-Unlock-Sound-A1-8bit-www.fesliyanstudios.com.mp3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/controller/scenerycontrolling/SceneryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/controller/scenerycontrolling/SceneryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/data/GameElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/data/GameElement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/data/gameelements/Coin.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/data/gameelements/Coin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/data/gameelements/obstacles/SteadyObstacle.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/data/gameelements/obstacles/SteadyObstacle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/MainFrameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/MainFrameView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/game/GamePanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/game/GamePanelView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/controller/PanelFrameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/controller/PanelFrameManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/start/StartPanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/start/StartPanelView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/Settings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/SoundManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/SoundManager.java" afterDir="false" />
     </list>
     <list id="cb6ccd45-2f4a-4a31-aef3-f8cd82d4f1fc" name="Changes by Alex" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -196,7 +176,7 @@
       <workItem from="1621845276347" duration="5881000" />
       <workItem from="1621852039132" duration="1512000" />
       <workItem from="1621853627596" duration="2273000" />
-      <workItem from="1621879835615" duration="6425000" />
+      <workItem from="1621879835615" duration="7695000" />
     </task>
     <servers />
   </component>

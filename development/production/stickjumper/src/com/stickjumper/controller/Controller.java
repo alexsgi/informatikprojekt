@@ -162,7 +162,8 @@ public class Controller {
     }
 
     public void updateHighScore() {
-        if (currentPlayer.getHighScore() < currentScore) currentPlayer.setHighScore(currentScore);
+        // if (currentPlayer.getHighScore() < currentScore) currentPlayer.setHighScore(currentScore);
+        // startPanelView.updateHighScoreLabel(currentScore);
     }
 
     public SceneryController getSceneryController() {
@@ -179,6 +180,7 @@ public class Controller {
 
     public void updateHighScoreLabel(int additionalHighScore){
         gamePanelView.incrementHighScore(additionalHighScore);
+        // currentScore = currentScore + additionalHighScore;
     }
 
 }

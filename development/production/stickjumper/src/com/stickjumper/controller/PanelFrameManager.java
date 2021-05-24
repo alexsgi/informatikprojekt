@@ -62,6 +62,7 @@ public class PanelFrameManager {
         if (controller.getCurrentPlayer() != null)
             startPanelView.showHighScore(controller.getCurrentPlayer().getHighScore());
         controller.gameStarted = false;
+        // controller.updateHighScore();
     }
 
     public void startMovingBackground() {
