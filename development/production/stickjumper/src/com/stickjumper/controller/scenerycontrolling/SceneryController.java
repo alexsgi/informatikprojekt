@@ -8,7 +8,6 @@ import com.stickjumper.frontend.game.GamePanelView;
 import com.stickjumper.frontend.rendering.GameElementRender;
 import com.stickjumper.utils.Settings;
 
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -69,16 +68,13 @@ public class SceneryController {
         foregroundTimer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
-                // gameElementRenders.forEach((e) -> e.decrementX(e.getSpeed() * generalSpeed));
+                // IT'S WORKING - DON'T TOUCH IT
                 for (int i = 0; i < gameElementRenders.size(); i++) {
                     GameElementRender current = gameElementRenders.get(i);
                     current.decrementX(current.getSpeed() * generalSpeed);
-                    Point pos = current.getLocation();
-                    if (pos.getX() + current.getWidth() <= 0) {
-                        removeGameElementRender(i);
-                    }
-                    yPosGameCharacter = GameCharacter.dimens.getHeight();
+                    if (current.getLocation().getX() + current.getWidth() <= 0) removeGameElementRender(i);
                 }
+                if (gameCharacterAlreadyAdded) yPosGameCharacter = gameCharacterElement.getY();
             }
         }, 0, timerSpeed);
     }

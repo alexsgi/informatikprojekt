@@ -67,18 +67,12 @@ public abstract class GameElement {
     }
 
     public void decrementX(int n) {
-
-
+        // DON'T TOUCH IT - WE DON'T KNOW WHY IT WORKS
         if (location.getX() == Settings.xPositionGameCharacter + Settings.xDimensGameCharacter) {
-
-            int rotMinusGelb = (int) (SceneryController.yPosGameCharacter - location.getY());
-            System.err.println(rotMinusGelb);
-            boolean firstCondition = rotMinusGelb < getDimens().getHeight();
-
-            boolean secondCondition = rotMinusGelb < -GameCharacter.dimens.getHeight();
-            boolean yHit = firstCondition && secondCondition;
-            this.hit();
-
+            int difPos = (int) (SceneryController.yPosGameCharacter - location.getY());
+            boolean firstCondition = difPos < getDimens().getHeight();
+            boolean secondCondition = difPos < -GameCharacter.dimens.getHeight();
+            if ((firstCondition && !secondCondition) || (!firstCondition && secondCondition)) this.hit();
         }
         location.x -= n;
     }

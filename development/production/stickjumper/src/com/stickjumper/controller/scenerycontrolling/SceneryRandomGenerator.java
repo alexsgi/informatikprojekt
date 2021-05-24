@@ -45,7 +45,7 @@ public class SceneryRandomGenerator {
                 if (coinHeight + Coin.getStandardDimens().getHeight() + Settings.seaLevel * 2 < Settings.SCREEN_HEIGHT) {
                     coinHeight += 50;
                 } else {
-                    coinHeight -= 50;
+                    coinHeight = 0;
                 }
             }
         }, 0, 1000);

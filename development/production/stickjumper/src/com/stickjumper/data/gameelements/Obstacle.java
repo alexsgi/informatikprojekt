@@ -21,7 +21,7 @@ public abstract class Obstacle extends GameElement {
 
     @Override
     public void hit() {
-        System.out.println("game over");
+        System.out.println("Game over");
     }
 
 }
