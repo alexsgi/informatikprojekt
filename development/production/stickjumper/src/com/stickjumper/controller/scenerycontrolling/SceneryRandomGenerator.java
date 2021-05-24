@@ -34,6 +34,7 @@ public class SceneryRandomGenerator {
 
     public void randomGenerate(){
         sceneryController.initGameCharacter(1);
+        // just a var in order to increase the coin height
         final int[] var = {0};
         timer = new Timer();
         timer.scheduleAtFixedRate(new TimerTask() {
