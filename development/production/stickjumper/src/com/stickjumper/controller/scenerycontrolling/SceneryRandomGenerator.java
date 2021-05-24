@@ -13,7 +13,7 @@ import java.util.TimerTask;
 public class SceneryRandomGenerator {
 
     private SceneryController sceneryController;
-    Timer timer = new Timer();
+    Timer timer;
 
     private  int h;
     private  int w;
@@ -34,16 +34,17 @@ public class SceneryRandomGenerator {
 
     public void randomGenerate(){
         sceneryController.initGameCharacter(1);
-
+        final int[] var = {0};
         timer = new Timer();
         timer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
-                createCoin(0, 1);
+                createCoin(var[0], 1);
                 createEnemy(2, 1);
                 createSteadyObstacle(1);
+                var[0] = var[0] +50;
             }
-        }, 0, 8000);
+        }, 0, 3000);
 
         // the real random component
     }
@@ -70,7 +71,6 @@ public class SceneryRandomGenerator {
 
     public void stop(){
         timer.cancel();
-        System.out.println("Timer stopped");
     }
 
 }
