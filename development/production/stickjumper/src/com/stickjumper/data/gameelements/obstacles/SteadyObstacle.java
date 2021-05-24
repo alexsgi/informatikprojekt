@@ -12,7 +12,7 @@ public class SteadyObstacle extends Obstacle {
 
 
     public SteadyObstacle(Point p, int skinType) {
-        super(p, dimens, ImageManager.STEADY_OBSTACLE_SKIN, skinType);
+        super(p, dimens, ImageManager.STEADY_OBSTACLE_SKIN, 1, skinType);
     }
 
     public static Dimens getStandardDimens() {

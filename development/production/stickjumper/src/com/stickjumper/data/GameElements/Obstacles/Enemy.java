@@ -18,4 +18,5 @@ public class Enemy extends Obstacle {
         return dimens;
     }
 
+
 }
