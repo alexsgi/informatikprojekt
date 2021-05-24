@@ -7,6 +7,8 @@ import com.stickjumper.frontend.game.GamePanelView;
 import com.stickjumper.utils.Settings;
 
 import java.awt.*;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class SceneryRandomGenerator {
 
@@ -32,10 +34,16 @@ public class SceneryRandomGenerator {
     public void randomGenerate(){
         sceneryController.initGameCharacter(1);
 
+        Timer timer = new Timer();
+        timer.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                createCoin(0, 1);
+                createEnemy(2, 1);
+                createSteadyObstacle(1);
+            }
+        }, 0, 2000);
 
-        createCoin(0, 1);
-        createEnemy(2, 1);
-        createSteadyObstacle(1);
         // the real random component
     }
 
