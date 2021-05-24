@@ -33,4 +33,14 @@ public class GameElementRender extends JLabel {
         setLocation(gameElement.getLocation());
     }
 
+    public void incrementY(int n) {
+        gameElement.incrementY(n);
+        setLocation(gameElement.getLocation());
+    }
+
+    public void decrementY(int n) {
+        gameElement.decrementY(n);
+        setLocation(gameElement.getLocation());
+    }
+
 }

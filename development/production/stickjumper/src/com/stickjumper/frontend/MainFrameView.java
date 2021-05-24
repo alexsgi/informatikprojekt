@@ -10,8 +10,10 @@ import com.stickjumper.utils.ImageManager;
 import com.stickjumper.utils.Settings;
 
 import javax.swing.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
-public class MainFrameView extends JFrame {
+public class MainFrameView extends JFrame implements KeyListener {
 
     private StartPanelView startPanel;
     private Controller controller;
@@ -21,6 +23,7 @@ public class MainFrameView extends JFrame {
     public MainFrameView(SceneryRandomGenerator sceneryRandomGenerator) {
         setResizable(false);
         setTitle("StickJumper");
+        addKeyListener(this);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(Settings.SCREEN_WIDTH, Settings.SCREEN_HEIGHT);
         setLocationRelativeTo(null);
@@ -33,8 +36,6 @@ public class MainFrameView extends JFrame {
         gamePanel = new GamePanelView(controller);
         controller.setGamePanelView(gamePanel);
 
-        // Add panel to frame
-        // setContentPane(startPanel);
         MovingBackgroundPanel movingBackgroundPanel = new MovingBackgroundPanel();
         movingBackgroundPanel.add(startPanel);
         setContentPane(movingBackgroundPanel);
@@ -42,5 +43,20 @@ public class MainFrameView extends JFrame {
 
     public void addPlayerListToController(List list) {
         controller.setList(list);
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        if (controller != null && controller.gameStarted) controller.getSceneryController().keyPressed(e);
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+
     }
 }

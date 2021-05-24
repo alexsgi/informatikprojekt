@@ -15,6 +15,7 @@ import com.stickjumper.utils.ConnectionTester;
 import com.stickjumper.utils.Settings;
 
 import javax.swing.*;
+import java.awt.event.KeyEvent;
 import java.sql.SQLException;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -38,6 +39,7 @@ public class Controller {
 
     private Timer connectionTimer;
     private boolean connectedToServer;
+    public boolean gameStarted = false;
 
     public Controller(MainFrameView mainFrameView, SceneryRandomGenerator sceneryRandomGenerator) {
         this.mainFrameView = mainFrameView;
@@ -117,6 +119,7 @@ public class Controller {
         currentScore = -1;
         sceneryController.startGame();
         sceneryRandomGenerator.randomGenerate();
+        gameStarted = true;
     }
 
     public boolean playerLogin(String userName, String password) throws SQLException {

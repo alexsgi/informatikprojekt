@@ -17,7 +17,6 @@ public abstract class GameElement {
     private BufferedImage image;
     private int speed;
 
-
     public GameElement(Point p, Dimens d, boolean visible, BufferedImage image, int speed) {
         this.location = p;
         this.dimens = new Dimens(d.getWidth() + ImageManager.getSizeTolerance(), d.getHeight() + ImageManager.getSizeTolerance());
@@ -75,6 +74,14 @@ public abstract class GameElement {
             if ((firstCondition && !secondCondition) || (!firstCondition && secondCondition)) this.hit();
         }
         location.x -= n;
+    }
+
+    public void incrementY(int n) {
+        location.y -= n;
+    }
+
+    public void decrementY(int n) {
+        location.y += n;
     }
 
     public abstract void hit();

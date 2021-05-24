@@ -8,6 +8,7 @@ import com.stickjumper.frontend.game.GamePanelView;
 import com.stickjumper.frontend.rendering.GameElementRender;
 import com.stickjumper.utils.Settings;
 
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -24,9 +25,11 @@ public class SceneryController {
     public static int yPosGameCharacter;
 
     // init timer:
-    Timer foregroundTimer;
-    int timerSpeed = Settings.foregroundSpeed;
-    int generalSpeed = 1;
+    Timer foregroundTimer, jumpTimer;
+    private int timerSpeed = Settings.foregroundSpeed;
+    private int generalSpeed = 1;
+    private static int jumpVar;
+
 
     GameElementRender gameCharacterElement;
 
@@ -39,7 +42,7 @@ public class SceneryController {
     public void initGameCharacter(int skinType) {
         if (!gameCharacterAlreadyAdded) {
             gameCharacterElement = new GameElementRender(new GameCharacter(skinType));
-            addGameElementRender(gameCharacterElement);
+            gamePanelView.addObject(gameCharacterElement);
             gameCharacterAlreadyAdded = true;
         }
         // yPosGameCharacter = gamePanelView.getHeight() - Settings.seaLevel - GameCharacter.dimens.getHeight();
@@ -83,6 +86,8 @@ public class SceneryController {
         foregroundTimer.cancel();
         gameElementRenders.forEach((e) -> gamePanelView.remove(e));
         gameElementRenders.clear();
+        gamePanelView.remove(gameCharacterElement);
+        gameCharacterElement = null;
         gameCharacterAlreadyAdded = false;
     }
 
@@ -98,7 +103,62 @@ public class SceneryController {
         return gamePanelView;
     }
 
+    public void keyPressed(KeyEvent e) {
+        switch (e.getKeyCode()) {
+            case KeyEvent.VK_SPACE:
+                jump();
+                break;
+        }
+    }
 
+    private void jump() {
+        jumpVar = 15;
+        jumpTimer = new Timer();
+        jumpTimer.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                gameCharacterElement.incrementY(jumpVar);
+                if (jumpVar > 0) {
+                    jumpVar--;
+                } else if (jumpVar == 0) {
+                    jumpTimer.cancel();
+                    jumpBackDown();
+                }
+            }
+        }, 0, 10);
+
+
+
+
+        /* Thread jumpThread = new Thread(() -> {
+            try {
+                Thread.sleep(60);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            jumpTimer.cancel();
+        });
+        jumpThread.start();
+
+         */
+    }
+
+    public void jumpBackDown() {
+        jumpVar = 0;
+        jumpTimer = new Timer();
+        jumpTimer.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+
+                gameCharacterElement.decrementY(jumpVar);
+                if (jumpVar < 15) {
+                    jumpVar++;
+                } else if (jumpVar == 15) {
+                    jumpTimer.cancel();
+                }
+            }
+        }, 0, 10);
+    }
 
         /*
         public void initCertainObject(String objectType, int height, int speed, int skinOrCoinValue){
