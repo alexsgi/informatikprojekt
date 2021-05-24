@@ -42,6 +42,11 @@ public class GameCharacter extends GameElement {
         return dimens;
     }
 
+    @Override
+    public String getNameOfCLass() {
+        return "GameCharacter";
+    }
+
     /*
     public void increaseHighScore(int num){
         if(num > 0){

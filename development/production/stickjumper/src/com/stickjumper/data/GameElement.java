@@ -14,6 +14,7 @@ public abstract class GameElement {
     private BufferedImage image;
     private int speed;
 
+
     public GameElement(Point p, Dimens d, boolean visible, BufferedImage image, int speed) {
         this.location = p;
         this.dimens = new Dimens(d.getWidth() + ImageManager.getSizeTolerance(), d.getHeight() + ImageManager.getSizeTolerance());
@@ -65,5 +66,7 @@ public abstract class GameElement {
     public void decrementX(int n) {
         location.x -= n;
     }
+
+    public abstract String getNameOfCLass();
 
 }

@@ -19,4 +19,8 @@ public class SteadyObstacle extends Obstacle {
         return dimens;
     }
 
+    @Override
+    public String getNameOfCLass() {
+        return "SteadyObstacle";
+    }
 }

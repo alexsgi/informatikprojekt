@@ -34,4 +34,8 @@ public class Coin extends GameElement {
         return coinValue;
     }
 
+    @Override
+    public String getNameOfCLass() {
+        return "Coin";
+    }
 }

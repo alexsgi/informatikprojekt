@@ -2,6 +2,7 @@ package com.stickjumper.controller.scenerycontrolling;
 
 import com.stickjumper.controller.Controller;
 import com.stickjumper.controller.PanelFrameManager;
+import com.stickjumper.data.GameElement;
 import com.stickjumper.data.gameelements.Coin;
 import com.stickjumper.data.gameelements.GameCharacter;
 import com.stickjumper.data.gameelements.obstacles.Enemy;
@@ -21,6 +22,7 @@ public class SceneryController {
     private PanelFrameManager panelFrameManager;
     private Controller controller;
     private ArrayList<GameElementRender> gameElementRenders = new ArrayList<>();
+    private boolean gameCharacterAlreadyAdded;
 
 
     // init timer:
@@ -56,9 +58,12 @@ public class SceneryController {
     }
 
     public void initGameCharacter(int skinType){
-        GameElementRender gameCharacterElement = new GameElementRender(new GameCharacter(skinType));
-        gamePanelView.addObject(gameCharacterElement);
-        addGameElementRender(gameCharacterElement);
+        if (!gameCharacterAlreadyAdded) {
+            GameElementRender gameCharacterElement = new GameElementRender(new GameCharacter(skinType));
+            gamePanelView.addObject(gameCharacterElement);
+            addGameElementRender(gameCharacterElement);
+            gameCharacterAlreadyAdded = true;
+        }
 
     }
 
@@ -89,6 +94,21 @@ public class SceneryController {
         }
 
 
+    }
+
+    public void initCertainGameObject(GameElement object){
+        // the input parameter height is the height above the "sea level" in game
+        int h = gamePanelView.getHeight()-Settings.seaLevel;
+        int w = gamePanelView.getWidth();
+
+        String className = object.getNameOfCLass();
+
+        
+
+                GameElementRender coinElement = new GameElementRender(object);
+                gamePanelView.addObject(coinElement);
+                addGameElementRender(coinElement);
+                System.out.println("test");
     }
 
     public void addGameElementRender(GameElementRender render) {
@@ -131,4 +151,7 @@ public class SceneryController {
         for (GameElementRender render : gameElementRenders) render.decrementX(-50);
     }
 
+    public GamePanelView getGamePanelView() {
+        return gamePanelView;
+    }
 }

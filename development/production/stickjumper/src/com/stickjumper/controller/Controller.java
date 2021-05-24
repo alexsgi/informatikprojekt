@@ -117,6 +117,7 @@ public class Controller {
         panelFrameManager.switchToGamePanel();
         currentScore = -1;
         sceneryController.startGame();
+        sceneryRandomGenerator.generate();
     }
 
     public boolean playerLogin(String userName, String password) throws SQLException {

@@ -18,4 +18,8 @@ public class Enemy extends Obstacle {
         return dimens;
     }
 
+    @Override
+    public String getNameOfCLass() {
+        return "Enemy";
+    }
 }
