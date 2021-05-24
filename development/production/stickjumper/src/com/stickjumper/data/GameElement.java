@@ -1,7 +1,10 @@
 package com.stickjumper.data;
 
+import com.stickjumper.controller.scenerycontrolling.SceneryController;
+import com.stickjumper.data.gameelements.GameCharacter;
 import com.stickjumper.utils.Dimens;
 import com.stickjumper.utils.ImageManager;
+import com.stickjumper.utils.Settings;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -64,8 +67,22 @@ public abstract class GameElement {
     }
 
     public void decrementX(int n) {
+
+
+        if (location.getX() == Settings.xPositionGameCharacter + Settings.xDimensGameCharacter) {
+
+            int rotMinusGelb = (int) (SceneryController.yPosGameCharacter - location.getY());
+            System.err.println(rotMinusGelb);
+            boolean firstCondition = rotMinusGelb < getDimens().getHeight();
+
+            boolean secondCondition = rotMinusGelb < -GameCharacter.dimens.getHeight();
+            boolean yHit = firstCondition && secondCondition;
+            this.hit();
+
+        }
         location.x -= n;
     }
 
+    public abstract void hit();
 
 }

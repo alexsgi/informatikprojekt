@@ -39,7 +39,7 @@ public class SceneryRandomGenerator {
         timer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
-                createCoin(coinHeight, 1);
+                createCoin(coinHeight);
                 createEnemy(2, 1);
                 createSteadyObstacle(1);
                 if (coinHeight + Coin.getStandardDimens().getHeight() + Settings.seaLevel * 2 < Settings.SCREEN_HEIGHT) {
@@ -48,7 +48,7 @@ public class SceneryRandomGenerator {
                     coinHeight -= 50;
                 }
             }
-        }, 0, 500);
+        }, 0, 2000);
         // the real random component
     }
 
@@ -58,8 +58,8 @@ public class SceneryRandomGenerator {
         // overwrites all the objects in the array lists, so that the game is different form the last one
     }
 
-    private void createCoin(int height, int coinValue) {
-        sceneryController.initCertainGameObject(new Coin(new Point(w, (h - Coin.getStandardDimens().getHeight() - height)), coinValue));
+    private void createCoin(int height) {
+        sceneryController.initCertainGameObject(new Coin(new Point(w, (h - Coin.getStandardDimens().getHeight() - height))));
     }
 
     private void createEnemy(int speed, int skinType) {

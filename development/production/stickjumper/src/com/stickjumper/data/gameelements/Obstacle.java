@@ -19,8 +19,9 @@ public abstract class Obstacle extends GameElement {
         this.skinType = skinType;
     }
 
+    @Override
     public void hit() {
-        //Game Over
+        System.out.println("game over");
     }
 
 }

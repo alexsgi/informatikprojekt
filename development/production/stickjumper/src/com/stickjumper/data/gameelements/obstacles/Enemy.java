@@ -3,6 +3,7 @@ package com.stickjumper.data.gameelements.obstacles;
 import com.stickjumper.data.gameelements.Obstacle;
 import com.stickjumper.utils.Dimens;
 import com.stickjumper.utils.ImageManager;
+import com.stickjumper.utils.Settings;
 
 import java.awt.*;
 
@@ -17,6 +18,5 @@ public class Enemy extends Obstacle {
     public static Dimens getStandardDimens() {
         return dimens;
     }
-
 
 }

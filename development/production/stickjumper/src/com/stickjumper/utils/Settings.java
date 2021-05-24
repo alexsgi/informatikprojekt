@@ -1,5 +1,7 @@
 package com.stickjumper.utils;
 
+import com.stickjumper.data.gameelements.GameCharacter;
+
 import java.awt.*;
 
 public class Settings {
@@ -33,10 +35,16 @@ public class Settings {
     // seaLevel and y-position of GameCharacter for initializations in SceneryController
     public static int seaLevel = 100;
     public static int xPositionGameCharacter = 320;
+    public static int xDimensGameCharacter = GameCharacter.getXValueDimens();
 
     // speed control (the higher the number, the slower the movement)
     public static int backgroundSpeed = 15;
     public static int foregroundSpeed = 7;
+
+    // CLASS NAMES
+    public static final String COIN_CLASS_NAME = "Coin";
+    public static final String ENEMY_CLASS_NAME = "Enemy";
+    public static final String STEADY_OBSTACLE_CLASS_NAME = "SteadyObstacle";
 
     public static void logData(String data) {
         if (isDebugMode()) System.out.println(data);

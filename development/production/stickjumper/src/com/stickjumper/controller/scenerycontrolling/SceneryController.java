@@ -21,10 +21,15 @@ public class SceneryController {
     private ArrayList<GameElementRender> gameElementRenders = new ArrayList<>();
     private boolean gameCharacterAlreadyAdded;
 
+    // this position is relative to the frame
+    public static int yPosGameCharacter;
+
     // init timer:
     Timer foregroundTimer;
     int timerSpeed = Settings.foregroundSpeed;
     int generalSpeed = 1;
+
+    GameElementRender gameCharacterElement;
 
     public SceneryController(GamePanelView gamePanelView, PanelFrameManager panelFrameManager, Controller controller) {
         this.gamePanelView = gamePanelView;
@@ -34,10 +39,12 @@ public class SceneryController {
 
     public void initGameCharacter(int skinType) {
         if (!gameCharacterAlreadyAdded) {
-            GameElementRender gameCharacterElement = new GameElementRender(new GameCharacter(skinType));
+             gameCharacterElement = new GameElementRender(new GameCharacter(skinType));
             addGameElementRender(gameCharacterElement);
             gameCharacterAlreadyAdded = true;
         }
+        // yPosGameCharacter = gamePanelView.getHeight() - Settings.seaLevel - GameCharacter.dimens.getHeight();
+        // yPosGameCharacter = gameCharacterElement.
     }
 
     public void initCertainGameObject(GameElement object) {
@@ -70,6 +77,7 @@ public class SceneryController {
                     if (pos.getX() + current.getWidth() <= 0) {
                         removeGameElementRender(i);
                     }
+                    yPosGameCharacter = GameCharacter.dimens.getHeight();
                 }
             }
         }, 0, timerSpeed);
@@ -93,6 +101,8 @@ public class SceneryController {
     public GamePanelView getGamePanelView() {
         return gamePanelView;
     }
+
+
 
         /*
         public void initCertainObject(String objectType, int height, int speed, int skinOrCoinValue){

@@ -11,7 +11,7 @@ import java.awt.*;
 public class GameCharacter extends GameElement {
 
     public static final int width = 70, height = 78;
-    private static final Dimens dimens = new Dimens(70, 78);
+    public static final Dimens dimens = new Dimens(70, 78);
     private int skinType;
     private int highScore;
 
@@ -42,6 +42,14 @@ public class GameCharacter extends GameElement {
         return dimens;
     }
 
+    public static int getXValueDimens() {
+        return dimens.getWidth();
+    }
+
+    @Override
+    public void hit() {
+
+    }
 
     /*
     public void increaseHighScore(int num){

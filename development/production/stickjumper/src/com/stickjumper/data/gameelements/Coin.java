@@ -3,6 +3,7 @@ package com.stickjumper.data.gameelements;
 import com.stickjumper.data.GameElement;
 import com.stickjumper.utils.Dimens;
 import com.stickjumper.utils.ImageManager;
+import com.stickjumper.utils.Settings;
 
 import java.awt.*;
 
@@ -26,13 +27,13 @@ public class Coin extends GameElement {
         return dimens;
     }
 
+    @Override
     public void hit() {
-        // increase highscore
+        System.out.println("Coin hit");
     }
 
     public int getCoinValue() {
         return coinValue;
     }
-
 
 }
