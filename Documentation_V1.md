@@ -220,10 +220,16 @@ Alex:
 1. Reguläre Internetverbindungstest
 2. MV-Anpassung
 
+Jonas: 
+1. Implementierung der automatisierten Bewegung der Vordergrundelemente mit anpassbarer Geschwindigkeit
+2. Anpassung der Game - Elemente, sodass die Konstruktoren für die Bewegung passen
+3. Anpassung der Varbiable SkinType in allen GameElement - Klassen, sodass man diesen im Nachhinein verändern kann
+
 ### **23.05.2021**
 
 Jonas:
-1.
+1. Random Generator hinzugefügt, sodass die Elemente in einer externen Klasse (später nach einen "random" Muster) erzeugt werden können
+2. Random Generator so testweise implementiert, dass in regelmäßigen Abständen Hindernisse und Münzen erscheinen
 
 Alex:
 1. Anpassung RandomGenerator
@@ -233,3 +239,9 @@ Alex:
 Alex:
 1. Jump-Funktion und Game-Over screen implementiert mit Jonas
 2. Automatische Spielzugüberprüfung mit Jonas
+3. Adaption der Jump-Bewegung, sodass diese "natürlich" wirkt, aber lange genug dauert, sodass hindernisse übersprungen werden können mit Jonas
+
+Jonas:
+1. Jump-Funktion und Game-Over Sxreen implementiert mit Alex
+2. Adaption der Jump-Bewegung, sodass diese "natürlich" wirkt, aber lange genug dauert, sodass hindernisse übersprungen werden können mit Alex
+3. Implementierung der Funktion, dass sobald die Bereiche des GameCharakters und des Hindernisses übereinstimmen das Spiel beendet wird mit Alex
