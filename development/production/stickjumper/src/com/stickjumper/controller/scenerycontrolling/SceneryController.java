@@ -112,7 +112,7 @@ public class SceneryController {
     }
 
     private void jump() {
-        jumpVar = 15;
+        jumpVar = Settings.jumpHeight;
         jumpTimer = new Timer();
         jumpTimer.scheduleAtFixedRate(new TimerTask() {
             @Override
@@ -125,10 +125,7 @@ public class SceneryController {
                     jumpBackDown();
                 }
             }
-        }, 0, 10);
-
-
-
+        }, 0, Settings.jumpPeriod);
 
         /* Thread jumpThread = new Thread(() -> {
             try {
@@ -151,13 +148,13 @@ public class SceneryController {
             public void run() {
 
                 gameCharacterElement.decrementY(jumpVar);
-                if (jumpVar < 15) {
+                if (jumpVar < Settings.jumpHeight) {
                     jumpVar++;
-                } else if (jumpVar == 15) {
+                } else if (jumpVar == Settings.jumpHeight) {
                     jumpTimer.cancel();
                 }
             }
-        }, 0, 10);
+        }, 50, Settings.jumpPeriod);
     }
 
         /*

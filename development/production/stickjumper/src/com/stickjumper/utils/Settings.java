@@ -41,6 +41,10 @@ public class Settings {
     public static int backgroundSpeed = 15;
     public static int foregroundSpeed = 7;
 
+    // jump variable
+    public static int jumpHeight = 20;
+    public static int jumpPeriod = 20;
+
     // CLASS NAMES
     public static final String COIN_CLASS_NAME = "Coin";
     public static final String ENEMY_CLASS_NAME = "Enemy";
