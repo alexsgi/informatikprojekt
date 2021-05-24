@@ -48,7 +48,7 @@ public class SceneryRandomGenerator {
                     coinHeight -= 50;
                 }
             }
-        }, 0, 2000);
+        }, 0, 1000);
         // the real random component
     }
 

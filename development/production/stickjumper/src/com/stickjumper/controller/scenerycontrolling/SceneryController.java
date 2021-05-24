@@ -39,12 +39,12 @@ public class SceneryController {
 
     public void initGameCharacter(int skinType) {
         if (!gameCharacterAlreadyAdded) {
-             gameCharacterElement = new GameElementRender(new GameCharacter(skinType));
+            gameCharacterElement = new GameElementRender(new GameCharacter(skinType));
             addGameElementRender(gameCharacterElement);
             gameCharacterAlreadyAdded = true;
         }
         // yPosGameCharacter = gamePanelView.getHeight() - Settings.seaLevel - GameCharacter.dimens.getHeight();
-        // yPosGameCharacter = gameCharacterElement.
+        yPosGameCharacter = gameCharacterElement.getY();
     }
 
     public void initCertainGameObject(GameElement object) {
