@@ -34,6 +34,10 @@ public class Settings {
     public static int seaLevel = 100;
     public static int xPositionGameCharacter = 320;
 
+    // speed control (the higher the number, the slower the movement)
+    public static int backgroundSpeed = 15;
+    public static int foregroundSpeed = 7;
+
     public static void logData(String data) {
         if (isDebugMode()) System.out.println(data);
         // What to do with logs?

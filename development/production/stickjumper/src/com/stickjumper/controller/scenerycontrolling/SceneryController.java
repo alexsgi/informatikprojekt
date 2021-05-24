@@ -27,13 +27,14 @@ public class SceneryController {
 
     // init timer:
     Timer foregroundTimer = new Timer();
-    int timerSpeed = 20;
+    int timerSpeed;
     int generalSpeed = 1;
 
     public SceneryController(GamePanelView gamePanelView, PanelFrameManager panelFrameManager, Controller controller) {
         this.gamePanelView = gamePanelView;
         this.panelFrameManager = panelFrameManager;
         this.controller = controller;
+        timerSpeed = Settings.foregroundSpeed;
     }
 
 

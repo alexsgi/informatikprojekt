@@ -58,6 +58,7 @@ public class PanelFrameManager {
         mainFrameView.getContentPane().removeAll();
         mainFrameView.getContentPane().add(startPanelView);
         stopMovingBackground();
+        controller.getSceneryRandomGenerator().stop();
         if (controller.getCurrentPlayer() != null)
             startPanelView.showHighScore(controller.getCurrentPlayer().getHighScore());
     }

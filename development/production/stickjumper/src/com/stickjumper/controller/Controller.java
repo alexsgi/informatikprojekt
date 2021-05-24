@@ -166,4 +166,7 @@ public class Controller {
         return sceneryController;
     }
 
+    public SceneryRandomGenerator getSceneryRandomGenerator() {
+        return sceneryRandomGenerator;
+    }
 }

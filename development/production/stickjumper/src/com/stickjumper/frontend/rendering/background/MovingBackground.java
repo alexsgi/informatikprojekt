@@ -1,6 +1,7 @@
-package com.stickjumper.frontend.rendering.background;
+/* package com.stickjumper.frontend.rendering.background;
 
 import com.stickjumper.utils.ImageManager;
+import com.stickjumper.utils.Settings;
 
 import javax.swing.*;
 import java.awt.*;
@@ -19,7 +20,7 @@ public class MovingBackground extends JLabel {
         backgroundMiddleMirrored = ImageManager.MOVING_BACKGROUND_MIRRORED;
 
         Timer backgroundTimer = new Timer();
-        int backgroundSpeed = 7;
+        int backgroundSpeed = Settings.backgroundSpeed;
 
         backgroundTimer.scheduleAtFixedRate(new TimerTask() {
             @Override
@@ -37,7 +38,7 @@ public class MovingBackground extends JLabel {
                     }
                 }
             }
-        }, 0, backgroundSpeed);
+        }, 0, Settings.backgroundSpeed);
     }
 
     @Override
@@ -58,5 +59,9 @@ public class MovingBackground extends JLabel {
         movement = true;
     }
 
+
+
 }
+
+ */
 

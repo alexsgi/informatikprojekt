@@ -13,6 +13,7 @@ import java.util.TimerTask;
 public class SceneryRandomGenerator {
 
     private SceneryController sceneryController;
+    Timer timer = new Timer();
 
     private  int h;
     private  int w;
@@ -34,7 +35,7 @@ public class SceneryRandomGenerator {
     public void randomGenerate(){
         sceneryController.initGameCharacter(1);
 
-        Timer timer = new Timer();
+        timer = new Timer();
         timer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
@@ -65,6 +66,11 @@ public class SceneryRandomGenerator {
     public void createSteadyObstacle(int skinType){
         sceneryController.initCertainGameObject(new SteadyObstacle(new Point(w, (h - SteadyObstacle.getStandardDimens().getHeight())), skinType));
 
+    }
+
+    public void stop(){
+        timer.cancel();
+        System.out.println("Timer stopped");
     }
 
 }

@@ -1,6 +1,7 @@
 package com.stickjumper.frontend.rendering.background;
 
 import com.stickjumper.utils.ImageManager;
+import com.stickjumper.utils.Settings;
 
 import javax.swing.*;
 import java.awt.*;
@@ -22,7 +23,7 @@ public class MovingBackgroundPanel extends JPanel {
         backgroundMiddleMirrored = ImageManager.MOVING_BACKGROUND_MIRRORED;
 
         java.util.Timer backgroundTimer = new Timer();
-        int backgroundSpeed = 7;
+        int backgroundSpeed = Settings.backgroundSpeed;
 
         backgroundTimer.scheduleAtFixedRate(new TimerTask() {
             @Override
