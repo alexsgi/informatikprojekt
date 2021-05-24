@@ -245,5 +245,5 @@ Jonas:
 1. Jump-Funktion und Game-Over Sxreen implementiert mit Alex
 2. Adaption der Jump-Bewegung, sodass diese "natürlich" wirkt, aber lange genug dauert, sodass hindernisse übersprungen werden können mit Alex
 3. Implementierung der Funktion, dass sobald die Bereiche des GameCharakters und des Hindernisses übereinstimmen das Spiel beendet wird mit Alex
-4. Implementierung einiges Sound Effekte und einer Highscore Erhöhung bei Münzberührung
+4. Implementierung einiges Sound Effekte und einer Highscore Erhöhung bei Münzberührung (mit einem neuen provisorischen Label)
 5. Implementierung einer Funktion, sodass die Münzen verschwinden, wenn man sie berührt
