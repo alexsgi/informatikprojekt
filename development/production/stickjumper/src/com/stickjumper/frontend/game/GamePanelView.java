@@ -13,7 +13,8 @@ import java.awt.event.ActionListener;
 
 public class GamePanelView extends JPanel implements ActionListener {
 
-    public JLabel lblGameOver;
+    public JLabel lblGameOver, lblHighScore;
+    public int highScore = 0;
     private Controller controller;
     private AdvancedButton backButton;
 
@@ -51,6 +52,22 @@ public class GamePanelView extends JPanel implements ActionListener {
         backButton.setID("backButton");
         backButton.addActionListener(this);
         lblGameOver.add(backButton);
+
+        lblHighScore = new JLabel("Highscore: " + highScore);
+        lblHighScore.setHorizontalAlignment(SwingConstants.CENTER);
+        lblHighScore.setVerticalAlignment(SwingConstants.CENTER);
+        lblHighScore.setSize(getWidth(), getHeight()/20);
+        lblHighScore.setLocation(0,5);
+        lblHighScore.setFont(Settings.FONT_LABEL);
+        lblHighScore.setOpaque(false);
+        lblHighScore.setVisible(true);
+        lblHighScore.setForeground(Color.BLACK);
+        add(lblHighScore);
+    }
+
+    public void incrementHighScore(int additionalHighScore){
+        if (additionalHighScore>=0) highScore = highScore + additionalHighScore;
+        lblHighScore.setText("Highscore:" +highScore);
     }
 
     @Override

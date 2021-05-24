@@ -1,6 +1,7 @@
 package com.stickjumper.frontend;
 
 import com.stickjumper.controller.Controller;
+import com.stickjumper.controller.scenerycontrolling.SceneryController;
 import com.stickjumper.controller.scenerycontrolling.SceneryRandomGenerator;
 import com.stickjumper.data.list.List;
 import com.stickjumper.frontend.game.GamePanelView;
@@ -15,7 +16,7 @@ import java.awt.event.KeyListener;
 
 public class MainFrameView extends JFrame implements KeyListener {
 
-    public boolean keysEnabled = true;
+    public boolean keysEnabledInGame = true;
     private StartPanelView startPanel;
     private Controller controller;
     private GamePanelView gamePanel;
@@ -48,12 +49,22 @@ public class MainFrameView extends JFrame implements KeyListener {
 
     @Override
     public void keyTyped(KeyEvent e) {
+        // why doesn't that work?
 
+        /*
+        if (controller != null && !controller.gameStarted && e.getKeyCode() == KeyEvent.VK_SPACE){
+            controller.startGame();
+        }
+        if(controller != null && SceneryController.gameOver && e.getKeyCode() == KeyEvent.VK_SPACE){
+            controller.getPanelFrameManager().switchToStartPanel();
+        }
+
+         */
     }
 
     @Override
     public void keyPressed(KeyEvent e) {
-        if (controller != null && controller.gameStarted && keysEnabled)
+        if (controller != null && controller.gameStarted && keysEnabledInGame)
             controller.getSceneryController().keyPressed(e);
     }
 

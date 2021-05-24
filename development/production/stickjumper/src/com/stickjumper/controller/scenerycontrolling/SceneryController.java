@@ -3,10 +3,12 @@ package com.stickjumper.controller.scenerycontrolling;
 import com.stickjumper.controller.Controller;
 import com.stickjumper.controller.PanelFrameManager;
 import com.stickjumper.data.GameElement;
+import com.stickjumper.data.gameelements.Coin;
 import com.stickjumper.data.gameelements.GameCharacter;
 import com.stickjumper.frontend.game.GamePanelView;
 import com.stickjumper.frontend.rendering.GameElementRender;
 import com.stickjumper.utils.Settings;
+import com.stickjumper.utils.SoundManager;
 
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
@@ -29,6 +31,10 @@ public class SceneryController {
     private boolean gameCharacterAlreadyAdded;
     private int timerSpeed = Settings.foregroundSpeed;
     private int generalSpeed = 1;
+
+    // this variable will turn true for a millisecond, when a coin is hit in order to increment the highscore
+    public static boolean coinHit = false;
+    public static int currentCoinValue = 0;
 
     public SceneryController(GamePanelView gamePanelView, PanelFrameManager panelFrameManager, Controller controller) {
         this.gamePanelView = gamePanelView;
@@ -72,11 +78,15 @@ public class SceneryController {
                 // IT'S WORKING - DON'T TOUCH IT
                 for (int i = 0; i < gameElementRenders.size(); i++) {
                     GameElementRender current = gameElementRenders.get(i);
+                    if (!current.getGameElement().isVisible()){
+                        removeGameElementRender(i);
+                    }
                     current.decrementX(current.getSpeed() * generalSpeed);
                     if (current.getLocation().getX() + current.getWidth() <= 0) removeGameElementRender(i);
                 }
                 if (gameCharacterAlreadyAdded) yPosGameCharacter = gameCharacterElement.getY();
-                if (gameOver) freeze();
+                if (gameOver){ freeze(); SoundManager.playSound(SoundManager.inputStreamGameOverSound);}
+                if (coinHit){coinHit = false; controller.updateHighScoreLabel(currentCoinValue);}
             }
         }, 0, timerSpeed);
     }
@@ -110,7 +120,7 @@ public class SceneryController {
         switch (e.getKeyCode()) {
             case KeyEvent.VK_SPACE:
                 jump();
-                controller.getMainFrameView().keysEnabled = false;
+                controller.getMainFrameView().keysEnabledInGame = false;
                 break;
         }
     }
@@ -147,7 +157,7 @@ public class SceneryController {
                         jumpVar++;
                     } else if (jumpVar == Settings.JUMP_HEIGHT) {
                         jumpTimer.cancel();
-                        controller.getMainFrameView().keysEnabled = true;
+                        controller.getMainFrameView().keysEnabledInGame = true;
                     }
                 }
             }

@@ -119,7 +119,7 @@ public class Controller {
         sceneryController.startGame();
         sceneryRandomGenerator.randomGenerate();
         gameStarted = true;
-        mainFrameView.keysEnabled = true;
+        mainFrameView.keysEnabledInGame = true;
     }
 
     public boolean playerLogin(String userName, String password) throws SQLException {
@@ -176,4 +176,9 @@ public class Controller {
     public SceneryRandomGenerator getSceneryRandomGenerator() {
         return sceneryRandomGenerator;
     }
+
+    public void updateHighScoreLabel(int additionalHighScore){
+        gamePanelView.incrementHighScore(additionalHighScore);
+    }
+
 }

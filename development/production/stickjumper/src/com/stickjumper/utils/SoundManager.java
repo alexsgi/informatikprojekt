@@ -12,15 +12,19 @@ public class SoundManager {
     public static String pathButtonSound2 = "/sounds/Winding-Alarm-Clock.wav";
     public static String pathBootSound = "/sounds/boot-2.wav";
     public static String pathBootSoundEmpty = "/sounds/empty-boot-sequence.wav";
+    public static String pathCoinSound = "/sounds/coin.wav";
+    public static String pathGameOverSound = "/sounds/DunDunDun.wav";
 
-    public static AudioInputStream inputStreamBootSound, inputStreamButtonSound;
+    public static AudioInputStream inputStreamBootSound, inputStreamButtonSound, inputStreamCoinSound, inputStreamGameOverSound;
 
     public static void loadAllClips() {
         pathButtonSound2 = pathBootSoundEmpty;
         try {
             inputStreamBootSound = AudioSystem.getAudioInputStream(SoundManager.class.getResourceAsStream(pathBootSoundEmpty));
             inputStreamButtonSound = AudioSystem.getAudioInputStream(SoundManager.class.getResourceAsStream(pathButtonSound2));
-        } catch (UnsupportedAudioFileException | IOException e) {
+            inputStreamCoinSound = AudioSystem.getAudioInputStream(SoundManager.class.getResourceAsStream(pathCoinSound));
+            inputStreamGameOverSound = AudioSystem.getAudioInputStream(SoundManager.class.getResourceAsStream(pathGameOverSound));
+        } catch (UnsupportedAudioFileException | IOException | NullPointerException e) {
             Settings.logData("Error loading sounds", e);
         }
     }

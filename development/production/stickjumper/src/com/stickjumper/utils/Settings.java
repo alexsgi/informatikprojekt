@@ -37,6 +37,10 @@ public class Settings {
     // speed control (the higher the number, the slower the movement)
     public static final int backgroundSpeed = 15;
     public static final int foregroundSpeed = 4;
+    // the higher this number is, the larger is the space above the obstacle, that will cause a game over when passed
+    public static final int gameOverSensitivity = 80;
+    // if this variable will be set true, when the random generator works propperly
+    public static final boolean steadyObstaclesCauseGameOver = false;
     // jump variable
     public static final int JUMP_HEIGHT = 22;
     public static final int JUMP_PERIOD = 13;
