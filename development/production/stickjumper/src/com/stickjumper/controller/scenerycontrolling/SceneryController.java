@@ -3,7 +3,6 @@ package com.stickjumper.controller.scenerycontrolling;
 import com.stickjumper.controller.Controller;
 import com.stickjumper.controller.PanelFrameManager;
 import com.stickjumper.data.GameElement;
-import com.stickjumper.data.gameelements.Coin;
 import com.stickjumper.data.gameelements.GameCharacter;
 import com.stickjumper.frontend.game.GamePanelView;
 import com.stickjumper.frontend.rendering.GameElementRender;
@@ -20,6 +19,9 @@ public class SceneryController {
     public static boolean gameOver = false;
     // this position is relative to the frame
     public static int yPosGameCharacter;
+    // this variable will turn true for a millisecond, when a coin is hit in order to increment the highscore
+    public static boolean coinHit = false;
+    public static int currentCoinValue = 0;
     private static int jumpVar;
     // init timer:
     Timer foregroundTimer, jumpTimer;
@@ -31,10 +33,6 @@ public class SceneryController {
     private boolean gameCharacterAlreadyAdded;
     private int timerSpeed = Settings.foregroundSpeed;
     private int generalSpeed = 1;
-
-    // this variable will turn true for a millisecond, when a coin is hit in order to increment the highscore
-    public static boolean coinHit = false;
-    public static int currentCoinValue = 0;
 
     public SceneryController(GamePanelView gamePanelView, PanelFrameManager panelFrameManager, Controller controller) {
         this.gamePanelView = gamePanelView;
@@ -78,15 +76,22 @@ public class SceneryController {
                 // IT'S WORKING - DON'T TOUCH IT
                 for (int i = 0; i < gameElementRenders.size(); i++) {
                     GameElementRender current = gameElementRenders.get(i);
-                    if (!current.getGameElement().isVisible()){
+                    if (!current.getGameElement().isVisible()) {
                         removeGameElementRender(i);
                     }
                     current.decrementX(current.getSpeed() * generalSpeed);
                     if (current.getLocation().getX() + current.getWidth() <= 0) removeGameElementRender(i);
                 }
                 if (gameCharacterAlreadyAdded) yPosGameCharacter = gameCharacterElement.getY();
-                if (gameOver){ freeze(); SoundManager.playSound(SoundManager.inputStreamGameOverSound);}
-                if (coinHit){coinHit = false; controller.updateHighScoreLabel(currentCoinValue);}
+                if (gameOver) {
+                    freeze();
+                    SoundManager.playSound(SoundManager.inputStreamGameOverSound);
+                }
+                if (coinHit) {
+                    coinHit = false;
+                    controller.updateHighScoreLabel(currentCoinValue);
+                }
+
             }
         }, 0, timerSpeed);
     }

@@ -4,7 +4,6 @@ import com.stickjumper.controller.scenerycontrolling.SceneryController;
 import com.stickjumper.data.GameElement;
 import com.stickjumper.utils.Dimens;
 import com.stickjumper.utils.ImageManager;
-import com.stickjumper.utils.Settings;
 import com.stickjumper.utils.SoundManager;
 
 import java.awt.*;
@@ -19,7 +18,6 @@ public class Coin extends GameElement {
     public Coin(Point p, int coinValue) {
         super(p, dimens, true, ImageManager.COIN_SKIN, speed);
         this.coinValue = coinValue;
-
     }
 
     public Coin(Point p) {
@@ -36,10 +34,10 @@ public class Coin extends GameElement {
         if (!hitOnce) {
             System.out.println("Coin hit");
             hitOnce = true;
-            SceneryController.coinHit=true;
-            SceneryController.currentCoinValue=coinValue;
+            SceneryController.coinHit = true;
+            SceneryController.currentCoinValue = coinValue;
             SoundManager.playSound(SoundManager.inputStreamCoinSound);
-            this.setVisible(false);
+            setVisible(false);
         }
     }
 

@@ -1,7 +1,6 @@
 package com.stickjumper.frontend;
 
 import com.stickjumper.controller.Controller;
-import com.stickjumper.controller.scenerycontrolling.SceneryController;
 import com.stickjumper.controller.scenerycontrolling.SceneryRandomGenerator;
 import com.stickjumper.data.list.List;
 import com.stickjumper.frontend.game.GamePanelView;

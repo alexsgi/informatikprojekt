@@ -12,15 +12,14 @@ import java.util.TimerTask;
 
 public class SceneryRandomGenerator {
 
-    private static int coinHeight = 0;
+    private static int coinHeight;
     Timer timer;
     private SceneryController sceneryController;
     private int h;
-    // array lists for all objects
     private int w;
 
     public SceneryRandomGenerator() {
-        // TODO: creating all the objects "enemy, steadyObstacle, Coin" in here and passing them as input parameter in the method "initCertainObject"
+        // TODO: creating all the objects "enemy, steadyObstacle, coin" in here and passing them as input parameter in the method "initCertainObject"
         // therefore, you have to adapt the method in SceneryController for passing an object of the class GameElement as an input parameter
     }
 
@@ -32,6 +31,7 @@ public class SceneryRandomGenerator {
     }
 
     public void randomGenerate() {
+        coinHeight = 0;
         sceneryController.initGameCharacter(1);
         timer = new Timer();
         timer.scheduleAtFixedRate(new TimerTask() {
@@ -53,7 +53,7 @@ public class SceneryRandomGenerator {
     public void recreate() {
         randomGenerate();
         // dont know if this is really needed
-        // overwrites all the objects in the array lists, so that the game is different form the last one
+        // overwrites all the objects in the array lists, so that the game is different from the last one
     }
 
     private void createCoin(int height) {

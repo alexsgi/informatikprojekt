@@ -68,9 +68,9 @@ public abstract class GameElement {
     public void decrementX(int n) {
         // DON'T TOUCH IT - WE DON'T KNOW WHY IT WORKS
         boolean gameOverCondition1 = location.getX() <= Settings.xPositionGameCharacter + Settings.xDimensGameCharacter;
-        boolean gameOverCondition2 = location.getX() >= Settings.xPositionGameCharacter + Settings.xDimensGameCharacter -Settings.gameOverSensitivity ;
+        boolean gameOverCondition2 = location.getX() >= Settings.xPositionGameCharacter + Settings.xDimensGameCharacter - Settings.gameOverSensitivity;
 
-        if (gameOverCondition1 && gameOverCondition2){
+        if (gameOverCondition1 && gameOverCondition2) {
             int difPos = (int) (SceneryController.yPosGameCharacter - location.getY());
             boolean firstCondition = difPos < getDimens().getHeight();
             boolean secondCondition = difPos < -GameCharacter.dimens.getHeight();

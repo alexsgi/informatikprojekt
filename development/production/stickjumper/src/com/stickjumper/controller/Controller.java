@@ -178,7 +178,7 @@ public class Controller {
         return sceneryRandomGenerator;
     }
 
-    public void updateHighScoreLabel(int additionalHighScore){
+    public void updateHighScoreLabel(int additionalHighScore) {
         gamePanelView.incrementHighScore(additionalHighScore);
         // currentScore = currentScore + additionalHighScore;
     }

@@ -56,8 +56,8 @@ public class GamePanelView extends JPanel implements ActionListener {
         lblHighScore = new JLabel("Highscore: " + highScore);
         lblHighScore.setHorizontalAlignment(SwingConstants.CENTER);
         lblHighScore.setVerticalAlignment(SwingConstants.CENTER);
-        lblHighScore.setSize(getWidth(), getHeight()/20);
-        lblHighScore.setLocation(0,5);
+        lblHighScore.setSize(getWidth(), getHeight() / 20);
+        lblHighScore.setLocation(0, 5);
         lblHighScore.setFont(Settings.FONT_LABEL);
         lblHighScore.setOpaque(false);
         lblHighScore.setVisible(true);
@@ -65,9 +65,9 @@ public class GamePanelView extends JPanel implements ActionListener {
         add(lblHighScore);
     }
 
-    public void incrementHighScore(int additionalHighScore){
-        if (additionalHighScore>=0) highScore = highScore + additionalHighScore;
-        lblHighScore.setText("Highscore:" +highScore);
+    public void incrementHighScore(int additionalHighScore) {
+        if (additionalHighScore >= 0) highScore += additionalHighScore;
+        lblHighScore.setText("Highscore: " + highScore);
     }
 
     @Override
