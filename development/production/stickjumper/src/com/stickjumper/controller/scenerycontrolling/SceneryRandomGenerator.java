@@ -7,6 +7,7 @@ import com.stickjumper.frontend.game.GamePanelView;
 import com.stickjumper.utils.Settings;
 
 import java.awt.*;
+import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -17,6 +18,8 @@ public class SceneryRandomGenerator {
     private SceneryController sceneryController;
     private int h;
     private int w;
+    private final int startHeight = 100;
+    private Random random = new Random();
 
     public SceneryRandomGenerator() {
         // TODO: creating all the objects "enemy, steadyObstacle, coin" in here and passing them as input parameter in the method "initCertainObject"
@@ -31,7 +34,7 @@ public class SceneryRandomGenerator {
     }
 
     public void randomGenerate() {
-        coinHeight = 0;
+        coinHeight = startHeight;
         sceneryController.initGameCharacter(1);
         timer = new Timer();
         timer.scheduleAtFixedRate(new TimerTask() {
@@ -43,7 +46,7 @@ public class SceneryRandomGenerator {
                 if (coinHeight + Coin.getStandardDimens().getHeight() + Settings.seaLevel * 2 < Settings.SCREEN_HEIGHT) {
                     coinHeight += 50;
                 } else {
-                    coinHeight = 0;
+                    coinHeight = startHeight;
                 }
             }
         }, 0, 1000);
@@ -57,7 +60,10 @@ public class SceneryRandomGenerator {
     }
 
     private void createCoin(int height) {
-        sceneryController.initCertainGameObject(new Coin(new Point(w, (h - Coin.getStandardDimens().getHeight() - height))));
+        int min = 100, max = Settings.SCREEN_HEIGHT - Settings.seaLevel - Coin.getStandardDimens().getHeight();
+        int r = random.nextInt((max - min) + 1) + min;
+        // sceneryController.initCertainGameObject(new Coin(new Point(w, (h - Coin.getStandardDimens().getHeight() - height))));
+        sceneryController.initCertainGameObject(new Coin(new Point(w, r)));
     }
 
     private void createEnemy(int speed, int skinType) {

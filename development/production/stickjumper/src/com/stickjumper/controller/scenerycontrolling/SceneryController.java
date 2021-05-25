@@ -9,6 +9,7 @@ import com.stickjumper.frontend.rendering.GameElementRender;
 import com.stickjumper.utils.Settings;
 import com.stickjumper.utils.SoundManager;
 
+import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.Timer;
@@ -110,7 +111,10 @@ public class SceneryController {
 
     public void stopGame() {
         freeze();
-        gameElementRenders.forEach((e) -> gamePanelView.remove(e));
+        // gameElementRenders.forEach((e) -> gamePanelView.remove(e));
+        for (Component comp : gamePanelView.getComponents()) {
+            if (comp instanceof GameElementRender) gamePanelView.remove(comp);
+        }
         gameElementRenders.clear();
         gamePanelView.remove(gameCharacterElement);
         gameCharacterElement = null;
