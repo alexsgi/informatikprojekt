@@ -203,6 +203,7 @@ Jonas:
 
 Alex:
 1. MV-Panel erstellt
+2. Passwort-Hashing implementiert und aktiviert
 
 ### **21.05.2021**
 Jessica, Alex, Jonas:
@@ -212,7 +213,7 @@ Jonas:
 1. Überarbeitung der playSound - Methode mit lag - Optimierung
 
 Alex:
-1. GamElement-UI angepasst
+1. GamElementRender angepasst
 
 ### **22.05.2021**
 
@@ -223,7 +224,7 @@ Alex:
 Jonas: 
 1. Implementierung der automatisierten Bewegung der Vordergrundelemente mit anpassbarer Geschwindigkeit
 2. Anpassung der Game - Elemente, sodass die Konstruktoren für die Bewegung passen
-3. Anpassung der Varbiable SkinType in allen GameElement - Klassen, sodass man diesen im Nachhinein verändern kann
+3. Anpassung der Variable SkinType in allen GameElement - Klassen, sodass man diesen im Nachhinein verändern kann
 
 ### **23.05.2021**
 
@@ -239,11 +240,21 @@ Alex:
 Alex:
 1. Jump-Funktion und Game-Over screen implementiert mit Jonas
 2. Automatische Spielzugüberprüfung mit Jonas
-3. Adaption der Jump-Bewegung, sodass diese "natürlich" wirkt, aber lange genug dauert, sodass hindernisse übersprungen werden können mit Jonas
+3. Adaption der Jump-Bewegung, sodass diese "natürlich" wirkt, aber lange genug dauert, sodass Hindernisse übersprungen werden können mit Jonas
 
 Jonas:
-1. Jump-Funktion und Game-Over Sxreen implementiert mit Alex
-2. Adaption der Jump-Bewegung, sodass diese "natürlich" wirkt, aber lange genug dauert, sodass hindernisse übersprungen werden können mit Alex
+1. Jump-Funktion und Game-Over Screen implementiert mit Alex
+2. Adaption der Jump-Bewegung, sodass diese "natürlich" wirkt, aber lange genug dauert, sodass Hindernisse übersprungen werden können mit Alex
 3. Implementierung der Funktion, dass sobald die Bereiche des GameCharakters und des Hindernisses übereinstimmen das Spiel beendet wird mit Alex
-4. Implementierung einiges Sound Effekte und einer Highscore Erhöhung bei Münzberührung (mit einem neuen provisorischen Label)
+4. Implementierung einiger Sound Effekte und einer Highscore Erhöhung bei Münzberührung (mit einem neuen provisorischen Label)
 5. Implementierung einer Funktion, sodass die Münzen verschwinden, wenn man sie berührt
+
+### **25.05.2021**
+
+Alex:
+1. Fix eines Fehlers bei Jonas' Implementierung der Generierung der Coins
+2. Höhe der Coins wird zufällig erzeugt
+3. Fix eines Fehlers beim Beenden des Spiels (MultiThreading)
+4. Umbenennen einiger Attribute und Variablen
+5. Code teilweise vereinfacht; Redundantes entfernt
+6. CountDownTimer hinzugefügt
