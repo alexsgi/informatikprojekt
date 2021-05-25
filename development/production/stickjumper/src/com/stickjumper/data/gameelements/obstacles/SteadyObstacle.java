@@ -19,7 +19,6 @@ public class SteadyObstacle extends Obstacle {
         return dimens;
     }
 
-
     public void hit() {
         if (Settings.steadyObstaclesCauseGameOver) super.hit();
     }

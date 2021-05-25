@@ -69,6 +69,7 @@ public class SceneryController {
     }
 
     public void startGame() {
+        controller.resetGameScore();
         unfreeze();
         foregroundTimer = new Timer();
         foregroundTimer.scheduleAtFixedRate(new TimerTask() {
@@ -84,13 +85,14 @@ public class SceneryController {
                     if (current.getLocation().getX() + current.getWidth() <= 0) removeGameElementRender(i);
                 }
                 if (gameCharacterAlreadyAdded) yPosGameCharacter = gameCharacterElement.getY();
-                if (gameOver) {
-                    freeze();
-                    SoundManager.playSound(SoundManager.inputStreamGameOverSound);
-                }
                 if (coinHit) {
                     coinHit = false;
                     controller.updateHighScoreLabel(currentCoinValue);
+                    // controller.setScore(controller.getScore() + currentCoinValue);
+                }
+                if (gameOver) {
+                    freeze();
+                    SoundManager.playSound(SoundManager.inputStreamGameOverSound);
                 }
 
             }
@@ -100,7 +102,7 @@ public class SceneryController {
     public void freeze() {
         if (foregroundTimer != null) foregroundTimer.cancel();
         if (jumpTimer != null) jumpTimer.cancel();
-        controller.stopMovingBackground();
+        controller.getPanelFrameManager().stopMovingBackground();
         gamePanelView.lblGameOver.setVisible(true);
     }
 
@@ -119,6 +121,7 @@ public class SceneryController {
         gamePanelView.remove(gameCharacterElement);
         gameCharacterElement = null;
         gameCharacterAlreadyAdded = false;
+        controller.updateHighScore();
     }
 
     public GamePanelView getGamePanelView() {

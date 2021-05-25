@@ -30,9 +30,9 @@ public class Controller {
     private SceneryController sceneryController;
     private SceneryRandomGenerator sceneryRandomGenerator;
     // Player management
-    private Player currentPlayer;
+    private Player signedInPlayer;
     private List playerList;
-    private int currentScore = 0;
+    private int localHighScore = 0;
     // All panels
     private StartPanelView startPanelView;
     private GamePanelView gamePanelView;
@@ -45,10 +45,10 @@ public class Controller {
         panelFrameManager = new PanelFrameManager(this, mainFrameView);
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             stopTimer();
-            if (getCurrentPlayer() != null) {
+            if (getSignedInPlayer() != null) {
                 updateHighScore();
                 try {
-                    DBConnection.updateHighScore(getCurrentPlayer());
+                    DBConnection.updateHighScore(getSignedInPlayer());
                 } catch (SQLException e) {
                     Settings.logData("SQLException (updateHighscore in Controller)", e);
                     JOptionPane.showMessageDialog(null, "Error updating highscore");
@@ -85,7 +85,6 @@ public class Controller {
         panelFrameManager.setRegisterPanelView(registerPanelView);
     }
 
-
     public PanelFrameManager getPanelFrameManager() {
         return panelFrameManager;
     }
@@ -115,7 +114,7 @@ public class Controller {
 
     public void startGame() {
         panelFrameManager.switchToGamePanel();
-        currentScore = -1;
+        localHighScore = -1;
         sceneryController.startGame();
         sceneryRandomGenerator.randomGenerate();
         gameStarted = true;
@@ -123,10 +122,10 @@ public class Controller {
     }
 
     public boolean playerLogin(String userName, String password) throws SQLException {
-        currentPlayer = getPlayerFromList(userName, password);
-        if (currentPlayer != null) startPanelView.showHighScore(currentPlayer.getHighScore());
-        currentScore = -1;
-        return currentPlayer != null;
+        signedInPlayer = getPlayerFromList(userName, password);
+        if (signedInPlayer != null) startPanelView.showHighScore(signedInPlayer.getHighScore());
+        localHighScore = -1;
+        return signedInPlayer != null;
     }
 
     private Player getPlayerFromList(String userName, String password) {
@@ -137,33 +136,22 @@ public class Controller {
         this.playerList = list;
     }
 
-    public void startMovingBackground() {
-        panelFrameManager.startMovingBackground();
-    }
-
-    public void stopMovingBackground() {
-        panelFrameManager.stopMovingBackground();
-    }
-
-    public Player getCurrentPlayer() {
-        return currentPlayer;
+    public Player getSignedInPlayer() {
+        return signedInPlayer;
     }
 
     public boolean isScoreExisting() {
-        return (currentScore != -1);
+        return (localHighScore != -1);
     }
 
-    public int getScoreFromCurrentPlayer() {
-        return (isScoreExisting()) ? currentScore : -1;
-    }
-
-    public void setScore(int newScore) {
-        currentScore = newScore;
+    public int getScoreFromSignedInPlayer() {
+        return (isScoreExisting()) ? localHighScore : -1;
     }
 
     public void updateHighScore() {
-        // if (currentPlayer.getHighScore() < currentScore) currentPlayer.setHighScore(currentScore);
-        // startPanelView.updateHighScoreLabel(currentScore);
+        if (signedInPlayer != null && signedInPlayer.getHighScore() < localHighScore)
+            signedInPlayer.setHighScore(localHighScore);
+        startPanelView.updateHighScoreLabel(localHighScore);
     }
 
     public SceneryController getSceneryController() {
@@ -178,9 +166,11 @@ public class Controller {
         return sceneryRandomGenerator;
     }
 
-    public void updateHighScoreLabel(int additionalHighScore) {
-        gamePanelView.incrementHighScore(additionalHighScore);
-        // currentScore = currentScore + additionalHighScore;
+    public void updateHighScoreLabel(int newScore) {
+        gamePanelView.updateHighScore(newScore);
     }
 
+    public void resetGameScore() {
+        gamePanelView.resetHighScore();
+    }
 }

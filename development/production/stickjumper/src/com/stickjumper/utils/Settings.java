@@ -21,6 +21,7 @@ public class Settings {
     public static final Font FONT_HEADING_BIG = new Font("Arial Black", Font.PLAIN, 40);
     public static final Font FONT_HEADING_GAME_OVER = new Font("Arial Black", Font.PLAIN, 100);
     public static final Font FONT_HEADING_SMALL = new Font("Arial Black", Font.PLAIN, 20);
+    public static final Font FONT_HEADING_GAME_HIGHSCORE = new Font("Open Sans", Font.BOLD, 30);
     public static final Font FONT_BUTTON = new Font("Calibri", Font.BOLD, 17);
     public static final Font FONT_BUTTON_PLAIN = new Font("Calibri", Font.PLAIN, 17);
     public static final Font FONT_LABEL = new Font("Calibri", Font.PLAIN, 20);
@@ -39,13 +40,13 @@ public class Settings {
     public static final int foregroundSpeed = 4;
     // the higher this number is, the larger is the space above the obstacle, that will cause a game over when passed
     public static final int gameOverSensitivity = 100;
-    // if this variable will be set true, when the random generator works propperly
-    public static final boolean steadyObstaclesCauseGameOver = false;
+    // if this variable will be set true, when the random generator works properly
+    public static final boolean steadyObstaclesCauseGameOver = true;
     // jump variable
     public static final int JUMP_HEIGHT = 22;
     public static final int JUMP_PERIOD = 13;
     // GENERAL
-    private static final boolean debugMode = true;
+    private static final boolean debugMode = false;
 
     public static void logData(String data) {
         if (isDebugMode()) System.out.println(data);

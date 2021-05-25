@@ -15,8 +15,7 @@ public class GamePanelView extends JPanel implements ActionListener {
 
     public JLabel lblGameOver, lblHighScore;
     public int highScore = 0;
-    private Controller controller;
-    private AdvancedButton backButton;
+    private final Controller controller;
 
     public GamePanelView(Controller controller) {
         super(true);
@@ -27,7 +26,7 @@ public class GamePanelView extends JPanel implements ActionListener {
 
         this.controller = controller;
 
-        backButton = new AdvancedButton(ImageManager.GAME_ICON_HOME_ACCENT, ImageManager.GAME_ICON_HOME);
+        AdvancedButton backButton = new AdvancedButton(ImageManager.GAME_ICON_HOME_ACCENT, ImageManager.GAME_ICON_HOME);
         backButton.setSize(36, 36);
         backButton.setLocation(5, 5);
         backButton.setID("backButton");
@@ -53,33 +52,36 @@ public class GamePanelView extends JPanel implements ActionListener {
         backButton.addActionListener(this);
         lblGameOver.add(backButton);
 
-        lblHighScore = new JLabel("Highscore: " + highScore);
+        lblHighScore = new JLabel(String.valueOf(highScore));
         lblHighScore.setHorizontalAlignment(SwingConstants.CENTER);
         lblHighScore.setVerticalAlignment(SwingConstants.CENTER);
-        lblHighScore.setSize(getWidth(), getHeight() / 20);
-        lblHighScore.setLocation(0, 5);
-        lblHighScore.setFont(Settings.FONT_LABEL);
+        lblHighScore.setSize(getWidth(), 50);
+        lblHighScore.setLocation(0, 3);
+        lblHighScore.setFont(Settings.FONT_HEADING_GAME_HIGHSCORE);
         lblHighScore.setOpaque(false);
-        lblHighScore.setVisible(true);
-        lblHighScore.setForeground(Color.BLACK);
+        lblHighScore.setForeground(Color.WHITE);
         add(lblHighScore);
     }
 
-    public void incrementHighScore(int additionalHighScore) {
-        if (additionalHighScore >= 0) highScore += additionalHighScore;
-        lblHighScore.setText("Highscore: " + highScore);
+    public void updateHighScore(int additionScore) {
+        highScore += additionScore;
+        lblHighScore.setText(String.valueOf(highScore));
+    }
+
+    public void resetHighScore() {
+        highScore = 0;
+        lblHighScore.setText(String.valueOf(highScore));
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        switch (e.getActionCommand()) {
-            case "backButton" -> controller.getPanelFrameManager().switchToStartPanel();
+        if ("backButton".equals(e.getActionCommand())) {
+            controller.getPanelFrameManager().switchToStartPanel();
         }
     }
 
     public void addObject(GameElementRender render) {
         add(render);
     }
-
 
 }

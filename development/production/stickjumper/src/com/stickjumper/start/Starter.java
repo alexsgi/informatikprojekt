@@ -38,8 +38,11 @@ public class Starter {
         boolean connectionAvailable = serverResponseCode == ConnectionTester.CONNECTION_OK;
         if (!connectionAvailable) {
             // TODO: check before login, register and update highscore (db)
-            JOptionPane.showMessageDialog(null, "Can not connect to the server -\ninternet connection available?");
-            System.exit(1);
+            JOptionPane.showMessageDialog(null, """
+                    Can not connect to the server -
+                    internet connection available?
+                    You can still play without an connection""");
+            System.exit(-2);
         }
 
         start = System.currentTimeMillis();
@@ -61,7 +64,6 @@ public class Starter {
         // Create main frame
         MainFrameView mainFrameView = new MainFrameView(sceneryRandomGenerator);
         mainFrameView.addPlayerListToController(DBConnection.getAllPlayers());
-
 
         // Close loading screen
         loadingFrameView.dispose();

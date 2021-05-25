@@ -49,7 +49,7 @@ public class StartPanelView extends JPanel implements ActionListener {
         lblHighScore.setHorizontalAlignment(SwingConstants.CENTER);
         lblHighScore.setBounds(0, 3, getWidth(), 50);
         lblHighScore.setFont(Settings.FONT_LABEL);
-        lblHighScore.setText("Highscore: " + controller.getScoreFromCurrentPlayer());
+        lblHighScore.setText("Highscore: " + controller.getScoreFromSignedInPlayer());
         add(lblHighScore);
 
         settingsButton = new AdvancedButton(Color.GRAY, Color.WHITE);

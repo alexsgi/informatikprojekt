@@ -55,14 +55,14 @@ public class PanelFrameManager {
 
     public void switchToStartPanel() {
         sceneryController.stopGame();
+        controller.getSceneryRandomGenerator().stop();
         mainFrameView.getContentPane().removeAll();
         mainFrameView.getContentPane().add(startPanelView);
-        stopMovingBackground();
-        controller.getSceneryRandomGenerator().stop();
-        if (controller.getCurrentPlayer() != null)
-            startPanelView.showHighScore(controller.getCurrentPlayer().getHighScore());
+        // stopMovingBackground();
+        if (controller.getSignedInPlayer() != null)
+            startPanelView.showHighScore(controller.getSignedInPlayer().getHighScore());
         controller.gameStarted = false;
-        // controller.updateHighScore();
+        controller.updateHighScore();
     }
 
     public void startMovingBackground() {
