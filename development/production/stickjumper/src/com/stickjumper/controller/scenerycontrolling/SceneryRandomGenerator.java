@@ -42,9 +42,9 @@ public class SceneryRandomGenerator {
                 // createEnemy(2, 1);
                 createSteadyObstacle(1);
             }
-        }, 0, 1000);
+        }, 0, 20000);
         */
-        createPattern(1);
+        // createPattern(1);
     }
 
     public void recreate() {
@@ -53,11 +53,15 @@ public class SceneryRandomGenerator {
         // overwrites all the objects in the array lists, so that the game is different from the last one
     }
 
-    private void createCoin(int xDelay) {
+    private void createCoinRandomHeight(int xDelay) {
         int min = 100, max = Settings.SCREEN_HEIGHT - Settings.seaLevel - Coin.getStandardDimens().getHeight();
         int r = random.nextInt((max - min) + 1) + min;
         // sceneryController.initCertainGameObject(new Coin(new Point(w, (h - Coin.getStandardDimens().getHeight() - height))));
         sceneryController.initCertainGameObject(new Coin(new Point(w + xDelay, r)));
+    }
+
+    private void createCoin(int height, int xDelay) {
+        sceneryController.initCertainGameObject(new Coin(new Point(w + xDelay, (h - Coin.getStandardDimens().getHeight() - height))));
     }
 
     private void createEnemy(int speed, int skinType, int xDelay) {
@@ -69,57 +73,73 @@ public class SceneryRandomGenerator {
     }
 
     public void stop() {
-        timer.cancel();
+        if (timer != null) timer.cancel();
     }
 
     private void createPattern(int pattern) {
         switch (pattern) {
             case 1:
-                createCoin(0);
+                createCoin(10, 0);
+                createEnemy(3, 1, 200);
+                createSteadyObstacle(1, 300);
+                createSteadyObstacle(1, 350);
+                createEnemy(2, 1, 200);
                 break;
 
             case 2:
-                createCoin(0);
+                createCoin(10, 0);
                 break;
 
             case 3:
-                createCoin(0);
+                createCoin(10, 0);
                 break;
 
             case 4:
-                createCoin(0);
+                createCoin(10, 0);
                 break;
 
             case 5:
-                createCoin(0);
+                createCoin(10, 0);
                 break;
 
             case 6:
-                createCoin(0);
+                createCoin(10, 0);
                 break;
 
             case 7:
-                createCoin(0);
+                createCoin(10, 0);
                 break;
 
             case 8:
-                createCoin(0);
+                createCoin(10, 0);
                 break;
 
             case 9:
-                createCoin(0);
+                createCoin(10, 0);
                 break;
 
             case 10:
-                createCoin(0);
+                createCoin(10, 0);
                 break;
 
             case 11:
-                createCoin(0);
+                createCoin(10, 0);
                 break;
 
             case 12:
-                createCoin(0);
+                createCoin(10, 0);
+                break;
+
+            case 13:
+                createCoin(10, 0);
+                break;
+
+            case 14:
+                createCoin(10, 0);
+                break;
+
+            case 15:
+                createCoin(10, 0);
                 break;
 
         }

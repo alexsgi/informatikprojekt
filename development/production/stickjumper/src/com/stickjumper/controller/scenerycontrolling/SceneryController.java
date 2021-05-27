@@ -23,7 +23,9 @@ public class SceneryController {
     // this variable will turn true for a millisecond, when a coin is hit in order to increment the high score
     public static boolean coinHit = false;
     public static int currentCoinValue = 0;
-    private static int jumpVar;
+    private static int jumpVar = Settings.JUMP_HEIGHT;
+    public static int keysPressed = 0;
+    private static int newDelay = 50;
     // init timer:
     Timer foregroundTimer, jumpTimer;
     GameElementRender gameCharacterElement;
@@ -131,8 +133,18 @@ public class SceneryController {
     public void keyPressed(KeyEvent e) {
         switch (e.getKeyCode()) {
             case KeyEvent.VK_SPACE -> {
-                jump();
-                controller.getMainFrameView().keysEnabledInGame = false;
+                if (keysPressed == 0) {
+                    keysPressed++;
+                    jump();
+                } else {
+                    if (keysPressed < 5) {
+                        newDelay += 100;
+                    } else {
+
+                    }
+                }
+                // controller.getMainFrameView().keysEnabledInGame = false;
+
             }
         }
     }
@@ -142,7 +154,6 @@ public class SceneryController {
     }
 
     public void jumpUp() {
-        jumpVar = Settings.JUMP_HEIGHT;
         jumpTimer = new Timer();
         jumpTimer.scheduleAtFixedRate(new TimerTask() {
             @Override
@@ -172,11 +183,14 @@ public class SceneryController {
                         jumpVar++;
                     } else if (jumpVar == Settings.JUMP_HEIGHT) {
                         jumpTimer.cancel();
-                        controller.getMainFrameView().keysEnabledInGame = true;
+                        // controller.getMainFrameView().keysEnabledInGame = true;
+                        jumpVar = Settings.JUMP_HEIGHT;
+                        newDelay = 50;
+                        keysPressed = 0;
                     }
                 }
             }
-        }, 50, Settings.JUMP_PERIOD);
+        }, newDelay, Settings.JUMP_PERIOD);
     }
 
         /*

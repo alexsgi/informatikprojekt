@@ -57,18 +57,28 @@ public class MainFrameView extends JFrame implements KeyListener {
         if(controller != null && SceneryController.gameOver && e.getKeyCode() == KeyEvent.VK_SPACE){
             controller.getPanelFrameManager().switchToStartPanel();
         }
-
          */
+        
     }
 
     @Override
     public void keyPressed(KeyEvent e) {
-        if (controller != null && controller.gameStarted && keysEnabledInGame)
+        if (controller != null && controller.gameStarted /* && keysEnabledInGame */) {
             controller.getSceneryController().keyPressed(e);
+        }
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
-
+        /*
+        keyPressEnd = System.currentTimeMillis();
+        int differenceKeyPressed = (int) (keyPressEnd - keyPressStart);
+        int factor = differenceKeyPressed / 100;
+        if (factor < 10) {
+            SceneryController.keysPressed = factor;
+        } else {
+            SceneryController.keysPressed = 10;
+        }
+         */
     }
 }

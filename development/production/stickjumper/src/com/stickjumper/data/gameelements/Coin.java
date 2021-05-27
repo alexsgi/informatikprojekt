@@ -11,7 +11,7 @@ import java.awt.*;
 
 public class Coin extends GameElement {
 
-    private static final Dimens dimens = new Dimens(64, 64);
+    private static final Dimens dimens = new Dimens(45, 45);
     private static final int speed = 1;
     private final int coinValue;
     private boolean hitOnce = false;

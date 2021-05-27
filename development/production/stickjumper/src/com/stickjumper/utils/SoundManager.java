@@ -38,7 +38,7 @@ public class SoundManager {
             try {
                 Clip clip = AudioSystem.getClip();
                 clip.open(inputStream);
-                clip.start();
+                // clip.start();
                 clip.setMicrosecondPosition(0);
                 loadAllClips();
             } catch (Exception e) {
