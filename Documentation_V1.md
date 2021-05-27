@@ -1,4 +1,4 @@
-# informatikprojekt
+# StickJumper
 
 ## Dokumentation
 
@@ -258,3 +258,8 @@ Alex:
 4. Umbenennen einiger Attribute und Variablen
 5. Code teilweise vereinfacht; Redundantes entfernt
 6. CountDownTimer hinzugefügt
+
+### **26.05.2021**
+
+Jessica, Alex, Jonas:
+1. Konferenz zur Besprechung des Spielalgortihmus (v.a. zufälliges Erzeugen aller Gegner usw.)
