@@ -135,11 +135,20 @@ public class SceneryController {
             case KeyEvent.VK_SPACE -> {
                 if (keysPressed == 0) {
                     keysPressed++;
+                    System.out.println(keysPressed);
                     jump();
                 } else {
-                    if (keysPressed < 5) {
-                        newDelay += 100;
+                    if (keysPressed == 1) {
+                        keysPressed ++;
+                        System.out.println(keysPressed);
+
+
                     } else {
+                        if(keysPressed == 2){
+                            keysPressed++;
+                            System.err.println(keysPressed);
+                            newDelay += 2000;
+                        }
 
                     }
                 }
@@ -164,6 +173,13 @@ public class SceneryController {
                         jumpVar--;
                     } else if (jumpVar == 0) {
                         jumpTimer.cancel();
+
+                        System.out.println(newDelay);
+                        try {
+                            Thread.sleep(newDelay);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
                         jumpBackDown();
                     }
                 }
@@ -185,6 +201,7 @@ public class SceneryController {
                         jumpTimer.cancel();
                         // controller.getMainFrameView().keysEnabledInGame = true;
                         jumpVar = Settings.JUMP_HEIGHT;
+                        System.out.println(newDelay);
                         newDelay = 50;
                         keysPressed = 0;
                     }

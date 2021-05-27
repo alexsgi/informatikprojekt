@@ -58,7 +58,7 @@ public class MainFrameView extends JFrame implements KeyListener {
             controller.getPanelFrameManager().switchToStartPanel();
         }
          */
-        
+
     }
 
     @Override
