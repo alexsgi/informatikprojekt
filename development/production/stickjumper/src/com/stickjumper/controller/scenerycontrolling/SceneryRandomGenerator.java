@@ -9,17 +9,15 @@ import com.stickjumper.utils.Settings;
 import java.awt.*;
 import java.util.Random;
 import java.util.Timer;
-import java.util.TimerTask;
 
 public class SceneryRandomGenerator {
 
-    private static int coinHeight;
     private final int startHeight = 100;
     Timer timer;
     private SceneryController sceneryController;
     private int h;
     private int w;
-    private Random random = new Random();
+    private final Random random = new Random();
 
     public SceneryRandomGenerator() {
         // TODO: creating all the objects "enemy, steadyObstacle, coin" in here and passing them as input parameter in the method "initCertainObject"
@@ -34,23 +32,19 @@ public class SceneryRandomGenerator {
     }
 
     public void randomGenerate() {
-        coinHeight = startHeight;
         sceneryController.initGameCharacter(1);
+        /*
         timer = new Timer();
         timer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
-                createCoin(coinHeight);
-                createEnemy(2, 1);
+                // createCoin(0);
+                // createEnemy(2, 1);
                 createSteadyObstacle(1);
-                if (coinHeight + Coin.getStandardDimens().getHeight() + Settings.seaLevel * 2 < Settings.SCREEN_HEIGHT) {
-                    coinHeight += 50;
-                } else {
-                    coinHeight = startHeight;
-                }
             }
         }, 0, 1000);
-        // the real random component
+        */
+        createPattern(1);
     }
 
     public void recreate() {
@@ -59,23 +53,76 @@ public class SceneryRandomGenerator {
         // overwrites all the objects in the array lists, so that the game is different from the last one
     }
 
-    private void createCoin(int height) {
+    private void createCoin(int xDelay) {
         int min = 100, max = Settings.SCREEN_HEIGHT - Settings.seaLevel - Coin.getStandardDimens().getHeight();
         int r = random.nextInt((max - min) + 1) + min;
         // sceneryController.initCertainGameObject(new Coin(new Point(w, (h - Coin.getStandardDimens().getHeight() - height))));
-        sceneryController.initCertainGameObject(new Coin(new Point(w, r)));
+        sceneryController.initCertainGameObject(new Coin(new Point(w + xDelay, r)));
     }
 
-    private void createEnemy(int speed, int skinType) {
-        sceneryController.initCertainGameObject(new Enemy(new Point(w, (h - Enemy.getStandardDimens().getHeight())), speed, skinType));
+    private void createEnemy(int speed, int skinType, int xDelay) {
+        sceneryController.initCertainGameObject(new Enemy(new Point(w + xDelay, (h - Enemy.getStandardDimens().getHeight())), speed, skinType));
     }
 
-    public void createSteadyObstacle(int skinType) {
-        sceneryController.initCertainGameObject(new SteadyObstacle(new Point(w, (h - SteadyObstacle.getStandardDimens().getHeight())), skinType));
+    public void createSteadyObstacle(int skinType, int xDelay) {
+        sceneryController.initCertainGameObject(new SteadyObstacle(new Point(w + xDelay, (h - SteadyObstacle.getStandardDimens().getHeight())), skinType));
     }
 
     public void stop() {
         timer.cancel();
+    }
+
+    private void createPattern(int pattern) {
+        switch (pattern) {
+            case 1:
+                createCoin(0);
+                break;
+
+            case 2:
+                createCoin(0);
+                break;
+
+            case 3:
+                createCoin(0);
+                break;
+
+            case 4:
+                createCoin(0);
+                break;
+
+            case 5:
+                createCoin(0);
+                break;
+
+            case 6:
+                createCoin(0);
+                break;
+
+            case 7:
+                createCoin(0);
+                break;
+
+            case 8:
+                createCoin(0);
+                break;
+
+            case 9:
+                createCoin(0);
+                break;
+
+            case 10:
+                createCoin(0);
+                break;
+
+            case 11:
+                createCoin(0);
+                break;
+
+            case 12:
+                createCoin(0);
+                break;
+
+        }
     }
 
 }

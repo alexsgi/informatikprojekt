@@ -20,7 +20,7 @@ public class SceneryController {
     public static boolean gameOver = false;
     // this position is relative to the frame
     public static int yPosGameCharacter;
-    // this variable will turn true for a millisecond, when a coin is hit in order to increment the highscore
+    // this variable will turn true for a millisecond, when a coin is hit in order to increment the high score
     public static boolean coinHit = false;
     public static int currentCoinValue = 0;
     private static int jumpVar;
@@ -130,15 +130,18 @@ public class SceneryController {
 
     public void keyPressed(KeyEvent e) {
         switch (e.getKeyCode()) {
-            case KeyEvent.VK_SPACE:
+            case KeyEvent.VK_SPACE -> {
                 jump();
                 controller.getMainFrameView().keysEnabledInGame = false;
-                break;
+            }
         }
     }
 
     private void jump() {
-        if (gameOver) return;
+        if (!gameOver) jumpUp();
+    }
+
+    public void jumpUp() {
         jumpVar = Settings.JUMP_HEIGHT;
         jumpTimer = new Timer();
         jumpTimer.scheduleAtFixedRate(new TimerTask() {
