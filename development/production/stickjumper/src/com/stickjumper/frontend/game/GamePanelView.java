@@ -75,9 +75,7 @@ public class GamePanelView extends JPanel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if ("backButton".equals(e.getActionCommand())) {
-            controller.getPanelFrameManager().switchToStartPanel();
-        }
+        if ("backButton".equals(e.getActionCommand())) controller.getPanelFrameManager().switchToStartPanel();
     }
 
     public void addObject(GameElementRender render) {
