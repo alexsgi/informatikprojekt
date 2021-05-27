@@ -13,9 +13,9 @@ import java.awt.event.ActionListener;
 
 public class GamePanelView extends JPanel implements ActionListener {
 
+    private final Controller controller;
     public JLabel lblGameOver, lblHighScore;
     public int highScore = 0;
-    private final Controller controller;
 
     public GamePanelView(Controller controller) {
         super(true);

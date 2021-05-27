@@ -14,11 +14,11 @@ import java.util.TimerTask;
 public class SceneryRandomGenerator {
 
     private static int coinHeight;
+    private final int startHeight = 100;
     Timer timer;
     private SceneryController sceneryController;
     private int h;
     private int w;
-    private final int startHeight = 100;
     private Random random = new Random();
 
     public SceneryRandomGenerator() {
