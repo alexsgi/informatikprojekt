@@ -263,3 +263,8 @@ Alex:
 
 Jessica, Alex, Jonas:
 1. Konferenz zur Besprechung des Spielalgortihmus (v.a. zufälliges Erzeugen aller Gegner usw.)
+
+### **28.05.2021**
+Alex:
+1. Wiederherstellen der funktionierenden Jump-Animation und -Logik
+2. Implementieren der Pattern 10 - 15 (SceneryRandomGenerator)
