@@ -43,7 +43,7 @@ public class Settings {
     // if this variable will be set true, when the random generator works properly
     public static final boolean steadyObstaclesCauseGameOver = true;
     // jump variable
-    public static final int JUMP_HEIGHT = 20;
+    public static final int JUMP_HEIGHT = 22;
     public static final int JUMP_PERIOD = 17;
     // GENERAL
     private static final boolean debugMode = false;

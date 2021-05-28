@@ -23,8 +23,8 @@ public class SceneryController {
     // this variable will turn true for a millisecond, when a coin is hit in order to increment the high score
     public static boolean coinHit = false;
     public static int currentCoinValue = 0;
-    private static int jumpVar = Settings.JUMP_HEIGHT;
     public static int keysPressed = 0;
+    private static int jumpVar = Settings.JUMP_HEIGHT;
     private static int newDelay = 50;
     // init timer:
     Timer foregroundTimer, jumpTimer;
@@ -53,9 +53,8 @@ public class SceneryController {
         yPosGameCharacter = gameCharacterElement.getY();
     }
 
-    public void initCertainGameObject(GameElement object) {
+    public void initGameElementUI(GameElement object) {
         GameElementRender elementRender = new GameElementRender(object);
-        gamePanelView.addObject(elementRender);
         addGameElementRender(elementRender);
     }
 
@@ -130,6 +129,17 @@ public class SceneryController {
         return gamePanelView;
     }
 
+    public void keyPressedSafe(KeyEvent e) {
+        switch (e.getKeyCode()) {
+            case KeyEvent.VK_SPACE -> {
+                if (controller.getMainFrameView().keysEnabledInGame && !gameOver) {
+                    jumpNormal();
+                    controller.getMainFrameView().keysEnabledInGame = false;
+                }
+            }
+        }
+    }
+
     public void keyPressed(KeyEvent e) {
         switch (e.getKeyCode()) {
             case KeyEvent.VK_SPACE -> {
@@ -139,21 +149,17 @@ public class SceneryController {
                     jump();
                 } else {
                     if (keysPressed == 1) {
-                        keysPressed ++;
+                        keysPressed++;
                         System.out.println(keysPressed);
-
-
                     } else {
-                        if(keysPressed == 2){
+                        if (keysPressed == 2) {
                             keysPressed++;
                             System.err.println(keysPressed);
                             newDelay += 2000;
                         }
-
                     }
                 }
                 // controller.getMainFrameView().keysEnabledInGame = false;
-
             }
         }
     }
@@ -208,6 +214,44 @@ public class SceneryController {
                 }
             }
         }, newDelay, Settings.JUMP_PERIOD);
+    }
+
+    public void jumpNormal() {
+        jumpVar = Settings.JUMP_HEIGHT;
+        jumpTimer = new Timer();
+        jumpTimer.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                if (gameCharacterElement != null) {
+                    gameCharacterElement.incrementY(jumpVar);
+                    if (jumpVar > 0) {
+                        jumpVar--;
+                    } else if (jumpVar == 0) {
+                        jumpTimer.cancel();
+                        jumpBackDownNormal();
+                    }
+                }
+            }
+        }, 0, Settings.JUMP_PERIOD);
+    }
+
+    public void jumpBackDownNormal() {
+        jumpVar = 0;
+        jumpTimer = new Timer();
+        jumpTimer.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                if (gameCharacterElement != null) {
+                    gameCharacterElement.decrementY(jumpVar);
+                    if (jumpVar < Settings.JUMP_HEIGHT) {
+                        jumpVar++;
+                    } else if (jumpVar == Settings.JUMP_HEIGHT) {
+                        jumpTimer.cancel();
+                        controller.getMainFrameView().keysEnabledInGame = true;
+                    }
+                }
+            }
+        }, 50, Settings.JUMP_PERIOD);
     }
 
         /*
