@@ -134,29 +134,24 @@ public class SceneryController {
         return gamePanelView;
     }
 
-    public void keyPressedSafe(KeyEvent e) {
-        switch (e.getKeyCode()) {
-            case KeyEvent.VK_SPACE -> {
-                if (controller.getMainFrameView().keysEnabledInGame && !gameOver) {
-                    jumpNormal();
-                    controller.getMainFrameView().keysEnabledInGame = false;
-                }
-            }
-        }
-    }
-
     public void keyPressed(KeyEvent e) {
         switch (e.getKeyCode()) {
             case KeyEvent.VK_SPACE -> {
-                if (!spacePressedOnce) {
-                    spacePressedOnce = true;
-                    jump();
-                    newDelay = 0;
+                if (Settings.DELAY_JUMP_WHEN_HOLDING_KEY) {
+                    if (!spacePressedOnce) {
+                        spacePressedOnce = true;
+                        jump();
+                        newDelay = 0;
+                    } else {
+                        newDelay = Settings.JUMP_DELAY_FOR_HOLDING_SPACE;
+                        spacePressedTwice = true;
+                    }
+                    // controller.getMainFrameView().keysEnabledInGame = false;
                 } else {
-                    newDelay = Settings.JUMP_DELAY_FOR_HOLDING_SPACE;
-                    spacePressedTwice = true;
+                    if (!spacePressedOnce) {
+                        spacePressedOnce = true;
+                        jumpNormal();}
                 }
-                // controller.getMainFrameView().keysEnabledInGame = false;
             }
         }
     }
@@ -199,11 +194,11 @@ public class SceneryController {
                     } else if (jumpVar == Settings.JUMP_TOLERANCE_FOR_DELAY) {
                         jumpTimer.cancel();
 
-                        if(newDelay==Settings.JUMP_DELAY_FOR_HOLDING_SPACE){
+                        if (newDelay == Settings.JUMP_DELAY_FOR_HOLDING_SPACE) {
                             System.out.println("jump delayed");
                             jumpBackDownFurtherDelay();
-                        }else {
-                           // System.out.println("jump NOT delayed");
+                        } else {
+                            // System.out.println("jump NOT delayed");
                             jumpBackDownFurtherNoDelay();
                         }
                     }
@@ -284,11 +279,25 @@ public class SceneryController {
                     } else if (jumpVar == Settings.JUMP_HEIGHT) {
                         jumpTimer.cancel();
                         controller.getMainFrameView().keysEnabledInGame = true;
+                        spacePressedOnce = false;
                     }
                 }
             }
         }, 50, Settings.JUMP_PERIOD);
     }
+
+    /*
+       public void keyPressedSafe(KeyEvent e) {
+        switch (e.getKeyCode()) {
+            case KeyEvent.VK_SPACE -> {
+                if (controller.getMainFrameView().keysEnabledInGame && !gameOver) {
+                    jumpNormal();
+                    controller.getMainFrameView().keysEnabledInGame = false;
+                }
+            }
+        }
+    }
+     */
 
         /*
         public void initCertainObject(String objectType, int height, int speed, int skinOrCoinValue){

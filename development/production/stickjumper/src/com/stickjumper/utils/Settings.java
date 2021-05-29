@@ -43,11 +43,16 @@ public class Settings {
     // if this variable will be set true, when the random generator works properly
     public static final boolean steadyObstaclesCauseGameOver = true;
     // jump variable
+    public static boolean DELAY_JUMP_WHEN_HOLDING_KEY = true; //not final, might be changed in the real settings in the real game //TODO
     public static final int JUMP_HEIGHT = 22;
     public static final int JUMP_PERIOD = 17;
     public static final int JUMP_DELAY_FOR_HOLDING_SPACE = 100;
     public static final int JUMP_PERIOD_FOR_HOLDING_SPACE = JUMP_PERIOD+6;
     public static final int JUMP_TOLERANCE_FOR_DELAY = 7;
+    // sounds
+    public static boolean SOUND_EFFECTS_ON = false;
+    public static boolean BACKGROUND_MUSIC_ON = false;
+    // TODO sound settings!
     // GENERAL
     private static final boolean debugMode = false;
 
