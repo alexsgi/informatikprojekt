@@ -100,6 +100,9 @@ public class SceneryController {
 
             }
         }, 0, timerSpeed);
+
+        spacePressedOnce = false;
+        spacePressedTwice = false;
     }
 
     public void freeze() {
@@ -150,7 +153,7 @@ public class SceneryController {
                     jump();
                     newDelay = 0;
                 } else {
-                    newDelay = 200;
+                    newDelay = Settings.JUMP_DELAY_FOR_HOLDING_SPACE;
                     spacePressedTwice = true;
                 }
                 // controller.getMainFrameView().keysEnabledInGame = false;
@@ -163,6 +166,7 @@ public class SceneryController {
     }
 
     public void jumpUp() {
+        jumpVar = Settings.JUMP_HEIGHT;
         jumpTimer = new Timer();
         jumpTimer.scheduleAtFixedRate(new TimerTask() {
             @Override
@@ -173,89 +177,48 @@ public class SceneryController {
                         jumpVar--;
                     } else if (jumpVar == 0) {
                         jumpTimer.cancel();
-                        try {
-                            Thread.sleep(150);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
-                        if (spacePressedTwice){
-                        jumpBackDownNormalDelay();
-                        }else {
-                            jumpBackDownNormalNoDelay();
-                        }
+                        jumpBackDown();
                     }
                 }
             }
         }, 0, Settings.JUMP_PERIOD);
     }
 
-
-    public void jumpBackDownNormalNoDelay() {
-        jumpVar = 0;
-        jumpTimer = new Timer();
-        jumpTimer.scheduleAtFixedRate(new TimerTask() {
-            @Override
-            public void run() {
-                if (gameCharacterElement != null) {
-                    gameCharacterElement.decrementY(jumpVar);
-                    if (jumpVar < Settings.JUMP_HEIGHT) {
-                        jumpVar++;
-                    } else if (jumpVar == Settings.JUMP_HEIGHT) {
-                        jumpTimer.cancel();
-                        controller.getMainFrameView().keysEnabledInGame = true;
-                        spacePressedOnce = false;
-                        spacePressedTwice = false;
-                    }
-                }
-            }
-        }, 0, Settings.JUMP_PERIOD);
-    }
-
-    public void jumpBackDownNormalDelay() {
-        jumpVar = 0;
-        jumpTimer = new Timer();
-        jumpTimer.scheduleAtFixedRate(new TimerTask() {
-            @Override
-            public void run() {
-                if (gameCharacterElement != null) {
-                    gameCharacterElement.decrementY(jumpVar);
-                    if (jumpVar < Settings.JUMP_HEIGHT) {
-                        jumpVar++;
-                    } else if (jumpVar == Settings.JUMP_HEIGHT) {
-                        jumpTimer.cancel();
-                        controller.getMainFrameView().keysEnabledInGame = true;
-                        spacePressedOnce = false;
-                        spacePressedTwice = false;
-                    }
-                }
-            }
-        }, 2000, Settings.JUMP_PERIOD);
-    }
 
     public void jumpBackDown() {
         jumpVar = 0;
         jumpTimer = new Timer();
-
         jumpTimer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
+                if (gameCharacterElement != null) {
 
-                if (newDelay != 0) {
-                    try {
-                        // System.out.println("sleep");
-                        start = System.currentTimeMillis();
-                        Thread.sleep(newDelay);
+                    if (jumpVar < 5) {
+                        gameCharacterElement.decrementY(jumpVar);
+                        jumpVar++;
+                    } else if (jumpVar == 5) {
+                        jumpTimer.cancel();
 
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
+
+                        if(newDelay==Settings.JUMP_DELAY_FOR_HOLDING_SPACE){
+                            System.out.println("jump delayed");
+                            jumpBackDownFurtherDelay();
+                        }else {
+                            System.out.println("jump NOT delayed");
+                            jumpBackDownFurtherNoDelay();
+                        }
                     }
-                    newDelay = 0;
-                } else {
-                    // System.out.println("no sleep");
                 }
+            }
+        }, 50, Settings.JUMP_PERIOD);
+    }
 
-
-
+    public void jumpBackDownFurtherNoDelay() {
+        jumpVar = 5;
+        jumpTimer = new Timer();
+        jumpTimer.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
                 if (gameCharacterElement != null) {
                     gameCharacterElement.decrementY(jumpVar);
                     if (jumpVar < Settings.JUMP_HEIGHT) {
@@ -263,13 +226,32 @@ public class SceneryController {
                     } else if (jumpVar == Settings.JUMP_HEIGHT) {
                         jumpTimer.cancel();
                         spacePressedOnce = false;
-                        newDelay = 0;
+                        spacePressedTwice = false;
                     }
                 }
             }
-        }, 20, Settings.JUMP_PERIOD);
+        }, 0, Settings.JUMP_PERIOD);
     }
 
+    public void jumpBackDownFurtherDelay() {
+        jumpVar = 5;
+        jumpTimer = new Timer();
+        jumpTimer.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                if (gameCharacterElement != null) {
+                    gameCharacterElement.decrementY(jumpVar);
+                    if (jumpVar < Settings.JUMP_HEIGHT) {
+                        jumpVar++;
+                    } else if (jumpVar == Settings.JUMP_HEIGHT) {
+                        jumpTimer.cancel();
+                        spacePressedOnce = false;
+                        spacePressedTwice = false;
+                    }
+                }
+            }
+        }, newDelay, Settings.JUMP_PERIOD_FOR_HOLDING_SPACE);
+    }
 
     public void jumpNormal() {
         jumpVar = Settings.JUMP_HEIGHT;
