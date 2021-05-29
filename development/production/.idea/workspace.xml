@@ -6,7 +6,12 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="460ac02d-4569-48ee-b691-afac2c185a3b" name="Default Changelist" comment="" />
+    <list default="true" id="460ac02d-4569-48ee-b691-afac2c185a3b" name="Default Changelist" comment="dont fucking know the solution">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/controller/scenerycontrolling/SceneryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/controller/scenerycontrolling/SceneryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/controller/scenerycontrolling/SceneryRandomGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/controller/scenerycontrolling/SceneryRandomGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/MainFrameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/MainFrameView.java" afterDir="false" />
+    </list>
     <list id="cb6ccd45-2f4a-4a31-aef3-f8cd82d4f1fc" name="Changes by Alex" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,10 +38,10 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/MainFrameView.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/login/LoginPanelView.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/UITools.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/login/RegisterPanelView.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/login/LoginFrameView.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/login/LoginPanelView.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/login/RegisterPanelView.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/UITools.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1sNxAxlUOzIo4QGOFZ9jkhs4zer" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -158,8 +163,16 @@
       <workItem from="1621951694059" duration="3182000" />
       <workItem from="1621954966568" duration="2910000" />
       <workItem from="1622111935740" duration="1052000" />
-      <workItem from="1622220761179" duration="3344000" />
+      <workItem from="1622320959100" duration="4485000" />
     </task>
+    <task id="LOCAL-00001" summary="dont fucking know the solution">
+      <created>1622122585642</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1622122585642</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -179,6 +192,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="dont fucking know the solution" />
+    <option name="LAST_COMMIT_MESSAGE" value="dont fucking know the solution" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
