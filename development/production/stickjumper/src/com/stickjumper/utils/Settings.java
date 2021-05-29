@@ -47,6 +47,7 @@ public class Settings {
     public static final int JUMP_PERIOD = 17;
     public static final int JUMP_DELAY_FOR_HOLDING_SPACE = 100;
     public static final int JUMP_PERIOD_FOR_HOLDING_SPACE = JUMP_PERIOD+6;
+    public static final int JUMP_TOLERANCE_FOR_DELAY = 7;
     // GENERAL
     private static final boolean debugMode = false;
 

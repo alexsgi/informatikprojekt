@@ -193,18 +193,17 @@ public class SceneryController {
             public void run() {
                 if (gameCharacterElement != null) {
 
-                    if (jumpVar < 5) {
+                    if (jumpVar < Settings.JUMP_TOLERANCE_FOR_DELAY) {
                         gameCharacterElement.decrementY(jumpVar);
                         jumpVar++;
-                    } else if (jumpVar == 5) {
+                    } else if (jumpVar == Settings.JUMP_TOLERANCE_FOR_DELAY) {
                         jumpTimer.cancel();
-
 
                         if(newDelay==Settings.JUMP_DELAY_FOR_HOLDING_SPACE){
                             System.out.println("jump delayed");
                             jumpBackDownFurtherDelay();
                         }else {
-                            System.out.println("jump NOT delayed");
+                           // System.out.println("jump NOT delayed");
                             jumpBackDownFurtherNoDelay();
                         }
                     }
@@ -214,7 +213,7 @@ public class SceneryController {
     }
 
     public void jumpBackDownFurtherNoDelay() {
-        jumpVar = 5;
+        jumpVar = Settings.JUMP_TOLERANCE_FOR_DELAY;
         jumpTimer = new Timer();
         jumpTimer.scheduleAtFixedRate(new TimerTask() {
             @Override
@@ -234,7 +233,7 @@ public class SceneryController {
     }
 
     public void jumpBackDownFurtherDelay() {
-        jumpVar = 5;
+        jumpVar = Settings.JUMP_TOLERANCE_FOR_DELAY;
         jumpTimer = new Timer();
         jumpTimer.scheduleAtFixedRate(new TimerTask() {
             @Override
