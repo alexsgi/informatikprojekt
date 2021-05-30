@@ -19,7 +19,6 @@ public class MainFrameView extends JFrame implements KeyListener {
     private StartPanelView startPanel;
     private Controller controller;
     private GamePanelView gamePanel;
-    private SceneryRandomGenerator sceneryRandomGenerator;
 
     public MainFrameView(SceneryRandomGenerator sceneryRandomGenerator) {
         setResizable(false);
@@ -70,16 +69,6 @@ public class MainFrameView extends JFrame implements KeyListener {
 
     @Override
     public void keyReleased(KeyEvent e) {
-        /*
-        keyPressEnd = System.currentTimeMillis();
-        int differenceKeyPressed = (int) (keyPressEnd - keyPressStart);
-        int factor = differenceKeyPressed / 100;
-        if (factor < 10) {
-            SceneryController.keysPressed = factor;
-        } else {
-            SceneryController.keysPressed = 10;
-        }
-         */
         if (controller != null && controller.gameStarted /* && keysEnabledInGame */) {
             controller.getSceneryController().keyReleased2(e);
         }
