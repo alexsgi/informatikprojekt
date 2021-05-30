@@ -59,7 +59,7 @@ public class SceneryRandomGenerator {
                     timerVar = 10;
                 }
             }
-        }, 0, 6000);
+        }, 0, 7000);
     }
 
     public void recreate() {
@@ -139,7 +139,7 @@ public class SceneryRandomGenerator {
                 createCoin(50, 1100);
                 createCoin(100, 1250);
 
-                createEnemy(1, 1, 1280);
+                createEnemy(2, 1, 1280);
                 createEnemy(3, 1, 1280);
                 createEnemy(3, 1, 200);
 
