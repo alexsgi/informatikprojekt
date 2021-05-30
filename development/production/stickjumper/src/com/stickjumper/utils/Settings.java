@@ -42,21 +42,21 @@ public class Settings {
     public static final int gameOverSensitivity = 100;
     // if this variable will be set true, when the random generator works properly
     public static final boolean steadyObstaclesCauseGameOver = true;
-    // jump variable
-    public static boolean DELAY_JUMP_WHEN_HOLDING_KEY = true; //not final, might be changed in the real settings in the real game //TODO
     public static final int JUMP_HEIGHT = 22;
     public static final int JUMP_PERIOD = 17;
-    public static final int JUMP_DELAY_FOR_HOLDING_SPACE = 1; //not needed in current method
+    public static final int JUMP_DELAY_FOR_HOLDING_SPACE = 1; // not needed in current method
+    public static final int JUMP_TOLERANCE_FOR_DELAY = JUMP_HEIGHT / 3;
+    public static final int JUMP_SECOND_TOLERANCE_FOR_DELAY = (JUMP_HEIGHT / 3) * 2;
     private static final int JUMP_PERIOD_DELAY = 12;
-    public static final int JUMP_PERIOD_FOR_HOLDING_SPACE = JUMP_PERIOD+JUMP_PERIOD_DELAY;
-    public static final int JUMP_TOLERANCE_FOR_DELAY = JUMP_HEIGHT/3;
-    public static final int JUMP_SECOND_TOLERANCE_FOR_DELAY = (JUMP_HEIGHT/3)*2;
-    // sounds
-    public static boolean SOUND_EFFECTS_ON = true;
-    public static boolean BACKGROUND_MUSIC_ON = false;
+    public static final int JUMP_PERIOD_FOR_HOLDING_SPACE = JUMP_PERIOD + JUMP_PERIOD_DELAY;
     // TODO sound settings!
     // GENERAL
     private static final boolean debugMode = false;
+    // jump variable
+    public static boolean DELAY_JUMP_WHEN_HOLDING_KEY = true; // not final, might be changed in the real settings in the real game //TODO
+    // sounds
+    public static boolean SOUND_EFFECTS_ON = true;
+    public static boolean BACKGROUND_MUSIC_ON = false;
 
     public static void logData(String data) {
         if (isDebugMode()) System.out.println(data);

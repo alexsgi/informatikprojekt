@@ -27,8 +27,6 @@ public class SceneryController {
     private static int jumpVar = Settings.JUMP_HEIGHT;
     private static int newDelay = 50;
     private static int newPeriod = Settings.JUMP_PERIOD;
-    //test:
-    private static long start, end;
     // init timer:
     Timer foregroundTimer, jumpTimer;
     GameElementRender gameCharacterElement;
@@ -96,7 +94,7 @@ public class SceneryController {
                 }
                 if (gameOver) {
                     freeze();
-                    SoundManager.playSound(SoundManager.inputStreamGameOverSound);
+                    if (Settings.BACKGROUND_MUSIC_ON) SoundManager.playSound(SoundManager.inputStreamGameOverSound);
                 }
 
             }
@@ -151,7 +149,8 @@ public class SceneryController {
                 } else {
                     if (!spacePressedOnce) {
                         spacePressedOnce = true;
-                        jumpNormal();}
+                        jumpNormal();
+                    }
                 }
             }
         }
@@ -161,10 +160,10 @@ public class SceneryController {
         switch (e.getKeyCode()) {
             case KeyEvent.VK_SPACE -> {
                 if (controller.getMainFrameView().keysEnabledInGame && !gameOver) {
-                    if(!spacePressedOnce) {
+                    if (!spacePressedOnce) {
                         jump2();
                         spacePressedOnce = true;
-                    }else{
+                    } else {
                         newPeriod = Settings.JUMP_PERIOD_FOR_HOLDING_SPACE;
                     }
                 }
@@ -172,7 +171,7 @@ public class SceneryController {
         }
     }
 
-    public void keyReleased2 (KeyEvent e){
+    public void keyReleased2(KeyEvent e) {
         switch (e.getKeyCode()) {
             case KeyEvent.VK_SPACE -> {
                 if (controller.getMainFrameView().keysEnabledInGame && !gameOver) {
