@@ -44,7 +44,7 @@ public class SceneryRandomGenerator {
             }
         }, 0, 20000);
         */
-        //createPattern(15);
+        createPattern(15);
     }
 
     public void recreate() {

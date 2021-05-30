@@ -46,12 +46,12 @@ public class Settings {
     public static boolean DELAY_JUMP_WHEN_HOLDING_KEY = true; //not final, might be changed in the real settings in the real game //TODO
     public static final int JUMP_HEIGHT = 22;
     public static final int JUMP_PERIOD = 17;
-    public static final int JUMP_DELAY_FOR_HOLDING_SPACE = 1;
-    public static final int JUMP_PERIOD_FOR_HOLDING_SPACE = JUMP_PERIOD+20;
-    public static final int JUMP_TOLERANCE_FOR_DELAY = 7;
-    public static final int JUMP_SECOND_TOLERANCE_FOR_DELAY = 15;
+    public static final int JUMP_DELAY_FOR_HOLDING_SPACE = 1; //not needed in current method
+    public static final int JUMP_PERIOD_FOR_HOLDING_SPACE = JUMP_PERIOD+20; //not needed in current method
+    public static final int JUMP_TOLERANCE_FOR_DELAY = JUMP_HEIGHT/3;
+    public static final int JUMP_SECOND_TOLERANCE_FOR_DELAY = (JUMP_HEIGHT/3)*2;
     // sounds
-    public static boolean SOUND_EFFECTS_ON = false;
+    public static boolean SOUND_EFFECTS_ON = true;
     public static boolean BACKGROUND_MUSIC_ON = false;
     // TODO sound settings!
     // GENERAL

@@ -34,18 +34,20 @@ public class SoundManager {
     }
 
     public static void playSound(AudioInputStream inputStream) {
-        new Thread(() -> {
-            try {
-                Clip clip = AudioSystem.getClip();
-                clip.open(inputStream);
-                // clip.start();
-                clip.setMicrosecondPosition(0);
-                loadAllClips();
-            } catch (Exception e) {
-                Settings.logData("Error playing sound " + e.getLocalizedMessage(), e);
-            }
+        if (Settings.SOUND_EFFECTS_ON) {
+            new Thread(() -> {
+                try {
+                    Clip clip = AudioSystem.getClip();
+                    clip.open(inputStream);
+                    clip.start();
+                    clip.setMicrosecondPosition(0);
+                    loadAllClips();
+                } catch (Exception e) {
+                    Settings.logData("Error playing sound " + e.getLocalizedMessage(), e);
+                }
 
-        }).start();
+            }).start();
+        }
     }
 
     /*
