@@ -390,8 +390,7 @@ public class SceneryController {
         }, 50, Settings.JUMP_PERIOD);
     }
 
-    /*
-       public void keyPressedSafe(KeyEvent e) {
+    public void keyPressedSafe(KeyEvent e) {
         switch (e.getKeyCode()) {
             case KeyEvent.VK_SPACE -> {
                 if (controller.getMainFrameView().keysEnabledInGame && !gameOver) {
@@ -401,7 +400,6 @@ public class SceneryController {
             }
         }
     }
-     */
 
         /*
         public void initCertainObject(String objectType, int height, int speed, int skinOrCoinValue){
