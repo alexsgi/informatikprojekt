@@ -52,7 +52,7 @@ public class Settings {
     public static final int JUMP_TOLERANCE_FOR_DELAY = JUMP_HEIGHT/3;
     public static final int JUMP_SECOND_TOLERANCE_FOR_DELAY = (JUMP_HEIGHT/3)*2;
     // sounds
-    public static boolean SOUND_EFFECTS_ON = true;
+    public static boolean SOUND_EFFECTS_ON = false;
     public static boolean BACKGROUND_MUSIC_ON = false;
     // TODO sound settings!
     // GENERAL

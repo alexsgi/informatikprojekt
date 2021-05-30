@@ -9,6 +9,7 @@ import com.stickjumper.utils.Settings;
 import java.awt.*;
 import java.util.Random;
 import java.util.Timer;
+import java.util.TimerTask;
 
 public class SceneryRandomGenerator {
 
@@ -18,6 +19,8 @@ public class SceneryRandomGenerator {
     private SceneryController sceneryController;
     private int h;
     private int w;
+
+    private static int timerVar = 10;
 
     public SceneryRandomGenerator() {
         // TODO: creating all the objects "enemy, steadyObstacle, coin" in here and passing them as input parameter in the method "initCertainObject"
@@ -44,7 +47,19 @@ public class SceneryRandomGenerator {
             }
         }, 0, 20000);
         */
-        createPattern(15);
+
+        timer = new Timer();
+        timer.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                createPattern(timerVar);
+                if (timerVar != 15) {
+                    timerVar++;
+                } else {
+                    timerVar = 10;
+                }
+            }
+        }, 0, 6000);
     }
 
     public void recreate() {
@@ -73,6 +88,7 @@ public class SceneryRandomGenerator {
 
     public void stop() {
         if (timer != null) timer.cancel();
+        timerVar = 10;
     }
 
     private void createPattern(int pattern) {

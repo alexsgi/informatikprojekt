@@ -6,8 +6,9 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="460ac02d-4569-48ee-b691-afac2c185a3b" name="Default Changelist" comment="new method for jumping">
+    <list default="true" id="460ac02d-4569-48ee-b691-afac2c185a3b" name="Default Changelist" comment="jump adjust">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/controller/scenerycontrolling/SceneryRandomGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/controller/scenerycontrolling/SceneryRandomGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/Settings.java" afterDir="false" />
     </list>
     <list id="cb6ccd45-2f4a-4a31-aef3-f8cd82d4f1fc" name="Changes by Alex" comment="" />
@@ -151,7 +152,7 @@
       <workItem from="1621954966568" duration="2910000" />
       <workItem from="1622111935740" duration="1052000" />
       <workItem from="1622320959100" duration="4485000" />
-      <workItem from="1622363570363" duration="2336000" />
+      <workItem from="1622363570363" duration="3129000" />
     </task>
     <task id="LOCAL-00001" summary="dont fucking know the solution">
       <created>1622122585642</created>
@@ -181,7 +182,28 @@
       <option name="project" value="LOCAL" />
       <updated>1622366021041</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="sound and jump">
+      <created>1622366507322</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1622366507322</updated>
+    </task>
+    <task id="LOCAL-00006" summary="sound and jump">
+      <created>1622366636416</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1622366636417</updated>
+    </task>
+    <task id="LOCAL-00007" summary="jump adjust">
+      <created>1622366761124</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1622366761124</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -204,7 +226,9 @@
     <MESSAGE value="dont fucking know the solution" />
     <MESSAGE value="jump delay tolerance" />
     <MESSAGE value="new method for jumping" />
-    <option name="LAST_COMMIT_MESSAGE" value="new method for jumping" />
+    <MESSAGE value="sound and jump" />
+    <MESSAGE value="jump adjust" />
+    <option name="LAST_COMMIT_MESSAGE" value="jump adjust" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
