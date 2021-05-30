@@ -64,7 +64,7 @@ public class MainFrameView extends JFrame implements KeyListener {
     @Override
     public void keyPressed(KeyEvent e) {
         if (controller != null && controller.gameStarted /* && keysEnabledInGame */) {
-            controller.getSceneryController().keyPressed(e);
+            controller.getSceneryController().keyPressed2(e);
         }
     }
 
@@ -80,5 +80,8 @@ public class MainFrameView extends JFrame implements KeyListener {
             SceneryController.keysPressed = 10;
         }
          */
+        if (controller != null && controller.gameStarted /* && keysEnabledInGame */) {
+            controller.getSceneryController().keyReleased2(e);
+        }
     }
 }
