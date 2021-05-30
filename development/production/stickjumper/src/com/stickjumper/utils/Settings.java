@@ -47,7 +47,7 @@ public class Settings {
     public static final int JUMP_HEIGHT = 22;
     public static final int JUMP_PERIOD = 17;
     public static final int JUMP_DELAY_FOR_HOLDING_SPACE = 1; //not needed in current method
-    private static final int JUMP_PERIOD_DELAY = 20;
+    private static final int JUMP_PERIOD_DELAY = 12;
     public static final int JUMP_PERIOD_FOR_HOLDING_SPACE = JUMP_PERIOD+JUMP_PERIOD_DELAY;
     public static final int JUMP_TOLERANCE_FOR_DELAY = JUMP_HEIGHT/3;
     public static final int JUMP_SECOND_TOLERANCE_FOR_DELAY = (JUMP_HEIGHT/3)*2;
