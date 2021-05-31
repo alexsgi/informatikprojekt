@@ -51,7 +51,7 @@ public class SceneryRandomGenerator {
 
 
          */
-        createPattern(3);
+        createPattern(4);
     }
 
     public void recreate() {
@@ -137,17 +137,48 @@ public class SceneryRandomGenerator {
                 createEnemy(2, 1, (int) (1280 * 1.9));
                 break;
             case 3:
-                createEnemy(1, 1, 1280);
-                createEnemy(2, 1, (int) (1280 * 4));
-                createEnemy(3, 1, (int) (1280 * 1.9));
-                createEnemy(1, 1, 1280);
-                createEnemy(2, 1, (int) (1280 * 4));
-                createEnemy(3, 1, (int) (1280 * 1.9));
-                createEnemy(1, 1, 1280);
-                createEnemy(2, 1, (int) (1280 * 4));
-                createEnemy(3, 1, (int) (1280 * 1.9));
+                createEnemy(1, 1, 200);
+                createEnemy(2, 1, (int) (1280 * 2));
+                createEnemy(2, 1, (int) (1280 * 4- 1000)/3);
+                createEnemy(1, 1, 500);
+                createEnemy(3, 1, (int) (1280 * 3+1000));
+                createEnemy(1, 1, 1000);
+                createEnemy(3, 1,  (1280 * 4)+800);
 
+                createCoin(0, 15);
+                createCoin(30, 60);
+                createCoin(140, 370);
+                createCoin(110, 420);
+                createCoin(140, 500);
+                createCoin(30, 1150);
+                createCoin(50, 710);
+                createCoin(140, 740);
+                break;
+            case 4:
+                createCoin(180, 0);
+                createCoin(150, 40);
+                createCoin(60, 220);
+                createCoin(130, 350);
+                createCoin(120, 400);
+                createCoin(150, 500);
+                createCoin(20, 1250);
+                createCoin(40, 700);
+                createCoin(150, 740);
 
+                createSteadyObstacle(1, 100);
+                createSteadyObstacle(1, 120);
+                createSteadyObstacle(1, 140);
+                createSteadyObstacle(1, 160);
+                createSteadyObstacle(1, 740);
+                createSteadyObstacle(1, 1100);
+                createSteadyObstacle(1, 500);
+
+                createEnemy(3, 1, 1280+300);
+                createEnemy(3, 1, (1280 * 4));
+                createEnemy(2, 1, (int) (1280 * 1.9));
+                createEnemy(3, 1, (1280 * 2)+800);
+
+                /*
                 // just marking the area haha
                 sceneryController.initGameElementUI(new SteadyObstacle(new Point(w + 0, 50 ),1));
                 sceneryController.initGameElementUI(new SteadyObstacle(new Point(w + 320, 50 ),1));
@@ -155,9 +186,7 @@ public class SceneryRandomGenerator {
                 sceneryController.initGameElementUI(new SteadyObstacle(new Point(w + 960, 50 ),1));
                 sceneryController.initGameElementUI(new SteadyObstacle(new Point(w + 1280, 50 ),1));
 
-                break;
-            case 4:
-                createCoin(10, 0);
+                 */
                 break;
             case 5:
                 createCoin(10, 0);
