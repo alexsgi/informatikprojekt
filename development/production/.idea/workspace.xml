@@ -6,18 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="460ac02d-4569-48ee-b691-afac2c185a3b" name="Default Changelist" comment="jump delay tolerance">
-      <change beforePath="$PROJECT_DIR$/../experimental/mvn/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../experimental/mvn/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../experimental/mvn/src/main/java/com/stickjumper/start/Starter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../experimental/mvn/src/main/java/com/stickjumper/start/Starter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../experimental/mvn/src/main/java/com/stickjumper/utils/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/../experimental/mvn/src/main/java/com/stickjumper/utils/Settings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../experimental/mvn/target/classes/com/stickjumper/start/Starter.class" beforeDir="false" afterPath="$PROJECT_DIR$/../experimental/mvn/target/classes/com/stickjumper/start/Starter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../experimental/mvn/target/classes/com/stickjumper/utils/Settings.class" beforeDir="false" afterPath="$PROJECT_DIR$/../experimental/mvn/target/classes/com/stickjumper/utils/Settings.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../experimental/mvn/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../experimental/mvn/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../experimental/mvn/target/stickjumper-jar-with-dependencies.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../experimental/mvn/target/stickjumper-jar-with-dependencies.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../experimental/mvn/target/stickjumper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../experimental/mvn/target/stickjumper.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/start/Starter.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/start/Starter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/Settings.java" afterDir="false" />
-    </list>
+    <list default="true" id="460ac02d-4569-48ee-b691-afac2c185a3b" name="Default Changelist" comment="jump delay tolerance" />
     <list id="cb6ccd45-2f4a-4a31-aef3-f8cd82d4f1fc" name="Changes by Alex" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,7 +162,7 @@
       <workItem from="1622111935740" duration="1052000" />
       <workItem from="1622320959100" duration="4485000" />
       <workItem from="1622363570363" duration="2336000" />
-      <workItem from="1622470235680" duration="3871000" />
+      <workItem from="1622470235680" duration="3909000" />
     </task>
     <task id="LOCAL-00001" summary="dont fucking know the solution">
       <created>1622122585642</created>
