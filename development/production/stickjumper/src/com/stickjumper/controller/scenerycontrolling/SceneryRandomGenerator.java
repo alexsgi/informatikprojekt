@@ -13,14 +13,13 @@ import java.util.TimerTask;
 
 public class SceneryRandomGenerator {
 
+    private static int timerVar = 10;
     private final int startHeight = 100;
     private final Random random = new Random();
     Timer timer;
     private SceneryController sceneryController;
     private int h;
     private int w;
-
-    private static int timerVar = 10;
 
     public SceneryRandomGenerator() {
         // TODO: creating all the objects "enemy, steadyObstacle, coin" in here and passing them as input parameter in the method "initCertainObject"
@@ -129,8 +128,8 @@ public class SceneryRandomGenerator {
 
                 createSteadyObstacle(1, 280);
                 createSteadyObstacle(1, 500);
-                createSteadyObstacle(1, 700);
-                createSteadyObstacle(1, 950);
+                createSteadyObstacle(1, 720);
+                createSteadyObstacle(1, 980);
 
                 createCoin(10, 0);
                 createCoin(100, 200);
@@ -139,7 +138,7 @@ public class SceneryRandomGenerator {
                 createCoin(50, 1100);
                 createCoin(100, 1250);
 
-                createEnemy(2, 1, 1280);
+                createEnemy(2, 1, 1000);
                 createEnemy(3, 1, 1280);
                 createEnemy(3, 1, 200);
 

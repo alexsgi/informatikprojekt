@@ -34,7 +34,9 @@ public class SoundManager {
     }
 
     public static void playSound(AudioInputStream inputStream) {
+        // TODO: don't load all input streams, only used ones
         if (Settings.SOUND_EFFECTS_ON) {
+            if (inputStream == inputStreamGameOverSound && !Settings.GAME_OVER_MUSIC_ON) return;
             new Thread(() -> {
                 try {
                     Clip clip = AudioSystem.getClip();
@@ -43,29 +45,12 @@ public class SoundManager {
                     clip.setMicrosecondPosition(0);
                     loadAllClips();
                 } catch (Exception e) {
-                    Settings.logData("Error playing sound " + e.getLocalizedMessage(), e);
+                    Settings.logData("Error playing sound: " + e.getMessage(), e);
                 }
-
             }).start();
+
         }
     }
 
-    /*
-    public static void playSound(final String url) {
-        new Thread(() -> {
-            try {
-                Clip clip = AudioSystem.getClip();
-                AudioInputStream inputStream = AudioSystem.getAudioInputStream(
-                        SoundManager.class.getResourceAsStream(url));
-                clip.open(inputStream);
-                clip.start();
-                clip.setMicrosecondPosition(0);
-            } catch (Exception e) {
-                Settings.logData("Error playing sound", e);
-            }
-
-        }).start();
-    }
-     */
 }
 

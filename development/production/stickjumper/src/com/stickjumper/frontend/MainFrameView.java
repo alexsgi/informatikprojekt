@@ -47,29 +47,32 @@ public class MainFrameView extends JFrame implements KeyListener {
 
     @Override
     public void keyTyped(KeyEvent e) {
-        // why doesn't that work?
 
-        /*
-        if (controller != null && !controller.gameStarted && e.getKeyCode() == KeyEvent.VK_SPACE){
+        System.err.println("KeyTyped called");
+
+        if(controller == null || controller.gameStarted || e.getKeyCode() != KeyEvent.VK_SPACE) return;
+
+        if(controller.getPanelFrameManager().isGamePanelActive()) {
+            controller.startGame();
+            return;
+        }
+
+        if(controller.getPanelFrameManager().isStartPanelActive()) {
+            controller.getPanelFrameManager().switchToGamePanel();
             controller.startGame();
         }
-        if(controller != null && SceneryController.gameOver && e.getKeyCode() == KeyEvent.VK_SPACE){
-            controller.getPanelFrameManager().switchToStartPanel();
-        }
-         */
-
     }
 
     @Override
     public void keyPressed(KeyEvent e) {
-        if (controller != null && controller.gameStarted /* && keysEnabledInGame */) {
+        if (controller != null && controller.gameStarted) {
             controller.getSceneryController().keyPressed2(e);
         }
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
-        if (controller != null && controller.gameStarted /* && keysEnabledInGame */) {
+        if (controller != null && controller.gameStarted) {
             controller.getSceneryController().keyReleased2(e);
         }
     }

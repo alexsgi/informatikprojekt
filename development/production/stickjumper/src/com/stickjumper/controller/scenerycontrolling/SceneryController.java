@@ -94,7 +94,7 @@ public class SceneryController {
                 }
                 if (gameOver) {
                     freeze();
-                    if (Settings.BACKGROUND_MUSIC_ON) SoundManager.playSound(SoundManager.inputStreamGameOverSound);
+                    SoundManager.playSound(SoundManager.inputStreamGameOverSound);
                 }
 
             }
