@@ -40,17 +40,6 @@ public class SceneryRandomGenerator {
         timer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
-                // createCoin(0);
-                // createEnemy(2, 1);
-                createSteadyObstacle(1);
-            }
-        }, 0, 20000);
-        */
-
-        timer = new Timer();
-        timer.scheduleAtFixedRate(new TimerTask() {
-            @Override
-            public void run() {
                 createPattern(timerVar);
                 if (timerVar != 15) {
                     timerVar++;
@@ -59,6 +48,10 @@ public class SceneryRandomGenerator {
                 }
             }
         }, 0, 7000);
+
+
+         */
+        createPattern(3);
     }
 
     public void recreate() {
@@ -92,18 +85,76 @@ public class SceneryRandomGenerator {
 
     private void createPattern(int pattern) {
         switch (pattern) {
+            // Jonas ↓
             case 1:
-                createCoin(10, 0);
-                createEnemy(3, 1, 200);
-                createSteadyObstacle(1, 300);
-                createSteadyObstacle(1, 350);
-                createEnemy(2, 1, 200);
+                createCoin(130, 0);
+                createCoin(130, 30);
+                createCoin(130, 60);
+                createCoin(80, 200);
+                createCoin(80, 400);
+                createCoin(50, 600);
+                createCoin(140, 720);
+                createCoin(130, 800);
+                createCoin(150, 1125);
+
+                createSteadyObstacle(1, 0);
+                createSteadyObstacle(1, 30);
+                createSteadyObstacle(1, 60);
+                createSteadyObstacle(1, 240);
+                createSteadyObstacle(1, 800);
+                createSteadyObstacle(1, 740);
+                createSteadyObstacle(1, 1000);
+                createSteadyObstacle(1, 1050);
+                createSteadyObstacle(1, 1250);
+
+                // createEnemy(1, 1, 300);
+                createEnemy(2, 1, 550);
+                createEnemy(3, 1, (int) (1280 * 2.5));
+                createEnemy(2, 1, (int) (1280 * 1.9));
+
+                createSteadyObstacle(1, 1280);
                 break;
             case 2:
-                createCoin(10, 0);
+                createCoin(0, 20);
+                createCoin(30, 60);
+                createCoin(60, 200);
+                createCoin(130, 350);
+                createCoin(120, 400);
+                createCoin(150, 500);
+                createCoin(20, 1250);
+                createCoin(40, 700);
+                createCoin(150, 740);
+
+                createSteadyObstacle(1, 110);
+                createSteadyObstacle(1, 150);
+                createSteadyObstacle(1, 350);
+                createSteadyObstacle(1, 550);
+                createSteadyObstacle(1, 740);
+                createSteadyObstacle(1, 1100);
+
+                createEnemy(2, 1, 1280);
+                createEnemy(3, 1, (1280 * 4));
+                createEnemy(2, 1, (int) (1280 * 1.9));
                 break;
             case 3:
-                createCoin(10, 0);
+                createEnemy(1, 1, 1280);
+                createEnemy(2, 1, (int) (1280 * 4));
+                createEnemy(3, 1, (int) (1280 * 1.9));
+                createEnemy(1, 1, 1280);
+                createEnemy(2, 1, (int) (1280 * 4));
+                createEnemy(3, 1, (int) (1280 * 1.9));
+                createEnemy(1, 1, 1280);
+                createEnemy(2, 1, (int) (1280 * 4));
+                createEnemy(3, 1, (int) (1280 * 1.9));
+
+
+                // just marking the area haha
+                sceneryController.initGameElementUI(new SteadyObstacle(new Point(w + 0, 50 ),1));
+                sceneryController.initGameElementUI(new SteadyObstacle(new Point(w + 320, 50 ),1));
+                sceneryController.initGameElementUI(new SteadyObstacle(new Point(w + 640, 50 ),1));
+                sceneryController.initGameElementUI(new SteadyObstacle(new Point(w + 960, 50 ),1));
+                sceneryController.initGameElementUI(new SteadyObstacle(new Point(w + 1280, 50 ),1));
+
                 break;
             case 4:
                 createCoin(10, 0);
