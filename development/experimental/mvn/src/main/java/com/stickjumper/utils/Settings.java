@@ -51,7 +51,7 @@ public class Settings {
     public static final int JUMP_PERIOD_FOR_HOLDING_SPACE = JUMP_PERIOD + JUMP_PERIOD_DELAY;
     // TODO sound settings!
     // GENERAL
-    private static final boolean debugMode = false;
+    private static boolean debugMode = false;
     // jump variable
     public static boolean DELAY_JUMP_WHEN_HOLDING_KEY = true; // not final, might be changed in the real settings in the real game //TODO
     // SOUND
@@ -83,4 +83,7 @@ public class Settings {
         return debugMode;
     }
 
+    public static void activateDebugMode() {
+        debugMode = true;
+    }
 }

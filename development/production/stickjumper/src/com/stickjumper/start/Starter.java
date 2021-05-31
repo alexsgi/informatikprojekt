@@ -15,6 +15,11 @@ public class Starter {
 
 
     public static void main(String[] args) throws SQLException {
+        for (String s : args) {
+            if(s.equals("debug")) {
+                Settings.activateDebugMode();
+            }
+        }
         UITools.initUI();
 
         LoadingFrameView loadingFrameView = new LoadingFrameView();
