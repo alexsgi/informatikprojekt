@@ -94,9 +94,6 @@ public class StartPanelView extends JPanel implements ActionListener {
         add(playButton);
     }
 
-    public StartSideMenuPanel getSideMenuPanel() {
-        return menuPanel;
-    }
 
     public void showHighScore(int highScore) {
         lblHighScore.setText("Highscore: " + highScore);
@@ -104,10 +101,6 @@ public class StartPanelView extends JPanel implements ActionListener {
 
     public InternetStateLabel getInternetIconLabel() {
         return internetIconLabel;
-    }
-
-    public void updateHighScoreLabel(int newHighScore) {
-        // lblHighScore.setText("Highscore: " + newHighScore);
     }
 
     @Override

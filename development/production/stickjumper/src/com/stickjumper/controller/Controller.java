@@ -33,6 +33,7 @@ public class Controller {
     private Player signedInPlayer;
     private List playerList;
     private int localHighScore = 0;
+    private int lastRoundHighScore = 0;
     // All panels
     private StartPanelView startPanelView;
     private GamePanelView gamePanelView;
@@ -46,7 +47,6 @@ public class Controller {
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             stopTimer();
             if (getSignedInPlayer() != null) {
-                updateHighScore();
                 try {
                     DBConnection.updateHighScore(getSignedInPlayer());
                 } catch (SQLException e) {
@@ -64,7 +64,6 @@ public class Controller {
         sceneryController = new SceneryController(gamePanelView, panelFrameManager, this);
         sceneryRandomGenerator.setSceneryController(sceneryController);
         panelFrameManager.setSceneryController(sceneryController);
-        // TODO: just a test - DELETE ALL OBJECTS WHEN GOING BACK TO START? - WHEN LOAD ALL OBJECTS?
     }
 
     public void setStartPanelView(StartPanelView startPanelView) {
@@ -150,9 +149,13 @@ public class Controller {
     }
 
     public void updateHighScore() {
+        startPanelView.showHighScore(localHighScore);
+    }
+
+    public void storeLocalHighscore() {
+        if (gamePanelView.highScore > localHighScore) localHighScore = gamePanelView.highScore;
         if (signedInPlayer != null && signedInPlayer.getHighScore() < localHighScore)
             signedInPlayer.setHighScore(localHighScore);
-        startPanelView.updateHighScoreLabel(localHighScore);
     }
 
     public SceneryController getSceneryController() {

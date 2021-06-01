@@ -11,11 +11,10 @@ import java.sql.SQLException;
 
 public class Starter {
 
-
     public static void main(String[] args) throws SQLException {
         for (String s : args) {
-            if (s.equals("debug")) {
-                Settings.activateDebugMode();
+            switch (s) {
+                case "debug" -> Settings.activateDebugMode();
             }
         }
         UITools.initUI();

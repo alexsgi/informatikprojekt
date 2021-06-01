@@ -73,8 +73,7 @@ public class SceneryController {
     public void startGame() {
         controller.resetGameScore();
         unfreeze();
-        Settings.STEADY_OBSTACLES_LETHAL = true;
-        controller.getPanelFrameManager();
+        // Settings.STEADY_OBSTACLES_LETHAL = true;
         foregroundTimer = new Timer();
         foregroundTimer.scheduleAtFixedRate(new TimerTask() {
             @Override
@@ -92,7 +91,6 @@ public class SceneryController {
                 if (coinHit) {
                     coinHit = false;
                     controller.updateHighScoreLabel(currentCoinValue);
-                    // controller.setScore(controller.getScore() + currentCoinValue);
                 }
                 if (gameOver) {
                     freeze();
@@ -120,7 +118,6 @@ public class SceneryController {
 
     public void stopGame() {
         freeze();
-        // gameElementRenders.forEach((e) -> gamePanelView.remove(e));
         for (Component comp : gamePanelView.getComponents()) {
             if (comp instanceof GameElementRender) gamePanelView.remove(comp);
         }
@@ -128,7 +125,8 @@ public class SceneryController {
         gamePanelView.remove(gameCharacterElement);
         gameCharacterElement = null;
         gameCharacterAlreadyAdded = false;
-        controller.updateHighScore();
+        System.err.println(gamePanelView.highScore);
+        controller.storeLocalHighscore();
     }
 
     public GamePanelView getGamePanelView() {
