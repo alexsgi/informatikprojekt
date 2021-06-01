@@ -1,6 +1,7 @@
 package com.stickjumper.frontend.game;
 
 import com.stickjumper.controller.Controller;
+import com.stickjumper.controller.scenerycontrolling.SceneryController;
 import com.stickjumper.frontend.rendering.GameElementRender;
 import com.stickjumper.utils.ImageManager;
 import com.stickjumper.utils.Settings;
@@ -10,6 +11,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class GamePanelView extends JPanel implements ActionListener {
 
@@ -17,12 +20,14 @@ public class GamePanelView extends JPanel implements ActionListener {
     public JLabel lblGameOver, lblHighScore;
     public int highScore = 0;
 
+    private int steadyObstaclesCheatCount;
+
     public GamePanelView(Controller controller) {
         super(true);
         setLayout(null);
+        setBackground(null);
         setOpaque(false);
         setSize(Settings.SCREEN_WIDTH, Settings.SCREEN_HEIGHT);
-        setBackground(null);
 
         this.controller = controller;
 
@@ -61,6 +66,19 @@ public class GamePanelView extends JPanel implements ActionListener {
         lblHighScore.setOpaque(false);
         lblHighScore.setForeground(Color.WHITE);
         add(lblHighScore);
+        lblHighScore.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                if (controller == null || SceneryController.gameOver) return;
+                if (Settings.STEADY_OBSTACLES_LETHAL) {
+                    steadyObstaclesCheatCount++;
+                    if (steadyObstaclesCheatCount >= 10) {
+                        Settings.STEADY_OBSTACLES_LETHAL = false;
+                        lblHighScore.setText("Secret cheat code activated");
+                    }
+                }
+            }
+        });
     }
 
     public void updateHighScore(int additionScore) {

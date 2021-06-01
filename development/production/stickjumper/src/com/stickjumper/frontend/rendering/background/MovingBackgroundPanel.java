@@ -23,7 +23,6 @@ public class MovingBackgroundPanel extends JPanel {
         backgroundMiddleMirrored = ImageManager.MOVING_BACKGROUND_MIRRORED;
 
         java.util.Timer backgroundTimer = new Timer();
-        int backgroundSpeed = Settings.backgroundSpeed;
 
         backgroundTimer.scheduleAtFixedRate(new TimerTask() {
             @Override
@@ -41,7 +40,7 @@ public class MovingBackgroundPanel extends JPanel {
                     }
                 }
             }
-        }, 0, backgroundSpeed);
+        }, 0, Settings.BACKGROUND_SPEED);
     }
 
     @Override

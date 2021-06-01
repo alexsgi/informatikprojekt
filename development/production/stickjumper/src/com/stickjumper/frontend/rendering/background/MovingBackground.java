@@ -20,7 +20,6 @@ public class MovingBackground extends JLabel {
         backgroundMiddleMirrored = ImageManager.MOVING_BACKGROUND_MIRRORED;
 
         Timer backgroundTimer = new Timer();
-        int backgroundSpeed = Settings.backgroundSpeed;
 
         backgroundTimer.scheduleAtFixedRate(new TimerTask() {
             @Override
@@ -38,7 +37,7 @@ public class MovingBackground extends JLabel {
                     }
                 }
             }
-        }, 0, Settings.backgroundSpeed);
+        }, 0, Settings.BACKGROUND_SPEED);
     }
 
     @Override

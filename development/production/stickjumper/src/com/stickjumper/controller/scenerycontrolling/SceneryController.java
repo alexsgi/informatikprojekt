@@ -36,7 +36,7 @@ public class SceneryController {
     private Controller controller;
     private ArrayList<GameElementRender> gameElementRenders = new ArrayList<>();
     private boolean gameCharacterAlreadyAdded;
-    private int timerSpeed = Settings.foregroundSpeed;
+    private int timerSpeed = Settings.FOREGROUND_SPEED;
     private int generalSpeed = 1;
 
     public SceneryController(GamePanelView gamePanelView, PanelFrameManager panelFrameManager, Controller controller) {
@@ -51,7 +51,7 @@ public class SceneryController {
             gamePanelView.addObject(gameCharacterElement);
             gameCharacterAlreadyAdded = true;
         }
-        // yPosGameCharacter = gamePanelView.getHeight() - Settings.seaLevel - GameCharacter.dimens.getHeight();
+        // yPosGameCharacter = gamePanelView.getHeight() - Settings.SEA_LEVEL - GameCharacter.dimens.getHeight();
         yPosGameCharacter = gameCharacterElement.getY();
     }
 
@@ -74,6 +74,7 @@ public class SceneryController {
     public void startGame() {
         controller.resetGameScore();
         unfreeze();
+        Settings.STEADY_OBSTACLES_LETHAL = true;
         foregroundTimer = new Timer();
         foregroundTimer.scheduleAtFixedRate(new TimerTask() {
             @Override
@@ -175,12 +176,9 @@ public class SceneryController {
     public void keyReleased2(KeyEvent e) {
         switch (e.getKeyCode()) {
             case KeyEvent.VK_SPACE -> {
-                if (controller.getMainFrameView().keysEnabledInGame && !gameOver) {
-                    newPeriod = Settings.JUMP_PERIOD;
-                }
+                if (controller.getMainFrameView().keysEnabledInGame && !gameOver) newPeriod = Settings.JUMP_PERIOD;
             }
         }
-
     }
 
     public void jump2() {
@@ -293,18 +291,15 @@ public class SceneryController {
             @Override
             public void run() {
                 if (gameCharacterElement != null) {
-
                     if (jumpVar < Settings.JUMP_TOLERANCE_FOR_DELAY) {
                         gameCharacterElement.decrementY(jumpVar);
                         jumpVar++;
                     } else if (jumpVar == Settings.JUMP_TOLERANCE_FOR_DELAY) {
                         jumpTimer.cancel();
-
                         if (newDelay == Settings.JUMP_DELAY_FOR_HOLDING_SPACE) {
                             System.out.println("jump delayed");
                             jumpBackDownFurtherDelay();
                         } else {
-                            // System.out.println("jump NOT delayed");
                             jumpBackDownFurtherNoDelay();
                         }
                     }
@@ -406,7 +401,7 @@ public class SceneryController {
         /*
         public void initCertainObject(String objectType, int height, int speed, int skinOrCoinValue){
         // the input parameter height is the height above the "sea level" in game
-        int h = gamePanelView.getHeight()-Settings.seaLevel;
+        int h = gamePanelView.getHeight()-Settings.SEA_LEVEL;
         int w = gamePanelView.getWidth();
 
         switch (objectType) {

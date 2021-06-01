@@ -26,7 +26,7 @@ public class GameCharacter extends GameElement {
     }
 
     public GameCharacter(int skinType) {
-        super(new Point(Settings.xPositionGameCharacter, Settings.SCREEN_HEIGHT - Settings.seaLevel - dimens.getHeight()), dimens, true, ImageManager.PLAYER_SKIN_1, 0);
+        super(new Point(Settings.X_POSITION_GAME_CHARACTER, Settings.SCREEN_HEIGHT - Settings.SEA_LEVEL - dimens.getHeight()), dimens, true, ImageManager.PLAYER_SKIN_1, 0);
         this.skinType = skinType;
     }
 

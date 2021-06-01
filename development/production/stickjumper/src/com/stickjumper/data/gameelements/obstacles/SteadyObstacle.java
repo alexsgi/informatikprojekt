@@ -20,6 +20,6 @@ public class SteadyObstacle extends Obstacle {
     }
 
     public void hit() {
-        if (Settings.steadyObstaclesCauseGameOver) super.hit();
+        if (Settings.STEADY_OBSTACLES_LETHAL) super.hit();
     }
 }
