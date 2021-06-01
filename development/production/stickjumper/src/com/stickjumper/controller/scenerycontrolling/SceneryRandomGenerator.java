@@ -33,7 +33,7 @@ public class SceneryRandomGenerator {
         timer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
-                // min = 1; max = 15 (+1 to be inclusive)
+                // min = 1; max = 15 (+1 to be included)
                 createPattern(ThreadLocalRandom.current().nextInt(1, 16));
             }
         }, 0, 7000);

@@ -32,8 +32,7 @@ public class Controller {
     // Player management
     private Player signedInPlayer;
     private List playerList;
-    private int localHighScore = 0;
-    private int lastRoundHighScore = 0;
+    private int localHighScore = 0, lastRoundHighScore = 0;
     // All panels
     private StartPanelView startPanelView;
     private GamePanelView gamePanelView;
@@ -113,7 +112,6 @@ public class Controller {
 
     public void startGame() {
         panelFrameManager.switchToGamePanel();
-        localHighScore = -1;
         sceneryController.startGame();
         sceneryRandomGenerator.randomGenerate();
         gamePanelView.resetCheatCount();
@@ -123,8 +121,10 @@ public class Controller {
 
     public boolean playerLogin(String userName, String password) throws SQLException {
         signedInPlayer = getPlayerFromList(userName, password);
-        if (signedInPlayer != null) startPanelView.showHighScore(signedInPlayer.getHighScore());
-        localHighScore = -1;
+        if (signedInPlayer != null) {
+            localHighScore = signedInPlayer.getHighScore();
+            startPanelView.showHighScore();
+        }
         return signedInPlayer != null;
     }
 
@@ -140,24 +140,6 @@ public class Controller {
         return signedInPlayer;
     }
 
-    public boolean isScoreExisting() {
-        return (localHighScore != -1);
-    }
-
-    public int getScoreFromSignedInPlayer() {
-        return (isScoreExisting()) ? localHighScore : -1;
-    }
-
-    public void updateHighScore() {
-        startPanelView.showHighScore(localHighScore);
-    }
-
-    public void storeLocalHighscore() {
-        if (gamePanelView.highScore > localHighScore) localHighScore = gamePanelView.highScore;
-        if (signedInPlayer != null && signedInPlayer.getHighScore() < localHighScore)
-            signedInPlayer.setHighScore(localHighScore);
-    }
-
     public SceneryController getSceneryController() {
         return sceneryController;
     }
@@ -170,11 +152,33 @@ public class Controller {
         return sceneryRandomGenerator;
     }
 
-    public void updateHighScoreLabel(int newScore) {
-        gamePanelView.updateHighScore(newScore);
+    public void resetGameScore() {
+        lastRoundHighScore = 0;
+        gamePanelView.resetScoreLabel();
     }
 
-    public void resetGameScore() {
-        gamePanelView.resetHighScore();
+    // update high score in startPanel
+    public void updateHighScore() {
+        startPanelView.showHighScore();
+    }
+
+    public void storeLocalHighscore() {
+        if (lastRoundHighScore > localHighScore) localHighScore = lastRoundHighScore;
+        if (signedInPlayer != null && signedInPlayer.getHighScore() < localHighScore)
+            signedInPlayer.setHighScore(localHighScore);
+    }
+
+    // Update score in gamePanel
+    public void updateHighScoreLabel(int additionalScore) {
+        lastRoundHighScore += additionalScore;
+        gamePanelView.updateHighScore();
+    }
+
+    public int getLocalHighScore() {
+        return localHighScore;
+    }
+
+    public int getLastRoundHighScore() {
+        return lastRoundHighScore;
     }
 }

@@ -49,7 +49,7 @@ public class StartPanelView extends JPanel implements ActionListener {
         lblHighScore.setHorizontalAlignment(SwingConstants.CENTER);
         lblHighScore.setBounds(0, 3, getWidth(), 50);
         lblHighScore.setFont(Settings.FONT_LABEL);
-        lblHighScore.setText("Highscore: " + controller.getScoreFromSignedInPlayer());
+        lblHighScore.setText("Highscore: " + controller.getLocalHighScore());
         add(lblHighScore);
 
         settingsButton = new AdvancedButton(Color.GRAY, Color.WHITE);
@@ -95,8 +95,8 @@ public class StartPanelView extends JPanel implements ActionListener {
     }
 
 
-    public void showHighScore(int highScore) {
-        lblHighScore.setText("Highscore: " + highScore);
+    public void showHighScore() {
+        lblHighScore.setText("Highscore: " + controller.getLocalHighScore());
     }
 
     public InternetStateLabel getInternetIconLabel() {
