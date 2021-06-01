@@ -1,7 +1,7 @@
 package com.stickjumper.frontend.rendering.background;
 
-import com.stickjumper.utils.manager.ImageManager;
 import com.stickjumper.utils.Settings;
+import com.stickjumper.utils.manager.ImageManager;
 
 import javax.swing.*;
 import java.awt.*;

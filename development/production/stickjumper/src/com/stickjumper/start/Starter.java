@@ -4,7 +4,7 @@ import com.stickjumper.controller.scenerycontrolling.SceneryRandomGenerator;
 import com.stickjumper.data.database.DBConnection;
 import com.stickjumper.frontend.MainFrameView;
 import com.stickjumper.frontend.boot.LoadingFrameView;
-import com.stickjumper.utils.*;
+import com.stickjumper.utils.Settings;
 import com.stickjumper.utils.manager.ImageManager;
 import com.stickjumper.utils.manager.SoundManager;
 import com.stickjumper.utils.manager.UITools;

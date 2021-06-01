@@ -6,8 +6,10 @@ import com.stickjumper.data.list.List;
 import com.stickjumper.frontend.game.GamePanelView;
 import com.stickjumper.frontend.rendering.background.MovingBackgroundPanel;
 import com.stickjumper.frontend.start.StartPanelView;
-import com.stickjumper.utils.manager.ImageManager;
+import com.stickjumper.frontend.start.startsidemenu.submenues.SettingsPanelView;
+import com.stickjumper.frontend.start.startsidemenu.submenues.StatisticsPanelView;
 import com.stickjumper.utils.Settings;
+import com.stickjumper.utils.manager.ImageManager;
 
 import javax.swing.*;
 import java.awt.event.KeyEvent;
@@ -15,8 +17,8 @@ import java.awt.event.KeyListener;
 
 public class MainFrameView extends JFrame implements KeyListener {
 
-    public boolean keysEnabledInGame = true;
     private final Controller controller;
+    public boolean keysEnabledInGame = true;
 
     public MainFrameView(SceneryRandomGenerator sceneryRandomGenerator) {
         setResizable(false);
@@ -27,9 +29,14 @@ public class MainFrameView extends JFrame implements KeyListener {
         setLocationRelativeTo(null);
         setIconImage(ImageManager.APP_ICON_IMAGE);
 
+        // StartSideMenuPanel menuPanel = new StartSideMenuPanel();
+
         controller = new Controller(this, sceneryRandomGenerator);
         StartPanelView startPanel = new StartPanelView(controller);
         controller.setStartPanelView(startPanel);
+
+        controller.getPanelFrameManager().setStatisticsPanel(new StatisticsPanelView());
+        controller.getPanelFrameManager().setSettingsPanelView(new SettingsPanelView());
 
         GamePanelView gamePanel = new GamePanelView(controller);
         controller.setGamePanelView(gamePanel);

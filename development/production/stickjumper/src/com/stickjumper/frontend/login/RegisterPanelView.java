@@ -2,12 +2,12 @@ package com.stickjumper.frontend.login;
 
 import com.stickjumper.controller.Controller;
 import com.stickjumper.data.database.DBConnection;
-import com.stickjumper.utils.manager.ImageManager;
 import com.stickjumper.utils.Settings;
 import com.stickjumper.utils.components.AdvancedButton;
 import com.stickjumper.utils.components.JRoundPasswordField;
 import com.stickjumper.utils.components.JRoundTextField;
 import com.stickjumper.utils.components.LoginLabel;
+import com.stickjumper.utils.manager.ImageManager;
 import com.stickjumper.utils.security.PasswordHasher;
 
 import javax.swing.*;

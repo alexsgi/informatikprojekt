@@ -3,10 +3,10 @@ package com.stickjumper.frontend.start;
 import com.stickjumper.controller.Controller;
 import com.stickjumper.frontend.login.LoginFrameView;
 import com.stickjumper.frontend.start.startsidemenu.StartSideMenuPanel;
-import com.stickjumper.utils.manager.ImageManager;
 import com.stickjumper.utils.Settings;
 import com.stickjumper.utils.components.AdvancedButton;
 import com.stickjumper.utils.components.InternetStateLabel;
+import com.stickjumper.utils.manager.ImageManager;
 
 import javax.swing.*;
 import java.awt.*;
@@ -20,7 +20,6 @@ public class StartPanelView extends JPanel implements ActionListener {
 
     private final AdvancedButton statisticsButton, loginButton, settingsButton, playButton;
     private final JLabel lblHighScore;
-    private final StartSideMenuPanel menuPanel;
 
     public StartPanelView(Controller controller) {
         super(true);
@@ -30,7 +29,7 @@ public class StartPanelView extends JPanel implements ActionListener {
 
         this.controller = controller;
 
-        menuPanel = new StartSideMenuPanel(this);
+        StartSideMenuPanel menuPanel = new StartSideMenuPanel();
         add(menuPanel);
 
         internetIconLabel = new InternetStateLabel();
@@ -38,7 +37,7 @@ public class StartPanelView extends JPanel implements ActionListener {
         internetIconLabel.setInternetEnabledStatus();
         add(internetIconLabel);
 
-        JLabel lblTitle = new JLabel("StickJumper");
+        JLabel lblTitle = new JLabel(Settings.APP_NAME);
         lblTitle.setHorizontalAlignment(SwingConstants.CENTER);
         lblTitle.setBounds(0, 96, 1280, 83);
         lblTitle.setFont(Settings.FONT_HEADING_BIG);
@@ -110,8 +109,9 @@ public class StartPanelView extends JPanel implements ActionListener {
                 controller.setLoginFrameView(loginFrame);
                 controller.getPanelFrameManager().openLoginFrame();
             }
-            case "settingsButton" -> internetIconLabel.flipStatus();
             case "playButton" -> controller.startGame();
+            case "statisticsButton" -> controller.getPanelFrameManager().openStatisticsPanel();
+            case "settingsButton" -> controller.getPanelFrameManager().openSettingsPanel();
         }
     }
 

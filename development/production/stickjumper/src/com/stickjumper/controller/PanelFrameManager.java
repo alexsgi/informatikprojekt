@@ -8,6 +8,8 @@ import com.stickjumper.frontend.login.LoginPanelView;
 import com.stickjumper.frontend.login.RegisterPanelView;
 import com.stickjumper.frontend.rendering.background.MovingBackgroundPanel;
 import com.stickjumper.frontend.start.StartPanelView;
+import com.stickjumper.frontend.start.startsidemenu.submenues.SettingsPanelView;
+import com.stickjumper.frontend.start.startsidemenu.submenues.StatisticsPanelView;
 
 public class PanelFrameManager {
 
@@ -16,6 +18,8 @@ public class PanelFrameManager {
     public LoginPanelView loginPanelView;
     public RegisterPanelView registerPanelView;
     public GamePanelView gamePanelView;
+    public StatisticsPanelView statisticsPanelView;
+    public SettingsPanelView settingsPanelView;
 
     // All frames
     public MainFrameView mainFrameView;
@@ -111,4 +115,17 @@ public class PanelFrameManager {
         return mainFrameView.getContentPane() instanceof StartPanelView;
     }
 
+    public void setStatisticsPanel(StatisticsPanelView statisticsPanelView) {
+        this.statisticsPanelView = statisticsPanelView;
+    }
+
+    public void setSettingsPanelView(SettingsPanelView settingsPanelView) {
+        this.settingsPanelView = settingsPanelView;
+    }
+
+    public void openStatisticsPanel() {
+    }
+
+    public void openSettingsPanel() {
+    }
 }

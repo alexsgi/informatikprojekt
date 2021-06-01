@@ -3,8 +3,8 @@ package com.stickjumper.data;
 import com.stickjumper.controller.scenerycontrolling.SceneryController;
 import com.stickjumper.data.gameelements.GameCharacter;
 import com.stickjumper.utils.Dimens;
-import com.stickjumper.utils.manager.ImageManager;
 import com.stickjumper.utils.Settings;
+import com.stickjumper.utils.manager.ImageManager;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;

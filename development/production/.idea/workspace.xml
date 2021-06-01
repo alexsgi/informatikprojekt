@@ -8,7 +8,24 @@
   <component name="ChangeListManager">
     <list default="true" id="460ac02d-4569-48ee-b691-afac2c185a3b" name="Default Changelist" comment="just added 4 patterns">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/controller/PanelFrameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/controller/PanelFrameManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/data/GameElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/data/GameElement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/data/gameelements/GameCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/data/gameelements/GameCharacter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/data/gameelements/obstacles/SteadyObstacle.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/data/gameelements/obstacles/SteadyObstacle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/MainFrameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/MainFrameView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/boot/LoadingFrameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/boot/LoadingFrameView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/game/GamePanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/game/GamePanelView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/login/LoginFrameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/login/LoginFrameView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/login/LoginPanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/login/LoginPanelView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/login/RegisterPanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/login/RegisterPanelView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/rendering/background/MovingBackgroundPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/rendering/background/MovingBackgroundPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/start/StartPanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/start/StartPanelView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/start/startsidemenu/StartSideMenuPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/start/startsidemenu/StartSideMenuPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/start/startsidemenu/submenues/SettingsPanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/start/startsidemenu/submenues/SettingsPanelView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/start/startsidemenu/submenues/StatisticsPanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/start/startsidemenu/submenues/StatisticsPanelView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/start/Starter.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/start/Starter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/Settings.java" afterDir="false" />
     </list>
     <list id="cb6ccd45-2f4a-4a31-aef3-f8cd82d4f1fc" name="Changes by Alex" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -77,7 +94,6 @@
     <configuration name="Starter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.stickjumper.start.Starter" />
       <module name="stickjumper" />
-      <option name="PROGRAM_PARAMETERS" value="debug" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.stickjumper.start.*" />
@@ -168,7 +184,7 @@
       <workItem from="1622363570363" duration="2336000" />
       <workItem from="1622470235680" duration="3909000" />
       <workItem from="1622532553329" duration="307000" />
-      <workItem from="1622563498875" duration="7806000" />
+      <workItem from="1622563498875" duration="9111000" />
     </task>
     <task id="LOCAL-00001" summary="dont fucking know the solution">
       <created>1622122585642</created>

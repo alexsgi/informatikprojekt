@@ -74,7 +74,7 @@ public class SceneryController {
         controller.resetGameScore();
         panelFrameManager.startMovingBackground();
         unfreeze();
-        // Settings.STEADY_OBSTACLES_LETHAL = true;
+        Settings.STEADY_OBSTACLES_LETHAL = true;
         foregroundTimer = new Timer();
         foregroundTimer.scheduleAtFixedRate(new TimerTask() {
             @Override

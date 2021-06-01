@@ -4,6 +4,7 @@ import java.awt.*;
 
 public class Settings {
 
+    public static final String APP_NAME = "StickJumper";
     public static final String APP_ICON = "/images/icons/appicon_4.png";
     public static final int SCREEN_WIDTH = 1280, SCREEN_HEIGHT = 640;
     public static final int LOGIN_SCREEN_WIDTH = 600, LOGIN_SCREEN_HEIGHT = 500;
@@ -40,15 +41,12 @@ public class Settings {
     public static final int GAME_OVER_SENSITIVITY = 100;
     public static final int JUMP_HEIGHT = 22;
     public static final int JUMP_PERIOD = 17;
-    public static final int JUMP_DELAY_FOR_HOLDING_SPACE = 1; // not needed in current method
     public static final int JUMP_TOLERANCE_FOR_DELAY = JUMP_HEIGHT / 3;
     public static final int JUMP_SECOND_TOLERANCE_FOR_DELAY = (JUMP_HEIGHT / 3) * 2;
     private static final int JUMP_PERIOD_DELAY = 12;
     public static final int JUMP_PERIOD_FOR_HOLDING_SPACE = JUMP_PERIOD + JUMP_PERIOD_DELAY;
     // set to false when click 10x on high score label
-    public static boolean STEADY_OBSTACLES_LETHAL = false;
-    // jump settings
-    public static boolean DELAY_JUMP_WHEN_HOLDING_KEY = true; // not final, might be changed in the real settings in the real game TODO
+    public static boolean STEADY_OBSTACLES_LETHAL = true;
     // SOUND
     public static boolean SOUND_EFFECTS_ON = true;
     public static boolean GAME_OVER_MUSIC_ON = false;

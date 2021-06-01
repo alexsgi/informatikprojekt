@@ -1,8 +1,8 @@
 package com.stickjumper.frontend.login;
 
 import com.stickjumper.controller.Controller;
-import com.stickjumper.utils.manager.ImageManager;
 import com.stickjumper.utils.Settings;
+import com.stickjumper.utils.manager.ImageManager;
 
 import javax.swing.*;
 import java.awt.event.WindowAdapter;
