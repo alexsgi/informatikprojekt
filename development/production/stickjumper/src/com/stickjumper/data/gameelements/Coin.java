@@ -3,8 +3,8 @@ package com.stickjumper.data.gameelements;
 import com.stickjumper.controller.scenerycontrolling.SceneryController;
 import com.stickjumper.data.GameElement;
 import com.stickjumper.utils.Dimens;
-import com.stickjumper.utils.ImageManager;
-import com.stickjumper.utils.SoundManager;
+import com.stickjumper.utils.manager.ImageManager;
+import com.stickjumper.utils.manager.SoundManager;
 
 import java.awt.*;
 

@@ -1,4 +1,6 @@
-package com.stickjumper.utils;
+package com.stickjumper.utils.manager;
+
+import com.stickjumper.utils.Settings;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -22,7 +24,7 @@ public class UITools {
             if (in == null) return null;
             return ImageIO.read(in);
         } catch (IOException e) {
-            Settings.logData(String.format("The image (%s) was not loaded\n", path), e);
+            Settings.logData(String.format("The image (%s) was not loaded", path), e);
         }
         return null;
     }

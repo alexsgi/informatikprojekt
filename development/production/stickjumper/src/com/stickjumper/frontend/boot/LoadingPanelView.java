@@ -1,7 +1,7 @@
 package com.stickjumper.frontend.boot;
 
 import com.stickjumper.utils.Settings;
-import com.stickjumper.utils.UITools;
+import com.stickjumper.utils.manager.UITools;
 
 import javax.swing.*;
 import java.awt.*;

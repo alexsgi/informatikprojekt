@@ -50,7 +50,6 @@ public class PanelFrameManager {
     public void switchToGamePanel() {
         mainFrameView.getContentPane().removeAll();
         mainFrameView.getContentPane().add(gamePanelView);
-        startMovingBackground();
     }
 
     public void switchToStartPanel() {
@@ -62,10 +61,6 @@ public class PanelFrameManager {
         controller.updateHighScore();
 
         mainFrameView.getContentPane().add(startPanelView);
-        /*
-        if (controller.getSignedInPlayer() != null)
-            startPanelView.showHighScore(controller.getSignedInPlayer().getHighScore());
-         */
     }
 
     public void startMovingBackground() {

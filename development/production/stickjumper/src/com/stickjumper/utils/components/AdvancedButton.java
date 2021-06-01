@@ -1,7 +1,7 @@
 package com.stickjumper.utils.components;
 
 import com.stickjumper.utils.Settings;
-import com.stickjumper.utils.SoundManager;
+import com.stickjumper.utils.manager.SoundManager;
 
 import javax.swing.*;
 import java.awt.*;

@@ -5,6 +5,10 @@ import com.stickjumper.data.database.DBConnection;
 import com.stickjumper.frontend.MainFrameView;
 import com.stickjumper.frontend.boot.LoadingFrameView;
 import com.stickjumper.utils.*;
+import com.stickjumper.utils.manager.ImageManager;
+import com.stickjumper.utils.manager.SoundManager;
+import com.stickjumper.utils.manager.UITools;
+import com.stickjumper.utils.network.ConnectionTester;
 
 import javax.swing.*;
 import java.sql.SQLException;
@@ -41,11 +45,10 @@ public class Starter {
         SceneryRandomGenerator sceneryRandomGenerator = new SceneryRandomGenerator();
 
         DBConnection.init();
-        // Create main frame
+
         MainFrameView mainFrameView = new MainFrameView(sceneryRandomGenerator);
         mainFrameView.addPlayerListToController(DBConnection.getAllPlayers());
 
-        // Close loading screen
         loadingFrameView.dispose();
         mainFrameView.setVisible(true);
     }

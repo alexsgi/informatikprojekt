@@ -7,15 +7,12 @@ import com.stickjumper.frontend.game.GamePanelView;
 import com.stickjumper.utils.Settings;
 
 import java.awt.*;
-import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class SceneryRandomGenerator {
 
-    private static int timerVar = 1;
-    private final Random random = new Random();
     private Timer timer;
     private SceneryController sceneryController;
     private int h, w;
@@ -106,10 +103,10 @@ public class SceneryRandomGenerator {
             }
             case 3 -> {
                 createEnemy(1, 1, 200);
-                createEnemy(2, 1, (int) (1280 * 2));
-                createEnemy(2, 1, (int) (1280 * 4 - 1000) / 3);
+                createEnemy(2, 1, 1280 * 2);
+                createEnemy(2, 1, (1280 * 4 - 1000) / 3);
                 createEnemy(1, 1, 500);
-                createEnemy(3, 1, (int) (1280 * 3 + 1000));
+                createEnemy(3, 1, 1280 * 3 + 1000);
                 createEnemy(1, 1, 1000);
                 createEnemy(3, 1, (1280 * 4) + 800);
                 createCoin(0, 15);

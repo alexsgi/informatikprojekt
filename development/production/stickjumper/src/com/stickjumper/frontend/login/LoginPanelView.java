@@ -1,7 +1,7 @@
 package com.stickjumper.frontend.login;
 
 import com.stickjumper.controller.Controller;
-import com.stickjumper.utils.ImageManager;
+import com.stickjumper.utils.manager.ImageManager;
 import com.stickjumper.utils.Settings;
 import com.stickjumper.utils.components.AdvancedButton;
 import com.stickjumper.utils.components.JRoundPasswordField;
@@ -20,9 +20,7 @@ public class LoginPanelView extends JPanel implements ActionListener {
     private final Controller controller;
 
     private final AdvancedButton loginButton;
-    // private JProgressBar progressBar;
 
-    // All Text fields
     private final JRoundTextField userNameTextField;
     private final JRoundPasswordField passwordField;
 
@@ -100,24 +98,6 @@ public class LoginPanelView extends JPanel implements ActionListener {
         registerButton.setID("registerButton");
         registerButton.addActionListener(this);
         add(registerButton);
-
-        /*
-        progressBar.setFocusable(false);
-        progressBar.setBackground(null);
-        progressBar.setOpaque(true);
-        progressBar.setBorderPainted(false);
-        progressBar.setFocusable(false);
-        progressBar.setBorder(null);
-        progressBar.setForeground(null);
-        progressBar = new JProgressBar();
-        progressBar.setSize(50, 50);
-        progressBar.setLocation((getWidth() - progressBar.getWidth()) / 2, 300);
-        progressBar.setVisible(true);
-        progressBar.setMaximum(100);
-        progressBar.setMinimum(0);
-        progressBar.setIndeterminate(true);
-        add(progressBar);
-         */
     }
 
     @Override
@@ -139,7 +119,7 @@ public class LoginPanelView extends JPanel implements ActionListener {
                     return;
                 }
                 loginButton.setEnabled(false);
-                // progressBarRun();
+
                 String hashed = PasswordHasher.hash(password);
                 if (hashed == null) {
                     JOptionPane.showMessageDialog(null, "Massive error (password hashing)");
@@ -158,28 +138,8 @@ public class LoginPanelView extends JPanel implements ActionListener {
                     Settings.logData("SQLException (login)", ex);
                 }
                 loginButton.setEnabled(true);
-                // progressBar.setVisible(false);
             }
             case "registerButton" -> controller.getPanelFrameManager().switchToRegisterPanel();
         }
     }
-
-    /*
-    private void progressBarRun() {
-            progressBar.setVisible(true);
-            Timer progressBarTimer = new Timer();
-            int progressBarSpeed = 20;
-            final int[] x = {0};
-            progressBarTimer.scheduleAtFixedRate(new TimerTask() {
-                @Override
-                public void run() {
-
-                    if (x[0] <= 100) {
-                        progressBar.setValue(x[0]);
-                        x[0]++;
-                    }
-                }
-            }, 0, progressBarSpeed);
-    }
-    */
 }

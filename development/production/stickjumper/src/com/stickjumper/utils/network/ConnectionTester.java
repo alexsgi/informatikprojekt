@@ -1,4 +1,4 @@
-package com.stickjumper.utils;
+package com.stickjumper.utils.network;
 
 import javax.net.ssl.HttpsURLConnection;
 import java.io.BufferedReader;

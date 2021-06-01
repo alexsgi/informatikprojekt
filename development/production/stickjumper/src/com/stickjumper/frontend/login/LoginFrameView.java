@@ -1,7 +1,7 @@
 package com.stickjumper.frontend.login;
 
 import com.stickjumper.controller.Controller;
-import com.stickjumper.utils.ImageManager;
+import com.stickjumper.utils.manager.ImageManager;
 import com.stickjumper.utils.Settings;
 
 import javax.swing.*;
@@ -11,8 +11,6 @@ import java.awt.event.WindowEvent;
 public class LoginFrameView extends JFrame {
 
     public LoginFrameView(Controller controller) {
-        // setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-
         addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
                 controller.getPanelFrameManager().enableMainFrame();
@@ -26,7 +24,6 @@ public class LoginFrameView extends JFrame {
 
         setIconImage(ImageManager.APP_ICON_IMAGE);
 
-        // builds both panels, they can be changed via PanelFrameManager
         RegisterPanelView registerPanelView = new RegisterPanelView(controller, this);
         controller.setRegisterPanelView(registerPanelView);
         LoginPanelView loginPanelView = new LoginPanelView(controller, this);

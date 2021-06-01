@@ -7,7 +7,7 @@ import com.stickjumper.data.gameelements.GameCharacter;
 import com.stickjumper.frontend.game.GamePanelView;
 import com.stickjumper.frontend.rendering.GameElementRender;
 import com.stickjumper.utils.Settings;
-import com.stickjumper.utils.SoundManager;
+import com.stickjumper.utils.manager.SoundManager;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -72,6 +72,7 @@ public class SceneryController {
 
     public void startGame() {
         controller.resetGameScore();
+        panelFrameManager.startMovingBackground();
         unfreeze();
         // Settings.STEADY_OBSTACLES_LETHAL = true;
         foregroundTimer = new Timer();
@@ -126,20 +127,18 @@ public class SceneryController {
         gameCharacterElement = null;
         gameCharacterAlreadyAdded = false;
         controller.storeLocalHighscore();
-        System.err.println(controller.getLastRoundHighScore());
-        System.err.println(controller.getLocalHighScore() + "\n");
     }
 
     public GamePanelView getGamePanelView() {
         return gamePanelView;
     }
 
-    public void keyPressed2(KeyEvent e) {
+    public void keyPressed(KeyEvent e) {
         switch (e.getKeyCode()) {
             case KeyEvent.VK_SPACE -> {
                 if (controller.getMainFrameView().keysEnabledInGame && !gameOver) {
                     if (!spacePressedOnce) {
-                        jump2();
+                        jump();
                         spacePressedOnce = true;
                     } else {
                         newPeriod = Settings.JUMP_PERIOD_FOR_HOLDING_SPACE;
@@ -149,7 +148,7 @@ public class SceneryController {
         }
     }
 
-    public void keyReleased2(KeyEvent e) {
+    public void keyReleased(KeyEvent e) {
         switch (e.getKeyCode()) {
             case KeyEvent.VK_SPACE -> {
                 if (controller.getMainFrameView().keysEnabledInGame && !gameOver) newPeriod = Settings.JUMP_PERIOD;
@@ -157,7 +156,7 @@ public class SceneryController {
         }
     }
 
-    public void jump2() {
+    public void jump() {
         jumpVar = Settings.JUMP_HEIGHT;
         jumpTimer = new Timer();
         jumpTimer.scheduleAtFixedRate(new TimerTask() {
@@ -169,34 +168,33 @@ public class SceneryController {
                         jumpVar--;
                     } else if (jumpVar == 0) {
                         jumpTimer.cancel();
-                        jumpBackDown2();
+                        jumpBackDown();
                     }
                 }
             }
         }, 0, Settings.JUMP_PERIOD);
     }
 
-    public void jumpBackDown2() {
+    public void jumpBackDown() {
         jumpVar = 0;
         jumpTimer = new Timer();
         jumpTimer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
                 if (gameCharacterElement != null) {
-
                     if (jumpVar < Settings.JUMP_TOLERANCE_FOR_DELAY) {
                         gameCharacterElement.decrementY(jumpVar);
                         jumpVar++;
                     } else if (jumpVar == Settings.JUMP_TOLERANCE_FOR_DELAY) {
                         jumpTimer.cancel();
-                        jumpBackDownFurther2();
+                        jumpBackDownFurther();
                     }
                 }
             }
         }, 50, Settings.JUMP_PERIOD);
     }
 
-    public void jumpBackDownFurther2() {
+    public void jumpBackDownFurther() {
         jumpVar = Settings.JUMP_TOLERANCE_FOR_DELAY;
         jumpTimer = new Timer();
         jumpTimer.scheduleAtFixedRate(new TimerTask() {
@@ -208,14 +206,14 @@ public class SceneryController {
                         jumpVar++;
                     } else if (jumpVar == Settings.JUMP_SECOND_TOLERANCE_FOR_DELAY) {
                         jumpTimer.cancel();
-                        jumpBackDownFurtherFurther2();
+                        jumpBackDownFurtherFurther();
                     }
                 }
             }
         }, 0, newPeriod);
     }
 
-    public void jumpBackDownFurtherFurther2() {
+    public void jumpBackDownFurtherFurther() {
         jumpVar = Settings.JUMP_SECOND_TOLERANCE_FOR_DELAY;
         jumpTimer = new Timer();
         jumpTimer.scheduleAtFixedRate(new TimerTask() {
@@ -233,7 +231,6 @@ public class SceneryController {
                 }
             }
         }, 0, newPeriod);
-
     }
 
 }

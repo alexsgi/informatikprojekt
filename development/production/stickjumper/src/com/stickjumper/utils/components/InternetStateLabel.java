@@ -1,6 +1,6 @@
 package com.stickjumper.utils.components;
 
-import com.stickjumper.utils.ImageManager;
+import com.stickjumper.utils.manager.ImageManager;
 
 import javax.swing.*;
 import java.awt.image.BufferedImage;

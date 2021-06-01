@@ -3,7 +3,7 @@ package com.stickjumper.frontend.start;
 import com.stickjumper.controller.Controller;
 import com.stickjumper.frontend.login.LoginFrameView;
 import com.stickjumper.frontend.start.startsidemenu.StartSideMenuPanel;
-import com.stickjumper.utils.ImageManager;
+import com.stickjumper.utils.manager.ImageManager;
 import com.stickjumper.utils.Settings;
 import com.stickjumper.utils.components.AdvancedButton;
 import com.stickjumper.utils.components.InternetStateLabel;
@@ -18,7 +18,6 @@ public class StartPanelView extends JPanel implements ActionListener {
     private final InternetStateLabel internetIconLabel;
     private final Controller controller;
 
-    // All buttons
     private final AdvancedButton statisticsButton, loginButton, settingsButton, playButton;
     private final JLabel lblHighScore;
     private final StartSideMenuPanel menuPanel;

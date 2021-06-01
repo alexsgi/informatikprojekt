@@ -34,13 +34,13 @@ public class DBConnection {
             connection = DriverManager.getConnection(String.format("jdbc:mysql://%s/%s?user=%s&password=%s",
                     DB_URL, DB_NAME, DB_USERNAME, DB_PASSWORD));
         } catch (SQLException ex) {
-            Settings.logData("SQL Exception (init)", ex);
+            Settings.logData("SQL Exception (init) [connectiion]", ex);
             return;
         }
         try {
             stmt = connection.createStatement();
         } catch (SQLException ex) {
-            Settings.logData("SQL Exception (init)", ex);
+            Settings.logData("SQL Exception (init) [stmt]", ex);
         }
         init = true;
     }

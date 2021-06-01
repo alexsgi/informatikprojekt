@@ -6,7 +6,7 @@ import com.stickjumper.data.list.List;
 import com.stickjumper.frontend.game.GamePanelView;
 import com.stickjumper.frontend.rendering.background.MovingBackgroundPanel;
 import com.stickjumper.frontend.start.StartPanelView;
-import com.stickjumper.utils.ImageManager;
+import com.stickjumper.utils.manager.ImageManager;
 import com.stickjumper.utils.Settings;
 
 import javax.swing.*;
@@ -16,9 +16,7 @@ import java.awt.event.KeyListener;
 public class MainFrameView extends JFrame implements KeyListener {
 
     public boolean keysEnabledInGame = true;
-    private StartPanelView startPanel;
-    private Controller controller;
-    private GamePanelView gamePanel;
+    private final Controller controller;
 
     public MainFrameView(SceneryRandomGenerator sceneryRandomGenerator) {
         setResizable(false);
@@ -30,10 +28,10 @@ public class MainFrameView extends JFrame implements KeyListener {
         setIconImage(ImageManager.APP_ICON_IMAGE);
 
         controller = new Controller(this, sceneryRandomGenerator);
-        startPanel = new StartPanelView(controller);
+        StartPanelView startPanel = new StartPanelView(controller);
         controller.setStartPanelView(startPanel);
 
-        gamePanel = new GamePanelView(controller);
+        GamePanelView gamePanel = new GamePanelView(controller);
         controller.setGamePanelView(gamePanel);
 
         MovingBackgroundPanel movingBackgroundPanel = new MovingBackgroundPanel();
@@ -47,32 +45,19 @@ public class MainFrameView extends JFrame implements KeyListener {
 
     @Override
     public void keyTyped(KeyEvent e) {
-        /*
-        if(controller == null || controller.gameStarted || e.getKeyCode() != KeyEvent.VK_SPACE) return;
-
-        if(controller.getPanelFrameManager().isGamePanelActive()) {
-            controller.startGame();
-            return;
-        }
-
-        if(controller.getPanelFrameManager().isStartPanelActive()) {
-            controller.getPanelFrameManager().switchToGamePanel();
-            controller.startGame();
-        }
-         */
     }
 
     @Override
     public void keyPressed(KeyEvent e) {
         if (controller != null && controller.gameStarted) {
-            controller.getSceneryController().keyPressed2(e);
+            controller.getSceneryController().keyPressed(e);
         }
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
         if (controller != null && controller.gameStarted) {
-            controller.getSceneryController().keyReleased2(e);
+            controller.getSceneryController().keyReleased(e);
         }
     }
 }

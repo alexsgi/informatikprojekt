@@ -2,7 +2,7 @@ package com.stickjumper.frontend.login;
 
 import com.stickjumper.controller.Controller;
 import com.stickjumper.data.database.DBConnection;
-import com.stickjumper.utils.ImageManager;
+import com.stickjumper.utils.manager.ImageManager;
 import com.stickjumper.utils.Settings;
 import com.stickjumper.utils.components.AdvancedButton;
 import com.stickjumper.utils.components.JRoundPasswordField;
@@ -143,7 +143,7 @@ public class RegisterPanelView extends JPanel implements ActionListener {
                             controller.getPanelFrameManager().closeLoginFrame();
                         } else {
                             // weird error
-                            Settings.logData("Weird error (register");
+                            Settings.logData("Weird error (register)");
                         }
                     }
                 } catch (SQLException throwable) {
@@ -154,8 +154,7 @@ public class RegisterPanelView extends JPanel implements ActionListener {
                 }
                 registerButton.setEnabled(true);
             }
-            case "backButton" -> // controller.getPanelFrameManager().closeLoginFrame();
-                    controller.getPanelFrameManager().switchToLoginPanel();
+            case "backButton" -> controller.getPanelFrameManager().switchToLoginPanel();
         }
     }
 }

@@ -1,4 +1,6 @@
-package com.stickjumper.utils;
+package com.stickjumper.utils.manager;
+
+import com.stickjumper.utils.Settings;
 
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;

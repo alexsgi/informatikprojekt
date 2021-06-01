@@ -5,7 +5,7 @@ import java.util.TimerTask;
 
 public class CountDownTimer extends Timer {
 
-    private final int period = 1000;
+    private final int period = 1000; // 1 sec
     private Timer timer;
 
     public CountDownTimer(int countDownFrom, CountDownCallback countDownCallback) {

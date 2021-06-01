@@ -11,7 +11,7 @@ import com.stickjumper.frontend.login.LoginFrameView;
 import com.stickjumper.frontend.login.LoginPanelView;
 import com.stickjumper.frontend.login.RegisterPanelView;
 import com.stickjumper.frontend.start.StartPanelView;
-import com.stickjumper.utils.ConnectionTester;
+import com.stickjumper.utils.network.ConnectionTester;
 import com.stickjumper.utils.Settings;
 
 import javax.swing.*;
@@ -28,7 +28,7 @@ public class Controller {
     public boolean gameStarted = false;
     // Manages all in-game objects
     private SceneryController sceneryController;
-    private SceneryRandomGenerator sceneryRandomGenerator;
+    private final SceneryRandomGenerator sceneryRandomGenerator;
     // Player management
     private Player signedInPlayer;
     private List playerList;

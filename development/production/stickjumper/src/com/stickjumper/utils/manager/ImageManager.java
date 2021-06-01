@@ -1,4 +1,4 @@
-package com.stickjumper.utils;
+package com.stickjumper.utils.manager;
 
 import java.awt.image.BufferedImage;
 
