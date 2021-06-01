@@ -6,10 +6,10 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="460ac02d-4569-48ee-b691-afac2c185a3b" name="Default Changelist" comment="just added 2,5 patterns">
+    <list default="true" id="460ac02d-4569-48ee-b691-afac2c185a3b" name="Default Changelist" comment="just added 4 patterns">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/controller/scenerycontrolling/SceneryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/controller/scenerycontrolling/SceneryController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/controller/scenerycontrolling/SceneryRandomGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/controller/scenerycontrolling/SceneryRandomGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/Settings.java" afterDir="false" />
     </list>
     <list id="cb6ccd45-2f4a-4a31-aef3-f8cd82d4f1fc" name="Changes by Alex" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -88,19 +88,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Starter" />
@@ -167,6 +154,7 @@
       <workItem from="1622320959100" duration="4485000" />
       <workItem from="1622363570363" duration="2336000" />
       <workItem from="1622470235680" duration="3909000" />
+      <workItem from="1622532553329" duration="307000" />
     </task>
     <task id="LOCAL-00001" summary="dont fucking know the solution">
       <created>1622122585642</created>
@@ -203,7 +191,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622493536073</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="just added 4 patterns">
+      <created>1622496481101</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1622496481101</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -227,7 +222,8 @@
     <MESSAGE value="jump delay tolerance" />
     <MESSAGE value="new method for jumping" />
     <MESSAGE value="just added 2,5 patterns" />
-    <option name="LAST_COMMIT_MESSAGE" value="just added 2,5 patterns" />
+    <MESSAGE value="just added 4 patterns" />
+    <option name="LAST_COMMIT_MESSAGE" value="just added 4 patterns" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -41,7 +41,7 @@ public class Settings {
     // the higher this number is, the larger is the space above the obstacle, that will cause a game over when passed
     public static final int gameOverSensitivity = 100;
     // if this variable will be set true, when the random generator works properly
-    public static final boolean steadyObstaclesCauseGameOver = true ;
+    public static final boolean steadyObstaclesCauseGameOver = false ;
     public static final int JUMP_HEIGHT = 22;
     public static final int JUMP_PERIOD = 17;
     public static final int JUMP_DELAY_FOR_HOLDING_SPACE = 1; // not needed in current method

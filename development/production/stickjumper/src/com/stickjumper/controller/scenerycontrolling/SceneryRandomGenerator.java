@@ -13,7 +13,7 @@ import java.util.TimerTask;
 
 public class SceneryRandomGenerator {
 
-    private static int timerVar = 10;
+    private static int timerVar = 1;
     private final int startHeight = 100;
     private final Random random = new Random();
     Timer timer;
@@ -35,8 +35,10 @@ public class SceneryRandomGenerator {
 
     public void randomGenerate() {
         sceneryController.initGameCharacter(1);
+
         /*
         timer = new Timer();
+
         timer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
@@ -44,14 +46,15 @@ public class SceneryRandomGenerator {
                 if (timerVar != 15) {
                     timerVar++;
                 } else {
-                    timerVar = 10;
+                    timerVar = 1;
                 }
             }
         }, 0, 7000);
 
+        */
 
-         */
-        createPattern(4);
+
+         createPattern(4);
     }
 
     public void recreate() {
@@ -80,7 +83,7 @@ public class SceneryRandomGenerator {
 
     public void stop() {
         if (timer != null) timer.cancel();
-        timerVar = 10;
+        timerVar -- ;
     }
 
     private void createPattern(int pattern) {
