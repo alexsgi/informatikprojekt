@@ -53,8 +53,6 @@ public class SceneryRandomGenerator {
 
     public void stop() {
         if (timer != null) timer.cancel();
-        if (timerVar != 1 && timerVar != 2) timerVar -= 2;
-        else timerVar = 1;
     }
 
     private void createPattern(int pattern) {
