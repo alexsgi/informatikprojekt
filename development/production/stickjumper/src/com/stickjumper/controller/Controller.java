@@ -117,6 +117,7 @@ public class Controller {
         localHighScore = -1;
         sceneryController.startGame();
         sceneryRandomGenerator.randomGenerate();
+        gamePanelView.resetCheatCount();
         gameStarted = true;
         mainFrameView.keysEnabledInGame = true;
     }

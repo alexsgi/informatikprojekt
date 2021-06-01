@@ -51,7 +51,6 @@ public class SceneryController {
             gamePanelView.addObject(gameCharacterElement);
             gameCharacterAlreadyAdded = true;
         }
-        // yPosGameCharacter = gamePanelView.getHeight() - Settings.SEA_LEVEL - GameCharacter.dimens.getHeight();
         yPosGameCharacter = gameCharacterElement.getY();
     }
 
@@ -75,6 +74,7 @@ public class SceneryController {
         controller.resetGameScore();
         unfreeze();
         Settings.STEADY_OBSTACLES_LETHAL = true;
+        controller.getPanelFrameManager();
         foregroundTimer = new Timer();
         foregroundTimer.scheduleAtFixedRate(new TimerTask() {
             @Override

@@ -100,4 +100,7 @@ public class GamePanelView extends JPanel implements ActionListener {
         add(render);
     }
 
+    public void resetCheatCount() {
+        steadyObstaclesCheatCount = 0;
+    }
 }
