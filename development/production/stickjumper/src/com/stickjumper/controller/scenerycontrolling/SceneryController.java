@@ -28,9 +28,6 @@ public class SceneryController {
     private static int newDelay = 50;
     private static int newPeriod = Settings.JUMP_PERIOD;
 
-    // for test usage only:
-    private static long end, start;
-
     // init timer:
     Timer foregroundTimer, jumpTimer;
     GameElementRender gameCharacterElement;
@@ -188,7 +185,6 @@ public class SceneryController {
 
     public void jump2() {
         jumpVar = Settings.JUMP_HEIGHT;
-        start = System.currentTimeMillis();
         jumpTimer = new Timer();
         jumpTimer.scheduleAtFixedRate(new TimerTask() {
             @Override
@@ -259,8 +255,6 @@ public class SceneryController {
                         jumpTimer.cancel();
                         spacePressedOnce = false;
                         spacePressedTwice = false;
-                        end = System.currentTimeMillis();
-                        System.out.println(end-start);
                     }
                 }
             }

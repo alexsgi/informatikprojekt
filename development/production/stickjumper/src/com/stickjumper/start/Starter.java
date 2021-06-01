@@ -6,9 +6,7 @@ import com.stickjumper.frontend.MainFrameView;
 import com.stickjumper.frontend.boot.LoadingFrameView;
 import com.stickjumper.utils.*;
 
-import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.*;
-import java.io.IOException;
 import java.sql.SQLException;
 
 public class Starter {
@@ -16,7 +14,7 @@ public class Starter {
 
     public static void main(String[] args) throws SQLException {
         for (String s : args) {
-            if(s.equals("debug")) {
+            if (s.equals("debug")) {
                 Settings.activateDebugMode();
             }
         }

@@ -47,8 +47,6 @@ public class SceneryRandomGenerator {
                 }
             }
         }, 0, 7000);
-
-
     }
 
     public void recreate() {
@@ -136,11 +134,11 @@ public class SceneryRandomGenerator {
             case 3:
                 createEnemy(1, 1, 200);
                 createEnemy(2, 1, (int) (1280 * 2));
-                createEnemy(2, 1, (int) (1280 * 4- 1000)/3);
+                createEnemy(2, 1, (int) (1280 * 4 - 1000) / 3);
                 createEnemy(1, 1, 500);
-                createEnemy(3, 1, (int) (1280 * 3+1000));
+                createEnemy(3, 1, (int) (1280 * 3 + 1000));
                 createEnemy(1, 1, 1000);
-                createEnemy(3, 1,  (1280 * 4)+800);
+                createEnemy(3, 1, (1280 * 4) + 800);
 
                 createCoin(0, 15);
                 createCoin(30, 60);
@@ -170,10 +168,10 @@ public class SceneryRandomGenerator {
                 createSteadyObstacle(1, 1100);
                 createSteadyObstacle(1, 500);
 
-                createEnemy(3, 1, 1280+300);
+                createEnemy(3, 1, 1280 + 300);
                 createEnemy(3, 1, (1280 * 4));
                 createEnemy(2, 1, (int) (1280 * 1.9));
-                createEnemy(3, 1, (1280 * 2)+800);
+                createEnemy(3, 1, (1280 * 2) + 800);
 
             /*
                 // just marking the area haha
@@ -188,104 +186,104 @@ public class SceneryRandomGenerator {
             // Jessica ↓
             case 5:
                 createCoin(250, 60);
-                createCoin(20,350);
-                createCoin(40,400);
-                createCoin(160,570);
-                createCoin(10,820);
-                createCoin(40,1000);
-                createCoin(160,550);
+                createCoin(20, 350);
+                createCoin(40, 400);
+                createCoin(160, 570);
+                createCoin(10, 820);
+                createCoin(40, 1000);
+                createCoin(160, 550);
 
-                createEnemy(2,1,500);
-                createEnemy(2,1,800);
-                createEnemy(3,1,1200);
-                createEnemy(2,1,1280*2);
-                createEnemy(3,1,5260);
+                createEnemy(2, 1, 500);
+                createEnemy(2, 1, 800);
+                createEnemy(3, 1, 1200);
+                createEnemy(2, 1, 1280 * 2);
+                createEnemy(3, 1, 5260);
 
-                createSteadyObstacle(1,300);
-                createSteadyObstacle(1,520);
-                createSteadyObstacle(1,540);
-                createSteadyObstacle(1,540+320);
-                createSteadyObstacle(1,1200);
-                createSteadyObstacle(1,1220);
+                createSteadyObstacle(1, 300);
+                createSteadyObstacle(1, 520);
+                createSteadyObstacle(1, 540);
+                createSteadyObstacle(1, 540 + 320);
+                createSteadyObstacle(1, 1200);
+                createSteadyObstacle(1, 1220);
                 break;
             case 6:
-                createCoin(110,550);
-                createCoin(160,600);
-                createCoin(180,650);
-                createCoin(160,700);
-                createCoin(110,750);
+                createCoin(110, 550);
+                createCoin(160, 600);
+                createCoin(180, 650);
+                createCoin(160, 700);
+                createCoin(110, 750);
 
-                createSteadyObstacle(1,100);
-                createSteadyObstacle(1,120);
-                createSteadyObstacle(1,300);
-                createSteadyObstacle(1,320);
-                createSteadyObstacle(1,340);
+                createSteadyObstacle(1, 100);
+                createSteadyObstacle(1, 120);
+                createSteadyObstacle(1, 300);
+                createSteadyObstacle(1, 320);
+                createSteadyObstacle(1, 340);
                 createSteadyObstacle(1, 900);
-                createSteadyObstacle(1,920);
-                createSteadyObstacle(1,940);
-                createSteadyObstacle(1,1120);
-                createSteadyObstacle(1,1140);
+                createSteadyObstacle(1, 920);
+                createSteadyObstacle(1, 940);
+                createSteadyObstacle(1, 1120);
+                createSteadyObstacle(1, 1140);
 
-                createEnemy(1,1,620);
+                createEnemy(1, 1, 620);
                 break;
             case 7:
-                createCoin(20,100);
+                createCoin(20, 100);
                 createCoin(80, 320);
-                createCoin(140,560);
-                createCoin(200,820);
+                createCoin(140, 560);
+                createCoin(200, 820);
 
-                createSteadyObstacle(1,0);
-                createSteadyObstacle(1,200);
-                createSteadyObstacle(1,220);
+                createSteadyObstacle(1, 0);
+                createSteadyObstacle(1, 200);
+                createSteadyObstacle(1, 220);
                 createSteadyObstacle(1, 420);
-                createSteadyObstacle(1,440);
-                createSteadyObstacle(1,460);
-                createSteadyObstacle(1,660);
-                createSteadyObstacle(1,680);
-                createSteadyObstacle(1,700);
-                createSteadyObstacle(1,720);
-                createSteadyObstacle(1,920);
-                createSteadyObstacle(1,940);
-                createSteadyObstacle(1,960);
-                createSteadyObstacle(1,980);
-                createSteadyObstacle(1,1000);
+                createSteadyObstacle(1, 440);
+                createSteadyObstacle(1, 460);
+                createSteadyObstacle(1, 660);
+                createSteadyObstacle(1, 680);
+                createSteadyObstacle(1, 700);
+                createSteadyObstacle(1, 720);
+                createSteadyObstacle(1, 920);
+                createSteadyObstacle(1, 940);
+                createSteadyObstacle(1, 960);
+                createSteadyObstacle(1, 980);
+                createSteadyObstacle(1, 1000);
                 break;
             case 8:
                 createCoin(10, 100);
-                createCoin(80,70);
-                createCoin(150,950);
-                createCoin(200,1000);
+                createCoin(80, 70);
+                createCoin(150, 950);
+                createCoin(200, 1000);
 
-                createSteadyObstacle(1,500);
-                createSteadyObstacle(1,560);
-                createSteadyObstacle(1,800);
-                createSteadyObstacle(1,1000);
-                createSteadyObstacle(1,1040);
-                createSteadyObstacle(1,1080);
+                createSteadyObstacle(1, 500);
+                createSteadyObstacle(1, 560);
+                createSteadyObstacle(1, 800);
+                createSteadyObstacle(1, 1000);
+                createSteadyObstacle(1, 1040);
+                createSteadyObstacle(1, 1080);
 
-                createEnemy(2,1,900);
-                createEnemy(3,1,1900);
-                createEnemy(2,1,1900);
-                createEnemy(3,1,2500);
+                createEnemy(2, 1, 900);
+                createEnemy(3, 1, 1900);
+                createEnemy(2, 1, 1900);
+                createEnemy(3, 1, 2500);
                 break;
             case 9:
-                createCoin(150,30);
-                createCoin(50,470);
-                createCoin(10,750);
-                createCoin(280,1200);
+                createCoin(150, 30);
+                createCoin(50, 470);
+                createCoin(10, 750);
+                createCoin(280, 1200);
 
-                createSteadyObstacle(1,0);
-                createSteadyObstacle(1,20);
-                createSteadyObstacle(1,40);
-                createSteadyObstacle(1,500);
-                createSteadyObstacle(1,530);
-                createSteadyObstacle(1,800);
-                createSteadyObstacle(1,850);
+                createSteadyObstacle(1, 0);
+                createSteadyObstacle(1, 20);
+                createSteadyObstacle(1, 40);
+                createSteadyObstacle(1, 500);
+                createSteadyObstacle(1, 530);
+                createSteadyObstacle(1, 800);
+                createSteadyObstacle(1, 850);
 
-                createEnemy(2,1,1300);
-                createEnemy(2,1,2000);
-                createEnemy(2,1,3000);
-                createEnemy(3,1, 2500);
+                createEnemy(2, 1, 1300);
+                createEnemy(2, 1, 2000);
+                createEnemy(2, 1, 3000);
+                createEnemy(3, 1, 2500);
                 break;
             // Alex ↓
             case 10:
