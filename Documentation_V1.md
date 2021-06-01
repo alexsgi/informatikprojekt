@@ -268,3 +268,8 @@ Jessica, Alex, Jonas:
 Alex:
 1. Wiederherstellen der funktionierenden Jump-Animation und -Logik
 2. Implementieren der Pattern 10 - 15 (SceneryRandomGenerator)
+
+### **01.06.2021**
+Alex:
+1. Ändern der Struktur der Variablen
+2. Highscore-Funktionalität vollständig implementiert
