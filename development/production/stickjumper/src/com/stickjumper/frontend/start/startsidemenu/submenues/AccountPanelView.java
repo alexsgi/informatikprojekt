@@ -54,46 +54,47 @@ public class AccountPanelView extends JPanel {
 
         LoginLabel lblPlayerName = new LoginLabel(LoginLabel.TEXT);
         lblPlayerName.setText("Player name:");
-        lblPlayerName.setSize(200, 30);
-        lblPlayerName.setLocation(menuPanel.getWidth() + 30, 100);
+        lblPlayerName.setSize(250, 15);
+        lblPlayerName.setLocation(menuPanel.getWidth() + 30, 200);
         lblPlayerName.setFont(Settings.FONT_LOGIN_FIELDS_LABELS);
         add(lblPlayerName);
 
         txtPlayerName = new JTextField();
         txtPlayerName.setHighlighter(null);
         txtPlayerName.setEditable(false);
-        txtPlayerName.setSize(200, 30);
-        txtPlayerName.setLocation(menuPanel.getWidth() + 30, 130);
+        txtPlayerName.setSize(lblPlayerName.getWidth(), 30);
+        txtPlayerName.setLocation(menuPanel.getWidth() + 30, lblPlayerName.getY() + lblPlayerName.getHeight() + 5);
         txtPlayerName.setFont(Settings.FONT_LOGIN_FIELDS_LABELS);
         add(txtPlayerName);
 
+        // test of course
         LoginLabel lblPlayerPassword = new LoginLabel(LoginLabel.TEXT);
-        lblPlayerPassword.setText("Password (luckily hashed):");
-        lblPlayerPassword.setSize(200, 30);
-        lblPlayerPassword.setLocation(menuPanel.getWidth() + 30, 160);
+        lblPlayerPassword.setText("Password (hashed!):");
+        lblPlayerPassword.setSize(lblPlayerName.getWidth(), lblPlayerName.getHeight());
+        lblPlayerPassword.setLocation(lblPlayerName.getX() + lblPlayerName.getWidth() + 50, lblPlayerName.getY());
         lblPlayerPassword.setFont(Settings.FONT_LOGIN_FIELDS_LABELS);
         add(lblPlayerPassword);
 
         txtPlayerPassword = new JTextField();
         txtPlayerPassword.setHighlighter(null);
         txtPlayerPassword.setEditable(false);
-        txtPlayerPassword.setSize(200, 30);
-        txtPlayerPassword.setLocation(menuPanel.getWidth() + 30, 190);
+        txtPlayerPassword.setSize(txtPlayerName.getWidth(), txtPlayerName.getHeight());
+        txtPlayerPassword.setLocation(txtPlayerName.getX() + txtPlayerName.getWidth() + 50, txtPlayerName.getY());
         txtPlayerPassword.setFont(Settings.FONT_LOGIN_FIELDS_LABELS);
         add(txtPlayerPassword);
 
         LoginLabel lblPlayerHighscore = new LoginLabel(LoginLabel.TEXT);
         lblPlayerHighscore.setText("Highscore:");
-        lblPlayerHighscore.setSize(200, 30);
-        lblPlayerHighscore.setLocation(menuPanel.getWidth() + 30, 220);
+        lblPlayerHighscore.setSize(lblPlayerName.getWidth(), lblPlayerName.getHeight());
+        lblPlayerHighscore.setLocation(lblPlayerPassword.getX() + lblPlayerPassword.getWidth() + 50, lblPlayerPassword.getY());
         lblPlayerHighscore.setFont(Settings.FONT_LOGIN_FIELDS_LABELS);
         add(lblPlayerHighscore);
 
         txtPlayerHighscore = new JTextField();
         txtPlayerHighscore.setHighlighter(null);
         txtPlayerHighscore.setEditable(false);
-        txtPlayerHighscore.setSize(200, 30);
-        txtPlayerHighscore.setLocation(menuPanel.getWidth() + 30, 250);
+        txtPlayerHighscore.setSize(txtPlayerName.getWidth(), txtPlayerName.getHeight());
+        txtPlayerHighscore.setLocation(txtPlayerPassword.getX() + txtPlayerPassword.getWidth() + 50, txtPlayerPassword.getY());
         txtPlayerHighscore.setFont(Settings.FONT_LOGIN_FIELDS_LABELS);
         add(txtPlayerHighscore);
     }
