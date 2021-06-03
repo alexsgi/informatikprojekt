@@ -46,9 +46,9 @@ public class AccountPanelView extends JPanel {
         add(menuPanel);
 
         JLabel lblTitle = new JLabel("ACCOUNT");
-        lblTitle.setHorizontalTextPosition(SwingConstants.HORIZONTAL);
+        lblTitle.setHorizontalAlignment(SwingConstants.CENTER);
         lblTitle.setSize(getWidth(), 50);
-        lblTitle.setLocation(600, 20);
+        lblTitle.setLocation(0, 20);
         lblTitle.setFont(Settings.FONT_HEADING_BIG);
         lblTitle.setForeground(Color.WHITE);
         add(lblTitle);

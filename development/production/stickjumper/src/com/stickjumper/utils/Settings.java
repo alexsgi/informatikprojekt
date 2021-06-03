@@ -17,8 +17,8 @@ public class Settings {
     // START
     public static final int START_SPACE_BUTTONS = 20;
     // FONT SIZES
-    public static final Font FONT_HEADING_BIG = new Font("Arial Black", Font.PLAIN, 40);
     public static final Font FONT_HEADING_GAME_OVER = new Font("Arial Black", Font.PLAIN, 100);
+    public static final Font FONT_HEADING_BIG = new Font("Arial Black", Font.PLAIN, 40);
     public static final Font FONT_HEADING_SMALL = new Font("Arial Black", Font.PLAIN, 20);
     public static final Font FONT_HEADING_GAME_HIGHSCORE = new Font("Open Sans", Font.BOLD, 30);
     public static final Font FONT_BUTTON = new Font("Calibri", Font.BOLD, 17);

@@ -47,12 +47,26 @@ public class StatisticsPanelView extends JPanel {
         add(menuPanel);
 
         JLabel lblTitle = new JLabel("STATISTICS");
-        lblTitle.setHorizontalTextPosition(SwingConstants.HORIZONTAL);
+        lblTitle.setHorizontalAlignment(SwingConstants.CENTER);
         lblTitle.setSize(getWidth(), 50);
-        lblTitle.setLocation(600, 20);
+        lblTitle.setLocation(0, 20);
         lblTitle.setFont(Settings.FONT_HEADING_BIG);
         lblTitle.setForeground(Color.WHITE);
         add(lblTitle);
+
+        // send own data to db, refresh list
+
+        JLabel lblHeader = new JLabel();
+        lblHeader.setHorizontalAlignment(SwingConstants.CENTER);
+        lblHeader.setText("Ranking of the best StickJumper players");
+        lblHeader.setSize(getWidth(), 50);
+        lblHeader.setLocation(0, 150);
+        lblHeader.setFont(Settings.FONT_HEADING_SMALL);
+        lblHeader.setForeground(Color.decode("#484848"));
+        add(lblHeader);
+
+        // need sorted list of 5 (?) best players
+
     }
 
 }
