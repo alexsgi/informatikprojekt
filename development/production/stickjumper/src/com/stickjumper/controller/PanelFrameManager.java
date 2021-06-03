@@ -8,6 +8,7 @@ import com.stickjumper.frontend.login.LoginPanelView;
 import com.stickjumper.frontend.login.RegisterPanelView;
 import com.stickjumper.frontend.rendering.background.MovingBackgroundPanel;
 import com.stickjumper.frontend.start.StartPanelView;
+import com.stickjumper.frontend.start.startsidemenu.submenues.AccountPanelView;
 import com.stickjumper.frontend.start.startsidemenu.submenues.SettingsPanelView;
 import com.stickjumper.frontend.start.startsidemenu.submenues.StatisticsPanelView;
 
@@ -20,6 +21,7 @@ public class PanelFrameManager {
     public GamePanelView gamePanelView;
     public StatisticsPanelView statisticsPanelView;
     public SettingsPanelView settingsPanelView;
+    public AccountPanelView accountPanelView;
 
     // All frames
     public MainFrameView mainFrameView;
@@ -123,9 +125,29 @@ public class PanelFrameManager {
         this.settingsPanelView = settingsPanelView;
     }
 
-    public void openStatisticsPanel() {
+    public void setAccountPanelView(AccountPanelView accountPanelView) {
+        this.accountPanelView = accountPanelView;
     }
 
-    public void openSettingsPanel() {
+    public void switchToStatisticsPanel() {
+        mainFrameView.getContentPane().removeAll();
+        mainFrameView.getContentPane().add(statisticsPanelView);
     }
+
+    public void switchToSettingsPanel() {
+        mainFrameView.getContentPane().removeAll();
+        mainFrameView.getContentPane().add(settingsPanelView);
+    }
+
+    public void switchToAccountPanel() {
+        mainFrameView.getContentPane().removeAll();
+        accountPanelView.refreshValues();
+        mainFrameView.getContentPane().add(accountPanelView);
+    }
+
+    public void switchToHome() {
+        mainFrameView.getContentPane().removeAll();
+        mainFrameView.getContentPane().add(startPanelView);
+    }
+
 }

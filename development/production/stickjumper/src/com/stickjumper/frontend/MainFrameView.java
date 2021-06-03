@@ -4,23 +4,27 @@ import com.stickjumper.controller.Controller;
 import com.stickjumper.controller.scenerycontrolling.SceneryRandomGenerator;
 import com.stickjumper.data.list.List;
 import com.stickjumper.frontend.game.GamePanelView;
+import com.stickjumper.frontend.login.LoginFrameView;
 import com.stickjumper.frontend.rendering.background.MovingBackgroundPanel;
 import com.stickjumper.frontend.start.StartPanelView;
+import com.stickjumper.frontend.start.startsidemenu.submenues.AccountPanelView;
 import com.stickjumper.frontend.start.startsidemenu.submenues.SettingsPanelView;
 import com.stickjumper.frontend.start.startsidemenu.submenues.StatisticsPanelView;
 import com.stickjumper.utils.Settings;
 import com.stickjumper.utils.manager.ImageManager;
+import com.stickjumper.utils.security.PasswordHasher;
 
 import javax.swing.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.sql.SQLException;
 
 public class MainFrameView extends JFrame implements KeyListener {
 
     private final Controller controller;
     public boolean keysEnabledInGame = true;
 
-    public MainFrameView(SceneryRandomGenerator sceneryRandomGenerator) {
+    public MainFrameView(SceneryRandomGenerator sceneryRandomGenerator, List playerList) {
         setResizable(false);
         setTitle("StickJumper");
         addKeyListener(this);
@@ -29,25 +33,25 @@ public class MainFrameView extends JFrame implements KeyListener {
         setLocationRelativeTo(null);
         setIconImage(ImageManager.APP_ICON_IMAGE);
 
-        // StartSideMenuPanel menuPanel = new StartSideMenuPanel();
-
         controller = new Controller(this, sceneryRandomGenerator);
         StartPanelView startPanel = new StartPanelView(controller);
         controller.setStartPanelView(startPanel);
 
-        controller.getPanelFrameManager().setStatisticsPanel(new StatisticsPanelView());
-        controller.getPanelFrameManager().setSettingsPanelView(new SettingsPanelView());
+        LoginFrameView loginFrameView = new LoginFrameView(controller);
+        controller.setLoginFrameView(loginFrameView);
+
+        controller.getPanelFrameManager().setStatisticsPanel(new StatisticsPanelView(controller));
+        controller.getPanelFrameManager().setSettingsPanelView(new SettingsPanelView(controller));
+        controller.getPanelFrameManager().setAccountPanelView(new AccountPanelView(controller));
 
         GamePanelView gamePanel = new GamePanelView(controller);
         controller.setGamePanelView(gamePanel);
 
+        controller.setList(playerList);
+
         MovingBackgroundPanel movingBackgroundPanel = new MovingBackgroundPanel();
         movingBackgroundPanel.add(startPanel);
         setContentPane(movingBackgroundPanel);
-    }
-
-    public void addPlayerListToController(List list) {
-        controller.setList(list);
     }
 
     @Override
@@ -66,5 +70,9 @@ public class MainFrameView extends JFrame implements KeyListener {
         if (controller != null && controller.gameStarted) {
             controller.getSceneryController().keyReleased(e);
         }
+    }
+
+    public void automaticLogin() throws SQLException {
+        controller.playerLogin("test", PasswordHasher.hash("test"));
     }
 }

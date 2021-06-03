@@ -18,7 +18,10 @@ public class Starter {
     public static void main(String[] args) throws SQLException {
         for (String s : args) {
             switch (s) {
-                case "debug" -> Settings.activateDebugMode();
+                case "debug" -> {
+                    Settings.activateDebugMode();
+                    System.err.println("WARNING: debug mode active");
+                }
             }
         }
         UITools.initUI();
@@ -46,8 +49,8 @@ public class Starter {
 
         DBConnection.init();
 
-        MainFrameView mainFrameView = new MainFrameView(sceneryRandomGenerator);
-        mainFrameView.addPlayerListToController(DBConnection.getAllPlayers());
+        MainFrameView mainFrameView = new MainFrameView(sceneryRandomGenerator, DBConnection.getAllPlayers());
+        mainFrameView.automaticLogin();
 
         loadingFrameView.dispose();
         mainFrameView.setVisible(true);

@@ -1,7 +1,6 @@
 package com.stickjumper.frontend.start;
 
 import com.stickjumper.controller.Controller;
-import com.stickjumper.frontend.login.LoginFrameView;
 import com.stickjumper.frontend.start.startsidemenu.StartSideMenuPanel;
 import com.stickjumper.utils.Settings;
 import com.stickjumper.utils.components.AdvancedButton;
@@ -9,16 +8,13 @@ import com.stickjumper.utils.components.InternetStateLabel;
 import com.stickjumper.utils.manager.ImageManager;
 
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
-public class StartPanelView extends JPanel implements ActionListener {
+public class StartPanelView extends JPanel {
 
     private final InternetStateLabel internetIconLabel;
     private final Controller controller;
-
-    private final AdvancedButton statisticsButton, loginButton, settingsButton, playButton;
     private final JLabel lblHighScore;
 
     public StartPanelView(Controller controller) {
@@ -29,12 +25,42 @@ public class StartPanelView extends JPanel implements ActionListener {
 
         this.controller = controller;
 
-        StartSideMenuPanel menuPanel = new StartSideMenuPanel();
+        StartSideMenuPanel menuPanel = new StartSideMenuPanel(new StartSideMenuPanel.ButtonCallback() {
+            @Override
+            public void onStatisticsClicked() {
+                controller.getPanelFrameManager().switchToStatisticsPanel();
+            }
+
+            @Override
+            public void onSettingsClicked() {
+                controller.getPanelFrameManager().switchToSettingsPanel();
+            }
+
+            @Override
+            public void onLoginClicked() {
+                if (controller.getSignedInPlayer() == null) {
+                    controller.getPanelFrameManager().openLoginFrame();
+                } else {
+                    controller.getPanelFrameManager().switchToAccountPanel();
+                }
+            }
+
+            @Override
+            public void onHomeClicked() {
+                // nothing
+            }
+        });
         add(menuPanel);
 
         internetIconLabel = new InternetStateLabel();
         internetIconLabel.setLocation(getWidth() - internetIconLabel.getWidth() * 2, 5);
         internetIconLabel.setInternetEnabledStatus();
+        internetIconLabel.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                internetIconLabel.flipStatus();
+            }
+        });
         add(internetIconLabel);
 
         JLabel lblTitle = new JLabel(Settings.APP_NAME);
@@ -50,45 +76,12 @@ public class StartPanelView extends JPanel implements ActionListener {
         lblHighScore.setText("Highscore: " + controller.getLocalHighScore());
         add(lblHighScore);
 
-        settingsButton = new AdvancedButton(Color.GRAY, Color.WHITE);
-        settingsButton.setText("Settings");
-        settingsButton.setFont(Settings.FONT_BUTTON);
-        settingsButton.setForeground(Color.WHITE);
-        settingsButton.setSize(menuPanel.getWidth() - 10, 30);
-        settingsButton.setLocation((menuPanel.getWidth() - settingsButton.getWidth()) / 2,
-                (menuPanel.getHeight() - settingsButton.getHeight() * 3));
-        settingsButton.setID("settingsButton");
-        settingsButton.addActionListener(this);
-        menuPanel.add(settingsButton);
-
-        loginButton = new AdvancedButton(Color.GRAY, Color.WHITE);
-        loginButton.setText("Login");
-        loginButton.setFont(Settings.FONT_BUTTON);
-        loginButton.setForeground(Color.WHITE);
-        loginButton.setSize(menuPanel.getWidth() - 10, 30);
-        loginButton.setLocation((menuPanel.getWidth() - loginButton.getWidth()) / 2,
-                settingsButton.getY() - loginButton.getHeight() - Settings.START_SPACE_BUTTONS);
-        loginButton.setID("loginButton");
-        loginButton.addActionListener(this);
-        menuPanel.add(loginButton);
-
-        statisticsButton = new AdvancedButton(Color.GRAY, Color.WHITE);
-        statisticsButton.setText("Statistics");
-        statisticsButton.setFont(Settings.FONT_BUTTON);
-        statisticsButton.setForeground(Color.WHITE);
-        statisticsButton.setSize(menuPanel.getWidth() - 10, 30);
-        statisticsButton.setLocation((menuPanel.getWidth() - statisticsButton.getWidth()) / 2,
-                loginButton.getY() - statisticsButton.getHeight() - Settings.START_SPACE_BUTTONS);
-        statisticsButton.setID("statisticsButton");
-        statisticsButton.addActionListener(this);
-        menuPanel.add(statisticsButton);
-
-        playButton = new AdvancedButton(ImageManager.START_ICON_PLAY_ACCENT, ImageManager.START_ICON_PLAY);
+        AdvancedButton playButton = new AdvancedButton(ImageManager.START_ICON_PLAY_ACCENT, ImageManager.START_ICON_PLAY);
         playButton.setSize(ImageManager.START_ICON_PLAY.getWidth(), ImageManager.START_ICON_PLAY.getHeight());
         playButton.setLocation((getWidth() - playButton.getWidth()) / 2,
                 (getHeight() - playButton.getHeight()) / 2);
         playButton.setID("playButton");
-        playButton.addActionListener(this);
+        playButton.addActionListener(e -> controller.startGame());
         add(playButton);
     }
 
@@ -99,20 +92,6 @@ public class StartPanelView extends JPanel implements ActionListener {
 
     public InternetStateLabel getInternetIconLabel() {
         return internetIconLabel;
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        switch (e.getActionCommand()) {
-            case "loginButton" -> {
-                LoginFrameView loginFrame = new LoginFrameView(controller);
-                controller.setLoginFrameView(loginFrame);
-                controller.getPanelFrameManager().openLoginFrame();
-            }
-            case "playButton" -> controller.startGame();
-            case "statisticsButton" -> controller.getPanelFrameManager().openStatisticsPanel();
-            case "settingsButton" -> controller.getPanelFrameManager().openSettingsPanel();
-        }
     }
 
 }

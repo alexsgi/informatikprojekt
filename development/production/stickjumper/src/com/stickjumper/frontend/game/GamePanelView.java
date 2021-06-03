@@ -30,7 +30,7 @@ public class GamePanelView extends JPanel implements ActionListener {
 
         this.controller = controller;
 
-        AdvancedButton backButton = new AdvancedButton(ImageManager.GAME_ICON_HOME_ACCENT, ImageManager.GAME_ICON_HOME);
+        AdvancedButton backButton = new AdvancedButton(ImageManager.GAME_ICON_HOME, ImageManager.START_ICON_HOME);
         backButton.setSize(36, 36);
         backButton.setLocation(5, 5);
         backButton.setID("backButton");
