@@ -6,20 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="460ac02d-4569-48ee-b691-afac2c185a3b" name="Default Changelist" comment="just added 4 patterns">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/controller/PanelFrameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/controller/PanelFrameManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/data/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/data/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/data/list/List.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/data/list/List.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/data/list/structure/LastNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/data/list/structure/LastNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/data/list/structure/ListElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/data/list/structure/ListElement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/data/list/structure/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/data/list/structure/Node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/login/LoginPanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/login/LoginPanelView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/login/RegisterPanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/login/RegisterPanelView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/start/startsidemenu/submenues/StatisticsPanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/start/startsidemenu/submenues/StatisticsPanelView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/start/Starter.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/start/Starter.java" afterDir="false" />
-    </list>
+    <list default="true" id="460ac02d-4569-48ee-b691-afac2c185a3b" name="Default Changelist" comment="just added 4 patterns" />
     <list id="cb6ccd45-2f4a-4a31-aef3-f8cd82d4f1fc" name="Changes by Alex" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +115,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1622731751745</updated>
-      <workItem from="1622731779549" duration="5894000" />
+      <workItem from="1622731779549" duration="5917000" />
     </task>
     <servers />
   </component>

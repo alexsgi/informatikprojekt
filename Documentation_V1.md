@@ -273,3 +273,7 @@ Alex:
 Alex:
 1. Ändern der Struktur der Variablen
 2. Highscore-Funktionalität vollständig implementiert
+
+### **03.06.2021**
+Alex: 
+1. Vollständige Implementierung der Statistiken
