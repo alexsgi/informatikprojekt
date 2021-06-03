@@ -3,6 +3,7 @@ package com.stickjumper.frontend.start.startsidemenu.submenues;
 import com.stickjumper.controller.Controller;
 import com.stickjumper.frontend.start.startsidemenu.StartSideMenuPanel;
 import com.stickjumper.utils.Settings;
+import com.stickjumper.utils.components.AdvancedButton;
 import com.stickjumper.utils.components.LoginLabel;
 
 import javax.swing.*;
@@ -97,6 +98,18 @@ public class AccountPanelView extends JPanel {
         txtPlayerHighscore.setLocation(txtPlayerPassword.getX() + txtPlayerPassword.getWidth() + 50, txtPlayerPassword.getY());
         txtPlayerHighscore.setFont(Settings.FONT_LOGIN_FIELDS_LABELS);
         add(txtPlayerHighscore);
+
+        AdvancedButton advancedButton = new AdvancedButton();
+        advancedButton.setText("Log out");
+        advancedButton.setSize(150, 35);
+        advancedButton.setLocation((getWidth() - advancedButton.getWidth()) / 2, getHeight() - advancedButton.getHeight() - 50);
+        advancedButton.addActionListener(e -> {
+            controller.playerLogout();
+            controller.updateHighScore();
+            controller.getPanelFrameManager().switchToHome();
+        });
+        add(advancedButton);
+
     }
 
     public void refreshValues() {

@@ -128,6 +128,24 @@ public class Controller {
         return signedInPlayer != null;
     }
 
+    public void playerLogout() {
+        if (signedInPlayer != null) {
+            try {
+                DBConnection.updateHighScore(signedInPlayer);
+            } catch (SQLException throwables) {
+                Settings.logData("Error updating highscore (logout)", throwables);
+            }
+        }
+        localHighScore = 0;
+        lastRoundHighScore = 0;
+        signedInPlayer = null;
+        try {
+            setList(DBConnection.getAllPlayers());
+        } catch (SQLException throwables) {
+            Settings.logData("Error reading player list from DB (logout)", throwables);
+        }
+    }
+
     private Player getPlayerFromList(String userName, String password) {
         return playerList.search(userName, password);
     }
