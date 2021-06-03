@@ -16,6 +16,7 @@ import com.stickjumper.utils.network.ConnectionTester;
 
 import javax.swing.*;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -198,5 +199,9 @@ public class Controller {
 
     public int getLastRoundHighScore() {
         return lastRoundHighScore;
+    }
+
+    public ArrayList<Player> getPlayerList() {
+        return playerList.asArrayList();
     }
 }

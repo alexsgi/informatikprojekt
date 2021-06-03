@@ -132,6 +132,7 @@ public class PanelFrameManager {
     public void switchToStatisticsPanel() {
         mainFrameView.getContentPane().removeAll();
         mainFrameView.getContentPane().add(statisticsPanelView);
+        statisticsPanelView.refresh();
     }
 
     public void switchToSettingsPanel() {

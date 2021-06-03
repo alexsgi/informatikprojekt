@@ -128,7 +128,9 @@ public class LoginPanelView extends JPanel implements ActionListener {
                 }
                 try {
                     boolean successful = controller.playerLogin(username, hashed);
+                    passwordField.setText("");
                     if (successful) {
+                        userNameTextField.setText("");
                         controller.getPanelFrameManager().enableMainFrame();
                         controller.getPanelFrameManager().closeLoginFrame();
                     } else {
