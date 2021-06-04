@@ -6,6 +6,7 @@ import com.stickjumper.frontend.rendering.GameElementRender;
 import com.stickjumper.utils.Settings;
 import com.stickjumper.utils.components.AdvancedButton;
 import com.stickjumper.utils.manager.ImageManager;
+import com.stickjumper.utils.manager.StringManager;
 
 import javax.swing.*;
 import java.awt.*;
@@ -37,7 +38,7 @@ public class GamePanelView extends JPanel implements ActionListener {
         backButton.addActionListener(this);
         add(backButton);
 
-        lblGameOver = new JLabel("Game over");
+        lblGameOver = new JLabel(StringManager.getString("game.gameover"));
         lblGameOver.setHorizontalAlignment(SwingConstants.CENTER);
         lblGameOver.setVerticalAlignment(SwingConstants.CENTER);
         lblGameOver.setSize(getWidth(), getHeight() + 100);
@@ -49,6 +50,7 @@ public class GamePanelView extends JPanel implements ActionListener {
         lblGameOver.setForeground(Color.WHITE);
         add(lblGameOver);
 
+        // TODO: !?
         backButton = new AdvancedButton(ImageManager.GAME_ICON_HOME_ACCENT, ImageManager.GAME_ICON_HOME);
         backButton.setSize(36, 36);
         backButton.setLocation(5, 105);
@@ -73,7 +75,7 @@ public class GamePanelView extends JPanel implements ActionListener {
                     steadyObstaclesCheatCount++;
                     if (steadyObstaclesCheatCount >= 10) {
                         Settings.STEADY_OBSTACLES_LETHAL = false;
-                        lblHighScore.setText("Secret cheat code activated");
+                        lblHighScore.setText(StringManager.getString("game.cheatcode.active"));
                     }
                 }
             }

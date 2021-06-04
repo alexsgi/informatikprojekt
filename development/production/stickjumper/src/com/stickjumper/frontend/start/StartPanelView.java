@@ -6,6 +6,7 @@ import com.stickjumper.utils.Settings;
 import com.stickjumper.utils.components.AdvancedButton;
 import com.stickjumper.utils.components.InternetStateLabel;
 import com.stickjumper.utils.manager.ImageManager;
+import com.stickjumper.utils.manager.StringManager;
 
 import javax.swing.*;
 import java.awt.*;
@@ -75,7 +76,7 @@ public class StartPanelView extends JPanel {
         lblHighScore.setHorizontalAlignment(SwingConstants.CENTER);
         lblHighScore.setBounds(0, 3, getWidth(), 50);
         lblHighScore.setFont(Settings.FONT_LABEL);
-        lblHighScore.setText("Highscore: " + controller.getLocalHighScore());
+        lblHighScore.setText(StringManager.getString("start.highscore") + controller.getLocalHighScore());
         add(lblHighScore);
 
         AdvancedButton playButton = new AdvancedButton(ImageManager.START_ICON_PLAY_ACCENT, ImageManager.START_ICON_PLAY);
@@ -98,7 +99,7 @@ public class StartPanelView extends JPanel {
 
 
     public void showHighScore() {
-        lblHighScore.setText("Highscore: " + controller.getLocalHighScore());
+        lblHighScore.setText(StringManager.getString("start.highscore") + controller.getLocalHighScore());
     }
 
     public InternetStateLabel getInternetIconLabel() {
@@ -110,13 +111,13 @@ public class StartPanelView extends JPanel {
         int timeOfDay = c.get(Calendar.HOUR_OF_DAY);
 
         if (timeOfDay < 12) {
-            lblGreeting.setText("Good morning");
+            lblGreeting.setText(StringManager.getString("start.morning"));
         } else if (timeOfDay < 16) {
-            lblGreeting.setText("Good afternoon");
+            lblGreeting.setText(StringManager.getString("start.afternoon"));
         } else if (timeOfDay < 21) {
-            lblGreeting.setText("Good evening");
+            lblGreeting.setText(StringManager.getString("start.evening"));
         } else {
-            lblGreeting.setText("Good night");
+            lblGreeting.setText(StringManager.getString("start.night"));
         }
         if (controller.getSignedInPlayer() != null)
             lblGreeting.setText(lblGreeting.getText() + ", " + controller.getSignedInPlayer().getPlayerName() + ".");

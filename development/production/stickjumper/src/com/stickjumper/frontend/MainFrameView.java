@@ -26,7 +26,7 @@ public class MainFrameView extends JFrame implements KeyListener {
 
     public MainFrameView(SceneryRandomGenerator sceneryRandomGenerator, List playerList) {
         setResizable(false);
-        setTitle("StickJumper");
+        setTitle(Settings.APP_NAME);
         addKeyListener(this);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(Settings.SCREEN_WIDTH, Settings.SCREEN_HEIGHT);

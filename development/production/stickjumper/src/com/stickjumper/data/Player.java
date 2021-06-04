@@ -67,11 +67,6 @@ public class Player implements Comparable {
         this.skin = skin;
     }
 
-    @Override
-    public String toString() {
-        return String.format("Player %s (%d) - Highscore: %s - Password: %s - Skin: %d", playerName, key, highScore, playerPassword, skin);
-    }
-
     public String getShortData() {
         return String.format("%s : %d", playerName, highScore);
     }

@@ -25,10 +25,8 @@ public class SceneryController {
     public static int currentCoinValue = 0;
     public static boolean spacePressedOnce = false, spacePressedTwice = false;
     private static int jumpVar = Settings.JUMP_HEIGHT;
-    private static int newDelay = 50;
     private static int newPeriod = Settings.JUMP_PERIOD;
 
-    // init timer:
     Timer foregroundTimer, jumpTimer;
     GameElementRender gameCharacterElement;
     private GamePanelView gamePanelView;
@@ -232,5 +230,4 @@ public class SceneryController {
             }
         }, 0, newPeriod);
     }
-
 }

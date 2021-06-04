@@ -3,6 +3,7 @@ package com.stickjumper.frontend.start.startsidemenu;
 import com.stickjumper.utils.Settings;
 import com.stickjumper.utils.components.AdvancedButton;
 import com.stickjumper.utils.manager.ImageManager;
+import com.stickjumper.utils.manager.StringManager;
 
 import javax.swing.*;
 import java.awt.*;
@@ -24,7 +25,7 @@ public class StartSideMenuPanel extends JPanel implements ActionListener {
         this.buttonCallback = buttonCallback;
 
         AdvancedButton settingsButton = new AdvancedButton(Color.GRAY, Color.WHITE);
-        settingsButton.setText("Settings");
+        settingsButton.setText(StringManager.getString("menu.settings"));
         settingsButton.setFont(Settings.FONT_BUTTON);
         settingsButton.setForeground(Color.WHITE);
         settingsButton.setSize(getWidth() - 10, 30);
@@ -35,7 +36,7 @@ public class StartSideMenuPanel extends JPanel implements ActionListener {
         add(settingsButton);
 
         AdvancedButton loginButton = new AdvancedButton(Color.GRAY, Color.WHITE);
-        loginButton.setText("Account");
+        loginButton.setText(StringManager.getString("menu.account"));
         loginButton.setFont(Settings.FONT_BUTTON);
         loginButton.setForeground(Color.WHITE);
         loginButton.setSize(getWidth() - 10, 30);
@@ -46,7 +47,7 @@ public class StartSideMenuPanel extends JPanel implements ActionListener {
         add(loginButton);
 
         AdvancedButton statisticsButton = new AdvancedButton(Color.GRAY, Color.WHITE);
-        statisticsButton.setText("Statistics");
+        statisticsButton.setText(StringManager.getString("menu.statistics"));
         statisticsButton.setFont(Settings.FONT_BUTTON);
         statisticsButton.setForeground(Color.WHITE);
         statisticsButton.setSize(getWidth() - 10, 30);

@@ -277,3 +277,8 @@ Alex:
 ### **03.06.2021**
 Alex: 
 1. Vollständige Implementierung der Statistiken
+
+### **04.06.2021**
+Alex:
+1. Implementieren der Einstellungen
+2. Outsourcen aller Strings

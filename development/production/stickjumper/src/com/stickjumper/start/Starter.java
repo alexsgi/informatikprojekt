@@ -16,7 +16,7 @@ import java.sql.SQLException;
 
 public class Starter {
 
-    public static void main(String[] args) throws SQLException, InterruptedException {
+    public static void main(String[] args) throws SQLException {
         for (String s : args) {
             switch (s) {
                 case "debug" -> {
@@ -27,7 +27,7 @@ public class Starter {
         }
         UITools.initUI();
 
-        StringManager.init(StringManager.EN);
+        StringManager.init(StringManager.DE);
 
         LoadingFrameView loadingFrameView = new LoadingFrameView();
         loadingFrameView.setVisible(true);
@@ -39,10 +39,7 @@ public class Starter {
 
         if (serverResponseCode != ConnectionTester.CONNECTION_OK) {
             // TODO: check before login, register and update highscore (db)
-            JOptionPane.showMessageDialog(null, """
-                    Can not connect to the server -
-                    internet connection available?
-                    You can still play without an connection""");
+            JOptionPane.showMessageDialog(null, StringManager.getString("starter.db.connection.error"));
             System.exit(-2);
         }
 
@@ -53,9 +50,7 @@ public class Starter {
         DBConnection.init();
 
         MainFrameView mainFrameView = new MainFrameView(sceneryRandomGenerator, DBConnection.getAllPlayers());
-        mainFrameView.automaticLogin();
-
-        // Thread.sleep(Integer.MAX_VALUE);
+        // mainFrameView.automaticLogin();
 
         loadingFrameView.dispose();
         mainFrameView.setVisible(true);

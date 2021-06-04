@@ -1,5 +1,7 @@
 package com.stickjumper.utils.manager;
 
+import com.stickjumper.utils.Settings;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
@@ -19,19 +21,16 @@ public class StringManager {
     }
 
     public static void init(String languageCode) {
+        // Locale.setDefault(new Locale(languageCode.toLowerCase(),languageCode.toUpperCase()));
         Properties prop = new Properties();
         try (InputStream inputStream = StringManager.class.getResourceAsStream(String.format("/strings/%s.prop", languageCode))) {
             prop.load(inputStream);
             Set<String> keys = prop.stringPropertyNames();
             strings = new HashMap<>();
-            for (String key : keys) {
-                strings.put(key, prop.getProperty(key));
-                System.out.println(key);
-            }
+            for (String key : keys) strings.put(key, prop.getProperty(key));
         } catch (IOException e) {
-            e.printStackTrace();
+            Settings.logData("Error loading strings", e);
         }
-
     }
 
     public static String getString(String key) {

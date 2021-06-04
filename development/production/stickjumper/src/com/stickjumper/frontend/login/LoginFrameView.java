@@ -3,6 +3,7 @@ package com.stickjumper.frontend.login;
 import com.stickjumper.controller.Controller;
 import com.stickjumper.utils.Settings;
 import com.stickjumper.utils.manager.ImageManager;
+import com.stickjumper.utils.manager.StringManager;
 
 import javax.swing.*;
 import java.awt.event.WindowAdapter;
@@ -18,7 +19,7 @@ public class LoginFrameView extends JFrame {
         });
 
         setResizable(false);
-        setTitle("Login");
+        setTitle(StringManager.getString("login.frame.title"));
         setSize(Settings.LOGIN_SCREEN_WIDTH, Settings.LOGIN_SCREEN_HEIGHT);
         setLocationRelativeTo(null);
 

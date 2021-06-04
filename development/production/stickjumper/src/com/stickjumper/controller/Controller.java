@@ -14,7 +14,6 @@ import com.stickjumper.frontend.start.StartPanelView;
 import com.stickjumper.utils.Settings;
 import com.stickjumper.utils.network.ConnectionTester;
 
-import javax.swing.*;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Timer;
@@ -51,7 +50,6 @@ public class Controller {
                     DBConnection.updateHighScore(getSignedInPlayer());
                 } catch (SQLException e) {
                     Settings.logData("SQLException (updateHighscore in Controller)", e);
-                    JOptionPane.showMessageDialog(null, "Error updating highscore");
                 }
             }
             DBConnection.close();

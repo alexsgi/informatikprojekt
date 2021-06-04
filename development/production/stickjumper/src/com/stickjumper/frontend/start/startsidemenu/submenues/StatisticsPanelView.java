@@ -5,6 +5,7 @@ import com.stickjumper.data.Player;
 import com.stickjumper.data.database.DBConnection;
 import com.stickjumper.frontend.start.startsidemenu.StartSideMenuPanel;
 import com.stickjumper.utils.Settings;
+import com.stickjumper.utils.manager.StringManager;
 
 import javax.swing.*;
 import java.awt.*;
@@ -54,7 +55,7 @@ public class StatisticsPanelView extends JPanel {
         });
         add(menuPanel);
 
-        JLabel lblTitle = new JLabel("STATISTICS");
+        JLabel lblTitle = new JLabel(StringManager.getString("menu.statistics.title"));
         lblTitle.setHorizontalAlignment(SwingConstants.CENTER);
         lblTitle.setSize(getWidth(), 50);
         lblTitle.setLocation(0, 20);
@@ -64,7 +65,7 @@ public class StatisticsPanelView extends JPanel {
 
         JLabel lblHeader = new JLabel();
         lblHeader.setHorizontalAlignment(SwingConstants.CENTER);
-        lblHeader.setText("Ranking of the best StickJumper players");
+        lblHeader.setText(StringManager.getString("menu.statistics.rankingheader"));
         lblHeader.setSize(getWidth(), 50);
         lblHeader.setLocation(0, 150);
         lblHeader.setFont(Settings.FONT_HEADING_SMALL);
@@ -84,8 +85,9 @@ public class StatisticsPanelView extends JPanel {
         }
 
         playerNotice = new JLabel();
-        playerNotice.setSize(200, 30);
-        playerNotice.setLocation((getWidth() - playerNotice.getWidth()) / 2, getHeight() - playerNotice.getHeight() * 4);
+        playerNotice.setSize(getWidth(), 30);
+        playerNotice.setHorizontalAlignment(SwingConstants.CENTER);
+        playerNotice.setLocation(0, getHeight() - playerNotice.getHeight() * 4);
         playerNotice.setFont(Settings.FONT_LABEL);
         add(playerNotice);
     }
@@ -118,7 +120,7 @@ public class StatisticsPanelView extends JPanel {
         if (controller.getSignedInPlayer() != null) {
             for (int i = 0; i < list.size(); i++) {
                 if (list.get(i).getPlayerName().equals(controller.getSignedInPlayer().getPlayerName())) {
-                    playerNotice.setText(String.format("You are on %d. place ", (i + 1)));
+                    playerNotice.setText(String.format(StringManager.getString("menu.statistics.placenotice"), (i + 1)));
                 }
             }
         }
