@@ -7,29 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="460ac02d-4569-48ee-b691-afac2c185a3b" name="Default Changelist" comment="just added 4 patterns">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/Elena.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/controller/scenerycontrolling/SceneryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/controller/scenerycontrolling/SceneryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/controller/scenerycontrolling/SceneryRandomGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/controller/scenerycontrolling/SceneryRandomGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/data/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/data/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/data/database/DBConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/data/database/DBConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/data/gameelements/GameCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/data/gameelements/GameCharacter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/MainFrameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/MainFrameView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/boot/LoadingFrameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/boot/LoadingFrameView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/game/GamePanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/game/GamePanelView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/login/LoginFrameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/login/LoginFrameView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/login/LoginPanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/login/LoginPanelView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/login/RegisterPanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/login/RegisterPanelView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/start/StartPanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/start/StartPanelView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/start/startsidemenu/StartSideMenuPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/start/startsidemenu/StartSideMenuPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/start/startsidemenu/submenues/AccountPanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/start/startsidemenu/submenues/AccountPanelView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/start/startsidemenu/submenues/SettingsPanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/start/startsidemenu/submenues/SettingsPanelView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/start/startsidemenu/submenues/StatisticsPanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/start/startsidemenu/submenues/StatisticsPanelView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/start/Starter.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/start/Starter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/manager/StringManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/manager/StringManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/res/strings/de.prop" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/res/strings/de.prop" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/res/strings/en.prop" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/res/strings/en.prop" afterDir="false" />
     </list>
     <list id="cb6ccd45-2f4a-4a31-aef3-f8cd82d4f1fc" name="Changes by Alex" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -109,31 +87,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JBossConfiguration" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
-      <deployment />
-      <server-settings>
-        <option name="SERVER" value="" />
-        <option name="BINDING_SET_NAME" value="" />
-        <option name="DOMAIN" value="false" />
-        <option name="SERVER_GROUP" value="" />
-        <option name="USERNAME" value="" />
-      </server-settings>
-      <predefined_log_file enabled="true" id="JBoss" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -259,6 +212,7 @@
       <workItem from="1622731779549" duration="5917000" />
       <workItem from="1622804615115" duration="4778000" />
       <workItem from="1622831988295" duration="10020000" />
+      <workItem from="1622842472790" duration="62000" />
     </task>
     <servers />
   </component>
