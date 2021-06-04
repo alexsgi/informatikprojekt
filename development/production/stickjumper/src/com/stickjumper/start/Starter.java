@@ -7,6 +7,7 @@ import com.stickjumper.frontend.boot.LoadingFrameView;
 import com.stickjumper.utils.Settings;
 import com.stickjumper.utils.manager.ImageManager;
 import com.stickjumper.utils.manager.SoundManager;
+import com.stickjumper.utils.manager.StringManager;
 import com.stickjumper.utils.manager.UITools;
 import com.stickjumper.utils.network.ConnectionTester;
 
@@ -15,7 +16,7 @@ import java.sql.SQLException;
 
 public class Starter {
 
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) throws SQLException, InterruptedException {
         for (String s : args) {
             switch (s) {
                 case "debug" -> {
@@ -25,6 +26,8 @@ public class Starter {
             }
         }
         UITools.initUI();
+
+        StringManager.init(StringManager.EN);
 
         LoadingFrameView loadingFrameView = new LoadingFrameView();
         loadingFrameView.setVisible(true);
@@ -50,7 +53,9 @@ public class Starter {
         DBConnection.init();
 
         MainFrameView mainFrameView = new MainFrameView(sceneryRandomGenerator, DBConnection.getAllPlayers());
-        // mainFrameView.automaticLogin();
+        mainFrameView.automaticLogin();
+
+        // Thread.sleep(Integer.MAX_VALUE);
 
         loadingFrameView.dispose();
         mainFrameView.setVisible(true);

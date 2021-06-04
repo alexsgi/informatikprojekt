@@ -11,6 +11,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.Calendar;
 
 public class StartPanelView extends JPanel {
 
@@ -67,7 +68,7 @@ public class StartPanelView extends JPanel {
         JLabel lblTitle = new JLabel(Settings.APP_NAME);
         lblTitle.setHorizontalAlignment(SwingConstants.CENTER);
         lblTitle.setBounds(0, 96, 1280, 83);
-        lblTitle.setFont(Settings.FONT_HEADING_BIG);
+        lblTitle.setFont(Settings.FONT_HEADING_BIG_BOLD);
         add(lblTitle);
 
         lblHighScore = new JLabel();
@@ -87,7 +88,7 @@ public class StartPanelView extends JPanel {
 
         // just for fun
         lblGreeting = new JLabel();
-        lblGreeting.setSize(getWidth(), 20);
+        lblGreeting.setSize(getWidth(), 30);
         lblGreeting.setLocation(0, 500);
         lblGreeting.setHorizontalAlignment(SwingConstants.CENTER);
         lblGreeting.setFont(Settings.FONT_LOGIN_HEADER);
@@ -105,7 +106,19 @@ public class StartPanelView extends JPanel {
     }
 
     public void refreshGreeting() {
+        Calendar c = Calendar.getInstance();
+        int timeOfDay = c.get(Calendar.HOUR_OF_DAY);
+
+        if (timeOfDay < 12) {
+            lblGreeting.setText("Good morning");
+        } else if (timeOfDay < 16) {
+            lblGreeting.setText("Good afternoon");
+        } else if (timeOfDay < 21) {
+            lblGreeting.setText("Good evening");
+        } else {
+            lblGreeting.setText("Good night");
+        }
         if (controller.getSignedInPlayer() != null)
-            lblGreeting.setText("Hello, " + controller.getSignedInPlayer().getPlayerName());
+            lblGreeting.setText(lblGreeting.getText() + ", " + controller.getSignedInPlayer().getPlayerName() + ".");
     }
 }

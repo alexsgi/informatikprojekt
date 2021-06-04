@@ -1,3 +1,6 @@
-appTitle=StickJumper
+appName=StickJumper
 appVersion=0.1
-login.welcome=Willkommen zu unserem Service!
+loading.hint0=
+loading.hint1=
+loading.hint2=
+loading.hint3=

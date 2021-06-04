@@ -62,8 +62,6 @@ public class StatisticsPanelView extends JPanel {
         lblTitle.setForeground(Color.WHITE);
         add(lblTitle);
 
-        // send own data to db, refresh list
-
         JLabel lblHeader = new JLabel();
         lblHeader.setHorizontalAlignment(SwingConstants.CENTER);
         lblHeader.setText("Ranking of the best StickJumper players");
@@ -86,7 +84,7 @@ public class StatisticsPanelView extends JPanel {
         }
 
         playerNotice = new JLabel();
-        playerNotice.setSize(200, 20);
+        playerNotice.setSize(200, 30);
         playerNotice.setLocation((getWidth() - playerNotice.getWidth()) / 2, getHeight() - playerNotice.getHeight() * 4);
         playerNotice.setFont(Settings.FONT_LABEL);
         add(playerNotice);
@@ -120,7 +118,7 @@ public class StatisticsPanelView extends JPanel {
         if (controller.getSignedInPlayer() != null) {
             for (int i = 0; i < list.size(); i++) {
                 if (list.get(i).getPlayerName().equals(controller.getSignedInPlayer().getPlayerName())) {
-                    playerNotice.setText("Your are on place " + (i + 1));
+                    playerNotice.setText(String.format("You are on %d. place ", (i + 1)));
                 }
             }
         }

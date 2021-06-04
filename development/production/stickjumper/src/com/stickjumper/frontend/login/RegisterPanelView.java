@@ -144,8 +144,9 @@ public class RegisterPanelView extends JPanel implements ActionListener {
                         controller.setList(DBConnection.getAllPlayers());
                         if (controller.playerLogin(username, hashed)) {
                             controller.getPanelFrameManager().closeLoginFrame();
+                            controller.getPanelFrameManager().refreshStartGreeting();
                         } else {
-                            // weird error
+                            // weird error - won't happen
                             Settings.logData("Weird error (register)");
                         }
                     }

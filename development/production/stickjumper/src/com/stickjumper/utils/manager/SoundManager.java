@@ -20,6 +20,8 @@ public class SoundManager {
 
     public static AudioInputStream inputStreamBootSound, inputStreamButtonSound, inputStreamCoinSound, inputStreamGameOverSound;
 
+    // TODO: play sound when cheat active
+
     public static void loadAllClips() {
         pathButtonSound2 = pathBootSoundEmpty;
         try {

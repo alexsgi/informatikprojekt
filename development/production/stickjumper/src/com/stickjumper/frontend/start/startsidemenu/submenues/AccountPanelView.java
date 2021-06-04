@@ -107,6 +107,7 @@ public class AccountPanelView extends JPanel {
             controller.playerLogout();
             controller.updateHighScore();
             controller.getPanelFrameManager().switchToHome();
+            controller.getPanelFrameManager().refreshStartGreeting();
         });
         add(advancedButton);
 

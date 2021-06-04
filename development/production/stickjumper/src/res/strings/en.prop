@@ -1,3 +1,6 @@
-appTitle=StickJumper
+appName=StickJumper
 appVersion=0.1
-login.welcome=Welcome to our service!
+loading.hint0=Tip: check your ranking under the statistics
+loading.hint1=Tip: by pressing SPACE you jump longer
+loading.hint2=Tip: did you find the hidden cheat in the game?
+loading.hint3=Tip: you can jump by pressing SPACE

@@ -58,25 +58,29 @@ public class SettingsPanelView extends JPanel {
         // Notice: visit SoundManager → game over sound depends on sound effects
 
         JLabel lblSoundEffects = new JLabel("Sound effects");
-        lblSoundEffects.setSize(100, 30);
+        lblSoundEffects.setSize(200, 30);
         lblSoundEffects.setLocation(menuPanel.getWidth() + 80, 300);
+        lblSoundEffects.setFont(Settings.FONT_LABEL_BOLD_SMALL);
         add(lblSoundEffects);
 
         soundEffectToggle = new JToggleButton(Settings.SOUND_EFFECTS_ON ? "ON" : "OFF", !Settings.SOUND_EFFECTS_ON);
         soundEffectToggle.setSize(80, lblSoundEffects.getHeight());
-        soundEffectToggle.setLocation(lblSoundEffects.getX() + lblSoundEffects.getWidth() + 30, lblSoundEffects.getY());
+        soundEffectToggle.setLocation(lblSoundEffects.getX() + lblSoundEffects.getWidth(), lblSoundEffects.getY());
         soundEffectToggle.setFocusable(false);
+        soundEffectToggle.setFont(Settings.FONT_BUTTON_PLAIN_SMALL);
         add(soundEffectToggle);
 
         JLabel lblGameOverMusic = new JLabel("Game over music");
         lblGameOverMusic.setSize(lblSoundEffects.getWidth(), lblSoundEffects.getHeight());
         lblGameOverMusic.setLocation(lblSoundEffects.getX(), lblSoundEffects.getY() + lblSoundEffects.getHeight() + 30);
+        lblGameOverMusic.setFont(Settings.FONT_LABEL_BOLD_SMALL);
         add(lblGameOverMusic);
 
         gameOverMusicToggle = new JToggleButton(Settings.GAME_OVER_MUSIC_ON ? "ON" : "OFF", !Settings.GAME_OVER_MUSIC_ON);
         gameOverMusicToggle.setSize(soundEffectToggle.getWidth(), soundEffectToggle.getHeight());
         gameOverMusicToggle.setLocation(soundEffectToggle.getX(), lblGameOverMusic.getY());
         gameOverMusicToggle.setFocusable(false);
+        gameOverMusicToggle.setFont(Settings.FONT_BUTTON_PLAIN_SMALL);
         gameOverMusicToggle.setEnabled(Settings.SOUND_EFFECTS_ON);
         add(gameOverMusicToggle);
 

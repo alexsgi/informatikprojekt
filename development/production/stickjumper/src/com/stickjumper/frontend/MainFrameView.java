@@ -74,5 +74,6 @@ public class MainFrameView extends JFrame implements KeyListener {
 
     public void automaticLogin() throws SQLException {
         controller.playerLogin("test", PasswordHasher.hash("test"));
+        controller.getPanelFrameManager().refreshStartGreeting();
     }
 }

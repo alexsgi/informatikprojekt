@@ -151,4 +151,8 @@ public class PanelFrameManager {
         startPanelView.refreshGreeting();
     }
 
+    public void refreshStartGreeting() {
+        startPanelView.refreshGreeting();
+    }
+
 }

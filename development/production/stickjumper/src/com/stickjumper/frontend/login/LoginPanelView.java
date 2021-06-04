@@ -133,6 +133,7 @@ public class LoginPanelView extends JPanel implements ActionListener {
                         userNameTextField.setText("");
                         controller.getPanelFrameManager().enableMainFrame();
                         controller.getPanelFrameManager().closeLoginFrame();
+                        controller.getPanelFrameManager().refreshStartGreeting();
                     } else {
                         warningLabel.setText("False credentials");
                     }
