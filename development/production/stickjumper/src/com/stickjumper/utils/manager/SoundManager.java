@@ -46,12 +46,11 @@ public class SoundManager {
                     clip.open(inputStream);
                     clip.start();
                     clip.setMicrosecondPosition(0);
-                    loadAllClips();
+                    loadAllClips(); // ←
                 } catch (Exception e) {
                     Settings.logData("Error playing sound: " + e.getMessage(), e);
                 }
             }).start();
-
         }
     }
 

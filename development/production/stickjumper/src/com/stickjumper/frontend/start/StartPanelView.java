@@ -8,6 +8,7 @@ import com.stickjumper.utils.components.InternetStateLabel;
 import com.stickjumper.utils.manager.ImageManager;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -15,7 +16,7 @@ public class StartPanelView extends JPanel {
 
     private final InternetStateLabel internetIconLabel;
     private final Controller controller;
-    private final JLabel lblHighScore;
+    private final JLabel lblHighScore, lblGreeting;
 
     public StartPanelView(Controller controller) {
         super(true);
@@ -83,6 +84,15 @@ public class StartPanelView extends JPanel {
         playButton.setID("playButton");
         playButton.addActionListener(e -> controller.startGame());
         add(playButton);
+
+        // just for fun
+        lblGreeting = new JLabel();
+        lblGreeting.setSize(getWidth(), 20);
+        lblGreeting.setLocation(0, 500);
+        lblGreeting.setHorizontalAlignment(SwingConstants.CENTER);
+        lblGreeting.setFont(Settings.FONT_LOGIN_HEADER);
+        lblGreeting.setForeground(Color.WHITE);
+        add(lblGreeting);
     }
 
 
@@ -94,4 +104,8 @@ public class StartPanelView extends JPanel {
         return internetIconLabel;
     }
 
+    public void refreshGreeting() {
+        if (controller.getSignedInPlayer() != null)
+            lblGreeting.setText("Hello, " + controller.getSignedInPlayer().getPlayerName());
+    }
 }

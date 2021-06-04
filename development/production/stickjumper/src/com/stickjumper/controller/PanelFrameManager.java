@@ -61,12 +61,11 @@ public class PanelFrameManager {
     public void switchToStartPanel() {
         sceneryController.stopGame();
         controller.getSceneryRandomGenerator().stop();
-        mainFrameView.getContentPane().removeAll();
 
         controller.gameStarted = false;
         controller.updateHighScore();
 
-        mainFrameView.getContentPane().add(startPanelView);
+        switchToHome();
     }
 
     public void startMovingBackground() {
@@ -149,6 +148,7 @@ public class PanelFrameManager {
     public void switchToHome() {
         mainFrameView.getContentPane().removeAll();
         mainFrameView.getContentPane().add(startPanelView);
+        startPanelView.refreshGreeting();
     }
 
 }

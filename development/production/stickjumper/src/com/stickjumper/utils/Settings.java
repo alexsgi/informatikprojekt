@@ -48,7 +48,7 @@ public class Settings {
     // set to false when click 10x on high score label
     public static boolean STEADY_OBSTACLES_LETHAL = true;
     // SOUND
-    public static boolean SOUND_EFFECTS_ON = true;
+    public static boolean SOUND_EFFECTS_ON = false;
     public static boolean GAME_OVER_MUSIC_ON = false;
     // GENERAL
     private static boolean DEBUG_MODE = false;

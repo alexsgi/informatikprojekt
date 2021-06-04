@@ -6,7 +6,14 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="460ac02d-4569-48ee-b691-afac2c185a3b" name="Default Changelist" comment="just added 4 patterns" />
+    <list default="true" id="460ac02d-4569-48ee-b691-afac2c185a3b" name="Default Changelist" comment="just added 4 patterns">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/controller/PanelFrameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/controller/PanelFrameManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/start/StartPanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/start/StartPanelView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/start/startsidemenu/submenues/SettingsPanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/start/startsidemenu/submenues/SettingsPanelView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/Settings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/manager/SoundManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/manager/SoundManager.java" afterDir="false" />
+    </list>
     <list id="cb6ccd45-2f4a-4a31-aef3-f8cd82d4f1fc" name="Changes by Alex" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,13 +92,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -116,6 +125,7 @@
       <option name="presentableId" value="Default" />
       <updated>1622731751745</updated>
       <workItem from="1622731779549" duration="5917000" />
+      <workItem from="1622804615115" duration="4778000" />
     </task>
     <servers />
   </component>
