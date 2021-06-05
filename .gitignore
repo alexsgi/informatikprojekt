@@ -1,2 +1,3 @@
 development/production/out/*
-development/production/.idea/workspace.xml
+development/production/.idea/*
+development/production/stickjumper/.idea/*
