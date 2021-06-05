@@ -27,7 +27,7 @@ public class Starter {
         }
         UITools.initUI();
 
-        StringManager.init(StringManager.DE);
+        StringManager.init(StringManager.EN);
 
         LoadingFrameView loadingFrameView = new LoadingFrameView();
         loadingFrameView.setVisible(true);

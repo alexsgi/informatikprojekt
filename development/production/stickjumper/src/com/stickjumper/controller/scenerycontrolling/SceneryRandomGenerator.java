@@ -31,7 +31,8 @@ public class SceneryRandomGenerator {
             @Override
             public void run() {
                 // min = 1; max = 15 (+1 to be included)
-                createPattern(ThreadLocalRandom.current().nextInt(1, 16));
+                int random = ThreadLocalRandom.current().nextInt(1, 16);
+                createPattern(random);
             }
         }, 0, 7000);
     }
@@ -52,13 +53,6 @@ public class SceneryRandomGenerator {
         if (timer != null) timer.cancel();
     }
 
-    /*
-    An dieser Stelle möge erwähnt sein, dass sich Jessica und Jonas für eine teils determinierte Spielvariante entschieden haben.
-    Alexander währenddessen sprach sich für eine völlig zufällig (mit Bedingungen) erzeugte Spielwelt aus.
-    Letzteres wurde von Jessica und Jonas unbegründet scharf kritisiert.
-
-    Jegliche Kritik bitte an folgende E-Mail-Adresse: jonas.strehler@online.de
-     */
     private void createPattern(int pattern) {
         switch (pattern) {
             // Jonas ↓

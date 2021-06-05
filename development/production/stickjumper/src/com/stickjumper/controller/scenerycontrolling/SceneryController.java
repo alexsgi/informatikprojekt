@@ -27,6 +27,8 @@ public class SceneryController {
     private static int jumpVar = Settings.JUMP_HEIGHT;
     private static int newPeriod = Settings.JUMP_PERIOD;
 
+    private long gameStartTime, gameEndTime;
+
     Timer foregroundTimer, jumpTimer;
     GameElementRender gameCharacterElement;
     private GamePanelView gamePanelView;
@@ -74,6 +76,7 @@ public class SceneryController {
         unfreeze();
         Settings.STEADY_OBSTACLES_LETHAL = true;
         foregroundTimer = new Timer();
+        gameStartTime = System.currentTimeMillis();
         foregroundTimer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
@@ -116,6 +119,8 @@ public class SceneryController {
     }
 
     public void stopGame() {
+        gameEndTime = System.currentTimeMillis();
+        System.err.println("Game took " + ((gameEndTime - gameStartTime) / 60000) + " min");
         freeze();
         for (Component comp : gamePanelView.getComponents()) {
             if (comp instanceof GameElementRender) gamePanelView.remove(comp);
