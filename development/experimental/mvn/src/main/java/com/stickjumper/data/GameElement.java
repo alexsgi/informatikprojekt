@@ -3,8 +3,8 @@ package com.stickjumper.data;
 import com.stickjumper.controller.scenerycontrolling.SceneryController;
 import com.stickjumper.data.gameelements.GameCharacter;
 import com.stickjumper.utils.Dimens;
-import com.stickjumper.utils.ImageManager;
 import com.stickjumper.utils.Settings;
+import com.stickjumper.utils.manager.ImageManager;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -67,8 +67,8 @@ public abstract class GameElement {
 
     public void decrementX(int n) {
         // DON'T TOUCH IT - WE DON'T KNOW WHY IT WORKS
-        boolean gameOverCondition1 = location.getX() <= Settings.xPositionGameCharacter + GameCharacter.getXValueDimens();
-        boolean gameOverCondition2 = location.getX() >= Settings.xPositionGameCharacter + GameCharacter.getXValueDimens() - Settings.gameOverSensitivity;
+        boolean gameOverCondition1 = location.getX() <= Settings.X_POSITION_GAME_CHARACTER + GameCharacter.getXValueDimens();
+        boolean gameOverCondition2 = location.getX() >= Settings.X_POSITION_GAME_CHARACTER + GameCharacter.getXValueDimens() - Settings.GAME_OVER_SENSITIVITY;
 
         if (gameOverCondition1 && gameOverCondition2) {
             int difPos = (int) (SceneryController.yPosGameCharacter - location.getY());

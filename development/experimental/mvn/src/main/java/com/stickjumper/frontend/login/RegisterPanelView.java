@@ -2,12 +2,13 @@ package com.stickjumper.frontend.login;
 
 import com.stickjumper.controller.Controller;
 import com.stickjumper.data.database.DBConnection;
-import com.stickjumper.utils.ImageManager;
 import com.stickjumper.utils.Settings;
 import com.stickjumper.utils.components.AdvancedButton;
 import com.stickjumper.utils.components.JRoundPasswordField;
 import com.stickjumper.utils.components.JRoundTextField;
 import com.stickjumper.utils.components.LoginLabel;
+import com.stickjumper.utils.manager.ImageManager;
+import com.stickjumper.utils.manager.StringManager;
 import com.stickjumper.utils.security.PasswordHasher;
 
 import javax.swing.*;
@@ -40,19 +41,19 @@ public class RegisterPanelView extends JPanel implements ActionListener {
         add(backButton);
 
         LoginLabel welcomeLabel = new LoginLabel(LoginLabel.HEADER);
-        welcomeLabel.setText("Welcome to StickJumper");
+        welcomeLabel.setText(StringManager.getString("login.register.welcome"));
         welcomeLabel.setSize(600, 50);
         welcomeLabel.setLocation(0, 20);
         add(welcomeLabel);
 
         LoginLabel signInLabel = new LoginLabel(LoginLabel.SUBHEADER);
-        signInLabel.setText("Join the community by creating an account");
+        signInLabel.setText(StringManager.getString("login.register.joinrequest"));
         signInLabel.setSize(getWidth(), 30);
         signInLabel.setLocation(0, welcomeLabel.getY() + welcomeLabel.getHeight() + 5);
         add(signInLabel);
 
         LoginLabel userNameLabel = new LoginLabel(LoginLabel.TEXT);
-        userNameLabel.setText("Username");
+        userNameLabel.setText(StringManager.getString("login.register.username"));
         userNameLabel.setSize(getWidth() - 2 * 100, 30);
         userNameLabel.setLocation(getWidth() / 7, signInLabel.getY() + signInLabel.getHeight() + 25);
         add(userNameLabel);
@@ -63,7 +64,7 @@ public class RegisterPanelView extends JPanel implements ActionListener {
         add(userNameTextField);
 
         LoginLabel passwordLabel = new LoginLabel(LoginLabel.TEXT);
-        passwordLabel.setText("Password");
+        passwordLabel.setText(StringManager.getString("login.register.password"));
         passwordLabel.setSize(getWidth() - 2 * 100, 30);
         passwordLabel.setLocation(getWidth() / 7, userNameTextField.getY() + userNameTextField.getHeight() + 1);
         add(passwordLabel);
@@ -74,7 +75,7 @@ public class RegisterPanelView extends JPanel implements ActionListener {
         add(passwordField);
 
         LoginLabel passwordLabelControl = new LoginLabel(LoginLabel.TEXT);
-        passwordLabelControl.setText("Repeat password");
+        passwordLabelControl.setText(StringManager.getString("login.register.repeatpassword"));
         passwordLabelControl.setSize(getWidth() - 2 * 100, 30);
         passwordLabelControl.setLocation(getWidth() / 7, passwordField.getY() + userNameTextField.getHeight() + 1);
         add(passwordLabelControl);
@@ -90,7 +91,7 @@ public class RegisterPanelView extends JPanel implements ActionListener {
         add(warningLabel);
 
         registerButton = new AdvancedButton();
-        registerButton.setText("Sign up");
+        registerButton.setText(StringManager.getString("login.register.button.signup"));
         registerButton.setFont(Settings.FONT_LOGIN_BUTTON);
         registerButton.setSize(150, 40);
         registerButton.setLocation((getWidth() - registerButton.getWidth()) / 2, getHeight() - (int) (registerButton.getHeight() * 3.5));
@@ -107,55 +108,56 @@ public class RegisterPanelView extends JPanel implements ActionListener {
                 String username = userNameTextField.getText(), password, passwordControl;
                 char[] passwordArray = passwordField.getPassword(), passwordControlArray = passwordFieldControl.getPassword();
                 if (username == null || username.isEmpty()) {
-                    warningLabel.setText("Choose an username");
+                    warningLabel.setText(StringManager.getString("login.register.warning.username"));
                     userNameTextField.requestFocus();
                     return;
                 }
                 if (passwordArray == null || (password = new String(passwordArray)).isEmpty()) {
-                    warningLabel.setText("Set a password");
+                    warningLabel.setText(StringManager.getString("login.register.warning.password"));
                     passwordField.requestFocus();
                     return;
                 }
                 if (passwordControlArray == null || (passwordControl = new String(passwordControlArray)).isEmpty()) {
-                    warningLabel.setText("Confirm your password");
+                    warningLabel.setText(StringManager.getString("login.register.warning.confirmpassword"));
                     passwordFieldControl.requestFocus();
                     return;
                 }
                 if (!password.equals(passwordControl)) {
-                    warningLabel.setText("The entered passwords do not match");
+                    warningLabel.setText(StringManager.getString("login.register.warning.nomatchpasswords"));
                     return;
                 }
                 registerButton.setEnabled(false);
                 String hashed = PasswordHasher.hash(password);
                 if (hashed == null) {
-                    JOptionPane.showMessageDialog(null, "Massive error (password hashing)");
                     Settings.logData("Error hashing password (register)");
                     System.exit(-1);
                 }
                 try {
                     boolean registrationSuccess = DBConnection.registerPlayer(username, hashed);
                     if (!registrationSuccess) {
-                        warningLabel.setText("Username already taken");
+                        warningLabel.setText(StringManager.getString("login.register.warning.alreadytaken"));
                     } else {
                         // Registration successful
+                        userNameTextField.setText("");
+                        passwordField.setText("");
+                        passwordFieldControl.setText("");
                         controller.setList(DBConnection.getAllPlayers());
                         if (controller.playerLogin(username, hashed)) {
                             controller.getPanelFrameManager().closeLoginFrame();
+                            controller.getPanelFrameManager().refreshStartGreeting();
                         } else {
-                            // weird error
-                            Settings.logData("Weird error (register");
+                            // weird error - won't happen
+                            Settings.logData("Weird error (register)");
                         }
                     }
                 } catch (SQLException throwable) {
-                    // Error - internet connection?
                     // TODO: implement server status check (online?), otherwise the program will freeze
-                    warningLabel.setText("Internet connection available?");
+                    warningLabel.setText(StringManager.getString("login.register.warning.inetconnunavailable"));
                     Settings.logData("SQLException during register", throwable);
                 }
                 registerButton.setEnabled(true);
             }
-            case "backButton" -> // controller.getPanelFrameManager().closeLoginFrame();
-                    controller.getPanelFrameManager().switchToLoginPanel();
+            case "backButton" -> controller.getPanelFrameManager().switchToLoginPanel();
         }
     }
 }

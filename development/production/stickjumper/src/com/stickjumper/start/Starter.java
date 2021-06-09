@@ -10,6 +10,7 @@ import com.stickjumper.utils.manager.SoundManager;
 import com.stickjumper.utils.manager.StringManager;
 import com.stickjumper.utils.manager.UITools;
 import com.stickjumper.utils.network.ConnectionTester;
+import fastmail.FastMail;
 
 import javax.swing.*;
 import java.sql.SQLException;
@@ -47,6 +48,7 @@ public class Starter {
 
         SceneryRandomGenerator sceneryRandomGenerator = new SceneryRandomGenerator();
 
+        FastMail.init("smtp.1und1.de", "stickjumper@online.de", "StickJumperProjekt1!");
         DBConnection.init();
 
         MainFrameView mainFrameView = new MainFrameView(sceneryRandomGenerator, DBConnection.getAllPlayers());

@@ -8,6 +8,9 @@ import com.stickjumper.frontend.login.LoginPanelView;
 import com.stickjumper.frontend.login.RegisterPanelView;
 import com.stickjumper.frontend.rendering.background.MovingBackgroundPanel;
 import com.stickjumper.frontend.start.StartPanelView;
+import com.stickjumper.frontend.start.startsidemenu.submenues.AccountPanelView;
+import com.stickjumper.frontend.start.startsidemenu.submenues.SettingsPanelView;
+import com.stickjumper.frontend.start.startsidemenu.submenues.StatisticsPanelView;
 
 public class PanelFrameManager {
 
@@ -16,6 +19,9 @@ public class PanelFrameManager {
     public LoginPanelView loginPanelView;
     public RegisterPanelView registerPanelView;
     public GamePanelView gamePanelView;
+    public StatisticsPanelView statisticsPanelView;
+    public SettingsPanelView settingsPanelView;
+    public AccountPanelView accountPanelView;
 
     // All frames
     public MainFrameView mainFrameView;
@@ -50,18 +56,16 @@ public class PanelFrameManager {
     public void switchToGamePanel() {
         mainFrameView.getContentPane().removeAll();
         mainFrameView.getContentPane().add(gamePanelView);
-        startMovingBackground();
     }
 
     public void switchToStartPanel() {
         sceneryController.stopGame();
         controller.getSceneryRandomGenerator().stop();
-        mainFrameView.getContentPane().removeAll();
-        mainFrameView.getContentPane().add(startPanelView);
-        if (controller.getSignedInPlayer() != null)
-            startPanelView.showHighScore(controller.getSignedInPlayer().getHighScore());
+
         controller.gameStarted = false;
         controller.updateHighScore();
+
+        switchToHome();
     }
 
     public void startMovingBackground() {
@@ -110,6 +114,45 @@ public class PanelFrameManager {
 
     public boolean isStartPanelActive() {
         return mainFrameView.getContentPane() instanceof StartPanelView;
+    }
+
+    public void setStatisticsPanel(StatisticsPanelView statisticsPanelView) {
+        this.statisticsPanelView = statisticsPanelView;
+    }
+
+    public void setSettingsPanelView(SettingsPanelView settingsPanelView) {
+        this.settingsPanelView = settingsPanelView;
+    }
+
+    public void setAccountPanelView(AccountPanelView accountPanelView) {
+        this.accountPanelView = accountPanelView;
+    }
+
+    public void switchToStatisticsPanel() {
+        mainFrameView.getContentPane().removeAll();
+        mainFrameView.getContentPane().add(statisticsPanelView);
+        statisticsPanelView.refresh();
+    }
+
+    public void switchToSettingsPanel() {
+        mainFrameView.getContentPane().removeAll();
+        mainFrameView.getContentPane().add(settingsPanelView);
+    }
+
+    public void switchToAccountPanel() {
+        mainFrameView.getContentPane().removeAll();
+        accountPanelView.refreshValues();
+        mainFrameView.getContentPane().add(accountPanelView);
+    }
+
+    public void switchToHome() {
+        mainFrameView.getContentPane().removeAll();
+        mainFrameView.getContentPane().add(startPanelView);
+        startPanelView.refreshGreeting();
+    }
+
+    public void refreshStartGreeting() {
+        startPanelView.refreshGreeting();
     }
 
 }

@@ -34,13 +34,13 @@ public class DBConnection {
             connection = DriverManager.getConnection(String.format("jdbc:mysql://%s/%s?user=%s&password=%s",
                     DB_URL, DB_NAME, DB_USERNAME, DB_PASSWORD));
         } catch (SQLException ex) {
-            Settings.logData("SQL Exception (init)", ex);
+            Settings.logData("SQL Exception (init) [connectiion]", ex);
             return;
         }
         try {
             stmt = connection.createStatement();
         } catch (SQLException ex) {
-            Settings.logData("SQL Exception (init)", ex);
+            Settings.logData("SQL Exception (init) [stmt]", ex);
         }
         init = true;
     }
@@ -104,7 +104,7 @@ public class DBConnection {
         if (list.size() == 0) return null;
         // More than one player with same username found: massive error!
         if (list.size() > 1) {
-            throw new SQLException("More than one player found! Massive error!!!");
+            throw new SQLException("More than one player found! Massive error!");
         }
         return list.getRootPlayer();
     }

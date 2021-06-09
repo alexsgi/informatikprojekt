@@ -3,7 +3,7 @@ package com.stickjumper.data;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class Player {
+public class Player implements Comparable {
 
     private final int key;
     private int highScore, skin;
@@ -67,8 +67,12 @@ public class Player {
         this.skin = skin;
     }
 
+    public String getShortData() {
+        return String.format("%s : %d", playerName, highScore);
+    }
+
     @Override
-    public String toString() {
-        return String.format("Player %s (%d) - Highscore: %s - Password: %s - Skin: %d", playerName, key, highScore, playerPassword, skin);
+    public int compareTo(Object o) {
+        return ((Player) o).getHighScore() - highScore;
     }
 }

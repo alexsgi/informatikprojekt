@@ -7,7 +7,7 @@ import com.stickjumper.data.gameelements.GameCharacter;
 import com.stickjumper.frontend.game.GamePanelView;
 import com.stickjumper.frontend.rendering.GameElementRender;
 import com.stickjumper.utils.Settings;
-import com.stickjumper.utils.SoundManager;
+import com.stickjumper.utils.manager.SoundManager;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -25,9 +25,10 @@ public class SceneryController {
     public static int currentCoinValue = 0;
     public static boolean spacePressedOnce = false, spacePressedTwice = false;
     private static int jumpVar = Settings.JUMP_HEIGHT;
-    private static int newDelay = 50;
     private static int newPeriod = Settings.JUMP_PERIOD;
-    // init timer:
+
+    private long gameStartTime, gameEndTime;
+
     Timer foregroundTimer, jumpTimer;
     GameElementRender gameCharacterElement;
     private GamePanelView gamePanelView;
@@ -35,7 +36,7 @@ public class SceneryController {
     private Controller controller;
     private ArrayList<GameElementRender> gameElementRenders = new ArrayList<>();
     private boolean gameCharacterAlreadyAdded;
-    private int timerSpeed = Settings.foregroundSpeed;
+    private int timerSpeed = Settings.FOREGROUND_SPEED;
     private int generalSpeed = 1;
 
     public SceneryController(GamePanelView gamePanelView, PanelFrameManager panelFrameManager, Controller controller) {
@@ -50,7 +51,6 @@ public class SceneryController {
             gamePanelView.addObject(gameCharacterElement);
             gameCharacterAlreadyAdded = true;
         }
-        // yPosGameCharacter = gamePanelView.getHeight() - Settings.seaLevel - GameCharacter.dimens.getHeight();
         yPosGameCharacter = gameCharacterElement.getY();
     }
 
@@ -72,8 +72,11 @@ public class SceneryController {
 
     public void startGame() {
         controller.resetGameScore();
+        panelFrameManager.startMovingBackground();
         unfreeze();
+        Settings.STEADY_OBSTACLES_LETHAL = true;
         foregroundTimer = new Timer();
+        gameStartTime = System.currentTimeMillis();
         foregroundTimer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
@@ -90,7 +93,6 @@ public class SceneryController {
                 if (coinHit) {
                     coinHit = false;
                     controller.updateHighScoreLabel(currentCoinValue);
-                    // controller.setScore(controller.getScore() + currentCoinValue);
                 }
                 if (gameOver) {
                     freeze();
@@ -117,8 +119,9 @@ public class SceneryController {
     }
 
     public void stopGame() {
+        gameEndTime = System.currentTimeMillis();
+        System.err.println("Game took " + ((gameEndTime - gameStartTime) / 60000) + " min");
         freeze();
-        // gameElementRenders.forEach((e) -> gamePanelView.remove(e));
         for (Component comp : gamePanelView.getComponents()) {
             if (comp instanceof GameElementRender) gamePanelView.remove(comp);
         }
@@ -126,7 +129,7 @@ public class SceneryController {
         gamePanelView.remove(gameCharacterElement);
         gameCharacterElement = null;
         gameCharacterAlreadyAdded = false;
-        controller.updateHighScore();
+        controller.storeLocalHighscore();
     }
 
     public GamePanelView getGamePanelView() {
@@ -136,32 +139,9 @@ public class SceneryController {
     public void keyPressed(KeyEvent e) {
         switch (e.getKeyCode()) {
             case KeyEvent.VK_SPACE -> {
-                if (Settings.DELAY_JUMP_WHEN_HOLDING_KEY) {
-                    if (!spacePressedOnce) {
-                        spacePressedOnce = true;
-                        jump();
-                        newDelay = 0;
-                    } else {
-                        newDelay = Settings.JUMP_DELAY_FOR_HOLDING_SPACE;
-                        spacePressedTwice = true;
-                    }
-                    // controller.getMainFrameView().keysEnabledInGame = false;
-                } else {
-                    if (!spacePressedOnce) {
-                        spacePressedOnce = true;
-                        jumpNormal();
-                    }
-                }
-            }
-        }
-    }
-
-    public void keyPressed2(KeyEvent e) {
-        switch (e.getKeyCode()) {
-            case KeyEvent.VK_SPACE -> {
                 if (controller.getMainFrameView().keysEnabledInGame && !gameOver) {
                     if (!spacePressedOnce) {
-                        jump2();
+                        jump();
                         spacePressedOnce = true;
                     } else {
                         newPeriod = Settings.JUMP_PERIOD_FOR_HOLDING_SPACE;
@@ -171,100 +151,15 @@ public class SceneryController {
         }
     }
 
-    public void keyReleased2(KeyEvent e) {
+    public void keyReleased(KeyEvent e) {
         switch (e.getKeyCode()) {
             case KeyEvent.VK_SPACE -> {
-                if (controller.getMainFrameView().keysEnabledInGame && !gameOver) {
-                    newPeriod = Settings.JUMP_PERIOD;
-                }
+                if (controller.getMainFrameView().keysEnabledInGame && !gameOver) newPeriod = Settings.JUMP_PERIOD;
             }
         }
-
     }
 
-    public void jump2() {
-        jumpVar = Settings.JUMP_HEIGHT;
-        jumpTimer = new Timer();
-        jumpTimer.scheduleAtFixedRate(new TimerTask() {
-            @Override
-            public void run() {
-                if (gameCharacterElement != null) {
-                    gameCharacterElement.incrementY(jumpVar);
-                    if (jumpVar > 0) {
-                        jumpVar--;
-                    } else if (jumpVar == 0) {
-                        jumpTimer.cancel();
-                        jumpBackDown2();
-                    }
-                }
-            }
-        }, 0, Settings.JUMP_PERIOD);
-    }
-
-    public void jumpBackDown2() {
-        jumpVar = 0;
-        jumpTimer = new Timer();
-        jumpTimer.scheduleAtFixedRate(new TimerTask() {
-            @Override
-            public void run() {
-                if (gameCharacterElement != null) {
-
-                    if (jumpVar < Settings.JUMP_TOLERANCE_FOR_DELAY) {
-                        gameCharacterElement.decrementY(jumpVar);
-                        jumpVar++;
-                    } else if (jumpVar == Settings.JUMP_TOLERANCE_FOR_DELAY) {
-                        jumpTimer.cancel();
-                        jumpBackDownFurther2();
-                    }
-                }
-            }
-        }, 50, Settings.JUMP_PERIOD);
-    }
-
-    public void jumpBackDownFurther2() {
-        jumpVar = Settings.JUMP_TOLERANCE_FOR_DELAY;
-        jumpTimer = new Timer();
-        jumpTimer.scheduleAtFixedRate(new TimerTask() {
-            @Override
-            public void run() {
-                if (gameCharacterElement != null) {
-                    if (jumpVar < Settings.JUMP_SECOND_TOLERANCE_FOR_DELAY) {
-                        gameCharacterElement.decrementY(jumpVar);
-                        jumpVar++;
-                    } else if (jumpVar == Settings.JUMP_SECOND_TOLERANCE_FOR_DELAY) {
-                        jumpTimer.cancel();
-                        jumpBackDownFurtherFurther2();
-                    }
-                }
-            }
-        }, 0, newPeriod);
-    }
-
-    public void jumpBackDownFurtherFurther2() {
-        jumpVar = Settings.JUMP_SECOND_TOLERANCE_FOR_DELAY;
-        jumpTimer = new Timer();
-        jumpTimer.scheduleAtFixedRate(new TimerTask() {
-            @Override
-            public void run() {
-                if (gameCharacterElement != null) {
-                    gameCharacterElement.decrementY(jumpVar);
-                    if (jumpVar < Settings.JUMP_HEIGHT) {
-                        jumpVar++;
-                    } else if (jumpVar == Settings.JUMP_HEIGHT) {
-                        jumpTimer.cancel();
-                        spacePressedOnce = false;
-                        spacePressedTwice = false;
-                    }
-                }
-            }
-        }, 0, newPeriod);
-    }
-
-    private void jump() {
-        if (!gameOver) jumpUp();
-    }
-
-    public void jumpUp() {
+    public void jump() {
         jumpVar = Settings.JUMP_HEIGHT;
         jumpTimer = new Timer();
         jumpTimer.scheduleAtFixedRate(new TimerTask() {
@@ -283,7 +178,6 @@ public class SceneryController {
         }, 0, Settings.JUMP_PERIOD);
     }
 
-
     public void jumpBackDown() {
         jumpVar = 0;
         jumpTimer = new Timer();
@@ -291,28 +185,39 @@ public class SceneryController {
             @Override
             public void run() {
                 if (gameCharacterElement != null) {
-
                     if (jumpVar < Settings.JUMP_TOLERANCE_FOR_DELAY) {
                         gameCharacterElement.decrementY(jumpVar);
                         jumpVar++;
                     } else if (jumpVar == Settings.JUMP_TOLERANCE_FOR_DELAY) {
                         jumpTimer.cancel();
-
-                        if (newDelay == Settings.JUMP_DELAY_FOR_HOLDING_SPACE) {
-                            System.out.println("jump delayed");
-                            jumpBackDownFurtherDelay();
-                        } else {
-                            // System.out.println("jump NOT delayed");
-                            jumpBackDownFurtherNoDelay();
-                        }
+                        jumpBackDownFurther();
                     }
                 }
             }
         }, 50, Settings.JUMP_PERIOD);
     }
 
-    public void jumpBackDownFurtherNoDelay() {
+    public void jumpBackDownFurther() {
         jumpVar = Settings.JUMP_TOLERANCE_FOR_DELAY;
+        jumpTimer = new Timer();
+        jumpTimer.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                if (gameCharacterElement != null) {
+                    if (jumpVar < Settings.JUMP_SECOND_TOLERANCE_FOR_DELAY) {
+                        gameCharacterElement.decrementY(jumpVar);
+                        jumpVar++;
+                    } else if (jumpVar == Settings.JUMP_SECOND_TOLERANCE_FOR_DELAY) {
+                        jumpTimer.cancel();
+                        jumpBackDownFurtherFurther();
+                    }
+                }
+            }
+        }, 0, newPeriod);
+    }
+
+    public void jumpBackDownFurtherFurther() {
+        jumpVar = Settings.JUMP_SECOND_TOLERANCE_FOR_DELAY;
         jumpTimer = new Timer();
         jumpTimer.scheduleAtFixedRate(new TimerTask() {
             @Override
@@ -328,104 +233,6 @@ public class SceneryController {
                     }
                 }
             }
-        }, 0, Settings.JUMP_PERIOD);
+        }, 0, newPeriod);
     }
-
-    public void jumpBackDownFurtherDelay() {
-        jumpVar = Settings.JUMP_TOLERANCE_FOR_DELAY;
-        jumpTimer = new Timer();
-        jumpTimer.scheduleAtFixedRate(new TimerTask() {
-            @Override
-            public void run() {
-                if (gameCharacterElement != null) {
-                    gameCharacterElement.decrementY(jumpVar);
-                    if (jumpVar < Settings.JUMP_HEIGHT) {
-                        jumpVar++;
-                    } else if (jumpVar == Settings.JUMP_HEIGHT) {
-                        jumpTimer.cancel();
-                        spacePressedOnce = false;
-                        spacePressedTwice = false;
-                    }
-                }
-            }
-        }, newDelay, Settings.JUMP_PERIOD_FOR_HOLDING_SPACE);
-    }
-
-    public void jumpNormal() {
-        jumpVar = Settings.JUMP_HEIGHT;
-        jumpTimer = new Timer();
-        jumpTimer.scheduleAtFixedRate(new TimerTask() {
-            @Override
-            public void run() {
-                if (gameCharacterElement != null) {
-                    gameCharacterElement.incrementY(jumpVar);
-                    if (jumpVar > 0) {
-                        jumpVar--;
-                    } else if (jumpVar == 0) {
-                        jumpTimer.cancel();
-                        jumpBackDownNormal();
-                    }
-                }
-            }
-        }, 0, Settings.JUMP_PERIOD);
-    }
-
-    public void jumpBackDownNormal() {
-        jumpVar = 0;
-        jumpTimer = new Timer();
-        jumpTimer.scheduleAtFixedRate(new TimerTask() {
-            @Override
-            public void run() {
-                if (gameCharacterElement != null) {
-                    gameCharacterElement.decrementY(jumpVar);
-                    if (jumpVar < Settings.JUMP_HEIGHT) {
-                        jumpVar++;
-                    } else if (jumpVar == Settings.JUMP_HEIGHT) {
-                        jumpTimer.cancel();
-                        controller.getMainFrameView().keysEnabledInGame = true;
-                        spacePressedOnce = false;
-                    }
-                }
-            }
-        }, 50, Settings.JUMP_PERIOD);
-    }
-
-    public void keyPressedSafe(KeyEvent e) {
-        switch (e.getKeyCode()) {
-            case KeyEvent.VK_SPACE -> {
-                if (controller.getMainFrameView().keysEnabledInGame && !gameOver) {
-                    jumpNormal();
-                    controller.getMainFrameView().keysEnabledInGame = false;
-                }
-            }
-        }
-    }
-
-        /*
-        public void initCertainObject(String objectType, int height, int speed, int skinOrCoinValue){
-        // the input parameter height is the height above the "sea level" in game
-        int h = gamePanelView.getHeight()-Settings.seaLevel;
-        int w = gamePanelView.getWidth();
-
-        switch (objectType) {
-            case "Coin":
-                GameElementRender coinElement = new GameElementRender(new Coin(new Point(w, (h - Enemy.getStandardDimens().getHeight()- height)), 1));
-                gamePanelView.addObject(coinElement);
-                addGameElementRender(coinElement);
-                break;
-
-            case "SteadyObstacle":
-                GameElementRender steadyObstacleElement = new GameElementRender(new SteadyObstacle(new Point(w , (h - SteadyObstacle.getStandardDimens().getHeight())), skinOrCoinValue));
-                gamePanelView.addObject(steadyObstacleElement);
-                addGameElementRender(steadyObstacleElement);
-                break;
-
-            case "Enemy":
-                GameElementRender enemyElement = new GameElementRender(new Enemy(new Point(w, (h - Enemy.getStandardDimens().getHeight())- height), speed, skinOrCoinValue));
-                gamePanelView.addObject(enemyElement);
-                addGameElementRender(enemyElement);
-                break;
-        }
-    }
-     */
 }

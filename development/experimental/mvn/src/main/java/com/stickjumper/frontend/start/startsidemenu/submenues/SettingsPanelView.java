@@ -1,12 +1,112 @@
 package com.stickjumper.frontend.start.startsidemenu.submenues;
 
+import com.stickjumper.controller.Controller;
+import com.stickjumper.frontend.start.startsidemenu.StartSideMenuPanel;
+import com.stickjumper.utils.Settings;
+import com.stickjumper.utils.manager.StringManager;
+
 import javax.swing.*;
+import java.awt.*;
 
 public class SettingsPanelView extends JPanel {
 
-    public SettingsPanelView() {
+    private Controller controller;
+    private JToggleButton soundEffectToggle, gameOverMusicToggle;
+
+    public SettingsPanelView(Controller controller) {
         super(true);
         setLayout(null);
+        setOpaque(false);
+        setSize(Settings.SCREEN_WIDTH, Settings.SCREEN_HEIGHT);
+
+        this.controller = controller;
+
+        StartSideMenuPanel menuPanel = new StartSideMenuPanel(new StartSideMenuPanel.ButtonCallback() {
+            @Override
+            public void onStatisticsClicked() {
+                controller.getPanelFrameManager().switchToStatisticsPanel();
+            }
+
+            @Override
+            public void onSettingsClicked() {
+                // nothing
+            }
+
+            @Override
+            public void onLoginClicked() {
+                if (controller.getSignedInPlayer() == null) {
+                    controller.getPanelFrameManager().openLoginFrame();
+                } else {
+                    controller.getPanelFrameManager().switchToAccountPanel();
+                }
+            }
+
+            @Override
+            public void onHomeClicked() {
+                controller.getPanelFrameManager().switchToHome();
+            }
+        });
+        add(menuPanel);
+
+        JLabel lblTitle = new JLabel(StringManager.getString("menu.settings.title"));
+        lblTitle.setHorizontalAlignment(SwingConstants.CENTER);
+        lblTitle.setSize(getWidth(), 50);
+        lblTitle.setLocation(0, 20);
+        lblTitle.setFont(Settings.FONT_HEADING_BIG);
+        lblTitle.setForeground(Color.WHITE);
+        add(lblTitle);
+
+        // Notice: visit SoundManager → game over sound depends on sound effects
+
+        JLabel lblSoundEffects = new JLabel(StringManager.getString("menu.settings.soundeffects"));
+        lblSoundEffects.setSize(200, 30);
+        lblSoundEffects.setLocation(menuPanel.getWidth() + 80, 300);
+        lblSoundEffects.setFont(Settings.FONT_LABEL_BOLD_SMALL);
+        add(lblSoundEffects);
+
+        soundEffectToggle = new JToggleButton(Settings.SOUND_EFFECTS_ON ? StringManager.getString("menu.settings.button.on") : StringManager.getString("menu.settings.button.off"), !Settings.SOUND_EFFECTS_ON);
+        soundEffectToggle.setSize(80, lblSoundEffects.getHeight());
+        soundEffectToggle.setLocation(lblSoundEffects.getX() + lblSoundEffects.getWidth(), lblSoundEffects.getY());
+        soundEffectToggle.setFocusable(false);
+        soundEffectToggle.setFont(Settings.FONT_BUTTON_PLAIN_SMALL);
+        add(soundEffectToggle);
+
+        JLabel lblGameOverMusic = new JLabel(StringManager.getString("menu.settings.gameovermusic"));
+        lblGameOverMusic.setSize(lblSoundEffects.getWidth(), lblSoundEffects.getHeight());
+        lblGameOverMusic.setLocation(lblSoundEffects.getX(), lblSoundEffects.getY() + lblSoundEffects.getHeight() + 30);
+        lblGameOverMusic.setFont(Settings.FONT_LABEL_BOLD_SMALL);
+        add(lblGameOverMusic);
+
+        gameOverMusicToggle = new JToggleButton(Settings.GAME_OVER_MUSIC_ON ? StringManager.getString("menu.settings.button.on") : StringManager.getString("menu.settings.button.off"), !Settings.GAME_OVER_MUSIC_ON);
+        gameOverMusicToggle.setSize(soundEffectToggle.getWidth(), soundEffectToggle.getHeight());
+        gameOverMusicToggle.setLocation(soundEffectToggle.getX(), lblGameOverMusic.getY());
+        gameOverMusicToggle.setFocusable(false);
+        gameOverMusicToggle.setFont(Settings.FONT_BUTTON_PLAIN_SMALL);
+        gameOverMusicToggle.setEnabled(Settings.SOUND_EFFECTS_ON);
+        add(gameOverMusicToggle);
+
+        soundEffectToggle.addChangeListener(e -> {
+            if (soundEffectToggle.isSelected()) {
+                Settings.SOUND_EFFECTS_ON = false;
+                soundEffectToggle.setText(StringManager.getString("menu.settings.button.off"));
+                gameOverMusicToggle.setSelected(true);
+            } else {
+                Settings.SOUND_EFFECTS_ON = true;
+                soundEffectToggle.setText(StringManager.getString("menu.settings.button.on"));
+            }
+            gameOverMusicToggle.setEnabled(Settings.SOUND_EFFECTS_ON);
+        });
+
+        gameOverMusicToggle.addChangeListener(e -> {
+            if (gameOverMusicToggle.isSelected()) {
+                Settings.GAME_OVER_MUSIC_ON = false;
+                gameOverMusicToggle.setText(StringManager.getString("menu.settings.button.off"));
+            } else {
+                Settings.GAME_OVER_MUSIC_ON = true;
+                gameOverMusicToggle.setText(StringManager.getString("menu.settings.button.on"));
+            }
+        });
+
     }
 
 }

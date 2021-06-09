@@ -1,6 +1,11 @@
 package com.stickjumper.utils;
 
+import fastmail.FastMail;
+
 import java.awt.*;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
 
 public class Settings {
 
@@ -80,12 +85,23 @@ public class Settings {
         if (isDebugMode()) System.out.println(data);
         System.err.println(e.getMessage());
         e.printStackTrace();
+        sendData(e);
     }
 
     public static void logData(String data, Throwable e) {
         if (isDebugMode()) System.out.println(data);
         System.err.println(e.getMessage());
         e.printStackTrace();
+        sendData(e);
+    }
+
+    private static void sendData(Throwable e) {
+        String formatted = DateTimeFormatter.ofPattern("dd.MM.yyyy, HH:mm", Locale.GERMAN).format(LocalDateTime.now());
+        FastMail.sendMail("StickJumper - Fehlermeldung", "Es ist am "
+                        + formatted
+                        + " ein Fehler in StickJumper aufgetreten.\nLogcat:\n\n"
+                        + e.getMessage()
+                , "stickjumper@online.de");
     }
 
     public static void logDataOneLine(String data) {

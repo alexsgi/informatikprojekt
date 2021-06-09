@@ -11,11 +11,11 @@ import com.stickjumper.frontend.login.LoginFrameView;
 import com.stickjumper.frontend.login.LoginPanelView;
 import com.stickjumper.frontend.login.RegisterPanelView;
 import com.stickjumper.frontend.start.StartPanelView;
-import com.stickjumper.utils.ConnectionTester;
 import com.stickjumper.utils.Settings;
+import com.stickjumper.utils.network.ConnectionTester;
 
-import javax.swing.*;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -25,14 +25,14 @@ public class Controller {
     private final PanelFrameManager panelFrameManager;
     // All frames
     private final MainFrameView mainFrameView;
+    private final SceneryRandomGenerator sceneryRandomGenerator;
     public boolean gameStarted = false;
     // Manages all in-game objects
     private SceneryController sceneryController;
-    private SceneryRandomGenerator sceneryRandomGenerator;
     // Player management
     private Player signedInPlayer;
     private List playerList;
-    private int localHighScore = 0;
+    private int localHighScore = 0, lastRoundHighScore = 0;
     // All panels
     private StartPanelView startPanelView;
     private GamePanelView gamePanelView;
@@ -46,12 +46,10 @@ public class Controller {
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             stopTimer();
             if (getSignedInPlayer() != null) {
-                updateHighScore();
                 try {
                     DBConnection.updateHighScore(getSignedInPlayer());
                 } catch (SQLException e) {
                     Settings.logData("SQLException (updateHighscore in Controller)", e);
-                    JOptionPane.showMessageDialog(null, "Error updating highscore");
                 }
             }
             DBConnection.close();
@@ -64,7 +62,6 @@ public class Controller {
         sceneryController = new SceneryController(gamePanelView, panelFrameManager, this);
         sceneryRandomGenerator.setSceneryController(sceneryController);
         panelFrameManager.setSceneryController(sceneryController);
-        // TODO: just a test - DELETE ALL OBJECTS WHEN GOING BACK TO START? - WHEN LOAD ALL OBJECTS?
     }
 
     public void setStartPanelView(StartPanelView startPanelView) {
@@ -114,18 +111,38 @@ public class Controller {
 
     public void startGame() {
         panelFrameManager.switchToGamePanel();
-        localHighScore = -1;
         sceneryController.startGame();
         sceneryRandomGenerator.randomGenerate();
+        gamePanelView.resetCheatCount();
         gameStarted = true;
         mainFrameView.keysEnabledInGame = true;
     }
 
     public boolean playerLogin(String userName, String password) throws SQLException {
         signedInPlayer = getPlayerFromList(userName, password);
-        if (signedInPlayer != null) startPanelView.showHighScore(signedInPlayer.getHighScore());
-        localHighScore = -1;
+        if (signedInPlayer != null) {
+            localHighScore = signedInPlayer.getHighScore();
+            startPanelView.showHighScore();
+        }
         return signedInPlayer != null;
+    }
+
+    public void playerLogout() {
+        if (signedInPlayer != null) {
+            try {
+                DBConnection.updateHighScore(signedInPlayer);
+            } catch (SQLException throwables) {
+                Settings.logData("Error updating highscore (logout)", throwables);
+            }
+        }
+        localHighScore = 0;
+        lastRoundHighScore = 0;
+        signedInPlayer = null;
+        try {
+            setList(DBConnection.getAllPlayers());
+        } catch (SQLException throwables) {
+            Settings.logData("Error reading player list from DB (logout)", throwables);
+        }
     }
 
     private Player getPlayerFromList(String userName, String password) {
@@ -140,20 +157,6 @@ public class Controller {
         return signedInPlayer;
     }
 
-    public boolean isScoreExisting() {
-        return (localHighScore != -1);
-    }
-
-    public int getScoreFromSignedInPlayer() {
-        return (isScoreExisting()) ? localHighScore : -1;
-    }
-
-    public void updateHighScore() {
-        if (signedInPlayer != null && signedInPlayer.getHighScore() < localHighScore)
-            signedInPlayer.setHighScore(localHighScore);
-        startPanelView.updateHighScoreLabel(localHighScore);
-    }
-
     public SceneryController getSceneryController() {
         return sceneryController;
     }
@@ -166,11 +169,37 @@ public class Controller {
         return sceneryRandomGenerator;
     }
 
-    public void updateHighScoreLabel(int newScore) {
-        gamePanelView.updateHighScore(newScore);
+    public void resetGameScore() {
+        lastRoundHighScore = 0;
+        gamePanelView.resetScoreLabel();
     }
 
-    public void resetGameScore() {
-        gamePanelView.resetHighScore();
+    // update high score in startPanel
+    public void updateHighScore() {
+        startPanelView.showHighScore();
+    }
+
+    public void storeLocalHighscore() {
+        if (lastRoundHighScore > localHighScore) localHighScore = lastRoundHighScore;
+        if (signedInPlayer != null && signedInPlayer.getHighScore() < localHighScore)
+            signedInPlayer.setHighScore(localHighScore);
+    }
+
+    // Update score in gamePanel
+    public void updateHighScoreLabel(int additionalScore) {
+        lastRoundHighScore += additionalScore;
+        gamePanelView.updateHighScore();
+    }
+
+    public int getLocalHighScore() {
+        return localHighScore;
+    }
+
+    public int getLastRoundHighScore() {
+        return lastRoundHighScore;
+    }
+
+    public ArrayList<Player> getPlayerList() {
+        return playerList.asArrayList();
     }
 }

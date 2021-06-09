@@ -1,4 +1,6 @@
-package com.stickjumper.utils;
+package com.stickjumper.utils.manager;
+
+import com.stickjumper.utils.Settings;
 
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
@@ -17,6 +19,8 @@ public class SoundManager {
     public static String pathGameOverSound = "/sounds/DunDunDun.wav";
 
     public static AudioInputStream inputStreamBootSound, inputStreamButtonSound, inputStreamCoinSound, inputStreamGameOverSound;
+
+    // TODO: play sound when cheat active
 
     public static void loadAllClips() {
         pathButtonSound2 = pathBootSoundEmpty;
@@ -44,12 +48,11 @@ public class SoundManager {
                     clip.open(inputStream);
                     clip.start();
                     clip.setMicrosecondPosition(0);
-                    loadAllClips();
+                    loadAllClips(); // ←
                 } catch (Exception e) {
                     Settings.logData("Error playing sound: " + e.getMessage(), e);
                 }
             }).start();
-
         }
     }
 

@@ -2,6 +2,8 @@ package com.stickjumper.data.list.structure;
 
 import com.stickjumper.data.Player;
 
+import java.util.ArrayList;
+
 public class Node extends ListElement {
 
     private ListElement followingNode = new LastNode();
@@ -46,5 +48,11 @@ public class Node extends ListElement {
         if (player == p) return followingNode;
         followingNode = followingNode.removeNode(p);
         return this;
+    }
+
+    @Override
+    public void storeInArrayList(ArrayList<Player> list) {
+        list.add(player);
+        followingNode.storeInArrayList(list);
     }
 }
