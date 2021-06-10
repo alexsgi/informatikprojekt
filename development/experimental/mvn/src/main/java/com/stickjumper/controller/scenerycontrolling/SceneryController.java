@@ -3,7 +3,9 @@ package com.stickjumper.controller.scenerycontrolling;
 import com.stickjumper.controller.Controller;
 import com.stickjumper.controller.PanelFrameManager;
 import com.stickjumper.data.GameElement;
+import com.stickjumper.data.gameelements.Coin;
 import com.stickjumper.data.gameelements.GameCharacter;
+import com.stickjumper.data.gameelements.Obstacle;
 import com.stickjumper.frontend.game.GamePanelView;
 import com.stickjumper.frontend.rendering.GameElementRender;
 import com.stickjumper.utils.Settings;
@@ -26,28 +28,42 @@ public class SceneryController {
     public static boolean spacePressedOnce = false, spacePressedTwice = false;
     private static int jumpVar = Settings.JUMP_HEIGHT;
     private static int newPeriod = Settings.JUMP_PERIOD;
-
-    private long gameStartTime, gameEndTime;
-
+    private final GamePanelView gamePanelView;
+    private final PanelFrameManager panelFrameManager;
+    private final Controller controller;
+    private final ArrayList<GameElementRender> gameElementRenders = new ArrayList<>();
+    private final int generalSpeed = 1;
     Timer foregroundTimer, jumpTimer;
     GameElementRender gameCharacterElement;
-    private GamePanelView gamePanelView;
-    private PanelFrameManager panelFrameManager;
-    private Controller controller;
-    private ArrayList<GameElementRender> gameElementRenders = new ArrayList<>();
     private boolean gameCharacterAlreadyAdded;
-    private int timerSpeed = Settings.FOREGROUND_SPEED;
-    private int generalSpeed = 1;
+    private final GameEventListener gameEventListener;
 
     public SceneryController(GamePanelView gamePanelView, PanelFrameManager panelFrameManager, Controller controller) {
         this.gamePanelView = gamePanelView;
         this.panelFrameManager = panelFrameManager;
         this.controller = controller;
+
+        gameEventListener = gameElement -> {
+            if (gameElement instanceof Obstacle) {
+                freeze();
+                SoundManager.playSound(SoundManager.inputStreamGameOverSound);
+                gameOver = true; // TODO: check if needed
+            } else if (gameElement instanceof Coin) {
+                SoundManager.playSound(SoundManager.inputStreamCoinSound);
+                controller.updateHighScoreLabel(((Coin) gameElement).getCoinValue());
+            }
+        };
+    }
+
+    public GameEventListener getGameEventListener() {
+        return gameEventListener;
     }
 
     public void initGameCharacter(int skinType) {
         if (!gameCharacterAlreadyAdded) {
-            gameCharacterElement = new GameElementRender(new GameCharacter(skinType));
+            GameCharacter character = new GameCharacter(skinType);
+            character.addEventListener(gameEventListener);
+            gameCharacterElement = new GameElementRender(character);
             gamePanelView.addObject(gameCharacterElement);
             gameCharacterAlreadyAdded = true;
         }
@@ -72,15 +88,13 @@ public class SceneryController {
 
     public void startGame() {
         controller.resetGameScore();
-        panelFrameManager.startMovingBackground();
         unfreeze();
+        panelFrameManager.startMovingBackground();
         Settings.STEADY_OBSTACLES_LETHAL = true;
         foregroundTimer = new Timer();
-        gameStartTime = System.currentTimeMillis();
         foregroundTimer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
-                // IT'S WORKING - DON'T TOUCH IT
                 for (int i = 0; i < gameElementRenders.size(); i++) {
                     GameElementRender current = gameElementRenders.get(i);
                     if (!current.getGameElement().isVisible()) {
@@ -90,6 +104,7 @@ public class SceneryController {
                     if (current.getLocation().getX() + current.getWidth() <= 0) removeGameElementRender(i);
                 }
                 if (gameCharacterAlreadyAdded) yPosGameCharacter = gameCharacterElement.getY();
+                /*
                 if (coinHit) {
                     coinHit = false;
                     controller.updateHighScoreLabel(currentCoinValue);
@@ -98,9 +113,9 @@ public class SceneryController {
                     freeze();
                     SoundManager.playSound(SoundManager.inputStreamGameOverSound);
                 }
-
+                 */
             }
-        }, 0, timerSpeed);
+        }, 0, Settings.FOREGROUND_SPEED);
 
         spacePressedOnce = false;
         spacePressedTwice = false;
@@ -109,7 +124,7 @@ public class SceneryController {
     public void freeze() {
         if (foregroundTimer != null) foregroundTimer.cancel();
         if (jumpTimer != null) jumpTimer.cancel();
-        controller.getPanelFrameManager().stopMovingBackground();
+        panelFrameManager.stopMovingBackground();
         gamePanelView.lblGameOver.setVisible(true);
     }
 
@@ -119,8 +134,6 @@ public class SceneryController {
     }
 
     public void stopGame() {
-        gameEndTime = System.currentTimeMillis();
-        System.err.println("Game took " + ((gameEndTime - gameStartTime) / 60000) + " min");
         freeze();
         for (Component comp : gamePanelView.getComponents()) {
             if (comp instanceof GameElementRender) gamePanelView.remove(comp);

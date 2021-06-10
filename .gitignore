@@ -3,3 +3,5 @@ development/production/.idea/*
 development/production/stickjumper/.idea/*
 development/production/.idea/workspace.xml
 development/production/.idea/workspace.xml
+
+*.class

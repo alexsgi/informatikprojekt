@@ -1,5 +1,6 @@
 package com.stickjumper.data.gameelements;
 
+import com.stickjumper.controller.scenerycontrolling.GameEventListener;
 import com.stickjumper.data.GameElement;
 import com.stickjumper.data.Player;
 import com.stickjumper.utils.Dimens;
@@ -42,5 +43,10 @@ public class GameCharacter extends GameElement {
     @Override
     public void hit() {
     }
+
+    @Override
+    public void addEventListener(GameEventListener listener) {
+    }
+
 
 }

@@ -1,5 +1,6 @@
 package com.stickjumper.data;
 
+import com.stickjumper.controller.scenerycontrolling.GameEventListener;
 import com.stickjumper.controller.scenerycontrolling.SceneryController;
 import com.stickjumper.data.gameelements.GameCharacter;
 import com.stickjumper.utils.Dimens;
@@ -16,6 +17,8 @@ public abstract class GameElement {
     private boolean visible;
     private BufferedImage image;
     private int speed;
+
+    private GameEventListener listener;
 
     public GameElement(Point p, Dimens d, boolean visible, BufferedImage image, int speed) {
         this.location = p;
@@ -88,5 +91,7 @@ public abstract class GameElement {
     }
 
     public abstract void hit();
+
+    public abstract void addEventListener(GameEventListener listener);
 
 }
