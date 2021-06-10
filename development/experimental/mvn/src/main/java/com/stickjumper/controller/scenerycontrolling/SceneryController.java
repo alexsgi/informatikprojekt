@@ -47,7 +47,7 @@ public class SceneryController {
             if (gameElement instanceof Obstacle) {
                 freeze();
                 SoundManager.playSound(SoundManager.inputStreamGameOverSound);
-                gameOver = true; // TODO: check if needed
+                gameOver = true; // TODO: check if even needed
             } else if (gameElement instanceof Coin) {
                 SoundManager.playSound(SoundManager.inputStreamCoinSound);
                 controller.updateHighScoreLabel(((Coin) gameElement).getCoinValue());

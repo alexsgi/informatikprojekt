@@ -5,27 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ed2fd7a0-e51f-484b-8ba6-69bb4ba3c6da" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/stickjumper/controller/scenerycontrolling/GameEventListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/stickjumper/controller/scenerycontrolling/SceneryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stickjumper/controller/scenerycontrolling/SceneryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stickjumper/controller/scenerycontrolling/SceneryRandomGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stickjumper/controller/scenerycontrolling/SceneryRandomGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stickjumper/data/GameElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stickjumper/data/GameElement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stickjumper/data/gameelements/Coin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stickjumper/data/gameelements/Coin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stickjumper/data/gameelements/GameCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stickjumper/data/gameelements/GameCharacter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stickjumper/data/gameelements/Obstacle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stickjumper/data/gameelements/Obstacle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stickjumper/data/gameelements/obstacles/SteadyObstacle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stickjumper/data/gameelements/obstacles/SteadyObstacle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/stickjumper/controller/scenerycontrolling/SceneryController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stickjumper/controller/scenerycontrolling/SceneryController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/stickjumper/controller/scenerycontrolling/SceneryController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stickjumper/controller/scenerycontrolling/SceneryController$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/stickjumper/controller/scenerycontrolling/SceneryController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stickjumper/controller/scenerycontrolling/SceneryController$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/stickjumper/controller/scenerycontrolling/SceneryController$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stickjumper/controller/scenerycontrolling/SceneryController$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/stickjumper/controller/scenerycontrolling/SceneryController$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stickjumper/controller/scenerycontrolling/SceneryController$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/stickjumper/controller/scenerycontrolling/SceneryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stickjumper/controller/scenerycontrolling/SceneryController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/stickjumper/controller/scenerycontrolling/SceneryRandomGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stickjumper/controller/scenerycontrolling/SceneryRandomGenerator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/stickjumper/data/GameElement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stickjumper/data/GameElement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/stickjumper/data/gameelements/Coin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stickjumper/data/gameelements/Coin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/stickjumper/data/gameelements/GameCharacter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stickjumper/data/gameelements/GameCharacter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/stickjumper/data/gameelements/obstacles/SteadyObstacle.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stickjumper/data/gameelements/obstacles/SteadyObstacle.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +89,7 @@
       <updated>1622472525398</updated>
       <workItem from="1622472526835" duration="1628000" />
       <workItem from="1623263005371" duration="1451000" />
-      <workItem from="1623347321482" duration="2417000" />
+      <workItem from="1623347321482" duration="2515000" />
     </task>
     <servers />
   </component>
