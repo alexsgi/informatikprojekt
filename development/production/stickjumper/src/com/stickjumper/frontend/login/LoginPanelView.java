@@ -7,7 +7,6 @@ import com.stickjumper.utils.components.JRoundPasswordField;
 import com.stickjumper.utils.components.JRoundTextField;
 import com.stickjumper.utils.components.LoginLabel;
 import com.stickjumper.utils.manager.ImageManager;
-import com.stickjumper.utils.manager.StringManager;
 import com.stickjumper.utils.security.PasswordHasher;
 
 import javax.swing.*;
@@ -25,7 +24,7 @@ public class LoginPanelView extends JPanel implements ActionListener {
     private final JRoundTextField userNameTextField;
     private final JRoundPasswordField passwordField;
 
-    private final JLabel warningLabel;
+    private final LoginLabel warningLabel;
 
     public LoginPanelView(Controller controller, LoginFrameView loginFrameView) {
         super(true);
@@ -44,18 +43,18 @@ public class LoginPanelView extends JPanel implements ActionListener {
         add(backButton);
 
         LoginLabel welcomeLabel = new LoginLabel(LoginLabel.HEADER);
-        welcomeLabel.setText(StringManager.getString("login.panel.welcome"));
+        welcomeLabel.setKeyText("login.panel.welcome");
         welcomeLabel.setBounds(0, 20, 600, 50);
         add(welcomeLabel);
 
         LoginLabel signInLabel = new LoginLabel(LoginLabel.SUBHEADER);
-        signInLabel.setText(StringManager.getString("login.panel.signinheader"));
+        signInLabel.setKeyText("login.panel.signinheader");
         signInLabel.setSize(getWidth(), 30);
         signInLabel.setLocation(0, welcomeLabel.getY() + welcomeLabel.getHeight() + 5);
         add(signInLabel);
 
         LoginLabel userNameLabel = new LoginLabel(LoginLabel.TEXT);
-        userNameLabel.setText(StringManager.getString("login.panel.username"));
+        userNameLabel.setKeyText("login.panel.username");
         userNameLabel.setSize(getWidth() - 2 * 100, 30);
         userNameLabel.setLocation(getWidth() / 7, signInLabel.getY() + signInLabel.getHeight() + 25);
         add(userNameLabel);
@@ -66,7 +65,7 @@ public class LoginPanelView extends JPanel implements ActionListener {
         add(userNameTextField);
 
         LoginLabel passwordLabel = new LoginLabel(LoginLabel.TEXT);
-        passwordLabel.setText(StringManager.getString("login.panel.password"));
+        passwordLabel.setKeyText("login.panel.password");
         passwordLabel.setSize(getWidth() - 2 * 100, 30);
         passwordLabel.setLocation(getWidth() / 7, userNameTextField.getY() + userNameTextField.getHeight() + 1);
         add(passwordLabel);
@@ -83,7 +82,7 @@ public class LoginPanelView extends JPanel implements ActionListener {
         add(warningLabel);
 
         loginButton = new AdvancedButton();
-        loginButton.setText(StringManager.getString("login.panel.button.login"));
+        loginButton.setKeyText("login.panel.button.login");
         loginButton.setFont(Settings.FONT_LOGIN_BUTTON);
         loginButton.setSize(150, 40);
         loginButton.setLocation((getWidth() - loginButton.getWidth()) / 2, getHeight() - (int) (loginButton.getHeight() * 3.5));
@@ -92,7 +91,7 @@ public class LoginPanelView extends JPanel implements ActionListener {
         add(loginButton);
 
         AdvancedButton registerButton = new AdvancedButton(Color.BLUE, Color.BLACK);
-        registerButton.setText(StringManager.getString("login.panel.button.register"));
+        registerButton.setKeyText("login.panel.button.register");
         registerButton.setFont(Settings.FONT_LOGIN_SMALL_BUTTON);
         registerButton.setSize(getWidth(), 40);
         registerButton.setHorizontalAlignment(SwingConstants.CENTER);
@@ -104,19 +103,19 @@ public class LoginPanelView extends JPanel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        warningLabel.setText("");
+        warningLabel.setKeyText(null);
         switch (e.getActionCommand()) {
             case "backButton" -> controller.getPanelFrameManager().closeLoginFrame();
             case "loginButton" -> {
                 String username = userNameTextField.getText(), password;
                 char[] passwordArray = passwordField.getPassword();
                 if (username == null || username.isEmpty()) {
-                    warningLabel.setText(StringManager.getString("login.panel.warning.username"));
+                    warningLabel.setKeyText("login.panel.warning.username");
                     userNameTextField.requestFocus();
                     return;
                 }
                 if (passwordArray == null || (password = new String(passwordArray)).isEmpty()) {
-                    warningLabel.setText(StringManager.getString("login.panel.warning.password"));
+                    warningLabel.setKeyText("login.panel.warning.password");
                     passwordField.requestFocus();
                     return;
                 }
@@ -136,7 +135,7 @@ public class LoginPanelView extends JPanel implements ActionListener {
                         controller.getPanelFrameManager().closeLoginFrame();
                         controller.getPanelFrameManager().refreshStartGreeting();
                     } else {
-                        warningLabel.setText(StringManager.getString("login.panel.warning.falsecredentials"));
+                        warningLabel.setKeyText("login.panel.warning.falsecredentials");
                     }
                 } catch (SQLException ex) {
                     Settings.logData("SQLException (login)", ex);

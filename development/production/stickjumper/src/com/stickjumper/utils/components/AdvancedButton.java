@@ -2,12 +2,14 @@ package com.stickjumper.utils.components;
 
 import com.stickjumper.utils.Settings;
 import com.stickjumper.utils.manager.SoundManager;
+import com.stickjumper.utils.manager.StringManager;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
+import java.util.ArrayList;
 
 public class AdvancedButton extends JButton {
 
@@ -19,14 +21,19 @@ public class AdvancedButton extends JButton {
     - with border, with icon (or null)
      */
 
+    private static final ArrayList<AdvancedButton> list = new ArrayList<>();
+    private String key;
+
     public AdvancedButton() {
         super();
         setFocusable(false);
         setFont(Settings.FONT_BUTTON_PLAIN);
+        list.add(this);
     }
 
     public AdvancedButton(Color enterColor, Color exitColor) {
         super();
+        list.add(this);
         setFocusable(false);
         setBackground(null);
         setOpaque(false);
@@ -63,6 +70,7 @@ public class AdvancedButton extends JButton {
 
     public AdvancedButton(BufferedImage enterImage, BufferedImage exitImage) {
         super();
+        list.add(this);
         setFocusable(false);
         setBackground(null);
         setOpaque(false);
@@ -99,6 +107,14 @@ public class AdvancedButton extends JButton {
         });
     }
 
+    public static void refresh() {
+        for (AdvancedButton b : list) {
+            if (b.getKey() != null) {
+                b.setKeyText(b.getKey());
+            }
+        }
+    }
+
     public void setIcon(BufferedImage image) {
         if (image != null) super.setIcon(new ImageIcon(image));
     }
@@ -111,6 +127,15 @@ public class AdvancedButton extends JButton {
     public void setID(String id) {
         setName(id);
         setActionCommand(id);
+    }
+
+    public void setKeyText(String key) {
+        this.key = key;
+        setText((key == null || key.equals("")) ? "" : StringManager.getString(key));
+    }
+
+    public String getKey() {
+        return key;
     }
 
 }

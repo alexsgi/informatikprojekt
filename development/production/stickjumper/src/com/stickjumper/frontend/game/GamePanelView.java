@@ -5,8 +5,8 @@ import com.stickjumper.controller.scenerycontrolling.SceneryController;
 import com.stickjumper.frontend.rendering.GameElementRender;
 import com.stickjumper.utils.Settings;
 import com.stickjumper.utils.components.AdvancedButton;
+import com.stickjumper.utils.components.AdvancedLabel;
 import com.stickjumper.utils.manager.ImageManager;
-import com.stickjumper.utils.manager.StringManager;
 
 import javax.swing.*;
 import java.awt.*;
@@ -18,7 +18,7 @@ import java.awt.event.MouseEvent;
 public class GamePanelView extends JPanel implements ActionListener {
 
     private final Controller controller;
-    public JLabel lblGameOver, lblHighScore;
+    public AdvancedLabel lblGameOver, lblHighScore;
 
     private int steadyObstaclesCheatCount;
 
@@ -38,7 +38,8 @@ public class GamePanelView extends JPanel implements ActionListener {
         backButton.addActionListener(this);
         add(backButton);
 
-        lblGameOver = new JLabel(StringManager.getString("game.gameover"));
+        lblGameOver = new AdvancedLabel();
+        lblGameOver.setKeyText("game.gameover");
         lblGameOver.setHorizontalAlignment(SwingConstants.CENTER);
         lblGameOver.setVerticalAlignment(SwingConstants.CENTER);
         lblGameOver.setSize(getWidth(), getHeight() + 100);
@@ -57,7 +58,8 @@ public class GamePanelView extends JPanel implements ActionListener {
         backButton.addActionListener(this);
         lblGameOver.add(backButton);
 
-        lblHighScore = new JLabel(String.valueOf(controller.getLocalHighScore()));
+        lblHighScore = new AdvancedLabel();
+        lblHighScore.setText(String.valueOf(controller.getLocalHighScore()));
         lblHighScore.setHorizontalAlignment(SwingConstants.CENTER);
         lblHighScore.setVerticalAlignment(SwingConstants.CENTER);
         lblHighScore.setSize(getWidth(), 50);
@@ -74,7 +76,7 @@ public class GamePanelView extends JPanel implements ActionListener {
                     steadyObstaclesCheatCount++;
                     if (steadyObstaclesCheatCount >= 10) {
                         Settings.STEADY_OBSTACLES_LETHAL = false;
-                        lblHighScore.setText(StringManager.getString("game.cheatcode.active"));
+                        lblHighScore.setKeyText("game.cheatcode.active");
                     }
                 }
             }
@@ -82,11 +84,11 @@ public class GamePanelView extends JPanel implements ActionListener {
     }
 
     public void updateHighScore() {
-        lblHighScore.setText(String.valueOf(controller.getLastRoundHighScore()));
+        lblHighScore.setNumberText(controller.getLastRoundHighScore());
     }
 
     public void resetScoreLabel() {
-        lblHighScore.setText(String.valueOf(controller.getLastRoundHighScore()));
+        lblHighScore.setNumberText(controller.getLastRoundHighScore());
     }
 
     @Override

@@ -11,13 +11,12 @@ import java.io.IOException;
 
 public class SoundManager {
 
-    public static String pathButtonSound = "/sounds/button_sound.wav";
     public static final String pathBootSound = "/sounds/boot_2.wav";
     // public static final String pathBootSoundEmpty = "/sounds/empty_boot_sequence.wav";
     public static final String pathBootSoundEmpty = "/sounds/empty_clip.wav";
     public static final String pathCoinSound = "/sounds/coin_sound.wav";
     public static final String pathGameOverSound = "/sounds/game_over.wav";
-
+    public static String pathButtonSound = "/sounds/button_sound.wav";
     public static AudioInputStream inputStreamBootSound, inputStreamButtonSound, inputStreamCoinSound, inputStreamGameOverSound;
 
     // TODO: play sound when cheat active

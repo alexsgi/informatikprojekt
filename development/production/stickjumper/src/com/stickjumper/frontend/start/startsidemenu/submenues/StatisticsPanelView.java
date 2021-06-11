@@ -5,7 +5,7 @@ import com.stickjumper.data.Player;
 import com.stickjumper.data.database.DBConnection;
 import com.stickjumper.frontend.start.startsidemenu.StartSideMenuPanel;
 import com.stickjumper.utils.Settings;
-import com.stickjumper.utils.manager.StringManager;
+import com.stickjumper.utils.components.AdvancedLabel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -17,7 +17,7 @@ public class StatisticsPanelView extends JPanel {
 
     private Controller controller;
     private JLabel[][] labelArray = new JLabel[5][2];
-    private JLabel playerNotice;
+    private AdvancedLabel playerNotice;
 
     public StatisticsPanelView(Controller controller) {
         super(true);
@@ -55,7 +55,8 @@ public class StatisticsPanelView extends JPanel {
         });
         add(menuPanel);
 
-        JLabel lblTitle = new JLabel(StringManager.getString("menu.statistics.title"));
+        AdvancedLabel lblTitle = new AdvancedLabel();
+        lblTitle.setKeyText("menu.statistics.title");
         lblTitle.setHorizontalAlignment(SwingConstants.CENTER);
         lblTitle.setSize(getWidth(), 50);
         lblTitle.setLocation(0, 20);
@@ -63,9 +64,9 @@ public class StatisticsPanelView extends JPanel {
         lblTitle.setForeground(Color.WHITE);
         add(lblTitle);
 
-        JLabel lblHeader = new JLabel();
+        AdvancedLabel lblHeader = new AdvancedLabel();
         lblHeader.setHorizontalAlignment(SwingConstants.CENTER);
-        lblHeader.setText(StringManager.getString("menu.statistics.rankingheader"));
+        lblHeader.setKeyText("menu.statistics.rankingheader");
         lblHeader.setSize(getWidth(), 50);
         lblHeader.setLocation(0, 150);
         lblHeader.setFont(Settings.FONT_HEADING_SMALL);
@@ -84,7 +85,7 @@ public class StatisticsPanelView extends JPanel {
             }
         }
 
-        playerNotice = new JLabel();
+        playerNotice = new AdvancedLabel();
         playerNotice.setSize(getWidth(), 30);
         playerNotice.setHorizontalAlignment(SwingConstants.CENTER);
         playerNotice.setLocation(0, getHeight() - playerNotice.getHeight() * 4);
@@ -93,7 +94,7 @@ public class StatisticsPanelView extends JPanel {
     }
 
     public void refresh() {
-        playerNotice.setText("");
+        playerNotice.setKeyText(null);
         for (JLabel[] jLabels : labelArray) {
             for (JLabel jLabel : jLabels) {
                 jLabel.setText("");
@@ -120,7 +121,7 @@ public class StatisticsPanelView extends JPanel {
         if (controller.getSignedInPlayer() != null) {
             for (int i = 0; i < list.size(); i++) {
                 if (list.get(i).getPlayerName().equals(controller.getSignedInPlayer().getPlayerName())) {
-                    playerNotice.setText(String.format(StringManager.getString("menu.statistics.placenotice"), (i + 1)));
+                    playerNotice.setKeyTextFormat("menu.statistics.placenotice", String.valueOf(i + 1));
                 }
             }
         }

@@ -4,16 +4,16 @@ import com.stickjumper.controller.Controller;
 import com.stickjumper.frontend.start.startsidemenu.StartSideMenuPanel;
 import com.stickjumper.utils.Settings;
 import com.stickjumper.utils.components.AdvancedButton;
+import com.stickjumper.utils.components.AdvancedLabel;
 import com.stickjumper.utils.components.LoginLabel;
-import com.stickjumper.utils.manager.StringManager;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class AccountPanelView extends JPanel {
 
+    private final Controller controller;
     JTextField txtPlayerName, txtPlayerPassword, txtPlayerHighscore;
-    private Controller controller;
 
     public AccountPanelView(Controller controller) {
         super(true);
@@ -46,7 +46,8 @@ public class AccountPanelView extends JPanel {
         });
         add(menuPanel);
 
-        JLabel lblTitle = new JLabel(StringManager.getString("menu.account.title"));
+        AdvancedLabel lblTitle = new AdvancedLabel();
+        lblTitle.setKeyText("menu.account.title");
         lblTitle.setHorizontalAlignment(SwingConstants.CENTER);
         lblTitle.setSize(getWidth(), 50);
         lblTitle.setLocation(0, 20);
@@ -55,7 +56,7 @@ public class AccountPanelView extends JPanel {
         add(lblTitle);
 
         LoginLabel lblPlayerName = new LoginLabel(LoginLabel.TEXT);
-        lblPlayerName.setText(StringManager.getString("menu.account.playername"));
+        lblPlayerName.setKeyText("menu.account.playername");
         lblPlayerName.setSize(250, 15);
         lblPlayerName.setLocation(menuPanel.getWidth() + 30, 200);
         lblPlayerName.setFont(Settings.FONT_LOGIN_FIELDS_LABELS);
@@ -71,7 +72,7 @@ public class AccountPanelView extends JPanel {
 
         // test of course
         LoginLabel lblPlayerPassword = new LoginLabel(LoginLabel.TEXT);
-        lblPlayerPassword.setText(StringManager.getString("menu.account.password"));
+        lblPlayerPassword.setKeyText("menu.account.password");
         lblPlayerPassword.setSize(lblPlayerName.getWidth(), lblPlayerName.getHeight());
         lblPlayerPassword.setLocation(lblPlayerName.getX() + lblPlayerName.getWidth() + 50, lblPlayerName.getY());
         lblPlayerPassword.setFont(Settings.FONT_LOGIN_FIELDS_LABELS);
@@ -86,7 +87,7 @@ public class AccountPanelView extends JPanel {
         add(txtPlayerPassword);
 
         LoginLabel lblPlayerHighscore = new LoginLabel(LoginLabel.TEXT);
-        lblPlayerHighscore.setText(StringManager.getString("menu.account.highscore"));
+        lblPlayerHighscore.setKeyText("menu.account.highscore");
         lblPlayerHighscore.setSize(lblPlayerName.getWidth(), lblPlayerName.getHeight());
         lblPlayerHighscore.setLocation(lblPlayerPassword.getX() + lblPlayerPassword.getWidth() + 50, lblPlayerPassword.getY());
         lblPlayerHighscore.setFont(Settings.FONT_LOGIN_FIELDS_LABELS);
@@ -100,17 +101,17 @@ public class AccountPanelView extends JPanel {
         txtPlayerHighscore.setFont(Settings.FONT_LOGIN_FIELDS_LABELS);
         add(txtPlayerHighscore);
 
-        AdvancedButton advancedButton = new AdvancedButton();
-        advancedButton.setText(StringManager.getString("menu.account.button.logout"));
-        advancedButton.setSize(150, 35);
-        advancedButton.setLocation((getWidth() - advancedButton.getWidth()) / 2, getHeight() - advancedButton.getHeight() - 50);
-        advancedButton.addActionListener(e -> {
+        AdvancedButton logoutButton = new AdvancedButton();
+        logoutButton.setKeyText("menu.account.button.logout");
+        logoutButton.setSize(150, 35);
+        logoutButton.setLocation((getWidth() - logoutButton.getWidth()) / 2, getHeight() - logoutButton.getHeight() - 50);
+        logoutButton.addActionListener(e -> {
             controller.playerLogout();
             controller.updateHighScore();
             controller.getPanelFrameManager().switchToHome();
             controller.getPanelFrameManager().refreshStartGreeting();
         });
-        add(advancedButton);
+        add(logoutButton);
 
     }
 

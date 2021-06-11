@@ -14,6 +14,9 @@ import com.stickjumper.frontend.start.startsidemenu.submenues.StatisticsPanelVie
 
 public class PanelFrameManager {
 
+    // All frames
+    private final MainFrameView mainFrameView;
+    private final Controller controller;
     // All panels
     private StartPanelView startPanelView;
     private LoginPanelView loginPanelView;
@@ -22,12 +25,7 @@ public class PanelFrameManager {
     private StatisticsPanelView statisticsPanelView;
     private SettingsPanelView settingsPanelView;
     private AccountPanelView accountPanelView;
-
-    // All frames
-    private final MainFrameView mainFrameView;
     private LoginFrameView loginFrameView;
-
-    private final Controller controller;
     private SceneryController sceneryController;
 
     public PanelFrameManager(Controller controller, MainFrameView mainFrameView) {

@@ -282,3 +282,12 @@ Alex:
 Alex:
 1. Implementieren der Einstellungen
 2. Outsourcen aller Strings
+
+### **10.06.2021**
+Alex:
+1. Ändern der hit-Funktionalität → läuft nun über ein interface statt üver booleans + Timer
+
+### **11.06.2021**
+Alex:
+1. Letzte Änderungen der hit-Funktionalität; Pull-Request
+2. Vollständige Text-Outsourcung mit Implementierung aller benötigten Advanced-Klassen

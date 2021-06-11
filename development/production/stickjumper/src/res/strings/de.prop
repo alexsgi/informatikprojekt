@@ -2,7 +2,7 @@
 app.name=StickJumper
 
 # Loading screen
-loading.loading=Lade...
+loading.loading=Lade Spiel...
 
 loading.hint0=Tipp: \u00dcberpr\u00fcfe deinen Rang unter den Statistiken
 loading.hint1=Tipp: Durch das Gedr\u00fcckt-Halten der Leertaste springst du l\u00e4nger
@@ -13,7 +13,7 @@ loading.hint3=Tipp: Durch das Dr\u00fccken der Leertaste springst du
 starter.db.connection.error=Verbindung zum Server kann nicht aufgebaut werden - Internetverbindung vorhanden?
 
 # Game
-game.gameover=Game over
+game.gameover=Game over (DE)
 game.cheatcode.active=Geheimer Cheat aktiviert
 
 # Login
@@ -66,7 +66,8 @@ menu.settings.soundeffects=Soundeffekte
 menu.settings.gameovermusic=Game-over-Musik
 menu.settings.button.on=AN
 menu.settings.button.off=AUS
+menu.settings.language=Sprache
 # Menu-Statistics
 menu.statistics.title=STATISTIKEN
 menu.statistics.rankingheader=Ranking der besten StickJumper-Spieler
-menu.statistics.placenotice=Du bist auf dem %d. Platz
+menu.statistics.placenotice=Du bist auf dem %s. Platz

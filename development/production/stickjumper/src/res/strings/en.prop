@@ -66,7 +66,8 @@ menu.settings.soundeffects=Sound effects
 menu.settings.gameovermusic=Game over music
 menu.settings.button.on=ON
 menu.settings.button.off=OFF
+menu.settings.language=Language
 # Menu-Statistics
 menu.statistics.title=STATISTICS
 menu.statistics.rankingheader=Ranking of the best StickJumper players
-menu.statistics.placenotice=You are on %d. place
+menu.statistics.placenotice=You are on %s. place

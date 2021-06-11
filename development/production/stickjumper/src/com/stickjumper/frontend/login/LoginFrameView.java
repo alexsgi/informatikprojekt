@@ -2,28 +2,24 @@ package com.stickjumper.frontend.login;
 
 import com.stickjumper.controller.Controller;
 import com.stickjumper.utils.Settings;
-import com.stickjumper.utils.manager.ImageManager;
-import com.stickjumper.utils.manager.StringManager;
+import com.stickjumper.utils.components.AdvancedFrame;
 
-import javax.swing.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
-public class LoginFrameView extends JFrame {
+public class LoginFrameView extends AdvancedFrame {
 
     public LoginFrameView(Controller controller) {
+        super();
         addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
                 controller.getPanelFrameManager().enableMainFrame();
             }
         });
 
-        setResizable(false);
-        setTitle(StringManager.getString("login.frame.title"));
+        setKeyTitle("login.frame.title");
         setSize(Settings.LOGIN_SCREEN_WIDTH, Settings.LOGIN_SCREEN_HEIGHT);
         setLocationRelativeTo(null);
-
-        setIconImage(ImageManager.APP_ICON_IMAGE);
 
         RegisterPanelView registerPanelView = new RegisterPanelView(controller, this);
         controller.setRegisterPanelView(registerPanelView);

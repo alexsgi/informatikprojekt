@@ -4,9 +4,9 @@ import com.stickjumper.controller.Controller;
 import com.stickjumper.frontend.start.startsidemenu.StartSideMenuPanel;
 import com.stickjumper.utils.Settings;
 import com.stickjumper.utils.components.AdvancedButton;
+import com.stickjumper.utils.components.AdvancedLabel;
 import com.stickjumper.utils.components.InternetStateLabel;
 import com.stickjumper.utils.manager.ImageManager;
-import com.stickjumper.utils.manager.StringManager;
 
 import javax.swing.*;
 import java.awt.*;
@@ -18,7 +18,7 @@ public class StartPanelView extends JPanel {
 
     private final InternetStateLabel internetIconLabel;
     private final Controller controller;
-    private final JLabel lblHighScore, lblGreeting;
+    private final AdvancedLabel lblHighScore, lblGreeting;
 
     public StartPanelView(Controller controller) {
         super(true);
@@ -50,7 +50,7 @@ public class StartPanelView extends JPanel {
 
             @Override
             public void onHomeClicked() {
-                // nothing
+                // Nothing
             }
         });
         add(menuPanel);
@@ -66,17 +66,18 @@ public class StartPanelView extends JPanel {
         });
         add(internetIconLabel);
 
-        JLabel lblTitle = new JLabel(Settings.APP_NAME);
+        AdvancedLabel lblTitle = new AdvancedLabel();
+        lblTitle.setKeyText("app.name");
         lblTitle.setHorizontalAlignment(SwingConstants.CENTER);
         lblTitle.setBounds(0, 96, 1280, 83);
         lblTitle.setFont(Settings.FONT_HEADING_BIG_BOLD);
         add(lblTitle);
 
-        lblHighScore = new JLabel();
+        lblHighScore = new AdvancedLabel();
         lblHighScore.setHorizontalAlignment(SwingConstants.CENTER);
         lblHighScore.setBounds(0, 3, getWidth(), 50);
         lblHighScore.setFont(Settings.FONT_LABEL);
-        lblHighScore.setText(StringManager.getString("start.highscore") + controller.getLocalHighScore());
+        lblHighScore.setKeyText("start.highscore", String.valueOf(controller.getLocalHighScore()));
         add(lblHighScore);
 
         AdvancedButton playButton = new AdvancedButton(ImageManager.START_ICON_PLAY_ACCENT, ImageManager.START_ICON_PLAY);
@@ -88,18 +89,19 @@ public class StartPanelView extends JPanel {
         add(playButton);
 
         // just for fun
-        lblGreeting = new JLabel();
+        lblGreeting = new AdvancedLabel();
         lblGreeting.setSize(getWidth(), 30);
         lblGreeting.setLocation(0, 500);
         lblGreeting.setHorizontalAlignment(SwingConstants.CENTER);
         lblGreeting.setFont(Settings.FONT_LOGIN_HEADER);
         lblGreeting.setForeground(Color.WHITE);
         add(lblGreeting);
+        refreshGreeting();
     }
 
 
     public void showHighScore() {
-        lblHighScore.setText(StringManager.getString("start.highscore") + controller.getLocalHighScore());
+        lblHighScore.setKeyText("start.highscore", String.valueOf(controller.getLocalHighScore()));
     }
 
     public InternetStateLabel getInternetIconLabel() {
@@ -111,15 +113,15 @@ public class StartPanelView extends JPanel {
         int timeOfDay = c.get(Calendar.HOUR_OF_DAY);
 
         if (timeOfDay < 12) {
-            lblGreeting.setText(StringManager.getString("start.morning"));
+            lblGreeting.setKeyText("start.morning");
         } else if (timeOfDay < 16) {
-            lblGreeting.setText(StringManager.getString("start.afternoon"));
+            lblGreeting.setKeyText("start.afternoon");
         } else if (timeOfDay < 21) {
-            lblGreeting.setText(StringManager.getString("start.evening"));
+            lblGreeting.setKeyText("start.evening");
         } else {
-            lblGreeting.setText(StringManager.getString("start.night"));
+            lblGreeting.setKeyText("start.night");
         }
         if (controller.getSignedInPlayer() != null)
-            lblGreeting.setText(lblGreeting.getText() + ", " + controller.getSignedInPlayer().getPlayerName() + ".");
+            lblGreeting.appendValue(", " + controller.getSignedInPlayer().getPlayerName() + ".");
     }
 }
