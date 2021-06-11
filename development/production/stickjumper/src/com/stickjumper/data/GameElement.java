@@ -1,5 +1,6 @@
 package com.stickjumper.data;
 
+import com.stickjumper.controller.scenerycontrolling.GameEventListener;
 import com.stickjumper.controller.scenerycontrolling.SceneryController;
 import com.stickjumper.data.gameelements.GameCharacter;
 import com.stickjumper.utils.Dimens;
@@ -16,6 +17,8 @@ public abstract class GameElement {
     private boolean visible;
     private BufferedImage image;
     private int speed;
+
+    private GameEventListener listener;
 
     public GameElement(Point p, Dimens d, boolean visible, BufferedImage image, int speed) {
         this.location = p;
@@ -71,7 +74,7 @@ public abstract class GameElement {
         boolean gameOverCondition2 = location.getX() >= Settings.X_POSITION_GAME_CHARACTER + GameCharacter.getXValueDimens() - Settings.GAME_OVER_SENSITIVITY;
 
         if (gameOverCondition1 && gameOverCondition2) {
-            int difPos = (int) (SceneryController.yPosGameCharacter - location.getY());
+            int difPos = (int) (SceneryController.getYPosGameCharacter() - location.getY());
             boolean firstCondition = difPos < getDimens().getHeight();
             boolean secondCondition = difPos < -GameCharacter.dimens.getHeight();
             if ((firstCondition && !secondCondition) || (!firstCondition && secondCondition)) this.hit();
@@ -88,5 +91,7 @@ public abstract class GameElement {
     }
 
     public abstract void hit();
+
+    public abstract void addEventListener(GameEventListener listener);
 
 }

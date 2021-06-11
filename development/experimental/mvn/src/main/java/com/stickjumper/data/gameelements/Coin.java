@@ -1,10 +1,9 @@
 package com.stickjumper.data.gameelements;
 
-import com.stickjumper.controller.scenerycontrolling.SceneryController;
+import com.stickjumper.controller.scenerycontrolling.GameEventListener;
 import com.stickjumper.data.GameElement;
 import com.stickjumper.utils.Dimens;
 import com.stickjumper.utils.manager.ImageManager;
-import com.stickjumper.utils.manager.SoundManager;
 
 import java.awt.*;
 
@@ -14,6 +13,8 @@ public class Coin extends GameElement {
     private static final int speed = 1;
     private final int coinValue;
     private boolean hitOnce = false;
+
+    private GameEventListener listener;
 
     public Coin(Point p, int coinValue) {
         super(p, dimens, true, ImageManager.COIN_SKIN, speed);
@@ -31,6 +32,12 @@ public class Coin extends GameElement {
 
     @Override
     public void hit() {
+        if (!hitOnce && listener != null) {
+            hitOnce = true; // idk the intention/function
+            listener.onContact(this); // should always be != null
+            setVisible(false);
+        }
+        /*
         if (!hitOnce) {
             hitOnce = true;
             SceneryController.coinHit = true;
@@ -38,10 +45,16 @@ public class Coin extends GameElement {
             SoundManager.playSound(SoundManager.inputStreamCoinSound);
             setVisible(false);
         }
+         */
     }
 
     public int getCoinValue() {
         return coinValue;
+    }
+
+    @Override
+    public void addEventListener(GameEventListener listener) {
+        this.listener = listener;
     }
 
 }

@@ -5,7 +5,7 @@ import com.stickjumper.utils.Settings;
 import javax.swing.*;
 import java.awt.*;
 
-public class LoginLabel extends JLabel {
+public class LoginLabel extends AdvancedLabel {
 
     public static final int HEADER = 0;
     public static final int SUBHEADER = 1;

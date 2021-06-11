@@ -10,8 +10,6 @@ import java.util.Set;
 
 public class StringManager {
 
-    // TODO: read prop files; set locale
-
     public static final String EN = "en";
     public static final String DE = "de";
 

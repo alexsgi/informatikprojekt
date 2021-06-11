@@ -19,6 +19,7 @@ public class SteadyObstacle extends Obstacle {
         return dimens;
     }
 
+    @Override
     public void hit() {
         if (Settings.STEADY_OBSTACLES_LETHAL) super.hit();
     }

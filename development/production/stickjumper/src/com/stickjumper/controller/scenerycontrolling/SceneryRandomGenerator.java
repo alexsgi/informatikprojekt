@@ -38,15 +38,15 @@ public class SceneryRandomGenerator {
     }
 
     private void createCoin(int height, int xShift) {
-        sceneryController.initGameElementUI(new Coin(new Point(w + xShift, (h - Coin.getStandardDimens().getHeight() - height))));
+        sceneryController.initGameElement(new Coin(new Point(w + xShift, (h - Coin.getStandardDimens().getHeight() - height))));
     }
 
     private void createEnemy(int speed, int skinType, int xShift) {
-        sceneryController.initGameElementUI(new Enemy(new Point(w + xShift, (h - Enemy.getStandardDimens().getHeight())), speed, skinType));
+        sceneryController.initGameElement(new Enemy(new Point(w + xShift, (h - Enemy.getStandardDimens().getHeight())), speed, skinType));
     }
 
     public void createSteadyObstacle(int skinType, int xShift) {
-        sceneryController.initGameElementUI(new SteadyObstacle(new Point(w + xShift, (h - SteadyObstacle.getStandardDimens().getHeight())), skinType));
+        sceneryController.initGameElement(new SteadyObstacle(new Point(w + xShift, (h - SteadyObstacle.getStandardDimens().getHeight())), skinType));
     }
 
     public void stop() {

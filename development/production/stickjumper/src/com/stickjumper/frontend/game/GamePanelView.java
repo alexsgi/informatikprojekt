@@ -50,7 +50,6 @@ public class GamePanelView extends JPanel implements ActionListener {
         lblGameOver.setForeground(Color.WHITE);
         add(lblGameOver);
 
-        // TODO: !?
         backButton = new AdvancedButton(ImageManager.GAME_ICON_HOME_ACCENT, ImageManager.GAME_ICON_HOME);
         backButton.setSize(36, 36);
         backButton.setLocation(5, 105);
@@ -70,7 +69,7 @@ public class GamePanelView extends JPanel implements ActionListener {
         lblHighScore.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                if (SceneryController.gameOver) return;
+                if (SceneryController.isGameOver()) return;
                 if (Settings.STEADY_OBSTACLES_LETHAL) {
                     steadyObstaclesCheatCount++;
                     if (steadyObstaclesCheatCount >= 10) {

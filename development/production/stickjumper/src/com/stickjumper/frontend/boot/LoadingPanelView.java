@@ -1,6 +1,7 @@
 package com.stickjumper.frontend.boot;
 
 import com.stickjumper.utils.Settings;
+import com.stickjumper.utils.components.AdvancedLabel;
 import com.stickjumper.utils.manager.StringManager;
 import com.stickjumper.utils.manager.UITools;
 
@@ -11,14 +12,13 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class LoadingPanelView extends JPanel {
 
-
     public LoadingPanelView(LoadingFrameView frame) {
         super(true);
         setLayout(null);
         setSize(frame.getWidth(), frame.getHeight());
 
-        JLabel loadingLabel = new JLabel();
-        loadingLabel.setText("Loading ...");
+        AdvancedLabel loadingLabel = new AdvancedLabel();
+        loadingLabel.setKeyText("loading.loading");
         loadingLabel.setHorizontalAlignment(SwingConstants.CENTER);
         loadingLabel.setSize(getWidth(), 30);
         loadingLabel.setLocation(0, 10);
@@ -26,7 +26,8 @@ public class LoadingPanelView extends JPanel {
         loadingLabel.setForeground(Color.WHITE);
         // add(loadingLabel);
 
-        JLabel lblTitle = new JLabel(Settings.APP_NAME);
+        AdvancedLabel lblTitle = new AdvancedLabel();
+        lblTitle.setKeyText("app.name");
         lblTitle.setHorizontalAlignment(SwingConstants.CENTER);
         lblTitle.setSize(getWidth(), 83);
         lblTitle.setLocation(0, 96);
@@ -34,7 +35,7 @@ public class LoadingPanelView extends JPanel {
         lblTitle.setForeground(Color.WHITE);
         add(lblTitle);
 
-        JLabel tipLabel = new JLabel();
+        AdvancedLabel tipLabel = new AdvancedLabel();
         tipLabel.setText(getTipMessage());
         tipLabel.setHorizontalAlignment(SwingConstants.CENTER);
         tipLabel.setSize(getWidth(), 30);
@@ -60,7 +61,6 @@ public class LoadingPanelView extends JPanel {
             case 2 -> StringManager.getString("loading.hint2");
             default -> StringManager.getString("loading.hint3");
         };
-        // return "Tip: you can jump by pressing SPACE";
     }
 
 }
