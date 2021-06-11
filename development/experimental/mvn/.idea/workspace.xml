@@ -5,19 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ed2fd7a0-e51f-484b-8ba6-69bb4ba3c6da" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stickjumper/controller/scenerycontrolling/SceneryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stickjumper/controller/scenerycontrolling/SceneryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../production/stickjumper/src/com/stickjumper/controller/scenerycontrolling/GameEventListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../production/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../production/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../production/stickjumper/src/com/stickjumper/controller/scenerycontrolling/SceneryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../production/stickjumper/src/com/stickjumper/controller/scenerycontrolling/SceneryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../production/stickjumper/src/com/stickjumper/controller/scenerycontrolling/SceneryRandomGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../production/stickjumper/src/com/stickjumper/controller/scenerycontrolling/SceneryRandomGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../production/stickjumper/src/com/stickjumper/data/GameElement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../production/stickjumper/src/com/stickjumper/data/GameElements/Obstacles/Enemy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../production/stickjumper/src/com/stickjumper/data/gameelements/Coin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../production/stickjumper/src/com/stickjumper/data/gameelements/GameCharacter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../production/stickjumper/src/com/stickjumper/data/gameelements/Obstacle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../production/stickjumper/src/com/stickjumper/data/gameelements/obstacles/SteadyObstacle.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Interface" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
@@ -89,7 +92,7 @@
       <updated>1622472525398</updated>
       <workItem from="1622472526835" duration="1628000" />
       <workItem from="1623263005371" duration="1451000" />
-      <workItem from="1623347321482" duration="2515000" />
+      <workItem from="1623418464029" duration="693000" />
     </task>
     <servers />
   </component>

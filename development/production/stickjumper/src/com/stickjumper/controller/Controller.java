@@ -67,7 +67,7 @@ public class Controller {
     public void setStartPanelView(StartPanelView startPanelView) {
         this.startPanelView = startPanelView;
         panelFrameManager.setStartPanelView(startPanelView);
-        // initTimer();
+        // initTimer(); TODO: activate
     }
 
     public void setLoginFrameView(LoginFrameView loginFrameView) {
@@ -91,15 +91,14 @@ public class Controller {
         connectionTimer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
-                Settings.logDataOneLine("Checking connection ...");
                 int connectionStatus = ConnectionTester.checkConnection();
                 connectedToServer = connectionStatus == ConnectionTester.CONNECTION_OK;
                 if (connectedToServer) {
                     startPanelView.getInternetIconLabel().setInternetEnabledStatus();
-                    Settings.logData(" ok");
+                    Settings.logData("Connection ok");
                 } else {
                     startPanelView.getInternetIconLabel().setInternetDisabledStatus();
-                    Settings.logData(" failed");
+                    Settings.logData("Connection failed");
                 }
             }
         }, 5000, 10000);

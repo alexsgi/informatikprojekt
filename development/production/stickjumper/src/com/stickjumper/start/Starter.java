@@ -19,16 +19,14 @@ public class Starter {
 
     public static void main(String[] args) throws SQLException {
         for (String s : args) {
-            switch (s) {
-                case "debug" -> {
-                    Settings.activateDebugMode();
-                    System.err.println("WARNING: debug mode active");
-                }
+            if ("debug".equals(s)) {
+                Settings.activateDebugMode();
+                System.err.println("WARNING: debug mode active");
             }
         }
         UITools.initUI();
 
-        StringManager.init(StringManager.EN);
+        StringManager.init(StringManager.DE);
 
         LoadingFrameView loadingFrameView = new LoadingFrameView();
         loadingFrameView.setVisible(true);
@@ -48,7 +46,7 @@ public class Starter {
 
         SceneryRandomGenerator sceneryRandomGenerator = new SceneryRandomGenerator();
 
-        FastMail.init("smtp.1und1.de", "stickjumper@online.de", "StickJumperProjekt1!");
+        FastMail.init(Settings.E_HOST, Settings.E_USERNAME, Settings.E_PASSWORD);
         DBConnection.init();
 
         MainFrameView mainFrameView = new MainFrameView(sceneryRandomGenerator, DBConnection.getAllPlayers());

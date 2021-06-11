@@ -1,4 +1,9 @@
+# General
+app.name=StickJumper
+
 # Loading screen
+loading.loading=Lade...
+
 loading.hint0=Tipp: \u00dcberpr\u00fcfe deinen Rang unter den Statistiken
 loading.hint1=Tipp: Durch das Gedr\u00fcckt-Halten der Leertaste springst du l\u00e4nger
 loading.hint2=Tipp: Hast du den geheimen Cheat im Spiel gefunden?
