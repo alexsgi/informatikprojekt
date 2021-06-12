@@ -2,10 +2,7 @@ package com.stickjumper.utils.manager;
 
 import com.stickjumper.utils.Settings;
 
-import javax.sound.sampled.AudioInputStream;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Clip;
-import javax.sound.sampled.UnsupportedAudioFileException;
+import javax.sound.sampled.*;
 import java.io.BufferedInputStream;
 import java.io.IOException;
 
@@ -44,9 +41,9 @@ public class SoundManager {
                 try {
                     Clip clip = AudioSystem.getClip();
                     clip.open(inputStream);
-                    clip.start();
                     clip.setMicrosecondPosition(0); // TODO: @jonas needed?
-                    loadAllClips(); // ← not nice, because all clips will be loaded, but it works
+                    clip.start();
+                    loadAllClips();
                 } catch (Exception e) {
                     Settings.logData("Error playing sound", e);
                 }

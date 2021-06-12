@@ -14,12 +14,10 @@ public class PasswordHasher {
     private static final byte[] salt = new byte[]{-71, 49, -54, 50, 22, -16, -67, -84, 36, 17, -31, -104, -23, -112, -77, 123};
 
     public static String hash(String input) {
-        KeySpec spec = new PBEKeySpec(input.toCharArray(), salt, 65536, 128);
         try {
-            SecretKeyFactory f = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA1");
-            byte[] hash = f.generateSecret(spec).getEncoded();
-            Base64.Encoder enc = Base64.getEncoder();
-            return enc.encodeToString(hash);
+            KeySpec spec = new PBEKeySpec(input.toCharArray(), salt, 65536, 128);
+            byte[] hash = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA1").generateSecret(spec).getEncoded();
+            return Base64.getEncoder().encodeToString(hash);
         } catch (NoSuchAlgorithmException | InvalidKeySpecException e) {
             Settings.logData("Error hashing password", e);
         }

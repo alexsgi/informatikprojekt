@@ -13,7 +13,7 @@ loading.hint3=Tipp: Durch das Dr\u00fccken der Leertaste springst du
 starter.db.connection.error=Verbindung zum Server kann nicht aufgebaut werden - Internetverbindung vorhanden?
 
 # Game
-game.gameover=Game over (DE)
+game.gameover=Game over
 game.cheatcode.active=Geheimer Cheat aktiviert
 
 # Login

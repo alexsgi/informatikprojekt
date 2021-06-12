@@ -14,6 +14,7 @@ import java.awt.event.ItemEvent;
 public class SettingsPanelView extends JPanel {
 
     private final AdvancedToggleButton soundEffectToggle, gameOverMusicToggle;
+    private String lastSelection;
 
     public SettingsPanelView(Controller controller) {
         super(true);
@@ -124,14 +125,15 @@ public class SettingsPanelView extends JPanel {
         comboBox.addItemListener(e -> {
             if (e.getStateChange() == ItemEvent.SELECTED) {
                 String language = e.getItem().toString();
-                // TODO: write better
-                if (language.equalsIgnoreCase(StringManager.getCurrentLanguage())) {
-                } else if (language.equalsIgnoreCase(StringManager.DE) || language.equalsIgnoreCase(StringManager.EN)) {
+                if (language.equalsIgnoreCase(StringManager.DE) || language.equalsIgnoreCase(StringManager.EN)) {
                     StringManager.init(language);
                     StringManager.refreshAllFields();
                 } else {
                     Settings.logData(language + " not implemented");
+                    comboBox.setSelectedItem(lastSelection);
                 }
+            } else if (e.getStateChange() == ItemEvent.DESELECTED) {
+                lastSelection = e.getItem().toString();
             }
         });
         add(comboBox);

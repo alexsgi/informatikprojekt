@@ -16,14 +16,12 @@ public class StringManager {
 
     public static final String EN = "en";
     public static final String DE = "de";
-    private static String currentLanguage;
     private static HashMap<String, String> strings = new HashMap<>();
 
     private StringManager() {
     }
 
     public static void init(String languageCode) {
-        currentLanguage = languageCode;
         Properties prop = new Properties();
         try (InputStream inputStream = StringManager.class.getResourceAsStream(String.format("/strings/%s.prop", languageCode.toLowerCase()))) {
             prop.load(inputStream);
@@ -46,7 +44,4 @@ public class StringManager {
         AdvancedToggleButton.refresh();
     }
 
-    public static String getCurrentLanguage() {
-        return currentLanguage;
-    }
 }
