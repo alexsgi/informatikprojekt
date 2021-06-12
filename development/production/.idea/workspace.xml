@@ -6,14 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="460ac02d-4569-48ee-b691-afac2c185a3b" name="Default Changelist" comment="just added 4 patterns">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/start/startsidemenu/submenues/SettingsPanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/start/startsidemenu/submenues/SettingsPanelView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/manager/SoundManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/manager/SoundManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/manager/StringManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/manager/StringManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/security/PasswordHasher.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/security/PasswordHasher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/res/strings/de.prop" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/res/strings/de.prop" afterDir="false" />
-    </list>
+    <list default="true" id="460ac02d-4569-48ee-b691-afac2c185a3b" name="Default Changelist" comment="just added 4 patterns" />
     <list id="cb6ccd45-2f4a-4a31-aef3-f8cd82d4f1fc" name="Changes by Alex" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +135,7 @@
       <workItem from="1623262830995" duration="1644000" />
       <workItem from="1623418816711" duration="6672000" />
       <workItem from="1623425940588" duration="7303000" />
-      <workItem from="1623490019094" duration="2149000" />
+      <workItem from="1623490019094" duration="2307000" />
     </task>
     <servers />
   </component>
