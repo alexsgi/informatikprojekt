@@ -291,3 +291,7 @@ Alex:
 Alex:
 1. Letzte Änderungen der hit-Funktionalität; Pull-Request
 2. Vollständige Text-Outsourcung mit Implementierung aller benötigten Advanced-Klassen
+
+### **15.06.2021**
+Alex:
+1. Geringfügige Änderungen; Formatieren des Codes
