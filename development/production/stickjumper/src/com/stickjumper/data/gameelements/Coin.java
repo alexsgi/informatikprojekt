@@ -33,19 +33,10 @@ public class Coin extends GameElement {
     @Override
     public void hit() {
         if (!hitOnce && listener != null) {
-            hitOnce = true; // idk the intention/function
-            listener.onContact(this); // should always be != null
+            hitOnce = true; // TODO: explanation
+            listener.onContact(this);
             setVisible(false);
         }
-        /*
-        if (!hitOnce) {
-            hitOnce = true;
-            SceneryController.coinHit = true;
-            SceneryController.currentCoinValue = coinValue;
-            SoundManager.playSound(SoundManager.inputStreamCoinSound);
-            setVisible(false);
-        }
-         */
     }
 
     public int getCoinValue() {

@@ -28,7 +28,7 @@ public class GameCharacter extends GameElement {
         this.skinType = skinType;
     }
 
-    public static int getXValueDimens() {
+    public static int getWidth() {
         return dimens.getWidth();
     }
 

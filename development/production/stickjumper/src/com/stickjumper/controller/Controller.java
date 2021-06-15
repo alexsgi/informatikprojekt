@@ -185,9 +185,10 @@ public class Controller {
     }
 
     // Update score in gamePanel
-    public void updateHighScoreLabel(int additionalScore) {
+    public boolean updateHighScoreLabel(int additionalScore) {
         lastRoundHighScore += additionalScore;
         gamePanelView.updateHighScore();
+        return lastRoundHighScore >= 1000;
     }
 
     public int getLocalHighScore() {

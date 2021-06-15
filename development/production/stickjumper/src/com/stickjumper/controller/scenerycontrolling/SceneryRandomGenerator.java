@@ -13,6 +13,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class SceneryRandomGenerator {
 
+    private final int[] coinValues = new int[]{10, 20, 30, 40, 50};
     private Timer timer;
     private SceneryController sceneryController;
     private int h, w;
@@ -38,7 +39,8 @@ public class SceneryRandomGenerator {
     }
 
     private void createCoin(int height, int xShift) {
-        sceneryController.initGameElement(new Coin(new Point(w + xShift, (h - Coin.getStandardDimens().getHeight() - height))));
+        Coin coin = new Coin(new Point(w + xShift, (h - Coin.getStandardDimens().getHeight() - height)), coinValues[ThreadLocalRandom.current().nextInt(0, coinValues.length)]);
+        sceneryController.initGameElement(coin);
     }
 
     private void createEnemy(int speed, int skinType, int xShift) {

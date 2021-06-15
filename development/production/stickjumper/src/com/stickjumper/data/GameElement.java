@@ -12,13 +12,11 @@ import java.awt.image.BufferedImage;
 
 public abstract class GameElement {
 
+    private final Dimens dimens;
+    private final BufferedImage image;
+    private final int speed;
     private Point location;
-    private Dimens dimens;
     private boolean visible;
-    private BufferedImage image;
-    private int speed;
-
-    private GameEventListener listener;
 
     public GameElement(Point p, Dimens d, boolean visible, BufferedImage image, int speed) {
         this.location = p;
@@ -40,16 +38,8 @@ public abstract class GameElement {
         return dimens;
     }
 
-    public void setDimens(Dimens dimens) {
-        this.dimens = dimens;
-    }
-
     public int getSpeed() {
         return speed;
-    }
-
-    public void setSpeed(int speed) {
-        this.speed = speed;
     }
 
     public boolean isVisible() {
@@ -64,14 +54,9 @@ public abstract class GameElement {
         return image;
     }
 
-    public void setImage(BufferedImage image) {
-        this.image = image;
-    }
-
     public void decrementX(int n) {
-        // DON'T TOUCH IT - WE DON'T KNOW WHY IT WORKS
-        boolean gameOverCondition1 = location.getX() <= Settings.X_POSITION_GAME_CHARACTER + GameCharacter.getXValueDimens();
-        boolean gameOverCondition2 = location.getX() >= Settings.X_POSITION_GAME_CHARACTER + GameCharacter.getXValueDimens() - Settings.GAME_OVER_SENSITIVITY;
+        boolean gameOverCondition1 = location.getX() <= Settings.X_POSITION_GAME_CHARACTER + GameCharacter.getWidth();
+        boolean gameOverCondition2 = location.getX() >= Settings.X_POSITION_GAME_CHARACTER + GameCharacter.getWidth() - Settings.GAME_OVER_SENSITIVITY;
 
         if (gameOverCondition1 && gameOverCondition2) {
             int difPos = (int) (SceneryController.getYPosGameCharacter() - location.getY());
