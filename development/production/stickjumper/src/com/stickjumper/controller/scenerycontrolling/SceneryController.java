@@ -20,8 +20,7 @@ import java.util.TimerTask;
 public class SceneryController {
 
     public static boolean spacePressedOnce = false, spacePressedTwice = false;
-    private static int yPosGameCharacter;
-    private static int jumpVar = Settings.JUMP_HEIGHT, newPeriod = Settings.JUMP_PERIOD;
+    private static int yPosGameCharacter, jumpVar = Settings.JUMP_HEIGHT, newPeriod = Settings.JUMP_PERIOD;
     private static boolean gameOver = false;
     // UI & Controller
     private final GamePanelView gamePanelView;
@@ -104,16 +103,6 @@ public class SceneryController {
                     if (current.getLocation().getX() + current.getWidth() <= 0) removeGameElementRender(i);
                 }
                 if (gameCharacterAlreadyAdded) yPosGameCharacter = gameCharacterElement.getY();
-                /*
-                if (coinHit) {
-                    coinHit = false;
-                    controller.updateHighScoreLabel(currentCoinValue);
-                }
-                if (gameOver) {
-                    freeze();
-                    SoundManager.playSound(SoundManager.inputStreamGameOverSound);
-                }
-                 */
             }
         }, 0, Settings.FOREGROUND_SPEED);
 
