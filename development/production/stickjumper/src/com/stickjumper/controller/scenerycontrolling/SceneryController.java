@@ -48,7 +48,7 @@ public class SceneryController {
             } else if (gameElement instanceof Coin) {
                 SoundManager.playSound(SoundManager.inputStreamCoinSound);
                 if (controller.updateHighScoreLabel(((Coin) gameElement).getCoinValue())) {
-                    // score >= 1000: won
+                    // TODO: score >= 1000: won
                 }
             }
         };

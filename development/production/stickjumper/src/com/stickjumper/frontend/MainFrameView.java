@@ -22,7 +22,7 @@ import java.sql.SQLException;
 public class MainFrameView extends AdvancedFrame implements KeyListener {
 
     private final Controller controller;
-    public boolean keysEnabledInGame = true; // TODO: GETTER
+    public boolean keysEnabledInGame = true;
 
     public MainFrameView(SceneryRandomGenerator sceneryRandomGenerator, List playerList) {
         super();

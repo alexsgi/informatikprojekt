@@ -67,7 +67,6 @@ public class SettingsPanelView extends JPanel {
         lblSoundEffects.setFont(Settings.FONT_LABEL_BOLD_SMALL);
         add(lblSoundEffects);
 
-        // TODO: need extra class for toggleButton
         soundEffectToggle = new AdvancedToggleButton(!Settings.SOUND_EFFECTS_ON);
         soundEffectToggle.setKeyText(Settings.SOUND_EFFECTS_ON ? "menu.settings.button.on" : "menu.settings.button.off");
         soundEffectToggle.setSize(80, lblSoundEffects.getHeight());
