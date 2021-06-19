@@ -13,7 +13,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class SceneryRandomGenerator {
 
-    private final int[] coinValues = new int[]{10, 20, 30, 40, 50};
+    private final int[] coinValues = new int[] {10, 20, 30, 40, 50};
     private Timer timer;
     private SceneryController sceneryController;
     private int h, w;
