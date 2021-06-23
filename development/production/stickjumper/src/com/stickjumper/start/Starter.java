@@ -39,7 +39,6 @@ public class Starter {
         if (serverResponseCode != ConnectionTester.CONNECTION_OK) {
             // TODO: check before login, register and update highscore (db)
             JOptionPane.showMessageDialog(null, StringManager.getString("starter.db.connection.error"));
-            System.exit(-2);
         }
 
         ImageManager.loadALlImages(loadingFrameView.getClass());

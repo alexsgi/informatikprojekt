@@ -65,6 +65,8 @@ public class AccountPanelView extends JPanel {
         txtPlayerName = new JTextField();
         txtPlayerName.setHighlighter(null);
         txtPlayerName.setEditable(false);
+        txtPlayerName.setEnabled(false);
+        txtPlayerName.setDisabledTextColor(Color.black);
         txtPlayerName.setSize(lblPlayerName.getWidth(), 30);
         txtPlayerName.setLocation(menuPanel.getWidth() + 30, lblPlayerName.getY() + lblPlayerName.getHeight() + 5);
         txtPlayerName.setFont(Settings.FONT_LOGIN_FIELDS_LABELS);
@@ -81,6 +83,8 @@ public class AccountPanelView extends JPanel {
         txtPlayerPassword = new JTextField();
         txtPlayerPassword.setHighlighter(null);
         txtPlayerPassword.setEditable(false);
+        txtPlayerPassword.setEnabled(false);
+        txtPlayerPassword.setDisabledTextColor(Color.black);
         txtPlayerPassword.setSize(txtPlayerName.getWidth(), txtPlayerName.getHeight());
         txtPlayerPassword.setLocation(txtPlayerName.getX() + txtPlayerName.getWidth() + 50, txtPlayerName.getY());
         txtPlayerPassword.setFont(Settings.FONT_LOGIN_FIELDS_LABELS);
@@ -96,6 +100,8 @@ public class AccountPanelView extends JPanel {
         txtPlayerHighscore = new JTextField();
         txtPlayerHighscore.setHighlighter(null);
         txtPlayerHighscore.setEditable(false);
+        txtPlayerHighscore.setEnabled(false);
+        txtPlayerHighscore.setDisabledTextColor(Color.black);
         txtPlayerHighscore.setSize(txtPlayerName.getWidth(), txtPlayerName.getHeight());
         txtPlayerHighscore.setLocation(txtPlayerPassword.getX() + txtPlayerPassword.getWidth() + 50, txtPlayerPassword.getY());
         txtPlayerHighscore.setFont(Settings.FONT_LOGIN_FIELDS_LABELS);

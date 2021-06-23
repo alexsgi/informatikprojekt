@@ -116,7 +116,7 @@ public class SettingsPanelView extends JPanel {
         lblLanguage.setFont(Settings.FONT_LABEL_BOLD_SMALL);
         add(lblLanguage);
 
-        String[] choices = {StringManager.DE.toUpperCase(), StringManager.EN.toUpperCase(), "ES", "FR", "RU"};
+        String[] choices = {StringManager.DE.toUpperCase(), StringManager.EN.toUpperCase()};
         JComboBox<String> comboBox = new JComboBox<>(choices);
         comboBox.setSize(gameOverMusicToggle.getWidth(), gameOverMusicToggle.getHeight());
         comboBox.setLocation(gameOverMusicToggle.getX(), gameOverMusicToggle.getY() + gameOverMusicToggle.getHeight() + 30);
