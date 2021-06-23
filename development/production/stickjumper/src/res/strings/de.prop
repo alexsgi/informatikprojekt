@@ -5,9 +5,9 @@ app.name=StickJumper
 loading.loading=Lade Spiel...
 
 loading.hint0=Tipp: \u00dcberpr\u00fcfe deinen Rang unter den Statistiken
-loading.hint1=Tipp: Durch das Gedr\u00fcckt-Halten der Leertaste springst du l\u00e4nger
+loading.hint1=Tipp: Halte die Leertaste gedr\u00fcckt, um l\u00e4nger zu springen
 loading.hint2=Tipp: Hast du den geheimen Cheat im Spiel gefunden?
-loading.hint3=Tipp: Durch das Dr\u00fccken der Leertaste springst du
+loading.hint3=Tipp: Nutze die Leertaste zum Springen
 
 # Starter
 starter.db.connection.error=Verbindung zum Server kann nicht aufgebaut werden - Internetverbindung vorhanden?

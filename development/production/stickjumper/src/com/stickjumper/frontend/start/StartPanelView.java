@@ -69,20 +69,22 @@ public class StartPanelView extends JPanel {
         AdvancedLabel lblTitle = new AdvancedLabel();
         lblTitle.setKeyText("app.name");
         lblTitle.setHorizontalAlignment(SwingConstants.CENTER);
-        lblTitle.setBounds(0, 96, 1280, 83);
+        lblTitle.setSize(400,83);
+        lblTitle.setLocation((getWidth() + menuPanel.getWidth() - lblTitle.getWidth()) / 2, 96);
         lblTitle.setFont(Settings.FONT_HEADING_BIG_BOLD);
         add(lblTitle);
 
         lblHighScore = new AdvancedLabel();
         lblHighScore.setHorizontalAlignment(SwingConstants.CENTER);
-        lblHighScore.setBounds(0, 3, getWidth(), 50);
+        lblHighScore.setSize(300,50);
+        lblHighScore.setLocation((getWidth() + menuPanel.getWidth() - lblHighScore.getWidth()) / 2,3);
         lblHighScore.setFont(Settings.FONT_LABEL);
         lblHighScore.setKeyText("start.highscore", String.valueOf(controller.getLocalHighScore()));
         add(lblHighScore);
 
         AdvancedButton playButton = new AdvancedButton(ImageManager.START_ICON_PLAY_ACCENT, ImageManager.START_ICON_PLAY);
         playButton.setSize(ImageManager.START_ICON_PLAY.getWidth(), ImageManager.START_ICON_PLAY.getHeight());
-        playButton.setLocation((getWidth() - playButton.getWidth()) / 2,
+        playButton.setLocation((getWidth() + menuPanel.getWidth() - playButton.getWidth()) / 2,
                 (getHeight() - playButton.getHeight()) / 2);
         playButton.setID("playButton");
         playButton.addActionListener(e -> controller.startGame());
@@ -90,8 +92,8 @@ public class StartPanelView extends JPanel {
 
         // just for fun
         lblGreeting = new AdvancedLabel();
-        lblGreeting.setSize(getWidth(), 30);
-        lblGreeting.setLocation(0, 500);
+        lblGreeting.setSize(400, 30);
+        lblGreeting.setLocation((getWidth() + menuPanel.getWidth() - lblGreeting.getWidth()) / 2, 500);
         lblGreeting.setHorizontalAlignment(SwingConstants.CENTER);
         lblGreeting.setFont(Settings.FONT_LOGIN_HEADER);
         lblGreeting.setForeground(Color.WHITE);

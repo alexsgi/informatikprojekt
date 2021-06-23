@@ -52,13 +52,11 @@ public class SettingsPanelView extends JPanel {
         AdvancedLabel lblTitle = new AdvancedLabel();
         lblTitle.setKeyText("menu.settings.title");
         lblTitle.setHorizontalAlignment(SwingConstants.CENTER);
-        lblTitle.setSize(getWidth(), 50);
-        lblTitle.setLocation(0, 20);
+        lblTitle.setSize(400, 50);
+        lblTitle.setLocation((getWidth() + menuPanel.getWidth() - lblTitle.getWidth()) / 2, 20);
         lblTitle.setFont(Settings.FONT_HEADING_BIG);
         lblTitle.setForeground(Color.WHITE);
         add(lblTitle);
-
-        // Notice: visit SoundManager → game over sound depends on sound effects
 
         AdvancedLabel lblSoundEffects = new AdvancedLabel();
         lblSoundEffects.setKeyText("menu.settings.soundeffects");

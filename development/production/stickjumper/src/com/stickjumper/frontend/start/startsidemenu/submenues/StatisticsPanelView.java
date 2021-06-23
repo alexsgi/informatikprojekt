@@ -15,9 +15,9 @@ import java.util.Collections;
 
 public class StatisticsPanelView extends JPanel {
 
-    private Controller controller;
-    private JLabel[][] labelArray = new JLabel[5][2];
-    private AdvancedLabel playerNotice;
+    private final Controller controller;
+    private final JLabel[][] labelArray = new JLabel[5][2];
+    private final AdvancedLabel playerNotice;
 
     public StatisticsPanelView(Controller controller) {
         super(true);
@@ -58,8 +58,8 @@ public class StatisticsPanelView extends JPanel {
         AdvancedLabel lblTitle = new AdvancedLabel();
         lblTitle.setKeyText("menu.statistics.title");
         lblTitle.setHorizontalAlignment(SwingConstants.CENTER);
-        lblTitle.setSize(getWidth(), 50);
-        lblTitle.setLocation(0, 20);
+        lblTitle.setSize(400, 50);
+        lblTitle.setLocation((getWidth() + menuPanel.getWidth() - lblTitle.getWidth()) / 2, 20);
         lblTitle.setFont(Settings.FONT_HEADING_BIG);
         lblTitle.setForeground(Color.WHITE);
         add(lblTitle);
@@ -67,29 +67,37 @@ public class StatisticsPanelView extends JPanel {
         AdvancedLabel lblHeader = new AdvancedLabel();
         lblHeader.setHorizontalAlignment(SwingConstants.CENTER);
         lblHeader.setKeyText("menu.statistics.rankingheader");
-        lblHeader.setSize(getWidth(), 50);
-        lblHeader.setLocation(0, 150);
+        lblHeader.setSize(400, 50);
+        lblHeader.setLocation((getWidth() + menuPanel.getWidth() - lblHeader.getWidth()) / 2, 150);
         lblHeader.setFont(Settings.FONT_HEADING_SMALL);
         lblHeader.setForeground(Color.decode("#484848"));
         add(lblHeader);
 
-        // automatically best 5 players
+        JPanel backgroundLabelPanel = new JPanel();
+        backgroundLabelPanel.setLayout(null);
+        backgroundLabelPanel.setBackground(new Color(255, 255, 255, 170));
+        backgroundLabelPanel.setOpaque(true);
+        backgroundLabelPanel.setLocation(menuPanel.getWidth() + 70, (getHeight() - backgroundLabelPanel.getHeight()) / 2);
+        backgroundLabelPanel.setSize(getWidth() - backgroundLabelPanel.getX() - 100, 200);
+        add(backgroundLabelPanel);
+
         for (int i = 0; i < labelArray.length; i++) {
             for (int j = 0; j < labelArray[i].length; j++) {
                 labelArray[i][j] = new JLabel();
                 labelArray[i][j].setFont(Settings.FONT_LOGIN_HEADER);
-                labelArray[i][j].setSize(250, 30);
-                labelArray[i][j].setLocation((getWidth() - labelArray[i][j].getWidth()) / 2 + j * (labelArray[i][j].getWidth() + 150) - 100, 300 + i * 40);
-                // labelArray[i][j].setForeground(Color.decode("#484848"));
-                add(labelArray[i][j]);
+                labelArray[i][j].setSize((j == 0) ? 250 : 100, 30);
+                labelArray[i][j].setLocation( (j == 0) ? 70 : backgroundLabelPanel.getWidth() - labelArray[i][j].getWidth() - 70,  i * 40);
+                labelArray[i][j].setHorizontalAlignment((j == 0) ? SwingConstants.LEFT : SwingConstants.RIGHT);
+                backgroundLabelPanel.add(labelArray[i][j]);
             }
         }
 
         playerNotice = new AdvancedLabel();
-        playerNotice.setSize(getWidth(), 30);
+        playerNotice.setSize(300, 30);
         playerNotice.setHorizontalAlignment(SwingConstants.CENTER);
-        playerNotice.setLocation(0, getHeight() - playerNotice.getHeight() * 4);
+        playerNotice.setLocation((getWidth() + menuPanel.getWidth() - playerNotice.getWidth()) / 2, getHeight() - playerNotice.getHeight() * 4);
         playerNotice.setFont(Settings.FONT_LABEL);
+        playerNotice.setForeground(Color.WHITE);
         add(playerNotice);
     }
 
