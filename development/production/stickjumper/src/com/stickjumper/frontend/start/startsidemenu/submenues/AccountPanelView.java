@@ -13,7 +13,7 @@ import java.awt.*;
 public class AccountPanelView extends JPanel {
 
     private final Controller controller;
-    JTextField txtPlayerName, txtPlayerPassword, txtPlayerHighscore;
+    private final JTextField txtPlayerName, txtPlayerHighscore;
 
     public AccountPanelView(Controller controller) {
         super(true);
@@ -49,8 +49,8 @@ public class AccountPanelView extends JPanel {
         AdvancedLabel lblTitle = new AdvancedLabel();
         lblTitle.setKeyText("menu.account.title");
         lblTitle.setHorizontalAlignment(SwingConstants.CENTER);
-        lblTitle.setSize(getWidth(), 50);
-        lblTitle.setLocation(0, 20);
+        lblTitle.setSize(400, 50);
+        lblTitle.setLocation((getWidth() + menuPanel.getWidth() - lblTitle.getWidth()) / 2, 20);
         lblTitle.setFont(Settings.FONT_HEADING_BIG);
         lblTitle.setForeground(Color.WHITE);
         add(lblTitle);
@@ -72,28 +72,10 @@ public class AccountPanelView extends JPanel {
         txtPlayerName.setFont(Settings.FONT_LOGIN_FIELDS_LABELS);
         add(txtPlayerName);
 
-        // test of course
-        LoginLabel lblPlayerPassword = new LoginLabel(LoginLabel.TEXT);
-        lblPlayerPassword.setKeyText("menu.account.password");
-        lblPlayerPassword.setSize(lblPlayerName.getWidth(), lblPlayerName.getHeight());
-        lblPlayerPassword.setLocation(lblPlayerName.getX() + lblPlayerName.getWidth() + 50, lblPlayerName.getY());
-        lblPlayerPassword.setFont(Settings.FONT_LOGIN_FIELDS_LABELS);
-        add(lblPlayerPassword);
-
-        txtPlayerPassword = new JTextField();
-        txtPlayerPassword.setHighlighter(null);
-        txtPlayerPassword.setEditable(false);
-        txtPlayerPassword.setEnabled(false);
-        txtPlayerPassword.setDisabledTextColor(Color.black);
-        txtPlayerPassword.setSize(txtPlayerName.getWidth(), txtPlayerName.getHeight());
-        txtPlayerPassword.setLocation(txtPlayerName.getX() + txtPlayerName.getWidth() + 50, txtPlayerName.getY());
-        txtPlayerPassword.setFont(Settings.FONT_LOGIN_FIELDS_LABELS);
-        add(txtPlayerPassword);
-
         LoginLabel lblPlayerHighscore = new LoginLabel(LoginLabel.TEXT);
         lblPlayerHighscore.setKeyText("menu.account.highscore");
         lblPlayerHighscore.setSize(lblPlayerName.getWidth(), lblPlayerName.getHeight());
-        lblPlayerHighscore.setLocation(lblPlayerPassword.getX() + lblPlayerPassword.getWidth() + 50, lblPlayerPassword.getY());
+        lblPlayerHighscore.setLocation(lblPlayerName.getX() + lblPlayerName.getWidth() + 50, lblPlayerName.getY());
         lblPlayerHighscore.setFont(Settings.FONT_LOGIN_FIELDS_LABELS);
         add(lblPlayerHighscore);
 
@@ -103,14 +85,14 @@ public class AccountPanelView extends JPanel {
         txtPlayerHighscore.setEnabled(false);
         txtPlayerHighscore.setDisabledTextColor(Color.black);
         txtPlayerHighscore.setSize(txtPlayerName.getWidth(), txtPlayerName.getHeight());
-        txtPlayerHighscore.setLocation(txtPlayerPassword.getX() + txtPlayerPassword.getWidth() + 50, txtPlayerPassword.getY());
+        txtPlayerHighscore.setLocation(txtPlayerName.getX() + txtPlayerName.getWidth() + 50, txtPlayerName.getY());
         txtPlayerHighscore.setFont(Settings.FONT_LOGIN_FIELDS_LABELS);
         add(txtPlayerHighscore);
 
         AdvancedButton logoutButton = new AdvancedButton();
         logoutButton.setKeyText("menu.account.button.logout");
         logoutButton.setSize(150, 35);
-        logoutButton.setLocation((getWidth() - logoutButton.getWidth()) / 2, getHeight() - logoutButton.getHeight() - 50);
+        logoutButton.setLocation((getWidth() + menuPanel.getWidth() - logoutButton.getWidth()) / 2, getHeight() - logoutButton.getHeight() - 50);
         logoutButton.addActionListener(e -> {
             controller.playerLogout();
             controller.updateHighScore();
@@ -124,7 +106,6 @@ public class AccountPanelView extends JPanel {
     public void refreshValues() {
         if (controller.getSignedInPlayer() == null) return;
         txtPlayerName.setText(controller.getSignedInPlayer().getPlayerName());
-        txtPlayerPassword.setText(controller.getSignedInPlayer().getPlayerPassword());
         txtPlayerHighscore.setText(controller.getSignedInPlayer().getHighScore() + "");
     }
 }
