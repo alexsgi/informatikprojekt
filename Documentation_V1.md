@@ -295,3 +295,8 @@ Alex:
 ### **15.06.2021**
 Alex:
 1. Geringfügige Änderungen; Formatieren des Codes
+
+### **23.06.2021**
+Alex:
+1. Überarbeitung der Menü-UIs; Verbesserung Lesbarkeit
+2. Coin icons hinzugefügt für verschiedene Münzwerte
