@@ -6,6 +6,71 @@
   <component name="ChangeListManager">
     <list default="true" id="7c009156-479f-4b70-869f-88943c226565" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/images/elements/coin/coin.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/images/elements/coin/coin.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/images/elements/coin/coin_10.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/images/elements/coin/coin_10.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/images/elements/coin/coin_20.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/images/elements/coin/coin_20.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/images/elements/coin/coin_30.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/images/elements/coin/coin_30.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/images/elements/coin/coin_40.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/images/elements/coin/coin_40.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/images/elements/coin/coin_50.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/images/elements/coin/coin_50.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/images/elements/obstacles/emeny_2.svg" beforeDir="false" afterPath="$PROJECT_DIR$/res/images/elements/obstacles/emeny_2.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/images/elements/obstacles/enemy.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/images/elements/obstacles/enemy.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/images/elements/obstacles/enemy_skin.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/images/elements/obstacles/enemy_skin.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/images/elements/obstacles/steady_obstacle.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/images/elements/obstacles/steady_obstacle.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/images/elements/obstacles/steady_obstacle_skin.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/images/elements/obstacles/steady_obstacle_skin.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/images/elements/obstacles/steady_obstacle_skin_dark.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/images/elements/obstacles/steady_obstacle_skin_dark.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/images/elements/skins/skin_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/images/elements/skins/skin_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/images/game_view/icons/home-light.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/images/game_view/icons/home-light.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/images/game_view/icons/home.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/images/game_view/icons/home.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/images/game_view/icons/home_white.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/images/game_view/icons/home_white.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/images/icons/appicon.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/images/icons/appicon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/images/icons/appicon_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/images/icons/appicon_2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/images/icons/appicon_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/images/icons/appicon_3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/images/icons/appicon_4.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/images/icons/appicon_4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/images/icons/appicon_5.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/images/icons/appicon_5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/images/icons/back_dark.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/images/icons/back_dark.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/images/loading_screen/loading_screen_image.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/images/loading_screen/loading_screen_image.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/images/loading_screen/original.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/images/loading_screen/original.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/images/loading_screen/sky.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/images/loading_screen/sky.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/images/moving_background_files/mountains-middle-mirrored.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/images/moving_background_files/mountains-middle-mirrored.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/images/moving_background_files/mountains-middle.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/images/moving_background_files/mountains-middle.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/images/other/ghost-high_res.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/images/other/ghost-high_res.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/images/other/ghost-low_res.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/images/other/ghost-low_res.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/images/other/ghost-mid_res.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/images/other/ghost-mid_res.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/images/other/ghost-svg.svg" beforeDir="false" afterPath="$PROJECT_DIR$/res/images/other/ghost-svg.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/images/other/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/images/other/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/images/other/playstore.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/images/other/playstore.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/images/start_view/background/mountains-big.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/images/start_view/background/mountains-big.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/images/start_view/background/mountains-middle-dark.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/images/start_view/background/mountains-middle-dark.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/images/start_view/background/mountains-middle.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/images/start_view/background/mountains-middle.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/images/start_view/background/mountains-small.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/images/start_view/background/mountains-small.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/images/start_view/icons/internet_available.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/images/start_view/icons/internet_available.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/images/start_view/icons/internet_unavailable.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/images/start_view/icons/internet_unavailable.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/images/start_view/icons/play-dark.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/images/start_view/icons/play-dark.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/images/start_view/icons/play.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/images/start_view/icons/play.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/sounds/boot_2.wav" beforeDir="false" afterPath="$PROJECT_DIR$/res/sounds/boot_2.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/sounds/boot_sound.wav" beforeDir="false" afterPath="$PROJECT_DIR$/res/sounds/boot_sound.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/sounds/button_sound.wav" beforeDir="false" afterPath="$PROJECT_DIR$/res/sounds/button_sound.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/sounds/button_sound_1.wav" beforeDir="false" afterPath="$PROJECT_DIR$/res/sounds/button_sound_1.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/sounds/coin_sound.wav" beforeDir="false" afterPath="$PROJECT_DIR$/res/sounds/coin_sound.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/sounds/empty_boot_sequence.wav" beforeDir="false" afterPath="$PROJECT_DIR$/res/sounds/empty_boot_sequence.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/sounds/empty_clip.wav" beforeDir="false" afterPath="$PROJECT_DIR$/res/sounds/empty_clip.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/sounds/game_over.wav" beforeDir="false" afterPath="$PROJECT_DIR$/res/sounds/game_over.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/sounds/soundMP3/90Speed_DunDunDunV6_From_FesliyanStudios.com.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/res/sounds/soundMP3/90Speed_DunDunDunV6_From_FesliyanStudios.com.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/sounds/soundMP3/Bag-of-Coins-A-www.fesliyanstudios.com.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/res/sounds/soundMP3/Bag-of-Coins-A-www.fesliyanstudios.com.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/sounds/soundMP3/Bag-of-Coins-A-www.fesliyanstudios.com.wav" beforeDir="false" afterPath="$PROJECT_DIR$/res/sounds/soundMP3/Bag-of-Coins-A-www.fesliyanstudios.com.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/sounds/soundMP3/Male-Death-Crying-Nooooo-Scream-A-www.fesliyanstudios.com.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/res/sounds/soundMP3/Male-Death-Crying-Nooooo-Scream-A-www.fesliyanstudios.com.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/sounds/soundMP3/Video-Game-Positive-Sound-A1-8bit-www.fesliyanstudios.com.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/res/sounds/soundMP3/Video-Game-Positive-Sound-A1-8bit-www.fesliyanstudios.com.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/sounds/soundMP3/Video-Game-Positive-Sound-A2-8bit-www.fesliyanstudios.com.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/res/sounds/soundMP3/Video-Game-Positive-Sound-A2-8bit-www.fesliyanstudios.com.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/sounds/soundMP3/Video-Game-Power-Level-Up-A1-www.fesliyanstudios.com.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/res/sounds/soundMP3/Video-Game-Power-Level-Up-A1-www.fesliyanstudios.com.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/sounds/soundMP3/Video-Game-Power-Level-Up-A3-Med-www.fesliyanstudios.com.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/res/sounds/soundMP3/Video-Game-Power-Level-Up-A3-Med-www.fesliyanstudios.com.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/sounds/soundMP3/Video-Game-Power-Level-Up-B1-www.fesliyanstudios.com.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/res/sounds/soundMP3/Video-Game-Power-Level-Up-B1-www.fesliyanstudios.com.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/sounds/soundMP3/Video-Game-Secret-Sound-C2-Slow-Reverse-www.fesliyanstudios.com.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/res/sounds/soundMP3/Video-Game-Secret-Sound-C2-Slow-Reverse-www.fesliyanstudios.com.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/sounds/soundMP3/Video-Game-Secret-Sound-D-Slows-Down-www.fesliyanstudios.com.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/res/sounds/soundMP3/Video-Game-Secret-Sound-D-Slows-Down-www.fesliyanstudios.com.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/sounds/soundMP3/Video-Game-Secret-Sound-D3-Slows-Down-www.fesliyanstudios.com.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/res/sounds/soundMP3/Video-Game-Secret-Sound-D3-Slows-Down-www.fesliyanstudios.com.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/sounds/soundMP3/Video-Game-Unlock-Sound-A1-8bit-www.fesliyanstudios.com.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/res/sounds/soundMP3/Video-Game-Unlock-Sound-A1-8bit-www.fesliyanstudios.com.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/sounds/webdriver_torso.wav" beforeDir="false" afterPath="$PROJECT_DIR$/res/sounds/webdriver_torso.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/strings/de.prop" beforeDir="false" afterPath="$PROJECT_DIR$/res/strings/de.prop" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/strings/en.prop" beforeDir="false" afterPath="$PROJECT_DIR$/res/strings/en.prop" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,23 +93,35 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.10471207" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
+    <configuration name="Starter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.stickjumper.start.Starter" />
+      <module name="stickjumper" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.stickjumper.start.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Starter" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -56,6 +133,10 @@
       <updated>1620838434154</updated>
       <workItem from="1620838438888" duration="587000" />
       <workItem from="1624638511326" duration="363000" />
+      <workItem from="1624638967043" duration="188000" />
+      <workItem from="1624639158591" duration="164000" />
+      <workItem from="1624639325494" duration="205000" />
+      <workItem from="1624639655900" duration="9000" />
     </task>
     <servers />
   </component>
