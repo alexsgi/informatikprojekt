@@ -86,7 +86,7 @@ public class StatisticsPanelView extends JPanel {
                 labelArray[i][j] = new JLabel();
                 labelArray[i][j].setFont(Settings.FONT_LOGIN_HEADER);
                 labelArray[i][j].setSize((j == 0) ? 250 : 100, 30);
-                labelArray[i][j].setLocation( (j == 0) ? 70 : backgroundLabelPanel.getWidth() - labelArray[i][j].getWidth() - 70,  i * 40);
+                labelArray[i][j].setLocation((j == 0) ? 70 : backgroundLabelPanel.getWidth() - labelArray[i][j].getWidth() - 70, i * 40);
                 labelArray[i][j].setHorizontalAlignment((j == 0) ? SwingConstants.LEFT : SwingConstants.RIGHT);
                 backgroundLabelPanel.add(labelArray[i][j]);
             }

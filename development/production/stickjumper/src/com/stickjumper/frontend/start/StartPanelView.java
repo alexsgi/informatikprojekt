@@ -69,15 +69,15 @@ public class StartPanelView extends JPanel {
         AdvancedLabel lblTitle = new AdvancedLabel();
         lblTitle.setKeyText("app.name");
         lblTitle.setHorizontalAlignment(SwingConstants.CENTER);
-        lblTitle.setSize(400,83);
+        lblTitle.setSize(400, 83);
         lblTitle.setLocation((getWidth() + menuPanel.getWidth() - lblTitle.getWidth()) / 2, 96);
         lblTitle.setFont(Settings.FONT_HEADING_BIG_BOLD);
         add(lblTitle);
 
         lblHighScore = new AdvancedLabel();
         lblHighScore.setHorizontalAlignment(SwingConstants.CENTER);
-        lblHighScore.setSize(300,50);
-        lblHighScore.setLocation((getWidth() + menuPanel.getWidth() - lblHighScore.getWidth()) / 2,3);
+        lblHighScore.setSize(300, 50);
+        lblHighScore.setLocation((getWidth() + menuPanel.getWidth() - lblHighScore.getWidth()) / 2, 3);
         lblHighScore.setFont(Settings.FONT_LABEL);
         lblHighScore.setKeyText("start.highscore", String.valueOf(controller.getLocalHighScore()));
         add(lblHighScore);
