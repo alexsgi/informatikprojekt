@@ -55,7 +55,7 @@ public abstract class GameElement {
     }
 
     public void decrementX(int n) {
-        boolean gameOverCondition1 = location.getX() <= Settings.X_POSITION_GAME_CHARACTER + GameCharacter.getWidth();
+        boolean gameOverCondition1 = location.getX() <= Settings.X_POSITION_GAME_CHARACTER + GameCharacter.getWidth() - 5;
         boolean gameOverCondition2 = location.getX() >= Settings.X_POSITION_GAME_CHARACTER + GameCharacter.getWidth() - Settings.GAME_OVER_SENSITIVITY;
 
         if (gameOverCondition1 && gameOverCondition2) {
