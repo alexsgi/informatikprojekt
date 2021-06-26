@@ -12,7 +12,7 @@ public class ImageManager {
     public static BufferedImage START_MENU_BACKGROUND_DARK;
     public static BufferedImage ICON_BACK, ICON_BACK_DARK;
     public static BufferedImage PLAYER_SKIN_1;
-    public static BufferedImage COIN_SKIN;
+    public static BufferedImage COIN_SKIN, COIN_SKIN_10, COIN_SKIN_20, COIN_SKIN_30, COIN_SKIN_40, COIN_SKIN_50;
     public static BufferedImage ENEMY_SKIN, STEADY_OBSTACLE_SKIN;
     public static BufferedImage ICON_INTERNET_AVAILABLE, ICON_INTERNET_UNAVAILABLE;
 
@@ -34,6 +34,11 @@ public class ImageManager {
         STEADY_OBSTACLE_SKIN = UITools.getImage(c, "/images/elements/obstacles/steady_obstacle_skin.png");
         ICON_INTERNET_AVAILABLE = UITools.getImage(c, "/images/start_view/icons/internet_available.png");
         ICON_INTERNET_UNAVAILABLE = UITools.getImage(c, "/images/start_view/icons/internet_unavailable.png");
+        COIN_SKIN_10 = UITools.getImage(c, "/images/elements/coin/coin_10.png");
+        COIN_SKIN_20 = UITools.getImage(c, "/images/elements/coin/coin_20.png");
+        COIN_SKIN_30 = UITools.getImage(c, "/images/elements/coin/coin_30.png");
+        COIN_SKIN_40 = UITools.getImage(c, "/images/elements/coin/coin_40.png");
+        COIN_SKIN_50 = UITools.getImage(c, "/images/elements/coin/coin_50.png");
     }
 
     public static int getSizeTolerance() {

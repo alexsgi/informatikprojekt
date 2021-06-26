@@ -1,4 +1,4 @@
-package com.stickjumper.data.gameelements.obstacles;
+package com.stickjumper.data.gameelements.obstacle;
 
 import com.stickjumper.data.gameelements.Obstacle;
 import com.stickjumper.utils.Dimens;
@@ -11,8 +11,8 @@ public class SteadyObstacle extends Obstacle {
 
     public static final Dimens dimens = new Dimens(50, 100);
 
-    public SteadyObstacle(Point p, int skinType) {
-        super(p, dimens, ImageManager.STEADY_OBSTACLE_SKIN, 1, skinType);
+    public SteadyObstacle(Point p) {
+        super(p, dimens, ImageManager.STEADY_OBSTACLE_SKIN);
     }
 
     public static Dimens getStandardDimens() {

@@ -1,7 +1,7 @@
 package com.stickjumper.data;
 
-import com.stickjumper.controller.scenerycontrolling.GameEventListener;
 import com.stickjumper.controller.scenerycontrolling.GameController;
+import com.stickjumper.controller.scenerycontrolling.GameEventListener;
 import com.stickjumper.data.gameelements.GameCharacter;
 import com.stickjumper.utils.Dimens;
 import com.stickjumper.utils.Settings;
@@ -55,7 +55,7 @@ public abstract class GameElement {
     }
 
     public void decrementX(int n) {
-        boolean gameOverCondition1 = location.getX() <= Settings.X_POSITION_GAME_CHARACTER + GameCharacter.getWidth() +Settings.GAME_OVER_SENSITIVITY_BEFORE_OBJECT;
+        boolean gameOverCondition1 = location.getX() <= Settings.X_POSITION_GAME_CHARACTER + GameCharacter.getWidth() + Settings.GAME_OVER_SENSITIVITY_BEFORE_OBJECT;
         boolean gameOverCondition2 = location.getX() >= Settings.X_POSITION_GAME_CHARACTER + GameCharacter.getWidth() + Settings.GAME_OVER_SENSITIVITY_AFTER_OBJECT;
 
         if (gameOverCondition1 && gameOverCondition2) {

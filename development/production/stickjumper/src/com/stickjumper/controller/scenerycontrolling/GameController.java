@@ -117,7 +117,7 @@ public class GameController {
         if (foregroundTimer != null) foregroundTimer.cancel();
         if (jumpTimer != null) jumpTimer.cancel();
         panelFrameManager.stopMovingBackground();
-        if(gameWon) {
+        if (gameWon) {
             gamePanelView.showGameWin();
         } else {
             gamePanelView.showGameOver();
@@ -128,7 +128,6 @@ public class GameController {
     public void unfreeze() {
         gameOver = false;
         gamePanelView.lblGameOver.setVisible(false);
-        gamePanelView.lblGameOver.setKeyText("");
     }
 
     public void stopGame(boolean won) {
@@ -137,7 +136,7 @@ public class GameController {
             if (comp instanceof GameElementRender) gamePanelView.remove(comp);
         }
         gameElementRenders.clear();
-        if(gameCharacterElement != null) gamePanelView.remove(gameCharacterElement);
+        if (gameCharacterElement != null) gamePanelView.remove(gameCharacterElement);
         gameCharacterElement = null;
         gameCharacterAlreadyAdded = false;
         controller.storeLocalHighscore();
