@@ -29,16 +29,16 @@ public class ImageManager {
         ICON_BACK = UITools.getImage(c, "/images/icons/back_dark.png");
         ICON_BACK_DARK = UITools.getImage(c, "/images/icons/back_dark.png");
         PLAYER_SKIN_1 = UITools.getImage(c, "/images/elements/skins/skin_1.png");
-        COIN_SKIN = UITools.getImage(c, "/images/elements/coin/coin.png");
+        COIN_SKIN = UITools.getImage(c, "/images/elements/coin/coin_1.png");
         ENEMY_SKIN = UITools.getImage(c, "/images/elements/obstacles/enemy_skin.png");
         STEADY_OBSTACLE_SKIN = UITools.getImage(c, "/images/elements/obstacles/steady_obstacle_skin.png");
         ICON_INTERNET_AVAILABLE = UITools.getImage(c, "/images/start_view/icons/internet_available.png");
         ICON_INTERNET_UNAVAILABLE = UITools.getImage(c, "/images/start_view/icons/internet_unavailable.png");
-        COIN_SKIN_10 = UITools.getImage(c, "/images/elements/coin/coin_10.png");
-        COIN_SKIN_20 = UITools.getImage(c, "/images/elements/coin/coin_20.png");
-        COIN_SKIN_30 = UITools.getImage(c, "/images/elements/coin/coin_30.png");
-        COIN_SKIN_40 = UITools.getImage(c, "/images/elements/coin/coin_40.png");
-        COIN_SKIN_50 = UITools.getImage(c, "/images/elements/coin/coin_50.png");
+        COIN_SKIN_10 = UITools.getImage(c, "/images/elements/coin/coin_1.png");
+        COIN_SKIN_20 = UITools.getImage(c, "/images/elements/coin/coin_2.png");
+        COIN_SKIN_30 = UITools.getImage(c, "/images/elements/coin/coin_3.png");
+        COIN_SKIN_40 = UITools.getImage(c, "/images/elements/coin/coin_4.png");
+        COIN_SKIN_50 = UITools.getImage(c, "/images/elements/coin/coin_5.png");
     }
 
     public static int getSizeTolerance() {

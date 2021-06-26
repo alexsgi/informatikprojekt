@@ -6,9 +6,11 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="460ac02d-4569-48ee-b691-afac2c185a3b" name="Default Changelist" comment="some adjustments and win level">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+    <list default="true" id="460ac02d-4569-48ee-b691-afac2c185a3b" name="Default Changelist" comment="last adjustments">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stickjumper/res/images/elements/coin/coin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/game/GamePanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/game/GamePanelView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/manager/ImageManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/manager/ImageManager.java" afterDir="false" />
     </list>
     <list id="cb6ccd45-2f4a-4a31-aef3-f8cd82d4f1fc" name="Changes by Alex" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,6 +31,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -99,6 +102,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Starter" />
@@ -130,6 +144,7 @@
       <workItem from="1623764126138" duration="3320000" />
       <workItem from="1624101486102" duration="943000" />
       <workItem from="1624457557740" duration="6675000" />
+      <workItem from="1624735109417" duration="1549000" />
     </task>
     <task id="LOCAL-00001" summary="delete border J-TextField">
       <created>1624694780795</created>
@@ -152,7 +167,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624698775033</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="last adjustments">
+      <created>1624708956748</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1624708956748</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -174,7 +196,8 @@
     <MESSAGE value="delete border J-TextField" />
     <MESSAGE value="Adjusted dead zone" />
     <MESSAGE value="some adjustments and win level" />
-    <option name="LAST_COMMIT_MESSAGE" value="some adjustments and win level" />
+    <MESSAGE value="last adjustments" />
+    <option name="LAST_COMMIT_MESSAGE" value="last adjustments" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
