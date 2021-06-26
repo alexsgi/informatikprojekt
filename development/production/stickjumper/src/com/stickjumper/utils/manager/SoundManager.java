@@ -17,7 +17,7 @@ public class SoundManager {
     public static final String pathCoinSound = "/sounds/coin_sound.wav";
     public static final String pathGameOverSound = "/sounds/game_over.wav";
     public static String pathButtonSound = "/sounds/button_sound.wav";
-    public static AudioInputStream inputStreamBootSound, inputStreamButtonSound, inputStreamCoinSound, inputStreamGameOverSound;
+    public static AudioInputStream inputStreamBootSound, inputStreamButtonSound, inputStreamCoinSound, inputStreamGameOverSound, inputStreamCheatSound;
 
     // TODO: play sound when cheat active
 
@@ -27,6 +27,7 @@ public class SoundManager {
             inputStreamButtonSound = AudioSystem.getAudioInputStream(new BufferedInputStream(SoundManager.class.getResourceAsStream(pathButtonSound)));
             inputStreamCoinSound = AudioSystem.getAudioInputStream(new BufferedInputStream(SoundManager.class.getResourceAsStream(pathCoinSound)));
             inputStreamGameOverSound = AudioSystem.getAudioInputStream(new BufferedInputStream(SoundManager.class.getResourceAsStream(pathGameOverSound)));
+            inputStreamCheatSound = AudioSystem.getAudioInputStream(new BufferedInputStream(SoundManager.class.getResourceAsStream(pathBootSound)));
         } catch (UnsupportedAudioFileException | IOException | NullPointerException e) {
             Settings.logData("Error loading sounds", e);
         }

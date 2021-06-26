@@ -7,6 +7,7 @@ import com.stickjumper.utils.Settings;
 import com.stickjumper.utils.components.AdvancedButton;
 import com.stickjumper.utils.components.AdvancedLabel;
 import com.stickjumper.utils.manager.ImageManager;
+import com.stickjumper.utils.manager.SoundManager;
 
 import javax.swing.*;
 import java.awt.*;
@@ -77,6 +78,7 @@ public class GamePanelView extends JPanel implements ActionListener {
                     if (steadyObstaclesCheatCount >= 10) {
                         Settings.STEADY_OBSTACLES_LETHAL = false;
                         lblHighScore.setKeyText("game.cheatcode.active");
+                        SoundManager.playSound(SoundManager.inputStreamCheatSound);
                     }
                 }
             }
