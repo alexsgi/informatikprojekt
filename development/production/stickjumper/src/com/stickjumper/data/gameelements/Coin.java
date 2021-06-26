@@ -33,7 +33,7 @@ public class Coin extends GameElement {
     @Override
     public void hit() {
         if (!hitOnce && listener != null) {
-            hitOnce = true; // TODO: explanation
+            hitOnce = true;
             listener.onContact(this);
             setVisible(false);
         }

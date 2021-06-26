@@ -73,7 +73,7 @@ public class StatisticsPanelView extends JPanel {
         lblHeader.setForeground(Color.decode("#484848"));
         add(lblHeader);
 
-        JPanel backgroundLabelPanel = new JPanel();
+        JPanel backgroundLabelPanel = new JPanel(true);
         backgroundLabelPanel.setLayout(null);
         backgroundLabelPanel.setBackground(new Color(255, 255, 255, 170));
         backgroundLabelPanel.setOpaque(true);

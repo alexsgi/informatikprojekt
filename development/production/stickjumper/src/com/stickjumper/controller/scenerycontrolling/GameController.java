@@ -49,7 +49,6 @@ public class GameController {
                 SoundManager.playSound(SoundManager.inputStreamCoinSound);
                 if (controller.updateHighScoreLabel(((Coin) gameElement).getCoinValue())) {
                     GameRandomGenerator.highScoreReached();
-                    // TODO: score >= 1000: won
                 }
             }
         };
@@ -119,6 +118,7 @@ public class GameController {
         if (jumpTimer != null) jumpTimer.cancel();
         panelFrameManager.stopMovingBackground();
         gamePanelView.lblGameOver.setVisible(true);
+        gamePanelView.showGameOver();
     }
 
     public void unfreeze() {

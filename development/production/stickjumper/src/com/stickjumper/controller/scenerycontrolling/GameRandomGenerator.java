@@ -49,7 +49,8 @@ public class GameRandomGenerator {
                     createPattern(16);
                     gameEndReached = true;
                 } else {
-                    //show text field
+                    sceneryController.getGamePanelView().showGameWin();
+                    sceneryController.stopGame();
                 }
             }
         }, 0, 7000);

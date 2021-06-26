@@ -15,6 +15,7 @@ starter.db.connection.error=Verbindung zum Server kann nicht aufgebaut werden - 
 # Game
 game.gameover=Game over
 game.cheatcode.active=Geheimer Cheat aktiviert
+game.won=Gewonnen!
 
 # Login
 login.frame.title=Login

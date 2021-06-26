@@ -15,6 +15,7 @@ starter.db.connection.error=Can not connect to the server - internet connection 
 # Game
 game.gameover=Game over
 game.cheatcode.active=Secret cheat activated
+game.won=You won!
 
 # Login
 login.frame.title=Login

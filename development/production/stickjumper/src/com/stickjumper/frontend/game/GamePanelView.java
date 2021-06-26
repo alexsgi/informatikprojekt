@@ -20,7 +20,7 @@ public class GamePanelView extends JPanel implements ActionListener {
 
     private final Controller controller;
     public AdvancedLabel lblGameOver, lblHighScore;
-    public JLabel groundlbl;
+    public JLabel lblGround;
 
     private int steadyObstaclesCheatCount;
 
@@ -85,13 +85,12 @@ public class GamePanelView extends JPanel implements ActionListener {
             }
         });
 
-        groundlbl = new JLabel();
-        groundlbl.setBackground(new Color(205,201,201, 80));
-        groundlbl.setVisible(true);
-        groundlbl.setSize(getWidth(), 200);
-        groundlbl.setLocation(0,510);
-        groundlbl.setOpaque(true);
-        add(groundlbl);
+        lblGround = new JLabel();
+        lblGround.setBackground(new Color(205, 201, 201, 80));
+        lblGround.setSize(getWidth(), Settings.SEA_LEVEL);
+        lblGround.setLocation(0, getHeight() - lblGround.getHeight());
+        lblGround.setOpaque(true);
+        add(lblGround);
     }
 
     public void updateHighScore() {
@@ -113,5 +112,13 @@ public class GamePanelView extends JPanel implements ActionListener {
 
     public void resetCheatCount() {
         steadyObstaclesCheatCount = 0;
+    }
+
+    public void showGameOver() {
+        lblGameOver.setKeyText("game.gameover");
+    }
+
+    public void showGameWin() {
+        lblGameOver.setKeyText("game.won");
     }
 }
