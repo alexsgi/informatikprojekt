@@ -41,7 +41,7 @@ public class Settings {
     public static final Font FONT_LOGIN_SMALL_BUTTON = new Font("Open Sans", Font.PLAIN, 14);
 
     // SEA_LEVEL and x-position of GameCharacter for initializations in SceneryController
-    public static final int SEA_LEVEL = 100;
+    public static final int SEA_LEVEL = 130;
     public static final int X_POSITION_GAME_CHARACTER = 320;
     // speed control (the higher the number, the slower the movement)
     public static final int BACKGROUND_SPEED = 15;

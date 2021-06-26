@@ -20,6 +20,7 @@ public class GamePanelView extends JPanel implements ActionListener {
 
     private final Controller controller;
     public AdvancedLabel lblGameOver, lblHighScore;
+    public JLabel groundlbl;
 
     private int steadyObstaclesCheatCount;
 
@@ -83,6 +84,14 @@ public class GamePanelView extends JPanel implements ActionListener {
                 }
             }
         });
+
+        groundlbl = new JLabel();
+        groundlbl.setBackground(new Color(205,201,201, 80));
+        groundlbl.setVisible(true);
+        groundlbl.setSize(getWidth(), 200);
+        groundlbl.setLocation(0,510);
+        groundlbl.setOpaque(true);
+        add(groundlbl);
     }
 
     public void updateHighScore() {
