@@ -47,7 +47,8 @@ public class Settings {
     public static final int BACKGROUND_SPEED = 15;
     public static final int FOREGROUND_SPEED = 4;
     // the higher this number is, the larger is the space above the obstacle, that will cause a game over when passed
-    public static final int GAME_OVER_SENSITIVITY = 100;
+    public static final int GAME_OVER_SENSITIVITY_AFTER_OBJECT = -110;
+    public static final int GAME_OVER_SENSITIVITY_BEFORE_OBJECT = -5;
     public static final int JUMP_HEIGHT = 22;
     public static final int JUMP_PERIOD = 17;
     public static final int JUMP_TOLERANCE_FOR_DELAY = JUMP_HEIGHT / 3;
