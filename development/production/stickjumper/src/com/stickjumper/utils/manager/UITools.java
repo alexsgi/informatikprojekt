@@ -12,10 +12,9 @@ public class UITools {
 
     public static void initUI() {
         try {
-            if(System.getProperty("os.name").contains("Windows")) {
+            if (System.getProperty("os.name").contains("Windows")) {
                 UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
             }
-            System.out.println(System.getProperty("os.name"));
         } catch (Throwable e) {
             Settings.logData("Error loading L&F", e);
         }
