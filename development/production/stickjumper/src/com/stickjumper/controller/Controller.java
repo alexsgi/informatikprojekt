@@ -1,7 +1,7 @@
 package com.stickjumper.controller;
 
-import com.stickjumper.controller.scenerycontrolling.SceneryController;
-import com.stickjumper.controller.scenerycontrolling.SceneryRandomGenerator;
+import com.stickjumper.controller.scenerycontrolling.GameController;
+import com.stickjumper.controller.scenerycontrolling.GameRandomGenerator;
 import com.stickjumper.data.Player;
 import com.stickjumper.data.database.DBConnection;
 import com.stickjumper.data.list.List;
@@ -25,10 +25,10 @@ public class Controller {
     private final PanelFrameManager panelFrameManager;
     // All frames
     private final MainFrameView mainFrameView;
-    private final SceneryRandomGenerator sceneryRandomGenerator;
+    private final GameRandomGenerator sceneryRandomGenerator;
     public boolean gameStarted = false;
     // Manages all in-game objects
-    private SceneryController sceneryController;
+    private GameController sceneryController;
     // Player management
     private Player signedInPlayer;
     private List playerList;
@@ -39,7 +39,7 @@ public class Controller {
     private Timer connectionTimer;
     private boolean connectedToServer;
 
-    public Controller(MainFrameView mainFrameView, SceneryRandomGenerator sceneryRandomGenerator) {
+    public Controller(MainFrameView mainFrameView, GameRandomGenerator sceneryRandomGenerator) {
         this.mainFrameView = mainFrameView;
         this.sceneryRandomGenerator = sceneryRandomGenerator;
         panelFrameManager = new PanelFrameManager(this, mainFrameView);
@@ -59,7 +59,7 @@ public class Controller {
     public void setGamePanelView(GamePanelView gamePanelView) {
         this.gamePanelView = gamePanelView;
         panelFrameManager.setGamePanelView(gamePanelView);
-        sceneryController = new SceneryController(gamePanelView, panelFrameManager, this);
+        sceneryController = new GameController(gamePanelView, panelFrameManager, this);
         sceneryRandomGenerator.setSceneryController(sceneryController);
         panelFrameManager.setSceneryController(sceneryController);
     }
@@ -156,7 +156,7 @@ public class Controller {
         return signedInPlayer;
     }
 
-    public SceneryController getSceneryController() {
+    public GameController getSceneryController() {
         return sceneryController;
     }
 
@@ -164,7 +164,7 @@ public class Controller {
         return mainFrameView;
     }
 
-    public SceneryRandomGenerator getSceneryRandomGenerator() {
+    public GameRandomGenerator getSceneryRandomGenerator() {
         return sceneryRandomGenerator;
     }
 
@@ -188,7 +188,7 @@ public class Controller {
     public boolean updateHighScoreLabel(int additionalScore) {
         lastRoundHighScore += additionalScore;
         gamePanelView.updateHighScore();
-        return lastRoundHighScore >= 1000;
+        return lastRoundHighScore >= Settings.HIGHSCORE_TO_WIN;
     }
 
     public int getLocalHighScore() {

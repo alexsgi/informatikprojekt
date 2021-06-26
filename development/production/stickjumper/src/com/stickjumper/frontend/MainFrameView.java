@@ -1,7 +1,7 @@
 package com.stickjumper.frontend;
 
 import com.stickjumper.controller.Controller;
-import com.stickjumper.controller.scenerycontrolling.SceneryRandomGenerator;
+import com.stickjumper.controller.scenerycontrolling.GameRandomGenerator;
 import com.stickjumper.data.list.List;
 import com.stickjumper.frontend.game.GamePanelView;
 import com.stickjumper.frontend.login.LoginFrameView;
@@ -24,7 +24,7 @@ public class MainFrameView extends AdvancedFrame implements KeyListener {
     private final Controller controller;
     public boolean keysEnabledInGame = true;
 
-    public MainFrameView(SceneryRandomGenerator sceneryRandomGenerator, List playerList) {
+    public MainFrameView(GameRandomGenerator sceneryRandomGenerator, List playerList) {
         super();
         setKeyTitle("app.name");
         addKeyListener(this);

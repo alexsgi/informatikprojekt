@@ -1,6 +1,6 @@
 package com.stickjumper.start;
 
-import com.stickjumper.controller.scenerycontrolling.SceneryRandomGenerator;
+import com.stickjumper.controller.scenerycontrolling.GameRandomGenerator;
 import com.stickjumper.data.database.DBConnection;
 import com.stickjumper.frontend.MainFrameView;
 import com.stickjumper.frontend.boot.LoadingFrameView;
@@ -43,7 +43,7 @@ public class Starter {
 
         ImageManager.loadALlImages(loadingFrameView.getClass());
 
-        SceneryRandomGenerator sceneryRandomGenerator = new SceneryRandomGenerator();
+        GameRandomGenerator sceneryRandomGenerator = new GameRandomGenerator();
 
         FastMail.init(Settings.E_HOST, Settings.E_USERNAME, Settings.E_PASSWORD);
         DBConnection.init();

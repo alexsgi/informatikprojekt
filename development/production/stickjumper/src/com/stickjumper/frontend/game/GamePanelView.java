@@ -1,7 +1,7 @@
 package com.stickjumper.frontend.game;
 
 import com.stickjumper.controller.Controller;
-import com.stickjumper.controller.scenerycontrolling.SceneryController;
+import com.stickjumper.controller.scenerycontrolling.GameController;
 import com.stickjumper.frontend.rendering.GameElementRender;
 import com.stickjumper.utils.Settings;
 import com.stickjumper.utils.components.AdvancedButton;
@@ -72,7 +72,7 @@ public class GamePanelView extends JPanel implements ActionListener {
         lblHighScore.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                if (SceneryController.isGameOver()) return;
+                if (GameController.isGameOver()) return;
                 if (Settings.STEADY_OBSTACLES_LETHAL) {
                     steadyObstaclesCheatCount++;
                     if (steadyObstaclesCheatCount >= 10) {

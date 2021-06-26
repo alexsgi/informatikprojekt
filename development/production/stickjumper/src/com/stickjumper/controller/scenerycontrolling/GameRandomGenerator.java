@@ -11,18 +11,28 @@ import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class SceneryRandomGenerator {
+public class GameRandomGenerator {
 
     private final int[] coinValues = new int[]{10, 20, 30, 40, 50};
     private Timer timer;
-    private SceneryController sceneryController;
+    private GameController sceneryController;
     private int h, w;
+    private static boolean highScoreReachedNow = false, gameEndReached = false;
 
-    public void setSceneryController(SceneryController sceneryController) {
+    public void setSceneryController(GameController sceneryController) {
         this.sceneryController = sceneryController;
         GamePanelView gamePanelView = sceneryController.getGamePanelView();
         h = gamePanelView.getHeight() - Settings.SEA_LEVEL;
         w = gamePanelView.getWidth();
+    }
+
+    public static void highScoreReached() {
+        highScoreReachedNow = true;
+    }
+
+    public static void resetRandomGenerator( ) {
+        highScoreReachedNow = false;
+        gameEndReached=false;
     }
 
     public void randomGenerate() {
@@ -32,8 +42,15 @@ public class SceneryRandomGenerator {
             @Override
             public void run() {
                 // min = 1; max = 15 (+1 to be included)
-                int random = ThreadLocalRandom.current().nextInt(1, 16);
-                createPattern(random);
+                if (!highScoreReachedNow) {
+                    int random = ThreadLocalRandom.current().nextInt(1, 16);
+                    createPattern(random);
+                } else if (!gameEndReached) {
+                    createPattern(16);
+                    gameEndReached = true;
+                } else {
+                    //show text field
+                }
             }
         }, 0, 7000);
     }
@@ -341,6 +358,14 @@ public class SceneryRandomGenerator {
                 createCoin(100, 800);
                 createCoin(50, 1000);
                 createCoin(0, 1250);
+            }
+            case 16 -> {
+                for (int i = 0; i < 600; i = i + 50) {
+                    for (int j = 0; j < 1000; j = j + 50) {
+                        createCoin(i, j);
+                    }
+
+                }
             }
             default -> createPattern(1);
         }

@@ -53,6 +53,7 @@ public class Settings {
     public static final int JUMP_PERIOD = 17;
     public static final int JUMP_TOLERANCE_FOR_DELAY = JUMP_HEIGHT / 3;
     public static final int JUMP_SECOND_TOLERANCE_FOR_DELAY = (JUMP_HEIGHT / 3) * 2;
+    public static final int HIGHSCORE_TO_WIN = 2000;
     // Credentials
     public static final String E_HOST = "smtp.1und1.de";
     public static final String E_USERNAME = "stickjumper@online.de";

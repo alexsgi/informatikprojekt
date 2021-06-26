@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class SceneryController {
+public class GameController {
 
     public static boolean spacePressedOnce = false, spacePressedTwice = false;
     private static int yPosGameCharacter, jumpVar = Settings.JUMP_HEIGHT, newPeriod = Settings.JUMP_PERIOD;
@@ -35,7 +35,7 @@ public class SceneryController {
     // Timer
     private Timer foregroundTimer, jumpTimer;
 
-    public SceneryController(GamePanelView gamePanelView, PanelFrameManager panelFrameManager, Controller controller) {
+    public GameController(GamePanelView gamePanelView, PanelFrameManager panelFrameManager, Controller controller) {
         this.gamePanelView = gamePanelView;
         this.panelFrameManager = panelFrameManager;
         this.controller = controller;
@@ -48,6 +48,7 @@ public class SceneryController {
             } else if (gameElement instanceof Coin) {
                 SoundManager.playSound(SoundManager.inputStreamCoinSound);
                 if (controller.updateHighScoreLabel(((Coin) gameElement).getCoinValue())) {
+                    GameRandomGenerator.highScoreReached();
                     // TODO: score >= 1000: won
                 }
             }
@@ -87,6 +88,7 @@ public class SceneryController {
     }
 
     public void startGame() {
+        GameRandomGenerator.resetRandomGenerator();
         controller.resetGameScore();
         unfreeze();
         panelFrameManager.startMovingBackground();

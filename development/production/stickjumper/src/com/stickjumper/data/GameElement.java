@@ -1,7 +1,7 @@
 package com.stickjumper.data;
 
 import com.stickjumper.controller.scenerycontrolling.GameEventListener;
-import com.stickjumper.controller.scenerycontrolling.SceneryController;
+import com.stickjumper.controller.scenerycontrolling.GameController;
 import com.stickjumper.data.gameelements.GameCharacter;
 import com.stickjumper.utils.Dimens;
 import com.stickjumper.utils.Settings;
@@ -59,7 +59,7 @@ public abstract class GameElement {
         boolean gameOverCondition2 = location.getX() >= Settings.X_POSITION_GAME_CHARACTER + GameCharacter.getWidth() + Settings.GAME_OVER_SENSITIVITY_AFTER_OBJECT;
 
         if (gameOverCondition1 && gameOverCondition2) {
-            int difPos = (int) (SceneryController.getYPosGameCharacter() - location.getY());
+            int difPos = (int) (GameController.getYPosGameCharacter() - location.getY());
             boolean firstCondition = difPos < getDimens().getHeight();
             boolean secondCondition = difPos < -GameCharacter.dimens.getHeight();
             if ((firstCondition && !secondCondition) || (!firstCondition && secondCondition)) this.hit();

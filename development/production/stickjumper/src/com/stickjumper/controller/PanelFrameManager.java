@@ -1,6 +1,6 @@
 package com.stickjumper.controller;
 
-import com.stickjumper.controller.scenerycontrolling.SceneryController;
+import com.stickjumper.controller.scenerycontrolling.GameController;
 import com.stickjumper.frontend.MainFrameView;
 import com.stickjumper.frontend.game.GamePanelView;
 import com.stickjumper.frontend.login.LoginFrameView;
@@ -26,7 +26,7 @@ public class PanelFrameManager {
     private SettingsPanelView settingsPanelView;
     private AccountPanelView accountPanelView;
     private LoginFrameView loginFrameView;
-    private SceneryController sceneryController;
+    private GameController sceneryController;
 
     public PanelFrameManager(Controller controller, MainFrameView mainFrameView) {
         this.controller = controller;
@@ -102,7 +102,7 @@ public class PanelFrameManager {
         this.loginFrameView = loginFrameView;
     }
 
-    public void setSceneryController(SceneryController sceneryController) {
+    public void setSceneryController(GameController sceneryController) {
         this.sceneryController = sceneryController;
     }
 
