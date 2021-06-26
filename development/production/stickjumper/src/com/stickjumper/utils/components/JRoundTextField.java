@@ -26,7 +26,6 @@ public class JRoundTextField extends JTextField {
 
     @Override
     protected void paintBorder(Graphics g) {
-        // g.setColor(((LineBorder) getBorder()).getLineColor());
         g.drawRoundRect(0, 0, getWidth() - 1, getHeight() - 1, Settings.LOGIN_VIEW_TEXTFIELD_CORNER_RADIUS, Settings.LOGIN_VIEW_TEXTFIELD_CORNER_RADIUS);
     }
 
