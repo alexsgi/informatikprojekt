@@ -57,7 +57,7 @@ public class PanelFrameManager {
     }
 
     public void switchToStartPanel() {
-        sceneryController.stopGame();
+        sceneryController.stopGame(false);
         controller.getSceneryRandomGenerator().stop();
 
         controller.gameStarted = false;

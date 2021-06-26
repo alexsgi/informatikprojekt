@@ -41,7 +41,6 @@ public class GamePanelView extends JPanel implements ActionListener {
         add(backButton);
 
         lblGameOver = new AdvancedLabel();
-        lblGameOver.setKeyText("game.gameover");
         lblGameOver.setHorizontalAlignment(SwingConstants.CENTER);
         lblGameOver.setVerticalAlignment(SwingConstants.CENTER);
         lblGameOver.setSize(getWidth(), getHeight() + 100);

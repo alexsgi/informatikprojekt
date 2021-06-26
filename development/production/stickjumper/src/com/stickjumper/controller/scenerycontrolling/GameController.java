@@ -42,7 +42,7 @@ public class GameController {
 
         gameEventListener = gameElement -> {
             if (gameElement instanceof Obstacle) {
-                freeze();
+                freeze(false);
                 SoundManager.playSound(SoundManager.inputStreamGameOverSound);
                 gameOver = true;
             } else if (gameElement instanceof Coin) {
@@ -113,26 +113,31 @@ public class GameController {
         spacePressedTwice = false;
     }
 
-    public void freeze() {
+    public void freeze(boolean gameWon) {
         if (foregroundTimer != null) foregroundTimer.cancel();
         if (jumpTimer != null) jumpTimer.cancel();
         panelFrameManager.stopMovingBackground();
+        if(gameWon) {
+            gamePanelView.showGameWin();
+        } else {
+            gamePanelView.showGameOver();
+        }
         gamePanelView.lblGameOver.setVisible(true);
-        gamePanelView.showGameOver();
     }
 
     public void unfreeze() {
         gameOver = false;
         gamePanelView.lblGameOver.setVisible(false);
+        gamePanelView.lblGameOver.setKeyText("");
     }
 
-    public void stopGame() {
-        freeze();
+    public void stopGame(boolean won) {
+        freeze(won);
         for (Component comp : gamePanelView.getComponents()) {
             if (comp instanceof GameElementRender) gamePanelView.remove(comp);
         }
         gameElementRenders.clear();
-        gamePanelView.remove(gameCharacterElement);
+        if(gameCharacterElement != null) gamePanelView.remove(gameCharacterElement);
         gameCharacterElement = null;
         gameCharacterAlreadyAdded = false;
         controller.storeLocalHighscore();
