@@ -5,8 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c009156-479f-4b70-869f-88943c226565" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/res/images/elements/coin/coin_50 Kopie.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/stickjumper/utils/manager/ImageManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/stickjumper/utils/manager/ImageManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/images/elements/coin/coin_10.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/images/elements/coin/coin_10.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/images/elements/coin/coin_20.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/images/elements/coin/coin_20.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/images/elements/coin/coin_30.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/images/elements/coin/coin_30.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/stickjumper/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/stickjumper/controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/stickjumper/controller/scenerycontrolling/GameRandomGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/stickjumper/controller/scenerycontrolling/GameRandomGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/stickjumper/data/gameelements/Coin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/stickjumper/data/gameelements/Coin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/stickjumper/utils/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/stickjumper/utils/Settings.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,12 +24,16 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
   <component name="ProjectId" id="1sRbcbvn6qiJ96OGtELRWgqOGHv" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mariadb" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -53,6 +64,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Starter" />
@@ -75,7 +99,7 @@
       <workItem from="1624639655900" duration="9000" />
       <workItem from="1624652890228" duration="1066000" />
       <workItem from="1624706821014" duration="2493000" />
-      <workItem from="1624788101539" duration="463000" />
+      <workItem from="1624788101539" duration="1807000" />
     </task>
     <servers />
   </component>
@@ -93,6 +117,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

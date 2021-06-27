@@ -188,7 +188,7 @@ public class Controller {
     public boolean updateHighScoreLabel(int additionalScore) {
         lastRoundHighScore += additionalScore;
         gamePanelView.updateHighScore();
-        return lastRoundHighScore >= Settings.HIGHSCORE_TO_WIN;
+        return lastRoundHighScore >= Settings.SCORE_TO_WIN;
     }
 
     public int getLocalHighScore() {

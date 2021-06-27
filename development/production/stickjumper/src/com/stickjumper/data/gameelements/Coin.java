@@ -18,9 +18,9 @@ public class Coin extends GameElement {
     private boolean hitOnce = false;
     private GameEventListener listener;
 
-    public Coin(Point p, int coinValue) {
-        super(p, dimens, true, ImageManager.COIN_SKIN, speed);
-        this.coinValue = coinValue;
+    public Coin(Point p) {
+        super(p, dimens, true, ImageManager.COIN_SKIN_50, speed);
+        this.coinValue = 50;
     }
 
     private Coin(Point p, int coinValue, BufferedImage image) {

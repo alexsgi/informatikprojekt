@@ -14,7 +14,6 @@ import java.util.concurrent.ThreadLocalRandom;
 public class GameRandomGenerator {
 
     private static boolean highScoreReachedNow = false, gameEndReached = false;
-    private final int[] coinValues = new int[]{10, 20, 30, 40, 50};
     private Timer timer;
     private GameController sceneryController;
     private int h, w;
@@ -58,6 +57,11 @@ public class GameRandomGenerator {
 
     private void createCoin(int height, int xShift) {
         Coin coin = Coin.createCoin(new Point(w + xShift, (h - Coin.getStandardDimens().getHeight() - height)));
+        sceneryController.initGameElement(coin);
+    }
+
+    private void createDefaultCoin(int height, int xShift) {
+        Coin coin = new Coin(new Point(w + xShift, (h - Coin.getStandardDimens().getHeight() - height)));
         sceneryController.initGameElement(coin);
     }
 
@@ -353,7 +357,7 @@ public class GameRandomGenerator {
             case 16 -> {
                 for (int i = 0; i < 600; i = i + 50) {
                     for (int j = 0; j < 1000; j = j + 50) {
-                        createCoin(i, j);
+                        createDefaultCoin(i, j);
                     }
                 }
             }
