@@ -14,7 +14,7 @@ import java.util.Set;
 
 public class StringManager {
 
-    public static final String EN = "en";
+    public static final String EN = "en"; // use enum
     public static final String DE = "de";
     private static HashMap<String, String> strings = new HashMap<>();
 

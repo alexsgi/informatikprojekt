@@ -15,6 +15,7 @@ public class SettingsPanelView extends JPanel {
 
     private final AdvancedToggleButton soundEffectToggle, gameOverMusicToggle;
     private String lastSelection;
+    private JComboBox<String> comboBox;
 
     public SettingsPanelView(Controller controller) {
         super(true);
@@ -115,7 +116,7 @@ public class SettingsPanelView extends JPanel {
         add(lblLanguage);
 
         String[] choices = {StringManager.DE.toUpperCase(), StringManager.EN.toUpperCase()};
-        JComboBox<String> comboBox = new JComboBox<>(choices);
+        comboBox = new JComboBox<>(choices);
         comboBox.setSize(gameOverMusicToggle.getWidth(), gameOverMusicToggle.getHeight());
         comboBox.setLocation(gameOverMusicToggle.getX(), gameOverMusicToggle.getY() + gameOverMusicToggle.getHeight() + 30);
         comboBox.setFocusable(false);
@@ -136,13 +137,12 @@ public class SettingsPanelView extends JPanel {
         add(comboBox);
 
         JLabel lblVersion = new JLabel();
-        lblVersion.setText("v1.0");
-        lblVersion.setSize(50, 30);
+        lblVersion.setText(Settings.APP_VERSION);
+        lblVersion.setSize(200, 30);
         lblVersion.setLocation((getWidth() + menuPanel.getWidth() - lblVersion.getWidth()) / 2, getHeight() - lblVersion.getHeight() * 2);
         lblVersion.setFont(Settings.FONT_LABEL_BOLD_SMALL);
         lblVersion.setForeground(Color.WHITE);
         lblVersion.setHorizontalAlignment(SwingConstants.CENTER);
         add(lblVersion);
     }
-
 }

@@ -6,11 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="7c009156-479f-4b70-869f-88943c226565" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/icons/appicon.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/images/icons/appicon.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/stickjumper/frontend/start/startsidemenu/submenues/SettingsPanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/stickjumper/frontend/start/startsidemenu/submenues/SettingsPanelView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/stickjumper/utils/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/stickjumper/utils/Settings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/stickjumper/utils/manager/ImageManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/stickjumper/utils/manager/ImageManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/stickjumper/utils/manager/UITools.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/stickjumper/utils/manager/UITools.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/stickjumper/utils/manager/StringManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/stickjumper/utils/manager/StringManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,15 +71,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -109,6 +105,7 @@
       <workItem from="1624652890228" duration="1066000" />
       <workItem from="1624706821014" duration="2493000" />
       <workItem from="1624788101539" duration="4367000" />
+      <workItem from="1624815648896" duration="2214000" />
     </task>
     <servers />
   </component>

@@ -10,6 +10,7 @@ import java.util.Locale;
 public class Settings {
 
     public static final String APP_NAME = "StickJumper";
+    public static final String APP_VERSION = "v0.7-alpha";
     public static final String APP_ICON = "/images/icons/appicon_4.png", APP_ICON_BIG = "/images/icons/appicon.png";
     public static final int SCREEN_WIDTH = 1280, SCREEN_HEIGHT = 640;
     public static final int LOGIN_SCREEN_WIDTH = 600, LOGIN_SCREEN_HEIGHT = 500;
@@ -91,6 +92,7 @@ public class Settings {
                             + "\n\nLogcat:\n\n"
                             + e.getMessage()
                             + "\n\nOS: " + System.getProperty("os.name")
+                            + "\n\nVersion: " + Settings.APP_VERSION
                     , E_USERNAME);
         }).start();
     }
