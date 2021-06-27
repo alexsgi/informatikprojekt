@@ -6,12 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7c009156-479f-4b70-869f-88943c226565" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/stickjumper/controller/scenerycontrolling/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/stickjumper/controller/scenerycontrolling/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/stickjumper/controller/scenerycontrolling/GameRandomGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/stickjumper/controller/scenerycontrolling/GameRandomGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/stickjumper/data/GameElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/stickjumper/data/GameElement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/stickjumper/data/gameelements/Coin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/stickjumper/data/gameelements/Coin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/stickjumper/data/gameelements/Obstacle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/stickjumper/data/gameelements/Obstacle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/stickjumper/data/gameelements/obstacle/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/stickjumper/data/gameelements/obstacle/Enemy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/stickjumper/utils/manager/ImageManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/stickjumper/utils/manager/ImageManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,17 +53,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Starter" />
@@ -92,6 +75,7 @@
       <workItem from="1624639655900" duration="9000" />
       <workItem from="1624652890228" duration="1066000" />
       <workItem from="1624706821014" duration="2493000" />
+      <workItem from="1624788101539" duration="463000" />
     </task>
     <servers />
   </component>
