@@ -5,15 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c009156-479f-4b70-869f-88943c226565" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/res/images/elements/coin/coin_50 Kopie.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/elements/coin/coin_10.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/images/elements/coin/coin_10.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/elements/coin/coin_20.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/images/elements/coin/coin_20.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/images/elements/coin/coin_30.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/images/elements/coin/coin_30.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/stickjumper/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/stickjumper/controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/stickjumper/controller/scenerycontrolling/GameRandomGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/stickjumper/controller/scenerycontrolling/GameRandomGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/stickjumper/data/gameelements/Coin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/stickjumper/data/gameelements/Coin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/images/icons/appicon.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/images/icons/appicon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/stickjumper/frontend/start/startsidemenu/submenues/SettingsPanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/stickjumper/frontend/start/startsidemenu/submenues/SettingsPanelView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/stickjumper/utils/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/stickjumper/utils/Settings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/stickjumper/utils/manager/ImageManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/stickjumper/utils/manager/ImageManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/stickjumper/utils/manager/UITools.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/stickjumper/utils/manager/UITools.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +19,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="1sRbcbvn6qiJ96OGtELRWgqOGHv" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -39,14 +44,18 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/res/images/icons" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.10471207" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="template.copyright.formatting" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/res/images/icons" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/res/images/icons" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
@@ -99,7 +108,7 @@
       <workItem from="1624639655900" duration="9000" />
       <workItem from="1624652890228" duration="1066000" />
       <workItem from="1624706821014" duration="2493000" />
-      <workItem from="1624788101539" duration="1807000" />
+      <workItem from="1624788101539" duration="4367000" />
     </task>
     <servers />
   </component>

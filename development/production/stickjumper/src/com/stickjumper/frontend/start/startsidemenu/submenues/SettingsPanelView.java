@@ -135,6 +135,14 @@ public class SettingsPanelView extends JPanel {
         });
         add(comboBox);
 
+        JLabel lblVersion = new JLabel();
+        lblVersion.setText("v1.0");
+        lblVersion.setSize(50, 30);
+        lblVersion.setLocation((getWidth() + menuPanel.getWidth() - lblVersion.getWidth()) / 2, getHeight() - lblVersion.getHeight() * 2);
+        lblVersion.setFont(Settings.FONT_LABEL_BOLD_SMALL);
+        lblVersion.setForeground(Color.WHITE);
+        lblVersion.setHorizontalAlignment(SwingConstants.CENTER);
+        add(lblVersion);
     }
 
 }
