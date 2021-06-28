@@ -300,3 +300,16 @@ Alex:
 Alex:
 1. Überarbeitung der Menü-UIs; Verbesserung Lesbarkeit
 2. Coin icons hinzugefügt für verschiedene Münzwerte
+
+### **26.06.2021**
+Alex:
+1. Überarbeiten Boden
+2. Erstellen verschiedener Münzicons
+
+### **27.06.2021**
+Alex:
+1. Implementieren der verschiedenen Münzicons
+
+### **28.06.2021**
+Alex:
+1. Suchen verschiedener Playericons und Implementierung der benötigten Logik
