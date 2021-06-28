@@ -9,29 +9,24 @@ import java.awt.image.BufferedImage;
 
 public abstract class Obstacle extends GameElement {
 
-    private int skinType;
     private GameEventListener listener;
 
-    public Obstacle(Point p, Dimens dimens, BufferedImage image, int speed, int skinType) {
+    public Obstacle(Point p, Dimens dimens, BufferedImage image, int speed) {
         super(p, dimens, true, image, speed);
-        this.skinType = skinType;
     }
 
-    public Obstacle(Point p, Dimens dimens, BufferedImage image, int skinType) {
-        super(p, dimens, true, image, 0);
-        this.skinType = skinType;
+    public Obstacle(Point p, Dimens dimens, BufferedImage image) {
+        super(p, dimens, true, image, 1);
     }
 
     @Override
     public void hit() {
         if (listener != null) listener.onContact(this);
-        // SceneryController.gameOver = true;
     }
 
     @Override
     public void addEventListener(GameEventListener listener) {
         this.listener = listener;
     }
-
 
 }

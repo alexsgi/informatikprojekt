@@ -1,6 +1,6 @@
 package com.stickjumper.controller;
 
-import com.stickjumper.controller.scenerycontrolling.SceneryController;
+import com.stickjumper.controller.scenerycontrolling.GameController;
 import com.stickjumper.frontend.MainFrameView;
 import com.stickjumper.frontend.game.GamePanelView;
 import com.stickjumper.frontend.login.LoginFrameView;
@@ -14,21 +14,19 @@ import com.stickjumper.frontend.start.startsidemenu.submenues.StatisticsPanelVie
 
 public class PanelFrameManager {
 
-    // All panels
-    public StartPanelView startPanelView;
-    public LoginPanelView loginPanelView;
-    public RegisterPanelView registerPanelView;
-    public GamePanelView gamePanelView;
-    public StatisticsPanelView statisticsPanelView;
-    public SettingsPanelView settingsPanelView;
-    public AccountPanelView accountPanelView;
-
     // All frames
-    public MainFrameView mainFrameView;
-    public LoginFrameView loginFrameView;
-
-    public Controller controller;
-    private SceneryController sceneryController;
+    private final MainFrameView mainFrameView;
+    private final Controller controller;
+    // All panels
+    private StartPanelView startPanelView;
+    private LoginPanelView loginPanelView;
+    private RegisterPanelView registerPanelView;
+    private GamePanelView gamePanelView;
+    private StatisticsPanelView statisticsPanelView;
+    private SettingsPanelView settingsPanelView;
+    private AccountPanelView accountPanelView;
+    private LoginFrameView loginFrameView;
+    private GameController gameController;
 
     public PanelFrameManager(Controller controller, MainFrameView mainFrameView) {
         this.controller = controller;
@@ -59,7 +57,7 @@ public class PanelFrameManager {
     }
 
     public void switchToStartPanel() {
-        sceneryController.stopGame();
+        gameController.stopGame(false);
         controller.getSceneryRandomGenerator().stop();
 
         controller.gameStarted = false;
@@ -104,16 +102,8 @@ public class PanelFrameManager {
         this.loginFrameView = loginFrameView;
     }
 
-    public void setSceneryController(SceneryController sceneryController) {
-        this.sceneryController = sceneryController;
-    }
-
-    public boolean isGamePanelActive() {
-        return mainFrameView.getContentPane() instanceof GamePanelView;
-    }
-
-    public boolean isStartPanelActive() {
-        return mainFrameView.getContentPane() instanceof StartPanelView;
+    public void setGameController(GameController gameController) {
+        this.gameController = gameController;
     }
 
     public void setStatisticsPanel(StatisticsPanelView statisticsPanelView) {
@@ -130,12 +120,13 @@ public class PanelFrameManager {
 
     public void switchToStatisticsPanel() {
         mainFrameView.getContentPane().removeAll();
-        mainFrameView.getContentPane().add(statisticsPanelView);
         statisticsPanelView.refresh();
+        mainFrameView.getContentPane().add(statisticsPanelView);
     }
 
     public void switchToSettingsPanel() {
         mainFrameView.getContentPane().removeAll();
+        settingsPanelView.refreshSkins();
         mainFrameView.getContentPane().add(settingsPanelView);
     }
 

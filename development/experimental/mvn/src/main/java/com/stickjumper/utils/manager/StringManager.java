@@ -1,6 +1,10 @@
 package com.stickjumper.utils.manager;
 
 import com.stickjumper.utils.Settings;
+import com.stickjumper.utils.components.AdvancedButton;
+import com.stickjumper.utils.components.AdvancedFrame;
+import com.stickjumper.utils.components.AdvancedLabel;
+import com.stickjumper.utils.components.AdvancedToggleButton;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -10,20 +14,16 @@ import java.util.Set;
 
 public class StringManager {
 
-    // TODO: read prop files; set locale
-
-    public static final String EN = "en";
+    public static final String EN = "en"; // use enum
     public static final String DE = "de";
-
     private static HashMap<String, String> strings = new HashMap<>();
 
     private StringManager() {
     }
 
     public static void init(String languageCode) {
-        // Locale.setDefault(new Locale(languageCode.toLowerCase(),languageCode.toUpperCase()));
         Properties prop = new Properties();
-        try (InputStream inputStream = StringManager.class.getResourceAsStream(String.format("/strings/%s.prop", languageCode))) {
+        try (InputStream inputStream = StringManager.class.getResourceAsStream(String.format("/strings/%s.prop", languageCode.toLowerCase()))) {
             prop.load(inputStream);
             Set<String> keys = prop.stringPropertyNames();
             strings = new HashMap<>();
@@ -36,4 +36,12 @@ public class StringManager {
     public static String getString(String key) {
         return strings.get(key);
     }
+
+    public static void refreshAllFields() {
+        AdvancedLabel.refresh();
+        AdvancedFrame.refresh();
+        AdvancedButton.refresh();
+        AdvancedToggleButton.refresh();
+    }
+
 }

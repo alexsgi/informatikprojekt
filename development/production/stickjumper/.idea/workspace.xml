@@ -5,22 +5,52 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c009156-479f-4b70-869f-88943c226565" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/res/images/elements/skins/skin_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/images/elements/skins/skin_3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/controller/PanelFrameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/controller/PanelFrameManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/controller/scenerycontrolling/SceneryController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/controller/scenerycontrolling/SceneryRandomGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/data/GameElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/data/GameElement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/data/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/data/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/data/gameelements/Coin.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/data/gameelements/Coin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/data/gameelements/GameCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/data/gameelements/GameCharacter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/data/gameelements/Obstacle.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/data/gameelements/Obstacle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/data/gameelements/obstacles/Enemy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/data/gameelements/obstacles/SteadyObstacle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/frontend/MainFrameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/frontend/MainFrameView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/frontend/boot/LoadingPanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/frontend/boot/LoadingPanelView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/frontend/game/GamePanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/frontend/game/GamePanelView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/frontend/login/LoginFrameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/frontend/login/LoginFrameView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/frontend/login/LoginPanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/frontend/login/LoginPanelView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/frontend/login/RegisterPanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/frontend/login/RegisterPanelView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/frontend/start/StartPanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/frontend/start/StartPanelView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/frontend/start/startsidemenu/StartSideMenuPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/frontend/start/startsidemenu/StartSideMenuPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/frontend/start/startsidemenu/submenues/AccountPanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/frontend/start/startsidemenu/submenues/AccountPanelView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/frontend/start/startsidemenu/submenues/SettingsPanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/frontend/start/startsidemenu/submenues/SettingsPanelView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/frontend/start/startsidemenu/submenues/StatisticsPanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/frontend/start/startsidemenu/submenues/StatisticsPanelView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/start/Starter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/start/Starter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/utils/CountDownTimer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/utils/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/utils/Settings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/utils/components/AdvancedButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/utils/components/AdvancedButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/utils/components/JRoundPasswordField.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/utils/components/JRoundPasswordField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/utils/components/JRoundTextField.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/utils/components/JRoundTextField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/utils/components/LoginLabel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/utils/components/LoginLabel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/utils/manager/ImageManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/utils/manager/ImageManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/utils/manager/SoundManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/utils/manager/SoundManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/utils/manager/StringManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/utils/manager/StringManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/utils/manager/UITools.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/utils/manager/UITools.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/utils/security/PasswordHasher.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/utils/security/PasswordHasher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/src/main/resources/images/elements/coin/coin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/src/main/resources/images/icons/appicon.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../experimental/mvn/src/main/resources/images/icons/appicon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/src/main/resources/sounds/DunDunDun.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/src/main/resources/sounds/Webdriver-Torso.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/src/main/resources/sounds/Winding-Alarm-Clock.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/src/main/resources/sounds/boot-2.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/src/main/resources/sounds/boot-sound.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/src/main/resources/sounds/coin.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/src/main/resources/sounds/empty-boot-sequence.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/src/main/resources/strings/de.prop" beforeDir="false" afterPath="$PROJECT_DIR$/../../experimental/mvn/src/main/resources/strings/de.prop" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/src/main/resources/strings/en.prop" beforeDir="false" afterPath="$PROJECT_DIR$/../../experimental/mvn/src/main/resources/strings/en.prop" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/strings/de.prop" beforeDir="false" afterPath="$PROJECT_DIR$/res/strings/de.prop" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/strings/en.prop" beforeDir="false" afterPath="$PROJECT_DIR$/res/strings/en.prop" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/stickjumper/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/stickjumper/controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/stickjumper/controller/PanelFrameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/stickjumper/controller/PanelFrameManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/stickjumper/controller/scenerycontrolling/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/stickjumper/controller/scenerycontrolling/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/stickjumper/controller/scenerycontrolling/GameRandomGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/stickjumper/controller/scenerycontrolling/GameRandomGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/stickjumper/data/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/stickjumper/data/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/stickjumper/data/gameelements/GameCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/stickjumper/data/gameelements/GameCharacter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/stickjumper/frontend/MainFrameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/stickjumper/frontend/MainFrameView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/stickjumper/frontend/start/startsidemenu/submenues/AccountPanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/stickjumper/frontend/start/startsidemenu/submenues/AccountPanelView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/stickjumper/frontend/start/startsidemenu/submenues/SettingsPanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/stickjumper/frontend/start/startsidemenu/submenues/SettingsPanelView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/stickjumper/utils/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/stickjumper/utils/Settings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/stickjumper/utils/manager/ImageManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/stickjumper/utils/manager/ImageManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,17 +114,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Starter" />
@@ -121,6 +140,8 @@
       <workItem from="1624815648896" duration="2214000" />
       <workItem from="1624865565792" duration="394000" />
       <workItem from="1624885150508" duration="6501000" />
+      <workItem from="1624901265802" duration="416000" />
+      <workItem from="1624901803164" duration="1000" />
     </task>
     <servers />
   </component>

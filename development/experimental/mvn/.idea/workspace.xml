@@ -5,17 +5,120 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ed2fd7a0-e51f-484b-8ba6-69bb4ba3c6da" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../production/stickjumper/src/com/stickjumper/controller/scenerycontrolling/GameEventListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../production/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../production/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../production/stickjumper/src/com/stickjumper/controller/scenerycontrolling/SceneryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../production/stickjumper/src/com/stickjumper/controller/scenerycontrolling/SceneryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../production/stickjumper/src/com/stickjumper/controller/scenerycontrolling/SceneryRandomGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../production/stickjumper/src/com/stickjumper/controller/scenerycontrolling/SceneryRandomGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../production/stickjumper/src/com/stickjumper/data/GameElement.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../production/stickjumper/src/com/stickjumper/data/GameElements/Obstacles/Enemy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../production/stickjumper/src/com/stickjumper/data/gameelements/Coin.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../production/stickjumper/src/com/stickjumper/data/gameelements/GameCharacter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../production/stickjumper/src/com/stickjumper/data/gameelements/Obstacle.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../production/stickjumper/src/com/stickjumper/data/gameelements/obstacles/SteadyObstacle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stickjumper/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stickjumper/controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stickjumper/controller/PanelFrameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stickjumper/controller/PanelFrameManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stickjumper/controller/scenerycontrolling/SceneryController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stickjumper/controller/scenerycontrolling/SceneryRandomGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stickjumper/data/GameElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stickjumper/data/GameElement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stickjumper/data/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stickjumper/data/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stickjumper/data/gameelements/Coin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stickjumper/data/gameelements/Coin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stickjumper/data/gameelements/GameCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stickjumper/data/gameelements/GameCharacter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stickjumper/data/gameelements/Obstacle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stickjumper/data/gameelements/Obstacle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stickjumper/data/gameelements/obstacles/Enemy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stickjumper/data/gameelements/obstacles/SteadyObstacle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stickjumper/frontend/MainFrameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stickjumper/frontend/MainFrameView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stickjumper/frontend/boot/LoadingPanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stickjumper/frontend/boot/LoadingPanelView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stickjumper/frontend/game/GamePanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stickjumper/frontend/game/GamePanelView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stickjumper/frontend/login/LoginFrameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stickjumper/frontend/login/LoginFrameView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stickjumper/frontend/login/LoginPanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stickjumper/frontend/login/LoginPanelView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stickjumper/frontend/login/RegisterPanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stickjumper/frontend/login/RegisterPanelView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stickjumper/frontend/start/StartPanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stickjumper/frontend/start/StartPanelView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stickjumper/frontend/start/startsidemenu/StartSideMenuPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stickjumper/frontend/start/startsidemenu/StartSideMenuPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stickjumper/frontend/start/startsidemenu/submenues/AccountPanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stickjumper/frontend/start/startsidemenu/submenues/AccountPanelView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stickjumper/frontend/start/startsidemenu/submenues/SettingsPanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stickjumper/frontend/start/startsidemenu/submenues/SettingsPanelView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stickjumper/frontend/start/startsidemenu/submenues/StatisticsPanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stickjumper/frontend/start/startsidemenu/submenues/StatisticsPanelView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stickjumper/start/Starter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stickjumper/start/Starter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stickjumper/utils/CountDownTimer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stickjumper/utils/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stickjumper/utils/Settings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stickjumper/utils/components/AdvancedButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stickjumper/utils/components/AdvancedButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stickjumper/utils/components/JRoundPasswordField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stickjumper/utils/components/JRoundPasswordField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stickjumper/utils/components/JRoundTextField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stickjumper/utils/components/JRoundTextField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stickjumper/utils/components/LoginLabel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stickjumper/utils/components/LoginLabel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stickjumper/utils/manager/ImageManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stickjumper/utils/manager/ImageManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stickjumper/utils/manager/SoundManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stickjumper/utils/manager/SoundManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stickjumper/utils/manager/StringManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stickjumper/utils/manager/StringManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stickjumper/utils/manager/UITools.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stickjumper/utils/manager/UITools.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stickjumper/utils/security/PasswordHasher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stickjumper/utils/security/PasswordHasher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/elements/coin/coin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/icons/appicon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/icons/appicon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/sounds/DunDunDun.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/sounds/Webdriver-Torso.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/sounds/Winding-Alarm-Clock.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/sounds/boot-2.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/sounds/boot-sound.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/sounds/coin.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/sounds/empty-boot-sequence.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/strings/de.prop" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/strings/de.prop" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/strings/en.prop" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/strings/en.prop" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/stickjumper/controller/Controller$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stickjumper/controller/Controller$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/stickjumper/controller/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stickjumper/controller/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/stickjumper/controller/PanelFrameManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stickjumper/controller/PanelFrameManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/stickjumper/controller/scenerycontrolling/SceneryController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/stickjumper/controller/scenerycontrolling/SceneryController$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/stickjumper/controller/scenerycontrolling/SceneryController$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/stickjumper/controller/scenerycontrolling/SceneryController$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/stickjumper/controller/scenerycontrolling/SceneryController$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/stickjumper/controller/scenerycontrolling/SceneryController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/stickjumper/controller/scenerycontrolling/SceneryRandomGenerator$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/stickjumper/controller/scenerycontrolling/SceneryRandomGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/stickjumper/data/GameElement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stickjumper/data/GameElement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/stickjumper/data/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stickjumper/data/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/stickjumper/data/database/DBConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stickjumper/data/database/DBConnection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/stickjumper/data/gameelements/Coin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stickjumper/data/gameelements/Coin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/stickjumper/data/gameelements/GameCharacter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stickjumper/data/gameelements/GameCharacter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/stickjumper/data/gameelements/Obstacle.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stickjumper/data/gameelements/Obstacle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/stickjumper/data/gameelements/obstacles/Enemy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/stickjumper/data/gameelements/obstacles/SteadyObstacle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/stickjumper/frontend/MainFrameView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stickjumper/frontend/MainFrameView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/stickjumper/frontend/boot/LoadingPanelView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stickjumper/frontend/boot/LoadingPanelView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/stickjumper/frontend/game/GamePanelView$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stickjumper/frontend/game/GamePanelView$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/stickjumper/frontend/game/GamePanelView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stickjumper/frontend/game/GamePanelView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/stickjumper/frontend/login/LoginFrameView$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stickjumper/frontend/login/LoginFrameView$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/stickjumper/frontend/login/LoginFrameView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stickjumper/frontend/login/LoginFrameView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/stickjumper/frontend/login/LoginPanelView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stickjumper/frontend/login/LoginPanelView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/stickjumper/frontend/login/RegisterPanelView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stickjumper/frontend/login/RegisterPanelView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/stickjumper/frontend/start/StartPanelView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stickjumper/frontend/start/StartPanelView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/stickjumper/frontend/start/startsidemenu/StartSideMenuPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stickjumper/frontend/start/startsidemenu/StartSideMenuPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/stickjumper/frontend/start/startsidemenu/submenues/AccountPanelView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stickjumper/frontend/start/startsidemenu/submenues/AccountPanelView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/stickjumper/frontend/start/startsidemenu/submenues/SettingsPanelView$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stickjumper/frontend/start/startsidemenu/submenues/SettingsPanelView$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/stickjumper/frontend/start/startsidemenu/submenues/SettingsPanelView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stickjumper/frontend/start/startsidemenu/submenues/SettingsPanelView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/stickjumper/frontend/start/startsidemenu/submenues/StatisticsPanelView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stickjumper/frontend/start/startsidemenu/submenues/StatisticsPanelView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/stickjumper/start/Starter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stickjumper/start/Starter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/stickjumper/utils/CountDownTimer$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/stickjumper/utils/CountDownTimer$CountDownCallback.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/stickjumper/utils/CountDownTimer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/stickjumper/utils/Settings.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stickjumper/utils/Settings.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/stickjumper/utils/components/AdvancedButton$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stickjumper/utils/components/AdvancedButton$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/stickjumper/utils/components/AdvancedButton$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stickjumper/utils/components/AdvancedButton$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/stickjumper/utils/components/AdvancedButton.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stickjumper/utils/components/AdvancedButton.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/stickjumper/utils/components/JRoundPasswordField.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stickjumper/utils/components/JRoundPasswordField.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/stickjumper/utils/components/JRoundTextField.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stickjumper/utils/components/JRoundTextField.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/stickjumper/utils/components/LoginLabel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stickjumper/utils/components/LoginLabel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/stickjumper/utils/manager/ImageManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stickjumper/utils/manager/ImageManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/stickjumper/utils/manager/SoundManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stickjumper/utils/manager/SoundManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/stickjumper/utils/manager/StringManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stickjumper/utils/manager/StringManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/stickjumper/utils/manager/UITools.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stickjumper/utils/manager/UITools.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/stickjumper/utils/security/PasswordHasher.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stickjumper/utils/security/PasswordHasher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/elements/coin/coin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/icons/appicon.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/images/icons/appicon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sounds/DunDunDun.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sounds/Webdriver-Torso.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sounds/Winding-Alarm-Clock.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sounds/boot-2.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sounds/boot-sound.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sounds/coin.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sounds/empty-boot-sequence.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/strings/de.prop" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/strings/de.prop" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/strings/en.prop" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/strings/en.prop" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/stickjumper-jar-with-dependencies.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/stickjumper-jar-with-dependencies.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/stickjumper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../production/stickjumper/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../production/stickjumper/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +142,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="configurable.group.other" />
@@ -65,13 +168,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -93,6 +198,7 @@
       <workItem from="1622472526835" duration="1628000" />
       <workItem from="1623263005371" duration="1451000" />
       <workItem from="1623418464029" duration="693000" />
+      <workItem from="1624901833771" duration="746000" />
     </task>
     <servers />
   </component>

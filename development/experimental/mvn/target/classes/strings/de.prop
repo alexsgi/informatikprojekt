@@ -1,8 +1,13 @@
+# General
+app.name=StickJumper
+
 # Loading screen
+loading.loading=Lade Spiel...
+
 loading.hint0=Tipp: \u00dcberpr\u00fcfe deinen Rang unter den Statistiken
-loading.hint1=Tipp: Durch das Gedr\u00fcckt-Halten der Leertaste springst du l\u00e4nger
+loading.hint1=Tipp: Halte die Leertaste gedr\u00fcckt, um l\u00e4nger zu springen
 loading.hint2=Tipp: Hast du den geheimen Cheat im Spiel gefunden?
-loading.hint3=Tipp: Durch das Dr\u00fccken der Leertaste springst du
+loading.hint3=Tipp: Nutze die Leertaste zum Springen
 
 # Starter
 starter.db.connection.error=Verbindung zum Server kann nicht aufgebaut werden - Internetverbindung vorhanden?
@@ -10,6 +15,7 @@ starter.db.connection.error=Verbindung zum Server kann nicht aufgebaut werden - 
 # Game
 game.gameover=Game over
 game.cheatcode.active=Geheimer Cheat aktiviert
+game.won=Gewonnen!
 
 # Login
 login.frame.title=Login
@@ -61,7 +67,12 @@ menu.settings.soundeffects=Soundeffekte
 menu.settings.gameovermusic=Game-over-Musik
 menu.settings.button.on=AN
 menu.settings.button.off=AUS
+menu.settings.language=Sprache
+menu.settings.skin=Skin
+menu.settings.skin1=Geist
+menu.settings.skin2=Gruseliger Geist
+menu.settings.skin3=Glurak
 # Menu-Statistics
 menu.statistics.title=STATISTIKEN
 menu.statistics.rankingheader=Ranking der besten StickJumper-Spieler
-menu.statistics.placenotice=Du bist auf dem %d. Platz
+menu.statistics.placenotice=Du bist auf dem %s. Platz

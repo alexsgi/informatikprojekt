@@ -8,7 +8,6 @@ import com.stickjumper.utils.components.JRoundPasswordField;
 import com.stickjumper.utils.components.JRoundTextField;
 import com.stickjumper.utils.components.LoginLabel;
 import com.stickjumper.utils.manager.ImageManager;
-import com.stickjumper.utils.manager.StringManager;
 import com.stickjumper.utils.security.PasswordHasher;
 
 import javax.swing.*;
@@ -23,7 +22,7 @@ public class RegisterPanelView extends JPanel implements ActionListener {
     private final AdvancedButton registerButton;
     private final JTextField userNameTextField;
     private final JPasswordField passwordField, passwordFieldControl;
-    private final JLabel warningLabel;
+    private final LoginLabel warningLabel;
 
     public RegisterPanelView(Controller controller, LoginFrameView loginFrameView) {
         super(true);
@@ -41,19 +40,19 @@ public class RegisterPanelView extends JPanel implements ActionListener {
         add(backButton);
 
         LoginLabel welcomeLabel = new LoginLabel(LoginLabel.HEADER);
-        welcomeLabel.setText(StringManager.getString("login.register.welcome"));
+        welcomeLabel.setKeyText("login.register.welcome");
         welcomeLabel.setSize(600, 50);
         welcomeLabel.setLocation(0, 20);
         add(welcomeLabel);
 
         LoginLabel signInLabel = new LoginLabel(LoginLabel.SUBHEADER);
-        signInLabel.setText(StringManager.getString("login.register.joinrequest"));
+        signInLabel.setKeyText("login.register.joinrequest");
         signInLabel.setSize(getWidth(), 30);
         signInLabel.setLocation(0, welcomeLabel.getY() + welcomeLabel.getHeight() + 5);
         add(signInLabel);
 
         LoginLabel userNameLabel = new LoginLabel(LoginLabel.TEXT);
-        userNameLabel.setText(StringManager.getString("login.register.username"));
+        userNameLabel.setKeyText("login.register.username");
         userNameLabel.setSize(getWidth() - 2 * 100, 30);
         userNameLabel.setLocation(getWidth() / 7, signInLabel.getY() + signInLabel.getHeight() + 25);
         add(userNameLabel);
@@ -64,7 +63,7 @@ public class RegisterPanelView extends JPanel implements ActionListener {
         add(userNameTextField);
 
         LoginLabel passwordLabel = new LoginLabel(LoginLabel.TEXT);
-        passwordLabel.setText(StringManager.getString("login.register.password"));
+        passwordLabel.setKeyText("login.register.password");
         passwordLabel.setSize(getWidth() - 2 * 100, 30);
         passwordLabel.setLocation(getWidth() / 7, userNameTextField.getY() + userNameTextField.getHeight() + 1);
         add(passwordLabel);
@@ -75,7 +74,7 @@ public class RegisterPanelView extends JPanel implements ActionListener {
         add(passwordField);
 
         LoginLabel passwordLabelControl = new LoginLabel(LoginLabel.TEXT);
-        passwordLabelControl.setText(StringManager.getString("login.register.repeatpassword"));
+        passwordLabelControl.setKeyText("login.register.repeatpassword");
         passwordLabelControl.setSize(getWidth() - 2 * 100, 30);
         passwordLabelControl.setLocation(getWidth() / 7, passwordField.getY() + userNameTextField.getHeight() + 1);
         add(passwordLabelControl);
@@ -91,7 +90,7 @@ public class RegisterPanelView extends JPanel implements ActionListener {
         add(warningLabel);
 
         registerButton = new AdvancedButton();
-        registerButton.setText(StringManager.getString("login.register.button.signup"));
+        registerButton.setKeyText("login.register.button.signup");
         registerButton.setFont(Settings.FONT_LOGIN_BUTTON);
         registerButton.setSize(150, 40);
         registerButton.setLocation((getWidth() - registerButton.getWidth()) / 2, getHeight() - (int) (registerButton.getHeight() * 3.5));
@@ -102,28 +101,28 @@ public class RegisterPanelView extends JPanel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        warningLabel.setText("");
+        warningLabel.setKeyText(null);
         switch (e.getActionCommand()) {
             case "registerButton" -> {
                 String username = userNameTextField.getText(), password, passwordControl;
                 char[] passwordArray = passwordField.getPassword(), passwordControlArray = passwordFieldControl.getPassword();
                 if (username == null || username.isEmpty()) {
-                    warningLabel.setText(StringManager.getString("login.register.warning.username"));
+                    warningLabel.setKeyText("login.register.warning.username");
                     userNameTextField.requestFocus();
                     return;
                 }
                 if (passwordArray == null || (password = new String(passwordArray)).isEmpty()) {
-                    warningLabel.setText(StringManager.getString("login.register.warning.password"));
+                    warningLabel.setKeyText("login.register.warning.password");
                     passwordField.requestFocus();
                     return;
                 }
                 if (passwordControlArray == null || (passwordControl = new String(passwordControlArray)).isEmpty()) {
-                    warningLabel.setText(StringManager.getString("login.register.warning.confirmpassword"));
+                    warningLabel.setKeyText("login.register.warning.confirmpassword");
                     passwordFieldControl.requestFocus();
                     return;
                 }
                 if (!password.equals(passwordControl)) {
-                    warningLabel.setText(StringManager.getString("login.register.warning.nomatchpasswords"));
+                    warningLabel.setKeyText("login.register.warning.nomatchpasswords");
                     return;
                 }
                 registerButton.setEnabled(false);
@@ -135,7 +134,7 @@ public class RegisterPanelView extends JPanel implements ActionListener {
                 try {
                     boolean registrationSuccess = DBConnection.registerPlayer(username, hashed);
                     if (!registrationSuccess) {
-                        warningLabel.setText(StringManager.getString("login.register.warning.alreadytaken"));
+                        warningLabel.setKeyText("login.register.warning.alreadytaken");
                     } else {
                         // Registration successful
                         userNameTextField.setText("");
@@ -152,7 +151,7 @@ public class RegisterPanelView extends JPanel implements ActionListener {
                     }
                 } catch (SQLException throwable) {
                     // TODO: implement server status check (online?), otherwise the program will freeze
-                    warningLabel.setText(StringManager.getString("login.register.warning.inetconnunavailable"));
+                    warningLabel.setKeyText("login.register.warning.inetconnunavailable");
                     Settings.logData("SQLException during register", throwable);
                 }
                 registerButton.setEnabled(true);

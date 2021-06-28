@@ -1,12 +1,13 @@
 package com.stickjumper.frontend.game;
 
 import com.stickjumper.controller.Controller;
-import com.stickjumper.controller.scenerycontrolling.SceneryController;
+import com.stickjumper.controller.scenerycontrolling.GameController;
 import com.stickjumper.frontend.rendering.GameElementRender;
 import com.stickjumper.utils.Settings;
 import com.stickjumper.utils.components.AdvancedButton;
+import com.stickjumper.utils.components.AdvancedLabel;
 import com.stickjumper.utils.manager.ImageManager;
-import com.stickjumper.utils.manager.StringManager;
+import com.stickjumper.utils.manager.SoundManager;
 
 import javax.swing.*;
 import java.awt.*;
@@ -18,7 +19,8 @@ import java.awt.event.MouseEvent;
 public class GamePanelView extends JPanel implements ActionListener {
 
     private final Controller controller;
-    public JLabel lblGameOver, lblHighScore;
+    public AdvancedLabel lblGameOver, lblHighScore;
+    public JLabel lblGround;
 
     private int steadyObstaclesCheatCount;
 
@@ -38,7 +40,7 @@ public class GamePanelView extends JPanel implements ActionListener {
         backButton.addActionListener(this);
         add(backButton);
 
-        lblGameOver = new JLabel(StringManager.getString("game.gameover"));
+        lblGameOver = new AdvancedLabel();
         lblGameOver.setHorizontalAlignment(SwingConstants.CENTER);
         lblGameOver.setVerticalAlignment(SwingConstants.CENTER);
         lblGameOver.setSize(getWidth(), getHeight() + 100);
@@ -50,7 +52,6 @@ public class GamePanelView extends JPanel implements ActionListener {
         lblGameOver.setForeground(Color.WHITE);
         add(lblGameOver);
 
-        // TODO: !?
         backButton = new AdvancedButton(ImageManager.GAME_ICON_HOME_ACCENT, ImageManager.GAME_ICON_HOME);
         backButton.setSize(36, 36);
         backButton.setLocation(5, 105);
@@ -58,7 +59,8 @@ public class GamePanelView extends JPanel implements ActionListener {
         backButton.addActionListener(this);
         lblGameOver.add(backButton);
 
-        lblHighScore = new JLabel(String.valueOf(controller.getLocalHighScore()));
+        lblHighScore = new AdvancedLabel();
+        lblHighScore.setText(String.valueOf(controller.getLocalHighScore()));
         lblHighScore.setHorizontalAlignment(SwingConstants.CENTER);
         lblHighScore.setVerticalAlignment(SwingConstants.CENTER);
         lblHighScore.setSize(getWidth(), 50);
@@ -70,24 +72,32 @@ public class GamePanelView extends JPanel implements ActionListener {
         lblHighScore.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                if (SceneryController.gameOver) return;
+                if (GameController.isGameOver()) return;
                 if (Settings.STEADY_OBSTACLES_LETHAL) {
                     steadyObstaclesCheatCount++;
                     if (steadyObstaclesCheatCount >= 10) {
                         Settings.STEADY_OBSTACLES_LETHAL = false;
-                        lblHighScore.setText(StringManager.getString("game.cheatcode.active"));
+                        lblHighScore.setKeyText("game.cheatcode.active");
+                        SoundManager.playSound(SoundManager.inputStreamCheatSound);
                     }
                 }
             }
         });
+
+        lblGround = new JLabel();
+        lblGround.setBackground(new Color(205, 201, 201, 80));
+        lblGround.setSize(getWidth(), Settings.SEA_LEVEL);
+        lblGround.setLocation(0, getHeight() - lblGround.getHeight());
+        lblGround.setOpaque(true);
+        add(lblGround);
     }
 
     public void updateHighScore() {
-        lblHighScore.setText(String.valueOf(controller.getLastRoundHighScore()));
+        lblHighScore.setNumberText(controller.getLastRoundHighScore());
     }
 
     public void resetScoreLabel() {
-        lblHighScore.setText(String.valueOf(controller.getLastRoundHighScore()));
+        lblHighScore.setNumberText(controller.getLastRoundHighScore());
     }
 
     @Override
@@ -101,5 +111,13 @@ public class GamePanelView extends JPanel implements ActionListener {
 
     public void resetCheatCount() {
         steadyObstaclesCheatCount = 0;
+    }
+
+    public void showGameOver() {
+        lblGameOver.setKeyText("game.gameover");
+    }
+
+    public void showGameWin() {
+        lblGameOver.setKeyText("game.won");
     }
 }

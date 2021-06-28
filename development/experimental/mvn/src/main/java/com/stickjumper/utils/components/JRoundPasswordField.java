@@ -3,7 +3,6 @@ package com.stickjumper.utils.components;
 import com.stickjumper.utils.Settings;
 
 import javax.swing.*;
-import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.geom.RoundRectangle2D;
 
@@ -28,7 +27,6 @@ public class JRoundPasswordField extends JPasswordField {
 
     @Override
     protected void paintBorder(Graphics g) {
-        g.setColor(((LineBorder) getBorder()).getLineColor());
         g.drawRoundRect(0, 0, getWidth() - 1, getHeight() - 1, Settings.LOGIN_VIEW_TEXTFIELD_CORNER_RADIUS, Settings.LOGIN_VIEW_TEXTFIELD_CORNER_RADIUS);
     }
 

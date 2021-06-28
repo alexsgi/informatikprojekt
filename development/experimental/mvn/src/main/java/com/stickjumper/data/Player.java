@@ -3,11 +3,11 @@ package com.stickjumper.data;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class Player implements Comparable {
+public class Player implements Comparable<Player> {
 
     private final int key;
+    private final String playerName, playerPassword;
     private int highScore, skin;
-    private String playerName, playerPassword;
 
     public Player(int key, String playerName, String playerPassword, int highScore, int skin) {
         this.key = key;
@@ -31,24 +31,13 @@ public class Player implements Comparable {
         return new Player(k, n, p, h, s);
     }
 
-    public int getKey() {
-        return key;
-    }
 
     public String getPlayerName() {
         return playerName;
     }
 
-    public void setPlayerName(String playerName) {
-        this.playerName = playerName;
-    }
-
     public String getPlayerPassword() {
         return playerPassword;
-    }
-
-    public void setPlayerPassword(String playerPassword) {
-        this.playerPassword = playerPassword;
     }
 
     public int getHighScore() {
@@ -67,12 +56,8 @@ public class Player implements Comparable {
         this.skin = skin;
     }
 
-    public String getShortData() {
-        return String.format("%s : %d", playerName, highScore);
-    }
-
     @Override
-    public int compareTo(Object o) {
-        return ((Player) o).getHighScore() - highScore;
+    public int compareTo(Player o) {
+        return o.getHighScore() - highScore;
     }
 }
