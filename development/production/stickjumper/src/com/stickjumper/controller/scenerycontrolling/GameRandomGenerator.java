@@ -15,7 +15,7 @@ public class GameRandomGenerator {
 
     private static boolean highScoreReachedNow = false, gameEndReached = false;
     private Timer timer;
-    private GameController sceneryController;
+    private GameController gameController;
     private int h, w;
 
     public static void highScoreReached() {
@@ -27,15 +27,15 @@ public class GameRandomGenerator {
         gameEndReached = false;
     }
 
-    public void setSceneryController(GameController sceneryController) {
-        this.sceneryController = sceneryController;
-        GamePanelView gamePanelView = sceneryController.getGamePanelView();
+    public void setGameController(GameController gameController) {
+        this.gameController = gameController;
+        GamePanelView gamePanelView = gameController.getGamePanelView();
         h = gamePanelView.getHeight() - Settings.SEA_LEVEL;
         w = gamePanelView.getWidth();
     }
 
     public void randomGenerate() {
-        sceneryController.initGameCharacter(1);
+        gameController.initGameCharacter(gameController.getController().getSignedInPlayer());
         timer = new Timer();
         timer.scheduleAtFixedRate(new TimerTask() {
             @Override
@@ -49,7 +49,7 @@ public class GameRandomGenerator {
                     gameEndReached = true;
                 } else {
                     timer.cancel();
-                    sceneryController.stopGame(true);
+                    gameController.stopGame(true);
                 }
             }
         }, 0, 7000);
@@ -57,20 +57,20 @@ public class GameRandomGenerator {
 
     private void createCoin(int height, int xShift) {
         Coin coin = Coin.createCoin(new Point(w + xShift, (h - Coin.getStandardDimens().getHeight() - height)));
-        sceneryController.initGameElement(coin);
+        gameController.initGameElement(coin);
     }
 
     private void createDefaultCoin(int height, int xShift) {
         Coin coin = new Coin(new Point(w + xShift, (h - Coin.getStandardDimens().getHeight() - height)));
-        sceneryController.initGameElement(coin);
+        gameController.initGameElement(coin);
     }
 
     private void createEnemy(int speed, int xShift) {
-        sceneryController.initGameElement(new Enemy(new Point(w + xShift, (h - Enemy.getStandardDimens().getHeight())), speed));
+        gameController.initGameElement(new Enemy(new Point(w + xShift, (h - Enemy.getStandardDimens().getHeight())), speed));
     }
 
     public void createSteadyObstacle(int xShift) {
-        sceneryController.initGameElement(new SteadyObstacle(new Point(w + xShift, (h - SteadyObstacle.getStandardDimens().getHeight()))));
+        gameController.initGameElement(new SteadyObstacle(new Point(w + xShift, (h - SteadyObstacle.getStandardDimens().getHeight()))));
     }
 
     public void stop() {

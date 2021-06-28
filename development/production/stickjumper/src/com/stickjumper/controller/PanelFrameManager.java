@@ -26,7 +26,7 @@ public class PanelFrameManager {
     private SettingsPanelView settingsPanelView;
     private AccountPanelView accountPanelView;
     private LoginFrameView loginFrameView;
-    private GameController sceneryController;
+    private GameController gameController;
 
     public PanelFrameManager(Controller controller, MainFrameView mainFrameView) {
         this.controller = controller;
@@ -57,7 +57,7 @@ public class PanelFrameManager {
     }
 
     public void switchToStartPanel() {
-        sceneryController.stopGame(false);
+        gameController.stopGame(false);
         controller.getSceneryRandomGenerator().stop();
 
         controller.gameStarted = false;
@@ -102,8 +102,8 @@ public class PanelFrameManager {
         this.loginFrameView = loginFrameView;
     }
 
-    public void setSceneryController(GameController sceneryController) {
-        this.sceneryController = sceneryController;
+    public void setGameController(GameController gameController) {
+        this.gameController = gameController;
     }
 
     public void setStatisticsPanel(StatisticsPanelView statisticsPanelView) {
@@ -120,12 +120,13 @@ public class PanelFrameManager {
 
     public void switchToStatisticsPanel() {
         mainFrameView.getContentPane().removeAll();
-        mainFrameView.getContentPane().add(statisticsPanelView);
         statisticsPanelView.refresh();
+        mainFrameView.getContentPane().add(statisticsPanelView);
     }
 
     public void switchToSettingsPanel() {
         mainFrameView.getContentPane().removeAll();
+        settingsPanelView.refreshSkins();
         mainFrameView.getContentPane().add(settingsPanelView);
     }
 

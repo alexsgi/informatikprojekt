@@ -1,6 +1,7 @@
 package com.stickjumper.frontend.start.startsidemenu.submenues;
 
 import com.stickjumper.controller.Controller;
+import com.stickjumper.data.Player;
 import com.stickjumper.frontend.start.startsidemenu.StartSideMenuPanel;
 import com.stickjumper.utils.Settings;
 import com.stickjumper.utils.components.AdvancedLabel;
@@ -10,18 +11,29 @@ import com.stickjumper.utils.manager.StringManager;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 
 public class SettingsPanelView extends JPanel {
 
     private final AdvancedToggleButton soundEffectToggle, gameOverMusicToggle;
-    private String lastSelection;
-    private JComboBox<String> comboBox;
+    private final Controller controller;
+    private final JComboBox<String> comboBoxSkin;
+    private final ItemListener itemListener = new ItemListener() {
+        @Override
+        public void itemStateChanged(ItemEvent e) {
+            if (e.getStateChange() == ItemEvent.SELECTED && controller.getSignedInPlayer() != null) {
+                controller.getSignedInPlayer().setSkin(comboBoxSkin.getSelectedIndex());
+            }
+        }
+    };
 
     public SettingsPanelView(Controller controller) {
         super(true);
         setLayout(null);
         setOpaque(false);
         setSize(Settings.SCREEN_WIDTH, Settings.SCREEN_HEIGHT);
+
+        this.controller = controller;
 
         StartSideMenuPanel menuPanel = new StartSideMenuPanel(new StartSideMenuPanel.ButtonCallback() {
             @Override
@@ -62,13 +74,13 @@ public class SettingsPanelView extends JPanel {
         AdvancedLabel lblSoundEffects = new AdvancedLabel();
         lblSoundEffects.setKeyText("menu.settings.soundeffects");
         lblSoundEffects.setSize(200, 30);
-        lblSoundEffects.setLocation(menuPanel.getWidth() + 80, 300);
+        lblSoundEffects.setLocation(menuPanel.getWidth() + 100, 300);
         lblSoundEffects.setFont(Settings.FONT_LABEL_BOLD_SMALL);
         add(lblSoundEffects);
 
         soundEffectToggle = new AdvancedToggleButton(!Settings.SOUND_EFFECTS_ON);
         soundEffectToggle.setKeyText(Settings.SOUND_EFFECTS_ON ? "menu.settings.button.on" : "menu.settings.button.off");
-        soundEffectToggle.setSize(80, lblSoundEffects.getHeight());
+        soundEffectToggle.setSize(150, lblSoundEffects.getHeight());
         soundEffectToggle.setLocation(lblSoundEffects.getX() + lblSoundEffects.getWidth(), lblSoundEffects.getY());
         add(soundEffectToggle);
 
@@ -116,7 +128,7 @@ public class SettingsPanelView extends JPanel {
         add(lblLanguage);
 
         String[] choices = {StringManager.DE.toUpperCase(), StringManager.EN.toUpperCase()};
-        comboBox = new JComboBox<>(choices);
+        JComboBox<String> comboBox = new JComboBox<>(choices);
         comboBox.setSize(gameOverMusicToggle.getWidth(), gameOverMusicToggle.getHeight());
         comboBox.setLocation(gameOverMusicToggle.getX(), gameOverMusicToggle.getY() + gameOverMusicToggle.getHeight() + 30);
         comboBox.setFocusable(false);
@@ -126,15 +138,25 @@ public class SettingsPanelView extends JPanel {
                 if (language.equalsIgnoreCase(StringManager.DE) || language.equalsIgnoreCase(StringManager.EN)) {
                     StringManager.init(language);
                     StringManager.refreshAllFields();
-                } else {
-                    Settings.logData(language + " not implemented");
-                    comboBox.setSelectedItem(lastSelection);
+                    refreshSkins();
                 }
-            } else if (e.getStateChange() == ItemEvent.DESELECTED) {
-                lastSelection = e.getItem().toString();
             }
         });
         add(comboBox);
+
+        AdvancedLabel lblSkin = new AdvancedLabel();
+        lblSkin.setKeyText("menu.settings.skin");
+        lblSkin.setSize(lblLanguage.getWidth(), lblLanguage.getHeight());
+        lblSkin.setLocation(lblLanguage.getX(), lblLanguage.getY() + lblLanguage.getHeight() + 30);
+        lblSkin.setFont(Settings.FONT_LABEL_BOLD_SMALL);
+        add(lblSkin);
+
+        comboBoxSkin = new JComboBox<>();
+        comboBoxSkin.setSize(gameOverMusicToggle.getWidth(), gameOverMusicToggle.getHeight());
+        comboBoxSkin.setLocation(comboBox.getX(), comboBox.getY() + comboBox.getHeight() + 30);
+        comboBoxSkin.setFocusable(false);
+        comboBoxSkin.addItemListener(itemListener);
+        add(comboBoxSkin);
 
         JLabel lblVersion = new JLabel();
         lblVersion.setText(Settings.APP_VERSION);
@@ -144,5 +166,30 @@ public class SettingsPanelView extends JPanel {
         lblVersion.setForeground(Color.WHITE);
         lblVersion.setHorizontalAlignment(SwingConstants.CENTER);
         add(lblVersion);
+    }
+
+    public void refreshSkins() {
+        Player player = controller.getSignedInPlayer();
+        comboBoxSkin.removeItemListener(itemListener);
+        comboBoxSkin.removeAllItems();
+        comboBoxSkin.setEditable(false);
+        comboBoxSkin.addItem(StringManager.getString("menu.settings.skin1"));
+        if (player == null) {
+            comboBoxSkin.setEditable(true);
+            comboBoxSkin.addItemListener(itemListener);
+            return;
+        }
+        if (player.getHighScore() > 1000) {
+            comboBoxSkin.addItem(StringManager.getString("menu.settings.skin2"));
+            if (player.getHighScore() > 2000) {
+                comboBoxSkin.addItem(StringManager.getString("menu.settings.skin3"));
+            }
+        }
+        comboBoxSkin.setSelectedIndex(player.getSkin());
+        if (controller.getSignedInPlayer() != null) {
+            controller.getSignedInPlayer().setSkin(comboBoxSkin.getSelectedIndex());
+        }
+        comboBoxSkin.setEditable(true);
+        comboBoxSkin.addItemListener(itemListener);
     }
 }

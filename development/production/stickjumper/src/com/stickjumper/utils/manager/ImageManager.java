@@ -11,7 +11,7 @@ public class ImageManager {
     public static BufferedImage START_ICON_PLAY, START_ICON_PLAY_ACCENT;
     public static BufferedImage START_MENU_BACKGROUND_DARK;
     public static BufferedImage ICON_BACK, ICON_BACK_DARK;
-    public static BufferedImage PLAYER_SKIN_1;
+    public static BufferedImage PLAYER_SKIN_1, PLAYER_SKIN_2, PLAYER_SKIN_3;
     public static BufferedImage COIN_SKIN, COIN_SKIN_10, COIN_SKIN_20, COIN_SKIN_30, COIN_SKIN_40, COIN_SKIN_50;
     public static BufferedImage ENEMY_SKIN, STEADY_OBSTACLE_SKIN;
     public static BufferedImage ICON_INTERNET_AVAILABLE, ICON_INTERNET_UNAVAILABLE;
@@ -29,6 +29,8 @@ public class ImageManager {
         ICON_BACK = UITools.getImage(c, "/images/icons/back_dark.png");
         ICON_BACK_DARK = UITools.getImage(c, "/images/icons/back_dark.png");
         PLAYER_SKIN_1 = UITools.getImage(c, "/images/elements/skins/skin_1.png");
+        PLAYER_SKIN_2 = UITools.getImage(c, "/images/elements/skins/skin_2.png");
+        PLAYER_SKIN_3 = UITools.getImage(c, "/images/elements/skins/skin_3.png");
         COIN_SKIN = UITools.getImage(c, "/images/elements/coin/coin_1.png");
         ENEMY_SKIN = UITools.getImage(c, "/images/elements/obstacles/enemy_skin.png");
         STEADY_OBSTACLE_SKIN = UITools.getImage(c, "/images/elements/obstacles/steady_obstacle_skin.png");

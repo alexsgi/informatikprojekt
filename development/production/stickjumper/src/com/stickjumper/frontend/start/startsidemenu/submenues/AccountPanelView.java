@@ -58,7 +58,7 @@ public class AccountPanelView extends JPanel {
         LoginLabel lblPlayerName = new LoginLabel(LoginLabel.TEXT);
         lblPlayerName.setKeyText("menu.account.playername");
         lblPlayerName.setSize(250, 15);
-        lblPlayerName.setLocation(menuPanel.getWidth() + 30, 200);
+        lblPlayerName.setLocation(menuPanel.getWidth() + 100, 200);
         lblPlayerName.setFont(Settings.FONT_LOGIN_FIELDS_LABELS);
         add(lblPlayerName);
 
@@ -68,7 +68,7 @@ public class AccountPanelView extends JPanel {
         txtPlayerName.setEnabled(false);
         txtPlayerName.setDisabledTextColor(Color.black);
         txtPlayerName.setSize(lblPlayerName.getWidth(), 30);
-        txtPlayerName.setLocation(menuPanel.getWidth() + 30, lblPlayerName.getY() + lblPlayerName.getHeight() + 5);
+        txtPlayerName.setLocation(lblPlayerName.getX(), lblPlayerName.getY() + lblPlayerName.getHeight() + 5);
         txtPlayerName.setFont(Settings.FONT_LOGIN_FIELDS_LABELS);
         add(txtPlayerName);
 

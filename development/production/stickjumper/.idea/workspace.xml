@@ -5,10 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c009156-479f-4b70-869f-88943c226565" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/res/images/elements/skins/skin_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/images/elements/skins/skin_3.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/strings/de.prop" beforeDir="false" afterPath="$PROJECT_DIR$/res/strings/de.prop" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/strings/en.prop" beforeDir="false" afterPath="$PROJECT_DIR$/res/strings/en.prop" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/stickjumper/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/stickjumper/controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/stickjumper/controller/PanelFrameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/stickjumper/controller/PanelFrameManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/stickjumper/controller/scenerycontrolling/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/stickjumper/controller/scenerycontrolling/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/stickjumper/controller/scenerycontrolling/GameRandomGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/stickjumper/controller/scenerycontrolling/GameRandomGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/stickjumper/data/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/stickjumper/data/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/stickjumper/data/gameelements/GameCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/stickjumper/data/gameelements/GameCharacter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/stickjumper/frontend/MainFrameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/stickjumper/frontend/MainFrameView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/stickjumper/frontend/start/startsidemenu/submenues/AccountPanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/stickjumper/frontend/start/startsidemenu/submenues/AccountPanelView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/stickjumper/frontend/start/startsidemenu/submenues/SettingsPanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/stickjumper/frontend/start/startsidemenu/submenues/SettingsPanelView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/stickjumper/utils/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/stickjumper/utils/Settings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/stickjumper/utils/manager/StringManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/stickjumper/utils/manager/StringManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/stickjumper/utils/manager/ImageManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/stickjumper/utils/manager/ImageManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +65,7 @@
       <recent name="$PROJECT_DIR$/res/images/icons" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/res/images/elements/skins" />
       <recent name="$PROJECT_DIR$/res/images/icons" />
       <recent name="$PROJECT_DIR$" />
     </key>
@@ -106,6 +119,8 @@
       <workItem from="1624706821014" duration="2493000" />
       <workItem from="1624788101539" duration="4367000" />
       <workItem from="1624815648896" duration="2214000" />
+      <workItem from="1624865565792" duration="394000" />
+      <workItem from="1624885150508" duration="6501000" />
     </task>
     <servers />
   </component>

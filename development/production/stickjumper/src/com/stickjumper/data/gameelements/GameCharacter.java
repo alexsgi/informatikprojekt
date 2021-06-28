@@ -14,13 +14,8 @@ public class GameCharacter extends GameElement {
     public static final Dimens dimens = new Dimens(70, 78);
     private int skinType;
 
-    public GameCharacter(Point p, int skinType) {
-        super(p, dimens, true, ImageManager.PLAYER_SKIN_1, 0);
-        this.skinType = skinType;
-    }
-
-    public GameCharacter(Player player, Point p) {
-        super(p, dimens, true, ImageManager.PLAYER_SKIN_1, 0);
+    public GameCharacter(Player player) {
+        super(new Point(Settings.X_POSITION_GAME_CHARACTER, Settings.SCREEN_HEIGHT - Settings.SEA_LEVEL - dimens.getHeight()), dimens, true, player == null ? ImageManager.PLAYER_SKIN_1 : player.getSkin() == 0 ? ImageManager.PLAYER_SKIN_1 : (player.getSkin() == 1 ? ImageManager.PLAYER_SKIN_2 : ImageManager.PLAYER_SKIN_3), 0);
     }
 
     public GameCharacter(int skinType) {

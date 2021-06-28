@@ -28,7 +28,7 @@ public class Controller {
     private final GameRandomGenerator sceneryRandomGenerator;
     public boolean gameStarted = false;
     // Manages all in-game objects
-    private GameController sceneryController;
+    private GameController gameController;
     // Player management
     private Player signedInPlayer;
     private List playerList;
@@ -59,9 +59,9 @@ public class Controller {
     public void setGamePanelView(GamePanelView gamePanelView) {
         this.gamePanelView = gamePanelView;
         panelFrameManager.setGamePanelView(gamePanelView);
-        sceneryController = new GameController(gamePanelView, panelFrameManager, this);
-        sceneryRandomGenerator.setSceneryController(sceneryController);
-        panelFrameManager.setSceneryController(sceneryController);
+        gameController = new GameController(gamePanelView, panelFrameManager, this);
+        sceneryRandomGenerator.setGameController(gameController);
+        panelFrameManager.setGameController(gameController);
     }
 
     public void setStartPanelView(StartPanelView startPanelView) {
@@ -110,7 +110,7 @@ public class Controller {
 
     public void startGame() {
         panelFrameManager.switchToGamePanel();
-        sceneryController.startGame();
+        gameController.startGame();
         sceneryRandomGenerator.randomGenerate();
         gamePanelView.resetCheatCount();
         gameStarted = true;
@@ -156,8 +156,8 @@ public class Controller {
         return signedInPlayer;
     }
 
-    public GameController getSceneryController() {
-        return sceneryController;
+    public GameController getGameController() {
+        return gameController;
     }
 
     public MainFrameView getMainFrameView() {

@@ -3,6 +3,7 @@ package com.stickjumper.controller.scenerycontrolling;
 import com.stickjumper.controller.Controller;
 import com.stickjumper.controller.PanelFrameManager;
 import com.stickjumper.data.GameElement;
+import com.stickjumper.data.Player;
 import com.stickjumper.data.gameelements.Coin;
 import com.stickjumper.data.gameelements.GameCharacter;
 import com.stickjumper.data.gameelements.Obstacle;
@@ -62,9 +63,13 @@ public class GameController {
         return yPosGameCharacter;
     }
 
-    public void initGameCharacter(int skinType) {
+    public Controller getController() {
+        return controller;
+    }
+
+    public void initGameCharacter(Player player) {
         if (!gameCharacterAlreadyAdded) {
-            GameCharacter character = new GameCharacter(skinType);
+            GameCharacter character = new GameCharacter(player);
             character.addEventListener(gameEventListener);
             gameCharacterElement = new GameElementRender(character);
             gamePanelView.addObject(gameCharacterElement);

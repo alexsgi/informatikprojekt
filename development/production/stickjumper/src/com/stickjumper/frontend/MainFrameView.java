@@ -60,19 +60,19 @@ public class MainFrameView extends AdvancedFrame implements KeyListener {
     @Override
     public void keyPressed(KeyEvent e) {
         if (controller != null && controller.gameStarted) {
-            controller.getSceneryController().keyPressed(e);
+            controller.getGameController().keyPressed(e);
         }
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
         if (controller != null && controller.gameStarted) {
-            controller.getSceneryController().keyReleased(e);
+            controller.getGameController().keyReleased(e);
         }
     }
 
     public void automaticLogin() throws SQLException {
-        controller.playerLogin("test", PasswordHasher.hash("test"));
+        controller.playerLogin("alex", PasswordHasher.hash("test"));
         controller.getPanelFrameManager().refreshStartGreeting();
     }
 }

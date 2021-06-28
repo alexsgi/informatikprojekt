@@ -68,6 +68,11 @@ menu.settings.gameovermusic=Game over music
 menu.settings.button.on=ON
 menu.settings.button.off=OFF
 menu.settings.language=Language
+menu.settings.skin=Skin
+menu.settings.skin1=Ghost
+menu.settings.skin2=Spooky Ghost
+menu.settings.skin3=Glurak
+
 # Menu-Statistics
 menu.statistics.title=STATISTICS
 menu.statistics.rankingheader=Ranking of the best StickJumper players
