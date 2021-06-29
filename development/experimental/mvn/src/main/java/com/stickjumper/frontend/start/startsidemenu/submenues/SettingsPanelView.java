@@ -160,7 +160,7 @@ public class SettingsPanelView extends JPanel {
 
         JLabel lblVersion = new JLabel();
         lblVersion.setText(Settings.APP_VERSION);
-        lblVersion.setSize(200, 30);
+        lblVersion.setSize(500, 30);
         lblVersion.setLocation((getWidth() + menuPanel.getWidth() - lblVersion.getWidth()) / 2, getHeight() - lblVersion.getHeight() * 2);
         lblVersion.setFont(Settings.FONT_LABEL_BOLD_SMALL);
         lblVersion.setForeground(Color.WHITE);

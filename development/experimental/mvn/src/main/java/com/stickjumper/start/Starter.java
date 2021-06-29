@@ -37,8 +37,8 @@ public class Starter {
         int serverResponseCode = ConnectionTester.checkConnection();
 
         if (serverResponseCode != ConnectionTester.CONNECTION_OK) {
-            // TODO: check before login, register and update highscore (db)
             JOptionPane.showMessageDialog(null, StringManager.getString("starter.db.connection.error"));
+            System.exit(2);
         }
 
         ImageManager.loadALlImages(loadingFrameView.getClass());
@@ -49,7 +49,6 @@ public class Starter {
         DBConnection.init();
 
         MainFrameView mainFrameView = new MainFrameView(sceneryRandomGenerator, DBConnection.getAllPlayers());
-        // mainFrameView.automaticLogin();
 
         loadingFrameView.dispose();
         mainFrameView.setVisible(true);

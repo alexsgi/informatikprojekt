@@ -12,12 +12,10 @@ import com.stickjumper.frontend.start.startsidemenu.submenues.SettingsPanelView;
 import com.stickjumper.frontend.start.startsidemenu.submenues.StatisticsPanelView;
 import com.stickjumper.utils.Settings;
 import com.stickjumper.utils.components.AdvancedFrame;
-import com.stickjumper.utils.security.PasswordHasher;
 
 import javax.swing.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.sql.SQLException;
 
 public class MainFrameView extends AdvancedFrame implements KeyListener {
 
@@ -71,8 +69,4 @@ public class MainFrameView extends AdvancedFrame implements KeyListener {
         }
     }
 
-    public void automaticLogin() throws SQLException {
-        controller.playerLogin("alex", PasswordHasher.hash("test"));
-        controller.getPanelFrameManager().refreshStartGreeting();
-    }
 }

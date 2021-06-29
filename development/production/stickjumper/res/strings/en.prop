@@ -2,8 +2,6 @@
 app.name=StickJumper
 
 # Loading screen
-loading.loading=Loading...
-
 loading.hint0=Tip: check your ranking under the statistics
 loading.hint1=Tip: by pressing SPACE you jump longer
 loading.hint2=Tip: did you find the hidden cheat in the game?
@@ -77,3 +75,6 @@ menu.settings.skin3=Glurak
 menu.statistics.title=STATISTICS
 menu.statistics.rankingheader=Ranking of the best StickJumper players
 menu.statistics.placenotice=You are on %s. place
+
+# Error
+error.message=An error occurred:

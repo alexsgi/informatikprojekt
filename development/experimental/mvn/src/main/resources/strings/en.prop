@@ -2,15 +2,13 @@
 app.name=StickJumper
 
 # Loading screen
-loading.loading=Loading...
-
 loading.hint0=Tip: check your ranking under the statistics
 loading.hint1=Tip: by pressing SPACE you jump longer
 loading.hint2=Tip: did you find the hidden cheat in the game?
 loading.hint3=Tip: you can jump by pressing SPACE
 
 # Starter
-starter.db.connection.error=Can not connect to the server - internet connection available?
+starter.db.connection.error=Cannot connect to the server - internet connection available? Establish connection and start game
 
 # Game
 game.gameover=Game over
@@ -77,3 +75,6 @@ menu.settings.skin3=Glurak
 menu.statistics.title=STATISTICS
 menu.statistics.rankingheader=Ranking of the best StickJumper players
 menu.statistics.placenotice=You are on %s. place
+
+# Error
+error.message=An error occurred:

@@ -12,19 +12,14 @@ import java.io.IOException;
 public class SoundManager {
 
     public static final String pathBootSound = "/sounds/boot_2.wav";
-    // public static final String pathBootSoundEmpty = "/sounds/empty_boot_sequence.wav";
     public static final String pathBootSoundEmpty = "/sounds/empty_clip.wav";
     public static final String pathCoinSound = "/sounds/coin_sound.wav";
     public static final String pathGameOverSound = "/sounds/game_over.wav";
-    public static String pathButtonSound = "/sounds/button_sound.wav";
-    public static AudioInputStream inputStreamBootSound, inputStreamButtonSound, inputStreamCoinSound, inputStreamGameOverSound, inputStreamCheatSound;
-
-    // TODO: play sound when cheat active
+    public static AudioInputStream inputStreamBootSound, inputStreamCoinSound, inputStreamGameOverSound, inputStreamCheatSound;
 
     public static void loadAllClips() {
         try {
             inputStreamBootSound = AudioSystem.getAudioInputStream(new BufferedInputStream(SoundManager.class.getResourceAsStream(pathBootSoundEmpty)));
-            inputStreamButtonSound = AudioSystem.getAudioInputStream(new BufferedInputStream(SoundManager.class.getResourceAsStream(pathButtonSound)));
             inputStreamCoinSound = AudioSystem.getAudioInputStream(new BufferedInputStream(SoundManager.class.getResourceAsStream(pathCoinSound)));
             inputStreamGameOverSound = AudioSystem.getAudioInputStream(new BufferedInputStream(SoundManager.class.getResourceAsStream(pathGameOverSound)));
             inputStreamCheatSound = AudioSystem.getAudioInputStream(new BufferedInputStream(SoundManager.class.getResourceAsStream(pathBootSound)));
@@ -40,12 +35,11 @@ public class SoundManager {
     public static void playSound(AudioInputStream inputStream) {
         if (Settings.SOUND_EFFECTS_ON) {
             if (inputStream == inputStreamGameOverSound && !Settings.GAME_OVER_MUSIC_ON) return;
-            if (inputStream == inputStreamButtonSound && !Settings.BUTTON_SOUND_ON) return;
             new Thread(() -> {
                 try {
                     Clip clip = AudioSystem.getClip();
                     clip.open(inputStream);
-                    clip.setMicrosecondPosition(0); // TODO: @jonas needed?
+                    clip.setMicrosecondPosition(0);
                     clip.start();
                     loadAllClips();
                 } catch (Exception e) {

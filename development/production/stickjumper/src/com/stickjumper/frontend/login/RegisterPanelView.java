@@ -32,7 +32,7 @@ public class RegisterPanelView extends JPanel implements ActionListener {
 
         this.controller = controller;
 
-        AdvancedButton backButton = new AdvancedButton(ImageManager.ICON_BACK_DARK, ImageManager.ICON_BACK);
+        AdvancedButton backButton = new AdvancedButton(ImageManager.ICON_BACK, ImageManager.ICON_BACK);
         backButton.setSize(32, 32);
         backButton.setLocation(5, 5);
         backButton.setID("backButton");

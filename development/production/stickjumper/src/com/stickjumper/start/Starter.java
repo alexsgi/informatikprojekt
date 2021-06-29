@@ -49,7 +49,6 @@ public class Starter {
         DBConnection.init();
 
         MainFrameView mainFrameView = new MainFrameView(sceneryRandomGenerator, DBConnection.getAllPlayers());
-        // mainFrameView.automaticLogin();
 
         loadingFrameView.dispose();
         mainFrameView.setVisible(true);

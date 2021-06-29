@@ -2,8 +2,6 @@
 app.name=StickJumper
 
 # Loading screen
-loading.loading=Lade Spiel...
-
 loading.hint0=Tipp: \u00dcberpr\u00fcfe deinen Rang unter den Statistiken
 loading.hint1=Tipp: Halte die Leertaste gedr\u00fcckt, um l\u00e4nger zu springen
 loading.hint2=Tipp: Hast du den geheimen Cheat im Spiel gefunden?
@@ -76,3 +74,6 @@ menu.settings.skin3=Glurak
 menu.statistics.title=STATISTIKEN
 menu.statistics.rankingheader=Ranking der besten StickJumper-Spieler
 menu.statistics.placenotice=Du bist auf dem %s. Platz
+
+# Error
+error.message=Ein Fehler ist aufgetreten:

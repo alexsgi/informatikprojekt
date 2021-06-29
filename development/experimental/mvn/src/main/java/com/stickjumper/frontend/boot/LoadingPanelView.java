@@ -17,15 +17,6 @@ public class LoadingPanelView extends JPanel {
         setLayout(null);
         setSize(frame.getWidth(), frame.getHeight());
 
-        AdvancedLabel loadingLabel = new AdvancedLabel();
-        loadingLabel.setKeyText("loading.loading");
-        loadingLabel.setHorizontalAlignment(SwingConstants.CENTER);
-        loadingLabel.setSize(getWidth(), 30);
-        loadingLabel.setLocation(0, 10);
-        loadingLabel.setFont(Settings.FONT_LOADING_HEADING_SMALL);
-        loadingLabel.setForeground(Color.WHITE);
-        // add(loadingLabel);
-
         AdvancedLabel lblTitle = new AdvancedLabel();
         lblTitle.setKeyText("app.name");
         lblTitle.setHorizontalAlignment(SwingConstants.CENTER);

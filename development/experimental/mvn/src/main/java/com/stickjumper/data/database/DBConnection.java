@@ -27,14 +27,14 @@ public class DBConnection {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException e) {
-            Settings.logData("Error loading driver", e);
+            Settings.logData("Error loading MySQL driver", e);
             return;
         }
         try {
             connection = DriverManager.getConnection(String.format("jdbc:mysql://%s/%s?user=%s&password=%s",
                     DB_URL, DB_NAME, DB_USERNAME, DB_PASSWORD));
         } catch (SQLException ex) {
-            Settings.logData("SQL Exception (init) [connectiion]", ex);
+            Settings.logData("SQL Exception (init) [connection]", ex);
             return;
         }
         try {

@@ -94,10 +94,8 @@ public class Controller {
                 int connectionStatus = ConnectionTester.checkConnection();
                 connectedToServer = connectionStatus == ConnectionTester.CONNECTION_OK;
                 if (connectedToServer) {
-                    startPanelView.getInternetIconLabel().setInternetEnabledStatus();
                     Settings.logData("Connection ok");
                 } else {
-                    startPanelView.getInternetIconLabel().setInternetDisabledStatus();
                     Settings.logData("Connection failed");
                 }
             }

@@ -5,18 +5,14 @@ import com.stickjumper.frontend.start.startsidemenu.StartSideMenuPanel;
 import com.stickjumper.utils.Settings;
 import com.stickjumper.utils.components.AdvancedButton;
 import com.stickjumper.utils.components.AdvancedLabel;
-import com.stickjumper.utils.components.InternetStateLabel;
 import com.stickjumper.utils.manager.ImageManager;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.util.Calendar;
 
 public class StartPanelView extends JPanel {
 
-    private final InternetStateLabel internetIconLabel;
     private final Controller controller;
     private final AdvancedLabel lblHighScore, lblGreeting;
 
@@ -54,17 +50,6 @@ public class StartPanelView extends JPanel {
             }
         });
         add(menuPanel);
-
-        internetIconLabel = new InternetStateLabel();
-        internetIconLabel.setLocation(getWidth() - internetIconLabel.getWidth() * 2, 5);
-        internetIconLabel.setInternetEnabledStatus();
-        internetIconLabel.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                internetIconLabel.flipStatus();
-            }
-        });
-        add(internetIconLabel);
 
         AdvancedLabel lblTitle = new AdvancedLabel();
         lblTitle.setKeyText("app.name");
@@ -104,10 +89,6 @@ public class StartPanelView extends JPanel {
 
     public void showHighScore() {
         lblHighScore.setKeyText("start.highscore", String.valueOf(controller.getLocalHighScore()));
-    }
-
-    public InternetStateLabel getInternetIconLabel() {
-        return internetIconLabel;
     }
 
     public void refreshGreeting() {
