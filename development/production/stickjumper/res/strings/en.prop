@@ -10,7 +10,7 @@ loading.hint2=Tip: did you find the hidden cheat in the game?
 loading.hint3=Tip: you can jump by pressing SPACE
 
 # Starter
-starter.db.connection.error=Can not connect to the server - internet connection available?
+starter.db.connection.error=Cannot connect to the server - internet connection available? Establish connection and start game
 
 # Game
 game.gameover=Game over

@@ -4,7 +4,6 @@ import java.awt.image.BufferedImage;
 
 public class ImageManager {
 
-    private static final int sizeTolerance = 0;
     // IMAGES
     public static BufferedImage APP_ICON_IMAGE, APP_ICON_IMAGE_BIG, BACKGROUND_MAIN, MOVING_BACKGROUND, MOVING_BACKGROUND_MIRRORED;
     public static BufferedImage GAME_ICON_HOME_ACCENT, GAME_ICON_HOME, START_ICON_HOME;
@@ -41,10 +40,6 @@ public class ImageManager {
         COIN_SKIN_30 = UITools.getImage(c, "/images/elements/coin/coin_30.png");
         COIN_SKIN_40 = UITools.getImage(c, "/images/elements/coin/coin_40.png");
         COIN_SKIN_50 = UITools.getImage(c, "/images/elements/coin/coin_50.png");
-    }
-
-    public static int getSizeTolerance() {
-        return sizeTolerance;
     }
 
 }

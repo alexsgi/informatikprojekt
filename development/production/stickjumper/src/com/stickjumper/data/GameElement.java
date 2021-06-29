@@ -5,7 +5,6 @@ import com.stickjumper.controller.scenerycontrolling.GameEventListener;
 import com.stickjumper.data.gameelements.GameCharacter;
 import com.stickjumper.utils.Dimens;
 import com.stickjumper.utils.Settings;
-import com.stickjumper.utils.manager.ImageManager;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -20,7 +19,7 @@ public abstract class GameElement {
 
     public GameElement(Point p, Dimens d, boolean visible, BufferedImage image, int speed) {
         this.location = p;
-        this.dimens = new Dimens(d.getWidth() + ImageManager.getSizeTolerance(), d.getHeight() + ImageManager.getSizeTolerance());
+        this.dimens = new Dimens(d.getWidth(), d.getHeight());
         this.visible = visible;
         this.image = image;
         this.speed = speed;

@@ -53,7 +53,6 @@ public class AdvancedButton extends JButton {
             @Override
             public void mouseReleased(MouseEvent e) {
                 setForeground(exitColor);
-                SoundManager.playSound(SoundManager.inputStreamButtonSound);
             }
 
             @Override
@@ -92,7 +91,6 @@ public class AdvancedButton extends JButton {
             @Override
             public void mouseReleased(MouseEvent e) {
                 setIcon(exitImage);
-                SoundManager.playSound(SoundManager.inputStreamButtonSound);
             }
 
             @Override

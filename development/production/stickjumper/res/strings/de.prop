@@ -10,7 +10,7 @@ loading.hint2=Tipp: Hast du den geheimen Cheat im Spiel gefunden?
 loading.hint3=Tipp: Nutze die Leertaste zum Springen
 
 # Starter
-starter.db.connection.error=Verbindung zum Server kann nicht aufgebaut werden - Internetverbindung vorhanden?
+starter.db.connection.error=Verbindung zum Server kann nicht aufgebaut werden - Internetverbindung vorhanden? Verbindung herstellen und Spiel erneut starten
 
 # Game
 game.gameover=Game over
