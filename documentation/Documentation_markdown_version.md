@@ -330,6 +330,7 @@ Alex:
 
 Jonas: 
 1. Überarbeitung des Bodens durch ein transparentes Icon
+2. Beginn mit der Arbeit an der Power-Point-Präsentation
 
 ### **27.06.2021**
 Jessica, Alex, Jonas:
@@ -340,6 +341,7 @@ Alex:
 
 Jonas: 
 1. Experimentelle Implementierung der verschiedenfarbigen Münzicons
+2. Arbeit an der Power-Point-Präsentation
 
 Jessica:
 1. Implementieren des Bodens
@@ -351,7 +353,10 @@ Alex:
 Jonas, Jessica:
 1. Wiederholte Anpassung des "Sterberadius", sodass unberechtigte Game-Over-Meldungen vermieden werden
 
-### *30.06.2021**
+### **30.06.2021**
 Alex:
 1. Letzte Codeanpassungen und Export
 2. Schreiben der README
+
+Jonas: 
+1. Fertigstellen der Power-Point-Präsentation
