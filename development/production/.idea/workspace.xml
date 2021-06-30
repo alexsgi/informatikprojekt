@@ -8,9 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="460ac02d-4569-48ee-b691-afac2c185a3b" name="Default Changelist" comment="last adjustments">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/res/images/elements/coin/coin.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/game/GamePanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/frontend/game/GamePanelView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/manager/ImageManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/stickjumper/src/com/stickjumper/utils/manager/ImageManager.java" afterDir="false" />
     </list>
     <list id="cb6ccd45-2f4a-4a31-aef3-f8cd82d4f1fc" name="Changes by Alex" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -102,17 +99,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Starter" />
@@ -145,6 +131,8 @@
       <workItem from="1624101486102" duration="943000" />
       <workItem from="1624457557740" duration="6675000" />
       <workItem from="1624735109417" duration="1549000" />
+      <workItem from="1624996099328" duration="801000" />
+      <workItem from="1625036036642" duration="123000" />
     </task>
     <task id="LOCAL-00001" summary="delete border J-TextField">
       <created>1624694780795</created>
