@@ -269,14 +269,27 @@ Alex:
 1. Wiederherstellen der funktionierenden Jump-Animation und -Logik
 2. Implementieren der Pattern 10 - 15 (SceneryRandomGenerator)
 
+Jonas:
+1. Implemetierung der Patterns 1-4
+2. Anpassung des Algorithmus zur Erzeugung der Patterns
+
+Jessica:
+1. Implementieren der Pattern 5-9
+
 ### **01.06.2021**
 Alex:
 1. Ändern der Struktur der Variablen
 2. Highscore-Funktionalität vollständig implementiert
 
+Jonas: 
+1. RandomGenerator angepasst
+
 ### **03.06.2021**
 Alex: 
 1. Vollständige Implementierung der Statistiken
+
+Jonas: 
+1. Anpassung der Spiellogik und der Jump-Bewegung
 
 ### **04.06.2021**
 Alex:
@@ -287,6 +300,9 @@ Alex:
 Alex:
 1. Ändern der hit-Funktionalität → läuft nun über ein interface statt üver booleans + Timer
 
+Jonas: 
+1. Bugfix
+
 ### **11.06.2021**
 Alex:
 1. Letzte Änderungen der hit-Funktionalität; Pull-Request
@@ -296,20 +312,41 @@ Alex:
 Alex:
 1. Geringfügige Änderungen; Formatieren des Codes
 
+Jonas: 
+1. Bugfix bei der Sprung-Bewegung
+
 ### **23.06.2021**
 Alex:
 1. Überarbeitung der Menü-UIs; Verbesserung Lesbarkeit
 2. Coin icons hinzugefügt für verschiedene Münzwerte
+
+Jonas: 
+1. Anpassung des "Sterberadius" 
 
 ### **26.06.2021**
 Alex:
 1. Überarbeiten Boden
 2. Erstellen verschiedener Münzicons
 
+Jonas: 
+1. Überarbeitung des Bodens durch ein transparentes Icon
+
 ### **27.06.2021**
+Jessica, Alex, Jonas:
+1. Konferenz zur Besprechung der verschiedenen Münzicons und Bugfix
+
 Alex:
 1. Implementieren der verschiedenen Münzicons
+
+Jonas: 
+1. Experimentelle Implementierung der verschiedenfarbigen Münzicons
+
+Jessica:
+1. Implementieren des Bodens
 
 ### **28.06.2021**
 Alex:
 1. Suchen verschiedener Playericons und Implementierung der benötigten Logik
+
+Jonas, Jessica:
+1. Wiederholte Anpassung des "Sterberadius", sodass unberechtigte Game-Over-Meldungen vermiedern werden
