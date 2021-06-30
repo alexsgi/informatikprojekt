@@ -318,7 +318,7 @@ Jonas:
 ### **23.06.2021**
 Alex:
 1. Überarbeitung der Menü-UIs; Verbesserung Lesbarkeit
-2. Coin icons hinzugefügt für verschiedene Münzwerte
+2. Coinicons hinzugefügt für verschiedene Münzwerte
 
 Jonas: 
 1. Anpassung des "Sterberadius" 
@@ -349,4 +349,8 @@ Alex:
 1. Suchen verschiedener Playericons und Implementierung der benötigten Logik
 
 Jonas, Jessica:
-1. Wiederholte Anpassung des "Sterberadius", sodass unberechtigte Game-Over-Meldungen vermiedern werden
+1. Wiederholte Anpassung des "Sterberadius", sodass unberechtigte Game-Over-Meldungen vermieden werden
+
+### *30.06.2021**
+Alex:
+1. Letzte Codeanpassungen und Export
