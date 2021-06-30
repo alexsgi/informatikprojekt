@@ -9,6 +9,7 @@ loading.hint3=Tip: you can jump by pressing SPACE
 
 # Starter
 starter.db.connection.error=Cannot connect to the server - internet connection available? Establish connection and start game
+starter.db.connection.maintenance=We are working on the servers - please try again later
 
 # Game
 game.gameover=Game over

@@ -157,9 +157,10 @@ public class SettingsPanelView extends JPanel {
         comboBoxSkin.setFocusable(false);
         comboBoxSkin.addItemListener(itemListener);
         add(comboBoxSkin);
+        comboBoxSkin.setVisible(true);
 
         JLabel lblVersion = new JLabel();
-        lblVersion.setText(Settings.APP_VERSION);
+        lblVersion.setText(String.format("We love StackOverflow - %s %s", Settings.APP_NAME, Settings.APP_VERSION));
         lblVersion.setSize(500, 30);
         lblVersion.setLocation((getWidth() + menuPanel.getWidth() - lblVersion.getWidth()) / 2, getHeight() - lblVersion.getHeight() * 2);
         lblVersion.setFont(Settings.FONT_LABEL_BOLD_SMALL);
@@ -186,9 +187,7 @@ public class SettingsPanelView extends JPanel {
             }
         }
         comboBoxSkin.setSelectedIndex(player.getSkin());
-        if (controller.getSignedInPlayer() != null) {
-            controller.getSignedInPlayer().setSkin(comboBoxSkin.getSelectedIndex());
-        }
+        player.setSkin(comboBoxSkin.getSelectedIndex());
         comboBoxSkin.setEditable(true);
         comboBoxSkin.addItemListener(itemListener);
     }

@@ -3,3 +3,5 @@ development/production/.idea/*
 development/production/stickjumper/.idea/*
 
 *.class
+
+.DS_Store
