@@ -354,3 +354,4 @@ Jonas, Jessica:
 ### *30.06.2021**
 Alex:
 1. Letzte Codeanpassungen und Export
+2. Schreiben der README
