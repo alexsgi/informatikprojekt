@@ -36,9 +36,15 @@ public class Starter {
 
         int serverResponseCode = ConnectionTester.checkConnection();
 
-        if (serverResponseCode != ConnectionTester.CONNECTION_OK) {
-            JOptionPane.showMessageDialog(null, StringManager.getString("starter.db.connection.error"));
-            System.exit(2);
+        switch (serverResponseCode) {
+            case ConnectionTester.CONNECTION_ERROR, ConnectionTester.CONNECTION_UNDEFINED_ERROR -> {
+                JOptionPane.showMessageDialog(null, StringManager.getString("starter.db.connection.error"));
+                System.exit(2);
+            }
+            case ConnectionTester.CONNECTION_MAINTENANCE -> {
+                JOptionPane.showMessageDialog(null, StringManager.getString("starter.db.connection.maintenance"));
+                System.exit(2);
+            }
         }
 
         ImageManager.loadALlImages(loadingFrameView.getClass());

@@ -157,6 +157,7 @@ public class SettingsPanelView extends JPanel {
         comboBoxSkin.setFocusable(false);
         comboBoxSkin.addItemListener(itemListener);
         add(comboBoxSkin);
+        comboBoxSkin.setVisible(true);
 
         JLabel lblVersion = new JLabel();
         lblVersion.setText(Settings.APP_VERSION);
