@@ -26,6 +26,7 @@ An internet connection is indispensable to start and play the game.
 ## How to play
 
 Use the space bar to jump. Collect coins and don't hit the enemies or obstacles! Did you find the hidden cheat?
+(While playing you can hit the highscore lable with the curser several times, which will activate the secret cheat. Now, hitting a cactus is not deadly any more!)
 
 ## Additional information
 
