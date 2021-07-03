@@ -36,4 +36,3 @@ You can just launch StickJumper.jar without having to install IntelliJ IDEA.
 #### Privacy notice:
 If an error occurs, we will be notified automatically via email send from your device. Except the **version of the game and your OS name** no private data will be send to us.
 The server backend, which is needed to play the game, will be probably shut down on **August 1th, 2021**. Additional information on how to set up an own server with a MySQL database can be obtained. Contact us for instructions.
-An internet connection is indispensable to start and play the game.
