@@ -6,6 +6,7 @@ import com.stickjumper.frontend.start.startsidemenu.StartSideMenuPanel;
 import com.stickjumper.utils.Settings;
 import com.stickjumper.utils.components.AdvancedLabel;
 import com.stickjumper.utils.components.AdvancedToggleButton;
+import com.stickjumper.utils.manager.ImageManager;
 import com.stickjumper.utils.manager.StringManager;
 
 import javax.swing.*;
@@ -166,9 +167,12 @@ public class SettingsPanelView extends JPanel {
         comboBoxSkin.addItemListener(itemListener);
         backgroundLabelPanel.add(comboBoxSkin);
 
-        JLabel imageHolder = new JLabel();
-        imageHolder.setSize(200,200);
+        AdvancedLabel imageHolder = new AdvancedLabel();
+        imageHolder.setSize(200,230);
         imageHolder.setLocation(backgroundLabelPanel.getWidth() - imageHolder.getWidth(), 0);
+        imageHolder.setHorizontalAlignment(SwingConstants.CENTER);
+        imageHolder.setVerticalAlignment(SwingConstants.CENTER);
+        imageHolder.setIcon(new ImageIcon(ImageManager.APP_ICON_IMAGE_BIG));
         backgroundLabelPanel.add(imageHolder);
 
         JLabel lblVersion = new JLabel();
