@@ -19,11 +19,20 @@ public class SettingsPanelView extends JPanel {
     private final AdvancedToggleButton soundEffectToggle, gameOverMusicToggle;
     private final Controller controller;
     private final JComboBox<String> comboBoxSkin;
+    private final JLabel imageHolder;
     private final ItemListener itemListener = new ItemListener() {
         @Override
         public void itemStateChanged(ItemEvent e) {
             if (e.getStateChange() == ItemEvent.SELECTED && controller.getSignedInPlayer() != null) {
                 controller.getSignedInPlayer().setSkin(comboBoxSkin.getSelectedIndex());
+                String chosenSkin = e.getItem().toString();
+                if (chosenSkin.equals(StringManager.getString("menu.settings.skin3"))) {
+                    imageHolder.setIcon(new ImageIcon(ImageManager.PLAYER_SKIN_3_BIG));
+                } else if (chosenSkin.equals(StringManager.getString("menu.settings.skin2"))) {
+                    imageHolder.setIcon(new ImageIcon(ImageManager.PLAYER_SKIN_2_BIG));
+                } else {
+                    imageHolder.setIcon(new ImageIcon(ImageManager.PLAYER_SKIN_1_BIG));
+                }
             }
         }
     };
@@ -167,12 +176,12 @@ public class SettingsPanelView extends JPanel {
         comboBoxSkin.addItemListener(itemListener);
         backgroundLabelPanel.add(comboBoxSkin);
 
-        AdvancedLabel imageHolder = new AdvancedLabel();
-        imageHolder.setSize(200,230);
-        imageHolder.setLocation(backgroundLabelPanel.getWidth() - imageHolder.getWidth(), 0);
+        imageHolder = new JLabel();
+        imageHolder.setSize(230, 230);
+        imageHolder.setLocation(backgroundLabelPanel.getWidth() - imageHolder.getWidth() - 40, 0);
         imageHolder.setHorizontalAlignment(SwingConstants.CENTER);
         imageHolder.setVerticalAlignment(SwingConstants.CENTER);
-        imageHolder.setIcon(new ImageIcon(ImageManager.APP_ICON_IMAGE_BIG));
+        imageHolder.setIcon(new ImageIcon(ImageManager.PLAYER_SKIN_1_BIG));
         backgroundLabelPanel.add(imageHolder);
 
         JLabel lblVersion = new JLabel();
@@ -206,5 +215,7 @@ public class SettingsPanelView extends JPanel {
         player.setSkin(comboBoxSkin.getSelectedIndex());
         comboBoxSkin.setEditable(true);
         comboBoxSkin.addItemListener(itemListener);
+
+
     }
 }
