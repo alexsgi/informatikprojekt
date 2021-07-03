@@ -11,7 +11,8 @@ Clean Java version:
 	Notice: Java 15+ required to run this project ([download](https://adoptopenjdk.net/archive.html?variant=openjdk15&jvmVariant=hotspot))<br>
 3. Errors may occur due to the libraries. To fix these problems: <br>
 	(In IntelliJ IDEA) <br>
-	*libs > 4 JAR files*<br>
+	There are 4 JARs in the folder _libs_<br>
+	Select all of them<br>
 	Right click > Add as library
 	
 Maven version (recommended) ([download](https://maven.apache.org/download.cgi)):<br>
