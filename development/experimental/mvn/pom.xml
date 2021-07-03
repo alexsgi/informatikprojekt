@@ -6,7 +6,7 @@
 
     <groupId>com.stickjumper</groupId>
     <artifactId>stickjumper</artifactId>
-    <version>0.7-alpha</version>
+    <version>1.1</version>
     <packaging>jar</packaging>
 
     <properties>
@@ -32,6 +32,7 @@
         <plugins>
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.3.0</version>
                 <configuration>
                     <archive>
                         <manifest>
@@ -59,10 +60,6 @@
         <repository>
             <id>jitpack.io</id>
             <url>https://jitpack.io</url>
-        </repository>
-        <repository>
-            <id>central</id>
-            <url>https://repo1.maven.org/maven2/</url>
         </repository>
     </repositories>
 

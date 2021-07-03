@@ -4,7 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ed2fd7a0-e51f-484b-8ba6-69bb4ba3c6da" name="Default Changelist" comment="" />
+    <list default="true" id="ed2fd7a0-e51f-484b-8ba6-69bb4ba3c6da" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/elements/big_skins/skin_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/elements/big_skins/skin_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/elements/big_skins/skin_3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stickjumper/frontend/start/startsidemenu/submenues/SettingsPanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stickjumper/frontend/start/startsidemenu/submenues/SettingsPanelView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stickjumper/utils/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stickjumper/utils/Settings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stickjumper/utils/manager/ImageManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stickjumper/utils/manager/ImageManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/StickJumper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../production/stickjumper/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../production/stickjumper/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -53,6 +64,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Starter" />
@@ -74,6 +96,7 @@
       <workItem from="1625036027183" duration="2303000" />
       <workItem from="1625054341069" duration="665000" />
       <workItem from="1625055928617" duration="10000" />
+      <workItem from="1625301717131" duration="1245000" />
     </task>
     <servers />
   </component>
