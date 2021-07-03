@@ -161,7 +161,7 @@ public class SettingsPanelView extends JPanel {
         JLabel lblVersion = new JLabel();
         lblVersion.setText(String.format("We love StackOverflow - %s %s", Settings.APP_NAME, Settings.APP_VERSION));
         lblVersion.setSize(500, 30);
-        lblVersion.setLocation((getWidth() + menuPanel.getWidth() - lblVersion.getWidth()) / 2, (int) (getHeight() - lblVersion.getHeight() * 2.5));
+        lblVersion.setLocation((getWidth() + menuPanel.getWidth() - lblVersion.getWidth()) / 2, (int) (getHeight() - lblVersion.getHeight() * 2.2));
         lblVersion.setFont(Settings.FONT_LABEL_BOLD_SMALL);
         lblVersion.setForeground(Color.WHITE);
         lblVersion.setHorizontalAlignment(SwingConstants.CENTER);
