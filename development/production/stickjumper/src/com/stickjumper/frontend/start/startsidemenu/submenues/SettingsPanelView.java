@@ -62,6 +62,14 @@ public class SettingsPanelView extends JPanel {
         });
         add(menuPanel);
 
+        JPanel backgroundLabelPanel = new JPanel(true);
+        backgroundLabelPanel.setLayout(null);
+        backgroundLabelPanel.setBackground(new Color(255, 255, 255, 170));
+        backgroundLabelPanel.setOpaque(true);
+        backgroundLabelPanel.setLocation(menuPanel.getWidth() + 70, (getHeight() - backgroundLabelPanel.getHeight()) / 2);
+        backgroundLabelPanel.setSize(getWidth() - backgroundLabelPanel.getX() - 100, 200);
+        add(backgroundLabelPanel);
+
         AdvancedLabel lblTitle = new AdvancedLabel();
         lblTitle.setKeyText("menu.settings.title");
         lblTitle.setHorizontalAlignment(SwingConstants.CENTER);
