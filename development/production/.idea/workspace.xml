@@ -6,9 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="460ac02d-4569-48ee-b691-afac2c185a3b" name="Default Changelist" comment="last adjustments">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="460ac02d-4569-48ee-b691-afac2c185a3b" name="Default Changelist" comment="last adjustments" />
     <list id="cb6ccd45-2f4a-4a31-aef3-f8cd82d4f1fc" name="Changes by Alex" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,6 +77,9 @@
       <recent name="C:\Users\Elena\Desktop\Alexander\05\Projekte\Java\informatikprojekt\development\production\stickjumper\src\com\stickjumper\controller" />
       <recent name="C:\Users\Elena\Desktop\Alexander\05\Projekte\Java\informatikprojekt\development\production\stickjumper\libs" />
       <recent name="C:\Users\jonas\Documents\Projekte\informatikprojekt\development\production\stickjumper\src\res\sounds" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jonas\Documents\Projekte\informatikprojekt\development\production\stickjumper\res\images\elements\big_skins" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.stickjumper.data" />
