@@ -157,7 +157,6 @@ public class SettingsPanelView extends JPanel {
         comboBoxSkin.setFocusable(false);
         comboBoxSkin.addItemListener(itemListener);
         add(comboBoxSkin);
-        comboBoxSkin.setVisible(true);
 
         JLabel lblVersion = new JLabel();
         lblVersion.setText(String.format("We love StackOverflow - %s %s", Settings.APP_NAME, Settings.APP_VERSION));
