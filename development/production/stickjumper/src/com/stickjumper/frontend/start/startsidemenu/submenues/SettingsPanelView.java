@@ -66,8 +66,8 @@ public class SettingsPanelView extends JPanel {
         backgroundLabelPanel.setLayout(null);
         backgroundLabelPanel.setBackground(new Color(255, 255, 255, 170));
         backgroundLabelPanel.setOpaque(true);
-        backgroundLabelPanel.setLocation(menuPanel.getWidth() + 70, (getHeight() - backgroundLabelPanel.getHeight()) / 2);
-        backgroundLabelPanel.setSize(getWidth() - backgroundLabelPanel.getX() - 100, 200);
+        backgroundLabelPanel.setLocation(menuPanel.getWidth() + 70, (getHeight() - backgroundLabelPanel.getHeight()) / 2 - 30);
+        backgroundLabelPanel.setSize(getWidth() - backgroundLabelPanel.getX() - 100, 230);
         add(backgroundLabelPanel);
 
         AdvancedLabel lblTitle = new AdvancedLabel();
@@ -82,29 +82,29 @@ public class SettingsPanelView extends JPanel {
         AdvancedLabel lblSoundEffects = new AdvancedLabel();
         lblSoundEffects.setKeyText("menu.settings.soundeffects");
         lblSoundEffects.setSize(200, 30);
-        lblSoundEffects.setLocation(menuPanel.getWidth() + 100, 300);
+        lblSoundEffects.setLocation(30, 10);
         lblSoundEffects.setFont(Settings.FONT_LABEL_BOLD_SMALL);
-        add(lblSoundEffects);
+        backgroundLabelPanel.add(lblSoundEffects);
 
         soundEffectToggle = new AdvancedToggleButton(!Settings.SOUND_EFFECTS_ON);
         soundEffectToggle.setKeyText(Settings.SOUND_EFFECTS_ON ? "menu.settings.button.on" : "menu.settings.button.off");
         soundEffectToggle.setSize(150, lblSoundEffects.getHeight());
         soundEffectToggle.setLocation(lblSoundEffects.getX() + lblSoundEffects.getWidth(), lblSoundEffects.getY());
-        add(soundEffectToggle);
+        backgroundLabelPanel.add(soundEffectToggle);
 
         AdvancedLabel lblGameOverMusic = new AdvancedLabel();
         lblGameOverMusic.setKeyText("menu.settings.gameovermusic");
         lblGameOverMusic.setSize(lblSoundEffects.getWidth(), lblSoundEffects.getHeight());
         lblGameOverMusic.setLocation(lblSoundEffects.getX(), lblSoundEffects.getY() + lblSoundEffects.getHeight() + 30);
         lblGameOverMusic.setFont(Settings.FONT_LABEL_BOLD_SMALL);
-        add(lblGameOverMusic);
+        backgroundLabelPanel.add(lblGameOverMusic);
 
         gameOverMusicToggle = new AdvancedToggleButton(!Settings.GAME_OVER_MUSIC_ON);
         gameOverMusicToggle.setKeyText(Settings.GAME_OVER_MUSIC_ON ? "menu.settings.button.on" : "menu.settings.button.off");
         gameOverMusicToggle.setSize(soundEffectToggle.getWidth(), soundEffectToggle.getHeight());
         gameOverMusicToggle.setLocation(soundEffectToggle.getX(), lblGameOverMusic.getY());
         gameOverMusicToggle.setEnabled(Settings.SOUND_EFFECTS_ON);
-        add(gameOverMusicToggle);
+        backgroundLabelPanel.add(gameOverMusicToggle);
 
         soundEffectToggle.addChangeListener(e -> {
             if (soundEffectToggle.isSelected()) {
@@ -133,7 +133,7 @@ public class SettingsPanelView extends JPanel {
         lblLanguage.setSize(lblSoundEffects.getWidth(), lblSoundEffects.getHeight());
         lblLanguage.setLocation(lblSoundEffects.getX(), lblGameOverMusic.getY() + lblGameOverMusic.getHeight() + 30);
         lblLanguage.setFont(Settings.FONT_LABEL_BOLD_SMALL);
-        add(lblLanguage);
+        backgroundLabelPanel.add(lblLanguage);
 
         String[] choices = {StringManager.DE.toUpperCase(), StringManager.EN.toUpperCase()};
         JComboBox<String> comboBox = new JComboBox<>(choices);
@@ -150,21 +150,21 @@ public class SettingsPanelView extends JPanel {
                 }
             }
         });
-        add(comboBox);
+        backgroundLabelPanel.add(comboBox);
 
         AdvancedLabel lblSkin = new AdvancedLabel();
         lblSkin.setKeyText("menu.settings.skin");
         lblSkin.setSize(lblLanguage.getWidth(), lblLanguage.getHeight());
         lblSkin.setLocation(lblLanguage.getX(), lblLanguage.getY() + lblLanguage.getHeight() + 30);
         lblSkin.setFont(Settings.FONT_LABEL_BOLD_SMALL);
-        add(lblSkin);
+        backgroundLabelPanel.add(lblSkin);
 
         comboBoxSkin = new JComboBox<>();
         comboBoxSkin.setSize(gameOverMusicToggle.getWidth(), gameOverMusicToggle.getHeight());
         comboBoxSkin.setLocation(comboBox.getX(), comboBox.getY() + comboBox.getHeight() + 30);
         comboBoxSkin.setFocusable(false);
         comboBoxSkin.addItemListener(itemListener);
-        add(comboBoxSkin);
+        backgroundLabelPanel.add(comboBoxSkin);
 
         JLabel lblVersion = new JLabel();
         lblVersion.setText(String.format("We love StackOverflow - %s %s", Settings.APP_NAME, Settings.APP_VERSION));
