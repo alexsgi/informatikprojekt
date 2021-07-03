@@ -359,4 +359,15 @@ Alex:
 2. Schreiben der README
 
 Jonas: 
-1. Fertigstellen der Power-Point-Präsentation
+1. Fertigstellen der PowerPoint-Präsentation
+
+### **03.07.2021**
+Jessica, Alex, Jonas:
+1. Besprechen der PowerPoint-Präsentation
+
+Alex, Jonas:
+1. Anpassen des Settings-Menüs
+2. Hinzufügen eines Vorschau-Fensters zum Settingsmenü
+
+Hinweis:
+Nach einer Abwägung der Vor- und Nachteile, sowie der erforderlichen Arbeit und Zeit, wurde entschieden, dass man von dem ursprünglichen Konzept - ein Spiel mit Sticks, welche platziert werden können, und Klippen, welche überquert werden müssen - abweichen wird. Der eigentlich daraus resultierende Aufwand ist massiv. Es wurde Wert gelegt auf ein Spiel, dass fehlerfrei ist und dem Spieler viele Konfigurationsmöglichkeiten bietet. Dieses Ziel wurde erreicht.
