@@ -8,10 +8,10 @@ import java.sql.*;
 
 public class DBConnection {
 
-    private static final String DB_URL = "stickjumper.ddns.net";
+    private static final String DB_URL = "stickjumperdb-do-user-9483007-0.b.db.ondigitalocean.com";
     private static final String DB_NAME = "stickjumper";
     private static final String DB_USERNAME = "stickjumperuser";
-    private static final String DB_PASSWORD = "XcZa746Awf43468SO736ZmOZRS";
+    private static final String DB_PASSWORD = "aokylwex37os8uk6";
     private static final String DB_TABLE_NAME = "player_table";
 
     private static Connection connection;
@@ -31,7 +31,7 @@ public class DBConnection {
             return;
         }
         try {
-            connection = DriverManager.getConnection(String.format("jdbc:mysql://%s/%s?user=%s&password=%s",
+            connection = DriverManager.getConnection(String.format("jdbc:mysql://%s:25060/%s?user=%s&password=%s",
                     DB_URL, DB_NAME, DB_USERNAME, DB_PASSWORD));
         } catch (SQLException ex) {
             Settings.logData("SQL Exception (init) [connection]", ex);

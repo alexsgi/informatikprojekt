@@ -20,7 +20,7 @@ public class Player implements Comparable<Player> {
     public static Player fromResultSet(ResultSet rs) throws SQLException {
         int k, h, s;
         String n, p;
-        k = rs.getInt("key");
+        k = rs.getInt("pkey");
         n = rs.getString("playername");
         p = rs.getString("playerpassword");
         h = rs.getInt("highscore");
