@@ -1,5 +1,3 @@
-[![GitHub Release](https://img.shields.io/github/release/alexsgi/informatikprojekt.svg?style=flat)]()
-
 # StickJumper
 
 This is the official repository for the computer science project "StickJumper".<br>
