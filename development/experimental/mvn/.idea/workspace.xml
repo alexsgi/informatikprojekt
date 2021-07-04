@@ -5,52 +5,46 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ed2fd7a0-e51f-484b-8ba6-69bb4ba3c6da" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/3b8766c5-56d7-4a2a-95a7-4de5b2274bfb.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/3b8766c5-56d7-4a2a-95a7-4de5b2274bfb/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/3b8766c5-56d7-4a2a-95a7-4de5b2274bfb/storage_v2/_src_/schema/mysql.osA4Bg.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/3b8766c5-56d7-4a2a-95a7-4de5b2274bfb/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/3b8766c5-56d7-4a2a-95a7-4de5b2274bfb/storage_v2/_src_/schema/sys.zb4BAA.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/elements/big_skins/skin_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/elements/big_skins/skin_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/elements/big_skins/skin_3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/elements/coin/coin_10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/elements/coin/coin_20.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/elements/coin/coin_30.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/elements/coin/coin_40.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/elements/coin/coin_50.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/elements/obstacles/enemy_skin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/elements/obstacles/steady_obstacle_skin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/elements/skins/skin_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/elements/skins/skin_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/elements/skins/skin_3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/game_view/icons/home-light.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/game_view/icons/home.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/game_view/icons/home_white.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/icons/appicon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/icons/appicon_4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/icons/back_dark.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/loading_screen/sky.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/moving_background_files/mountains-middle-mirrored.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/moving_background_files/mountains-middle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/start_view/icons/play-dark.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/images/start_view/icons/play.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/sounds/boot_2.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/sounds/button_sound.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/sounds/coin_sound.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/sounds/empty_clip.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/sounds/game_over.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/strings/de.prop" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/strings/en.prop" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../StickJumper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../../../StickJumper.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3b8766c5-56d7-4a2a-95a7-4de5b2274bfb.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3b8766c5-56d7-4a2a-95a7-4de5b2274bfb.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stickjumper/data/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stickjumper/data/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stickjumper/data/database/DBConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stickjumper/data/database/DBConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/StickJumper-jar-with-dependencies.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/StickJumper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/StickJumper.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/elements/big_skins/skin_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/elements/big_skins/skin_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/elements/big_skins/skin_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/elements/coin/coin_10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/elements/coin/coin_20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/elements/coin/coin_30.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/elements/coin/coin_40.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/elements/coin/coin_50.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/elements/obstacles/enemy_skin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/elements/obstacles/steady_obstacle_skin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/elements/skins/skin_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/elements/skins/skin_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/elements/skins/skin_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/game_view/icons/home-light.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/game_view/icons/home.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/game_view/icons/home_white.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/icons/appicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/icons/appicon_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/icons/back_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/loading_screen/sky.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/moving_background_files/mountains-middle-mirrored.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/moving_background_files/mountains-middle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/start_view/icons/play-dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/start_view/icons/play.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sounds/boot_2.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sounds/button_sound.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sounds/coin_sound.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sounds/empty_clip.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sounds/game_over.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/strings/de.prop" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/strings/en.prop" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../production/stickjumper/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../production/stickjumper/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../production/stickjumper/src/com/stickjumper/data/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../production/stickjumper/src/com/stickjumper/data/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../production/stickjumper/src/com/stickjumper/data/database/DBConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../production/stickjumper/src/com/stickjumper/data/database/DBConnection.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,6 +95,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Starter" />
@@ -123,7 +130,7 @@
       <workItem from="1625054341069" duration="665000" />
       <workItem from="1625055928617" duration="10000" />
       <workItem from="1625301717131" duration="1245000" />
-      <workItem from="1625395025841" duration="1472000" />
+      <workItem from="1625395025841" duration="2237000" />
     </task>
     <servers />
   </component>

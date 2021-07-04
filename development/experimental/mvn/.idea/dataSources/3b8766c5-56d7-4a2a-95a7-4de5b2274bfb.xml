@@ -1074,7 +1074,9 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="294" parent="289" name="skin">
       <Position>5</Position>
-      <DataType>varchar(255)|0s</DataType>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>0</DefaultExpression>
     </column>
     <key id="295" parent="289" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
