@@ -67,7 +67,6 @@ public class Controller {
     public void setStartPanelView(StartPanelView startPanelView) {
         this.startPanelView = startPanelView;
         panelFrameManager.setStartPanelView(startPanelView);
-        // initTimer(); TODO: activate
     }
 
     public void setLoginFrameView(LoginFrameView loginFrameView) {
@@ -84,22 +83,6 @@ public class Controller {
 
     public PanelFrameManager getPanelFrameManager() {
         return panelFrameManager;
-    }
-
-    private void initTimer() {
-        connectionTimer = new Timer();
-        connectionTimer.scheduleAtFixedRate(new TimerTask() {
-            @Override
-            public void run() {
-                int connectionStatus = ConnectionTester.checkConnection();
-                connectedToServer = connectionStatus == ConnectionTester.CONNECTION_OK;
-                if (connectedToServer) {
-                    Settings.logData("Connection ok");
-                } else {
-                    Settings.logData("Connection failed");
-                }
-            }
-        }, 5000, 10000);
     }
 
     private void stopTimer() {

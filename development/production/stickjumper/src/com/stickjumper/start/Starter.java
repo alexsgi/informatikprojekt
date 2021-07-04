@@ -13,6 +13,7 @@ import com.stickjumper.utils.network.ConnectionTester;
 import fastmail.FastMail;
 
 import javax.swing.*;
+import java.io.IOException;
 import java.sql.SQLException;
 
 public class Starter {
@@ -34,17 +35,11 @@ public class Starter {
         SoundManager.loadAllClips();
         SoundManager.bootSoundManager();
 
-        int serverResponseCode = ConnectionTester.checkConnection();
-
-        switch (serverResponseCode) {
-            case ConnectionTester.CONNECTION_ERROR, ConnectionTester.CONNECTION_UNDEFINED_ERROR -> {
-                JOptionPane.showMessageDialog(null, StringManager.getString("starter.db.connection.error"));
-                System.exit(2);
-            }
-            case ConnectionTester.CONNECTION_MAINTENANCE -> {
-                JOptionPane.showMessageDialog(null, StringManager.getString("starter.db.connection.maintenance"));
-                System.exit(2);
-            }
+        try {
+            ConnectionTester.checkConnection();
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(null, StringManager.getString("starter.db.connection.error"));
+            System.exit(1);
         }
 
         ImageManager.loadALlImages(loadingFrameView.getClass());

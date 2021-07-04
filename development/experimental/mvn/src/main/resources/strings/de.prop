@@ -9,8 +9,6 @@ loading.hint3=Tipp: Nutze die Leertaste zum Springen
 
 # Starter
 starter.db.connection.error=Verbindung zum Server kann nicht aufgebaut werden - Internetverbindung vorhanden? Verbindung herstellen und Spiel erneut starten
-starter.db.connection.maintenance=Die Server werden gewartet - bitte sp\u00e4ter erneut versuchen
-
 
 # Game
 game.gameover=Game over

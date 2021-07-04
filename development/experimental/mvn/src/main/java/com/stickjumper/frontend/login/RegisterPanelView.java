@@ -129,7 +129,7 @@ public class RegisterPanelView extends JPanel implements ActionListener {
                 String hashed = PasswordHasher.hash(password);
                 if (hashed == null) {
                     Settings.logData("Error hashing password (register)");
-                    System.exit(-1);
+                    System.exit(2);
                 }
                 try {
                     boolean registrationSuccess = DBConnection.registerPlayer(username, hashed);
@@ -150,7 +150,6 @@ public class RegisterPanelView extends JPanel implements ActionListener {
                         }
                     }
                 } catch (SQLException throwable) {
-                    // TODO: implement server status check (online?), otherwise the program will freeze
                     warningLabel.setKeyText("login.register.warning.inetconnunavailable");
                     Settings.logData("SQLException during register", throwable);
                 }
