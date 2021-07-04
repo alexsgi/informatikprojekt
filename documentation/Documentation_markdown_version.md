@@ -369,5 +369,12 @@ Alex, Jonas:
 1. Anpassen des Settings-Menüs
 2. Hinzufügen eines Vorschau-Fensters zum Settingsmenü
 
+### **04.07.2021**
+Alex:
+1. Migrieren der DB zu DigitalOcean
+2. Entfernen redundanter Codeteile (z.B. Verbindungsüberprüfung)
+3. Export
+4. Fertigstellen der Dokumentation
+
 Hinweis:
 Nach einer Abwägung der Vor- und Nachteile, sowie der erforderlichen Arbeit und Zeit, wurde entschieden, dass man von dem ursprünglichen Konzept - ein Spiel mit Sticks, welche platziert werden können, und Klippen, welche überquert werden müssen - abweichen wird. Der eigentlich daraus resultierende Aufwand ist massiv. Es wurde Wert gelegt auf ein Spiel, dass fehlerfrei ist und dem Spieler viele Konfigurationsmöglichkeiten bietet. Dieses Ziel wurde erreicht.
