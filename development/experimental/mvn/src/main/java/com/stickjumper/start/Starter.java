@@ -10,7 +10,6 @@ import com.stickjumper.utils.manager.SoundManager;
 import com.stickjumper.utils.manager.StringManager;
 import com.stickjumper.utils.manager.UITools;
 import com.stickjumper.utils.network.ConnectionTester;
-import fastmail.FastMail;
 
 import javax.swing.*;
 import java.io.IOException;
@@ -46,7 +45,6 @@ public class Starter {
 
         GameRandomGenerator sceneryRandomGenerator = new GameRandomGenerator();
 
-        FastMail.init(Settings.E_HOST, Settings.E_USERNAME, Settings.E_PASSWORD);
         DBConnection.init();
 
         MainFrameView mainFrameView = new MainFrameView(sceneryRandomGenerator, DBConnection.getAllPlayers());

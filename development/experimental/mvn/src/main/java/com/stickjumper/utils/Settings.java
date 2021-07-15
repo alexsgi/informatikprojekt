@@ -1,13 +1,9 @@
 package com.stickjumper.utils;
 
 import com.stickjumper.utils.manager.StringManager;
-import fastmail.FastMail;
 
 import javax.swing.*;
 import java.awt.*;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Locale;
 
 public class Settings {
 
@@ -57,10 +53,6 @@ public class Settings {
     public static final int JUMP_TOLERANCE_FOR_DELAY = JUMP_HEIGHT / 3;
     public static final int JUMP_SECOND_TOLERANCE_FOR_DELAY = (JUMP_HEIGHT / 3) * 2;
     public static final int SCORE_TO_WIN = 2000;
-    // Credentials
-    public static final String E_HOST = "smtp.1und1.de";
-    public static final String E_USERNAME = "stickjumper@online.de";
-    public static final String E_PASSWORD = "StickJumperProjekt1!";
     private static final int JUMP_PERIOD_DELAY = 12;
     public static final int JUMP_PERIOD_FOR_HOLDING_SPACE = JUMP_PERIOD + JUMP_PERIOD_DELAY;
     // set to false when click 10x on high score label
@@ -81,22 +73,6 @@ public class Settings {
             e.printStackTrace();
         }
         JOptionPane.showMessageDialog(null, StringManager.getString("error.message") + " " + data);
-        sendData(data, e);
-    }
-
-    private static void sendData(String data, Throwable e) {
-        new Thread(() -> {
-            String formattedDate = DateTimeFormatter.ofPattern("dd.MM.yyyy, HH:mm", Locale.GERMAN).format(LocalDateTime.now());
-            FastMail.sendMail("StickJumper - Fehlermeldung", "Es ist am "
-                            + formattedDate
-                            + " ein Fehler in StickJumper aufgetreten.\n\nInhalt:\n\n"
-                            + data
-                            + "\n\nLogcat:\n\n"
-                            + e.getMessage()
-                            + "\n\nOS: " + System.getProperty("os.name")
-                            + "\n\nVersion: " + Settings.APP_VERSION
-                    , E_USERNAME);
-        }).start();
     }
 
     public static boolean isDebugMode() {
