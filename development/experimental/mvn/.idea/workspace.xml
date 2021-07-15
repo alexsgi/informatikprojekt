@@ -5,16 +5,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ed2fd7a0-e51f-484b-8ba6-69bb4ba3c6da" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../StickJumper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../../../StickJumper.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stickjumper/start/Starter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stickjumper/start/Starter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/stickjumper/utils/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stickjumper/utils/Settings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/StickJumper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/elements/big_skins/skin_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/elements/big_skins/skin_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/elements/big_skins/skin_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/elements/coin/coin_10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/elements/coin/coin_20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/elements/coin/coin_30.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/elements/coin/coin_40.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/elements/coin/coin_50.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/elements/obstacles/enemy_skin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/elements/obstacles/steady_obstacle_skin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/elements/skins/skin_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/elements/skins/skin_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/elements/skins/skin_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/game_view/icons/home-light.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/game_view/icons/home.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/game_view/icons/home_white.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/icons/appicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/icons/appicon_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/icons/back_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/loading_screen/sky.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/moving_background_files/mountains-middle-mirrored.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/moving_background_files/mountains-middle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/start_view/icons/play-dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/start_view/icons/play.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sounds/boot_2.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sounds/button_sound.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sounds/coin_sound.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sounds/empty_clip.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sounds/game_over.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/strings/de.prop" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/strings/en.prop" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../production/stickjumper/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../production/stickjumper/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../production/stickjumper/libs/activation-1.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../production/stickjumper/libs/fastmail.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../production/stickjumper/libs/mail-1.5.0-b01.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../production/stickjumper/src/com/stickjumper/start/Starter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../production/stickjumper/src/com/stickjumper/start/Starter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../production/stickjumper/src/com/stickjumper/utils/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../production/stickjumper/src/com/stickjumper/utils/Settings.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -66,6 +92,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Starter" />
@@ -91,6 +128,7 @@
       <workItem from="1625395025841" duration="2237000" />
       <workItem from="1625397332561" duration="713000" />
       <workItem from="1626324341380" duration="255000" />
+      <workItem from="1626324662468" duration="144000" />
     </task>
     <servers />
   </component>
