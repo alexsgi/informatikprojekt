@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c009156-479f-4b70-869f-88943c226565" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/stickjumper/data/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/stickjumper/data/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/stickjumper/data/database/DBConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/stickjumper/data/database/DBConnection.java" afterDir="false" />
-    </list>
+    <list default="true" id="7c009156-479f-4b70-869f-88943c226565" name="Default Changelist" comment="" />
     <list id="fea15059-de51-486a-98fc-5eb881e652da" name="Changes by jonas" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +113,7 @@
       <workItem from="1679480477715" duration="3671000" />
       <workItem from="1679559446024" duration="1000" />
       <workItem from="1679646278154" duration="4000" />
-      <workItem from="1680703189982" duration="173000" />
+      <workItem from="1680703189982" duration="254000" />
     </task>
     <servers />
   </component>
