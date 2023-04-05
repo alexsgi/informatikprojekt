@@ -5,42 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c009156-479f-4b70-869f-88943c226565" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../experimental/mvn/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/utils/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../experimental/mvn/src/main/java/com/stickjumper/utils/Settings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/target/StickJumper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/target/classes/images/elements/big_skins/skin_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/target/classes/images/elements/big_skins/skin_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/target/classes/images/elements/big_skins/skin_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/target/classes/images/elements/coin/coin_10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/target/classes/images/elements/coin/coin_20.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/target/classes/images/elements/coin/coin_30.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/target/classes/images/elements/coin/coin_40.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/target/classes/images/elements/coin/coin_50.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/target/classes/images/elements/obstacles/enemy_skin.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/target/classes/images/elements/obstacles/steady_obstacle_skin.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/target/classes/images/elements/skins/skin_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/target/classes/images/elements/skins/skin_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/target/classes/images/elements/skins/skin_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/target/classes/images/game_view/icons/home-light.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/target/classes/images/game_view/icons/home.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/target/classes/images/game_view/icons/home_white.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/target/classes/images/icons/appicon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/target/classes/images/icons/appicon_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/target/classes/images/icons/back_dark.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/target/classes/images/loading_screen/sky.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/target/classes/images/moving_background_files/mountains-middle-mirrored.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/target/classes/images/moving_background_files/mountains-middle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/target/classes/images/start_view/icons/play-dark.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/target/classes/images/start_view/icons/play.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/target/classes/sounds/boot_2.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/target/classes/sounds/button_sound.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/target/classes/sounds/coin_sound.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/target/classes/sounds/empty_clip.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/target/classes/sounds/game_over.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/target/classes/strings/de.prop" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../experimental/mvn/target/classes/strings/en.prop" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/stickjumper/utils/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/stickjumper/utils/Settings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/stickjumper/data/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/stickjumper/data/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/stickjumper/data/database/DBConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/stickjumper/data/database/DBConnection.java" afterDir="false" />
     </list>
     <list id="fea15059-de51-486a-98fc-5eb881e652da" name="Changes by jonas" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,6 +26,9 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="1sRbcbvn6qiJ96OGtELRWgqOGHv" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -66,23 +36,20 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="DatabaseDriversLRU" value="mariadb" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="aspect.path.notification.shown" value="true" />
-    <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/res/images/icons" />
-    <property name="project.structure.last.edited" value="Problems" />
-    <property name="project.structure.proportion" value="0.10471207" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="template.copyright.formatting" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/alex/Documents/Entwicklung/Projekte/Gemeinsame Projekte/informatikprojekt/development/production/stickjumper&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
+  }
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/res/images/icons" />
@@ -97,6 +64,7 @@
     <configuration name="Starter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.stickjumper.start.Starter" />
       <module name="stickjumper" />
+      <option name="PROGRAM_PARAMETERS" value="debug" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.stickjumper.start.*" />
@@ -146,6 +114,10 @@
       <workItem from="1625397973826" duration="31000" />
       <workItem from="1626324493584" duration="103000" />
       <workItem from="1626324660355" duration="146000" />
+      <workItem from="1679480477715" duration="3671000" />
+      <workItem from="1679559446024" duration="1000" />
+      <workItem from="1679646278154" duration="4000" />
+      <workItem from="1680703189982" duration="173000" />
     </task>
     <servers />
   </component>
@@ -162,7 +134,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
